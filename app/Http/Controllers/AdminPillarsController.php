@@ -14,7 +14,7 @@ class AdminPillarsController extends Controller
 
         $pillars = Pillar::all();
 
-        return view('admin.manage_pillars', compact('pillars'));
+        return view('admin.pillarmanage.manage_pillars', compact('pillars'));
     }
 
     /**
@@ -25,7 +25,7 @@ class AdminPillarsController extends Controller
     public function create()
     {
         //
-         return view('admin.create-pillar');
+         return view('admin.pillarmanage.create-pillar');
     }
 
     /**
@@ -74,7 +74,7 @@ class AdminPillarsController extends Controller
     public function edit($id)
     {
         $pillar = Pillar::find($id);
-        return view('admin.edit-pillar', compact('pillar'));
+        return view('admin.pillarmanage.edit-pillar', compact('pillar'));
     }
     /**
      * Update the specified resource in storage.

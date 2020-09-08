@@ -21,7 +21,7 @@ class AdminManageUsersController extends Controller {
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index() {
-        return view('admin.manage_users');
+        return view('admin.manageusers.manage_users');
     }
 
 
@@ -34,6 +34,6 @@ class AdminManageUsersController extends Controller {
     public function create()
     {
         //
-        return view('admin.create_user');
+        return view('admin.manageusers.create_user');
     }
 }
