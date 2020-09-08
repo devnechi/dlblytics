@@ -746,6 +746,7 @@
                 <ul class="list-unstyled components">
                     <p style="font-size:800;">Navigation</p>
                     <li><a href="{{ route('admin') }}">Dashboard</a></li>
+                    <li><a href="{{ route('manage-pillars') }}">Manage Pillars</a></li>
 
                     <!-- <li><a href="dlab_create_project.php">Create A new project</a></li> -->
                     <li><a href="{{ route('update') }}">Update Data</a></li>
@@ -812,6 +813,18 @@
             <script src="../../web/js/moment.min.js"></script>
             <script src="../../web/js/bootstrap-datetimepicker.min.js"></script>
 
+
+
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $('[data-toggle=confirmation]').confirmation({
+                        rootSelector: '[data-toggle=confirmation]',
+                        onConfirm: function (event, element) {
+                            element.closest('form').submit();
+                        }
+                    });
+                });
+            </script>
 
 <script>
 $(document).ready(function () {

@@ -35,6 +35,13 @@ Route::get('/manage-users', 'AdminManageUsersController@index')->name('manage-us
 Route::get('/create-user', 'AdminManageUsersController@create')->name('create-user');
 Route::get('/add-new-disaggregate', 'AdminManageUsersController@create')->name('add-new-disaggregate');
 
+Route::get('/manage-pillars', 'AdminPillarsController@index')->name('manage-pillars');
+Route::get('/add-new-pillar', 'AdminPillarsController@create')->name('add-new-pillar');
+
+Route::resource('pillars', 'AdminPillarsController');
+
+
+
 
 
 
