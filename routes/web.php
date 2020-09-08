@@ -42,6 +42,11 @@ Route::resource('pillars', 'AdminPillarsController');
 
 
 
+// ADMIN MANAGING kpis
+
+
+
+
 
 
 

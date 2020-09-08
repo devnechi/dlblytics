@@ -747,6 +747,8 @@
                     <p style="font-size:800;">Navigation</p>
                     <li><a href="{{ route('admin') }}">Dashboard</a></li>
                     <li><a href="{{ route('manage-pillars') }}">Manage Pillars</a></li>
+                    <li><a href="{{ route('manage-kpis') }}">Manage KPIs</a></li>
+
 
                     <!-- <li><a href="dlab_create_project.php">Create A new project</a></li> -->
                     <li><a href="{{ route('update') }}">Update Data</a></li>
