@@ -37,12 +37,19 @@ Route::get('/add-new-disaggregate', 'AdminManageUsersController@create')->name('
 
 Route::get('/manage-pillars', 'AdminPillarsController@index')->name('manage-pillars');
 Route::get('/add-new-pillar', 'AdminPillarsController@create')->name('add-new-pillar');
-
 Route::resource('pillars', 'AdminPillarsController');
 
 
 
-// ADMIN MANAGING kpis
+// ADMIN MANAGING kpis manage-kpis
+Route::get('/manage-kpis', 'DataKpiController@index')->name('manage-kpis');
+Route::get('/create-new-kpi', 'DataKpiController@create')->name('create-new-kpi');
+
+Route::resource('kpis', 'DataKpiController');
+
+
+
+
 
 
 

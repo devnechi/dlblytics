@@ -6,7 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class DataKpi extends Model
 {
+    public $table = "kpiTable";
+
     protected $fillable = [
-        // 'topic','description', 'categorie',
+       'creators_id',
+       'kpi_title',
+        'kpi_desc',
+        'dc_timing',
+        'fq_of_dc',
+        'classification',
+        'unit_of_measure'
     ];
 }

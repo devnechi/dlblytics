@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\DataKpi;
 use Illuminate\Http\Request;
+use App\Pillar;
+use Auth;
 
 class DataKpiController extends Controller
 {
@@ -12,10 +14,15 @@ class DataKpiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function index() {
+
+       // $kpis = DB::table('articles')->paginate(3);
+
+        $kpis = DataKpi::paginate(3);
+
+        return view('admin.kpimanage.manage-kpis', ['kpis' => $kpis]);
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -24,7 +31,11 @@ class DataKpiController extends Controller
      */
     public function create()
     {
-        //
+        // $pillars = Pillar::pluck('id', 'pillar_title');
+        $pillars = Pillar::all(['id', 'pillar_title']);
+
+
+        return view('admin.kpimanage.create-kpi', compact('pillars', $pillars));
     }
 
     /**

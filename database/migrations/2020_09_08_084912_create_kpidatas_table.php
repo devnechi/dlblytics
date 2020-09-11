@@ -40,6 +40,6 @@ class CreateKpidatasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kpidatas');
+        Schema::dropIfExists('kpiTable');
     }
 }
