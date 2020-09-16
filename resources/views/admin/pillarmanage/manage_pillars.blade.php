@@ -3,34 +3,10 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-12">
-            @if(session()->has('pillraddsuccess'))
+            @if(session()->has('success'))
             <div class="alert alert-success">
-                {{ session()->get('pillraddsuccess') }}
+                {{ session()->get('success') }}
             </div>
-
-            @elseif (session()->has('pillarupdsuccess'))
-            <div class="alert alert-success">
-                {{ session()->get('pillarupdsuccess') }}
-            </div>
-            @elseif (session()->has('pillardltsuccess'))
-            <div class="alert alert-success">
-                {{ session()->get('pillardltsuccess') }}
-            </div>
-
-            {{--
-            @elseif (session()->has('pillardltsuccess'))
-            <div class="alert alert-success">
-                {{ session()->get('pillardltsuccess') }}
-        </div>
-
-        @elseif (session()->has('pillraddsuccess'))
-        <div class="alert alert-success">
-            {{ session()->get('pillraddsuccess') }}
-        </div>
-        @else --}}
-        {{-- <div class="alert alert-success">
-                {{ session()->get('pillraddsuccess') }}
-    </div> --}}
     @endif
 
 

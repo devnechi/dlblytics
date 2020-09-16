@@ -14,9 +14,10 @@ class CreateKpidatasTable extends Migration
     public function up()
     {
         Schema::create('kpiTable', function (Blueprint $table) {
-            $table->increments('kpi_id');
+            $table->increments('id');
             $table->integer('creators_id');
             $table->string('kpi_title');
+            $table->string('ref_pillar_id');
             $table->longText('kpi_desc');
             $table->string('dc_timing');
             $table->string('fq_of_dc');

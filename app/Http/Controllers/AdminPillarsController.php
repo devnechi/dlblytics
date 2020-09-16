@@ -53,7 +53,7 @@ class AdminPillarsController extends Controller
         //  var_dump( $request-> get('creator_id'));
 
         $pillar->save();
-        return redirect('/manage-pillars')->with('pillraddsuccess', 'A new pillar was successfully added!');
+        return redirect('/manage-pillars')->with('success', 'A new pillar was successfully added!');
     }
     /**
      * Display the specified resource.
@@ -96,7 +96,7 @@ class AdminPillarsController extends Controller
         $pillar->pillar_status = $request->get('pillar_status');
 
         $pillar->save();
-        return redirect('/manage-pillars')->with('pillarupdsuccess', 'pillar was successfully updated!');
+        return redirect('/manage-pillars')->with('success', 'pillar was successfully updated!');
     }
     /**
      * Remove the specified resource from storage.
@@ -108,6 +108,6 @@ class AdminPillarsController extends Controller
     {
         $pillar = Pillar::find($id);
         $pillar->delete();
-        return redirect('/manage-pillars')->with('pillardltsuccess', 'pillar was successfully deleted!');
+        return redirect('/manage-pillars')->with('success', 'pillar was successfully deleted!');
     }
 }

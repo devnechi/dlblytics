@@ -5,8 +5,8 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header" data-background-color="orange">
-                    <h4 class="title text-center">Create New Key Perfomance Indicator</h4>
-                    <p class="category text-center">Creating a Key Perfomance Indicator that tracks data</p>
+                    <h4 class="title text-center">Create Data Collection Form</h4>
+                    <p class="category text-center">The form will be used to collect data for the kpi</p>
                 </div>
                 <div class="card-content table-responsive">
                     <div class="row">
