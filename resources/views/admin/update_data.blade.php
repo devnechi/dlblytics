@@ -1640,7 +1640,7 @@
                     <div class="card">
                         <div class="card-header" data-background-color="orange">
                             <h3 class="title text-center"> kpi-<strong>10</strong></h3>
-                            <h4 class="title text-center">Number of Data Products and Services supported by dLab</h4>
+                            <h4 class="title text-center">Data Products and Services supported by dLab</h4>
                         </div>
                         <div class="card-content table-responsive">
                             <div class="row">
@@ -1686,7 +1686,7 @@
                                     <div class="row">
                                         <div class="form-group col-md-6 input-group-lg">
                                             <label for="formGroupProductName"> Title of <strong>Product or
-                                                    Services</strong></label>
+                                                    Service</strong></label>
                                             <input type="text" class="form-control" id="number_of_breaks"
                                                 name="number_of_breaks"
                                                 value="<?= isset($_POST['number_of_breaks']) ? $_POST['number_of_breaks'] : ''; ?>"
@@ -1696,7 +1696,7 @@
 
                                     <div class="row">
                                         <div class="form-group col-md-6 input-group-lg">
-                                            <label for="formGroupProductName"> Type of support</label>
+                                            <h6> Type of support</h6>
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" value=""
                                                     id="defaultCheckT">
@@ -1704,6 +1704,19 @@
                                                     Technical Support
                                                 </label>
                                             </div>
+
+                                            <div class="form-group green-border-focus">
+                                                <label for="exampleFormControlTextarea5">Short Description of Technical Support</strong></label>
+                                                <textarea class="form-control" id="exampleFormControlTextarea5"
+                                                    rows="10"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+
+                                        <div class="form-group col-md-6 input-group-lg">
+
                                             <div class="form-check">
                                                 <input class="form-check-input" type="checkbox" value=""
                                                     id="defaultCheckF">
@@ -1711,9 +1724,17 @@
                                                     Financial Support
                                                 </label>
                                             </div>
+
+
+                                            <div class="form-group green-border-focus">
+                                                <label for="exampleFormControlTextarea5">Amount offered</strong></label>
+                                                <input type="text" class="form-control" id="number_of_breaks"
+                                                name="number_of_breaks"
+                                                value="<?= isset($_POST['number_of_breaks']) ? $_POST['number_of_breaks'] : ''; ?>"
+                                                placeholder="">
+                                            </div>
                                         </div>
                                     </div>
-
                                     <div class="row">
 
                                         <div class="col-md-6">
@@ -1723,14 +1744,14 @@
                                             <div class="row">
                                                 <div class="col-md-6 form-group col-md-6 input-group-lg">
                                                     <label for="formGroupProductName">Start date</label>
-                                                    <input type="text" class="form-control" id="number_of_breaks"
+                                                    <input type="date" class="form-control" id="number_of_breaks"
                                                         name="number_of_breaks"
                                                         value="<?= isset($_POST['number_of_breaks']) ? $_POST['number_of_breaks'] : ''; ?>"
                                                         placeholder="">
                                                 </div>
                                                 <div class="col-md-6 form-group col-md-6 input-group-lg">
                                                     <label for="formGroupProductName">End date</label>
-                                                    <input type="text" class="form-control" id="number_of_breaks"
+                                                    <input type="date" class="form-control" id="number_of_breaks"
                                                         name="number_of_breaks"
                                                         value="<?= isset($_POST['number_of_breaks']) ? $_POST['number_of_breaks'] : ''; ?>"
                                                         placeholder="">
@@ -1745,8 +1766,8 @@
                                             <h2>Description</h2>
                                             <br />
                                             <div class="form-group green-border-focus">
-                                                <label for="exampleFormControlTextarea5">Description of the new
-                                                    <strong>Product and Service</strong></label>
+                                                <label for="exampleFormControlTextarea5">Description of the
+                                                    <strong>Product or Service</strong></label>
                                                 <textarea class="form-control" id="exampleFormControlTextarea5"
                                                     rows="10"></textarea>
                                             </div>
@@ -1791,8 +1812,7 @@
                     <div class="card">
                         <div class="card-header" data-background-color="orange">
                             <h3 class="title text-center"> kpi-<strong>11</strong></h3>
-                            <h4 class="title text-center">New Organisation Engaged</h4>
-                            <p class="category text-center">enter details of Organisations engaged</p>
+                            <h4 class="title text-center"> Organisations Engaged</h4>
                         </div>
                         <div class="card-content table-responsive">
                             <div class="row">
@@ -1844,7 +1864,31 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="row">
 
+                                        <div class="col-md-6">
+                                            <br />
+                                            <h2>Duration</h2>
+                                            <br />
+                                            <div class="row">
+                                                <div class="col-md-6 form-group col-md-6 input-group-lg">
+                                                    <label for="formGroupProductName">Start date</label>
+                                                    <input type="date" class="form-control" id="number_of_breaks"
+                                                        name="number_of_breaks"
+                                                        value="<?= isset($_POST['number_of_breaks']) ? $_POST['number_of_breaks'] : ''; ?>"
+                                                        placeholder="">
+                                                </div>
+                                                <div class="col-md-6 form-group col-md-6 input-group-lg">
+                                                    <label for="formGroupProductName">End date</label>
+                                                    <input type="date" class="form-control" id="number_of_breaks"
+                                                        name="number_of_breaks"
+                                                        value="<?= isset($_POST['number_of_breaks']) ? $_POST['number_of_breaks'] : ''; ?>"
+                                                        placeholder="">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
                                     <div class="row">
                                         <div class="form-group col-lg-12 input-group-lg">
                                             <div class="form-group green-border-focus">
@@ -1893,8 +1937,7 @@
                     <div class="card">
                         <div class="card-header" data-background-color="orange">
                             <h3 class="title text-center"> kpi-<strong>12, 13, 14</strong></h3>
-                            <h4 class="title text-center">New People Engaged</h4>
-                            <p class="category text-center">Number of People trained directly by Dlab</p>
+                            <h4 class="title text-center">Beneficiaries of dLab training</h4>
                         </div>
                         <div class="card-content table-responsive">
                             <div class="row">
@@ -1914,28 +1957,63 @@
                                                 placeholder="">
                                         </div>
                                     </div>
-
                                     <div class="row">
                                         <div class="form-group col-md-6 input-group-lg">
-                                            <label for="formGroupProductName">Total number of Participants</label>
+                                            <label for="formGroupProductName">Number of Male Participants</label>
                                             <input type="text" class="form-control" id="number_of_breaks"
                                                 name="number_of_breaks"
                                                 value="<?= isset($_POST['number_of_breaks']) ? $_POST['number_of_breaks'] : ''; ?>"
                                                 placeholder="">
                                         </div>
-                                    </div>
-
-
-                                    <div class="row">
                                         <div class="form-group col-md-6 input-group-lg">
                                             <label for="formGroupProductName">Number of Female Participants</label>
                                             <input type="text" class="form-control" id="number_of_breaks"
                                                 name="number_of_breaks"
                                                 value="<?= isset($_POST['number_of_breaks']) ? $_POST['number_of_breaks'] : ''; ?>"
                                                 placeholder="">
+                                                <br />
                                         </div>
+                                    </div>
+                                    <br />
+                                            <h2>Participants Age Group</h2>
+                                            <br />
+                                    <div class="row">
                                         <div class="form-group col-md-6 input-group-lg">
-                                            <label for="formGroupProductName">Number of Youth Participants</label>
+
+                                            <label for="formGroupProductName">Age group 18-19 (youth) participants</label>
+                                            <input type="text" class="form-control" id="number_of_breaks"
+                                                name="number_of_breaks"
+                                                value="<?= isset($_POST['number_of_breaks']) ? $_POST['number_of_breaks'] : ''; ?>"
+                                                placeholder="">
+                                        </div>
+
+                                        <div class="form-group col-md-6 input-group-lg">
+                                            <label for="formGroupProductName">Age groupd 20-24 participants</label>
+                                            <input type="text" class="form-control" id="number_of_breaks"
+                                                name="number_of_breaks"
+                                                value="<?= isset($_POST['number_of_breaks']) ? $_POST['number_of_breaks'] : ''; ?>"
+                                                placeholder="">
+                                        </div>
+
+                                        <div class="form-group col-md-6 input-group-lg">
+                                            <label for="formGroupProductName">Adult 25-29 participants</label>
+                                            <input type="text" class="form-control" id="number_of_breaks"
+                                                name="number_of_breaks"
+                                                value="<?= isset($_POST['number_of_breaks']) ? $_POST['number_of_breaks'] : ''; ?>"
+                                                placeholder="">
+                                        </div>
+
+
+                                        <div class="form-group col-md-6 input-group-lg">
+                                            <label for="formGroupProductName">Age groupd 30-35 participants</label>
+                                            <input type="text" class="form-control" id="number_of_breaks"
+                                                name="number_of_breaks"
+                                                value="<?= isset($_POST['number_of_breaks']) ? $_POST['number_of_breaks'] : ''; ?>"
+                                                placeholder="">
+                                        </div>
+
+                                        <div class="form-group col-md-6 input-group-lg">
+                                            <label for="formGroupProductName">Age groupd 36 and above participants</label>
                                             <input type="text" class="form-control" id="number_of_breaks"
                                                 name="number_of_breaks"
                                                 value="<?= isset($_POST['number_of_breaks']) ? $_POST['number_of_breaks'] : ''; ?>"
@@ -1952,8 +2030,7 @@
                                                     <option value="dli">Data Ambassadors </option>
                                                 </select>
                                                 <div class="input-group-append">
-                                                    <label class="input-group-text" for="inputGroupSelect02">Target
-                                                        population</label>
+                                                    <label class="input-group-text" for="inputGroupSelect02">Type of Beneficiaries</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -1978,12 +2055,42 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="form-group col-md-6 input-group-lg">
+                                            <br />
+                                            <h2>Report upload</h2>
+                                            <br />
+                                            <div class="input-group col-mb-6">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">Upload signing sheet</span>
+                                                </div>
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="inputGroupFile01">
+                                                    <label class="custom-file-label" for="inputGroupFile01">Choose
+                                                        file</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><div class="row">
+                                        <div class="form-group col-md-6 input-group-lg">
 
+                                            <div class="input-group col-mb-6">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">Upload training Report</span>
+                                                </div>
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="inputGroupFile01">
+                                                    <label class="custom-file-label" for="inputGroupFile01">Choose
+                                                        file</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
                                     <div class="row">
                                         <div class="form-group col-lg-12 input-group-lg">
                                             <div class="form-group green-border-focus">
-                                                <label for="exampleFormControlTextarea5">Aim of the Training </label>
+                                                <label for="exampleFormControlTextarea5">Objectives of the Training </label>
                                                 <textarea class="form-control" id="exampleFormControlTextarea5"
                                                     rows="10"></textarea>
                                             </div>
@@ -2297,8 +2404,7 @@
                     <div class="card">
                         <div class="card-header" data-background-color="orange">
                             <h3 class="title text-center"> kpi-<strong>15</strong></h3>
-                            <h4 class="title text-center">New Partnership Formed</h4>
-                            <p class="category text-center">Number of Partnerships formed by Dlab</p>
+                            <h4 class="title text-center">Partnerships Formed</h4>
                         </div>
                         <div class="card-content table-responsive">
                             <div class="row">
@@ -2309,7 +2415,7 @@
                                     <br />
                                     <div class="row">
                                         <div class="form-group col-md-6 input-group-lg">
-                                            <label for="formGroupProductName"> Title of Partner</label>
+                                            <label for="formGroupProductName"> Name of Organisation</label>
                                             <input type="text" class="form-control" id="number_of_breaks"
                                                 name="number_of_breaks"
                                                 value="<?= isset($_POST['number_of_breaks']) ? $_POST['number_of_breaks'] : ''; ?>"
@@ -2336,22 +2442,15 @@
 
                                     <div class="row">
                                         <div class="form-group col-md-6 input-group-lg">
-                                            <div class="input-group input-group-lg mb-3">
-                                                <select class="custom-select" id="selectTypeOfEvent">
-                                                    <option selected>Select Sector</option>
-                                                    <option value="dli">Sector: HIV</option>
-                                                    <option value="data">Sector: Health</option>
-                                                    <option value="dcli">Sector: Economic Growth</option>
-                                                    <option value="dli">Sector: Education</option>
-                                                    <option value="data">Sector: Governance Decision Making</option>
-                                                    <option value="dcli">Sector: Gender</option>
-                                                    <option value="dcli">other</option>
-                                                </select>
-                                                <div class="input-group-append">
-                                                    <label class="input-group-text" for="inputGroupSelect02">select
-                                                        sector/area of Partnership</label>
-                                                </div>
-                                            </div>
+
+                                                        <label for="formGroupProductName">
+                                                            Sector/Area of Partnership </label>
+
+                                                        <input type="text" class="form-control" id="number_of_breaks"
+                                                        name="number_of_breaks"
+                                                        value="<?= isset($_POST['number_of_breaks']) ? $_POST['number_of_breaks'] : ''; ?>"
+                                                        placeholder="">
+
                                         </div>
                                     </div>
                                     <div class="row">
@@ -2373,7 +2472,7 @@
                                     <div class="row">
                                         <div class="form-group col-md-6 input-group-lg">
                                             <br />
-                                            <h2>partnership documentation. <small>(upload a memorandum or an
+                                            <h2>Evidence of Partnership <small>(Upload memorandum of understanding or an
                                                     aggrement)</small></h2>
                                             <br />
                                             <div class="input-group col-mb-6">
@@ -2391,10 +2490,29 @@
                                     <div class="row">
                                         <div class="col-md-6 form-group col-md-6 input-group-lg">
                                             <label for="formGroupProductName">Date Formed</label>
-                                            <input type="text" class="form-control" id="number_of_breaks"
+                                            <input type="date" class="form-control" id="number_of_breaks"
                                                 name="number_of_breaks"
                                                 value="<?= isset($_POST['number_of_breaks']) ? $_POST['number_of_breaks'] : ''; ?>"
                                                 placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col-md-6 input-group-lg">
+                                            <br />
+                                            <h2>Duration</h2>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label for="formGroupProductName">Start Date</label>
+                                                    ￼ <input type="date" class="form-control" name="bday"
+                                                        min="1000-01-01" max="3000-12-31" class="form-control">
+
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label for="formGroupProductName">End Date</label>
+                                                    ￼ <input type="date" class="form-control" name="bday"
+                                                        min="1000-01-01" max="3000-12-31" class="form-control">
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -2447,8 +2565,7 @@
                         <div class="card-header" data-background-color="orange">
                             <h3 class="title text-center"> kpi-<strong>16</strong></h3>
                             <h4 class="title text-center">Innovation program assessment</h4>
-                            <p class="category text-center">Number of Stakeholders engaged in Dlab Innovation Programs
-                            </p>
+
                         </div>
                         <div class="card-content table-responsive">
                             <div class="row">
@@ -2472,19 +2589,97 @@
 
                                     <div class="row">
                                         <div class="form-group col-md-6 input-group-lg">
-                                            <select class="form-control" aria-label="Large" id="selectAccountStatus"
-                                                name="selectAccountStatus" aria-describedby="inputGroup-sizing-sm">
-                                                <option value="select">Select Sector</option>
-                                                <option value="dli">Sector: HIV</option>
-                                                <option value="data">Sector: Health</option>
-                                                <option value="dcli">Sector: Economic Growth</option>
-                                                <option value="dli">Sector: Education</option>
-                                                <option value="data">Sector: Governance Decision Making</option>
-                                                <option value="dcli">Sector: Gender</option>
-                                                <option value="dcli">Other</option>
-                                            </select>￼
+                                            <label for="formGroupProductName"> Sector of Focus</label>
+                                            <input type="text" class="form-control" id="number_of_breaks"
+                                                name="number_of_breaks"
+                                                value="<?= isset($_POST['number_of_breaks']) ? $_POST['number_of_breaks'] : ''; ?>"
+                                                placeholder="">
                                         </div>
                                     </div>
+
+                                    <div class="row">
+                                        <div class="form-group col-md-6 input-group-lg">
+                                            <label for="formGroupProductName">Number of Individuals</label>
+                                            <input type="text" class="form-control" id="number_of_breaks"
+                                                name="number_of_breaks"
+                                                value="<?= isset($_POST['number_of_breaks']) ? $_POST['number_of_breaks'] : ''; ?>"
+                                                placeholder="">
+                                        </div>
+                                        <div class="form-group col-md-6 input-group-lg">
+                                            <label for="formGroupProductName">Number of Organisation</label>
+                                            <input type="text" class="form-control" id="number_of_breaks"
+                                                name="number_of_breaks"
+                                                value="<?= isset($_POST['number_of_breaks']) ? $_POST['number_of_breaks'] : ''; ?>"
+                                                placeholder="">
+                                                <br />
+                                        </div>
+                                    </div>
+                                    <br />
+                                    <div class="row">
+                                        <div class="form-group col-md-6 input-group-lg">
+                                            <label for="formGroupProductName">Number of Male Participants</label>
+                                            <input type="text" class="form-control" id="number_of_breaks"
+                                                name="number_of_breaks"
+                                                value="<?= isset($_POST['number_of_breaks']) ? $_POST['number_of_breaks'] : ''; ?>"
+                                                placeholder="">
+                                        </div>
+                                        <div class="form-group col-md-6 input-group-lg">
+                                            <label for="formGroupProductName">Number of Female Participants</label>
+                                            <input type="text" class="form-control" id="number_of_breaks"
+                                                name="number_of_breaks"
+                                                value="<?= isset($_POST['number_of_breaks']) ? $_POST['number_of_breaks'] : ''; ?>"
+                                                placeholder="">
+                                                <br />
+                                        </div>
+                                    </div>
+                                    <br />
+                                            <h2>Participants Age Group</h2>
+                                            <br />
+                                    <div class="row">
+                                        <div class="form-group col-md-6 input-group-lg">
+
+                                            <label for="formGroupProductName">Age group 18-19 (youth) participants</label>
+                                            <input type="text" class="form-control" id="number_of_breaks"
+                                                name="number_of_breaks"
+                                                value="<?= isset($_POST['number_of_breaks']) ? $_POST['number_of_breaks'] : ''; ?>"
+                                                placeholder="">
+                                        </div>
+
+                                        <div class="form-group col-md-6 input-group-lg">
+                                            <label for="formGroupProductName">Age groupd 20-24 participants</label>
+                                            <input type="text" class="form-control" id="number_of_breaks"
+                                                name="number_of_breaks"
+                                                value="<?= isset($_POST['number_of_breaks']) ? $_POST['number_of_breaks'] : ''; ?>"
+                                                placeholder="">
+                                        </div>
+
+                                        <div class="form-group col-md-6 input-group-lg">
+                                            <label for="formGroupProductName">Adult 25-29 participants</label>
+                                            <input type="text" class="form-control" id="number_of_breaks"
+                                                name="number_of_breaks"
+                                                value="<?= isset($_POST['number_of_breaks']) ? $_POST['number_of_breaks'] : ''; ?>"
+                                                placeholder="">
+                                        </div>
+
+
+                                        <div class="form-group col-md-6 input-group-lg">
+                                            <label for="formGroupProductName">Age groupd 30-35 participants</label>
+                                            <input type="text" class="form-control" id="number_of_breaks"
+                                                name="number_of_breaks"
+                                                value="<?= isset($_POST['number_of_breaks']) ? $_POST['number_of_breaks'] : ''; ?>"
+                                                placeholder="">
+                                        </div>
+
+                                        <div class="form-group col-md-6 input-group-lg">
+                                            <label for="formGroupProductName">Age groupd 36 and above participants</label>
+                                            <input type="text" class="form-control" id="number_of_breaks"
+                                                name="number_of_breaks"
+                                                value="<?= isset($_POST['number_of_breaks']) ? $_POST['number_of_breaks'] : ''; ?>"
+                                                placeholder="">
+                                                <br />
+                                        </div>
+                                    </div>
+
                                     <div class="row">
                                         <div class="form-group col-md-6 input-group-lg">
                                             <div class="input-group input-group-lg mb-3">
@@ -2515,23 +2710,27 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="form-group col-md-6 input-group-lg">
-                                            <div class="input-group mb-3">
-                                                <div class="input-group-prepend">
-                                                    <span class="input-group-text">Upload field report</span>
-                                                </div>
-                                                <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="inputGroupFile01">
-                                                    <label class="custom-file-label" for="inputGroupFile01">Choose
-                                                        file</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-4 input-group-lg">
+                                    <label for="formGroupProductName"> Total Amount Awarded <small>in TZS</small></label>
+                                    <input type="text" class="form-control" id="number_of_breaks"
+                                        name="number_of_breaks"
+                                        value="<?= isset($_POST['number_of_breaks']) ? $_POST['number_of_breaks'] : ''; ?>"
+                                        placeholder="">
                                 </div>
                             </div>
 
+                            <div class="row">
+                                <div class="form-group col-md-4 input-group-lg">
+                                    <label for="formGroupProductName"> Total Amount Disbursed <small>in TZS</small></label>
+                                    <input type="text" class="form-control" id="number_of_breaks"
+                                        name="number_of_breaks"
+                                        value="<?= isset($_POST['number_of_breaks']) ? $_POST['number_of_breaks'] : ''; ?>"
+                                        placeholder="">
+                                </div>
+                            </div>
                             <div class="row">
 
                                 <div class="col-md-6">
@@ -2541,14 +2740,14 @@
                                     <div class="row">
                                         <div class="col-md-6 form-group col-md-6 input-group-lg">
                                             <label for="formGroupProductName">Start date</label>
-                                            <input type="text" class="form-control" id="number_of_breaks"
+                                            <input type="date" class="form-control" id="number_of_breaks"
                                                 name="number_of_breaks"
                                                 value="<?= isset($_POST['number_of_breaks']) ? $_POST['number_of_breaks'] : ''; ?>"
                                                 placeholder="">
                                         </div>
                                         <div class="col-md-6 form-group col-md-6 input-group-lg">
                                             <label for="formGroupProductName">End date</label>
-                                            <input type="text" class="form-control" id="number_of_breaks"
+                                            <input type="date" class="form-control" id="number_of_breaks"
                                                 name="number_of_breaks"
                                                 value="<?= isset($_POST['number_of_breaks']) ? $_POST['number_of_breaks'] : ''; ?>"
                                                 placeholder="">
@@ -2605,8 +2804,7 @@
                     <div class="card">
                         <div class="card-header" data-background-color="orange">
                             <h3 class="title text-center"> kpi-<strong>17</strong></h3>
-                            <h4 class="title text-center">Funds Manager</h4>
-                            <p class="category text-center">Funds managed by Dlab</p>
+                            <h4 class="title text-center">Funds Managed by dLab</h4>
                         </div>
                         <div class="card-content table-responsive">
                             <div class="row">
