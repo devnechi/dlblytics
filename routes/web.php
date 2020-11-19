@@ -51,13 +51,21 @@ Route::resource('kpis', 'DataKpiController');
 Route::get('/finance-dashboard', 'FinanceAdminController@index')->name('finance-dashboard')->middleware('finance-dashboard');
 
 
-
-
-
-
-
-
-
-
-
-
+// monitoring and evaluation routes
+Route::get('/monitoring-evaluation-dashboard', 'mneController@index')->name('monitoring-evaluation-dashboard')->middleware('monitoring-evaluation-dashboard');
+// cb routes
+Route::get('/capacity-building-dashboard', 'cbController@index')->name('capacity-building-dashboard')->middleware('capacity-building-dashboard');
+// IS routes
+Route::get('/institutional-strengthening-dashboard', 'isController@index')->name('institutional-strengthening-dashboard')->middleware('institutional-strengthening-dashboard');
+// RI routes
+Route::get('/research-innovation-dashboard', 'riController@index')->name('research-innovation-dashboard')->middleware('research-innovation-dashboard');
+// CE routes
+Route::get('/community-engagement-dashboard', 'ceController@index')->name('community-engagement-dashboard')->middleware('community-engagement-dashboard');
+// DS routes
+Route::get('/data-science-dashboard', 'dsController@index')->name('data-science-dashboard')->middleware('data-science-dashboard');
+// Comms routes
+Route::get('/communication-channels-dashboard', 'commsController@index')->name('communication-channels-dashboard')->middleware('communication-channels-dashboard');
+// Normal User routes
+Route::get('/members-area-dashboard', 'nuController@index')->name('members-area-dashboard')->middleware('members-area-dashboard');
+// donor routes
+Route::get('/dlab-donors-dashboard', 'donorController@index')->name('dlab-donors-dashboard')->middleware('dlab-donors-dashboard');

@@ -55,6 +55,52 @@ class LoginController extends Controller
                 return $this->redirectTo;
                 break;
 
+            case 5:
+                $this->redirectTo = '/monitoring-evaluation-dashboard';
+                return $this->redirectTo;
+                break;
+
+            case 6:
+                $this->redirectTo = '/capacity-building-dashboard';
+                return $this->redirectTo;
+                break;
+
+            case 7:
+                $this->redirectTo = '/institutional-strengthening-dashboard';
+                return $this->redirectTo;
+                break;
+
+            case 8:
+                $this->redirectTo = '/research-innovation-dashboard';
+                return $this->redirectTo;
+                break;
+
+            case 9:
+                $this->redirectTo = '/community-engagement-dashboard';
+                return $this->redirectTo;
+                break;
+
+            case 10:
+                $this->redirectTo = '/data-science-dashboard';
+                return $this->redirectTo;
+                break;
+
+            case 11:
+                $this->redirectTo = '/communication-channels-dashboard';
+                return $this->redirectTo;
+                break;
+
+            case 12:
+                $this->redirectTo = '/members-area-dashboard';
+                return $this->redirectTo;
+                break;
+
+
+            case 13:
+                $this->redirectTo = '/dlab-donors-dashboard';
+                return $this->redirectTo;
+                break;
+
             default:
                 # code...
                 $this->redirectTo = '/login';

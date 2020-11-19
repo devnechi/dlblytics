@@ -3,10 +3,11 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class FinanceAdmin
+
+class MonitoringnEvaluation
 {
     /**
      * Handle an incoming request.
@@ -17,6 +18,7 @@ class FinanceAdmin
      */
     public function handle(Request $request, Closure $next)
     {
+
         if(!Auth::check()){
             return redirect()->route('login');
         }
@@ -28,27 +30,28 @@ class FinanceAdmin
 
         // role 2 = manager
         if(Auth::user()->role == 2){
-
-            return redirect() ->route('manager');
-
+            return redirect()->route('manager');
         }
 
         // role 3 = user
         if(Auth::user()->role == 3){
             return redirect()->route('user');
-
         }
 
-           // role 4 = finance admin
-           if(Auth::user()->role == 4){
+        // role 4 = finance admin
+        if(Auth::user()->role == 4){
+        return redirect()->route('finance-dashboard');
+        }
+
+        // role 5 = mne
+        if(Auth::user()->role == 5){
             return $next($request);
+        }
+
+        // role 6 = cb admin
+        if(Auth::user()->role == 6){
+            return redirect()->route('capacity-building-dashboard');
 
         }
-            // role 5 = mne
-            if(Auth::user()->role == 5){
-                return redirect()->route('monitoring-evaluation-dashboard');
-
-            }
-
     }
 }

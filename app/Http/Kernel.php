@@ -69,6 +69,19 @@ class Kernel extends HttpKernel
         'manager' =>\App\Http\Middleware\Manager::class,
         'user' =>\App\Http\Middleware\User::class,
         'finance-dashboard' => \App\Http\Middleware\FinanceAdmin::class,
+        'monitoring-evaluation-dashboard' => \App\Http\Middleware\MonitoringnEvaluation::class,
+        'capacity-building-dashboard' => \App\Http\Middleware\CapacityBuilding::class,
+        'institutional-strengthening-dashboard' => \App\Http\Middleware\InstitutionStrengthing::class,
+        'research-innovation-dashboard' => \App\Http\Middleware\ResearchnInnovation::class,
+        'community-engagement-dashboard' => \App\Http\Middleware\CommunityEngagement::class,
+        'data-science-dashboard' => \App\Http\Middleware\DataScience::class,
+        'communication-channels-dashboard' => \App\Http\Middleware\CommunicationsChannel::class,
+        'members-area-dashboard' => \App\Http\Middleware\NormalUser::class,
+        'dlab-donors-dashboard' => \App\Http\Middleware\DonorArea::class,
+
+
+
+
 
     ];
 }
