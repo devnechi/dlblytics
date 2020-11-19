@@ -2813,10 +2813,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card">
-                        <div class="card-header" data-background-color="orange">
-                            <h4 class="title text-center">Imprest and Retirements</h4>
-                            <p class="category text-center">list of inbound imprests and retirements</p>
-                        </div>
+
                         <div class="card-content table-responsive">
                             <div class="container">
                               <div class="row">
@@ -2828,7 +2825,7 @@
 
                                     <table class="table table-hover">
                                         <caption>view full list</caption>
-                                        <thead class="dashrecentimpresttbl">
+                                        <thead>
                                           <tr>
                                             <th scope="col">#</th>
                                             <th scope="col">Title</th>
@@ -2903,6 +2900,24 @@
                                     </div>
                                 </div>
 
+                            </div>
+
+
+
+                            </div>
+                    </div>
+                    <!-- end of SECOND column -->
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+
+                        <div class="card-content table-responsive">
+                            <div class="container">
+
                                 <div class="row">
                                     <div class="col">
                                         <br />
@@ -2912,7 +2927,7 @@
 
                                         <table class="table table-hover">
                                             <caption>view full list</caption>
-                                            <thead class="dashrecentretirementstbl">
+                                            <thead>
                                               <tr>
                                                 <th scope="col">#</th>
                                                 <th scope="col">Title</th>
