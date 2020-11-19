@@ -47,6 +47,8 @@ Route::get('/create-new-kpi', 'DataKpiController@create')->name('create-new-kpi'
 
 Route::resource('kpis', 'DataKpiController');
 
+// finance Admin routes
+Route::get('/finance-dashboard', 'FinanceAdminController@index')->name('finance-dashboard')->middleware('finance-dashboard');
 
 
 

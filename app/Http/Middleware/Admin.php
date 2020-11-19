@@ -38,5 +38,11 @@ class Admin
             return redirect()->route('user');
 
         }
+
+         // role 4 = finance admin
+         if(Auth::user()->role == 4){
+            return redirect()->route('finance-dashboard');
+
+        }
     }
 }

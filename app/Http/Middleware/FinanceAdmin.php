@@ -3,10 +3,10 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Auth;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
-
-class User
+class FinanceAdmin
 {
     /**
      * Handle an incoming request.
@@ -15,10 +15,8 @@ class User
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle(Request $request, Closure $next)
     {
-
-
         if(!Auth::check()){
             return redirect()->route('login');
         }
@@ -31,19 +29,19 @@ class User
         // role 2 = manager
         if(Auth::user()->role == 2){
 
-            return redirect()->route('manager');
+            return $next($request);
+
         }
 
         // role 3 = user
         if(Auth::user()->role == 3){
-            return $next($request);
-
+            return redirect()->route('user');
 
         }
 
-         // role 4 = finance admin
-         if(Auth::user()->role == 4){
-            return redirect()->route('finance-dashboard');
+           // role 4 = finance admin
+           if(Auth::user()->role == 4){
+            return $next($request);
 
         }
     }
