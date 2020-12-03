@@ -11,24 +11,25 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" id="imprest-retirements-tab-md" data-toggle="tab" href="#imprest-retirements-md" role="tab"
-                aria-controls="imprest-retirements-md" aria-selected="false">Imprests & Retirements</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="payment-approvalnrequest-tab-md" data-toggle="tab" href="#payment-approvalnrequest-md" role="tab"
-                aria-controls="payment-approvalnrequest-md" aria-selected="false">Payment Approval & Requests</a>
+                aria-controls="imprest-retirements-md" aria-selected="false">Vouchers, Imprests & Retirements</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" id="financial-reports-tab-md" data-toggle="tab" href="#financial-reports-md" role="tab" aria-controls="financial-reports-md"
-                aria-selected="false">Financial reports</a>
+                aria-selected="false">Financial Reports</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" id="payroll-system-tab-md" data-toggle="tab" href="#payroll-system-md" role="tab"
-                aria-controls="payroll-system-md" aria-selected="false">Payroll System</a>
-        </li>
+
         <li class="nav-item">
             <a class="nav-link" id="scholars-grantees-tab-md" data-toggle="tab" href="#scholars-grantees-md"
-                role="tab" aria-controls="scholars-grantees-md" aria-selected="false">Private and Public
-                Data</a>
+                role="tab" aria-controls="scholars-grantees-md" aria-selected="false">Scholars & Grantees</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" id="payroll-system-tab-md" data-toggle="tab" href="#payroll-system-md" role="tab"
+                aria-controls="payroll-system-md" aria-selected="false">Organisation Payroll </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="financial-analytics-tab-md" data-toggle="tab" href="#financial-analytics-md" role="tab"
+                aria-controls="financial-analytics-md" aria-selected="false">Financial Analytics</a>
         </li>
     </ul>
 
@@ -3019,7 +3020,7 @@
                =      start of payment-approvalnrequest data           =
                ========================================= -->
         <!-- start of payment-approvalnrequest data panel -->
-        <div class="tab-pane fade" id="payment-approvalnrequest-md" role="tabpanel" aria-labelledby="payment-approvalnrequest-tab-md">
+        <div class="tab-pane fade" id="financial-analytics-md" role="tabpanel" aria-labelledby="financial-analytics-tab-md">
             <p>Date is specific to individual projects</p>
             <br />
             <br />

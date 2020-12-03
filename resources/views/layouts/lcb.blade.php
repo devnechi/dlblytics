@@ -757,14 +757,8 @@
                     <li><a href="{{ route('monitoring-evaluation-dashboard') }}">Dashboard</a></li>
                     <li><a href="{{ route('manage-pillars') }}">Imprest & Retirements</a></li>
                     <li><a href="{{ route('manage-kpis') }}">Payment Approval & Request</a></li>
-
-
-                    <!-- <li><a href="dlab_create_project.php">Create A new project</a></li> -->
                     <li><a href="{{ route('update') }}">Payroll System</a></li>
-
                     <li><a href="{{ route('admin') }}">Financial Reports</a></li>
-
-                    <!-- <li><a href="dlab_data_tests.php"> Data Mapping</a></li> -->
                     <li><a href="{{ route('manage-users') }}">Scholars and Grantees</a></li>
                     <li>
                         <a href="{{ route('logout') }}"
