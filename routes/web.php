@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\ResearchnInnovation;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,6 +31,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 // admin update data
 Route::get('/update', 'AdminUpdateDataController@index')->name('update');
 // admin manage users
+
 // AdminManageUsersController
 Route::get('/manage-users', 'AdminManageUsersController@index')->name('manage-users');
 Route::get('/create-user', 'AdminManageUsersController@create')->name('create-user');
@@ -49,6 +51,26 @@ Route::resource('kpis', 'DataKpiController');
 
 // finance Admin routes
 Route::get('/finance-dashboard', 'FinanceAdminController@index')->name('finance-dashboard')->middleware('finance-dashboard');
+Route::get('/create-new-training-advance-request', 'FinanceAdminController@createTrainingAdvance')->name('create-new-training-advance-request');
+Route::get('/create-new-travel-advance-request', 'FinanceAdminController@createTravelAdvance')->name('create-new-travel-advance-request');
+Route::get('/create-new-per-diem-claim', 'FinanceAdminController@createperDiemClaim')->name('create-new-per-diem-claim');
+Route::get('/create-new-petty-cash', 'FinanceAdminController@createPettyCash')->name('create-new-petty-cash');
+Route::get('/create-payment-requisition', 'FinanceAdminController@createPaymentRequisition')->name('create-payment-requisition');
+Route::get('/create-new-workshop-registration', 'FinanceAdminController@createNewWorkshopRegistration')->name('create-new-workshop-registration');
+Route::get('/create-allowance-request', 'FinanceAdminController@createAllowanceRequest')->name('create-allowance-request');
+// Route::get('/create-per-diem-claim', 'FinanceAdminController@createPerDiemClaim')->name('create-per-diem-claim');
+
+// reports routes
+Route::get('/create-bank-reconciliation-report', 'FinanceAdminController@createBankReconciliationReport')->name('create-bank-reconciliation-report');
+Route::get('/create-petty-cash-reconciliation-report', 'FinanceAdminController@createPettyCashReconciliationReport')->name('create-petty-cash-reconciliation-report');
+Route::get('/create-payment-voucher', 'FinanceAdminController@createPaymentVoucher')->name('create-payment-voucher');
+Route::get('/create-deposit-voucher', 'FinanceAdminController@createDepositVoucher')->name('create-deposit-voucher');
+Route::get('/create-journal-voucher', 'FinanceAdminController@createJournalVoucher')->name('create-journal-voucher');
+Route::get('/create-pay-slip', 'FinanceAdminController@createPaySlip')->name('create-pay-slip');
+
+
+
+
 
 
 // monitoring and evaluation routes

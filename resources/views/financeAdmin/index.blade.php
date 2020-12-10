@@ -1178,7 +1178,7 @@
             aria-labelledby="imprest-retirements-tab-md">
             <!-- line chart -->
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModalCenter">
                 create a new request
             </button>
 
@@ -1194,8 +1194,7 @@
                             </button>
                         </div>
                         <div class="modal-body">
-
-                            <ul class="list-group list-group-flush">
+                            {{-- <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
                                     <a href="#" class="btn btn-lg  btn-outline-info" role="button"
                                         aria-pressed="true">Training Adavance Request</a>
@@ -1230,13 +1229,50 @@
                                         aria-pressed="true">Workshop Registration Form</a>
                                 </li>
 
+                            </ul> --}}
+                            <ul class="list-group-flush">
+                                <li class="list-group-item">
+                                    <a href="{{ route('create-new-training-advance-request') }}" class="list-group-item list-group-item-action">
+                                    Training Advance Request
+                                      </a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="{{ route('create-new-travel-advance-request') }}" class="list-group-item list-group-item-action">
+                                        Travel Advance Request
+                                          </a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="{{ route('create-allowance-request') }}" class="list-group-item list-group-item-action">
+                                        Allowance Request
+                                          </a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="{{ route('create-new-per-diem-claim') }}" class="list-group-item list-group-item-action">
+                                        Per Diem claim
+                                    </a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="{{ route('create-new-petty-cash') }}" class="list-group-item list-group-item-action">
+                                        Petty Cash
+                                    </a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="{{ route('create-payment-requisition') }}" class="list-group-item list-group-item-action">
+                                        Payment Requisition
+                                    </a>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <a href="{{ route('create-new-workshop-registration') }}" class="list-group-item list-group-item-action">
+                                        Workshop Registration Form
+                                    </a>
+                                </li>
+
                             </ul>
-
-
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+
                         </div>
                     </div>
                 </div>
@@ -1482,27 +1518,27 @@
 
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item">
-                                    <a href="#" class="btn btn-lg  btn-outline-info" role="button"
+                                    <a href="{{ route('create-bank-reconciliation-report') }}" class="btn btn-lg  btn-outline-info" role="button"
                                         aria-pressed="true">Bank Reconciliation</a>
                                 </li>
                                 <li class="list-group-item">
-                                    <a href="#" class="btn btn-lg  btn-outline-info" role="button"
+                                    <a href="{{ route('create-petty-cash-reconciliation-report') }}" class="btn btn-lg  btn-outline-info" role="button"
                                         aria-pressed="true">Petty Cash Reconciliation</a>
                                 </li>
                                 <li class="list-group-item">
-                                    <a href="#" class="btn btn-lg  btn-outline-info" role="button"
+                                    <a href="{{ route('create-payment-voucher') }}" class="btn btn-lg  btn-outline-info" role="button"
                                         aria-pressed="true">Payment voucher</a>
                                 </li>
                                 <li class="list-group-item">
-                                    <a href="#" class="btn btn-lg  btn-outline-info" role="button"
+                                    <a href="{{ route('create-deposit-voucher') }}" class="btn btn-lg  btn-outline-info" role="button"
                                         aria-pressed="true">Deposit voucher</a>
                                 </li>
                                 <li class="list-group-item">
-                                    <a href="#" class="btn btn-lg  btn-outline-info" role="button"
+                                    <a href="{{ route('create-journal-voucher') }}" class="btn btn-lg  btn-outline-info" role="button"
                                         aria-pressed="true">Journal voucher</a>
                                 </li>
                                 <li class="list-group-item">
-                                    <a href="#" class="btn btn-lg  btn-outline-info" role="button"
+                                    <a href="{{ route('create-pay-slip') }}" class="btn btn-lg  btn-outline-info" role="button"
                                         aria-pressed="true">Payslip</a>
                                 </li>
 

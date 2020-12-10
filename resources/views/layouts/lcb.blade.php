@@ -747,31 +747,76 @@
     <div id="app">
         <div class="wrapper">
             <!-- Sidebar Holder -->
-            <nav id="sidebar">
-                <div class="sidebar-header">
-                    <h3> Capacity Building Dashboard</h3>
-                </div>
+                        <!-- Sidebar Holder -->
+                        <nav id="sidebar">
+                            <div class="sidebar-header">
+                                <h3> DLAB Finance Dashboard</h3>
+                            </div>
 
-                <ul class="list-unstyled components">
-                    <p style="font-size:800;">Navigation</p>
-                    <li><a href="{{ route('monitoring-evaluation-dashboard') }}">Dashboard</a></li>
-                    <li><a href="{{ route('manage-pillars') }}">Imprest & Retirements</a></li>
-                    <li><a href="{{ route('manage-kpis') }}">Payment Approval & Request</a></li>
-                    <li><a href="{{ route('update') }}">Payroll System</a></li>
-                    <li><a href="{{ route('admin') }}">Financial Reports</a></li>
-                    <li><a href="{{ route('manage-users') }}">Scholars and Grantees</a></li>
-                    <li>
-                        <a href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
-                        </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                    </li>
-                </ul>
-            </nav>
+                            <ul class="list-unstyled components">
+                                <p style="font-size:800;">Navigation</p>
+                                <li><a href="{{ route('finance-dashboard') }}">Dashboard</a></li>
+                                <li>
+                                    <a  data-toggle="collapse" href="#nav-new-request" aria-expanded="false" aria-controls="nav-new-request">
+                                      Advance Requests
+                                      <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-double-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                                        <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                                      </svg>
+                                    </a>
+                                    <div class="collapse" id="nav-new-request">
+                                        <a  href="{{ route('manage-pillars') }}">
+                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                              </svg>
+                                              Create New Request</a>
+                                        <a  href="{{ route('manage-pillars') }}">
+                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                              </svg>
+                                              Manage Requests</a>
+                                      </div>
+                                </li>
+                                <li>
+                                    <a  data-toggle="collapse" href="#nav-new-reports" aria-expanded="false" aria-controls="nav-new-request">
+                                      Finance reports
+                                      <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-double-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                                        <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                                      </svg>
+                                    </a>
+                                    <div class="collapse" id="nav-new-reports">
+                                        <a  href="{{ route('manage-pillars') }}">
+                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                              </svg>
+                                              Create New Request</a>
+                                        <a  href="{{ route('manage-pillars') }}">
+                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                              </svg>
+                                              Manage Requests</a>
+                                      </div>
+                                </li>
+                                <!-- <li><a href="dlab_create_project.php">Create A new project</a></li> -->
+                                <li><a href="{{ route('update') }}">Payroll System</a></li>
+
+                                <li><a href="{{ route('admin') }}">Financial Reports</a></li>
+
+                                <!-- <li><a href="dlab_data_tests.php"> Data Mapping</a></li> -->
+                                <li><a href="{{ route('manage-users') }}">Scholars and Grantees</a></li>
+                                <li>
+                                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </li>
+                            </ul>
+                        </nav>
+
 
 
         <main class="py-4">
