@@ -67,6 +67,12 @@ class Kernel extends HttpKernel
 
         'admin' =>\App\Http\Middleware\Admin::class,
         'manager' =>\App\Http\Middleware\Manager::class,
+        'ri-pillar-manager' =>\App\Http\Middleware\RIlineManager::class,
+        'cb-pillar-manager' =>\App\Http\Middleware\CBpillarManager::class,
+        'is-pillar-manager' =>\App\Http\Middleware\ISpillarManager::class,
+        'ce-pillar-manager' =>\App\Http\Middleware\CEpillarManager::class,
+        'ds-pillar-manager' =>\App\Http\Middleware\DSpillarManager::class,
+
         'user' =>\App\Http\Middleware\User::class,
         'finance-dashboard' => \App\Http\Middleware\FinanceAdmin::class,
         'monitoring-evaluation-dashboard' => \App\Http\Middleware\MonitoringnEvaluation::class,

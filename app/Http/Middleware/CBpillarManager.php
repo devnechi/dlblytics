@@ -3,11 +3,10 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
-
-class ResearchnInnovation
+class CBpillarManager
 {
     /**
      * Handle an incoming request.
@@ -18,8 +17,6 @@ class ResearchnInnovation
      */
     public function handle(Request $request, Closure $next)
     {
-
-
         if(!Auth::check()){
             return redirect()->route('login');
         }
@@ -51,22 +48,17 @@ class ResearchnInnovation
 
         //role 6 = cb-pillar-manager
         if(Auth::user()->role == 6){
-            return redirect()->route('cb-pillar-manager');
-
-
+            return $next($request);
         }
 
-        //role 7 = is-pillar-manager
+        //role 7 = ri-pillar-manager
         if(Auth::user()->role == 7){
-            return redirect()->route('is-pillar-manager');
-
-
-        }
-        //role 8 = ri-pillar-manager
-        if(Auth::user()->role == 8){
             return redirect()->route('ri-pillar-manager');
 
-
+        }
+        //role 8 = is-pillar-manager
+        if(Auth::user()->role == 8){
+            return redirect()->route('is-pillar-manager');
         }
 
         //role 9 = ce-pillar-manager
@@ -81,44 +73,32 @@ class ResearchnInnovation
         // Staff Roles and redirections
         //role 11 = ri-staff
         if(Auth::user()->role == 11){
-            return $next($request);
+            return redirect()->route('research-innovation-dashboard');
         }
         //role 12 = cb-staff
         if(Auth::user()->role == 12){
             return redirect()->route('capacity-building-dashboard');
-
-
         }
         //role 13 = is-staff
         if(Auth::user()->role == 13){
             return redirect()->route('institutional-strengthening-dashboard');
-
-
         }
         //role 14 = ce-staff
         if(Auth::user()->role == 14){
             return redirect()->route('community-engagement-dashboard');
-
-
         }
         //role 15 = ds-staff
         if(Auth::user()->role == 15){
             return redirect()->route('data-science-dashboard');
-
-
         }
 
         //communication channels
         if(Auth::user()->role == 16){
             return redirect()->route('communication-channels-dashboard');
-
-
         }
         // donor area
         if(Auth::user()->role == 17){
             return redirect()->route('dlab-donors-dashboard');
-
-
         }
 
         //members dashboard

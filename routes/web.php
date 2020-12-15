@@ -43,6 +43,14 @@ Route::resource('pillars', 'AdminPillarsController');
 
 
 
+// line / pillar managers routes
+Route::get('/ri-pillar-manager', 'RIlineManager@index')->name('ri-pillar-manager')->middleware('ri-pillar-manager');
+Route::get('/is-pillar-manager', 'ISpillarManager@index')->name('is-pillar-manager')->middleware('is-pillar-manager');
+Route::get('/cb-pillar-manager', 'CBpillarManager@index')->name('cb-pillar-manager')->middleware('cb-pillar-manager');
+Route::get('/ce-pillar-manager', 'CEpillarManager@index')->name('ce-pillar-manager')->middleware('ce-pillar-manager');
+Route::get('/ds-pillar-manager', 'DSpillarManager@index')->name('ds-pillar-manager')->middleware('ds-pillar-manager');
+
+
 // ADMIN MANAGING kpis manage-kpis
 Route::get('/manage-kpis', 'DataKpiController@index')->name('manage-kpis');
 Route::get('/create-new-kpi', 'DataKpiController@create')->name('create-new-kpi');

@@ -1,5 +1,6 @@
 <?php
 
+use Faker\Provider\ar_JO\Address;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -23,6 +24,13 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            //items to add -->
+            // position
+            // Address
+            //if pillar, administration, department
+            // supervisour
+            // status
+
         });
     }
 

@@ -3,11 +3,11 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 
-class ResearchnInnovation
+class RIlineManager
 {
     /**
      * Handle an incoming request.
@@ -18,7 +18,6 @@ class ResearchnInnovation
      */
     public function handle(Request $request, Closure $next)
     {
-
 
         if(!Auth::check()){
             return redirect()->route('login');
@@ -69,19 +68,26 @@ class ResearchnInnovation
 
         }
 
+
         //role 9 = ce-pillar-manager
         if(Auth::user()->role == 9){
             return redirect()->route('ce-pillar-manager');
+
+
         }
         //role 10 = ds-pillar-manager
         if(Auth::user()->role == 10){
+
             return redirect()->route('ds-pillar-manager');
+
         }
 
         // Staff Roles and redirections
         //role 11 = ri-staff
         if(Auth::user()->role == 11){
-            return $next($request);
+            return redirect()->route('research-innovation-dashboard');
+
+
         }
         //role 12 = cb-staff
         if(Auth::user()->role == 12){

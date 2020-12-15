@@ -35,71 +35,121 @@ class LoginController extends Controller
 
         switch (Auth::user()->role) {
             case 1:
+
+                //role 1 = admin
                 $this->redirectTo = '/admin';
                 return $this->redirectTo;
                 break;
 
             case 2:
+                //role 2 = manager
                 $this->redirectTo = '/manager';
                 return $this->redirectTo;
              break;
 
             case 3:
+                //role 3 = user
               $this->redirectTo = '/user';
               return $this->redirectTo;
               break;
 
 
             case 4:
+                //role 4 = finance admin
                 $this->redirectTo = '/finance-dashboard';
                 return $this->redirectTo;
                 break;
 
             case 5:
+                //role 5 = mne
                 $this->redirectTo = '/monitoring-evaluation-dashboard';
                 return $this->redirectTo;
                 break;
 
             case 6:
-                $this->redirectTo = '/capacity-building-dashboard';
+                //role 6 = cb-pillar-manager
+                $this->redirectTo = '/cb-pillar-manager';
                 return $this->redirectTo;
                 break;
 
             case 7:
-                $this->redirectTo = '/institutional-strengthening-dashboard';
+                //role 7 = is-pillar-manager
+                $this->redirectTo = '/is-pillar-manager';
                 return $this->redirectTo;
                 break;
 
             case 8:
-                $this->redirectTo = '/research-innovation-dashboard';
+                //role 8 = ri-pillar-manager
+                $this->redirectTo = '/ri-pillar-manager';
                 return $this->redirectTo;
                 break;
 
             case 9:
-                $this->redirectTo = '/community-engagement-dashboard';
+                //role 9 = ce-pillar-manager
+                $this->redirectTo = '/ce-pillar-manager';
                 return $this->redirectTo;
                 break;
 
             case 10:
-                $this->redirectTo = '/data-science-dashboard';
+                //role 10 = ds-pillar-manager
+                $this->redirectTo = '/ds-pillar-manager';
                 return $this->redirectTo;
                 break;
 
             case 11:
-                $this->redirectTo = '/communication-channels-dashboard';
+                //role 11 = research-innovation-dashboard
+                $this->redirectTo = '/research-innovation-dashboard';
                 return $this->redirectTo;
                 break;
 
             case 12:
-                $this->redirectTo = '/members-area-dashboard';
+                //role 12 = capacity-building-dashboard
+                $this->redirectTo = '/capacity-building-dashboard';
                 return $this->redirectTo;
                 break;
 
 
             case 13:
+                //role 13 = institutional-strengthening-dashboard
+                $this->redirectTo = '/institutional-strengthening-dashboard';
+                return $this->redirectTo;
+                break;
+
+
+                case 14:
+                    //role 14 = community-engagement-dashboard
+                    $this->redirectTo = '/community-engagement-dashboard';
+                    return $this->redirectTo;
+                    break;
+
+
+            case 15:
+                //role 15 = data-science-dashboard
+                $this->redirectTo = '/data-science-dashboard';
+                return $this->redirectTo;
+                break;
+
+
+            case 16:
+                //role 16 = communication-channels-dashboard
+                $this->redirectTo = '/communication-channels-dashboard';
+                return $this->redirectTo;
+                break;
+
+
+            case 17:
+                //role 17 = dlab-donors-dashboard
                 $this->redirectTo = '/dlab-donors-dashboard';
                 return $this->redirectTo;
                 break;
+
+
+            case 18:
+                //role 18 = members-area-dashboard
+                $this->redirectTo = '/members-area-dashboard';
+                return $this->redirectTo;
+                break;
+
 
             default:
                 # code...
