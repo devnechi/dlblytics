@@ -63,7 +63,7 @@ class RIlineManager
         }
         //role 8 = ri-pillar-manager
         if(Auth::user()->role == 8){
-            return redirect()->route('ri-pillar-manager');
+            return $next($request);
 
 
         }

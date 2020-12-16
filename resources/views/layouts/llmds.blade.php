@@ -919,11 +919,11 @@ $('.dataTables_length').addClass('bs-select');
 </script>
 
     {{-- script that loads a modal that collects user tasks daily --}}
-    <script type="text/javascript">
+    {{-- <script type="text/javascript">
         $(window).on('load',function(){
             $('#exampleModal').modal('show');
         });
-    </script>
+    </script> --}}
 
 
 <script>
