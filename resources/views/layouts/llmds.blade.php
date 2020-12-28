@@ -619,7 +619,7 @@
 
         ///timezone_location_get
         a{text-decoration:none}
-    h4{text-align:center;margin:30px 0;color:#444}
+    h4{text-align:center;margin:30px 0;color:#6cb2eb}
     .main-timeline{position:relative}
     .main-timeline:before{content:"";width:5px;height:100%;border-radius:20px;margin:0 auto;background:#242922;position:absolute;top:0;left:0;right:0}
     .main-timeline .timeline{display:inline-block;margin-bottom:50px;position:relative}
@@ -737,7 +737,45 @@
     .main-timeline4 .inner-content{padding:10px}
     }
 
+.rounded {
+    border-radius:.90rem!important
 
+}
+
+.rounded-tabs {
+    border-radius:.40rem!important
+
+}
+
+.cardhd{
+    color: #6cb2eb;
+
+}
+
+.cardhdcash{
+    color: #8bc34a;
+}
+
+.cardhdexpenscash{
+    color: #ff5252;
+
+}
+
+.paraspandollars{
+    color: #03a9f4;
+}
+
+.h4{
+    color: #6cb2eb;
+}
+
+.cardhdthreedanger{
+    color: #ff5252;
+
+}
+.cardhdthreesuccess{
+  color: #8bc34a;
+}
 
 
         </style>
@@ -791,7 +829,7 @@
                                 <li><a href="{{ route('finance-dashboard') }}">Dashboard</a></li>
                                 <li>
                                     <a  data-toggle="collapse" href="#nav-new-request" aria-expanded="false" aria-controls="nav-new-request">
-                                      Advance Requests
+                                      Project & Activities
                                       <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-double-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
                                         <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
@@ -802,17 +840,17 @@
                                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                                               </svg>
-                                              Create New Request</a>
+                                              Create New Project</a>
                                         <a  href="{{ route('manage-pillars') }}">
                                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                                               </svg>
-                                              Manage Requests</a>
+                                              Manage Projects</a>
                                       </div>
                                 </li>
                                 <li>
                                     <a  data-toggle="collapse" href="#nav-new-reports" aria-expanded="false" aria-controls="nav-new-request">
-                                      Finance reports
+                                      Staff Management
                                       <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-double-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
                                         <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
@@ -823,18 +861,18 @@
                                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                                               </svg>
-                                              Create New Request</a>
+                                              Create Staff Appraisal</a>
                                         <a  href="{{ route('manage-pillars') }}">
                                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                                               </svg>
-                                              Manage Requests</a>
+                                              Manage Staff</a>
                                       </div>
                                 </li>
                                 <!-- <li><a href="dlab_create_project.php">Create A new project</a></li> -->
-                                <li><a href="{{ route('update') }}">Payroll System</a></li>
+                                <li><a href="{{ route('update') }}">My Timesheet</a></li>
 
-                                <li><a href="{{ route('admin') }}">Financial Reports</a></li>
+                                <li><a href="{{ route('admin') }}">My Records</a></li>
 
                                 <!-- <li><a href="dlab_data_tests.php"> Data Mapping</a></li> -->
                                 <li><a href="{{ route('manage-users') }}">Scholars and Grantees</a></li>
@@ -975,13 +1013,46 @@ $('.dataTables_length').addClass('bs-select');
     })(jQuery);
     </script>
 
+
+<script>
+    window.onload = function () {
+
+    var chart = new CanvasJS.Chart("chartDlabPyramid", {
+        animationEnabled: true,
+        exportEnabled: true,
+        theme: "light1",
+        title:{
+            text: "Pillar Impact to Organisation"
+        },
+        data: [{
+            type: "pyramid",
+            yValueFormatString: "#\"%\"",
+            indexLabelFontColor: "black",
+            indexLabelFontSize: 16,
+            indexLabel: "{label} - {y}",
+            //reversed: true, // Reverses the pyramid
+            dataPoints: [
+                { y: 100, label: "Sub-Activities" },
+                { y: 65, label: "Project Activities" },
+                { y: 45, label: "Pillar Objectives" },
+                { y: 32, label: "Organisational goals" },
+                { y: 5, label: "Dlab Success" }
+            ]
+        }]
+    });
+    chart.render();
+
+    }
+    </script>
+
+
             <script>
 window.onload = function () {
 
 var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
 	title:{
-		text: "Use Stories",
+		text: "Pillar activities as per Sector",
 		horizontalAlign: "left"
 	},
 	data: [{
@@ -1006,7 +1077,7 @@ chart.render();
 var chart = new CanvasJS.Chart("chartDemographicPositive", {
 	animationEnabled: true,
 	title: {
-		text: "Demographic that  reported positive change - 2019"
+		text: "Demographic impact as a result of pillar activities - 2020"
 	},
 	data: [{
 		type: "pie",

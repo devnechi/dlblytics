@@ -49,6 +49,8 @@ Route::get('/is-pillar-manager', 'ISpillarManager@index')->name('is-pillar-manag
 Route::get('/cb-pillar-manager', 'CBpillarManager@index')->name('cb-pillar-manager')->middleware('cb-pillar-manager');
 Route::get('/ce-pillar-manager', 'CEpillarManager@index')->name('ce-pillar-manager')->middleware('ce-pillar-manager');
 Route::get('/ds-pillar-manager', 'DSpillarManager@index')->name('ds-pillar-manager')->middleware('ds-pillar-manager');
+Route::get('/data-science-create-new-imprest', 'DSpillarManager@createImprest')->name('data-science-create-new-imprest');
+
 
 
 // ADMIN MANAGING kpis manage-kpis

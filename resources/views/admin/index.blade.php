@@ -2947,8 +2947,7 @@
                                 Tools, 2019</p>
                         </div>
                         <div class="card-content table-responsive">
-
-                            <div id="chartStakeholderAccessingDataTools" style="height: 370px; width: 100%;"></div>
+                            <div id="chartContainer" style="height: 370px; width: 100%;"></div>
 
                         </div>
                     </div>

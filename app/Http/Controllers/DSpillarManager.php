@@ -10,4 +10,10 @@ class DSpillarManager extends Controller
     {
     return view('lmds.index');
     }
+
+
+      //create new imprest
+    public function createImprest(){
+        return view('lmds.imprestds.create-new-imprest');
+    }
 }
