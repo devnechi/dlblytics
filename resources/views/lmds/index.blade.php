@@ -5,37 +5,53 @@
         <li class="nav-item">
             <a class="nav-link active" id="data-science-overview-tab-md" data-toggle="tab"
                 href="#data-science-overview-md" role="tab" aria-controls="data-science-overview-md"
-                aria-selected="true"> Overview </a>
+                aria-selected="true"> Overview
+            </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" id="data-science-request-tab-md" data-toggle="tab" href="#data-science-request-md"
-                role="tab" aria-controls="data-science-request-md" aria-selected="false"> Data Science Requests</a>
+                role="tab" aria-controls="data-science-request-md" aria-selected="false"> Data Science Requests
+                <span class="badge badge-danger badge-pill">3</span>
+            </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" id="retirements-tab-md" data-toggle="tab" href="#retirements-md" role="tab"
-                aria-controls="retirements-md" aria-selected="false">Retirements</a>
+                aria-controls="retirements-md" aria-selected="false">Retirements
+                <span class="badge badge-danger badge-pill">5</span>
+
+            </a>
         </li>
 
         <li class="nav-item">
             <a class="nav-link" id="imprests-tab-md" data-toggle="tab" href="#imprests-md" role="tab"
-                aria-controls="imprests-md" aria-selected="false">Imprest Management</a>
+                aria-controls="imprests-md" aria-selected="false">Imprest Management
+                <span class="badge badge-danger badge-pill">3</span>
+            </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" id="projects-nactivities-tab-md" data-toggle="tab" href="#projects-nactivities-md"
-                role="tab" aria-controls="projects-nactivities-md" aria-selected="false">Projects & Activities </a>
+                role="tab" aria-controls="projects-nactivities-md" aria-selected="false">Projects & Activities
+                <span class="badge badge-danger badge-pill">4</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="data-science-scholar-tab-md" data-toggle="tab" href="#data-science-scholars-md"
+                role="tab" aria-controls="data-science-scholar-md" aria-selected="false">Scholars</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="data-science-grantees-tab-md" data-toggle="tab" href="#data-science-grantees-md"
+                role="tab" aria-controls="data-science-grantees-md" aria-selected="false">Grantees</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="data-science-timesheet-tab-md" data-toggle="tab" href="#data-science-timesheet-md"
+                role="tab" aria-controls="data-science-timesheet-md" aria-selected="false">Timesheet
+                <span class="badge badge-danger badge-pill">1</span>
+            </a>
         </li>
         <li class="nav-item">
             <a class="nav-link" id="download-forms-tab-md" data-toggle="tab" href="#download-forms-md" role="tab"
-                aria-controls="download-forms-md" aria-selected="false">Download Forms </a>
-        </li>
-
-        <li class="nav-item">
-            <a class="nav-link" id="data-science-timesheet-tab-md" data-toggle="tab" href="#data-science-timesheet-md"
-                role="tab" aria-controls="data-science-timesheet-md" aria-selected="false">Timesheet</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="data-science-analytics-tab-md" data-toggle="tab" href="#data-science-analytics-md"
-                role="tab" aria-controls="data-science-analytics-md" aria-selected="false">Data Science Analytics</a>
+                aria-controls="download-forms-md" aria-selected="false">Download Forms
+            </a>
         </li>
     </ul>
 
@@ -1019,14 +1035,14 @@
             aria-labelledby="data-science-request-tab-md">
             <!-- line chart -->
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModalCenter">
+            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#dataScienceRequestTypeModal">
                 create a new request
             </button>
             <br />
             <br />
 
             <!-- Modal -->
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+            <div class="modal fade" id="dataScienceRequestTypeModal" tabindex="-1" role="dialog"
                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
@@ -1043,13 +1059,14 @@
                                         class="list-group-item list-group-item-action">
                                         Training Advance Request
                                     </a>
+
                                 </li>
                                 <li class="list-group-item">
-                                    <a href="{{ route('create-new-travel-advance-request') }}"
+                                    <a href="{{ route('create-new-training-advance-request') }}"
                                         class="list-group-item list-group-item-action">
-                                        Travel Advance Request
+                                         Travel Advance request
                                     </a>
-                                </li>
+
                                 <li class="list-group-item">
                                     <a href="{{ route('create-allowance-request') }}"
                                         class="list-group-item list-group-item-action">
@@ -1075,13 +1092,6 @@
                                     </a>
                                 </li>
 
-                                <li class="list-group-item">
-                                    <a href="{{ route('create-new-workshop-registration') }}"
-                                        class="list-group-item list-group-item-action">
-                                        Workshop Registration Form
-                                    </a>
-                                </li>
-
                             </ul>
                         </div>
                         <div class="modal-footer">
@@ -1094,510 +1104,591 @@
 
             <div class="row">
                 <div class="col-lg-12">
+
                     <nav>
                         <div class="nav nav-tabs" id="dsreq-nav-tab" role="tablist">
-                            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab"
-                                href="#dsreq-nav-home" role="tab" aria-controls="nav-home" aria-selected="true">My
+                            <a class="nav-item nav-link active" id="nav-my-requests-tab" data-toggle="tab"
+                                href="#dsreq-nav-my-requests" role="tab" aria-controls="nav-my-requests" aria-selected="true">My
                                 Requests</a>
-                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab"
-                                href="#dsreq-nav-profile" role="tab" aria-controls="nav-profile"
+                            <a class="nav-item nav-link" id="nav-staff-requests-tab" data-toggle="tab"
+                                href="#dsreq-nav-staff-requests" role="tab" aria-controls="nav-staff-requests"
                                 aria-selected="false">Staff Requests</a>
-                            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab"
-                                href="#dsreq-nav-contact" role="tab" aria-controls="nav-contact"
+                            <a class="nav-item nav-link" id="nav-res-lm-requests-tab" data-toggle="tab"
+                                href="#dsreq-nav-res-lm-requests" role="tab" aria-controls="nav-contact"
                                 aria-selected="false">Response from Line Manager</a>
                         </div>
                     </nav>
                     <div class="tab-content" id="dsreq-tabContent">
-                        <div class="tab-pane fade show active" id="dsreq-nav-home" role="tabpanel"
+                        <div class="tab-pane fade show active" id="dsreq-nav-my-requests" role="tabpanel"
                             aria-labelledby="nav-home-tab">
-                            <br />
-                            <br />
                             {{-- my ds requests --}}
+                            <br />
+                            <br />
                             <div class="row">
                                 <div class="col-md-2">
                                     <div class="nav flex-column nav-pills" id="vdsreqs-pills-tab" role="tablist"
                                         aria-orientation="vertical">
-                                        <a class="nav-link active" id="vdsreqs-pills-home-tab" data-toggle="pill"
-                                            href="#vdsreqs-pills-home" role="tab" aria-controls="vdsreqs-pills-home"
-                                            aria-selected="true">Pending Review</a>
-                                        <a class="nav-link" id="vdsreqs-pills-profile-tab" data-toggle="pill"
-                                            href="#vdsreqs-pills-profile" role="tab"
-                                            aria-controls="vdsreqs-pills-profile" aria-selected="false">Approved</a>
-                                        <a class="nav-link" id="vdsreqs-pills-messages-tab" data-toggle="pill"
-                                            href="#vdsreqs-pills-messages" role="tab"
-                                            aria-controls="vdsreqs-pills-messages" aria-selected="false">My
-                                            retirements</a>
-                                        <a class="nav-link" id="vdsreqs-pills-settings-tab" data-toggle="pill"
-                                            href="#vdsreqs-pills-settings" role="tab"
-                                            aria-controls="vdsreqs-pills-settings" aria-selected="false">All</a>
+                                        <a class="nav-link active" id="vdsreqs-pills-my-req-onreview-tab" data-toggle="pill"
+                                            href="#vdsreqs-pillsmy-req-onreview" role="tab" aria-controls="vdsreqs-pills-my-req-onreview"
+                                            aria-selected="true">My reviewed requests</a>
+                                        <a class="nav-link" id="vdsreqs-pills-my-approved-req-tab" data-toggle="pill"
+                                            href="#vdsreqs-pills-my-approved-req" role="tab"
+                                            aria-controls="vdsreqs-pills-my-approved-req" aria-selected="false">My Approved
+                                            request</a>
+                                        <a class="nav-link" id="vdsreqs-pills-my-req-retirements-tab" data-toggle="pill"
+                                            href="#vdsreqs-pills-my-req-retirements" role="tab"
+                                            aria-controls="vdsreqs-pills-my-req-retirements" aria-selected="false">My
+                                            Requests retirements</a>
+                                        <a class="nav-link" id="vdsreqs-pills-all-my-req-tab" data-toggle="pill"
+                                            href="#vdsreqs-pills-all-my-req" role="tab"
+                                            aria-controls="vdsreqs-pills-all-my-req" aria-selected="false">All My
+                                            requests</a>
+                                        <a class="nav-link" id="vdsreqs-pills-all-pillar-request-tab" data-toggle="pill"
+                                            href="#vdsreqs-pills-all-pillar-request" role="tab"
+                                            aria-controls="vdsreqs-pills-all-pillar-request" aria-selected="false">All
+                                            Pillar requests</a>
                                     </div>
                                 </div>
                                 <div class="col-md-10">
                                     <div class="tab-content" id="v-pills-tabContent">
-                                        <div class="tab-pane fade show active" id="vdsreqs-pills-home" role="tabpanel"
-                                            aria-labelledby="v-pills-home-tab">.
+                                        <div class="tab-pane fade show active" id="vdsreqs-pillsmy-req-onreview" role="tabpanel"
+                                            aria-labelledby="v-pills-home-tab">
+                                            {{-- My reviewed requests --}}
                                             <div class="row">
                                                 <div class="col-lg-12">
-                                                    <div class="card">
-                                                        <div class="card-content table-responsive">
-                                                            <br />
-                                                            <table class="table table-bordered table-hover">
-                                                                <p>Requests pending review <strong></strong></p>
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th scope="col">#</th>
-                                                                        <th scope="col">Requested by</th>
-                                                                        <th scope="col-md-4">Title</th>
-                                                                        <th scope="col">Request Type</th>
-                                                                        <th scope="col">Under Project</th>
-                                                                        <th scope="col"># of approvals</th>
-                                                                        <th scope="col">Total Cost</th>
-                                                                        <th scope="col">Date created</th>
+                                                    <table class="table table-bordered table-hover">
+                                                        <p>My requests that are on  <strong>review</strong></p>
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">#</th>
+                                                                <th scope="col">Requested by</th>
+                                                                <th scope="col-md-4">Title</th>
+                                                                <th scope="col">Request Type</th>
+                                                                <th scope="col">Under Project</th>
+                                                                <th scope="col"># of approvals</th>
+                                                                <th scope="col">Total Cost</th>
+                                                                <th scope="col">Date created</th>
 
-                                                                        <th scope="col"></th>
+                                                                <th scope="col"></th>
 
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <th scope="row">1</th>
-                                                                        <td>MarkCuban</td>
-                                                                        <td>Data visualisation in Mbeya</td>
-                                                                        <td>Training</td>
-                                                                        <td>Sauti Mpya</td>
-                                                                        <td>0</td>
-                                                                        <td>2,300,000 <span
-                                                                                class="badge badge-success">TZS</span>
-                                                                        </td>
-                                                                        <td>2019-09-11</td>
-                                                                        <td>
-                                                                            <button type="button"
-                                                                                class="btn btn-outline-success">view
-                                                                                request</button>
-                                                                        </td>
-                                                                    </tr>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope="row">1</th>
+                                                                <td>MarkCuban</td>
+                                                                <td>Data visualisation in Mbeya</td>
+                                                                <td>Training</td>
+                                                                <td>Sauti Mpya</td>
+                                                                <td>0</td>
+                                                                <td>2,300,000 <span
+                                                                        class="badge badge-success">TZS</span>
+                                                                </td>
+                                                                <td>2019-09-11</td>
+                                                                <td>
+                                                                    <button type="button"
+                                                                        class="btn btn-outline-success">view
+                                                                        request</button>
+                                                                </td>
+                                                            </tr>
 
-                                                                    <tr>
-                                                                        <th scope="row">4</th>
-                                                                        <td>Jane Sharpe</td>
-                                                                        <td>Data Mining in Dar</td>
-                                                                        <td>Training</td>
-                                                                        <td>Data Zetu</td>
-                                                                        <td>0</td>
-                                                                        <td>6,600,000 <span
-                                                                                class="badge badge-success">TZS</span>
-                                                                        </td>
-                                                                        <td>2019-09-11</td>
-                                                                        <td>
-                                                                            <button type="button"
-                                                                                class="btn btn-outline-success">view
-                                                                                request</button>
-                                                                        </td>
-                                                                    </tr>
+                                                            <tr>
+                                                                <th scope="row">4</th>
+                                                                <td>Jane Sharpe</td>
+                                                                <td>Data Mining in Dar</td>
+                                                                <td>Training</td>
+                                                                <td>Data Zetu</td>
+                                                                <td>0</td>
+                                                                <td>6,600,000 <span
+                                                                        class="badge badge-success">TZS</span>
+                                                                </td>
+                                                                <td>2019-09-11</td>
+                                                                <td>
+                                                                    <button type="button"
+                                                                        class="btn btn-outline-success">view
+                                                                        request</button>
+                                                                </td>
+                                                            </tr>
 
-                                                                    <tr>
-                                                                        <th scope="row">3</th>
-                                                                        <td>Mary Poppins</td>
-                                                                        <td>Data Analyis and Mining</td>
-                                                                        <td>Training</td>
-                                                                        <td>Sauti Mpya</td>
-                                                                        <td>0</td>
-                                                                        <td>8,700,000 <span
-                                                                                class="badge badge-success">TZS</span>
-                                                                        </td>
-                                                                        <td>2019-09-11</td>
-                                                                        <td>
-                                                                            <button type="button"
-                                                                                class="btn btn-outline-success">view
-                                                                                request</button>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                            <br />
-                                                            <nav aria-label="Page navigation example">
-                                                                <ul class="pagination">
-                                                                    <li class="page-item">
-                                                                        <a class="page-link" href="#"
-                                                                            aria-label="Previous">
-                                                                            <span aria-hidden="true">&laquo;</span>
-                                                                            <span class="sr-only">Previous</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">1</a></li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">2</a></li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">3</a></li>
-                                                                    <li class="page-item">
-                                                                        <a class="page-link" href="#" aria-label="Next">
-                                                                            <span aria-hidden="true">&raquo;</span>
-                                                                            <span class="sr-only">Next</span>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </nav>
-                                                        </div>
-                                                    </div>
+                                                            <tr>
+                                                                <th scope="row">3</th>
+                                                                <td>Mary Poppins</td>
+                                                                <td>Data Analyis and Mining</td>
+                                                                <td>Training</td>
+                                                                <td>Sauti Mpya</td>
+                                                                <td>0</td>
+                                                                <td>8,700,000 <span
+                                                                        class="badge badge-success">TZS</span>
+                                                                </td>
+                                                                <td>2019-09-11</td>
+                                                                <td>
+                                                                    <button type="button"
+                                                                        class="btn btn-outline-success">view
+                                                                        request</button>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <br />
+                                                    <nav aria-label="Page navigation example">
+                                                        <ul class="pagination">
+                                                            <li class="page-item">
+                                                                <a class="page-link" href="#" aria-label="Previous">
+                                                                    <span aria-hidden="true">&laquo;</span>
+                                                                    <span class="sr-only">Previous</span>
+                                                                </a>
+                                                            </li>
+                                                            <li class="page-item"><a class="page-link" href="#">1</a>
+                                                            </li>
+                                                            <li class="page-item"><a class="page-link" href="#">2</a>
+                                                            </li>
+                                                            <li class="page-item"><a class="page-link" href="#">3</a>
+                                                            </li>
+                                                            <li class="page-item">
+                                                                <a class="page-link" href="#" aria-label="Next">
+                                                                    <span aria-hidden="true">&raquo;</span>
+                                                                    <span class="sr-only">Next</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </nav>
                                                     <!-- end of SECOND column -->
                                                 </div>
 
                                             </div>
                                         </div>
-                                        <div class="tab-pane fade" id="vdsreqs-pills-profile" role="tabpanel"
+                                        <div class="tab-pane fade" id="vdsreqs-pills-my-approved-req" role="tabpanel"
                                             aria-labelledby="vdsreqs-pills-profile-tab">
+
+                                            {{-- my approved requests --}}
                                             <div class="row">
                                                 <div class="col-lg-12">
-                                                    <div class="card">
 
-                                                        <div class="card-content table-responsive">
+                                                    <table class="table table-bordered table-hover">
+                                                        <p>My requests that have been approved </p>
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">#</th>
+                                                                <th scope="col">Requested by</th>
+                                                                <th scope="col-md-4">Title</th>
+                                                                <th scope="col">Request Type</th>
+                                                                <th scope="col">Under Project</th>
+                                                                <th scope="col"># of approvals</th>
+                                                                <th scope="col">Total Cost</th>
+                                                                <th scope="col">Date created</th>
 
-                                                            <br />
-                                                            <table class="table table-bordered table-hover">
-                                                                <p>Approved requests from <strong>Executive
-                                                                        Director</strong></p>
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th scope="col">#</th>
-                                                                        <th scope="col">Requested by</th>
-                                                                        <th scope="col-md-4">Title</th>
-                                                                        <th scope="col">Request Type</th>
-                                                                        <th scope="col">Under Project</th>
-                                                                        <th scope="col"># of approvals</th>
-                                                                        <th scope="col">Total Cost</th>
-                                                                        <th scope="col">Date created</th>
+                                                                <th scope="col"></th>
 
-                                                                        <th scope="col"></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope="row">1</th>
+                                                                <td>MarkCuban</td>
+                                                                <td>Data visualisation in Mbeya</td>
+                                                                <td>Training</td>
+                                                                <td>Sauti Mpya</td>
+                                                                <td>2</td>
+                                                                <td>2,300,000 <span
+                                                                        class="badge badge-success">TZS</span>
+                                                                </td>
+                                                                <td>2019-09-11</td>
+                                                                <td>
+                                                                    <button type="button"
+                                                                        class="btn btn-outline-success">view
+                                                                        request</button>
+                                                                </td>
+                                                            </tr>
 
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <th scope="row">1</th>
-                                                                        <td>MarkCuban</td>
-                                                                        <td>Data visualisation in Mbeya</td>
-                                                                        <td>Training</td>
-                                                                        <td>Sauti Mpya</td>
-                                                                        <td>2</td>
-                                                                        <td>2,300,000 <span
-                                                                                class="badge badge-success">TZS</span>
-                                                                        </td>
-                                                                        <td>2019-09-11</td>
-                                                                        <td>
-                                                                            <button type="button"
-                                                                                class="btn btn-outline-success">view
-                                                                                request</button>
-                                                                        </td>
-                                                                    </tr>
+                                                            <tr>
+                                                                <th scope="row">4</th>
+                                                                <td>Jane Sharpe</td>
+                                                                <td>Data Mining in Dar</td>
+                                                                <td>Training</td>
+                                                                <td>Data Zetu</td>
+                                                                <td>4</td>
+                                                                <td>6,600,000 <span
+                                                                        class="badge badge-success">TZS</span>
+                                                                </td>
+                                                                <td>2019-09-11</td>
+                                                                <td>
+                                                                    <button type="button"
+                                                                        class="btn btn-outline-success">view
+                                                                        request</button>
+                                                                </td>
+                                                            </tr>
 
-                                                                    <tr>
-                                                                        <th scope="row">4</th>
-                                                                        <td>Jane Sharpe</td>
-                                                                        <td>Data Mining in Dar</td>
-                                                                        <td>Training</td>
-                                                                        <td>Data Zetu</td>
-                                                                        <td>4</td>
-                                                                        <td>6,600,000 <span
-                                                                                class="badge badge-success">TZS</span>
-                                                                        </td>
-                                                                        <td>2019-09-11</td>
-                                                                        <td>
-                                                                            <button type="button"
-                                                                                class="btn btn-outline-success">view
-                                                                                request</button>
-                                                                        </td>
-                                                                    </tr>
+                                                            <tr>
+                                                                <th scope="row">3</th>
+                                                                <td>Mary Poppins</td>
+                                                                <td>Data Analyis and Mining</td>
+                                                                <td>Training</td>
+                                                                <td>Sauti Mpya</td>
+                                                                <td>1</td>
+                                                                <td>8,700,000 <span
+                                                                        class="badge badge-success">TZS</span>
+                                                                </td>
+                                                                <td>2019-09-11</td>
+                                                                <td>
+                                                                    <button type="button"
+                                                                        class="btn btn-outline-success">view
+                                                                        request</button>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
 
-                                                                    <tr>
-                                                                        <th scope="row">3</th>
-                                                                        <td>Mary Poppins</td>
-                                                                        <td>Data Analyis and Mining</td>
-                                                                        <td>Training</td>
-                                                                        <td>Sauti Mpya</td>
-                                                                        <td>1</td>
-                                                                        <td>8,700,000 <span
-                                                                                class="badge badge-success">TZS</span>
-                                                                        </td>
-                                                                        <td>2019-09-11</td>
-                                                                        <td>
-                                                                            <button type="button"
-                                                                                class="btn btn-outline-success">view
-                                                                                request</button>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
+                                                    </table>
+                                                    <br />
+                                                    <br />
+                                                    <nav aria-label="Page navigation example">
+                                                        <ul class="pagination">
+                                                            <li class="page-item">
+                                                                <a class="page-link" href="#" aria-label="Previous">
+                                                                    <span aria-hidden="true">&laquo;</span>
+                                                                    <span class="sr-only">Previous</span>
+                                                                </a>
+                                                            </li>
+                                                            <li class="page-item"><a class="page-link" href="#">1</a>
+                                                            </li>
+                                                            <li class="page-item"><a class="page-link" href="#">2</a>
+                                                            </li>
+                                                            <li class="page-item"><a class="page-link" href="#">3</a>
+                                                            </li>
+                                                            <li class="page-item">
+                                                                <a class="page-link" href="#" aria-label="Next">
+                                                                    <span aria-hidden="true">&raquo;</span>
+                                                                    <span class="sr-only">Next</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </nav>
 
-                                                            </table>
-                                                            <br />
-                                                            <br />
-                                                            <nav aria-label="Page navigation example">
-                                                                <ul class="pagination">
-                                                                    <li class="page-item">
-                                                                        <a class="page-link" href="#"
-                                                                            aria-label="Previous">
-                                                                            <span aria-hidden="true">&laquo;</span>
-                                                                            <span class="sr-only">Previous</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">1</a></li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">2</a></li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">3</a></li>
-                                                                    <li class="page-item">
-                                                                        <a class="page-link" href="#" aria-label="Next">
-                                                                            <span aria-hidden="true">&raquo;</span>
-                                                                            <span class="sr-only">Next</span>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </nav>
-
-
-                                                        </div>
-                                                    </div>
                                                     <!-- end of SECOND column -->
                                                 </div>
 
                                             </div>
 
                                         </div>
-                                        <div class="tab-pane fade" id="vdsreqs-pills-messages" role="tabpanel"
+                                        <div class="tab-pane fade" id="vdsreqs-pills-my-req-retirements" role="tabpanel"
                                             aria-labelledby="vdsreqs-pills-messages-tab">
-
+                                            {{-- my request retirements --}}
                                             <div class="row">
                                                 <div class="col-lg-12">
-                                                    <div class="card">
+                                                    <table class="table table-bordered table-hover">
+                                                        <p>My request <strong>Retirements</strong></p>
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">#</th>
+                                                                <th scope="col">Requested by</th>
+                                                                <th scope="col-md-4">Title</th>
+                                                                <th scope="col">Request Type</th>
+                                                                <th scope="col">Under Project</th>
+                                                                <th scope="col"># of approvals</th>
+                                                                <th scope="col">Total Cost</th>
+                                                                <th scope="col">Date created</th>
 
-                                                        <div class="card-content table-responsive">
+                                                                <th scope="col"></th>
 
-                                                            <br />
-                                                            <p>All requests from <strong>Executive Director</strong></p>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope="row">1</th>
+                                                                <td>MarkCuban</td>
+                                                                <td>Data visualisation in Mbeya</td>
+                                                                <td>Training</td>
+                                                                <td>Sauti Mpya</td>
+                                                                <td>4</td>
+                                                                <td>2,300,000 <span
+                                                                        class="badge badge-success">TZS</span>
+                                                                </td>
+                                                                <td>2019-09-11</td>
+                                                                <td>
+                                                                    <button type="button"
+                                                                        class="btn btn-outline-success">view
+                                                                        request</button>
+                                                                </td>
+                                                            </tr>
 
-                                                            <br />
-                                                            <table class="table table-bordered table-hover">
-                                                                <p>Requests pending review <strong></strong></p>
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th scope="col">#</th>
-                                                                        <th scope="col">Requested by</th>
-                                                                        <th scope="col-md-4">Title</th>
-                                                                        <th scope="col">Request Type</th>
-                                                                        <th scope="col">Under Project</th>
-                                                                        <th scope="col"># of approvals</th>
-                                                                        <th scope="col">Total Cost</th>
-                                                                        <th scope="col">Date created</th>
+                                                            <tr>
+                                                                <th scope="row">4</th>
+                                                                <td>Jane Sharpe</td>
+                                                                <td>Data Mining in Dar</td>
+                                                                <td>Training</td>
+                                                                <td>Data Zetu</td>
+                                                                <td>4</td>
+                                                                <td>6,600,000 <span
+                                                                        class="badge badge-success">TZS</span>
+                                                                </td>
+                                                                <td>2019-09-11</td>
+                                                                <td>
+                                                                    <button type="button"
+                                                                        class="btn btn-outline-success">view
+                                                                        request</button>
+                                                                </td>
+                                                            </tr>
 
-                                                                        <th scope="col"></th>
+                                                            <tr>
+                                                                <th scope="row">3</th>
+                                                                <td>Mary Poppins</td>
+                                                                <td>Data Analyis and Mining</td>
+                                                                <td>Training</td>
+                                                                <td>Sauti Mpya</td>
+                                                                <td>4</td>
+                                                                <td>8,700,000 <span
+                                                                        class="badge badge-success">TZS</span>
+                                                                </td>
+                                                                <td>2019-09-11</td>
+                                                                <td>
+                                                                    <button type="button"
+                                                                        class="btn btn-outline-success">view
+                                                                        request</button>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
 
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <th scope="row">1</th>
-                                                                        <td>MarkCuban</td>
-                                                                        <td>Data visualisation in Mbeya</td>
-                                                                        <td>Training</td>
-                                                                        <td>Sauti Mpya</td>
-                                                                        <td>4</td>
-                                                                        <td>2,300,000 <span
-                                                                                class="badge badge-success">TZS</span>
-                                                                        </td>
-                                                                        <td>2019-09-11</td>
-                                                                        <td>
-                                                                            <button type="button"
-                                                                                class="btn btn-outline-success">view
-                                                                                request</button>
-                                                                        </td>
-                                                                    </tr>
+                                                    </table>
+                                                    <br />
+                                                    <br />
+                                                    <nav aria-label="Page navigation example">
+                                                        <ul class="pagination">
+                                                            <li class="page-item">
+                                                                <a class="page-link" href="#" aria-label="Previous">
+                                                                    <span aria-hidden="true">&laquo;</span>
+                                                                    <span class="sr-only">Previous</span>
+                                                                </a>
+                                                            </li>
+                                                            <li class="page-item"><a class="page-link" href="#">1</a>
+                                                            </li>
+                                                            <li class="page-item"><a class="page-link" href="#">2</a>
+                                                            </li>
+                                                            <li class="page-item"><a class="page-link" href="#">3</a>
+                                                            </li>
+                                                            <li class="page-item">
+                                                                <a class="page-link" href="#" aria-label="Next">
+                                                                    <span aria-hidden="true">&raquo;</span>
+                                                                    <span class="sr-only">Next</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </nav>
 
-                                                                    <tr>
-                                                                        <th scope="row">4</th>
-                                                                        <td>Jane Sharpe</td>
-                                                                        <td>Data Mining in Dar</td>
-                                                                        <td>Training</td>
-                                                                        <td>Data Zetu</td>
-                                                                        <td>4</td>
-                                                                        <td>6,600,000 <span
-                                                                                class="badge badge-success">TZS</span>
-                                                                        </td>
-                                                                        <td>2019-09-11</td>
-                                                                        <td>
-                                                                            <button type="button"
-                                                                                class="btn btn-outline-success">view
-                                                                                request</button>
-                                                                        </td>
-                                                                    </tr>
-
-                                                                    <tr>
-                                                                        <th scope="row">3</th>
-                                                                        <td>Mary Poppins</td>
-                                                                        <td>Data Analyis and Mining</td>
-                                                                        <td>Training</td>
-                                                                        <td>Sauti Mpya</td>
-                                                                        <td>4</td>
-                                                                        <td>8,700,000 <span
-                                                                                class="badge badge-success">TZS</span>
-                                                                        </td>
-                                                                        <td>2019-09-11</td>
-                                                                        <td>
-                                                                            <button type="button"
-                                                                                class="btn btn-outline-success">view
-                                                                                request</button>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-
-                                                            </table>
-                                                            <br />
-                                                            <br />
-                                                            <nav aria-label="Page navigation example">
-                                                                <ul class="pagination">
-                                                                    <li class="page-item">
-                                                                        <a class="page-link" href="#"
-                                                                            aria-label="Previous">
-                                                                            <span aria-hidden="true">&laquo;</span>
-                                                                            <span class="sr-only">Previous</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">1</a></li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">2</a></li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">3</a></li>
-                                                                    <li class="page-item">
-                                                                        <a class="page-link" href="#" aria-label="Next">
-                                                                            <span aria-hidden="true">&raquo;</span>
-                                                                            <span class="sr-only">Next</span>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </nav>
-
-
-                                                        </div>
-                                                    </div>
                                                     <!-- end of SECOND column -->
                                                 </div>
 
                                             </div>
                                         </div>
-                                        <div class="tab-pane fade" id="vdsreqs-pills-settings" role="tabpanel"
+                                        <div class="tab-pane fade" id="vdsreqs-pills-all-my-req" role="tabpanel"
                                             aria-labelledby="vdsreqs-pills-settings-tab">
                                             <div class="row">
                                                 <div class="col-lg-12">
-                                                    <div class="card">
+                                                    <table class="table table-bordered table-hover">
+                                                        <p>All my created <strong>Requests</strong></p>
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">#</th>
+                                                                <th scope="col">Requested by</th>
+                                                                <th scope="col-md-4">Title</th>
+                                                                <th scope="col">Request Type</th>
+                                                                <th scope="col">Under Project</th>
+                                                                <th scope="col"># of approvals</th>
+                                                                <th scope="col">Total Cost</th>
+                                                                <th scope="col">Date created</th>
 
-                                                        <div class="card-content table-responsive">
+                                                                <th scope="col"></th>
 
-                                                            <br />
-                                                            <br />
-                                                            <table class="table table-bordered table-hover">
-                                                                <p>Requests pending review <strong></strong></p>
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th scope="col">#</th>
-                                                                        <th scope="col">Requested by</th>
-                                                                        <th scope="col-md-4">Title</th>
-                                                                        <th scope="col">Request Type</th>
-                                                                        <th scope="col">Under Project</th>
-                                                                        <th scope="col"># of approvals</th>
-                                                                        <th scope="col">Total Cost</th>
-                                                                        <th scope="col">Date created</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope="row">1</th>
+                                                                <td>MarkCuban</td>
+                                                                <td>Data visualisation in Mbeya</td>
+                                                                <td>Training</td>
+                                                                <td>Sauti Mpya</td>
+                                                                <td>0</td>
+                                                                <td>2,300,000 <span
+                                                                        class="badge badge-success">TZS</span>
+                                                                </td>
+                                                                <td>2019-09-11</td>
+                                                                <td>
+                                                                    <button type="button"
+                                                                        class="btn btn-outline-success">view
+                                                                        request</button>
+                                                                </td>
+                                                            </tr>
 
-                                                                        <th scope="col"></th>
+                                                            <tr>
+                                                                <th scope="row">4</th>
+                                                                <td>Jane Sharpe</td>
+                                                                <td>Data Mining in Dar</td>
+                                                                <td>Training</td>
+                                                                <td>Data Zetu</td>
+                                                                <td>0</td>
+                                                                <td>6,600,000 <span
+                                                                        class="badge badge-success">TZS</span>
+                                                                </td>
+                                                                <td>2019-09-11</td>
+                                                                <td>
+                                                                    <button type="button"
+                                                                        class="btn btn-outline-success">view
+                                                                        request</button>
+                                                                </td>
+                                                            </tr>
 
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <th scope="row">1</th>
-                                                                        <td>MarkCuban</td>
-                                                                        <td>Data visualisation in Mbeya</td>
-                                                                        <td>Training</td>
-                                                                        <td>Sauti Mpya</td>
-                                                                        <td>0</td>
-                                                                        <td>2,300,000 <span
-                                                                                class="badge badge-success">TZS</span>
-                                                                        </td>
-                                                                        <td>2019-09-11</td>
-                                                                        <td>
-                                                                            <button type="button"
-                                                                                class="btn btn-outline-success">view
-                                                                                request</button>
-                                                                        </td>
-                                                                    </tr>
+                                                            <tr>
+                                                                <th scope="row">3</th>
+                                                                <td>Mary Poppins</td>
+                                                                <td>Data Analyis and Mining</td>
+                                                                <td>Training</td>
+                                                                <td>Sauti Mpya</td>
+                                                                <td>0</td>
+                                                                <td>8,700,000 <span
+                                                                        class="badge badge-success">TZS</span>
+                                                                </td>
+                                                                <td>2019-09-11</td>
+                                                                <td>
+                                                                    <button type="button"
+                                                                        class="btn btn-outline-success">view
+                                                                        request</button>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
 
-                                                                    <tr>
-                                                                        <th scope="row">4</th>
-                                                                        <td>Jane Sharpe</td>
-                                                                        <td>Data Mining in Dar</td>
-                                                                        <td>Training</td>
-                                                                        <td>Data Zetu</td>
-                                                                        <td>0</td>
-                                                                        <td>6,600,000 <span
-                                                                                class="badge badge-success">TZS</span>
-                                                                        </td>
-                                                                        <td>2019-09-11</td>
-                                                                        <td>
-                                                                            <button type="button"
-                                                                                class="btn btn-outline-success">view
-                                                                                request</button>
-                                                                        </td>
-                                                                    </tr>
+                                                    </table>
+                                                    <br />
+                                                    <br />
+                                                    <nav aria-label="Page navigation example">
+                                                        <ul class="pagination">
+                                                            <li class="page-item">
+                                                                <a class="page-link" href="#" aria-label="Previous">
+                                                                    <span aria-hidden="true">&laquo;</span>
+                                                                    <span class="sr-only">Previous</span>
+                                                                </a>
+                                                            </li>
+                                                            <li class="page-item"><a class="page-link" href="#">1</a>
+                                                            </li>
+                                                            <li class="page-item"><a class="page-link" href="#">2</a>
+                                                            </li>
+                                                            <li class="page-item"><a class="page-link" href="#">3</a>
+                                                            </li>
+                                                            <li class="page-item">
+                                                                <a class="page-link" href="#" aria-label="Next">
+                                                                    <span aria-hidden="true">&raquo;</span>
+                                                                    <span class="sr-only">Next</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </nav>
 
-                                                                    <tr>
-                                                                        <th scope="row">3</th>
-                                                                        <td>Mary Poppins</td>
-                                                                        <td>Data Analyis and Mining</td>
-                                                                        <td>Training</td>
-                                                                        <td>Sauti Mpya</td>
-                                                                        <td>0</td>
-                                                                        <td>8,700,000 <span
-                                                                                class="badge badge-success">TZS</span>
-                                                                        </td>
-                                                                        <td>2019-09-11</td>
-                                                                        <td>
-                                                                            <button type="button"
-                                                                                class="btn btn-outline-success">view
-                                                                                request</button>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
+                                                    <!-- end of SECOND column -->
+                                                </div>
 
-                                                            </table>
-                                                            <br />
-                                                            <br />
-                                                            <nav aria-label="Page navigation example">
-                                                                <ul class="pagination">
-                                                                    <li class="page-item">
-                                                                        <a class="page-link" href="#"
-                                                                            aria-label="Previous">
-                                                                            <span aria-hidden="true">&laquo;</span>
-                                                                            <span class="sr-only">Previous</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">1</a></li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">2</a></li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">3</a></li>
-                                                                    <li class="page-item">
-                                                                        <a class="page-link" href="#" aria-label="Next">
-                                                                            <span aria-hidden="true">&raquo;</span>
-                                                                            <span class="sr-only">Next</span>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </nav>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="vdsreqs-pills-all-pillar-request" role="tabpanel"
+                                            aria-labelledby="vdsreqs-pills-settings-tab">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <table class="table table-bordered table-hover">
+                                                        <p>All created <strong>Requests</strong> in the Pillar</p>
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">#</th>
+                                                                <th scope="col">Requested by</th>
+                                                                <th scope="col-md-4">Title</th>
+                                                                <th scope="col">Request Type</th>
+                                                                <th scope="col">Under Project</th>
+                                                                <th scope="col"># of approvals</th>
+                                                                <th scope="col">Total Cost</th>
+                                                                <th scope="col">Date created</th>
 
+                                                                <th scope="col"></th>
 
-                                                        </div>
-                                                    </div>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope="row">1</th>
+                                                                <td>MarkCuban</td>
+                                                                <td>Data visualisation in Mbeya</td>
+                                                                <td>Training</td>
+                                                                <td>Sauti Mpya</td>
+                                                                <td>0</td>
+                                                                <td>2,300,000 <span
+                                                                        class="badge badge-success">TZS</span>
+                                                                </td>
+                                                                <td>2019-09-11</td>
+                                                                <td>
+                                                                    <button type="button"
+                                                                        class="btn btn-outline-success">view
+                                                                        request</button>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <th scope="row">4</th>
+                                                                <td>Jane Sharpe</td>
+                                                                <td>Data Mining in Dar</td>
+                                                                <td>Training</td>
+                                                                <td>Data Zetu</td>
+                                                                <td>0</td>
+                                                                <td>6,600,000 <span
+                                                                        class="badge badge-success">TZS</span>
+                                                                </td>
+                                                                <td>2019-09-11</td>
+                                                                <td>
+                                                                    <button type="button"
+                                                                        class="btn btn-outline-success">view
+                                                                        request</button>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <th scope="row">3</th>
+                                                                <td>Mary Poppins</td>
+                                                                <td>Data Analyis and Mining</td>
+                                                                <td>Training</td>
+                                                                <td>Sauti Mpya</td>
+                                                                <td>0</td>
+                                                                <td>8,700,000 <span
+                                                                        class="badge badge-success">TZS</span>
+                                                                </td>
+                                                                <td>2019-09-11</td>
+                                                                <td>
+                                                                    <button type="button"
+                                                                        class="btn btn-outline-success">view
+                                                                        request</button>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+
+                                                    </table>
+                                                    <br />
+                                                    <br />
+                                                    <nav aria-label="Page navigation example">
+                                                        <ul class="pagination">
+                                                            <li class="page-item">
+                                                                <a class="page-link" href="#" aria-label="Previous">
+                                                                    <span aria-hidden="true">&laquo;</span>
+                                                                    <span class="sr-only">Previous</span>
+                                                                </a>
+                                                            </li>
+                                                            <li class="page-item"><a class="page-link" href="#">1</a>
+                                                            </li>
+                                                            <li class="page-item"><a class="page-link" href="#">2</a>
+                                                            </li>
+                                                            <li class="page-item"><a class="page-link" href="#">3</a>
+                                                            </li>
+                                                            <li class="page-item">
+                                                                <a class="page-link" href="#" aria-label="Next">
+                                                                    <span aria-hidden="true">&raquo;</span>
+                                                                    <span class="sr-only">Next</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </nav>
+
                                                     <!-- end of SECOND column -->
                                                 </div>
 
@@ -1607,41 +1698,47 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="dsreq-nav-profile" role="tabpanel"
+                        <div class="tab-pane fade" id="dsreq-nav-staff-requests" role="tabpanel"
                             aria-labelledby="nav-profile-tab">
-                            <br />
-                            <br />
                             {{-- my ds requests --}}
+                            <br />
+                            <br />
                             <div class="row">
                                 <div class="col-md-2">
                                     <div class="nav flex-column nav-pills" id="vds-staff-reqs-pills-tab" role="tablist"
                                         aria-orientation="vertical">
-                                        <a class="nav-link active" id="vds-staff-reqs-pills-home-tab" data-toggle="pill"
-                                            href="#vds-staff-reqs-pills-home" role="tab"
-                                            aria-controls="vds-staff-reqs-pills-home" aria-selected="true">Reviewed</a>
-                                        <a class="nav-link" id="vds-staff-reqs-pills-profile-tab" data-toggle="pill"
-                                            href="#vds-staff-reqs-pills-profile" role="tab"
-                                            aria-controls="vds-staff-reqs-pills-profile"
-                                            aria-selected="false">Approved</a>
-                                        <a class="nav-link" id="vds-staff-reqs-pills-messages-tab" data-toggle="pill"
-                                            href="#vds-staff-reqs-pills-messages" role="tab"
-                                            aria-controls="vds-staff-reqs-pills-messages"
-                                            aria-selected="false">Retirements</a>
-                                        <a class="nav-link" id="vds-staff-reqs-pills-settings-tab" data-toggle="pill"
-                                            href="#vds-staff-reqs-pills-settings" role="tab"
-                                            aria-controls="vds-staff-reqs-pills-settings" aria-selected="false">All</a>
+                                        <a class="nav-link active" id="vds-staff-reqs-pills-need-review-tab" data-toggle="pill"
+                                            href="#vds-staff-reqs-pills-need-review" role="tab"
+                                            aria-controls="vds-staff-reqs-pills-need-review" aria-selected="true">Request need
+                                            your review</a>
+                                        <a class="nav-link" id="vds-staff-reqs-pills-staff-req-onreview-tab"
+                                            data-toggle="pill" href="#vds-staff-reqs-pills-staff-req-onreview" role="tab"
+                                            aria-controls="vds-staff-reqs-pills-home" aria-selected="true">Staff request on
+                                            review</a>
+                                        <a class="nav-link" id="vds-staff-reqs-pills-approved-reqs-tab" data-toggle="pill"
+                                            href="#vds-staff-reqs-pills-approved-reqs-content" role="tab"
+                                            aria-controls="vds-staff-reqs-pills-approved-reqs" aria-selected="false">Staff
+                                            Approved requests</a>
+                                        <a class="nav-link" id="vds-staff-reqs-pills-staff-retirements-tab" data-toggle="pill"
+                                            href="#vds-staff-reqs-pills-staff-retirements" role="tab"
+                                            aria-controls="vds-staff-reqs-pills-staff-retirements-content" aria-selected="false">Staff
+                                            request retirements</a>
+                                        <a class="nav-link" id="vds-staff-reqs-pills-all-req-request-tab" data-toggle="pill"
+                                            href="#vds-staff-reqs-pills-all-req-request-content" role="tab"
+                                            aria-controls="vds-staff-reqs-pills-all-req-request" aria-selected="false">All
+                                            Staff request</a>
                                     </div>
                                 </div>
                                 <div class="col-md-10">
 
                                     <div class="tab-content" id="vds-staff-pills-tabContent">
-                                        <div class="tab-pane fade show active" id="vds-staff-reqs-pills-home"
+                                        <div class="tab-pane fade show active" id="vds-staff-reqs-pills-need-review"
                                             role="tabpanel" aria-labelledby="v-pills-home-tab">
                                             {{-- staff requests tab -reviewed--}}
 
                                             <br />
                                             <table class="table table-bordered table-hover">
-                                                <p>Approved requests <strong></strong></p>
+                                                <p>Requests that need your <strong>Review</strong></p>
                                                 <thead>
                                                     <tr>
                                                         <th scope="col">#</th>
@@ -1708,12 +1805,13 @@
                                             <br />
 
                                         </div>
-                                        <div class="tab-pane fade" id="vds-staff-reqs-pills-profile" role="tabpanel"
+
+                                        <div class="tab-pane fade" id="vds-staff-reqs-pills-staff-req-onreview" role="tabpanel"
                                             aria-labelledby="vdsreqs-pills-profile-tab">
 
                                             <br />
                                             <table class="table table-bordered table-hover">
-                                                <p>Approved requests <strong></strong></p>
+                                                <p>Staff requests <strong>On Review</strong></p>
                                                 <thead>
                                                     <tr>
                                                         <th scope="col">#</th>
@@ -1779,12 +1877,83 @@
                                             </table>
                                             <br />
                                         </div>
-                                        <div class="tab-pane fade" id="vds-staff-reqs-pills-messages" role="tabpanel"
+                                        <div class="tab-pane fade" id="vds-staff-reqs-pills-approved-reqs-content"
+                                            role="tabpanel" aria-labelledby="vdsreqs-pills-profile-tab">
+
+                                            <br />
+                                            <table class="table table-bordered table-hover">
+                                                <p>Staff request Approved by Adminstration <strong></strong></p>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">#</th>
+                                                        <th scope="col">Requested by</th>
+                                                        <th scope="col-md-4">Title</th>
+                                                        <th scope="col">Request Type</th>
+                                                        <th scope="col">Under Project</th>
+                                                        <th scope="col"># of approvals</th>
+                                                        <th scope="col">Total Cost</th>
+                                                        <th scope="col">Date created</th>
+
+                                                        <th scope="col"></th>
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">1</th>
+                                                        <td>MarkCuban</td>
+                                                        <td>Data visualisation in Mbeya</td>
+                                                        <td>Training</td>
+                                                        <td>Sauti Mpya</td>
+                                                        <td>2</td>
+                                                        <td>2,300,000 <span class="badge badge-success">TZS</span></td>
+                                                        <td>2019-09-11</td>
+                                                        <td>
+                                                            <button type="button" class="btn btn-outline-success">view
+                                                                request</button>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <th scope="row">4</th>
+                                                        <td>Jane Sharpe</td>
+                                                        <td>Data Mining in Dar</td>
+                                                        <td>Training</td>
+                                                        <td>Data Zetu</td>
+                                                        <td>4</td>
+                                                        <td>6,600,000 <span class="badge badge-success">TZS</span></td>
+                                                        <td>2019-09-11</td>
+                                                        <td>
+                                                            <button type="button" class="btn btn-outline-success">view
+                                                                request</button>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr>
+                                                        <th scope="row">3</th>
+                                                        <td>Mary Poppins</td>
+                                                        <td>Data Analyis and Mining</td>
+                                                        <td>Training</td>
+                                                        <td>Sauti Mpya</td>
+                                                        <td>1</td>
+                                                        <td>8,700,000 <span class="badge badge-success">TZS</span></td>
+                                                        <td>2019-09-11</td>
+                                                        <td>
+                                                            <button type="button" class="btn btn-outline-success">view
+                                                                request</button>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+
+                                            </table>
+                                            <br />
+                                        </div>
+                                        <div class="tab-pane fade" id="vds-staff-reqs-pills-staff-retirements" role="tabpanel"
                                             aria-labelledby="vdsreqs-pills-messages-tab">
 
                                             <br />
                                             <table class="table table-bordered table-hover">
-                                                <p>Approved requests <strong></strong></p>
+                                                <p>Staff Request <strong>Retirements</strong></p>
                                                 <thead>
                                                     <tr>
                                                         <th scope="col">#</th>
@@ -1850,12 +2019,12 @@
                                             </table>
                                             <br />
                                         </div>
-                                        <div class="tab-pane fade" id="vds-staff-reqs-pills-settings" role="tabpanel"
+                                        <div class="tab-pane fade" id="vds-staff-reqs-pills-all-req-request-content" role="tabpanel"
                                             aria-labelledby="vdsreqs-pills-settings-tab">
 
                                             <br />
                                             <table class="table table-bordered table-hover">
-                                                <p>Approved requests <strong></strong></p>
+                                                <p>All request from <strong>Staff</strong></p>
                                                 <thead>
                                                     <tr>
                                                         <th scope="col">#</th>
@@ -1925,11 +2094,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="dsreq-nav-contact" role="tabpanel"
+                        <div class="tab-pane fade" id="dsreq-nav-res-lm-requests" role="tabpanel"
                             aria-labelledby="nav-contact-tab">
-                            <br />
-                            <br />
                             {{-- my ds requests --}}
+                            <br />
+                            <br />
                             <div class="row">
                                 <div class="col-md-2">
                                     <div class="nav flex-column nav-pills" id="vds-ed-reqs-pills-tab" role="tablist"
@@ -1942,8 +2111,7 @@
                                             aria-controls="vds-ed-reqs-pills-profile" aria-selected="false">Approved</a>
                                         <a class="nav-link" id="vds-ed-reqs-pills-messages-tab" data-toggle="pill"
                                             href="#vds-ed-reqs-pills-messages" role="tab"
-                                            aria-controls="vds-ed-reqs-pills-messages"
-                                            aria-selected="false">Retirements</a>
+                                            aria-controls="vds-ed-reqs-pills-messages" aria-selected="false">Denied</a>
                                         <a class="nav-link" id="vds-ed-reqs-pills-settings-tab" data-toggle="pill"
                                             href="#vds-ed-reqs-pills-settings" role="tab"
                                             aria-controls="vds-ed-reqs-pills-settings" aria-selected="false">All</a>
@@ -1957,7 +2125,7 @@
 
                                             <br />
                                             <table class="table table-bordered table-hover">
-                                                <p>Approved requests <strong></strong></p>
+                                                <p>My request on review by <strong>Line Manager</strong></p>
                                                 <thead>
                                                     <tr>
                                                         <th scope="col">#</th>
@@ -2028,7 +2196,7 @@
 
                                             <br />
                                             <table class="table table-bordered table-hover">
-                                                <p>Approved requests <strong></strong></p>
+                                                <p>My Approved request by <strong>Line Manager</strong></p>
                                                 <thead>
                                                     <tr>
                                                         <th scope="col">#</th>
@@ -2099,7 +2267,7 @@
 
                                             <br />
                                             <table class="table table-bordered table-hover">
-                                                <p>Approved requests <strong></strong></p>
+                                                <p> <strong>Denied</strong> requests</p>
                                                 <thead>
                                                     <tr>
                                                         <th scope="col">#</th>
@@ -2170,7 +2338,7 @@
 
                                             <br />
                                             <table class="table table-bordered table-hover">
-                                                <p>Approved requests <strong></strong></p>
+                                                <p>All my request at <strong>Line Manager</strong> level</p>
                                                 <thead>
                                                     <tr>
                                                         <th scope="col">#</th>
@@ -2249,7 +2417,7 @@
         <!--
                =========================================
                =                                       =
-               =      start of finacial reports data           =
+               =      start of  retirements data           =
                ========================================= -->
         <!-- start of financial reports data panel -->
         <div class="tab-pane fade" id="retirements-md" role="tabpanel" aria-labelledby="retirements-tab-md">
@@ -2319,19 +2487,20 @@
 
                     <nav>
                         <div class="nav nav-tabs" id="ds-rtrmt-nav-nav-tab" role="tablist">
-                            <a class="nav-item nav-link active" id="ds-rtrmt-nav-home-tab" data-toggle="tab"
-                                href="#ds-rtrmt-nav-home" role="tab" aria-controls="nav-home" aria-selected="true">My
+                            <a class="nav-item nav-link active" id="ds-my-rtrmt-tab" data-toggle="tab"
+                                href="#ds-my-rtrmt-content" role="tab" aria-controls="nav-ds-my-rtrmt-content"
+                                aria-selected="true">My
                                 Retirements</a>
-                            <a class="nav-item nav-link" id="ds-rtrmt-nav-profile-tab" data-toggle="tab"
-                                href="#ds-rtrmt-nav-profile" role="tab" aria-controls="nav-profile"
+                            <a class="nav-item nav-link" id="ds-my-rtrmt-tab" data-toggle="tab"
+                                href="#ds-staff-rtrmt-content" role="tab" aria-controls="nav-profile"
                                 aria-selected="false">Staff Retirements</a>
-                            <a class="nav-item nav-link" id="ds-rtrmt-nav-contact-tab" data-toggle="tab"
-                                href="#ds-rtrmt-nav-contact" role="tab" aria-controls="nav-contact"
+                            <a class="nav-item nav-link" id="ds-lm-rtrmt-reponse-tab" data-toggle="tab"
+                                href="#ds-lm-rtrmt-reponse-content" role="tab" aria-controls="nav-contact"
                                 aria-selected="false">Response from Line Manager</a>
                         </div>
                     </nav>
                     <div class="tab-content" id="ds-rtrmt-nav-tabContent">
-                        <div class="tab-pane fade show active" id="ds-rtrmt-nav-home" role="tabpanel"
+                        <div class="tab-pane fade show active" id="ds-my-rtrmt-content" role="tabpanel"
                             aria-labelledby="nav-home-tab">
                             <br />
                             <br />
@@ -2340,137 +2509,147 @@
                                 <div class="col-md-2">
                                     <div class="nav flex-column nav-pills" id="vds-ds-rtrmt-pills-tab" role="tablist"
                                         aria-orientation="vertical">
-                                        <a class="nav-link active" id="vds-ds-rtrmt-pills-home-tab" data-toggle="pill"
-                                            href="#vds-ds-rtrmt-pills-home" role="tab"
-                                            aria-controls="vdsreqs-pills-home" aria-selected="true">Reviewed</a>
-                                        <a class="nav-link" id="vds-ds-rtrmt-pills-profile-tab" data-toggle="pill"
-                                            href="#vds-ds-rtrmt-pills-profile" role="tab"
-                                            aria-controls="vdsreqs-pills-profile" aria-selected="false">Approved</a>
-                                        <a class="nav-link" id="vds-ds-rtrmt-pills-messages-tab" data-toggle="pill"
-                                            href="#vds-ds-rtrmt-pills-messages" role="tab"
-                                            aria-controls="vdsreqs-pills-messages" aria-selected="false">Denied</a>
-                                        <a class="nav-link" id="vds-ds-rtrmt-pills-settings-tab" data-toggle="pill"
-                                            href="#vds-ds-rtrmt-pills-settings" role="tab"
-                                            aria-controls="vdsreqs-pills-settings" aria-selected="false">All</a>
+                                        <a class="nav-link active" id="vds-ds-rtrmt-pills-on-review-tab"
+                                            data-toggle="pill" href="#vds-ds-rtrmt-pills-on-review" role="tab"
+                                            aria-controls="vdsreqs-pills-on-review" aria-selected="true">On review</a>
+
+                                        <a class="nav-link" id="vds-ds-rtrmt-pills-approved-tab" data-toggle="pill"
+                                            href="#vds-ds-rtrmt-pills-approved" role="tab"
+                                            aria-controls="vdsreqs-pills-approved" aria-selected="false">Approved</a>
+
+                                        <a class="nav-link" id="vds-ds-rtrmt-pills-denied-tab" data-toggle="pill"
+                                            href="#vds-ds-rtrmt-pills-denied" role="tab"
+                                            aria-controls="vdsreqs-pills-denied" aria-selected="false">Denied</a>
+
+                                        <a class="nav-link" id="vds-ds-all-my-rtrmt-pills-tab" data-toggle="pill"
+                                            href="#vds-ds-all-my-rtrmt-pills" role="tab"
+                                            aria-controls="vdsreqs-all-my-pills-messages" aria-selected="false">All my
+                                            retirements</a>
+
+                                        <a class="nav-link" id="vds-ds-all-my-rtrmt-pills-settings-tab"
+                                            data-toggle="pill" href="#vds-ds-all-pillar-rtrmt-pills" role="tab"
+                                            aria-controls="vdsreqs-pills-settings" aria-selected="false">All pillar
+                                            retirements</a>
                                     </div>
                                 </div>
                                 <div class="col-md-10">
 
                                     <div class="tab-content" id="vds-ds-rtrmt-pills-tabContent">
-                                        <div class="tab-pane fade show active" id="vds-ds-rtrmt-pills-home"
+                                        <div class="tab-pane fade show active" id="vds-ds-rtrmt-pills-on-review"
                                             role="tabpanel" aria-labelledby="v-pills-home-tab">
-                                                    {{-- my retirements --}}
-                                                    <div class="row">
-                                                        <div class="col-lg-12">
-                                                            <div class="card">
-                                                                <div class="card-content table-responsive">
-                                                                    <br />
-                                                                    <table class="table table-bordered table-hover">
-                                                                        <p>My retirements that have been <strong>reviewed.</strong></p>
-                                                                        <thead>
-                                                                            <tr>
-                                                                                <th scope="col">#</th>
-                                                                                <th scope="col">Requested by</th>
-                                                                                <th scope="col-md-4">Title</th>
-                                                                                <th scope="col">Request Type</th>
-                                                                                <th scope="col">Under Project</th>
-                                                                                <th scope="col"># of approvals</th>
-                                                                                <th scope="col">Total Cost</th>
-                                                                                <th scope="col">Date created</th>
+                                            {{-- my retirements --}}
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="card">
+                                                        <div class="card-content table-responsive">
+                                                            <br />
+                                                            <table class="table table-bordered table-hover">
+                                                                <p>My Retirements that are on
+                                                                    <strong>review.</strong></p>
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col">#</th>
+                                                                        <th scope="col">Requested by</th>
+                                                                        <th scope="col-md-4">Title</th>
+                                                                        <th scope="col">Request Type</th>
+                                                                        <th scope="col">Under Project</th>
+                                                                        <th scope="col"># of approvals</th>
+                                                                        <th scope="col">Total Cost</th>
+                                                                        <th scope="col">Date created</th>
 
-                                                                                <th scope="col"></th>
+                                                                        <th scope="col"></th>
 
-                                                                            </tr>
-                                                                        </thead>
-                                                                        <tbody>
-                                                                            <tr>
-                                                                                <th scope="row">1</th>
-                                                                                <td>MarkCuban</td>
-                                                                                <td>Data visualisation in Mbeya</td>
-                                                                                <td>Training</td>
-                                                                                <td>Sauti Mpya</td>
-                                                                                <td>0</td>
-                                                                                <td>2,300,000 <span
-                                                                                        class="badge badge-success">TZS</span>
-                                                                                </td>
-                                                                                <td>2019-09-11</td>
-                                                                                <td>
-                                                                                    <button type="button"
-                                                                                        class="btn btn-outline-success">view
-                                                                                        request</button>
-                                                                                </td>
-                                                                            </tr>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <th scope="row">1</th>
+                                                                        <td>MarkCuban</td>
+                                                                        <td>Data visualisation in Mbeya</td>
+                                                                        <td>Training</td>
+                                                                        <td>Sauti Mpya</td>
+                                                                        <td>0</td>
+                                                                        <td>2,300,000 <span
+                                                                                class="badge badge-success">TZS</span>
+                                                                        </td>
+                                                                        <td>2019-09-11</td>
+                                                                        <td>
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-success">view
+                                                                                request</button>
+                                                                        </td>
+                                                                    </tr>
 
-                                                                            <tr>
-                                                                                <th scope="row">4</th>
-                                                                                <td>Jane Sharpe</td>
-                                                                                <td>Data Mining in Dar</td>
-                                                                                <td>Training</td>
-                                                                                <td>Data Zetu</td>
-                                                                                <td>0</td>
-                                                                                <td>6,600,000 <span
-                                                                                        class="badge badge-success">TZS</span>
-                                                                                </td>
-                                                                                <td>2019-09-11</td>
-                                                                                <td>
-                                                                                    <button type="button"
-                                                                                        class="btn btn-outline-success">view
-                                                                                        request</button>
-                                                                                </td>
-                                                                            </tr>
+                                                                    <tr>
+                                                                        <th scope="row">4</th>
+                                                                        <td>Jane Sharpe</td>
+                                                                        <td>Data Mining in Dar</td>
+                                                                        <td>Training</td>
+                                                                        <td>Data Zetu</td>
+                                                                        <td>0</td>
+                                                                        <td>6,600,000 <span
+                                                                                class="badge badge-success">TZS</span>
+                                                                        </td>
+                                                                        <td>2019-09-11</td>
+                                                                        <td>
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-success">view
+                                                                                request</button>
+                                                                        </td>
+                                                                    </tr>
 
-                                                                            <tr>
-                                                                                <th scope="row">3</th>
-                                                                                <td>Mary Poppins</td>
-                                                                                <td>Data Analyis and Mining</td>
-                                                                                <td>Training</td>
-                                                                                <td>Sauti Mpya</td>
-                                                                                <td>0</td>
-                                                                                <td>8,700,000 <span
-                                                                                        class="badge badge-success">TZS</span>
-                                                                                </td>
-                                                                                <td>2019-09-11</td>
-                                                                                <td>
-                                                                                    <button type="button"
-                                                                                        class="btn btn-outline-success">view
-                                                                                        request</button>
-                                                                                </td>
-                                                                            </tr>
-                                                                        </tbody>
-                                                                    </table>
-                                                                    <br />
-                                                                    <nav aria-label="Page navigation example">
-                                                                        <ul class="pagination">
-                                                                            <li class="page-item">
-                                                                                <a class="page-link" href="#"
-                                                                                    aria-label="Previous">
-                                                                                    <span aria-hidden="true">&laquo;</span>
-                                                                                    <span class="sr-only">Previous</span>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li class="page-item"><a class="page-link"
-                                                                                    href="#">1</a></li>
-                                                                            <li class="page-item"><a class="page-link"
-                                                                                    href="#">2</a></li>
-                                                                            <li class="page-item"><a class="page-link"
-                                                                                    href="#">3</a></li>
-                                                                            <li class="page-item">
-                                                                                <a class="page-link" href="#" aria-label="Next">
-                                                                                    <span aria-hidden="true">&raquo;</span>
-                                                                                    <span class="sr-only">Next</span>
-                                                                                </a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </nav>
-                                                                </div>
-                                                            </div>
-                                                            <!-- end of SECOND column -->
+                                                                    <tr>
+                                                                        <th scope="row">3</th>
+                                                                        <td>Mary Poppins</td>
+                                                                        <td>Data Analyis and Mining</td>
+                                                                        <td>Training</td>
+                                                                        <td>Sauti Mpya</td>
+                                                                        <td>0</td>
+                                                                        <td>8,700,000 <span
+                                                                                class="badge badge-success">TZS</span>
+                                                                        </td>
+                                                                        <td>2019-09-11</td>
+                                                                        <td>
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-success">view
+                                                                                request</button>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <br />
+                                                            <nav aria-label="Page navigation example">
+                                                                <ul class="pagination">
+                                                                    <li class="page-item">
+                                                                        <a class="page-link" href="#"
+                                                                            aria-label="Previous">
+                                                                            <span aria-hidden="true">&laquo;</span>
+                                                                            <span class="sr-only">Previous</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="page-item"><a class="page-link"
+                                                                            href="#">1</a></li>
+                                                                    <li class="page-item"><a class="page-link"
+                                                                            href="#">2</a></li>
+                                                                    <li class="page-item"><a class="page-link"
+                                                                            href="#">3</a></li>
+                                                                    <li class="page-item">
+                                                                        <a class="page-link" href="#" aria-label="Next">
+                                                                            <span aria-hidden="true">&raquo;</span>
+                                                                            <span class="sr-only">Next</span>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </nav>
                                                         </div>
-
                                                     </div>
+                                                    <!-- end of SECOND column -->
+                                                </div>
+
+                                            </div>
 
                                         </div>
-                                        <div class="tab-pane fade" id="vds-ds-rtrmt-pills-profile" role="tabpanel"
+                                        <div class="tab-pane fade" id="vds-ds-rtrmt-pills-approved" role="tabpanel"
                                             aria-labelledby="vdsreqs-pills-profile-tab">
                                             {{-- my approved retirements --}}
                                             {{-- my retirements --}}
@@ -2480,7 +2659,8 @@
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>reviewed.</strong></p>
+                                                                <p>My retirements that have been
+                                                                    <strong>approved.</strong></p>
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">#</th>
@@ -2585,7 +2765,7 @@
 
 
                                         </div>
-                                        <div class="tab-pane fade" id="vds-ds-rtrmt-pills-messages" role="tabpanel"
+                                        <div class="tab-pane fade" id="vds-ds-rtrmt-pills-denied" role="tabpanel"
                                             aria-labelledby="vdsreqs-pills-messages-tab">
                                             {{-- my denied retirements  --}}
                                             <div class="row">
@@ -2594,7 +2774,8 @@
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>denied.</strong></p>
+                                                                <p>My retirements that have been
+                                                                    <strong>denied.</strong></p>
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">#</th>
@@ -2698,7 +2879,7 @@
                                             </div>
 
                                         </div>
-                                        <div class="tab-pane fade" id="vds-ds-rtrmt-pills-settings" role="tabpanel"
+                                        <div class="tab-pane fade" id="vds-ds-all-my-rtrmt-pills" role="tabpanel"
                                             aria-labelledby="vdsreqs-pills-settings-tab">
                                             {{-- all my retirments --}}
                                             {{-- my retirements --}}
@@ -2813,11 +2994,126 @@
 
 
                                         </div>
+                                        <div class="tab-pane fade" id="vds-ds-all-pillar-rtrmt-pills" role="tabpanel"
+                                            aria-labelledby="vdsreqs-pills-settings-tab">
+                                            {{-- all my retirments --}}
+                                            {{-- my retirements --}}
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="card">
+                                                        <div class="card-content table-responsive">
+                                                            <br />
+                                                            <table class="table table-bordered table-hover">
+                                                                <p>All pillar retirements. </p>
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col">#</th>
+                                                                        <th scope="col">Requested by</th>
+                                                                        <th scope="col-md-4">Title</th>
+                                                                        <th scope="col">Request Type</th>
+                                                                        <th scope="col">Under Project</th>
+                                                                        <th scope="col"># of approvals</th>
+                                                                        <th scope="col">Total Cost</th>
+                                                                        <th scope="col">Date created</th>
+
+                                                                        <th scope="col"></th>
+
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <th scope="row">1</th>
+                                                                        <td>MarkCuban</td>
+                                                                        <td>Data visualisation in Mbeya</td>
+                                                                        <td>Training</td>
+                                                                        <td>Sauti Mpya</td>
+                                                                        <td>0</td>
+                                                                        <td>2,300,000 <span
+                                                                                class="badge badge-success">TZS</span>
+                                                                        </td>
+                                                                        <td>2019-09-11</td>
+                                                                        <td>
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-success">view
+                                                                                request</button>
+                                                                        </td>
+                                                                    </tr>
+
+                                                                    <tr>
+                                                                        <th scope="row">4</th>
+                                                                        <td>Jane Sharpe</td>
+                                                                        <td>Data Mining in Dar</td>
+                                                                        <td>Training</td>
+                                                                        <td>Data Zetu</td>
+                                                                        <td>0</td>
+                                                                        <td>6,600,000 <span
+                                                                                class="badge badge-success">TZS</span>
+                                                                        </td>
+                                                                        <td>2019-09-11</td>
+                                                                        <td>
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-success">view
+                                                                                request</button>
+                                                                        </td>
+                                                                    </tr>
+
+                                                                    <tr>
+                                                                        <th scope="row">3</th>
+                                                                        <td>Mary Poppins</td>
+                                                                        <td>Data Analyis and Mining</td>
+                                                                        <td>Training</td>
+                                                                        <td>Sauti Mpya</td>
+                                                                        <td>0</td>
+                                                                        <td>8,700,000 <span
+                                                                                class="badge badge-success">TZS</span>
+                                                                        </td>
+                                                                        <td>2019-09-11</td>
+                                                                        <td>
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-success">view
+                                                                                request</button>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <br />
+                                                            <nav aria-label="Page navigation example">
+                                                                <ul class="pagination">
+                                                                    <li class="page-item">
+                                                                        <a class="page-link" href="#"
+                                                                            aria-label="Previous">
+                                                                            <span aria-hidden="true">&laquo;</span>
+                                                                            <span class="sr-only">Previous</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="page-item"><a class="page-link"
+                                                                            href="#">1</a></li>
+                                                                    <li class="page-item"><a class="page-link"
+                                                                            href="#">2</a></li>
+                                                                    <li class="page-item"><a class="page-link"
+                                                                            href="#">3</a></li>
+                                                                    <li class="page-item">
+                                                                        <a class="page-link" href="#" aria-label="Next">
+                                                                            <span aria-hidden="true">&raquo;</span>
+                                                                            <span class="sr-only">Next</span>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </nav>
+                                                        </div>
+                                                    </div>
+                                                    <!-- end of SECOND column -->
+                                                </div>
+
+                                            </div>
+
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="ds-rtrmt-nav-profile" role="tabpanel"
+                        <div class="tab-pane fade" id="ds-staff-rtrmt-content" role="tabpanel"
                             aria-labelledby="nav-profile-tab">
                             <br />
                             <br />
@@ -2826,139 +3122,150 @@
                                 <div class="col-md-2">
                                     <div class="nav flex-column nav-pills" id="vds-ds-rtrmt-staff-pills-tab"
                                         role="tablist" aria-orientation="vertical">
-                                        <a class="nav-link active" id="vds-ds-rtrmt-staff-pills-home-tab"
-                                            data-toggle="pill" href="#vds-ds-rtrmt-staff-pills-home" role="tab"
-                                            aria-controls="vds-staff-reqs-pills-home" aria-selected="true">Reviewed</a>
-                                        <a class="nav-link" id="vds-ds-rtrmt-staff-pills-profile-tab" data-toggle="pill"
-                                            href="#vds-ds-rtrmt-staff-pills-profile" role="tab"
-                                            aria-controls="vds-staff-reqs-pills-profile"
-                                            aria-selected="false">Approved</a>
-                                        <a class="nav-link" id="vds-ds-rtrmt-staff-pills-messages-tab"
-                                            data-toggle="pill" href="#vds-ds-rtrmt-staff-pills-messages" role="tab"
-                                            aria-controls="vds-staff-reqs-pills-messages"
-                                            aria-selected="false">Retirements</a>
-                                        <a class="nav-link" id="vds-ds-rtrmt-staff-pills-settings-tab"
-                                            data-toggle="pill" href="#vds-ds-rtrmt-staff-pills-settings" role="tab"
-                                            aria-controls="vds-staff-reqs-pills-settings" aria-selected="false">All</a>
+                                        <a class="nav-link active" id="vds-ds-rtrmt-staff-pills-ryr-tab"
+                                            data-toggle="pill" href="#vds-ds-rtrmt-staff-pills-ryr" role="tab"
+                                            aria-controls="vds-staff-reqs-pills-ryr" aria-selected="true">Require your
+                                            Review</a>
+
+                                        <a class="nav-link" id="vds-ds-rtrmt-staff-pills-oadr-tab" data-toggle="pill"
+                                            href="#vds-ds-rtrmt-staff-pills-oadr" role="tab"
+                                            aria-controls="vds-staff-reqs-pills-oadr" aria-selected="false">On
+                                            Administrative Review</a>
+
+                                        <a class="nav-link" id="vds-ds-rtrmt-staff-pills-aba-tab" data-toggle="pill"
+                                            href="#vds-ds-rtrmt-staff-pills-aba" role="tab"
+                                            aria-controls="vds-staff-reqs-pills-aba" aria-selected="false">Approved
+                                            by Administration</a>
+
+                                        <a class="nav-link" id="vds-ds-rtrmt-staff-pills-denied-tab"
+                                            data-toggle="pill" href="#vds-ds-rtrmt-staff-pills-denied" role="tab"
+                                            aria-controls="vds-staff-reqs-pills-denied"
+                                            aria-selected="false">Denied</a>
+
+                                        <a class="nav-link" id="vds-ds-rtrmt-staff-pills-all-staff-rtmtr-tab"
+                                            data-toggle="pill" href="#vds-ds-rtrmt-staff-pills-all-staff-rtmtr" role="tab"
+                                            aria-controls="vds-staff-reqs-pills-all-staff-rtmtr" aria-selected="false">All
+                                            Retirements</a>
                                     </div>
                                 </div>
                                 <div class="col-md-10">
 
                                     <div class="tab-content" id="vds-ds-rtrmt-staff-tabContent">
-                                        <div class="tab-pane fade show active" id="vds-ds-rtrmt-staff-pills-home"
+                                        <div class="tab-pane fade show active" id="vds-ds-rtrmt-staff-pills-ryr"
                                             role="tabpanel" aria-labelledby="vds-ds-rtrmt-staff-pills-home-tab">
-                                                {{-- my retirements --}}
-                                                <div class="row">
-                                                    <div class="col-lg-12">
-                                                        <div class="card">
-                                                            <div class="card-content table-responsive">
-                                                                <br />
-                                                                <table class="table table-bordered table-hover">
-                                                                    <p>My retirements that have been <strong>reviewed.</strong></p>
-                                                                    <thead>
-                                                                        <tr>
-                                                                            <th scope="col">#</th>
-                                                                            <th scope="col">Requested by</th>
-                                                                            <th scope="col-md-4">Title</th>
-                                                                            <th scope="col">Request Type</th>
-                                                                            <th scope="col">Under Project</th>
-                                                                            <th scope="col"># of approvals</th>
-                                                                            <th scope="col">Total Cost</th>
-                                                                            <th scope="col">Date created</th>
+                                            {{-- my retirements --}}
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="card">
+                                                        <div class="card-content table-responsive">
+                                                            <br />
+                                                            <table class="table table-bordered table-hover">
+                                                                <p>My retirements that require your
+                                                                    <strong>review.</strong></p>
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col">#</th>
+                                                                        <th scope="col">Requested by</th>
+                                                                        <th scope="col-md-4">Title</th>
+                                                                        <th scope="col">Request Type</th>
+                                                                        <th scope="col">Under Project</th>
+                                                                        <th scope="col"># of approvals</th>
+                                                                        <th scope="col">Total Cost</th>
+                                                                        <th scope="col">Date created</th>
 
-                                                                            <th scope="col"></th>
+                                                                        <th scope="col"></th>
 
-                                                                        </tr>
-                                                                    </thead>
-                                                                    <tbody>
-                                                                        <tr>
-                                                                            <th scope="row">1</th>
-                                                                            <td>MarkCuban</td>
-                                                                            <td>Data visualisation in Mbeya</td>
-                                                                            <td>Training</td>
-                                                                            <td>Sauti Mpya</td>
-                                                                            <td>0</td>
-                                                                            <td>2,300,000 <span
-                                                                                    class="badge badge-success">TZS</span>
-                                                                            </td>
-                                                                            <td>2019-09-11</td>
-                                                                            <td>
-                                                                                <button type="button"
-                                                                                    class="btn btn-outline-success">view
-                                                                                    request</button>
-                                                                            </td>
-                                                                        </tr>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <th scope="row">1</th>
+                                                                        <td>MarkCuban</td>
+                                                                        <td>Data visualisation in Mbeya</td>
+                                                                        <td>Training</td>
+                                                                        <td>Sauti Mpya</td>
+                                                                        <td>0</td>
+                                                                        <td>2,300,000 <span
+                                                                                class="badge badge-success">TZS</span>
+                                                                        </td>
+                                                                        <td>2019-09-11</td>
+                                                                        <td>
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-success">view
+                                                                                request</button>
+                                                                        </td>
+                                                                    </tr>
 
-                                                                        <tr>
-                                                                            <th scope="row">4</th>
-                                                                            <td>Jane Sharpe</td>
-                                                                            <td>Data Mining in Dar</td>
-                                                                            <td>Training</td>
-                                                                            <td>Data Zetu</td>
-                                                                            <td>0</td>
-                                                                            <td>6,600,000 <span
-                                                                                    class="badge badge-success">TZS</span>
-                                                                            </td>
-                                                                            <td>2019-09-11</td>
-                                                                            <td>
-                                                                                <button type="button"
-                                                                                    class="btn btn-outline-success">view
-                                                                                    request</button>
-                                                                            </td>
-                                                                        </tr>
+                                                                    <tr>
+                                                                        <th scope="row">4</th>
+                                                                        <td>Jane Sharpe</td>
+                                                                        <td>Data Mining in Dar</td>
+                                                                        <td>Training</td>
+                                                                        <td>Data Zetu</td>
+                                                                        <td>0</td>
+                                                                        <td>6,600,000 <span
+                                                                                class="badge badge-success">TZS</span>
+                                                                        </td>
+                                                                        <td>2019-09-11</td>
+                                                                        <td>
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-success">view
+                                                                                request</button>
+                                                                        </td>
+                                                                    </tr>
 
-                                                                        <tr>
-                                                                            <th scope="row">3</th>
-                                                                            <td>Mary Poppins</td>
-                                                                            <td>Data Analyis and Mining</td>
-                                                                            <td>Training</td>
-                                                                            <td>Sauti Mpya</td>
-                                                                            <td>0</td>
-                                                                            <td>8,700,000 <span
-                                                                                    class="badge badge-success">TZS</span>
-                                                                            </td>
-                                                                            <td>2019-09-11</td>
-                                                                            <td>
-                                                                                <button type="button"
-                                                                                    class="btn btn-outline-success">view
-                                                                                    request</button>
-                                                                            </td>
-                                                                        </tr>
-                                                                    </tbody>
-                                                                </table>
-                                                                <br />
-                                                                <nav aria-label="Page navigation example">
-                                                                    <ul class="pagination">
-                                                                        <li class="page-item">
-                                                                            <a class="page-link" href="#"
-                                                                                aria-label="Previous">
-                                                                                <span aria-hidden="true">&laquo;</span>
-                                                                                <span class="sr-only">Previous</span>
-                                                                            </a>
-                                                                        </li>
-                                                                        <li class="page-item"><a class="page-link"
-                                                                                href="#">1</a></li>
-                                                                        <li class="page-item"><a class="page-link"
-                                                                                href="#">2</a></li>
-                                                                        <li class="page-item"><a class="page-link"
-                                                                                href="#">3</a></li>
-                                                                        <li class="page-item">
-                                                                            <a class="page-link" href="#" aria-label="Next">
-                                                                                <span aria-hidden="true">&raquo;</span>
-                                                                                <span class="sr-only">Next</span>
-                                                                            </a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </nav>
-                                                            </div>
+                                                                    <tr>
+                                                                        <th scope="row">3</th>
+                                                                        <td>Mary Poppins</td>
+                                                                        <td>Data Analyis and Mining</td>
+                                                                        <td>Training</td>
+                                                                        <td>Sauti Mpya</td>
+                                                                        <td>0</td>
+                                                                        <td>8,700,000 <span
+                                                                                class="badge badge-success">TZS</span>
+                                                                        </td>
+                                                                        <td>2019-09-11</td>
+                                                                        <td>
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-success">view
+                                                                                request</button>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <br />
+                                                            <nav aria-label="Page navigation example">
+                                                                <ul class="pagination">
+                                                                    <li class="page-item">
+                                                                        <a class="page-link" href="#"
+                                                                            aria-label="Previous">
+                                                                            <span aria-hidden="true">&laquo;</span>
+                                                                            <span class="sr-only">Previous</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="page-item"><a class="page-link"
+                                                                            href="#">1</a></li>
+                                                                    <li class="page-item"><a class="page-link"
+                                                                            href="#">2</a></li>
+                                                                    <li class="page-item"><a class="page-link"
+                                                                            href="#">3</a></li>
+                                                                    <li class="page-item">
+                                                                        <a class="page-link" href="#" aria-label="Next">
+                                                                            <span aria-hidden="true">&raquo;</span>
+                                                                            <span class="sr-only">Next</span>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </nav>
                                                         </div>
-                                                        <!-- end of SECOND column -->
                                                     </div>
-
+                                                    <!-- end of SECOND column -->
                                                 </div>
 
+                                            </div>
+
                                         </div>
-                                        <div class="tab-pane fade" id="vds-ds-rtrmt-staff-pills-profile" role="tabpanel"
+                                        <div class="tab-pane fade" id="vds-ds-rtrmt-staff-pills-oadr" role="tabpanel"
                                             aria-labelledby="vds-ds-rtrmt-staff-pills-profile-tab">
                                             {{-- my retirements --}}
                                             <div class="row">
@@ -2967,7 +3274,8 @@
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>reviewed.</strong></p>
+                                                                <p>Staff retirements that on administration
+                                                                    <strong>review.</strong></p>
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">#</th>
@@ -3072,8 +3380,8 @@
 
 
                                         </div>
-                                        <div class="tab-pane fade" id="vds-ds-rtrmt-staff-pills-messages"
-                                            role="tabpanel" aria-labelledby="vds-ds-rtrmt-staff-pills-messages-tab">
+                                        <div class="tab-pane fade" id="vds-ds-rtrmt-staff-pills-aba"
+                                            role="tabpanel" aria-labelledby="vds-ds-rtrmt-staff-pills-aba-tab">
 
                                             {{-- my retirements --}}
                                             <div class="row">
@@ -3082,7 +3390,8 @@
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>reviewed.</strong></p>
+                                                                <p>Staff retirements that have been
+                                                                    <strong>approved by Administration.</strong></p>
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">#</th>
@@ -3186,124 +3495,240 @@
                                             </div>
 
                                         </div>
-                                        <div class="tab-pane fade" id="vds-ds-rtrmt-staff-pills-settings"
+                                        <div class="tab-pane fade" id="vds-ds-rtrmt-staff-pills-denied"
                                             role="tabpanel" aria-labelledby="vds-ds-rtrmt-staff-pills-settings-tab">
-                                                {{-- my retirements --}}
-                                                <div class="row">
-                                                    <div class="col-lg-12">
-                                                        <div class="card">
-                                                            <div class="card-content table-responsive">
-                                                                <br />
-                                                                <table class="table table-bordered table-hover">
-                                                                    <p>My retirements that have been <strong>reviewed.</strong></p>
-                                                                    <thead>
-                                                                        <tr>
-                                                                            <th scope="col">#</th>
-                                                                            <th scope="col">Requested by</th>
-                                                                            <th scope="col-md-4">Title</th>
-                                                                            <th scope="col">Request Type</th>
-                                                                            <th scope="col">Under Project</th>
-                                                                            <th scope="col"># of approvals</th>
-                                                                            <th scope="col">Total Cost</th>
-                                                                            <th scope="col">Date created</th>
+                                            {{-- my retirements --}}
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="card">
+                                                        <div class="card-content table-responsive">
+                                                            <br />
+                                                            <table class="table table-bordered table-hover">
+                                                                <p>Staff retirements that have been
+                                                                    <strong>denied.</strong></p>
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col">#</th>
+                                                                        <th scope="col">Requested by</th>
+                                                                        <th scope="col-md-4">Title</th>
+                                                                        <th scope="col">Request Type</th>
+                                                                        <th scope="col">Under Project</th>
+                                                                        <th scope="col"># of approvals</th>
+                                                                        <th scope="col">Total Cost</th>
+                                                                        <th scope="col">Date created</th>
 
-                                                                            <th scope="col"></th>
+                                                                        <th scope="col"></th>
 
-                                                                        </tr>
-                                                                    </thead>
-                                                                    <tbody>
-                                                                        <tr>
-                                                                            <th scope="row">1</th>
-                                                                            <td>MarkCuban</td>
-                                                                            <td>Data visualisation in Mbeya</td>
-                                                                            <td>Training</td>
-                                                                            <td>Sauti Mpya</td>
-                                                                            <td>0</td>
-                                                                            <td>2,300,000 <span
-                                                                                    class="badge badge-success">TZS</span>
-                                                                            </td>
-                                                                            <td>2019-09-11</td>
-                                                                            <td>
-                                                                                <button type="button"
-                                                                                    class="btn btn-outline-success">view
-                                                                                    request</button>
-                                                                            </td>
-                                                                        </tr>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <th scope="row">1</th>
+                                                                        <td>MarkCuban</td>
+                                                                        <td>Data visualisation in Mbeya</td>
+                                                                        <td>Training</td>
+                                                                        <td>Sauti Mpya</td>
+                                                                        <td>0</td>
+                                                                        <td>2,300,000 <span
+                                                                                class="badge badge-success">TZS</span>
+                                                                        </td>
+                                                                        <td>2019-09-11</td>
+                                                                        <td>
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-success">view
+                                                                                request</button>
+                                                                        </td>
+                                                                    </tr>
 
-                                                                        <tr>
-                                                                            <th scope="row">4</th>
-                                                                            <td>Jane Sharpe</td>
-                                                                            <td>Data Mining in Dar</td>
-                                                                            <td>Training</td>
-                                                                            <td>Data Zetu</td>
-                                                                            <td>0</td>
-                                                                            <td>6,600,000 <span
-                                                                                    class="badge badge-success">TZS</span>
-                                                                            </td>
-                                                                            <td>2019-09-11</td>
-                                                                            <td>
-                                                                                <button type="button"
-                                                                                    class="btn btn-outline-success">view
-                                                                                    request</button>
-                                                                            </td>
-                                                                        </tr>
+                                                                    <tr>
+                                                                        <th scope="row">4</th>
+                                                                        <td>Jane Sharpe</td>
+                                                                        <td>Data Mining in Dar</td>
+                                                                        <td>Training</td>
+                                                                        <td>Data Zetu</td>
+                                                                        <td>0</td>
+                                                                        <td>6,600,000 <span
+                                                                                class="badge badge-success">TZS</span>
+                                                                        </td>
+                                                                        <td>2019-09-11</td>
+                                                                        <td>
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-success">view
+                                                                                request</button>
+                                                                        </td>
+                                                                    </tr>
 
-                                                                        <tr>
-                                                                            <th scope="row">3</th>
-                                                                            <td>Mary Poppins</td>
-                                                                            <td>Data Analyis and Mining</td>
-                                                                            <td>Training</td>
-                                                                            <td>Sauti Mpya</td>
-                                                                            <td>0</td>
-                                                                            <td>8,700,000 <span
-                                                                                    class="badge badge-success">TZS</span>
-                                                                            </td>
-                                                                            <td>2019-09-11</td>
-                                                                            <td>
-                                                                                <button type="button"
-                                                                                    class="btn btn-outline-success">view
-                                                                                    request</button>
-                                                                            </td>
-                                                                        </tr>
-                                                                    </tbody>
-                                                                </table>
-                                                                <br />
-                                                                <nav aria-label="Page navigation example">
-                                                                    <ul class="pagination">
-                                                                        <li class="page-item">
-                                                                            <a class="page-link" href="#"
-                                                                                aria-label="Previous">
-                                                                                <span aria-hidden="true">&laquo;</span>
-                                                                                <span class="sr-only">Previous</span>
-                                                                            </a>
-                                                                        </li>
-                                                                        <li class="page-item"><a class="page-link"
-                                                                                href="#">1</a></li>
-                                                                        <li class="page-item"><a class="page-link"
-                                                                                href="#">2</a></li>
-                                                                        <li class="page-item"><a class="page-link"
-                                                                                href="#">3</a></li>
-                                                                        <li class="page-item">
-                                                                            <a class="page-link" href="#" aria-label="Next">
-                                                                                <span aria-hidden="true">&raquo;</span>
-                                                                                <span class="sr-only">Next</span>
-                                                                            </a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </nav>
-                                                            </div>
+                                                                    <tr>
+                                                                        <th scope="row">3</th>
+                                                                        <td>Mary Poppins</td>
+                                                                        <td>Data Analyis and Mining</td>
+                                                                        <td>Training</td>
+                                                                        <td>Sauti Mpya</td>
+                                                                        <td>0</td>
+                                                                        <td>8,700,000 <span
+                                                                                class="badge badge-success">TZS</span>
+                                                                        </td>
+                                                                        <td>2019-09-11</td>
+                                                                        <td>
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-success">view
+                                                                                request</button>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <br />
+                                                            <nav aria-label="Page navigation example">
+                                                                <ul class="pagination">
+                                                                    <li class="page-item">
+                                                                        <a class="page-link" href="#"
+                                                                            aria-label="Previous">
+                                                                            <span aria-hidden="true">&laquo;</span>
+                                                                            <span class="sr-only">Previous</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="page-item"><a class="page-link"
+                                                                            href="#">1</a></li>
+                                                                    <li class="page-item"><a class="page-link"
+                                                                            href="#">2</a></li>
+                                                                    <li class="page-item"><a class="page-link"
+                                                                            href="#">3</a></li>
+                                                                    <li class="page-item">
+                                                                        <a class="page-link" href="#" aria-label="Next">
+                                                                            <span aria-hidden="true">&raquo;</span>
+                                                                            <span class="sr-only">Next</span>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </nav>
                                                         </div>
-                                                        <!-- end of SECOND column -->
                                                     </div>
-
+                                                    <!-- end of SECOND column -->
                                                 </div>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="tab-pane fade" id="vds-ds-rtrmt-staff-pills-all-staff-rtmtr"
+                                            role="tabpanel" aria-labelledby="vds-ds-rtrmt-staff-pills-settings-tab">
+                                            {{-- my retirements --}}
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="card">
+                                                        <div class="card-content table-responsive">
+                                                            <br />
+                                                            <table class="table table-bordered table-hover">
+                                                                <p>All retirements that have been created by
+                                                                    <strong>Staff.</strong></p>
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col">#</th>
+                                                                        <th scope="col">Requested by</th>
+                                                                        <th scope="col-md-4">Title</th>
+                                                                        <th scope="col">Request Type</th>
+                                                                        <th scope="col">Under Project</th>
+                                                                        <th scope="col"># of approvals</th>
+                                                                        <th scope="col">Total Cost</th>
+                                                                        <th scope="col">Date created</th>
+
+                                                                        <th scope="col"></th>
+
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <th scope="row">1</th>
+                                                                        <td>MarkCuban</td>
+                                                                        <td>Data visualisation in Mbeya</td>
+                                                                        <td>Training</td>
+                                                                        <td>Sauti Mpya</td>
+                                                                        <td>0</td>
+                                                                        <td>2,300,000 <span
+                                                                                class="badge badge-success">TZS</span>
+                                                                        </td>
+                                                                        <td>2019-09-11</td>
+                                                                        <td>
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-success">view
+                                                                                request</button>
+                                                                        </td>
+                                                                    </tr>
+
+                                                                    <tr>
+                                                                        <th scope="row">4</th>
+                                                                        <td>Jane Sharpe</td>
+                                                                        <td>Data Mining in Dar</td>
+                                                                        <td>Training</td>
+                                                                        <td>Data Zetu</td>
+                                                                        <td>0</td>
+                                                                        <td>6,600,000 <span
+                                                                                class="badge badge-success">TZS</span>
+                                                                        </td>
+                                                                        <td>2019-09-11</td>
+                                                                        <td>
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-success">view
+                                                                                request</button>
+                                                                        </td>
+                                                                    </tr>
+
+                                                                    <tr>
+                                                                        <th scope="row">3</th>
+                                                                        <td>Mary Poppins</td>
+                                                                        <td>Data Analyis and Mining</td>
+                                                                        <td>Training</td>
+                                                                        <td>Sauti Mpya</td>
+                                                                        <td>0</td>
+                                                                        <td>8,700,000 <span
+                                                                                class="badge badge-success">TZS</span>
+                                                                        </td>
+                                                                        <td>2019-09-11</td>
+                                                                        <td>
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-success">view
+                                                                                request</button>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <br />
+                                                            <nav aria-label="Page navigation example">
+                                                                <ul class="pagination">
+                                                                    <li class="page-item">
+                                                                        <a class="page-link" href="#"
+                                                                            aria-label="Previous">
+                                                                            <span aria-hidden="true">&laquo;</span>
+                                                                            <span class="sr-only">Previous</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="page-item"><a class="page-link"
+                                                                            href="#">1</a></li>
+                                                                    <li class="page-item"><a class="page-link"
+                                                                            href="#">2</a></li>
+                                                                    <li class="page-item"><a class="page-link"
+                                                                            href="#">3</a></li>
+                                                                    <li class="page-item">
+                                                                        <a class="page-link" href="#" aria-label="Next">
+                                                                            <span aria-hidden="true">&raquo;</span>
+                                                                            <span class="sr-only">Next</span>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </nav>
+                                                        </div>
+                                                    </div>
+                                                    <!-- end of SECOND column -->
+                                                </div>
+
+                                            </div>
 
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="ds-rtrmt-nav-contact" role="tabpanel"
+                        <div class="tab-pane fade" id="ds-lm-rtrmt-reponse-content" role="tabpanel"
                             aria-labelledby="nav-contact-tab">
                             <br />
                             <br />
@@ -3312,25 +3737,23 @@
                                 <div class="col-md-2">
                                     <div class="nav flex-column nav-pills" id="vds-ds-rtrmt-ed-pills-tab" role="tablist"
                                         aria-orientation="vertical">
-                                        <a class="nav-link active" id="vds-ds-rtrmt-ed-pills-home-tab"
-                                            data-toggle="pill" href="#vds-ds-rtrmt-ed-pills-home" role="tab"
-                                            aria-controls="vds-ed-reqs-pills-home" aria-selected="true">Reviewed</a>
-                                        <a class="nav-link" id="vds-ds-rtrmt-ed-pills-profile-tab" data-toggle="pill"
-                                            href="#vds-ds-rtrmt-ed-pills-profile" role="tab"
-                                            aria-controls="vds-ed-reqs-pills-profile" aria-selected="false">Approved</a>
-                                        <a class="nav-link" id="vds-ds-rtrmt-ed-pills-messages-tab" data-toggle="pill"
-                                            href="#vds-ds-rtrmt-ed-pills-messages" role="tab"
-                                            aria-controls="vds-ed-reqs-pills-messages"
-                                            aria-selected="false">Retirements</a>
-                                        <a class="nav-link" id="vds-ds-rtrmt-ed-pills-settings-tab" data-toggle="pill"
-                                            href="#vds-ds-rtrmt-ed-pills-settings" role="tab"
-                                            aria-controls="vds-ed-reqs-pills-settings" aria-selected="false">All</a>
+                                        <a class="nav-link active" id="vds-ds-rtrmt-ed-pills-reviewed-tab"
+                                            data-toggle="pill" href="#vds-ds-rtrmt-ed-pills-reviewed" role="tab"
+                                            aria-controls="vds-ed-reqs-pills-reviewed" aria-selected="true">Reviewed</a>
+
+                                        <a class="nav-link" id="vds-ds-rtrmt-ed-pills-approved-tab" data-toggle="pill"
+                                            href="#vds-ds-rtrmt-ed-pills-approved" role="tab"
+                                            aria-controls="vds-ed-reqs-pills-approved" aria-selected="false">Approved</a>
+
+                                        <a class="nav-link" id="vds-ds-rtrmt-ed-pills-all-tab" data-toggle="pill"
+                                            href="#vds-ds-rtrmt-ed-pills-all" role="tab"
+                                            aria-controls="vds-ed-reqs-pills-all" aria-selected="false">All</a>
                                     </div>
                                 </div>
                                 <div class="col-md-10">
 
                                     <div class="tab-content" id="vds-ds-rtrmt-ed-pills-tabContent">
-                                        <div class="tab-pane fade show active" id="vds-ds-rtrmt-ed-pills-home"
+                                        <div class="tab-pane fade show active" id="vds-ds-rtrmt-ed-pills-reviewed"
                                             role="tabpanel" aria-labelledby="vds-ed-reqs-pills-home-tab">
 
 
@@ -3341,7 +3764,8 @@
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>reviewed.</strong></p>
+                                                                <p>My retirements that have been
+                                                                    <strong>reviewed.</strong></p>
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">#</th>
@@ -3446,7 +3870,7 @@
 
 
                                         </div>
-                                        <div class="tab-pane fade" id="vds-ds-rtrmt-ed-pills-profile" role="tabpanel"
+                                        <div class="tab-pane fade" id="vds-ds-rtrmt-ed-pills-approved" role="tabpanel"
                                             aria-labelledby="vdsreqs-pills-profile-tab">
 
 
@@ -3457,7 +3881,8 @@
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>reviewed.</strong></p>
+                                                                <p>My retirements that have been
+                                                                    <strong>Approved</strong> by Line Manager</p>
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">#</th>
@@ -3561,121 +3986,7 @@
                                             </div>
 
                                         </div>
-                                        <div class="tab-pane fade" id="vds-ds-rtrmt-ed-pills-messages" role="tabpanel"
-                                            aria-labelledby="vdsreqs-pills-messages-tab">
-
-                                            {{-- my retirements --}}
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div class="card">
-                                                        <div class="card-content table-responsive">
-                                                            <br />
-                                                            <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>reviewed.</strong></p>
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th scope="col">#</th>
-                                                                        <th scope="col">Requested by</th>
-                                                                        <th scope="col-md-4">Title</th>
-                                                                        <th scope="col">Request Type</th>
-                                                                        <th scope="col">Under Project</th>
-                                                                        <th scope="col"># of approvals</th>
-                                                                        <th scope="col">Total Cost</th>
-                                                                        <th scope="col">Date created</th>
-
-                                                                        <th scope="col"></th>
-
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <th scope="row">1</th>
-                                                                        <td>MarkCuban</td>
-                                                                        <td>Data visualisation in Mbeya</td>
-                                                                        <td>Training</td>
-                                                                        <td>Sauti Mpya</td>
-                                                                        <td>0</td>
-                                                                        <td>2,300,000 <span
-                                                                                class="badge badge-success">TZS</span>
-                                                                        </td>
-                                                                        <td>2019-09-11</td>
-                                                                        <td>
-                                                                            <button type="button"
-                                                                                class="btn btn-outline-success">view
-                                                                                request</button>
-                                                                        </td>
-                                                                    </tr>
-
-                                                                    <tr>
-                                                                        <th scope="row">4</th>
-                                                                        <td>Jane Sharpe</td>
-                                                                        <td>Data Mining in Dar</td>
-                                                                        <td>Training</td>
-                                                                        <td>Data Zetu</td>
-                                                                        <td>0</td>
-                                                                        <td>6,600,000 <span
-                                                                                class="badge badge-success">TZS</span>
-                                                                        </td>
-                                                                        <td>2019-09-11</td>
-                                                                        <td>
-                                                                            <button type="button"
-                                                                                class="btn btn-outline-success">view
-                                                                                request</button>
-                                                                        </td>
-                                                                    </tr>
-
-                                                                    <tr>
-                                                                        <th scope="row">3</th>
-                                                                        <td>Mary Poppins</td>
-                                                                        <td>Data Analyis and Mining</td>
-                                                                        <td>Training</td>
-                                                                        <td>Sauti Mpya</td>
-                                                                        <td>0</td>
-                                                                        <td>8,700,000 <span
-                                                                                class="badge badge-success">TZS</span>
-                                                                        </td>
-                                                                        <td>2019-09-11</td>
-                                                                        <td>
-                                                                            <button type="button"
-                                                                                class="btn btn-outline-success">view
-                                                                                request</button>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                            <br />
-                                                            <nav aria-label="Page navigation example">
-                                                                <ul class="pagination">
-                                                                    <li class="page-item">
-                                                                        <a class="page-link" href="#"
-                                                                            aria-label="Previous">
-                                                                            <span aria-hidden="true">&laquo;</span>
-                                                                            <span class="sr-only">Previous</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">1</a></li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">2</a></li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">3</a></li>
-                                                                    <li class="page-item">
-                                                                        <a class="page-link" href="#" aria-label="Next">
-                                                                            <span aria-hidden="true">&raquo;</span>
-                                                                            <span class="sr-only">Next</span>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </nav>
-                                                        </div>
-                                                    </div>
-                                                    <!-- end of SECOND column -->
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-                                        <div class="tab-pane fade" id="vds-ds-rtrmt-ed-pills-settings" role="tabpanel"
+                                        <div class="tab-pane fade" id="vds-ds-rtrmt-ed-pills-all" role="tabpanel"
                                             aria-labelledby="vdsreqs-pills-settings-tab">
 
                                             {{-- my retirements --}}
@@ -3685,7 +3996,8 @@
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>reviewed.</strong></p>
+                                                                <p>All My retirements that have been
+                                                                    <strong>reviewed.</strong></p>
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">#</th>
@@ -3799,7 +4111,7 @@
 
 
         </div>
-        <!-- end of  financial reports panel -->
+        <!-- end of  retirements panel -->
 
         <!--
          ========================================
@@ -3851,19 +4163,19 @@
                 <div class="col-lg-12">
                     <nav>
                         <div class="nav nav-tabs" id="ds-impr-nav-tab" role="tablist">
-                            <a class="nav-item nav-link active" id="ds-impr-nav-home-tab" data-toggle="tab"
-                                href="#ds-impr-nav-home" role="tab" aria-controls="nav-home" aria-selected="true">My
+                            <a class="nav-item nav-link active" id="ds-impr-nav-my-imprests-tab" data-toggle="tab"
+                                href="#ds-impr-nav-my-imprests-content" role="tab" aria-controls="nav-my-imprests" aria-selected="true">My
                                 Imprests</a>
-                            <a class="nav-item nav-link" id="ds-impr-nav-profile-tab" data-toggle="tab"
-                                href="#ds-impr-nav-profile" role="tab" aria-controls="nav-profile"
+                            <a class="nav-item nav-link" id="ds-impr-nav-staff-imprests-tab" data-toggle="tab"
+                                href="#ds-impr-nav-staff-imprests-content" role="tab" aria-controls="nav-profile"
                                 aria-selected="false">Staff Imprests</a>
-                            <a class="nav-item nav-link" id="ds-impr-nav-contact-tab" data-toggle="tab"
-                                href="#ds-impr-nav-contact" role="tab" aria-controls="nav-contact"
+                            <a class="nav-item nav-link" id="ds-impr-nav-resp-lm-imprests-tab" data-toggle="tab"
+                                href="#ds-impr-nav-resp-lm-imprest-content" role="tab" aria-controls="nav-contact"
                                 aria-selected="false">Response from Line Manager</a>
                         </div>
                     </nav>
                     <div class="tab-content" id="ds-impr-nav-tabContent">
-                        <div class="tab-pane fade show active" id="ds-impr-nav-home" role="tabpanel"
+                        <div class="tab-pane fade show active" id="ds-impr-nav-my-imprests-content" role="tabpanel"
                             aria-labelledby="nav-home-tab">
                             <br />
                             <br />
@@ -3872,139 +4184,30 @@
                                 <div class="col-md-2">
                                     <div class="nav flex-column nav-pills" id="vds-ds-impr-pills-tab" role="tablist"
                                         aria-orientation="vertical">
-                                        <a class="nav-link active" id="vds-ds-impr-pills-home-tab" data-toggle="pill"
-                                            href="#vds-ds-impr-pills-home" role="tab" aria-controls="vdsreqs-pills-home"
-                                            aria-selected="true">Reviewed</a>
-                                        <a class="nav-link" id="vds-ds-impr-pills-profile-tab" data-toggle="pill"
-                                            href="#vds-ds-impr-pills-profile" role="tab"
-                                            aria-controls="vdsreqs-pills-profile" aria-selected="false">Approved</a>
-                                        <a class="nav-link" id="vds-ds-impr-pills-messages-tab" data-toggle="pill"
-                                            href="#vds-ds-impr-pills-messages" role="tab"
-                                            aria-controls="vdsreqs-pills-messages" aria-selected="false">Project Retirements</a>
-                                        <a class="nav-link" id="vds-ds-impr-pills-settings-tab" data-toggle="pill"
-                                            href="#vds-ds-impr-pills-settings" role="tab"
-                                            aria-controls="vdsreqs-pills-settings" aria-selected="false">All</a>
+                                        <a class="nav-link active" id="vds-ds-impr-pills-my-onreview-tab" data-toggle="pill"
+                                            href="#vds-ds-impr-pills-my-onreview-content" role="tab" aria-controls="vdsreqs-pills-my-onreview"
+                                            aria-selected="true">My Imprests on review</a>
+
+                                        <a class="nav-link" id="vds-ds-impr-pills-my-approved-tab" data-toggle="pill"
+                                            href="#vds-ds-impr-pills-my-approved-content" role="tab"
+                                            aria-controls="vdsreqs-pills-my-approved" aria-selected="false">My Imprests Approved</a>
+
+                                        <a class="nav-link" id="vds-ds-impr-pills-my-imprests-retirements-tab" data-toggle="pill"
+                                            href="#vds-ds-impr-pills-my-imprests-retirements-content" role="tab"
+                                            aria-controls="vdsreqs-pills-my-imprests-retirements" aria-selected="false">My Imprest
+                                            Retirements</a>
+
+                                        <a class="nav-link" id="vds-ds-impr-pills-all-my-imprests-tab" data-toggle="pill"
+                                            href="#vds-ds-impr-pills-all-my-imprests-content" role="tab"
+                                            aria-controls="vdsreqs-pills-all-my-imprests" aria-selected="false">All My Imprest</a>
                                     </div>
                                 </div>
                                 <div class="col-md-10">
 
                                     <div class="tab-content" id="vds-ds-impr-pills-tabContent">
-                                        <div class="tab-pane fade show active" id="vds-ds-impr-pills-home"
+                                        <div class="tab-pane fade show active" id="vds-ds-impr-pills-my-onreview-content"
                                             role="tabpanel" aria-labelledby="impr-pills-home-tab">
 
-                                                <div class="row">
-                                                    <div class="col-lg-12">
-                                                        <div class="card">
-
-                                                            <div class="card-content table-responsive">
-
-                                                                <br />
-                                                                <p>All my under imprests under review on <strong>Data Science</strong> pillar</p>
-
-                                                                <table class="table table-bordered table-hover">
-                                                                    <thead>
-                                                                        <tr>
-                                                                            <th scope="col">#</th>
-                                                                            <th scope="col">Title</th>
-                                                                            <th scope="col">Requested by</th>
-                                                                            <th scope="col">Request Type</th>
-                                                                            <th scope="col">Project Name</th>
-                                                                            <th scope="col"># Activities</th>
-                                                                            <th scope="col">Total Requested</th>
-                                                                            <th scope="col">Depature date</th>
-                                                                            <th scope="col">Return Date</th>
-                                                                            <th scope="col">Request stage</th>
-                                                                            <th scope="col">Date Created</th>
-                                                                            <th scope="col"></th>
-
-                                                                        </tr>
-                                                                    </thead>
-                                                                    <tbody>
-                                                                        <tr>
-                                                                            <th scope="row">1</th>
-                                                                            <td>Mark</td>
-                                                                            <td>Otto</td>
-                                                                            <td>Mark</td>
-                                                                            <td>Otto</td>
-                                                                            <td>Mark</td>
-                                                                            <td>Otto</td>
-                                                                            <td>Otto</td>
-                                                                            <td>Otto</td>
-                                                                            <td>@mdo</td>
-                                                                            <td>@mdo</td>
-                                                                            <td>
-                                                                                <button type="button" class="btn btn-outline-success">view
-                                                                                    request</button>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <th scope="row">2</th>
-                                                                            <td>Jacob</td>
-                                                                            <td>Thornton</td>
-                                                                            <td>Jacob</td>
-                                                                            <td>Thornton</td>
-                                                                            <td>Jacob</td>
-                                                                            <td>Otto</td>
-                                                                            <td>Thornton</td>
-                                                                            <td>Otto</td>
-                                                                            <td>@fat</td>
-                                                                            <td>@mdo</td>
-                                                                            <td>
-                                                                                <button type="button" class="btn btn-outline-success">view
-                                                                                    request</button>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <th scope="row">3</th>
-                                                                            <td>Larry</td>
-                                                                            <td> the Bird</td>
-                                                                            <td>Jacob</td>
-                                                                            <td>Thornton</td>
-                                                                            <td>Jacob</td>
-                                                                            <td>Thornton</td>
-                                                                            <td>Otto</td>
-                                                                            <td>Otto</td>
-                                                                            <td>@twitter</td>
-                                                                            <td>@mdo</td>
-                                                                            <td>
-                                                                                <button type="button" class="btn btn-outline-success">view
-                                                                                    details</button>
-                                                                            </td>
-
-                                                                        </tr>
-                                                                    </tbody>
-                                                                </table>
-                                                                <br />
-                                                                <nav aria-label="Page navigation example">
-                                                                    <ul class="pagination">
-                                                                        <li class="page-item">
-                                                                            <a class="page-link" href="#" aria-label="Previous">
-                                                                                <span aria-hidden="true">&laquo;</span>
-                                                                                <span class="sr-only">Previous</span>
-                                                                            </a>
-                                                                        </li>
-                                                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                                        <li class="page-item">
-                                                                            <a class="page-link" href="#" aria-label="Next">
-                                                                                <span aria-hidden="true">&raquo;</span>
-                                                                                <span class="sr-only">Next</span>
-                                                                            </a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </nav>
-
-
-                                                            </div>
-                                                        </div>
-                                                        <!-- end of SECOND column -->
-                                                    </div>
-
-                                                </div>
-                                        </div>
-                                        <div class="tab-pane fade" id="vds-ds-impr-pills-profile" role="tabpanel"
-                                            aria-labelledby="vdsreqs-pills-profile-tab">
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <div class="card">
@@ -4012,8 +4215,7 @@
                                                         <div class="card-content table-responsive">
 
                                                             <br />
-                                                            <p>All available projects under <strong>Data Science</strong> pillar</p>
-                                                            <p>Select one and create an imprest</p>
+                                                            <p>My Imprests on <strong>review</strong></p>
 
                                                             <table class="table table-bordered table-hover">
                                                                 <thead>
@@ -4047,7 +4249,8 @@
                                                                         <td>@mdo</td>
                                                                         <td>@mdo</td>
                                                                         <td>
-                                                                            <button type="button" class="btn btn-outline-success">view
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-success">view
                                                                                 request</button>
                                                                         </td>
                                                                     </tr>
@@ -4064,7 +4267,8 @@
                                                                         <td>@fat</td>
                                                                         <td>@mdo</td>
                                                                         <td>
-                                                                            <button type="button" class="btn btn-outline-success">view
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-success">view
                                                                                 request</button>
                                                                         </td>
                                                                     </tr>
@@ -4081,7 +4285,128 @@
                                                                         <td>@twitter</td>
                                                                         <td>@mdo</td>
                                                                         <td>
-                                                                            <button type="button" class="btn btn-outline-success">view
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-success">view
+                                                                                details</button>
+                                                                        </td>
+
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <br />
+                                                            <nav aria-label="Page navigation example">
+                                                                <ul class="pagination">
+                                                                    <li class="page-item">
+                                                                        <a class="page-link" href="#"
+                                                                            aria-label="Previous">
+                                                                            <span aria-hidden="true">&laquo;</span>
+                                                                            <span class="sr-only">Previous</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="page-item"><a class="page-link"
+                                                                            href="#">1</a></li>
+                                                                    <li class="page-item"><a class="page-link"
+                                                                            href="#">2</a></li>
+                                                                    <li class="page-item"><a class="page-link"
+                                                                            href="#">3</a></li>
+                                                                    <li class="page-item">
+                                                                        <a class="page-link" href="#" aria-label="Next">
+                                                                            <span aria-hidden="true">&raquo;</span>
+                                                                            <span class="sr-only">Next</span>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </nav>
+
+
+                                                        </div>
+                                                    </div>
+                                                    <!-- end of SECOND column -->
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="vds-ds-impr-pills-my-approved-content" role="tabpanel"
+                                            aria-labelledby="vdsreqs-pills-profile-tab">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="card">
+
+                                                        <div class="card-content table-responsive">
+
+                                                            <br />
+                                                            <p>My approved Imprests</p>
+
+                                                            <table class="table table-bordered table-hover">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col">#</th>
+                                                                        <th scope="col">Title</th>
+                                                                        <th scope="col">Requested by</th>
+                                                                        <th scope="col">Request Type</th>
+                                                                        <th scope="col">Project Name</th>
+                                                                        <th scope="col"># Activities</th>
+                                                                        <th scope="col">Total Requested</th>
+                                                                        <th scope="col">Depature date</th>
+                                                                        <th scope="col">Return Date</th>
+                                                                        <th scope="col">Request stage</th>
+                                                                        <th scope="col">Date Created</th>
+                                                                        <th scope="col"></th>
+
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <th scope="row">1</th>
+                                                                        <td>Mark</td>
+                                                                        <td>Otto</td>
+                                                                        <td>Mark</td>
+                                                                        <td>Otto</td>
+                                                                        <td>Mark</td>
+                                                                        <td>Otto</td>
+                                                                        <td>Otto</td>
+                                                                        <td>Otto</td>
+                                                                        <td>@mdo</td>
+                                                                        <td>@mdo</td>
+                                                                        <td>
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-success">view
+                                                                                request</button>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">2</th>
+                                                                        <td>Jacob</td>
+                                                                        <td>Thornton</td>
+                                                                        <td>Jacob</td>
+                                                                        <td>Thornton</td>
+                                                                        <td>Jacob</td>
+                                                                        <td>Otto</td>
+                                                                        <td>Thornton</td>
+                                                                        <td>Otto</td>
+                                                                        <td>@fat</td>
+                                                                        <td>@mdo</td>
+                                                                        <td>
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-success">view
+                                                                                request</button>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">3</th>
+                                                                        <td>Larry</td>
+                                                                        <td> the Bird</td>
+                                                                        <td>Jacob</td>
+                                                                        <td>Thornton</td>
+                                                                        <td>Jacob</td>
+                                                                        <td>Thornton</td>
+                                                                        <td>Otto</td>
+                                                                        <td>Otto</td>
+                                                                        <td>@twitter</td>
+                                                                        <td>@mdo</td>
+                                                                        <td>
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-success">view
                                                                                 request</button>
                                                                         </td>
 
@@ -4092,14 +4417,18 @@
                                                             <nav aria-label="Page navigation example">
                                                                 <ul class="pagination">
                                                                     <li class="page-item">
-                                                                        <a class="page-link" href="#" aria-label="Previous">
+                                                                        <a class="page-link" href="#"
+                                                                            aria-label="Previous">
                                                                             <span aria-hidden="true">&laquo;</span>
                                                                             <span class="sr-only">Previous</span>
                                                                         </a>
                                                                     </li>
-                                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                                    <li class="page-item"><a class="page-link"
+                                                                            href="#">1</a></li>
+                                                                    <li class="page-item"><a class="page-link"
+                                                                            href="#">2</a></li>
+                                                                    <li class="page-item"><a class="page-link"
+                                                                            href="#">3</a></li>
                                                                     <li class="page-item">
                                                                         <a class="page-link" href="#" aria-label="Next">
                                                                             <span aria-hidden="true">&raquo;</span>
@@ -4118,7 +4447,7 @@
                                             </div>
 
                                         </div>
-                                        <div class="tab-pane fade" id="vds-ds-impr-pills-messages" role="tabpanel"
+                                        <div class="tab-pane fade" id="vds-ds-impr-pills-my-imprests-retirements-content" role="tabpanel"
                                             aria-labelledby="vdsreqs-pills-messages-tab">
 
                                             <div class="row">
@@ -4128,8 +4457,7 @@
                                                         <div class="card-content table-responsive">
 
                                                             <br />
-                                                            <p>All available projects under <strong>Data Science</strong> pillar</p>
-                                                            <p>Select one and create an imprest</p>
+                                                            <p>My Imprests retirements</p>
 
                                                             <table class="table table-bordered table-hover">
                                                                 <thead>
@@ -4163,7 +4491,8 @@
                                                                         <td>@mdo</td>
                                                                         <td>@mdo</td>
                                                                         <td>
-                                                                            <button type="button" class="btn btn-outline-success">view
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-success">view
                                                                                 request</button>
                                                                         </td>
                                                                     </tr>
@@ -4180,7 +4509,8 @@
                                                                         <td>@fat</td>
                                                                         <td>@mdo</td>
                                                                         <td>
-                                                                            <button type="button" class="btn btn-outline-success">view
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-success">view
                                                                                 request</button>
                                                                         </td>
                                                                     </tr>
@@ -4197,7 +4527,8 @@
                                                                         <td>@twitter</td>
                                                                         <td>@mdo</td>
                                                                         <td>
-                                                                            <button type="button" class="btn btn-outline-success">view
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-success">view
                                                                                 request</button>
                                                                         </td>
 
@@ -4208,14 +4539,18 @@
                                                             <nav aria-label="Page navigation example">
                                                                 <ul class="pagination">
                                                                     <li class="page-item">
-                                                                        <a class="page-link" href="#" aria-label="Previous">
+                                                                        <a class="page-link" href="#"
+                                                                            aria-label="Previous">
                                                                             <span aria-hidden="true">&laquo;</span>
                                                                             <span class="sr-only">Previous</span>
                                                                         </a>
                                                                     </li>
-                                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                                    <li class="page-item"><a class="page-link"
+                                                                            href="#">1</a></li>
+                                                                    <li class="page-item"><a class="page-link"
+                                                                            href="#">2</a></li>
+                                                                    <li class="page-item"><a class="page-link"
+                                                                            href="#">3</a></li>
                                                                     <li class="page-item">
                                                                         <a class="page-link" href="#" aria-label="Next">
                                                                             <span aria-hidden="true">&raquo;</span>
@@ -4235,7 +4570,7 @@
 
 
                                         </div>
-                                        <div class="tab-pane fade" id="vds-ds-impr-pills-settings" role="tabpanel"
+                                        <div class="tab-pane fade" id="vds-ds-impr-pills-all-my-imprests-content" role="tabpanel"
                                             aria-labelledby="vdsreqs-pills-settings-tab">
 
                                             <div class="row">
@@ -4245,8 +4580,7 @@
                                                         <div class="card-content table-responsive">
 
                                                             <br />
-                                                            <p>All available projects under <strong>Data Science</strong> pillar</p>
-                                                            <p>Select one and create an imprest</p>
+                                                            <p>All My Imprests</p>
 
                                                             <table class="table table-bordered table-hover">
                                                                 <thead>
@@ -4280,7 +4614,8 @@
                                                                         <td>@mdo</td>
                                                                         <td>@mdo</td>
                                                                         <td>
-                                                                            <button type="button" class="btn btn-outline-success">view
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-success">view
                                                                                 request</button>
                                                                         </td>
                                                                     </tr>
@@ -4297,7 +4632,8 @@
                                                                         <td>@fat</td>
                                                                         <td>@mdo</td>
                                                                         <td>
-                                                                            <button type="button" class="btn btn-outline-success">view
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-success">view
                                                                                 request</button>
                                                                         </td>
                                                                     </tr>
@@ -4314,7 +4650,8 @@
                                                                         <td>@twitter</td>
                                                                         <td>@mdo</td>
                                                                         <td>
-                                                                            <button type="button" class="btn btn-outline-success">view
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-success">view
                                                                                 request</button>
                                                                         </td>
 
@@ -4325,14 +4662,18 @@
                                                             <nav aria-label="Page navigation example">
                                                                 <ul class="pagination">
                                                                     <li class="page-item">
-                                                                        <a class="page-link" href="#" aria-label="Previous">
+                                                                        <a class="page-link" href="#"
+                                                                            aria-label="Previous">
                                                                             <span aria-hidden="true">&laquo;</span>
                                                                             <span class="sr-only">Previous</span>
                                                                         </a>
                                                                     </li>
-                                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                                    <li class="page-item"><a class="page-link"
+                                                                            href="#">1</a></li>
+                                                                    <li class="page-item"><a class="page-link"
+                                                                            href="#">2</a></li>
+                                                                    <li class="page-item"><a class="page-link"
+                                                                            href="#">3</a></li>
                                                                     <li class="page-item">
                                                                         <a class="page-link" href="#" aria-label="Next">
                                                                             <span aria-hidden="true">&raquo;</span>
@@ -4356,7 +4697,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="ds-impr-nav-profile" role="tabpanel"
+                        <div class="tab-pane fade" id="ds-impr-nav-staff-imprests-content" role="tabpanel"
                             aria-labelledby="nav-profile-tab">
                             <br />
                             <br />
@@ -4365,26 +4706,34 @@
                                 <div class="col-md-2">
                                     <div class="nav flex-column nav-pills" id="vds-ds-impr-staff-pills-tab"
                                         role="tablist" aria-orientation="vertical">
-                                        <a class="nav-link active" id="vds-ds-impr-staff-pills-home-tab"
-                                            data-toggle="pill" href="#vds-ds-impr-staff-pills-home" role="tab"
-                                            aria-controls="vds-staff-reqs-pills-home" aria-selected="true">Reviewed</a>
-                                        <a class="nav-link" id="vds-ds-impr-staff-pills-profile-tab" data-toggle="pill"
-                                            href="#vds-ds-impr-staff-pills-profile" role="tab"
+                                        <a class="nav-link active" id="vds-ds-impr-staff-pills-for-review-tab"
+                                            data-toggle="pill" href="#vds-ds-impr-staff-pills-for-review-content" role="tab"
+                                            aria-controls="vds-staff-reqs-pills-for-review" aria-selected="true">Staff Imprests need your review</a>
+
+                                      <a class="nav-link" id="vds-ds-impr-staff-pills-on-admin-review-tab" data-toggle="pill"
+                                            href="#vds-ds-impr-staff-pills-on-admin-review-content" role="tab"
+                                            aria-controls="vds-staff-reqs-pills-on-admin-review"
+                                            aria-selected="false">Staff Imprests on Admin review</a>
+
+                                        <a class="nav-link" id="vds-ds-impr-staff-pills-approved-tab" data-toggle="pill"
+                                            href="#vds-ds-impr-staff-pills-approved-content" role="tab"
                                             aria-controls="vds-staff-reqs-pills-profile"
-                                            aria-selected="false">Approved</a>
-                                        <a class="nav-link" id="vds-ds-impr-staff-pills-messages-tab" data-toggle="pill"
-                                            href="#vds-ds-impr-staff-pills-messages" role="tab"
-                                            aria-controls="vds-staff-reqs-pills-messages"
-                                            aria-selected="false">Retirements</a>
-                                        <a class="nav-link" id="vds-ds-impr-staff-pills-settings-tab" data-toggle="pill"
-                                            href="#vds-ds-impr-staff-pills-settings" role="tab"
-                                            aria-controls="vds-staff-reqs-pills-settings" aria-selected="false">All</a>
+                                            aria-selected="false">Staff Imprests Approved</a>
+
+                                        <a class="nav-link" id="vds-ds-impr-staff-pills-retirements-tab" data-toggle="pill"
+                                            href="#vds-ds-impr-staff-pills-retirements-content" role="tab"
+                                            aria-controls="vds-staff-reqs-pills-retirements"
+                                            aria-selected="false">Staff Imprest Retirements</a>
+
+                                        <a class="nav-link" id="vds-ds-impr-staff-pills-all-imprests-tab" data-toggle="pill"
+                                            href="#vds-ds-impr-staff-pills-all-imprests-content" role="tab"
+                                            aria-controls="vds-staff-reqs-pills-settings" aria-selected="false">All Staff Imprests</a>
                                     </div>
                                 </div>
                                 <div class="col-md-10">
 
                                     <div class="tab-content" id="vds-ds-impr-tabContent">
-                                        <div class="tab-pane fade show active" id="vds-ds-impr-staff-pills-home"
+                                        <div class="tab-pane fade show active" id="vds-ds-impr-staff-pills-for-review-content"
                                             role="tabpanel" aria-labelledby="vds-ds-rtrmt-staff-pills-home-tab">
 
                                             {{-- my retirements --}}
@@ -4394,7 +4743,8 @@
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>reviewed.</strong></p>
+                                                                <p>Staff Imprests that require your review
+                                                                    </p>
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">#</th>
@@ -4497,7 +4847,8 @@
 
                                             </div>
                                         </div>
-                                        <div class="tab-pane fade" id="vds-ds-impr-staff-pills-profile" role="tabpanel"
+
+                                        <div class="tab-pane fade" id="vds-ds-impr-staff-pills-on-admin-review-content" role="tabpanel"
                                             aria-labelledby="vds-ds-rtrmt-staff-pills-profile-tab">
 
                                             {{-- my retirements --}}
@@ -4507,7 +4858,7 @@
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>reviewed.</strong></p>
+                                                                <p>Staff Imprests that are on adminstration <strong>review</strong></p>
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">#</th>
@@ -4610,7 +4961,121 @@
 
                                             </div>
                                         </div>
-                                        <div class="tab-pane fade" id="vds-ds-impr-staff-pills-messages" role="tabpanel"
+                                        <div class="tab-pane fade" id="vds-ds-impr-staff-pills-approved-content" role="tabpanel"
+                                            aria-labelledby="vds-ds-rtrmt-staff-pills-profile-tab">
+
+                                            {{-- my retirements --}}
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="card">
+                                                        <div class="card-content table-responsive">
+                                                            <br />
+                                                            <table class="table table-bordered table-hover">
+                                                                <p>Staff imprests Approved by
+                                                                    <strong>Adminstration.</strong></p>
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th scope="col">#</th>
+                                                                        <th scope="col">Requested by</th>
+                                                                        <th scope="col-md-4">Title</th>
+                                                                        <th scope="col">Request Type</th>
+                                                                        <th scope="col">Under Project</th>
+                                                                        <th scope="col"># of approvals</th>
+                                                                        <th scope="col">Total Cost</th>
+                                                                        <th scope="col">Date created</th>
+
+                                                                        <th scope="col"></th>
+
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <th scope="row">1</th>
+                                                                        <td>MarkCuban</td>
+                                                                        <td>Data visualisation in Mbeya</td>
+                                                                        <td>Training</td>
+                                                                        <td>Sauti Mpya</td>
+                                                                        <td>0</td>
+                                                                        <td>2,300,000 <span
+                                                                                class="badge badge-success">TZS</span>
+                                                                        </td>
+                                                                        <td>2019-09-11</td>
+                                                                        <td>
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-success">view
+                                                                                request</button>
+                                                                        </td>
+                                                                    </tr>
+
+                                                                    <tr>
+                                                                        <th scope="row">4</th>
+                                                                        <td>Jane Sharpe</td>
+                                                                        <td>Data Mining in Dar</td>
+                                                                        <td>Training</td>
+                                                                        <td>Data Zetu</td>
+                                                                        <td>0</td>
+                                                                        <td>6,600,000 <span
+                                                                                class="badge badge-success">TZS</span>
+                                                                        </td>
+                                                                        <td>2019-09-11</td>
+                                                                        <td>
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-success">view
+                                                                                request</button>
+                                                                        </td>
+                                                                    </tr>
+
+                                                                    <tr>
+                                                                        <th scope="row">3</th>
+                                                                        <td>Mary Poppins</td>
+                                                                        <td>Data Analyis and Mining</td>
+                                                                        <td>Training</td>
+                                                                        <td>Sauti Mpya</td>
+                                                                        <td>0</td>
+                                                                        <td>8,700,000 <span
+                                                                                class="badge badge-success">TZS</span>
+                                                                        </td>
+                                                                        <td>2019-09-11</td>
+                                                                        <td>
+                                                                            <button type="button"
+                                                                                class="btn btn-outline-success">view
+                                                                                request</button>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <br />
+                                                            <nav aria-label="Page navigation example">
+                                                                <ul class="pagination">
+                                                                    <li class="page-item">
+                                                                        <a class="page-link" href="#"
+                                                                            aria-label="Previous">
+                                                                            <span aria-hidden="true">&laquo;</span>
+                                                                            <span class="sr-only">Previous</span>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="page-item"><a class="page-link"
+                                                                            href="#">1</a></li>
+                                                                    <li class="page-item"><a class="page-link"
+                                                                            href="#">2</a></li>
+                                                                    <li class="page-item"><a class="page-link"
+                                                                            href="#">3</a></li>
+                                                                    <li class="page-item">
+                                                                        <a class="page-link" href="#" aria-label="Next">
+                                                                            <span aria-hidden="true">&raquo;</span>
+                                                                            <span class="sr-only">Next</span>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </nav>
+                                                        </div>
+                                                    </div>
+                                                    <!-- end of SECOND column -->
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="vds-ds-impr-staff-pills-retirements-content" role="tabpanel"
                                             aria-labelledby="vds-ds-rtrmt-staff-pills-messages-tab">
 
                                             {{-- my retirements --}}
@@ -4620,7 +5085,8 @@
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>reviewed.</strong></p>
+                                                                <p>Staff imprest
+                                                                    <strong>retirements.</strong></p>
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">#</th>
@@ -4724,7 +5190,7 @@
                                             </div>
 
                                         </div>
-                                        <div class="tab-pane fade" id="vds-ds-impr-staff-pills-settings" role="tabpanel"
+                                        <div class="tab-pane fade" id="vds-ds-impr-staff-pills-all-imprests-content" role="tabpanel"
                                             aria-labelledby="vds-ds-rtrmt-staff-pills-settings-tab">
 
                                             {{-- my retirements --}}
@@ -4734,7 +5200,8 @@
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>reviewed.</strong></p>
+                                                                <p>All Staff
+                                                                    <strong>imprests.</strong></p>
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">#</th>
@@ -4841,7 +5308,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="ds-impr-nav-contact" role="tabpanel"
+                        <div class="tab-pane fade" id="ds-impr-nav-resp-lm-imprest-content" role="tabpanel"
                             aria-labelledby="nav-contact-tab">
                             <br />
                             <br />
@@ -4850,25 +5317,28 @@
                                 <div class="col-md-2">
                                     <div class="nav flex-column nav-pills" id="vds-ds-impr-ed-pills-tab" role="tablist"
                                         aria-orientation="vertical">
-                                        <a class="nav-link active" id="vds-ds-impr-ed-pills-home-tab" data-toggle="pill"
-                                            href="#vds-ds-impr-ed-pills-home" role="tab"
-                                            aria-controls="vds-ed-reqs-pills-home" aria-selected="true">Reviewed</a>
-                                        <a class="nav-link" id="vds-ds-impr-ed-pills-profile-tab" data-toggle="pill"
-                                            href="#vds-ds-impr-ed-pills-profile" role="tab"
-                                            aria-controls="vds-ed-reqs-pills-profile" aria-selected="false">Approved</a>
-                                        <a class="nav-link" id="vds-ds-impr-ed-pills-messages-tab" data-toggle="pill"
-                                            href="#vds-ds-impr-ed-pills-messages" role="tab"
-                                            aria-controls="vds-ed-reqs-pills-messages"
-                                            aria-selected="false">Retirements</a>
-                                        <a class="nav-link" id="vds-ds-impr-ed-pills-settings-tab" data-toggle="pill"
-                                            href="#vds-ds-impr-ed-pills-settings" role="tab"
-                                            aria-controls="vds-ed-reqs-pills-settings" aria-selected="false">All</a>
+                                        <a class="nav-link active" id="vds-ds-impr-ed-pills-reviewed-tab" data-toggle="pill"
+                                            href="#vds-ds-impr-ed-pills-reviewed-content" role="tab"
+                                            aria-controls="vds-ed-reqs-pills-reviewed" aria-selected="true">Reviewed</a>
+
+                                        <a class="nav-link" id="vds-ds-impr-ed-pills-approved-tab" data-toggle="pill"
+                                            href="#vds-ds-impr-ed-pills-approved-content" role="tab"
+                                            aria-controls="vds-ed-reqs-pills-approved" aria-selected="false">Approved</a>
+
+                                        <a class="nav-link" id="vds-ds-impr-ed-pills-denied-tab" data-toggle="pill"
+                                            href="#vds-ds-impr-ed-pills-denied-content" role="tab"
+                                            aria-controls="vds-ed-reqs-pills-denied"
+                                            aria-selected="false">Denied</a>
+
+                                        <a class="nav-link" id="vds-ds-impr-ed-pills-all-tab" data-toggle="pill"
+                                            href="#vds-ds-impr-ed-pills-all-content" role="tab"
+                                            aria-controls="vds-ed-reqs-pills-all" aria-selected="false">All</a>
                                     </div>
                                 </div>
                                 <div class="col-md-10">
 
                                     <div class="tab-content" id="vds-ds-impr-ed-pills-tabContent">
-                                        <div class="tab-pane fade show active" id="vds-ds-impr-ed-pills-home"
+                                        <div class="tab-pane fade show active" id="vds-ds-impr-ed-pills-reviewed-content"
                                             role="tabpanel" aria-labelledby="vds-ed-reqs-pills-home-tab">
 
                                             {{-- my retirements --}}
@@ -4878,7 +5348,7 @@
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>reviewed.</strong></p>
+                                                                <p>My imprest reviewed by <strong>Line Manager</strong></p>
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">#</th>
@@ -4981,8 +5451,8 @@
 
                                             </div>
                                         </div>
-                                        <div class="tab-pane fade" id="vds-ds-impr-ed-pills-profile" role="tabpanel"
-                                            aria-labelledby="vdsreqs-pills-profile-tab">
+                                        <div class="tab-pane fade" id="vds-ds-impr-ed-pills-approved-content" role="tabpanel"
+                                            aria-labelledby="vdsreqs-pills-approved-tab">
 
 
                                             {{-- my retirements --}}
@@ -4992,7 +5462,8 @@
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>reviewed.</strong></p>
+                                                                <p>My imprest approved by <strong>Line Manager</strong></p>
+
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">#</th>
@@ -5097,7 +5568,7 @@
 
 
                                         </div>
-                                        <div class="tab-pane fade" id="vds-ds-impr-ed-pills-messages" role="tabpanel"
+                                        <div class="tab-pane fade" id="vds-ds-impr-ed-pills-denied-content" role="tabpanel"
                                             aria-labelledby="vdsreqs-pills-messages-tab">
 
                                             {{-- my retirements --}}
@@ -5107,7 +5578,8 @@
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>reviewed.</strong></p>
+                                                                <p>My imprest denied by <strong>Line Manager</strong></p>
+
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">#</th>
@@ -5211,7 +5683,7 @@
                                             </div>
 
                                         </div>
-                                        <div class="tab-pane fade" id="vds-ds-impr-ed-pills-settings" role="tabpanel"
+                                        <div class="tab-pane fade" id="vds-ds-impr-ed-pills-all-content" role="tabpanel"
                                             aria-labelledby="vdsreqs-pills-settings-tab">
 
 
@@ -5222,7 +5694,8 @@
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>reviewed.</strong></p>
+                                                                <p>All Imprests authorised by <strong>Line Manager</strong></p>
+
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">#</th>
@@ -5337,99 +5810,413 @@
         <!--
          ========================================
          =                                      =
-         =       start of scholars and grantees =
+         =       start of download-forms =
          ======================================== -->
-        <!-- start of scholar and grantees data panel -->
+        <!-- start of download-forms data panel -->
         <div class="tab-pane fade" id="download-forms-md" role="tabpanel" aria-labelledby="download-forms-tab-md">
-            <h4>Forms and Downloadable Materials</h4>
-            <br />
-            <br />
-            <br />
-
+            {{-- my ds requests --}}
             <div class="row">
-                <div class="col-md-3">
-                    <div class="card" style="width: 20rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Travel allowance form</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Finance Category</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <a href="#" class="card-link">Preview Form</a>
-                            <a href="#" class="btn btn-primary">Download Form</a>
-                        </div>
+                <div class="col-md-2">
+                    <div class="nav flex-column nav-pills" id="vds-ds-pna-ed-pills-tab" role="tablist"
+                        aria-orientation="vertical">
+                        <a class="nav-link active" id="vds-ds-pna-ed-pills-home-tab" data-toggle="pill"
+                            href="#vds-ds-pna-ed-pills-home" role="tab" aria-controls="vds-ed-reqs-pills-home"
+                            aria-selected="true">Administration Forms</a>
+                        <a class="nav-link" id="vds-ds-pna-ed-pills-profile-tab" data-toggle="pill"
+                            href="#vds-ds-pna-ed-pills-profile" role="tab" aria-controls="vds-ed-reqs-pills-profile"
+                            aria-selected="false">Finance Forms</a>
+                        <a class="nav-link" id="vds-ds-pna-ed-pills-messages-tab" data-toggle="pill"
+                            href="#vds-ds-pna-ed-pills-messages" role="tab" aria-controls="vds-ed-reqs-pills-messages"
+                            aria-selected="false">Personal official forms</a>
+                        <a class="nav-link" id="vds-ds-pna-ed-pills-settings-tab" data-toggle="pill"
+                            href="#vds-ds-pna-ed-pills-settings" role="tab" aria-controls="vds-ed-reqs-pills-settings"
+                            aria-selected="false">All</a>
                     </div>
-
                 </div>
-                <div class="col-md-3">
-                    <div class="card" style="width: 20rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Transport allowance form</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Finance Category</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <a href="#" class="card-link">Preview Form</a>
-                            <a href="#" class="btn btn-primary">Download Form</a>
+                <div class="col-md-10">
+                    <div class="tab-content" id="vds-ds-pna-ed-pills-tabContent">
+                        <div class="tab-pane fade show active" id="vds-ds-pna-ed-pills-home" role="tabpanel"
+                            aria-labelledby="vds-ed-reqs-pills-home-tab">
+                            <h4>Administration Forms</h4>
+                            <br />
+
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="card" style="width: 20rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Travel allowance form</h5>
+                                            <h6 class="card-subtitle mb-2 text-muted">Finance Category</h6>
+                                            <p class="card-text">Some quick example text to build on the card title and
+                                                make up the bulk
+                                                of the card's content.</p>
+                                            <a href="#" class="card-link">Preview Form</a>
+                                            <a href="#" class="btn btn-primary">Download Form</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card" style="width: 20rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Transport allowance form</h5>
+                                            <h6 class="card-subtitle mb-2 text-muted">Finance Category</h6>
+                                            <p class="card-text">Some quick example text to build on the card title and
+                                                make up the bulk
+                                                of the card's content.</p>
+                                            <a href="#" class="card-link">Preview Form</a>
+                                            <a href="#" class="btn btn-primary">Download Form</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card" style="width: 20rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Per diem form</h5>
+                                            <h6 class="card-subtitle mb-2 text-muted">Finance Category</h6>
+                                            <p class="card-text">Some quick example text to build on the card title and
+                                                make up the bulk
+                                                of the card's content.</p>
+                                            <a href="#" class="card-link">Preview Form</a>
+                                            <a href="#" class="btn btn-primary">Download Form</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card" style="width: 20rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Imprest request form</h5>
+                                            <h6 class="card-subtitle mb-2 text-muted">Finance Category</h6>
+                                            <p class="card-text">Some quick example text to build on the card title and
+                                                make up the bulk
+                                                of the card's content.</p>
+                                            <a href="#" class="card-link">Preview Form</a>
+                                            <a href="#" class="btn btn-primary">Download Form</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card" style="width: 20rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title"> Daily attendance form</h5>
+                                            <h6 class="card-subtitle mb-2 text-muted">Finance Category</h6>
+                                            <p class="card-text">Some quick example text to build on the card title and
+                                                make up the bulk
+                                                of the card's content.</p>
+                                            <a href="#" class="card-link">Preview Form</a>
+                                            <a href="#" class="btn btn-primary">Download Form</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="card" style="width: 20rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title"> First time attendance form</h5>
+                                            <h6 class="card-subtitle mb-2 text-muted">Finance Category</h6>
+                                            <p class="card-text">Some quick example text to build on the card title and
+                                                make up the bulk
+                                                of the card's content.</p>
+                                            <a href="#" class="card-link">Preview Form</a>
+                                            <a href="#" class="btn btn-primary">Download Form</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="tab-pane fade" id="vds-ds-pna-ed-pills-profile" role="tabpanel"
+                            aria-labelledby="vdsreqs-pills-profile-tab">
+                            <h4> Accounting and Finance forms</h4>
+                            <br />
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="card" style="width: 20rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Travel allowance form</h5>
+                                            <h6 class="card-subtitle mb-2 text-muted">Finance Category</h6>
+                                            <p class="card-text">Some quick example text to build on the card title and
+                                                make up the bulk
+                                                of the card's content.</p>
+                                            <a href="#" class="card-link">Preview Form</a>
+                                            <a href="#" class="btn btn-primary">Download Form</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card" style="width: 20rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Transport allowance form</h5>
+                                            <h6 class="card-subtitle mb-2 text-muted">Finance Category</h6>
+                                            <p class="card-text">Some quick example text to build on the card title and
+                                                make up the bulk
+                                                of the card's content.</p>
+                                            <a href="#" class="card-link">Preview Form</a>
+                                            <a href="#" class="btn btn-primary">Download Form</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card" style="width: 20rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Per diem form</h5>
+                                            <h6 class="card-subtitle mb-2 text-muted">Finance Category</h6>
+                                            <p class="card-text">Some quick example text to build on the card title and
+                                                make up the bulk
+                                                of the card's content.</p>
+                                            <a href="#" class="card-link">Preview Form</a>
+                                            <a href="#" class="btn btn-primary">Download Form</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card" style="width: 20rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Imprest request form</h5>
+                                            <h6 class="card-subtitle mb-2 text-muted">Finance Category</h6>
+                                            <p class="card-text">Some quick example text to build on the card title and
+                                                make up the bulk
+                                                of the card's content.</p>
+                                            <a href="#" class="card-link">Preview Form</a>
+                                            <a href="#" class="btn btn-primary">Download Form</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card" style="width: 20rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title"> Daily attendance form</h5>
+                                            <h6 class="card-subtitle mb-2 text-muted">Finance Category</h6>
+                                            <p class="card-text">Some quick example text to build on the card title and
+                                                make up the bulk
+                                                of the card's content.</p>
+                                            <a href="#" class="card-link">Preview Form</a>
+                                            <a href="#" class="btn btn-primary">Download Form</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="card" style="width: 20rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title"> First time attendance form</h5>
+                                            <h6 class="card-subtitle mb-2 text-muted">Finance Category</h6>
+                                            <p class="card-text">Some quick example text to build on the card title and
+                                                make up the bulk
+                                                of the card's content.</p>
+                                            <a href="#" class="card-link">Preview Form</a>
+                                            <a href="#" class="btn btn-primary">Download Form</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="tab-pane fade" id="vds-ds-pna-ed-pills-messages" role="tabpanel"
+                            aria-labelledby="vdsreqs-pills-messages-tab">
+                            <h4> Personal Official forms</h4>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="card" style="width: 20rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Travel allowance form</h5>
+                                            <h6 class="card-subtitle mb-2 text-muted">Finance Category</h6>
+                                            <p class="card-text">Some quick example text to build on the card title and
+                                                make up the bulk
+                                                of the card's content.</p>
+                                            <a href="#" class="card-link">Preview Form</a>
+                                            <a href="#" class="btn btn-primary">Download Form</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card" style="width: 20rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Transport allowance form</h5>
+                                            <h6 class="card-subtitle mb-2 text-muted">Finance Category</h6>
+                                            <p class="card-text">Some quick example text to build on the card title and
+                                                make up the bulk
+                                                of the card's content.</p>
+                                            <a href="#" class="card-link">Preview Form</a>
+                                            <a href="#" class="btn btn-primary">Download Form</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card" style="width: 20rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Per diem form</h5>
+                                            <h6 class="card-subtitle mb-2 text-muted">Finance Category</h6>
+                                            <p class="card-text">Some quick example text to build on the card title and
+                                                make up the bulk
+                                                of the card's content.</p>
+                                            <a href="#" class="card-link">Preview Form</a>
+                                            <a href="#" class="btn btn-primary">Download Form</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card" style="width: 20rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Imprest request form</h5>
+                                            <h6 class="card-subtitle mb-2 text-muted">Finance Category</h6>
+                                            <p class="card-text">Some quick example text to build on the card title and
+                                                make up the bulk
+                                                of the card's content.</p>
+                                            <a href="#" class="card-link">Preview Form</a>
+                                            <a href="#" class="btn btn-primary">Download Form</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card" style="width: 20rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title"> Daily attendance form</h5>
+                                            <h6 class="card-subtitle mb-2 text-muted">Finance Category</h6>
+                                            <p class="card-text">Some quick example text to build on the card title and
+                                                make up the bulk
+                                                of the card's content.</p>
+                                            <a href="#" class="card-link">Preview Form</a>
+                                            <a href="#" class="btn btn-primary">Download Form</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="card" style="width: 20rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title"> First time attendance form</h5>
+                                            <h6 class="card-subtitle mb-2 text-muted">Finance Category</h6>
+                                            <p class="card-text">Some quick example text to build on the card title and
+                                                make up the bulk
+                                                of the card's content.</p>
+                                            <a href="#" class="card-link">Preview Form</a>
+                                            <a href="#" class="btn btn-primary">Download Form</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="tab-pane fade" id="vds-ds-pna-ed-pills-settings" role="tabpanel"
+                            aria-labelledby="vdsreqs-pills-settings-tab">
+                            <h4> All official forms</h4>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="card" style="width: 20rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Travel allowance form</h5>
+                                            <h6 class="card-subtitle mb-2 text-muted">Finance Category</h6>
+                                            <p class="card-text">Some quick example text to build on the card title and
+                                                make up the bulk
+                                                of the card's content.</p>
+                                            <a href="#" class="card-link">Preview Form</a>
+                                            <a href="#" class="btn btn-primary">Download Form</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card" style="width: 20rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Transport allowance form</h5>
+                                            <h6 class="card-subtitle mb-2 text-muted">Finance Category</h6>
+                                            <p class="card-text">Some quick example text to build on the card title and
+                                                make up the bulk
+                                                of the card's content.</p>
+                                            <a href="#" class="card-link">Preview Form</a>
+                                            <a href="#" class="btn btn-primary">Download Form</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card" style="width: 20rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Per diem form</h5>
+                                            <h6 class="card-subtitle mb-2 text-muted">Finance Category</h6>
+                                            <p class="card-text">Some quick example text to build on the card title and
+                                                make up the bulk
+                                                of the card's content.</p>
+                                            <a href="#" class="card-link">Preview Form</a>
+                                            <a href="#" class="btn btn-primary">Download Form</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card" style="width: 20rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Imprest request form</h5>
+                                            <h6 class="card-subtitle mb-2 text-muted">Finance Category</h6>
+                                            <p class="card-text">Some quick example text to build on the card title and
+                                                make up the bulk
+                                                of the card's content.</p>
+                                            <a href="#" class="card-link">Preview Form</a>
+                                            <a href="#" class="btn btn-primary">Download Form</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card" style="width: 20rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title"> Daily attendance form</h5>
+                                            <h6 class="card-subtitle mb-2 text-muted">Finance Category</h6>
+                                            <p class="card-text">Some quick example text to build on the card title and
+                                                make up the bulk
+                                                of the card's content.</p>
+                                            <a href="#" class="card-link">Preview Form</a>
+                                            <a href="#" class="btn btn-primary">Download Form</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="card" style="width: 20rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title"> First time attendance form</h5>
+                                            <h6 class="card-subtitle mb-2 text-muted">Finance Category</h6>
+                                            <p class="card-text">Some quick example text to build on the card title and
+                                                make up the bulk
+                                                of the card's content.</p>
+                                            <a href="#" class="card-link">Preview Form</a>
+                                            <a href="#" class="btn btn-primary">Download Form</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
                         </div>
                     </div>
-
-                </div>
-                <div class="col-md-3">
-                    <div class="card" style="width: 20rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Per diem form</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Finance Category</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <a href="#" class="card-link">Preview Form</a>
-                            <a href="#" class="btn btn-primary">Download Form</a>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-md-3">
-                    <div class="card" style="width: 20rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">Imprest request form</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Finance Category</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <a href="#" class="card-link">Preview Form</a>
-                            <a href="#" class="btn btn-primary">Download Form</a>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-md-3">
-                    <div class="card" style="width: 20rem;">
-                        <div class="card-body">
-                            <h5 class="card-title"> Daily attendance form</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Finance Category</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <a href="#" class="card-link">Preview Form</a>
-                            <a href="#" class="btn btn-primary">Download Form</a>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="col-md-3">
-                    <div class="card" style="width: 20rem;">
-                        <div class="card-body">
-                            <h5 class="card-title"> First time attendance form</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Finance Category</h6>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <a href="#" class="card-link">Preview Form</a>
-                            <a href="#" class="btn btn-primary">Download Form</a>
-                        </div>
-                    </div>
-
                 </div>
             </div>
 
+
         </div>
-        <!-- end of scholar and grantees data panel -->
+        <!-- end of download-forms data panel -->
 
 
         <!--
@@ -5441,406 +6228,553 @@
         <div class="tab-pane fade" id="projects-nactivities-md" role="tabpanel"
             aria-labelledby="projects-nactivities-tab-md">
             <br />
-
+            {{-- my ds requests --}}
             <div class="row">
                 <div class="col-md-2">
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#newDsProject">
-                        create a new project
-                    </button>
-                    <br />
-                    <br />
-                </div>
-                <div class="col-md-2">
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#newDsActivity">
-                        create activity
-                    </button>
-                    <br />
-                    <br />
-                </div>
-                <div class="col-md-2">
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#newDsActivity">
-                        create a sub activity
-                    </button>
-                    <br />
-                    <br />
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
+                    <div class="nav flex-column nav-pills" id="vds-ds-proj-pills-tab" role="tablist"
+                        aria-orientation="vertical">
+                        <a class="nav-link active" id="vds-ds-pna-pills-proj-tab" data-toggle="pill"
+                            href="#vds-ds-pna-pills-proj" role="tab" aria-controls="vdsreqs-pills-proj"
+                            aria-selected="true">Projects</a>
 
-                    <nav>
-                        <div class="nav nav-tabs" id="ds-pna-nav-tab" role="tablist">
-                            <a class="nav-item nav-link active" id="ds-pna-nav-home-tab" data-toggle="tab"
-                                href="#ds-pna-nav-home" role="tab" aria-controls="nav-home" aria-selected="true">My
-                                Projects</a>
-                            <a class="nav-item nav-link" id="ds-pna-nav-profile-tab" data-toggle="tab"
-                                href="#ds-pna-nav-profile" role="tab" aria-controls="nav-profile"
-                                aria-selected="false">Staff Activities</a>
-                            <a class="nav-item nav-link" id="ds-pna-nav-profile-tab" data-toggle="tab"
-                                href="#ds-pna-nav-sub-act" role="tab" aria-controls="nav-profile"
-                                aria-selected="false">Staff Sub-Activities</a>
-                            <a class="nav-item nav-link" id="ds-pna-nav-contact-tab" data-toggle="tab"
-                                href="#ds-pna-nav-contact" role="tab" aria-controls="nav-contact"
-                                aria-selected="false">Response from Line Manager</a>
-                        </div>
-                    </nav>
-                    <div class="tab-content" id="ds-pna-nav-tabContent">
-                        <div class="tab-pane fade show active" id="ds-pna-nav-home" role="tabpanel"
-                            aria-labelledby="nav-home-tab">
-                            <br />
-                            <br />
-                            {{-- my ds requests --}}
+                        <a class="nav-link" id="vds-ds-pna-pills-activities-tab" data-toggle="pill"
+                            href="#vds-ds-pna-pills-activities" role="tab" aria-controls="vdsreqs-pills-activities"
+                            aria-selected="false">Activities</a>
+
+                        <a class="nav-link" id="vds-ds-pna-pills-sub-act-tab" data-toggle="pill"
+                            href="#vds-ds-pna-pills-sub-act" role="tab" aria-controls="vdsreqs-pills-sub-act"
+                            aria-selected="false">Sub Activities</a>
+
+                    </div>
+                </div>
+                <div class="col-md-10">
+
+                    <div class="tab-content" id="vds-ds-pna-pills-tabContent">
+                        <div class="tab-pane fade show active" id="vds-ds-pna-pills-proj" role="tabpanel"
+                            aria-labelledby="impr-pills-proj-tab">
+                            {{-- Projects --}}
                             <div class="row">
-                                <div class="col-md-2">
-                                    <div class="nav flex-column nav-pills" id="vds-ds-impr-pills-tab" role="tablist"
-                                        aria-orientation="vertical">
-                                        <a class="nav-link active" id="vds-ds-impr-pills-home-tab" data-toggle="pill"
-                                            href="#vds-ds-impr-pills-home" role="tab" aria-controls="vdsreqs-pills-home"
-                                            aria-selected="true">Reviewed</a>
-                                        <a class="nav-link" id="vds-ds-impr-pills-profile-tab" data-toggle="pill"
-                                            href="#vds-ds-impr-pills-profile" role="tab"
-                                            aria-controls="vdsreqs-pills-profile" aria-selected="false">Approved</a>
-                                        <a class="nav-link" id="vds-ds-impr-pills-messages-tab" data-toggle="pill"
-                                            href="#vds-ds-impr-pills-messages" role="tab"
-                                            aria-controls="vdsreqs-pills-messages" aria-selected="false">Retirements</a>
-                                        <a class="nav-link" id="vds-ds-impr-pills-settings-tab" data-toggle="pill"
-                                            href="#vds-ds-impr-pills-settings" role="tab"
-                                            aria-controls="vdsreqs-pills-settings" aria-selected="false">All</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-10">
-
-                                    <div class="tab-content" id="vds-ds-impr-pills-tabContent">
-                                        <div class="tab-pane fade show active" id="vds-ds-impr-pills-home"
-                                            role="tabpanel" aria-labelledby="impr-pills-home-tab">
-
-                                            <br />
-                                            <table class="table table-bordered table-hover">
-                                                <p>Approved requests <strong></strong></p>
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">#</th>
-                                                        <th scope="col">Requested by</th>
-                                                        <th scope="col-md-4">Title</th>
-                                                        <th scope="col">Request Type</th>
-                                                        <th scope="col">Under Project</th>
-                                                        <th scope="col"># of approvals</th>
-                                                        <th scope="col">Total Cost</th>
-                                                        <th scope="col">Date created</th>
-
-                                                        <th scope="col"></th>
-
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">1</th>
-                                                        <td>MarkCuban</td>
-                                                        <td>Data visualisation in Mbeya</td>
-                                                        <td>Training</td>
-                                                        <td>Sauti Mpya</td>
-                                                        <td>2</td>
-                                                        <td>2,300,000 <span class="badge badge-success">TZS</span></td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>Jane Sharpe</td>
-                                                        <td>Data Mining in Dar</td>
-                                                        <td>Training</td>
-                                                        <td>Data Zetu</td>
-                                                        <td>4</td>
-                                                        <td>6,600,000 <span class="badge badge-success">TZS</span></td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td>Mary Poppins</td>
-                                                        <td>Data Analyis and Mining</td>
-                                                        <td>Training</td>
-                                                        <td>Sauti Mpya</td>
-                                                        <td>1</td>
-                                                        <td>8,700,000 <span class="badge badge-success">TZS</span></td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-
-                                            </table>
-                                            <br />
+                                <div class="col-lg-12">
+                                    <nav>
+                                        <div class="nav nav-tabs" id="ds-pna-proj-nav-tab" role="tablist">
+                                            <a class="nav-item nav-link active" id="ds-nav-pna-my-proj-tab"
+                                                data-toggle="tab" href="#ds-pna-my-proj-content" role="tab"
+                                                aria-controls="nav-my-proj" aria-selected="true">My
+                                                Projects</a>
+                                            <a class="nav-item nav-link" id="ds-nav-pna-staff-proj-tab" data-toggle="tab"
+                                                href="#ds-pna-staff-proj-content" role="tab" aria-controls="nav-staff-proj-content"
+                                                aria-selected="false">Staff Projects</a>
+                                            <a class="nav-item nav-link" id="ds-pna-lm-response-tab" data-toggle="tab"
+                                                href="#ds-pna-lm-response-content" role="tab" aria-controls="nav-lm-response"
+                                                aria-selected="false">Response from Line Manager</a>
                                         </div>
-                                        <div class="tab-pane fade" id="vds-ds-impr-pills-profile" role="tabpanel"
-                                            aria-labelledby="vdsreqs-pills-profile-tab">
+                                    </nav>
+                                    <div class="tab-content" id="ds-impr-nav-tabContent">
+                                        <div class="tab-pane fade show active" id="ds-pna-my-proj-content" role="tabpanel"
+                                            aria-labelledby="nav-ds-pna-my-proj-content-tab">
 
                                             <br />
-                                            <table class="table table-bordered table-hover">
-                                                <p>Approved requests <strong></strong></p>
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">#</th>
-                                                        <th scope="col">Requested by</th>
-                                                        <th scope="col-md-4">Title</th>
-                                                        <th scope="col">Request Type</th>
-                                                        <th scope="col">Under Project</th>
-                                                        <th scope="col"># of approvals</th>
-                                                        <th scope="col">Total Cost</th>
-                                                        <th scope="col">Date created</th>
+                                                {{-- my ds requests --}}
+                                                <div class="row">
+                                                    <div class="col-md-2">
+                                                        <div class="nav flex-column nav-pills" id="vds-ds-project-ed-pills-tab" role="tablist"
+                                                            aria-orientation="vertical">
+                                                            <a class="nav-link active" id="vds-ds-project-ed-pills-reviewed-tab" data-toggle="pill"
+                                                                href="#vds-ds-project-ed-pills-reviewed-content" role="tab"
+                                                                aria-controls="vds-ed-reqs-pills-reviewed" aria-selected="true">Reviewed</a>
 
-                                                        <th scope="col"></th>
+                                                            <a class="nav-link" id="vds-ds-project-ed-pills-approved-tab" data-toggle="pill"
+                                                                href="#vds-ds-project-ed-pills-approved-content" role="tab"
+                                                                aria-controls="vds-ed-reqs-pills-approved" aria-selected="false">Approved</a>
 
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">1</th>
-                                                        <td>MarkCuban</td>
-                                                        <td>Data visualisation in Mbeya</td>
-                                                        <td>Training</td>
-                                                        <td>Sauti Mpya</td>
-                                                        <td>2</td>
-                                                        <td>2,300,000 <span class="badge badge-success">TZS</span></td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
+                                                            <a class="nav-link" id="vds-ds-project-ed-pills-denied-tab" data-toggle="pill"
+                                                                href="#vds-ds-project-ed-pills-denied-content" role="tab"
+                                                                aria-controls="vds-ed-reqs-pills-denied"
+                                                                aria-selected="false">Denied</a>
 
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>Jane Sharpe</td>
-                                                        <td>Data Mining in Dar</td>
-                                                        <td>Training</td>
-                                                        <td>Data Zetu</td>
-                                                        <td>4</td>
-                                                        <td>6,600,000 <span class="badge badge-success">TZS</span></td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
+                                                            <a class="nav-link" id="vds-ds-project-ed-pills-all-tab" data-toggle="pill"
+                                                                href="#vds-ds-project-ed-pills-all-content" role="tab"
+                                                                aria-controls="vds-ed-reqs-pills-all" aria-selected="false">All</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-10">
 
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td>Mary Poppins</td>
-                                                        <td>Data Analyis and Mining</td>
-                                                        <td>Training</td>
-                                                        <td>Sauti Mpya</td>
-                                                        <td>1</td>
-                                                        <td>8,700,000 <span class="badge badge-success">TZS</span></td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
+                                                        <div class="tab-content" id="vds-ds-project-ed-pills-tabContent">
+                                                            <div class="tab-pane fade show active" id="vds-ds-project-ed-pills-reviewed-content"
+                                                                role="tabpanel" aria-labelledby="vds-ed-reqs-pills-home-tab">
 
-                                            </table>
-                                            <br />
+                                                                {{-- my retirements --}}
+                                                                <div class="row">
+                                                                    <div class="col-lg-12">
+                                                                        <div class="card">
+                                                                            <div class="card-content table-responsive">
+                                                                                <br />
+                                                                                <table class="table table-bordered table-hover">
+                                                                                    <p>My projects currently <strong> under Administration review</strong></p>
+                                                                                    <thead>
+                                                                                        <tr>
+                                                                                            <th scope="col">#</th>
+                                                                                            <th scope="col">Requested by</th>
+                                                                                            <th scope="col-md-4">Title</th>
+                                                                                            <th scope="col">Request Type</th>
+                                                                                            <th scope="col">Under Project</th>
+                                                                                            <th scope="col"># of approvals</th>
+                                                                                            <th scope="col">Total Cost</th>
+                                                                                            <th scope="col">Date created</th>
+
+                                                                                            <th scope="col"></th>
+
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <th scope="row">1</th>
+                                                                                            <td>MarkCuban</td>
+                                                                                            <td>Data visualisation in Mbeya</td>
+                                                                                            <td>Training</td>
+                                                                                            <td>Sauti Mpya</td>
+                                                                                            <td>0</td>
+                                                                                            <td>2,300,000 <span
+                                                                                                    class="badge badge-success">TZS</span>
+                                                                                            </td>
+                                                                                            <td>2019-09-11</td>
+                                                                                            <td>
+                                                                                                <button type="button"
+                                                                                                    class="btn btn-outline-success">view
+                                                                                                    request</button>
+                                                                                            </td>
+                                                                                        </tr>
+
+                                                                                        <tr>
+                                                                                            <th scope="row">4</th>
+                                                                                            <td>Jane Sharpe</td>
+                                                                                            <td>Data Mining in Dar</td>
+                                                                                            <td>Training</td>
+                                                                                            <td>Data Zetu</td>
+                                                                                            <td>0</td>
+                                                                                            <td>6,600,000 <span
+                                                                                                    class="badge badge-success">TZS</span>
+                                                                                            </td>
+                                                                                            <td>2019-09-11</td>
+                                                                                            <td>
+                                                                                                <button type="button"
+                                                                                                    class="btn btn-outline-success">view
+                                                                                                    request</button>
+                                                                                            </td>
+                                                                                        </tr>
+
+                                                                                        <tr>
+                                                                                            <th scope="row">3</th>
+                                                                                            <td>Mary Poppins</td>
+                                                                                            <td>Data Analyis and Mining</td>
+                                                                                            <td>Training</td>
+                                                                                            <td>Sauti Mpya</td>
+                                                                                            <td>0</td>
+                                                                                            <td>8,700,000 <span
+                                                                                                    class="badge badge-success">TZS</span>
+                                                                                            </td>
+                                                                                            <td>2019-09-11</td>
+                                                                                            <td>
+                                                                                                <button type="button"
+                                                                                                    class="btn btn-outline-success">view
+                                                                                                    request</button>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                                <br />
+                                                                                <nav aria-label="Page navigation example">
+                                                                                    <ul class="pagination">
+                                                                                        <li class="page-item">
+                                                                                            <a class="page-link" href="#"
+                                                                                                aria-label="Previous">
+                                                                                                <span aria-hidden="true">&laquo;</span>
+                                                                                                <span class="sr-only">Previous</span>
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li class="page-item"><a class="page-link"
+                                                                                                href="#">1</a></li>
+                                                                                        <li class="page-item"><a class="page-link"
+                                                                                                href="#">2</a></li>
+                                                                                        <li class="page-item"><a class="page-link"
+                                                                                                href="#">3</a></li>
+                                                                                        <li class="page-item">
+                                                                                            <a class="page-link" href="#" aria-label="Next">
+                                                                                                <span aria-hidden="true">&raquo;</span>
+                                                                                                <span class="sr-only">Next</span>
+                                                                                            </a>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </nav>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- end of SECOND column -->
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="tab-pane fade" id="vds-ds-project-ed-pills-approved-content" role="tabpanel"
+                                                                aria-labelledby="vdsreqs-pills-approved-tab">
+
+
+                                                                {{-- my approved projects --}}
+                                                                <div class="row">
+                                                                    <div class="col-lg-12">
+                                                                        <div class="card">
+                                                                            <div class="card-content table-responsive">
+                                                                                <br />
+                                                                                <table class="table table-bordered table-hover">
+                                                                                    <p>My Approved by <strong>Projects</strong></p>
+
+                                                                                    <thead>
+                                                                                        <tr>
+                                                                                            <th scope="col">#</th>
+                                                                                            <th scope="col">Requested by</th>
+                                                                                            <th scope="col-md-4">Title</th>
+                                                                                            <th scope="col">Request Type</th>
+                                                                                            <th scope="col">Under Project</th>
+                                                                                            <th scope="col"># of approvals</th>
+                                                                                            <th scope="col">Total Cost</th>
+                                                                                            <th scope="col">Date created</th>
+
+                                                                                            <th scope="col"></th>
+
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <th scope="row">1</th>
+                                                                                            <td>MarkCuban</td>
+                                                                                            <td>Data visualisation in Mbeya</td>
+                                                                                            <td>Training</td>
+                                                                                            <td>Sauti Mpya</td>
+                                                                                            <td>0</td>
+                                                                                            <td>2,300,000 <span
+                                                                                                    class="badge badge-success">TZS</span>
+                                                                                            </td>
+                                                                                            <td>2019-09-11</td>
+                                                                                            <td>
+                                                                                                <button type="button"
+                                                                                                    class="btn btn-outline-success">view
+                                                                                                    request</button>
+                                                                                            </td>
+                                                                                        </tr>
+
+                                                                                        <tr>
+                                                                                            <th scope="row">4</th>
+                                                                                            <td>Jane Sharpe</td>
+                                                                                            <td>Data Mining in Dar</td>
+                                                                                            <td>Training</td>
+                                                                                            <td>Data Zetu</td>
+                                                                                            <td>0</td>
+                                                                                            <td>6,600,000 <span
+                                                                                                    class="badge badge-success">TZS</span>
+                                                                                            </td>
+                                                                                            <td>2019-09-11</td>
+                                                                                            <td>
+                                                                                                <button type="button"
+                                                                                                    class="btn btn-outline-success">view
+                                                                                                    request</button>
+                                                                                            </td>
+                                                                                        </tr>
+
+                                                                                        <tr>
+                                                                                            <th scope="row">3</th>
+                                                                                            <td>Mary Poppins</td>
+                                                                                            <td>Data Analyis and Mining</td>
+                                                                                            <td>Training</td>
+                                                                                            <td>Sauti Mpya</td>
+                                                                                            <td>0</td>
+                                                                                            <td>8,700,000 <span
+                                                                                                    class="badge badge-success">TZS</span>
+                                                                                            </td>
+                                                                                            <td>2019-09-11</td>
+                                                                                            <td>
+                                                                                                <button type="button"
+                                                                                                    class="btn btn-outline-success">view
+                                                                                                    request</button>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                                <br />
+                                                                                <nav aria-label="Page navigation example">
+                                                                                    <ul class="pagination">
+                                                                                        <li class="page-item">
+                                                                                            <a class="page-link" href="#"
+                                                                                                aria-label="Previous">
+                                                                                                <span aria-hidden="true">&laquo;</span>
+                                                                                                <span class="sr-only">Previous</span>
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li class="page-item"><a class="page-link"
+                                                                                                href="#">1</a></li>
+                                                                                        <li class="page-item"><a class="page-link"
+                                                                                                href="#">2</a></li>
+                                                                                        <li class="page-item"><a class="page-link"
+                                                                                                href="#">3</a></li>
+                                                                                        <li class="page-item">
+                                                                                            <a class="page-link" href="#" aria-label="Next">
+                                                                                                <span aria-hidden="true">&raquo;</span>
+                                                                                                <span class="sr-only">Next</span>
+                                                                                            </a>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </nav>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- end of SECOND column -->
+                                                                    </div>
+
+                                                                </div>
+
+
+                                                            </div>
+                                                            <div class="tab-pane fade" id="vds-ds-project-ed-pills-denied-content" role="tabpanel"
+                                                                aria-labelledby="vdsreqs-pills-messages-tab">
+
+                                                                {{-- my denied projects --}}
+                                                                <div class="row">
+                                                                    <div class="col-lg-12">
+                                                                        <div class="card">
+                                                                            <div class="card-content table-responsive">
+                                                                                <br />
+                                                                                <table class="table table-bordered table-hover">
+                                                                                    <p>My denied <strong>Projects</strong></p>
+
+                                                                                    <thead>
+                                                                                        <tr>
+                                                                                            <th scope="col">#</th>
+                                                                                            <th scope="col">Requested by</th>
+                                                                                            <th scope="col-md-4">Title</th>
+                                                                                            <th scope="col">Request Type</th>
+                                                                                            <th scope="col">Under Project</th>
+                                                                                            <th scope="col"># of approvals</th>
+                                                                                            <th scope="col">Total Cost</th>
+                                                                                            <th scope="col">Date created</th>
+
+                                                                                            <th scope="col"></th>
+
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <th scope="row">1</th>
+                                                                                            <td>MarkCuban</td>
+                                                                                            <td>Data visualisation in Mbeya</td>
+                                                                                            <td>Training</td>
+                                                                                            <td>Sauti Mpya</td>
+                                                                                            <td>0</td>
+                                                                                            <td>2,300,000 <span
+                                                                                                    class="badge badge-success">TZS</span>
+                                                                                            </td>
+                                                                                            <td>2019-09-11</td>
+                                                                                            <td>
+                                                                                                <button type="button"
+                                                                                                    class="btn btn-outline-success">view
+                                                                                                    request</button>
+                                                                                            </td>
+                                                                                        </tr>
+
+                                                                                        <tr>
+                                                                                            <th scope="row">4</th>
+                                                                                            <td>Jane Sharpe</td>
+                                                                                            <td>Data Mining in Dar</td>
+                                                                                            <td>Training</td>
+                                                                                            <td>Data Zetu</td>
+                                                                                            <td>0</td>
+                                                                                            <td>6,600,000 <span
+                                                                                                    class="badge badge-success">TZS</span>
+                                                                                            </td>
+                                                                                            <td>2019-09-11</td>
+                                                                                            <td>
+                                                                                                <button type="button"
+                                                                                                    class="btn btn-outline-success">view
+                                                                                                    request</button>
+                                                                                            </td>
+                                                                                        </tr>
+
+                                                                                        <tr>
+                                                                                            <th scope="row">3</th>
+                                                                                            <td>Mary Poppins</td>
+                                                                                            <td>Data Analyis and Mining</td>
+                                                                                            <td>Training</td>
+                                                                                            <td>Sauti Mpya</td>
+                                                                                            <td>0</td>
+                                                                                            <td>8,700,000 <span
+                                                                                                    class="badge badge-success">TZS</span>
+                                                                                            </td>
+                                                                                            <td>2019-09-11</td>
+                                                                                            <td>
+                                                                                                <button type="button"
+                                                                                                    class="btn btn-outline-success">view
+                                                                                                    request</button>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                                <br />
+                                                                                <nav aria-label="Page navigation example">
+                                                                                    <ul class="pagination">
+                                                                                        <li class="page-item">
+                                                                                            <a class="page-link" href="#"
+                                                                                                aria-label="Previous">
+                                                                                                <span aria-hidden="true">&laquo;</span>
+                                                                                                <span class="sr-only">Previous</span>
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li class="page-item"><a class="page-link"
+                                                                                                href="#">1</a></li>
+                                                                                        <li class="page-item"><a class="page-link"
+                                                                                                href="#">2</a></li>
+                                                                                        <li class="page-item"><a class="page-link"
+                                                                                                href="#">3</a></li>
+                                                                                        <li class="page-item">
+                                                                                            <a class="page-link" href="#" aria-label="Next">
+                                                                                                <span aria-hidden="true">&raquo;</span>
+                                                                                                <span class="sr-only">Next</span>
+                                                                                            </a>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </nav>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- end of SECOND column -->
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="tab-pane fade" id="vds-ds-project-ed-pills-all-content" role="tabpanel"
+                                                                aria-labelledby="vdsreqs-pills-settings-tab">
+
+
+                                                                {{-- my retirements --}}
+                                                                <div class="row">
+                                                                    <div class="col-lg-12">
+                                                                        <div class="card">
+                                                                            <div class="card-content table-responsive">
+                                                                                <br />
+                                                                                <table class="table table-bordered table-hover">
+                                                                                    <p>My <strong>Projects</strong> List</p>
+
+                                                                                    <thead>
+                                                                                        <tr>
+                                                                                            <th scope="col">#</th>
+                                                                                            <th scope="col">Requested by</th>
+                                                                                            <th scope="col-md-4">Title</th>
+                                                                                            <th scope="col">Request Type</th>
+                                                                                            <th scope="col">Under Project</th>
+                                                                                            <th scope="col"># of approvals</th>
+                                                                                            <th scope="col">Total Cost</th>
+                                                                                            <th scope="col">Date created</th>
+
+                                                                                            <th scope="col"></th>
+
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <th scope="row">1</th>
+                                                                                            <td>MarkCuban</td>
+                                                                                            <td>Data visualisation in Mbeya</td>
+                                                                                            <td>Training</td>
+                                                                                            <td>Sauti Mpya</td>
+                                                                                            <td>0</td>
+                                                                                            <td>2,300,000 <span
+                                                                                                    class="badge badge-success">TZS</span>
+                                                                                            </td>
+                                                                                            <td>2019-09-11</td>
+                                                                                            <td>
+                                                                                                <button type="button"
+                                                                                                    class="btn btn-outline-success">view
+                                                                                                    request</button>
+                                                                                            </td>
+                                                                                        </tr>
+
+                                                                                        <tr>
+                                                                                            <th scope="row">4</th>
+                                                                                            <td>Jane Sharpe</td>
+                                                                                            <td>Data Mining in Dar</td>
+                                                                                            <td>Training</td>
+                                                                                            <td>Data Zetu</td>
+                                                                                            <td>0</td>
+                                                                                            <td>6,600,000 <span
+                                                                                                    class="badge badge-success">TZS</span>
+                                                                                            </td>
+                                                                                            <td>2019-09-11</td>
+                                                                                            <td>
+                                                                                                <button type="button"
+                                                                                                    class="btn btn-outline-success">view
+                                                                                                    request</button>
+                                                                                            </td>
+                                                                                        </tr>
+
+                                                                                        <tr>
+                                                                                            <th scope="row">3</th>
+                                                                                            <td>Mary Poppins</td>
+                                                                                            <td>Data Analyis and Mining</td>
+                                                                                            <td>Training</td>
+                                                                                            <td>Sauti Mpya</td>
+                                                                                            <td>0</td>
+                                                                                            <td>8,700,000 <span
+                                                                                                    class="badge badge-success">TZS</span>
+                                                                                            </td>
+                                                                                            <td>2019-09-11</td>
+                                                                                            <td>
+                                                                                                <button type="button"
+                                                                                                    class="btn btn-outline-success">view
+                                                                                                    request</button>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                                <br />
+                                                                                <nav aria-label="Page navigation example">
+                                                                                    <ul class="pagination">
+                                                                                        <li class="page-item">
+                                                                                            <a class="page-link" href="#"
+                                                                                                aria-label="Previous">
+                                                                                                <span aria-hidden="true">&laquo;</span>
+                                                                                                <span class="sr-only">Previous</span>
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li class="page-item"><a class="page-link"
+                                                                                                href="#">1</a></li>
+                                                                                        <li class="page-item"><a class="page-link"
+                                                                                                href="#">2</a></li>
+                                                                                        <li class="page-item"><a class="page-link"
+                                                                                                href="#">3</a></li>
+                                                                                        <li class="page-item">
+                                                                                            <a class="page-link" href="#" aria-label="Next">
+                                                                                                <span aria-hidden="true">&raquo;</span>
+                                                                                                <span class="sr-only">Next</span>
+                                                                                            </a>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </nav>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- end of SECOND column -->
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                         </div>
-                                        <div class="tab-pane fade" id="vds-ds-impr-pills-messages" role="tabpanel"
-                                            aria-labelledby="vdsreqs-pills-messages-tab">
-
+                                        <div class="tab-pane fade" id="ds-pna-staff-proj-content" role="tabpanel"
+                                            aria-labelledby="nav-profile-tab">
                                             <br />
-                                            <table class="table table-bordered table-hover">
-                                                <p>Approved requests <strong></strong></p>
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">#</th>
-                                                        <th scope="col">Requested by</th>
-                                                        <th scope="col-md-4">Title</th>
-                                                        <th scope="col">Request Type</th>
-                                                        <th scope="col">Under Project</th>
-                                                        <th scope="col"># of approvals</th>
-                                                        <th scope="col">Total Cost</th>
-                                                        <th scope="col">Date created</th>
-
-                                                        <th scope="col"></th>
-
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">1</th>
-                                                        <td>MarkCuban</td>
-                                                        <td>Data visualisation in Mbeya</td>
-                                                        <td>Training</td>
-                                                        <td>Sauti Mpya</td>
-                                                        <td>2</td>
-                                                        <td>2,300,000 <span class="badge badge-success">TZS</span></td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>Jane Sharpe</td>
-                                                        <td>Data Mining in Dar</td>
-                                                        <td>Training</td>
-                                                        <td>Data Zetu</td>
-                                                        <td>4</td>
-                                                        <td>6,600,000 <span class="badge badge-success">TZS</span></td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td>Mary Poppins</td>
-                                                        <td>Data Analyis and Mining</td>
-                                                        <td>Training</td>
-                                                        <td>Sauti Mpya</td>
-                                                        <td>1</td>
-                                                        <td>8,700,000 <span class="badge badge-success">TZS</span></td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-
-                                            </table>
                                             <br />
-                                        </div>
-                                        <div class="tab-pane fade" id="vds-ds-impr-pills-settings" role="tabpanel"
-                                            aria-labelledby="vdsreqs-pills-settings-tab">
-
-                                            <br />
-                                            <table class="table table-bordered table-hover">
-                                                <p>Approved requests <strong></strong></p>
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">#</th>
-                                                        <th scope="col">Requested by</th>
-                                                        <th scope="col-md-4">Title</th>
-                                                        <th scope="col">Request Type</th>
-                                                        <th scope="col">Under Project</th>
-                                                        <th scope="col"># of approvals</th>
-                                                        <th scope="col">Total Cost</th>
-                                                        <th scope="col">Date created</th>
-
-                                                        <th scope="col"></th>
-
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">1</th>
-                                                        <td>MarkCuban</td>
-                                                        <td>Data visualisation in Mbeya</td>
-                                                        <td>Training</td>
-                                                        <td>Sauti Mpya</td>
-                                                        <td>2</td>
-                                                        <td>2,300,000 <span class="badge badge-success">TZS</span></td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>Jane Sharpe</td>
-                                                        <td>Data Mining in Dar</td>
-                                                        <td>Training</td>
-                                                        <td>Data Zetu</td>
-                                                        <td>4</td>
-                                                        <td>6,600,000 <span class="badge badge-success">TZS</span></td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td>Mary Poppins</td>
-                                                        <td>Data Analyis and Mining</td>
-                                                        <td>Training</td>
-                                                        <td>Sauti Mpya</td>
-                                                        <td>1</td>
-                                                        <td>8,700,000 <span class="badge badge-success">TZS</span></td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-
-                                            </table>
-                                            <br />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="ds-pna-nav-profile" role="tabpanel"
-                            aria-labelledby="nav-profile-tab">
-                            <br />
-                            <br />
-                            {{-- my ds requests --}}
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <div class="nav flex-column nav-pills" id="vds-ds-impr-staff-pills-tab"
-                                        role="tablist" aria-orientation="vertical">
-                                        <a class="nav-link active" id="vds-ds-impr-staff-pills-home-tab"
-                                            data-toggle="pill" href="#vds-ds-impr-staff-pills-home" role="tab"
-                                            aria-controls="vds-staff-reqs-pills-home" aria-selected="true">Reviewed</a>
-                                        <a class="nav-link" id="vds-ds-impr-staff-pills-profile-tab" data-toggle="pill"
-                                            href="#vds-ds-impr-staff-pills-profile" role="tab"
-                                            aria-controls="vds-staff-reqs-pills-profile"
-                                            aria-selected="false">Approved</a>
-                                        <a class="nav-link" id="vds-ds-impr-staff-pills-messages-tab" data-toggle="pill"
-                                            href="#vds-ds-impr-staff-pills-messages" role="tab"
-                                            aria-controls="vds-staff-reqs-pills-messages"
-                                            aria-selected="false">Retirements</a>
-                                        <a class="nav-link" id="vds-ds-impr-staff-pills-settings-tab" data-toggle="pill"
-                                            href="#vds-ds-impr-staff-pills-settings" role="tab"
-                                            aria-controls="vds-staff-reqs-pills-settings" aria-selected="false">All</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-10">
-
-                                    <div class="tab-content" id="vds-ds-impr-tabContent">
-                                        <div class="tab-pane fade show active" id="vds-ds-impr-staff-pills-home"
-                                            role="tabpanel" aria-labelledby="vds-ds-rtrmt-staff-pills-home-tab">
-
-                                            {{-- my retirements --}}
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <div class="card">
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>reviewed.</strong></p>
+                                                                <p>Staff projects that are
+                                                                    <strong>on administration review.</strong></p>
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">#</th>
@@ -5940,20 +6874,20 @@
                                                     </div>
                                                     <!-- end of SECOND column -->
                                                 </div>
-
                                             </div>
                                         </div>
-                                        <div class="tab-pane fade" id="vds-ds-impr-staff-pills-profile" role="tabpanel"
-                                            aria-labelledby="vds-ds-rtrmt-staff-pills-profile-tab">
-
-                                            {{-- my retirements --}}
+                                        <div class="tab-pane fade" id="ds-pna-lm-response-content" role="tabpanel"
+                                            aria-labelledby="nav-contact-tab">
+                                            <br />
+                                            <br />
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <div class="card">
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>reviewed.</strong></p>
+                                                                <p>My project response from
+                                                                    <strong>Line manager.</strong></p>
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">#</th>
@@ -6053,280 +6987,538 @@
                                                     </div>
                                                     <!-- end of SECOND column -->
                                                 </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="tab-pane fade" id="vds-ds-impr-staff-pills-messages" role="tabpanel"
-                                            aria-labelledby="vds-ds-rtrmt-staff-pills-messages-tab">
-
-                                            {{-- my retirements --}}
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div class="card">
-                                                        <div class="card-content table-responsive">
-                                                            <br />
-                                                            <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>reviewed.</strong></p>
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th scope="col">#</th>
-                                                                        <th scope="col">Requested by</th>
-                                                                        <th scope="col-md-4">Title</th>
-                                                                        <th scope="col">Request Type</th>
-                                                                        <th scope="col">Under Project</th>
-                                                                        <th scope="col"># of approvals</th>
-                                                                        <th scope="col">Total Cost</th>
-                                                                        <th scope="col">Date created</th>
-
-                                                                        <th scope="col"></th>
-
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <th scope="row">1</th>
-                                                                        <td>MarkCuban</td>
-                                                                        <td>Data visualisation in Mbeya</td>
-                                                                        <td>Training</td>
-                                                                        <td>Sauti Mpya</td>
-                                                                        <td>0</td>
-                                                                        <td>2,300,000 <span
-                                                                                class="badge badge-success">TZS</span>
-                                                                        </td>
-                                                                        <td>2019-09-11</td>
-                                                                        <td>
-                                                                            <button type="button"
-                                                                                class="btn btn-outline-success">view
-                                                                                request</button>
-                                                                        </td>
-                                                                    </tr>
-
-                                                                    <tr>
-                                                                        <th scope="row">4</th>
-                                                                        <td>Jane Sharpe</td>
-                                                                        <td>Data Mining in Dar</td>
-                                                                        <td>Training</td>
-                                                                        <td>Data Zetu</td>
-                                                                        <td>0</td>
-                                                                        <td>6,600,000 <span
-                                                                                class="badge badge-success">TZS</span>
-                                                                        </td>
-                                                                        <td>2019-09-11</td>
-                                                                        <td>
-                                                                            <button type="button"
-                                                                                class="btn btn-outline-success">view
-                                                                                request</button>
-                                                                        </td>
-                                                                    </tr>
-
-                                                                    <tr>
-                                                                        <th scope="row">3</th>
-                                                                        <td>Mary Poppins</td>
-                                                                        <td>Data Analyis and Mining</td>
-                                                                        <td>Training</td>
-                                                                        <td>Sauti Mpya</td>
-                                                                        <td>0</td>
-                                                                        <td>8,700,000 <span
-                                                                                class="badge badge-success">TZS</span>
-                                                                        </td>
-                                                                        <td>2019-09-11</td>
-                                                                        <td>
-                                                                            <button type="button"
-                                                                                class="btn btn-outline-success">view
-                                                                                request</button>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                            <br />
-                                                            <nav aria-label="Page navigation example">
-                                                                <ul class="pagination">
-                                                                    <li class="page-item">
-                                                                        <a class="page-link" href="#"
-                                                                            aria-label="Previous">
-                                                                            <span aria-hidden="true">&laquo;</span>
-                                                                            <span class="sr-only">Previous</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">1</a></li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">2</a></li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">3</a></li>
-                                                                    <li class="page-item">
-                                                                        <a class="page-link" href="#" aria-label="Next">
-                                                                            <span aria-hidden="true">&raquo;</span>
-                                                                            <span class="sr-only">Next</span>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </nav>
-                                                        </div>
-                                                    </div>
-                                                    <!-- end of SECOND column -->
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="tab-pane fade" id="vds-ds-impr-staff-pills-settings" role="tabpanel"
-                                            aria-labelledby="vds-ds-rtrmt-staff-pills-settings-tab">
-
-
-                                            {{-- my retirements --}}
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div class="card">
-                                                        <div class="card-content table-responsive">
-                                                            <br />
-                                                            <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>reviewed.</strong></p>
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th scope="col">#</th>
-                                                                        <th scope="col">Requested by</th>
-                                                                        <th scope="col-md-4">Title</th>
-                                                                        <th scope="col">Request Type</th>
-                                                                        <th scope="col">Under Project</th>
-                                                                        <th scope="col"># of approvals</th>
-                                                                        <th scope="col">Total Cost</th>
-                                                                        <th scope="col">Date created</th>
-
-                                                                        <th scope="col"></th>
-
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <th scope="row">1</th>
-                                                                        <td>MarkCuban</td>
-                                                                        <td>Data visualisation in Mbeya</td>
-                                                                        <td>Training</td>
-                                                                        <td>Sauti Mpya</td>
-                                                                        <td>0</td>
-                                                                        <td>2,300,000 <span
-                                                                                class="badge badge-success">TZS</span>
-                                                                        </td>
-                                                                        <td>2019-09-11</td>
-                                                                        <td>
-                                                                            <button type="button"
-                                                                                class="btn btn-outline-success">view
-                                                                                request</button>
-                                                                        </td>
-                                                                    </tr>
-
-                                                                    <tr>
-                                                                        <th scope="row">4</th>
-                                                                        <td>Jane Sharpe</td>
-                                                                        <td>Data Mining in Dar</td>
-                                                                        <td>Training</td>
-                                                                        <td>Data Zetu</td>
-                                                                        <td>0</td>
-                                                                        <td>6,600,000 <span
-                                                                                class="badge badge-success">TZS</span>
-                                                                        </td>
-                                                                        <td>2019-09-11</td>
-                                                                        <td>
-                                                                            <button type="button"
-                                                                                class="btn btn-outline-success">view
-                                                                                request</button>
-                                                                        </td>
-                                                                    </tr>
-
-                                                                    <tr>
-                                                                        <th scope="row">3</th>
-                                                                        <td>Mary Poppins</td>
-                                                                        <td>Data Analyis and Mining</td>
-                                                                        <td>Training</td>
-                                                                        <td>Sauti Mpya</td>
-                                                                        <td>0</td>
-                                                                        <td>8,700,000 <span
-                                                                                class="badge badge-success">TZS</span>
-                                                                        </td>
-                                                                        <td>2019-09-11</td>
-                                                                        <td>
-                                                                            <button type="button"
-                                                                                class="btn btn-outline-success">view
-                                                                                request</button>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                            <br />
-                                                            <nav aria-label="Page navigation example">
-                                                                <ul class="pagination">
-                                                                    <li class="page-item">
-                                                                        <a class="page-link" href="#"
-                                                                            aria-label="Previous">
-                                                                            <span aria-hidden="true">&laquo;</span>
-                                                                            <span class="sr-only">Previous</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">1</a></li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">2</a></li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">3</a></li>
-                                                                    <li class="page-item">
-                                                                        <a class="page-link" href="#" aria-label="Next">
-                                                                            <span aria-hidden="true">&raquo;</span>
-                                                                            <span class="sr-only">Next</span>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </nav>
-                                                        </div>
-                                                    </div>
-                                                    <!-- end of SECOND column -->
-                                                </div>
-
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="tab-pane fade" id="vds-ds-pna-pills-activities" role="tabpanel"
+                            aria-labelledby="vdsreqs-pills-activities-tab">
+                            {{-- Activities --}}
 
-                        <div class="tab-pane fade" id="ds-pna-nav-sub-act" role="tabpanel"
-                            aria-labelledby="nav-profile-tab">
-                            <br />
-                            <br />
-                            {{-- my ds requests --}}
                             <div class="row">
-                                <div class="col-md-2">
-                                    <div class="nav flex-column nav-pills" id="vds-ds-impr-staff-pills-tab"
-                                        role="tablist" aria-orientation="vertical">
-                                        <a class="nav-link active" id="vds-ds-impr-staff-pills-home-tab"
-                                            data-toggle="pill" href="#vds-ds-impr-staff-pills-home" role="tab"
-                                            aria-controls="vds-staff-reqs-pills-home" aria-selected="true">Reviewed</a>
-                                        <a class="nav-link" id="vds-ds-impr-staff-pills-profile-tab" data-toggle="pill"
-                                            href="#vds-ds-impr-staff-pills-profile" role="tab"
-                                            aria-controls="vds-staff-reqs-pills-profile"
-                                            aria-selected="false">Approved</a>
-                                        <a class="nav-link" id="vds-ds-impr-staff-pills-messages-tab" data-toggle="pill"
-                                            href="#vds-ds-impr-staff-pills-messages" role="tab"
-                                            aria-controls="vds-staff-reqs-pills-messages"
-                                            aria-selected="false">Retirements</a>
-                                        <a class="nav-link" id="vds-ds-impr-staff-pills-settings-tab" data-toggle="pill"
-                                            href="#vds-ds-impr-staff-pills-settings" role="tab"
-                                            aria-controls="vds-staff-reqs-pills-settings" aria-selected="false">All</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-10">
+                                <div class="col-lg-12">
+                                    <nav>
+                                        <div class="nav nav-tabs" id="ds-pna-activities-nav-tab" role="tablist">
+                                            <a class="nav-item nav-link active" id="ds-nav-pna-my-activities-tab"
+                                                data-toggle="tab" href="#ds-pna-my-activities-content" role="tab"
+                                                aria-controls="nav-my-activities" aria-selected="true">My
+                                                Activities</a>
+                                            <a class="nav-item nav-link" id="ds-nav-pna-staff-activities-tab" data-toggle="tab"
+                                                href="#ds-pna-staff-activities-content" role="tab" aria-controls="nav-staff-proj-content"
+                                                aria-selected="false">Staff Activities</a>
+                                            <a class="nav-item nav-link" id="ds-pna-activities-lm-response-tab" data-toggle="tab"
+                                                href="#ds-pna-lm-activities-response-content" role="tab" aria-controls="nav-lm-response"
+                                                aria-selected="false">Response from Line Manager</a>
+                                        </div>
+                                    </nav>
+                                    <div class="tab-content" id="ds-impr-nav-tabContent">
+                                        <div class="tab-pane fade show active" id="ds-pna-my-activities-content" role="tabpanel"
+                                            aria-labelledby="nav-ds-pna-my-activities-content-tab">
+                                            <br />
+                                            <br />
+                                               {{-- my ds requests --}}
+                                                <div class="row">
+                                                    <div class="col-md-2">
+                                                        <div class="nav flex-column nav-pills" id="vds-ds-impr-ed-pills-tab" role="tablist"
+                                                            aria-orientation="vertical">
+                                                            <a class="nav-link active" id="vds-ds-act-ed-pills-reviewed-tab" data-toggle="pill"
+                                                                href="#vds-ds-act-ed-pills-reviewed-content" role="tab"
+                                                                aria-controls="vds-ed-reqs-pills-reviewed" aria-selected="true">Reviewed</a>
 
-                                    <div class="tab-content" id="vds-ds-impr-tabContent">
-                                        <div class="tab-pane fade show active" id="vds-ds-impr-staff-pills-home"
-                                            role="tabpanel" aria-labelledby="vds-ds-rtrmt-staff-pills-home-tab">
+                                                            <a class="nav-link" id="vds-ds-act-ed-pills-approved-tab" data-toggle="pill"
+                                                                href="#vds-ds-act-ed-pills-approved-content" role="tab"
+                                                                aria-controls="vds-ed-reqs-pills-approved" aria-selected="false">Approved</a>
 
-                                            {{-- my retirements --}}
+                                                            <a class="nav-link" id="vds-ds-act-ed-pills-denied-tab" data-toggle="pill"
+                                                                href="#vds-ds-act-ed-pills-denied-content" role="tab"
+                                                                aria-controls="vds-ed-reqs-pills-denied"
+                                                                aria-selected="false">Denied</a>
+
+                                                            <a class="nav-link" id="vds-ds-act-ed-pills-all-tab" data-toggle="pill"
+                                                                href="#vds-ds-act-ed-pills-all-content" role="tab"
+                                                                aria-controls="vds-ed-reqs-pills-all" aria-selected="false">All</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-10">
+
+                                                        <div class="tab-content" id="vds-ds-act-ed-pills-tabContent">
+                                                            <div class="tab-pane fade show active" id="vds-ds-act-ed-pills-reviewed-content"
+                                                                role="tabpanel" aria-labelledby="vds-ed-reqs-pills-home-tab">
+
+                                                                {{-- my retirements --}}
+                                                                <div class="row">
+                                                                    <div class="col-lg-12">
+                                                                        <div class="card">
+                                                                            <div class="card-content table-responsive">
+                                                                                <br />
+                                                                                <table class="table table-bordered table-hover">
+                                                                                    <p>My Activities that are on <strong>Administrative review</strong></p>
+                                                                                    <thead>
+                                                                                        <tr>
+                                                                                            <th scope="col">#</th>
+                                                                                            <th scope="col">Requested by</th>
+                                                                                            <th scope="col-md-4">Title</th>
+                                                                                            <th scope="col">Request Type</th>
+                                                                                            <th scope="col">Under Project</th>
+                                                                                            <th scope="col"># of approvals</th>
+                                                                                            <th scope="col">Total Cost</th>
+                                                                                            <th scope="col">Date created</th>
+
+                                                                                            <th scope="col"></th>
+
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <th scope="row">1</th>
+                                                                                            <td>MarkCuban</td>
+                                                                                            <td>Data visualisation in Mbeya</td>
+                                                                                            <td>Training</td>
+                                                                                            <td>Sauti Mpya</td>
+                                                                                            <td>0</td>
+                                                                                            <td>2,300,000 <span
+                                                                                                    class="badge badge-success">TZS</span>
+                                                                                            </td>
+                                                                                            <td>2019-09-11</td>
+                                                                                            <td>
+                                                                                                <button type="button"
+                                                                                                    class="btn btn-outline-success">view
+                                                                                                    request</button>
+                                                                                            </td>
+                                                                                        </tr>
+
+                                                                                        <tr>
+                                                                                            <th scope="row">4</th>
+                                                                                            <td>Jane Sharpe</td>
+                                                                                            <td>Data Mining in Dar</td>
+                                                                                            <td>Training</td>
+                                                                                            <td>Data Zetu</td>
+                                                                                            <td>0</td>
+                                                                                            <td>6,600,000 <span
+                                                                                                    class="badge badge-success">TZS</span>
+                                                                                            </td>
+                                                                                            <td>2019-09-11</td>
+                                                                                            <td>
+                                                                                                <button type="button"
+                                                                                                    class="btn btn-outline-success">view
+                                                                                                    request</button>
+                                                                                            </td>
+                                                                                        </tr>
+
+                                                                                        <tr>
+                                                                                            <th scope="row">3</th>
+                                                                                            <td>Mary Poppins</td>
+                                                                                            <td>Data Analyis and Mining</td>
+                                                                                            <td>Training</td>
+                                                                                            <td>Sauti Mpya</td>
+                                                                                            <td>0</td>
+                                                                                            <td>8,700,000 <span
+                                                                                                    class="badge badge-success">TZS</span>
+                                                                                            </td>
+                                                                                            <td>2019-09-11</td>
+                                                                                            <td>
+                                                                                                <button type="button"
+                                                                                                    class="btn btn-outline-success">view
+                                                                                                    request</button>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                                <br />
+                                                                                <nav aria-label="Page navigation example">
+                                                                                    <ul class="pagination">
+                                                                                        <li class="page-item">
+                                                                                            <a class="page-link" href="#"
+                                                                                                aria-label="Previous">
+                                                                                                <span aria-hidden="true">&laquo;</span>
+                                                                                                <span class="sr-only">Previous</span>
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li class="page-item"><a class="page-link"
+                                                                                                href="#">1</a></li>
+                                                                                        <li class="page-item"><a class="page-link"
+                                                                                                href="#">2</a></li>
+                                                                                        <li class="page-item"><a class="page-link"
+                                                                                                href="#">3</a></li>
+                                                                                        <li class="page-item">
+                                                                                            <a class="page-link" href="#" aria-label="Next">
+                                                                                                <span aria-hidden="true">&raquo;</span>
+                                                                                                <span class="sr-only">Next</span>
+                                                                                            </a>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </nav>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- end of SECOND column -->
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="tab-pane fade" id="vds-ds-act-ed-pills-approved-content" role="tabpanel"
+                                                                aria-labelledby="vdsreqs-pills-approved-tab">
+
+
+                                                                {{-- my retirements --}}
+                                                                <div class="row">
+                                                                    <div class="col-lg-12">
+                                                                        <div class="card">
+                                                                            <div class="card-content table-responsive">
+                                                                                <br />
+                                                                                <table class="table table-bordered table-hover">
+                                                                                    <p>My Activities that have been <strong>Approved by the Adminstration</strong></p>
+
+                                                                                    <thead>
+                                                                                        <tr>
+                                                                                            <th scope="col">#</th>
+                                                                                            <th scope="col">Requested by</th>
+                                                                                            <th scope="col-md-4">Title</th>
+                                                                                            <th scope="col">Request Type</th>
+                                                                                            <th scope="col">Under Project</th>
+                                                                                            <th scope="col"># of approvals</th>
+                                                                                            <th scope="col">Total Cost</th>
+                                                                                            <th scope="col">Date created</th>
+
+                                                                                            <th scope="col"></th>
+
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <th scope="row">1</th>
+                                                                                            <td>MarkCuban</td>
+                                                                                            <td>Data visualisation in Mbeya</td>
+                                                                                            <td>Training</td>
+                                                                                            <td>Sauti Mpya</td>
+                                                                                            <td>0</td>
+                                                                                            <td>2,300,000 <span
+                                                                                                    class="badge badge-success">TZS</span>
+                                                                                            </td>
+                                                                                            <td>2019-09-11</td>
+                                                                                            <td>
+                                                                                                <button type="button"
+                                                                                                    class="btn btn-outline-success">view
+                                                                                                    request</button>
+                                                                                            </td>
+                                                                                        </tr>
+
+                                                                                        <tr>
+                                                                                            <th scope="row">4</th>
+                                                                                            <td>Jane Sharpe</td>
+                                                                                            <td>Data Mining in Dar</td>
+                                                                                            <td>Training</td>
+                                                                                            <td>Data Zetu</td>
+                                                                                            <td>0</td>
+                                                                                            <td>6,600,000 <span
+                                                                                                    class="badge badge-success">TZS</span>
+                                                                                            </td>
+                                                                                            <td>2019-09-11</td>
+                                                                                            <td>
+                                                                                                <button type="button"
+                                                                                                    class="btn btn-outline-success">view
+                                                                                                    request</button>
+                                                                                            </td>
+                                                                                        </tr>
+
+                                                                                        <tr>
+                                                                                            <th scope="row">3</th>
+                                                                                            <td>Mary Poppins</td>
+                                                                                            <td>Data Analyis and Mining</td>
+                                                                                            <td>Training</td>
+                                                                                            <td>Sauti Mpya</td>
+                                                                                            <td>0</td>
+                                                                                            <td>8,700,000 <span
+                                                                                                    class="badge badge-success">TZS</span>
+                                                                                            </td>
+                                                                                            <td>2019-09-11</td>
+                                                                                            <td>
+                                                                                                <button type="button"
+                                                                                                    class="btn btn-outline-success">view
+                                                                                                    request</button>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                                <br />
+                                                                                <nav aria-label="Page navigation example">
+                                                                                    <ul class="pagination">
+                                                                                        <li class="page-item">
+                                                                                            <a class="page-link" href="#"
+                                                                                                aria-label="Previous">
+                                                                                                <span aria-hidden="true">&laquo;</span>
+                                                                                                <span class="sr-only">Previous</span>
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li class="page-item"><a class="page-link"
+                                                                                                href="#">1</a></li>
+                                                                                        <li class="page-item"><a class="page-link"
+                                                                                                href="#">2</a></li>
+                                                                                        <li class="page-item"><a class="page-link"
+                                                                                                href="#">3</a></li>
+                                                                                        <li class="page-item">
+                                                                                            <a class="page-link" href="#" aria-label="Next">
+                                                                                                <span aria-hidden="true">&raquo;</span>
+                                                                                                <span class="sr-only">Next</span>
+                                                                                            </a>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </nav>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- end of SECOND column -->
+                                                                    </div>
+
+                                                                </div>
+
+
+                                                            </div>
+                                                            <div class="tab-pane fade" id="vds-ds-act-ed-pills-denied-content" role="tabpanel"
+                                                                aria-labelledby="vdsreqs-pills-messages-tab">
+
+                                                                {{-- my retirements --}}
+                                                                <div class="row">
+                                                                    <div class="col-lg-12">
+                                                                        <div class="card">
+                                                                            <div class="card-content table-responsive">
+                                                                                <br />
+                                                                                <table class="table table-bordered table-hover">
+                                                                                    <p>My Activities that have been <strong>Denied</strong></p>
+
+                                                                                    <thead>
+                                                                                        <tr>
+                                                                                            <th scope="col">#</th>
+                                                                                            <th scope="col">Requested by</th>
+                                                                                            <th scope="col-md-4">Title</th>
+                                                                                            <th scope="col">Request Type</th>
+                                                                                            <th scope="col">Under Project</th>
+                                                                                            <th scope="col"># of approvals</th>
+                                                                                            <th scope="col">Total Cost</th>
+                                                                                            <th scope="col">Date created</th>
+
+                                                                                            <th scope="col"></th>
+
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <th scope="row">1</th>
+                                                                                            <td>MarkCuban</td>
+                                                                                            <td>Data visualisation in Mbeya</td>
+                                                                                            <td>Training</td>
+                                                                                            <td>Sauti Mpya</td>
+                                                                                            <td>0</td>
+                                                                                            <td>2,300,000 <span
+                                                                                                    class="badge badge-success">TZS</span>
+                                                                                            </td>
+                                                                                            <td>2019-09-11</td>
+                                                                                            <td>
+                                                                                                <button type="button"
+                                                                                                    class="btn btn-outline-success">view
+                                                                                                    request</button>
+                                                                                            </td>
+                                                                                        </tr>
+
+                                                                                        <tr>
+                                                                                            <th scope="row">4</th>
+                                                                                            <td>Jane Sharpe</td>
+                                                                                            <td>Data Mining in Dar</td>
+                                                                                            <td>Training</td>
+                                                                                            <td>Data Zetu</td>
+                                                                                            <td>0</td>
+                                                                                            <td>6,600,000 <span
+                                                                                                    class="badge badge-success">TZS</span>
+                                                                                            </td>
+                                                                                            <td>2019-09-11</td>
+                                                                                            <td>
+                                                                                                <button type="button"
+                                                                                                    class="btn btn-outline-success">view
+                                                                                                    request</button>
+                                                                                            </td>
+                                                                                        </tr>
+
+                                                                                        <tr>
+                                                                                            <th scope="row">3</th>
+                                                                                            <td>Mary Poppins</td>
+                                                                                            <td>Data Analyis and Mining</td>
+                                                                                            <td>Training</td>
+                                                                                            <td>Sauti Mpya</td>
+                                                                                            <td>0</td>
+                                                                                            <td>8,700,000 <span
+                                                                                                    class="badge badge-success">TZS</span>
+                                                                                            </td>
+                                                                                            <td>2019-09-11</td>
+                                                                                            <td>
+                                                                                                <button type="button"
+                                                                                                    class="btn btn-outline-success">view
+                                                                                                    request</button>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                                <br />
+                                                                                <nav aria-label="Page navigation example">
+                                                                                    <ul class="pagination">
+                                                                                        <li class="page-item">
+                                                                                            <a class="page-link" href="#"
+                                                                                                aria-label="Previous">
+                                                                                                <span aria-hidden="true">&laquo;</span>
+                                                                                                <span class="sr-only">Previous</span>
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li class="page-item"><a class="page-link"
+                                                                                                href="#">1</a></li>
+                                                                                        <li class="page-item"><a class="page-link"
+                                                                                                href="#">2</a></li>
+                                                                                        <li class="page-item"><a class="page-link"
+                                                                                                href="#">3</a></li>
+                                                                                        <li class="page-item">
+                                                                                            <a class="page-link" href="#" aria-label="Next">
+                                                                                                <span aria-hidden="true">&raquo;</span>
+                                                                                                <span class="sr-only">Next</span>
+                                                                                            </a>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </nav>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- end of SECOND column -->
+                                                                    </div>
+
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="tab-pane fade" id="vds-ds-act-ed-pills-all-content" role="tabpanel"
+                                                                aria-labelledby="vdsreqs-pills-settings-tab">
+
+
+                                                                {{-- my retirements --}}
+                                                                <div class="row">
+                                                                    <div class="col-lg-12">
+                                                                        <div class="card">
+                                                                            <div class="card-content table-responsive">
+                                                                                <br />
+                                                                                <table class="table table-bordered table-hover">
+                                                                                    <p>All My <strong>Activities</strong></p>
+
+                                                                                    <thead>
+                                                                                        <tr>
+                                                                                            <th scope="col">#</th>
+                                                                                            <th scope="col">Requested by</th>
+                                                                                            <th scope="col-md-4">Title</th>
+                                                                                            <th scope="col">Request Type</th>
+                                                                                            <th scope="col">Under Project</th>
+                                                                                            <th scope="col"># of approvals</th>
+                                                                                            <th scope="col">Total Cost</th>
+                                                                                            <th scope="col">Date created</th>
+
+                                                                                            <th scope="col"></th>
+
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <th scope="row">1</th>
+                                                                                            <td>MarkCuban</td>
+                                                                                            <td>Data visualisation in Mbeya</td>
+                                                                                            <td>Training</td>
+                                                                                            <td>Sauti Mpya</td>
+                                                                                            <td>0</td>
+                                                                                            <td>2,300,000 <span
+                                                                                                    class="badge badge-success">TZS</span>
+                                                                                            </td>
+                                                                                            <td>2019-09-11</td>
+                                                                                            <td>
+                                                                                                <button type="button"
+                                                                                                    class="btn btn-outline-success">view
+                                                                                                    request</button>
+                                                                                            </td>
+                                                                                        </tr>
+
+                                                                                        <tr>
+                                                                                            <th scope="row">4</th>
+                                                                                            <td>Jane Sharpe</td>
+                                                                                            <td>Data Mining in Dar</td>
+                                                                                            <td>Training</td>
+                                                                                            <td>Data Zetu</td>
+                                                                                            <td>0</td>
+                                                                                            <td>6,600,000 <span
+                                                                                                    class="badge badge-success">TZS</span>
+                                                                                            </td>
+                                                                                            <td>2019-09-11</td>
+                                                                                            <td>
+                                                                                                <button type="button"
+                                                                                                    class="btn btn-outline-success">view
+                                                                                                    request</button>
+                                                                                            </td>
+                                                                                        </tr>
+
+                                                                                        <tr>
+                                                                                            <th scope="row">3</th>
+                                                                                            <td>Mary Poppins</td>
+                                                                                            <td>Data Analyis and Mining</td>
+                                                                                            <td>Training</td>
+                                                                                            <td>Sauti Mpya</td>
+                                                                                            <td>0</td>
+                                                                                            <td>8,700,000 <span
+                                                                                                    class="badge badge-success">TZS</span>
+                                                                                            </td>
+                                                                                            <td>2019-09-11</td>
+                                                                                            <td>
+                                                                                                <button type="button"
+                                                                                                    class="btn btn-outline-success">view
+                                                                                                    request</button>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                                <br />
+                                                                                <nav aria-label="Page navigation example">
+                                                                                    <ul class="pagination">
+                                                                                        <li class="page-item">
+                                                                                            <a class="page-link" href="#"
+                                                                                                aria-label="Previous">
+                                                                                                <span aria-hidden="true">&laquo;</span>
+                                                                                                <span class="sr-only">Previous</span>
+                                                                                            </a>
+                                                                                        </li>
+                                                                                        <li class="page-item"><a class="page-link"
+                                                                                                href="#">1</a></li>
+                                                                                        <li class="page-item"><a class="page-link"
+                                                                                                href="#">2</a></li>
+                                                                                        <li class="page-item"><a class="page-link"
+                                                                                                href="#">3</a></li>
+                                                                                        <li class="page-item">
+                                                                                            <a class="page-link" href="#" aria-label="Next">
+                                                                                                <span aria-hidden="true">&raquo;</span>
+                                                                                                <span class="sr-only">Next</span>
+                                                                                            </a>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </nav>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!-- end of SECOND column -->
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="ds-pna-staff-activities-content" role="tabpanel"
+                                            aria-labelledby="nav-profile-tab">
+                                            <br />
+                                            <br />
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <div class="card">
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>reviewed.</strong></p>
+                                                                <p>Staff Activities that are
+                                                                    <strong>on administration review.</strong></p>
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">#</th>
@@ -6426,20 +7618,20 @@
                                                     </div>
                                                     <!-- end of SECOND column -->
                                                 </div>
-
                                             </div>
                                         </div>
-                                        <div class="tab-pane fade" id="vds-ds-impr-staff-pills-profile" role="tabpanel"
-                                            aria-labelledby="vds-ds-rtrmt-staff-pills-profile-tab">
-
-                                            {{-- my retirements --}}
+                                        <div class="tab-pane fade" id="ds-pna-lm-activities-response-content" role="tabpanel"
+                                            aria-labelledby="nav-contact-tab">
+                                            <br />
+                                            <br />
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <div class="card">
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>reviewed.</strong></p>
+                                                                <p>My retirements that have been
+                                                                    <strong>reviewed.</strong></p>
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">#</th>
@@ -6539,279 +7731,539 @@
                                                     </div>
                                                     <!-- end of SECOND column -->
                                                 </div>
-
                                             </div>
-                                        </div>
-                                        <div class="tab-pane fade" id="vds-ds-impr-staff-pills-messages" role="tabpanel"
-                                            aria-labelledby="vds-ds-rtrmt-staff-pills-messages-tab">
-
-                                            {{-- my retirements --}}
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div class="card">
-                                                        <div class="card-content table-responsive">
-                                                            <br />
-                                                            <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>reviewed.</strong></p>
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th scope="col">#</th>
-                                                                        <th scope="col">Requested by</th>
-                                                                        <th scope="col-md-4">Title</th>
-                                                                        <th scope="col">Request Type</th>
-                                                                        <th scope="col">Under Project</th>
-                                                                        <th scope="col"># of approvals</th>
-                                                                        <th scope="col">Total Cost</th>
-                                                                        <th scope="col">Date created</th>
-
-                                                                        <th scope="col"></th>
-
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <th scope="row">1</th>
-                                                                        <td>MarkCuban</td>
-                                                                        <td>Data visualisation in Mbeya</td>
-                                                                        <td>Training</td>
-                                                                        <td>Sauti Mpya</td>
-                                                                        <td>0</td>
-                                                                        <td>2,300,000 <span
-                                                                                class="badge badge-success">TZS</span>
-                                                                        </td>
-                                                                        <td>2019-09-11</td>
-                                                                        <td>
-                                                                            <button type="button"
-                                                                                class="btn btn-outline-success">view
-                                                                                request</button>
-                                                                        </td>
-                                                                    </tr>
-
-                                                                    <tr>
-                                                                        <th scope="row">4</th>
-                                                                        <td>Jane Sharpe</td>
-                                                                        <td>Data Mining in Dar</td>
-                                                                        <td>Training</td>
-                                                                        <td>Data Zetu</td>
-                                                                        <td>0</td>
-                                                                        <td>6,600,000 <span
-                                                                                class="badge badge-success">TZS</span>
-                                                                        </td>
-                                                                        <td>2019-09-11</td>
-                                                                        <td>
-                                                                            <button type="button"
-                                                                                class="btn btn-outline-success">view
-                                                                                request</button>
-                                                                        </td>
-                                                                    </tr>
-
-                                                                    <tr>
-                                                                        <th scope="row">3</th>
-                                                                        <td>Mary Poppins</td>
-                                                                        <td>Data Analyis and Mining</td>
-                                                                        <td>Training</td>
-                                                                        <td>Sauti Mpya</td>
-                                                                        <td>0</td>
-                                                                        <td>8,700,000 <span
-                                                                                class="badge badge-success">TZS</span>
-                                                                        </td>
-                                                                        <td>2019-09-11</td>
-                                                                        <td>
-                                                                            <button type="button"
-                                                                                class="btn btn-outline-success">view
-                                                                                request</button>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                            <br />
-                                                            <nav aria-label="Page navigation example">
-                                                                <ul class="pagination">
-                                                                    <li class="page-item">
-                                                                        <a class="page-link" href="#"
-                                                                            aria-label="Previous">
-                                                                            <span aria-hidden="true">&laquo;</span>
-                                                                            <span class="sr-only">Previous</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">1</a></li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">2</a></li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">3</a></li>
-                                                                    <li class="page-item">
-                                                                        <a class="page-link" href="#" aria-label="Next">
-                                                                            <span aria-hidden="true">&raquo;</span>
-                                                                            <span class="sr-only">Next</span>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </nav>
-                                                        </div>
-                                                    </div>
-                                                    <!-- end of SECOND column -->
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-                                        <div class="tab-pane fade" id="vds-ds-impr-staff-pills-settings" role="tabpanel"
-                                            aria-labelledby="vds-ds-rtrmt-staff-pills-settings-tab">
-
-                                            {{-- my retirements --}}
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div class="card">
-                                                        <div class="card-content table-responsive">
-                                                            <br />
-                                                            <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>reviewed.</strong></p>
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th scope="col">#</th>
-                                                                        <th scope="col">Requested by</th>
-                                                                        <th scope="col-md-4">Title</th>
-                                                                        <th scope="col">Request Type</th>
-                                                                        <th scope="col">Under Project</th>
-                                                                        <th scope="col"># of approvals</th>
-                                                                        <th scope="col">Total Cost</th>
-                                                                        <th scope="col">Date created</th>
-
-                                                                        <th scope="col"></th>
-
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <th scope="row">1</th>
-                                                                        <td>MarkCuban</td>
-                                                                        <td>Data visualisation in Mbeya</td>
-                                                                        <td>Training</td>
-                                                                        <td>Sauti Mpya</td>
-                                                                        <td>0</td>
-                                                                        <td>2,300,000 <span
-                                                                                class="badge badge-success">TZS</span>
-                                                                        </td>
-                                                                        <td>2019-09-11</td>
-                                                                        <td>
-                                                                            <button type="button"
-                                                                                class="btn btn-outline-success">view
-                                                                                request</button>
-                                                                        </td>
-                                                                    </tr>
-
-                                                                    <tr>
-                                                                        <th scope="row">4</th>
-                                                                        <td>Jane Sharpe</td>
-                                                                        <td>Data Mining in Dar</td>
-                                                                        <td>Training</td>
-                                                                        <td>Data Zetu</td>
-                                                                        <td>0</td>
-                                                                        <td>6,600,000 <span
-                                                                                class="badge badge-success">TZS</span>
-                                                                        </td>
-                                                                        <td>2019-09-11</td>
-                                                                        <td>
-                                                                            <button type="button"
-                                                                                class="btn btn-outline-success">view
-                                                                                request</button>
-                                                                        </td>
-                                                                    </tr>
-
-                                                                    <tr>
-                                                                        <th scope="row">3</th>
-                                                                        <td>Mary Poppins</td>
-                                                                        <td>Data Analyis and Mining</td>
-                                                                        <td>Training</td>
-                                                                        <td>Sauti Mpya</td>
-                                                                        <td>0</td>
-                                                                        <td>8,700,000 <span
-                                                                                class="badge badge-success">TZS</span>
-                                                                        </td>
-                                                                        <td>2019-09-11</td>
-                                                                        <td>
-                                                                            <button type="button"
-                                                                                class="btn btn-outline-success">view
-                                                                                request</button>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                            <br />
-                                                            <nav aria-label="Page navigation example">
-                                                                <ul class="pagination">
-                                                                    <li class="page-item">
-                                                                        <a class="page-link" href="#"
-                                                                            aria-label="Previous">
-                                                                            <span aria-hidden="true">&laquo;</span>
-                                                                            <span class="sr-only">Previous</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">1</a></li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">2</a></li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">3</a></li>
-                                                                    <li class="page-item">
-                                                                        <a class="page-link" href="#" aria-label="Next">
-                                                                            <span aria-hidden="true">&raquo;</span>
-                                                                            <span class="sr-only">Next</span>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </nav>
-                                                        </div>
-                                                    </div>
-                                                    <!-- end of SECOND column -->
-                                                </div>
-
-                                            </div>
-
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="ds-pna-nav-contact" role="tabpanel"
-                            aria-labelledby="nav-contact-tab">
-                            <br />
-                            <br />
-                            {{-- my ds requests --}}
+                        <div class="tab-pane fade" id="vds-ds-pna-pills-sub-act" role="tabpanel"
+                            aria-labelledby="vdsreqs-pills-sub-act-tab">
+
+                            {{-- Sub   Activities --}}
+
                             <div class="row">
-                                <div class="col-md-2">
-                                    <div class="nav flex-column nav-pills" id="vds-ds-impr-ed-pills-tab" role="tablist"
-                                        aria-orientation="vertical">
-                                        <a class="nav-link active" id="vds-ds-impr-ed-pills-home-tab" data-toggle="pill"
-                                            href="#vds-ds-impr-ed-pills-home" role="tab"
-                                            aria-controls="vds-ed-reqs-pills-home" aria-selected="true">Reviewed</a>
-                                        <a class="nav-link" id="vds-ds-impr-ed-pills-profile-tab" data-toggle="pill"
-                                            href="#vds-ds-impr-ed-pills-profile" role="tab"
-                                            aria-controls="vds-ed-reqs-pills-profile" aria-selected="false">Approved</a>
-                                        <a class="nav-link" id="vds-ds-impr-ed-pills-messages-tab" data-toggle="pill"
-                                            href="#vds-ds-impr-ed-pills-messages" role="tab"
-                                            aria-controls="vds-ed-reqs-pills-messages"
-                                            aria-selected="false">Retirements</a>
-                                        <a class="nav-link" id="vds-ds-impr-ed-pills-settings-tab" data-toggle="pill"
-                                            href="#vds-ds-impr-ed-pills-settings" role="tab"
-                                            aria-controls="vds-ed-reqs-pills-settings" aria-selected="false">All</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-10">
+                                <div class="col-lg-12">
+                                    <nav>
+                                        <div class="nav nav-tabs" id="ds-pna-sub-activities-nav-tab" role="tablist">
+                                            <a class="nav-item nav-link active" id="ds-nav-pna-my-sub-activities-tab"
+                                                data-toggle="tab" href="#ds-pna-my-sub-activities-content" role="tab"
+                                                aria-controls="nav-my-sub-activities" aria-selected="true">My Sub
+                                                Activities</a>
+                                            <a class="nav-item nav-link" id="ds-nav-pna-staff-sub-activities-tab" data-toggle="tab"
+                                                href="#ds-pna-staff-sub-activities-content" role="tab" aria-controls="nav-staff-proj-content"
+                                                aria-selected="false">Staff Sub Activities</a>
+                                            <a class="nav-item nav-link" id="ds-pna-sub-activities-lm-response-tab" data-toggle="tab"
+                                                href="#ds-pna-lm-sub-activities-response-content" role="tab" aria-controls="nav-lm-response"
+                                                aria-selected="false">Response from Line Manager</a>
+                                        </div>
+                                    </nav>
+                                    <div class="tab-content" id="ds-impr-nav-tabContent">
+                                        <div class="tab-pane fade show active" id="ds-pna-my-sub-activities-content" role="tabpanel"
+                                            aria-labelledby="nav-ds-pna-my-sub-activities-content-tab">
+                                            <br />
+                                            <br />
+                                            {{-- my ds requests --}}
+                                            <div class="row">
+                                                <div class="col-md-2">
+                                                    <div class="nav flex-column nav-pills" id="vds-ds-subact-ed-pills-tab" role="tablist"
+                                                        aria-orientation="vertical">
+                                                        <a class="nav-link active" id="vds-ds-subact-ed-pills-reviewed-tab" data-toggle="pill"
+                                                            href="#vds-ds-subact-ed-pills-reviewed-content" role="tab"
+                                                            aria-controls="vds-ed-reqs-pills-reviewed" aria-selected="true">Reviewed</a>
 
-                                    <div class="tab-content" id="vds-ds-impr-ed-pills-tabContent">
-                                        <div class="tab-pane fade show active" id="vds-ds-impr-ed-pills-home"
-                                            role="tabpanel" aria-labelledby="vds-ed-reqs-pills-home-tab">
+                                                        <a class="nav-link" id="vds-ds-subact-ed-pills-approved-tab" data-toggle="pill"
+                                                            href="#vds-ds-subact-ed-pills-approved-content" role="tab"
+                                                            aria-controls="vds-ed-reqs-pills-approved" aria-selected="false">Approved</a>
 
-                                            {{-- my retirements --}}
+                                                        <a class="nav-link" id="vds-ds-subact-ed-pills-denied-tab" data-toggle="pill"
+                                                            href="#vds-ds-subact-ed-pills-denied-content" role="tab"
+                                                            aria-controls="vds-ed-reqs-pills-denied"
+                                                            aria-selected="false">Denied</a>
+
+                                                        <a class="nav-link" id="vds-ds-subact-ed-pills-all-tab" data-toggle="pill"
+                                                            href="#vds-ds-subact-ed-pills-all-content" role="tab"
+                                                            aria-controls="vds-ed-reqs-pills-all" aria-selected="false">All</a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-10">
+
+                                                    <div class="tab-content" id="vds-ds-subact-ed-pills-tabContent">
+                                                        <div class="tab-pane fade show active" id="vds-ds-subact-ed-pills-reviewed-content"
+                                                            role="tabpanel" aria-labelledby="vds-ed-reqs-pills-home-tab">
+
+                                                            {{-- my retirements --}}
+                                                            <div class="row">
+                                                                <div class="col-lg-12">
+                                                                    <div class="card">
+                                                                        <div class="card-content table-responsive">
+                                                                            <br />
+                                                                            <table class="table table-bordered table-hover">
+                                                                                <p>My Sub Activities on <strong>Adminstration review</strong></p>
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <th scope="col">#</th>
+                                                                                        <th scope="col">Requested by</th>
+                                                                                        <th scope="col-md-4">Title</th>
+                                                                                        <th scope="col">Request Type</th>
+                                                                                        <th scope="col">Under Project</th>
+                                                                                        <th scope="col"># of approvals</th>
+                                                                                        <th scope="col">Total Cost</th>
+                                                                                        <th scope="col">Date created</th>
+
+                                                                                        <th scope="col"></th>
+
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <th scope="row">1</th>
+                                                                                        <td>MarkCuban</td>
+                                                                                        <td>Data visualisation in Mbeya</td>
+                                                                                        <td>Training</td>
+                                                                                        <td>Sauti Mpya</td>
+                                                                                        <td>0</td>
+                                                                                        <td>2,300,000 <span
+                                                                                                class="badge badge-success">TZS</span>
+                                                                                        </td>
+                                                                                        <td>2019-09-11</td>
+                                                                                        <td>
+                                                                                            <button type="button"
+                                                                                                class="btn btn-outline-success">view
+                                                                                                request</button>
+                                                                                        </td>
+                                                                                    </tr>
+
+                                                                                    <tr>
+                                                                                        <th scope="row">4</th>
+                                                                                        <td>Jane Sharpe</td>
+                                                                                        <td>Data Mining in Dar</td>
+                                                                                        <td>Training</td>
+                                                                                        <td>Data Zetu</td>
+                                                                                        <td>0</td>
+                                                                                        <td>6,600,000 <span
+                                                                                                class="badge badge-success">TZS</span>
+                                                                                        </td>
+                                                                                        <td>2019-09-11</td>
+                                                                                        <td>
+                                                                                            <button type="button"
+                                                                                                class="btn btn-outline-success">view
+                                                                                                request</button>
+                                                                                        </td>
+                                                                                    </tr>
+
+                                                                                    <tr>
+                                                                                        <th scope="row">3</th>
+                                                                                        <td>Mary Poppins</td>
+                                                                                        <td>Data Analyis and Mining</td>
+                                                                                        <td>Training</td>
+                                                                                        <td>Sauti Mpya</td>
+                                                                                        <td>0</td>
+                                                                                        <td>8,700,000 <span
+                                                                                                class="badge badge-success">TZS</span>
+                                                                                        </td>
+                                                                                        <td>2019-09-11</td>
+                                                                                        <td>
+                                                                                            <button type="button"
+                                                                                                class="btn btn-outline-success">view
+                                                                                                request</button>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                            <br />
+                                                                            <nav aria-label="Page navigation example">
+                                                                                <ul class="pagination">
+                                                                                    <li class="page-item">
+                                                                                        <a class="page-link" href="#"
+                                                                                            aria-label="Previous">
+                                                                                            <span aria-hidden="true">&laquo;</span>
+                                                                                            <span class="sr-only">Previous</span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li class="page-item"><a class="page-link"
+                                                                                            href="#">1</a></li>
+                                                                                    <li class="page-item"><a class="page-link"
+                                                                                            href="#">2</a></li>
+                                                                                    <li class="page-item"><a class="page-link"
+                                                                                            href="#">3</a></li>
+                                                                                    <li class="page-item">
+                                                                                        <a class="page-link" href="#" aria-label="Next">
+                                                                                            <span aria-hidden="true">&raquo;</span>
+                                                                                            <span class="sr-only">Next</span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </nav>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- end of SECOND column -->
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="tab-pane fade" id="vds-ds-subact-ed-pills-approved-content" role="tabpanel"
+                                                            aria-labelledby="vdsreqs-pills-approved-tab">
+
+
+                                                            {{-- my retirements --}}
+                                                            <div class="row">
+                                                                <div class="col-lg-12">
+                                                                    <div class="card">
+                                                                        <div class="card-content table-responsive">
+                                                                            <br />
+                                                                            <table class="table table-bordered table-hover">
+                                                                                <p>My approved <strong>Sub Activities</strong></p>
+
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <th scope="col">#</th>
+                                                                                        <th scope="col">Requested by</th>
+                                                                                        <th scope="col-md-4">Title</th>
+                                                                                        <th scope="col">Request Type</th>
+                                                                                        <th scope="col">Under Project</th>
+                                                                                        <th scope="col"># of approvals</th>
+                                                                                        <th scope="col">Total Cost</th>
+                                                                                        <th scope="col">Date created</th>
+
+                                                                                        <th scope="col"></th>
+
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <th scope="row">1</th>
+                                                                                        <td>MarkCuban</td>
+                                                                                        <td>Data visualisation in Mbeya</td>
+                                                                                        <td>Training</td>
+                                                                                        <td>Sauti Mpya</td>
+                                                                                        <td>0</td>
+                                                                                        <td>2,300,000 <span
+                                                                                                class="badge badge-success">TZS</span>
+                                                                                        </td>
+                                                                                        <td>2019-09-11</td>
+                                                                                        <td>
+                                                                                            <button type="button"
+                                                                                                class="btn btn-outline-success">view
+                                                                                                request</button>
+                                                                                        </td>
+                                                                                    </tr>
+
+                                                                                    <tr>
+                                                                                        <th scope="row">4</th>
+                                                                                        <td>Jane Sharpe</td>
+                                                                                        <td>Data Mining in Dar</td>
+                                                                                        <td>Training</td>
+                                                                                        <td>Data Zetu</td>
+                                                                                        <td>0</td>
+                                                                                        <td>6,600,000 <span
+                                                                                                class="badge badge-success">TZS</span>
+                                                                                        </td>
+                                                                                        <td>2019-09-11</td>
+                                                                                        <td>
+                                                                                            <button type="button"
+                                                                                                class="btn btn-outline-success">view
+                                                                                                request</button>
+                                                                                        </td>
+                                                                                    </tr>
+
+                                                                                    <tr>
+                                                                                        <th scope="row">3</th>
+                                                                                        <td>Mary Poppins</td>
+                                                                                        <td>Data Analyis and Mining</td>
+                                                                                        <td>Training</td>
+                                                                                        <td>Sauti Mpya</td>
+                                                                                        <td>0</td>
+                                                                                        <td>8,700,000 <span
+                                                                                                class="badge badge-success">TZS</span>
+                                                                                        </td>
+                                                                                        <td>2019-09-11</td>
+                                                                                        <td>
+                                                                                            <button type="button"
+                                                                                                class="btn btn-outline-success">view
+                                                                                                request</button>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                            <br />
+                                                                            <nav aria-label="Page navigation example">
+                                                                                <ul class="pagination">
+                                                                                    <li class="page-item">
+                                                                                        <a class="page-link" href="#"
+                                                                                            aria-label="Previous">
+                                                                                            <span aria-hidden="true">&laquo;</span>
+                                                                                            <span class="sr-only">Previous</span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li class="page-item"><a class="page-link"
+                                                                                            href="#">1</a></li>
+                                                                                    <li class="page-item"><a class="page-link"
+                                                                                            href="#">2</a></li>
+                                                                                    <li class="page-item"><a class="page-link"
+                                                                                            href="#">3</a></li>
+                                                                                    <li class="page-item">
+                                                                                        <a class="page-link" href="#" aria-label="Next">
+                                                                                            <span aria-hidden="true">&raquo;</span>
+                                                                                            <span class="sr-only">Next</span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </nav>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- end of SECOND column -->
+                                                                </div>
+
+                                                            </div>
+
+
+                                                        </div>
+                                                        <div class="tab-pane fade" id="vds-ds-subact-ed-pills-denied-content" role="tabpanel"
+                                                            aria-labelledby="vdsreqs-pills-messages-tab">
+
+                                                            {{-- my retirements --}}
+                                                            <div class="row">
+                                                                <div class="col-lg-12">
+                                                                    <div class="card">
+                                                                        <div class="card-content table-responsive">
+                                                                            <br />
+                                                                            <table class="table table-bordered table-hover">
+                                                                                <p>My denied <strong>Sub Activities</strong></p>
+
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <th scope="col">#</th>
+                                                                                        <th scope="col">Requested by</th>
+                                                                                        <th scope="col-md-4">Title</th>
+                                                                                        <th scope="col">Request Type</th>
+                                                                                        <th scope="col">Under Project</th>
+                                                                                        <th scope="col"># of approvals</th>
+                                                                                        <th scope="col">Total Cost</th>
+                                                                                        <th scope="col">Date created</th>
+
+                                                                                        <th scope="col"></th>
+
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <th scope="row">1</th>
+                                                                                        <td>MarkCuban</td>
+                                                                                        <td>Data visualisation in Mbeya</td>
+                                                                                        <td>Training</td>
+                                                                                        <td>Sauti Mpya</td>
+                                                                                        <td>0</td>
+                                                                                        <td>2,300,000 <span
+                                                                                                class="badge badge-success">TZS</span>
+                                                                                        </td>
+                                                                                        <td>2019-09-11</td>
+                                                                                        <td>
+                                                                                            <button type="button"
+                                                                                                class="btn btn-outline-success">view
+                                                                                                request</button>
+                                                                                        </td>
+                                                                                    </tr>
+
+                                                                                    <tr>
+                                                                                        <th scope="row">4</th>
+                                                                                        <td>Jane Sharpe</td>
+                                                                                        <td>Data Mining in Dar</td>
+                                                                                        <td>Training</td>
+                                                                                        <td>Data Zetu</td>
+                                                                                        <td>0</td>
+                                                                                        <td>6,600,000 <span
+                                                                                                class="badge badge-success">TZS</span>
+                                                                                        </td>
+                                                                                        <td>2019-09-11</td>
+                                                                                        <td>
+                                                                                            <button type="button"
+                                                                                                class="btn btn-outline-success">view
+                                                                                                request</button>
+                                                                                        </td>
+                                                                                    </tr>
+
+                                                                                    <tr>
+                                                                                        <th scope="row">3</th>
+                                                                                        <td>Mary Poppins</td>
+                                                                                        <td>Data Analyis and Mining</td>
+                                                                                        <td>Training</td>
+                                                                                        <td>Sauti Mpya</td>
+                                                                                        <td>0</td>
+                                                                                        <td>8,700,000 <span
+                                                                                                class="badge badge-success">TZS</span>
+                                                                                        </td>
+                                                                                        <td>2019-09-11</td>
+                                                                                        <td>
+                                                                                            <button type="button"
+                                                                                                class="btn btn-outline-success">view
+                                                                                                request</button>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                            <br />
+                                                                            <nav aria-label="Page navigation example">
+                                                                                <ul class="pagination">
+                                                                                    <li class="page-item">
+                                                                                        <a class="page-link" href="#"
+                                                                                            aria-label="Previous">
+                                                                                            <span aria-hidden="true">&laquo;</span>
+                                                                                            <span class="sr-only">Previous</span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li class="page-item"><a class="page-link"
+                                                                                            href="#">1</a></li>
+                                                                                    <li class="page-item"><a class="page-link"
+                                                                                            href="#">2</a></li>
+                                                                                    <li class="page-item"><a class="page-link"
+                                                                                            href="#">3</a></li>
+                                                                                    <li class="page-item">
+                                                                                        <a class="page-link" href="#" aria-label="Next">
+                                                                                            <span aria-hidden="true">&raquo;</span>
+                                                                                            <span class="sr-only">Next</span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </nav>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- end of SECOND column -->
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="tab-pane fade" id="vds-ds-subact-ed-pills-all-content" role="tabpanel"
+                                                            aria-labelledby="vdsreqs-pills-settings-tab">
+
+
+                                                            {{-- my retirements --}}
+                                                            <div class="row">
+                                                                <div class="col-lg-12">
+                                                                    <div class="card">
+                                                                        <div class="card-content table-responsive">
+                                                                            <br />
+                                                                            <table class="table table-bordered table-hover">
+                                                                                <p>All My <strong>Sub Activities</strong></p>
+
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <th scope="col">#</th>
+                                                                                        <th scope="col">Requested by</th>
+                                                                                        <th scope="col-md-4">Title</th>
+                                                                                        <th scope="col">Request Type</th>
+                                                                                        <th scope="col">Under Project</th>
+                                                                                        <th scope="col"># of approvals</th>
+                                                                                        <th scope="col">Total Cost</th>
+                                                                                        <th scope="col">Date created</th>
+
+                                                                                        <th scope="col"></th>
+
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <th scope="row">1</th>
+                                                                                        <td>MarkCuban</td>
+                                                                                        <td>Data visualisation in Mbeya</td>
+                                                                                        <td>Training</td>
+                                                                                        <td>Sauti Mpya</td>
+                                                                                        <td>0</td>
+                                                                                        <td>2,300,000 <span
+                                                                                                class="badge badge-success">TZS</span>
+                                                                                        </td>
+                                                                                        <td>2019-09-11</td>
+                                                                                        <td>
+                                                                                            <button type="button"
+                                                                                                class="btn btn-outline-success">view
+                                                                                                request</button>
+                                                                                        </td>
+                                                                                    </tr>
+
+                                                                                    <tr>
+                                                                                        <th scope="row">4</th>
+                                                                                        <td>Jane Sharpe</td>
+                                                                                        <td>Data Mining in Dar</td>
+                                                                                        <td>Training</td>
+                                                                                        <td>Data Zetu</td>
+                                                                                        <td>0</td>
+                                                                                        <td>6,600,000 <span
+                                                                                                class="badge badge-success">TZS</span>
+                                                                                        </td>
+                                                                                        <td>2019-09-11</td>
+                                                                                        <td>
+                                                                                            <button type="button"
+                                                                                                class="btn btn-outline-success">view
+                                                                                                request</button>
+                                                                                        </td>
+                                                                                    </tr>
+
+                                                                                    <tr>
+                                                                                        <th scope="row">3</th>
+                                                                                        <td>Mary Poppins</td>
+                                                                                        <td>Data Analyis and Mining</td>
+                                                                                        <td>Training</td>
+                                                                                        <td>Sauti Mpya</td>
+                                                                                        <td>0</td>
+                                                                                        <td>8,700,000 <span
+                                                                                                class="badge badge-success">TZS</span>
+                                                                                        </td>
+                                                                                        <td>2019-09-11</td>
+                                                                                        <td>
+                                                                                            <button type="button"
+                                                                                                class="btn btn-outline-success">view
+                                                                                                request</button>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                            <br />
+                                                                            <nav aria-label="Page navigation example">
+                                                                                <ul class="pagination">
+                                                                                    <li class="page-item">
+                                                                                        <a class="page-link" href="#"
+                                                                                            aria-label="Previous">
+                                                                                            <span aria-hidden="true">&laquo;</span>
+                                                                                            <span class="sr-only">Previous</span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                    <li class="page-item"><a class="page-link"
+                                                                                            href="#">1</a></li>
+                                                                                    <li class="page-item"><a class="page-link"
+                                                                                            href="#">2</a></li>
+                                                                                    <li class="page-item"><a class="page-link"
+                                                                                            href="#">3</a></li>
+                                                                                    <li class="page-item">
+                                                                                        <a class="page-link" href="#" aria-label="Next">
+                                                                                            <span aria-hidden="true">&raquo;</span>
+                                                                                            <span class="sr-only">Next</span>
+                                                                                        </a>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </nav>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- end of SECOND column -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="ds-pna-staff-sub-activities-content" role="tabpanel"
+                                            aria-labelledby="nav-profile-tab">
+                                            <br />
+                                            <br />
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <div class="card">
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>reviewed.</strong></p>
+                                                                <p>Staff Sub Activities that are
+                                                                    <strong>on administration review.</strong></p>
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">#</th>
@@ -6911,248 +8363,20 @@
                                                     </div>
                                                     <!-- end of SECOND column -->
                                                 </div>
-
                                             </div>
-
                                         </div>
-                                        <div class="tab-pane fade" id="vds-ds-impr-ed-pills-profile" role="tabpanel"
-                                            aria-labelledby="vdsreqs-pills-profile-tab">
-
-                                            {{-- my retirements --}}
+                                        <div class="tab-pane fade" id="ds-pna-lm-sub-activities-response-content" role="tabpanel"
+                                            aria-labelledby="nav-contact-tab">
+                                            <br />
+                                            <br />
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <div class="card">
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>reviewed.</strong></p>
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th scope="col">#</th>
-                                                                        <th scope="col">Requested by</th>
-                                                                        <th scope="col-md-4">Title</th>
-                                                                        <th scope="col">Request Type</th>
-                                                                        <th scope="col">Under Project</th>
-                                                                        <th scope="col"># of approvals</th>
-                                                                        <th scope="col">Total Cost</th>
-                                                                        <th scope="col">Date created</th>
-
-                                                                        <th scope="col"></th>
-
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <th scope="row">1</th>
-                                                                        <td>MarkCuban</td>
-                                                                        <td>Data visualisation in Mbeya</td>
-                                                                        <td>Training</td>
-                                                                        <td>Sauti Mpya</td>
-                                                                        <td>0</td>
-                                                                        <td>2,300,000 <span
-                                                                                class="badge badge-success">TZS</span>
-                                                                        </td>
-                                                                        <td>2019-09-11</td>
-                                                                        <td>
-                                                                            <button type="button"
-                                                                                class="btn btn-outline-success">view
-                                                                                request</button>
-                                                                        </td>
-                                                                    </tr>
-
-                                                                    <tr>
-                                                                        <th scope="row">4</th>
-                                                                        <td>Jane Sharpe</td>
-                                                                        <td>Data Mining in Dar</td>
-                                                                        <td>Training</td>
-                                                                        <td>Data Zetu</td>
-                                                                        <td>0</td>
-                                                                        <td>6,600,000 <span
-                                                                                class="badge badge-success">TZS</span>
-                                                                        </td>
-                                                                        <td>2019-09-11</td>
-                                                                        <td>
-                                                                            <button type="button"
-                                                                                class="btn btn-outline-success">view
-                                                                                request</button>
-                                                                        </td>
-                                                                    </tr>
-
-                                                                    <tr>
-                                                                        <th scope="row">3</th>
-                                                                        <td>Mary Poppins</td>
-                                                                        <td>Data Analyis and Mining</td>
-                                                                        <td>Training</td>
-                                                                        <td>Sauti Mpya</td>
-                                                                        <td>0</td>
-                                                                        <td>8,700,000 <span
-                                                                                class="badge badge-success">TZS</span>
-                                                                        </td>
-                                                                        <td>2019-09-11</td>
-                                                                        <td>
-                                                                            <button type="button"
-                                                                                class="btn btn-outline-success">view
-                                                                                request</button>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                            <br />
-                                                            <nav aria-label="Page navigation example">
-                                                                <ul class="pagination">
-                                                                    <li class="page-item">
-                                                                        <a class="page-link" href="#"
-                                                                            aria-label="Previous">
-                                                                            <span aria-hidden="true">&laquo;</span>
-                                                                            <span class="sr-only">Previous</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">1</a></li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">2</a></li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">3</a></li>
-                                                                    <li class="page-item">
-                                                                        <a class="page-link" href="#" aria-label="Next">
-                                                                            <span aria-hidden="true">&raquo;</span>
-                                                                            <span class="sr-only">Next</span>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </nav>
-                                                        </div>
-                                                    </div>
-                                                    <!-- end of SECOND column -->
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <div class="tab-pane fade" id="vds-ds-impr-ed-pills-messages" role="tabpanel"
-                                            aria-labelledby="vdsreqs-pills-messages-tab">
-
-                                            {{-- my retirements --}}
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div class="card">
-                                                        <div class="card-content table-responsive">
-                                                            <br />
-                                                            <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>reviewed.</strong></p>
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th scope="col">#</th>
-                                                                        <th scope="col">Requested by</th>
-                                                                        <th scope="col-md-4">Title</th>
-                                                                        <th scope="col">Request Type</th>
-                                                                        <th scope="col">Under Project</th>
-                                                                        <th scope="col"># of approvals</th>
-                                                                        <th scope="col">Total Cost</th>
-                                                                        <th scope="col">Date created</th>
-
-                                                                        <th scope="col"></th>
-
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <th scope="row">1</th>
-                                                                        <td>MarkCuban</td>
-                                                                        <td>Data visualisation in Mbeya</td>
-                                                                        <td>Training</td>
-                                                                        <td>Sauti Mpya</td>
-                                                                        <td>0</td>
-                                                                        <td>2,300,000 <span
-                                                                                class="badge badge-success">TZS</span>
-                                                                        </td>
-                                                                        <td>2019-09-11</td>
-                                                                        <td>
-                                                                            <button type="button"
-                                                                                class="btn btn-outline-success">view
-                                                                                request</button>
-                                                                        </td>
-                                                                    </tr>
-
-                                                                    <tr>
-                                                                        <th scope="row">4</th>
-                                                                        <td>Jane Sharpe</td>
-                                                                        <td>Data Mining in Dar</td>
-                                                                        <td>Training</td>
-                                                                        <td>Data Zetu</td>
-                                                                        <td>0</td>
-                                                                        <td>6,600,000 <span
-                                                                                class="badge badge-success">TZS</span>
-                                                                        </td>
-                                                                        <td>2019-09-11</td>
-                                                                        <td>
-                                                                            <button type="button"
-                                                                                class="btn btn-outline-success">view
-                                                                                request</button>
-                                                                        </td>
-                                                                    </tr>
-
-                                                                    <tr>
-                                                                        <th scope="row">3</th>
-                                                                        <td>Mary Poppins</td>
-                                                                        <td>Data Analyis and Mining</td>
-                                                                        <td>Training</td>
-                                                                        <td>Sauti Mpya</td>
-                                                                        <td>0</td>
-                                                                        <td>8,700,000 <span
-                                                                                class="badge badge-success">TZS</span>
-                                                                        </td>
-                                                                        <td>2019-09-11</td>
-                                                                        <td>
-                                                                            <button type="button"
-                                                                                class="btn btn-outline-success">view
-                                                                                request</button>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                            <br />
-                                                            <nav aria-label="Page navigation example">
-                                                                <ul class="pagination">
-                                                                    <li class="page-item">
-                                                                        <a class="page-link" href="#"
-                                                                            aria-label="Previous">
-                                                                            <span aria-hidden="true">&laquo;</span>
-                                                                            <span class="sr-only">Previous</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">1</a></li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">2</a></li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">3</a></li>
-                                                                    <li class="page-item">
-                                                                        <a class="page-link" href="#" aria-label="Next">
-                                                                            <span aria-hidden="true">&raquo;</span>
-                                                                            <span class="sr-only">Next</span>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </nav>
-                                                        </div>
-                                                    </div>
-                                                    <!-- end of SECOND column -->
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-                                        <div class="tab-pane fade" id="vds-ds-impr-ed-pills-settings" role="tabpanel"
-                                            aria-labelledby="vdsreqs-pills-settings-tab">
-
-                                            {{-- my retirements --}}
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div class="card">
-                                                        <div class="card-content table-responsive">
-                                                            <br />
-                                                            <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>reviewed.</strong></p>
+                                                                <p>My Sub Activities that are
+                                                                    <strong>on Line Manager review.</strong></p>
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">#</th>
@@ -7261,7 +8485,6 @@
                     </div>
                 </div>
             </div>
-
 
         </div>
         <!-- end of data-science-analytics data panel -->
@@ -7274,8 +8497,9 @@
         <!-- start of financial-analytics data panel -->
         <div class="tab-pane fade" id="data-science-timesheet-md" role="tabpanel"
             aria-labelledby="data-science-timesheet-tab-md">
-            <p>Data Science Staff Timesheets</p>
             <br />
+            <p>date:</p>
+            <h2>01 January 2021</h2>
             <br />
             <div class="row">
                 <div class="col-lg-12">
@@ -7303,27 +8527,27 @@
                                 <div class="col-md-2">
                                     <div class="nav flex-column nav-pills" id="vds-ds-impr-pills-tab" role="tablist"
                                         aria-orientation="vertical">
-                                        <a class="nav-link active" id="vds-ds-impr-pills-home-tab" data-toggle="pill"
-                                            href="#vds-ds-impr-pills-home" role="tab" aria-controls="vdsreqs-pills-home"
-                                            aria-selected="true">Reviewed</a>
-                                        <a class="nav-link" id="vds-ds-impr-pills-profile-tab" data-toggle="pill"
-                                            href="#vds-ds-impr-pills-profile" role="tab"
-                                            aria-controls="vdsreqs-pills-profile" aria-selected="false">Approved</a>
-                                        <a class="nav-link" id="vds-ds-impr-pills-messages-tab" data-toggle="pill"
-                                            href="#vds-ds-impr-pills-messages" role="tab"
-                                            aria-controls="vdsreqs-pills-messages" aria-selected="false">Retirements</a>
-                                        <a class="nav-link" id="vds-ds-impr-pills-settings-tab" data-toggle="pill"
-                                            href="#vds-ds-impr-pills-settings" role="tab"
-                                            aria-controls="vdsreqs-pills-settings" aria-selected="false">All</a>
+                                        <a class="nav-link active" id="vds-ds-impr-pills-wk1-tab" data-toggle="pill"
+                                            href="#vds-ds-impr-pills-wk1-content" role="tab" aria-controls="vdsreqs-pills-home"
+                                            aria-selected="true">Week 1</a>
+
+                                        <a class="nav-link" id="vds-ds-impr-pills-wk2-tab" data-toggle="pill"
+                                            href="#vds-ds-impr-pills-wk2-content" role="tab"
+                                            aria-controls="vdsreqs-pills-wk2" aria-selected="false">Week 2</a>
+
+                                        <a class="nav-link" id="vds-ds-impr-pills-wk3-tab" data-toggle="pill"
+                                            href="#vds-ds-impr-pills-wk3-content" role="tab"
+                                            aria-controls="vdsreqs-pills-wk3" aria-selected="false">Week 3</a>
+                                        <a class="nav-link" id="vds-ds-impr-pills-wk4-tab" data-toggle="pill"
+                                            href="#vds-ds-impr-pills-wk4-content" role="tab"
+                                            aria-controls="vdsreqs-pills-wk4" aria-selected="false">Week 4</a>
                                     </div>
                                 </div>
                                 <div class="col-md-10">
 
                                     <div class="tab-content" id="vds-ds-impr-pills-tabContent">
-                                        <div class="tab-pane fade show active" id="vds-ds-impr-pills-home"
+                                        <div class="tab-pane fade show active" id="vds-ds-impr-pills-wk1-content"
                                             role="tabpanel" aria-labelledby="impr-pills-home-tab">
-
-
                                             {{-- my retirements --}}
                                             <div class="row">
                                                 <div class="col-lg-12">
@@ -7331,7 +8555,8 @@
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>reviewed.</strong></p>
+                                                                <p>My retirements that have been
+                                                                    <strong>reviewed.</strong></p>
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">#</th>
@@ -7434,10 +8659,8 @@
 
                                             </div>
                                         </div>
-                                        <div class="tab-pane fade" id="vds-ds-impr-pills-profile" role="tabpanel"
+                                        <div class="tab-pane fade" id="vds-ds-impr-pills-wk2-content" role="tabpanel"
                                             aria-labelledby="vdsreqs-pills-profile-tab">
-
-
                                             {{-- my retirements --}}
                                             <div class="row">
                                                 <div class="col-lg-12">
@@ -7445,7 +8668,8 @@
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>reviewed.</strong></p>
+                                                                <p>My retirements that have been
+                                                                    <strong>reviewed.</strong></p>
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">#</th>
@@ -7548,9 +8772,8 @@
 
                                             </div>
                                         </div>
-                                        <div class="tab-pane fade" id="vds-ds-impr-pills-messages" role="tabpanel"
+                                        <div class="tab-pane fade" id="vds-ds-impr-pills-wk3-content" role="tabpanel"
                                             aria-labelledby="vdsreqs-pills-messages-tab">
-
                                             {{-- my retirements --}}
                                             <div class="row">
                                                 <div class="col-lg-12">
@@ -7558,7 +8781,8 @@
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>reviewed.</strong></p>
+                                                                <p>My retirements that have been
+                                                                    <strong>reviewed.</strong></p>
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">#</th>
@@ -7660,11 +8884,9 @@
                                                 </div>
 
                                             </div>
-
                                         </div>
-                                        <div class="tab-pane fade" id="vds-ds-impr-pills-settings" role="tabpanel"
+                                        <div class="tab-pane fade" id="vds-ds-impr-pills-wk4-content" role="tabpanel"
                                             aria-labelledby="vdsreqs-pills-settings-tab">
-
                                             {{-- my retirements --}}
                                             <div class="row">
                                                 <div class="col-lg-12">
@@ -7672,7 +8894,8 @@
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>reviewed.</strong></p>
+                                                                <p>My retirements that have been
+                                                                    <strong>reviewed.</strong></p>
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">#</th>
@@ -7818,7 +9041,8 @@
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>reviewed.</strong></p>
+                                                                <p>My retirements that have been
+                                                                    <strong>reviewed.</strong></p>
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">#</th>
@@ -7932,7 +9156,8 @@
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>reviewed.</strong></p>
+                                                                <p>My retirements that have been
+                                                                    <strong>reviewed.</strong></p>
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">#</th>
@@ -8046,7 +9271,8 @@
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>reviewed.</strong></p>
+                                                                <p>My retirements that have been
+                                                                    <strong>reviewed.</strong></p>
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">#</th>
@@ -8160,7 +9386,8 @@
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>reviewed.</strong></p>
+                                                                <p>My retirements that have been
+                                                                    <strong>reviewed.</strong></p>
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">#</th>
@@ -8306,7 +9533,8 @@
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>reviewed.</strong></p>
+                                                                <p>My retirements that have been
+                                                                    <strong>reviewed.</strong></p>
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">#</th>
@@ -8419,7 +9647,8 @@
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>reviewed.</strong></p>
+                                                                <p>My retirements that have been
+                                                                    <strong>reviewed.</strong></p>
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">#</th>
@@ -8534,7 +9763,8 @@
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>reviewed.</strong></p>
+                                                                <p>My retirements that have been
+                                                                    <strong>reviewed.</strong></p>
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">#</th>
@@ -8649,7 +9879,8 @@
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             <table class="table table-bordered table-hover">
-                                                                <p>My retirements that have been <strong>reviewed.</strong></p>
+                                                                <p>My retirements that have been
+                                                                    <strong>reviewed.</strong></p>
                                                                 <thead>
                                                                     <tr>
                                                                         <th scope="col">#</th>
@@ -8762,25 +9993,1517 @@
                 </div>
             </div>
 
-
         </div>
         <!-- end of data-science-analytics data panel -->
 
-
-        <!--
+                <!--
                =========================================
                =                                       =
-               =      start of financial-analytics data           =
+               =      start of data-science-scholars data           =
                ========================================= -->
-        <!-- start of financial-analytics data panel -->
-        <div class="tab-pane fade" id="data-science-analytics-md" role="tabpanel"
-            aria-labelledby="data-science-analytics-tab-md">
-            <p>data science analytics Reports</p>
+        <!-- start of data-science-scholars data panel -->
+        <div class="tab-pane fade" id="data-science-scholars-md" role="tabpanel"
+            aria-labelledby="data-science-scholars-tab-md">
             <br />
+            {{-- my ds requests --}}
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="nav flex-column nav-pills" id="vds-ds-scholars-pills-tab" role="tablist"
+                        aria-orientation="vertical">
+                        <a class="nav-link active" id="vds-ds-scholars-pills-intake-tab" data-toggle="pill"
+                            href="#vds-ds-scholars-pills-intake-content" role="tab" aria-controls="vds-ed-reqs-pills-home"
+                            aria-selected="true">Intakes</a>
+                        <a class="nav-link" id="vds-ds-scholars-pills-scs-tab" data-toggle="pill"
+                            href="#vds-ds-scholars-pills-scs-content" role="tab" aria-controls="vds-ed-reqs-pills-profile"
+                            aria-selected="false">Scholars</a>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <div class="tab-content" id="vds-ds-pna-ed-pills-tabContent">
+                        <div class="tab-pane fade show active" id="vds-ds-scholars-pills-intake-content" role="tabpanel"
+                            aria-labelledby="vds-ds-scholars-pills-intake-tab">
+
+                            {{-- intake --}}
+                            <ul class="nav nav-tabs" id="dsCurrentIntake" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="ds-current-intake-tab" data-toggle="tab" href="#ds-current-intake-content" role="tab" aria-controls="home" aria-selected="true">Current Intake</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="ds-all-intake-content-tab" data-toggle="tab" href="#ds-all-intake-content" role="tab" aria-controls="profile" aria-selected="false">All Intakes</a>
+                                </li>
+                                </ul>
+                                <div class="tab-content" id="myScholarIntakeContent">
+                                <div class="tab-pane fade show active" id="ds-current-intake-content" role="tabpanel" aria-labelledby="ds-current-intake-content-tab">
+                                    <br />
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#newDSimprest">
+                                        create a new intake
+                                    </button>
+                                    <br />
+                                    <br />
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="card">
+                                                <div class="card-content table-responsive">
+                                                    <br />
+                                                    <table class="table table-bordered table-hover">
+                                                        <p>Current on going intakes </p>
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">#</th>
+                                                                <th scope="col">Requested by</th>
+                                                                <th scope="col-md-4">Title</th>
+                                                                <th scope="col">Request Type</th>
+                                                                <th scope="col">Under Project</th>
+                                                                <th scope="col"># of approvals</th>
+                                                                <th scope="col">Total Cost</th>
+                                                                <th scope="col">Date created</th>
+
+                                                                <th scope="col"></th>
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope="row">1</th>
+                                                                <td>MarkCuban</td>
+                                                                <td>Data visualisation in Mbeya</td>
+                                                                <td>Training</td>
+                                                                <td>Sauti Mpya</td>
+                                                                <td>0</td>
+                                                                <td>2,300,000 <span
+                                                                        class="badge badge-success">TZS</span>
+                                                                </td>
+                                                                <td>2019-09-11</td>
+                                                                <td>
+                                                                    <button type="button"
+                                                                        class="btn btn-outline-success">view
+                                                                        request</button>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <th scope="row">4</th>
+                                                                <td>Jane Sharpe</td>
+                                                                <td>Data Mining in Dar</td>
+                                                                <td>Training</td>
+                                                                <td>Data Zetu</td>
+                                                                <td>0</td>
+                                                                <td>6,600,000 <span
+                                                                        class="badge badge-success">TZS</span>
+                                                                </td>
+                                                                <td>2019-09-11</td>
+                                                                <td>
+                                                                    <button type="button"
+                                                                        class="btn btn-outline-success">view
+                                                                        request</button>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <th scope="row">3</th>
+                                                                <td>Mary Poppins</td>
+                                                                <td>Data Analyis and Mining</td>
+                                                                <td>Training</td>
+                                                                <td>Sauti Mpya</td>
+                                                                <td>0</td>
+                                                                <td>8,700,000 <span
+                                                                        class="badge badge-success">TZS</span>
+                                                                </td>
+                                                                <td>2019-09-11</td>
+                                                                <td>
+                                                                    <button type="button"
+                                                                        class="btn btn-outline-success">view
+                                                                        request</button>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <br />
+                                                    <nav aria-label="Page navigation example">
+                                                        <ul class="pagination">
+                                                            <li class="page-item">
+                                                                <a class="page-link" href="#"
+                                                                    aria-label="Previous">
+                                                                    <span aria-hidden="true">&laquo;</span>
+                                                                    <span class="sr-only">Previous</span>
+                                                                </a>
+                                                            </li>
+                                                            <li class="page-item"><a class="page-link"
+                                                                    href="#">1</a></li>
+                                                            <li class="page-item"><a class="page-link"
+                                                                    href="#">2</a></li>
+                                                            <li class="page-item"><a class="page-link"
+                                                                    href="#">3</a></li>
+                                                            <li class="page-item">
+                                                                <a class="page-link" href="#" aria-label="Next">
+                                                                    <span aria-hidden="true">&raquo;</span>
+                                                                    <span class="sr-only">Next</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </nav>
+                                                </div>
+                                            </div>
+                                            <!-- end of SECOND column -->
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="tab-pane fade" id="ds-all-intake-content" role="tabpanel" aria-labelledby="profile-tab">
+                                    <br />
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="card">
+                                                <div class="card-content table-responsive">
+                                                    <br />
+                                                    <table class="table table-bordered table-hover">
+                                                        <p>All Intakes</p>
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">#</th>
+                                                                <th scope="col">Requested by</th>
+                                                                <th scope="col-md-4">Title</th>
+                                                                <th scope="col">Request Type</th>
+                                                                <th scope="col">Under Project</th>
+                                                                <th scope="col"># of approvals</th>
+                                                                <th scope="col">Total Cost</th>
+                                                                <th scope="col">Date created</th>
+
+                                                                <th scope="col"></th>
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope="row">1</th>
+                                                                <td>MarkCuban</td>
+                                                                <td>Data visualisation in Mbeya</td>
+                                                                <td>Training</td>
+                                                                <td>Sauti Mpya</td>
+                                                                <td>0</td>
+                                                                <td>2,300,000 <span
+                                                                        class="badge badge-success">TZS</span>
+                                                                </td>
+                                                                <td>2019-09-11</td>
+                                                                <td>
+                                                                    <button type="button"
+                                                                        class="btn btn-outline-success">view
+                                                                        request</button>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <th scope="row">4</th>
+                                                                <td>Jane Sharpe</td>
+                                                                <td>Data Mining in Dar</td>
+                                                                <td>Training</td>
+                                                                <td>Data Zetu</td>
+                                                                <td>0</td>
+                                                                <td>6,600,000 <span
+                                                                        class="badge badge-success">TZS</span>
+                                                                </td>
+                                                                <td>2019-09-11</td>
+                                                                <td>
+                                                                    <button type="button"
+                                                                        class="btn btn-outline-success">view
+                                                                        request</button>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <th scope="row">3</th>
+                                                                <td>Mary Poppins</td>
+                                                                <td>Data Analyis and Mining</td>
+                                                                <td>Training</td>
+                                                                <td>Sauti Mpya</td>
+                                                                <td>0</td>
+                                                                <td>8,700,000 <span
+                                                                        class="badge badge-success">TZS</span>
+                                                                </td>
+                                                                <td>2019-09-11</td>
+                                                                <td>
+                                                                    <button type="button"
+                                                                        class="btn btn-outline-success">view
+                                                                        request</button>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <br />
+                                                    <nav aria-label="Page navigation example">
+                                                        <ul class="pagination">
+                                                            <li class="page-item">
+                                                                <a class="page-link" href="#"
+                                                                    aria-label="Previous">
+                                                                    <span aria-hidden="true">&laquo;</span>
+                                                                    <span class="sr-only">Previous</span>
+                                                                </a>
+                                                            </li>
+                                                            <li class="page-item"><a class="page-link"
+                                                                    href="#">1</a></li>
+                                                            <li class="page-item"><a class="page-link"
+                                                                    href="#">2</a></li>
+                                                            <li class="page-item"><a class="page-link"
+                                                                    href="#">3</a></li>
+                                                            <li class="page-item">
+                                                                <a class="page-link" href="#" aria-label="Next">
+                                                                    <span aria-hidden="true">&raquo;</span>
+                                                                    <span class="sr-only">Next</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </nav>
+                                                </div>
+                                            </div>
+                                            <!-- end of SECOND column -->
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                </div>
+
+                        </div>
+                        <div class="tab-pane fade" id="vds-ds-scholars-pills-scs-content" role="tabpanel"
+                            aria-labelledby="vds-ds-scholars-pills-scs-tab">
+                            {{-- scholars --}}
+
+                            <ul class="nav nav-tabs" id="myScholarTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="on-going-scholars-tab" data-toggle="tab" href="#ds-on-going-scholars-content" role="tab" aria-controls="home" aria-selected="true">On going Scholars</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="ds-all-scholars-tab" data-toggle="tab" href="#ds-all-scholars-content" role="tab" aria-controls="profile" aria-selected="false">All Scholars</a>
+                                </li>
+                                </ul>
+                                <div class="tab-content" id="myScholarContent">
+                                <div class="tab-pane fade show active" id="ds-on-going-scholars-content" role="tabpanel" aria-labelledby="on-going-scholars-tab">
+                                    <br />
+
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#newDSimprest">
+                                        add new scholar
+                                    </button>
+                                    <br />
+                                    <br />
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="card">
+                                                <div class="card-content table-responsive">
+                                                    <br />
+                                                    <table class="table table-bordered table-hover">
+                                                        <p>Current Scholars</p>
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">#</th>
+                                                                <th scope="col">Requested by</th>
+                                                                <th scope="col-md-4">Title</th>
+                                                                <th scope="col">Request Type</th>
+                                                                <th scope="col">Under Project</th>
+                                                                <th scope="col"># of approvals</th>
+                                                                <th scope="col">Total Cost</th>
+                                                                <th scope="col">Date created</th>
+
+                                                                <th scope="col"></th>
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope="row">1</th>
+                                                                <td>MarkCuban</td>
+                                                                <td>Data visualisation in Mbeya</td>
+                                                                <td>Training</td>
+                                                                <td>Sauti Mpya</td>
+                                                                <td>0</td>
+                                                                <td>2,300,000 <span
+                                                                        class="badge badge-success">TZS</span>
+                                                                </td>
+                                                                <td>2019-09-11</td>
+                                                                <td>
+                                                                    <button type="button"
+                                                                        class="btn btn-outline-success">view
+                                                                        request</button>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <th scope="row">4</th>
+                                                                <td>Jane Sharpe</td>
+                                                                <td>Data Mining in Dar</td>
+                                                                <td>Training</td>
+                                                                <td>Data Zetu</td>
+                                                                <td>0</td>
+                                                                <td>6,600,000 <span
+                                                                        class="badge badge-success">TZS</span>
+                                                                </td>
+                                                                <td>2019-09-11</td>
+                                                                <td>
+                                                                    <button type="button"
+                                                                        class="btn btn-outline-success">view
+                                                                        request</button>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <th scope="row">3</th>
+                                                                <td>Mary Poppins</td>
+                                                                <td>Data Analyis and Mining</td>
+                                                                <td>Training</td>
+                                                                <td>Sauti Mpya</td>
+                                                                <td>0</td>
+                                                                <td>8,700,000 <span
+                                                                        class="badge badge-success">TZS</span>
+                                                                </td>
+                                                                <td>2019-09-11</td>
+                                                                <td>
+                                                                    <button type="button"
+                                                                        class="btn btn-outline-success">view
+                                                                        request</button>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <br />
+                                                    <nav aria-label="Page navigation example">
+                                                        <ul class="pagination">
+                                                            <li class="page-item">
+                                                                <a class="page-link" href="#"
+                                                                    aria-label="Previous">
+                                                                    <span aria-hidden="true">&laquo;</span>
+                                                                    <span class="sr-only">Previous</span>
+                                                                </a>
+                                                            </li>
+                                                            <li class="page-item"><a class="page-link"
+                                                                    href="#">1</a></li>
+                                                            <li class="page-item"><a class="page-link"
+                                                                    href="#">2</a></li>
+                                                            <li class="page-item"><a class="page-link"
+                                                                    href="#">3</a></li>
+                                                            <li class="page-item">
+                                                                <a class="page-link" href="#" aria-label="Next">
+                                                                    <span aria-hidden="true">&raquo;</span>
+                                                                    <span class="sr-only">Next</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </nav>
+                                                </div>
+                                            </div>
+                                            <!-- end of SECOND column -->
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="tab-pane fade" id="ds-all-scholars-content" role="tabpanel" aria-labelledby="all-going-scholars-tab">
+                                    <br />
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="card">
+                                                <div class="card-content table-responsive">
+                                                    <br />
+                                                    <table class="table table-bordered table-hover">
+                                                        <p>All Scholars</p>
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">#</th>
+                                                                <th scope="col">Requested by</th>
+                                                                <th scope="col-md-4">Title</th>
+                                                                <th scope="col">Request Type</th>
+                                                                <th scope="col">Under Project</th>
+                                                                <th scope="col"># of approvals</th>
+                                                                <th scope="col">Total Cost</th>
+                                                                <th scope="col">Date created</th>
+
+                                                                <th scope="col"></th>
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th scope="row">1</th>
+                                                                <td>MarkCuban</td>
+                                                                <td>Data visualisation in Mbeya</td>
+                                                                <td>Training</td>
+                                                                <td>Sauti Mpya</td>
+                                                                <td>0</td>
+                                                                <td>2,300,000 <span
+                                                                        class="badge badge-success">TZS</span>
+                                                                </td>
+                                                                <td>2019-09-11</td>
+                                                                <td>
+                                                                    <button type="button"
+                                                                        class="btn btn-outline-success">view
+                                                                        request</button>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <th scope="row">4</th>
+                                                                <td>Jane Sharpe</td>
+                                                                <td>Data Mining in Dar</td>
+                                                                <td>Training</td>
+                                                                <td>Data Zetu</td>
+                                                                <td>0</td>
+                                                                <td>6,600,000 <span
+                                                                        class="badge badge-success">TZS</span>
+                                                                </td>
+                                                                <td>2019-09-11</td>
+                                                                <td>
+                                                                    <button type="button"
+                                                                        class="btn btn-outline-success">view
+                                                                        request</button>
+                                                                </td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <th scope="row">3</th>
+                                                                <td>Mary Poppins</td>
+                                                                <td>Data Analyis and Mining</td>
+                                                                <td>Training</td>
+                                                                <td>Sauti Mpya</td>
+                                                                <td>0</td>
+                                                                <td>8,700,000 <span
+                                                                        class="badge badge-success">TZS</span>
+                                                                </td>
+                                                                <td>2019-09-11</td>
+                                                                <td>
+                                                                    <button type="button"
+                                                                        class="btn btn-outline-success">view
+                                                                        request</button>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <br />
+                                                    <nav aria-label="Page navigation example">
+                                                        <ul class="pagination">
+                                                            <li class="page-item">
+                                                                <a class="page-link" href="#"
+                                                                    aria-label="Previous">
+                                                                    <span aria-hidden="true">&laquo;</span>
+                                                                    <span class="sr-only">Previous</span>
+                                                                </a>
+                                                            </li>
+                                                            <li class="page-item"><a class="page-link"
+                                                                    href="#">1</a></li>
+                                                            <li class="page-item"><a class="page-link"
+                                                                    href="#">2</a></li>
+                                                            <li class="page-item"><a class="page-link"
+                                                                    href="#">3</a></li>
+                                                            <li class="page-item">
+                                                                <a class="page-link" href="#" aria-label="Next">
+                                                                    <span aria-hidden="true">&raquo;</span>
+                                                                    <span class="sr-only">Next</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </nav>
+                                                </div>
+                                            </div>
+                                            <!-- end of SECOND column -->
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
         </div>
-        <!-- end of financial-analytics data panel -->
+        <!-- end of data-science-scholars data panel -->
+                <!--
+               =========================================
+               =                                       =
+               =      start of data-science-scholars data           =
+               ========================================= -->
+        <!-- start of data-science-scholars data panel -->
+        <div class="tab-pane fade" id="data-science-grantees-md" role="tabpanel"
+            aria-labelledby="data-science-scholars-tab-md">
+                        {{-- data science grantees --}}
+
+                        <div class="row">
+                            <div class="col-lg-12">
+
+                                <nav>
+                                    <div class="nav nav-tabs" id="ds-grantees-nav-tab" role="tablist">
+                                        <a class="nav-item nav-link active" id="ds-grantees-nav-rounds-tab" data-toggle="tab"
+                                            href="#ds-grantees-nav-rounds-content" role="tab" aria-controls="nav-home" aria-selected="true">
+                                            Rounds</a>
+                                        <a class="nav-item nav-link" id="ds-grantees-nav-all-grnt-tab" data-toggle="tab"
+                                            href="#ds-grantees-nav-all-grnt-content" role="tab" aria-controls="nav-grantees"
+                                            aria-selected="false">Grantees</a>
+                                    </div>
+                                </nav>
+                                <div class="tab-content" id="ds-tms-nav-tabContent">
+                                    <div class="tab-pane fade show active" id="ds-grantees-nav-rounds-content" role="tabpanel"
+                                        aria-labelledby="nav-ds-grantees-rounds-tab">
+                                        <br />
+
+                                        <table class="table table-bordered table-hover">
+                                            <p>Funding Rounds</p>
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">#</th>
+                                                    <th scope="col">Requested by</th>
+                                                    <th scope="col-md-4">Title</th>
+                                                    <th scope="col">Request Type</th>
+                                                    <th scope="col">Under Project</th>
+                                                    <th scope="col"># of approvals</th>
+                                                    <th scope="col">Total Cost</th>
+                                                    <th scope="col">Date created</th>
+
+                                                    <th scope="col"></th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">1</th>
+                                                    <td>MarkCuban</td>
+                                                    <td>Data visualisation in Mbeya</td>
+                                                    <td>Training</td>
+                                                    <td>Sauti Mpya</td>
+                                                    <td>0</td>
+                                                    <td>2,300,000 <span
+                                                            class="badge badge-success">TZS</span>
+                                                    </td>
+                                                    <td>2019-09-11</td>
+                                                    <td>
+                                                        <button type="button"
+                                                            class="btn btn-outline-success">view
+                                                            request</button>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <th scope="row">4</th>
+                                                    <td>Jane Sharpe</td>
+                                                    <td>Data Mining in Dar</td>
+                                                    <td>Training</td>
+                                                    <td>Data Zetu</td>
+                                                    <td>0</td>
+                                                    <td>6,600,000 <span
+                                                            class="badge badge-success">TZS</span>
+                                                    </td>
+                                                    <td>2019-09-11</td>
+                                                    <td>
+                                                        <button type="button"
+                                                            class="btn btn-outline-success">view
+                                                            request</button>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <th scope="row">3</th>
+                                                    <td>Mary Poppins</td>
+                                                    <td>Data Analyis and Mining</td>
+                                                    <td>Training</td>
+                                                    <td>Sauti Mpya</td>
+                                                    <td>0</td>
+                                                    <td>8,700,000 <span
+                                                            class="badge badge-success">TZS</span>
+                                                    </td>
+                                                    <td>2019-09-11</td>
+                                                    <td>
+                                                        <button type="button"
+                                                            class="btn btn-outline-success">view
+                                                            request</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <br />
+                                        <nav aria-label="Page navigation example">
+                                            <ul class="pagination">
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#"
+                                                        aria-label="Previous">
+                                                        <span aria-hidden="true">&laquo;</span>
+                                                        <span class="sr-only">Previous</span>
+                                                    </a>
+                                                </li>
+                                                <li class="page-item"><a class="page-link"
+                                                        href="#">1</a></li>
+                                                <li class="page-item"><a class="page-link"
+                                                        href="#">2</a></li>
+                                                <li class="page-item"><a class="page-link"
+                                                        href="#">3</a></li>
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#" aria-label="Next">
+                                                        <span aria-hidden="true">&raquo;</span>
+                                                        <span class="sr-only">Next</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                    <div class="tab-pane fade" id="ds-grantees-nav-all-grnt-content" role="tabpanel"
+                                        aria-labelledby="nav-grantees-tab">
+                                        <br />
+
+                                        <br />
+                                        {{-- my ds requests --}}
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <div class="nav flex-column nav-pills" id="vds-ds-grantees-pills-tab" role="tablist"
+                                                    aria-orientation="vertical">
+                                                    <a class="nav-link active" id="vds-ds-grantees-pills-new-applications-tab" data-toggle="pill"
+                                                        href="#vds-ds-grantees-pills-new-applications-content" role="tab" aria-controls="vdsreqs-pills-new-applications"
+                                                        aria-selected="true">New Application</a>
+
+                                                    <a class="nav-link" id="vds-ds-grantees-pills-shortlisted-tab" data-toggle="pill"
+                                                        href="#vds-ds-grantees-pills-shortlisted-content" role="tab"
+                                                        aria-controls="vdsreqs-pills-shortlisted" aria-selected="false">Shortlisted</a>
+
+                                                    <a class="nav-link" id="vds-ds-grantees-pills-pitched-tab" data-toggle="pill"
+                                                        href="#vds-ds-grantees-pills-pitched-content" role="tab"
+                                                        aria-controls="vdsreqs-pills-pitched" aria-selected="false">Pitched</a>
+
+                                                    <a class="nav-link" id="vds-ds-grantees-pills-innovators-tab" data-toggle="pill"
+                                                        href="#vds-ds-grantees-pills-innovators-content" role="tab"
+                                                        aria-controls="vdsreqs-pills-innovators-content" aria-selected="false">Innovators</a>
+
+
+                                                    <a class="nav-link" id="vds-ds-grantees-pills-dropouts-tab" data-toggle="pill"
+                                                    href="#vds-ds-grantees-pills-dropouts-content" role="tab"
+                                                    aria-controls="vdsreqs-pills-settings" aria-selected="false">Dropouts</a>
+
+
+                                                    <a class="nav-link" id="vds-ds-grantees-pills-graduates-tab" data-toggle="pill"
+                                                        href="#vds-ds-grantees-pills-graduates-content" role="tab"
+                                                        aria-controls="vdsreqs-pills-graduates" aria-selected="false">Graduates</a>
+
+
+                                                    <a class="nav-link" id="vds-ds-grantees-pills-scaled-up-proj-tab" data-toggle="pill"
+                                                    href="#vds-ds-grantees-pills-scaled-up-proj-content" role="tab"
+                                                    aria-controls="vdsreqs-pills-scaled-up-proj-content" aria-selected="false">Scaled up projects</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-10">
+
+                                                <div class="tab-content" id="vds-ds-impr-pills-tabContent">
+                                                    <div class="tab-pane fade show active" id="vds-ds-grantees-pills-new-applications-content"
+                                                        role="tabpanel" aria-labelledby="impr-pills-home-tab">
+                                                        {{-- my retirements --}}
+
+                                                        <br />
+                                                        <!-- Button trigger modal -->
+                                                        <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#newDSimprest">
+                                                            create a new grantee
+                                                        </button>
+                                                        <br />
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <div class="card">
+                                                                    <div class="card-content table-responsive">
+                                                                        <br />
+                                                                        <br />
+                                                                        <table class="table table-bordered table-hover">
+                                                                            <p><strong>New Applicants.</strong></p>
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th scope="col">#</th>
+                                                                                    <th scope="col">Requested by</th>
+                                                                                    <th scope="col-md-4">Title</th>
+                                                                                    <th scope="col">Request Type</th>
+                                                                                    <th scope="col">Under Project</th>
+                                                                                    <th scope="col"># of approvals</th>
+                                                                                    <th scope="col">Total Cost</th>
+                                                                                    <th scope="col">Date created</th>
+
+                                                                                    <th scope="col"></th>
+
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <th scope="row">1</th>
+                                                                                    <td>MarkCuban</td>
+                                                                                    <td>Data visualisation in Mbeya</td>
+                                                                                    <td>Training</td>
+                                                                                    <td>Sauti Mpya</td>
+                                                                                    <td>0</td>
+                                                                                    <td>2,300,000 <span
+                                                                                            class="badge badge-success">TZS</span>
+                                                                                    </td>
+                                                                                    <td>2019-09-11</td>
+                                                                                    <td>
+                                                                                        <button type="button"
+                                                                                            class="btn btn-outline-success">view
+                                                                                            request</button>
+                                                                                    </td>
+                                                                                </tr>
+
+                                                                                <tr>
+                                                                                    <th scope="row">4</th>
+                                                                                    <td>Jane Sharpe</td>
+                                                                                    <td>Data Mining in Dar</td>
+                                                                                    <td>Training</td>
+                                                                                    <td>Data Zetu</td>
+                                                                                    <td>0</td>
+                                                                                    <td>6,600,000 <span
+                                                                                            class="badge badge-success">TZS</span>
+                                                                                    </td>
+                                                                                    <td>2019-09-11</td>
+                                                                                    <td>
+                                                                                        <button type="button"
+                                                                                            class="btn btn-outline-success">view
+                                                                                            request</button>
+                                                                                    </td>
+                                                                                </tr>
+
+                                                                                <tr>
+                                                                                    <th scope="row">3</th>
+                                                                                    <td>Mary Poppins</td>
+                                                                                    <td>Data Analyis and Mining</td>
+                                                                                    <td>Training</td>
+                                                                                    <td>Sauti Mpya</td>
+                                                                                    <td>0</td>
+                                                                                    <td>8,700,000 <span
+                                                                                            class="badge badge-success">TZS</span>
+                                                                                    </td>
+                                                                                    <td>2019-09-11</td>
+                                                                                    <td>
+                                                                                        <button type="button"
+                                                                                            class="btn btn-outline-success">view
+                                                                                            request</button>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                        <br />
+                                                                        <nav aria-label="Page navigation example">
+                                                                            <ul class="pagination">
+                                                                                <li class="page-item">
+                                                                                    <a class="page-link" href="#"
+                                                                                        aria-label="Previous">
+                                                                                        <span aria-hidden="true">&laquo;</span>
+                                                                                        <span class="sr-only">Previous</span>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li class="page-item"><a class="page-link"
+                                                                                        href="#">1</a></li>
+                                                                                <li class="page-item"><a class="page-link"
+                                                                                        href="#">2</a></li>
+                                                                                <li class="page-item"><a class="page-link"
+                                                                                        href="#">3</a></li>
+                                                                                <li class="page-item">
+                                                                                    <a class="page-link" href="#" aria-label="Next">
+                                                                                        <span aria-hidden="true">&raquo;</span>
+                                                                                        <span class="sr-only">Next</span>
+                                                                                    </a>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </nav>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- end of SECOND column -->
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="tab-pane fade" id="vds-ds-grantees-pills-shortlisted-content" role="tabpanel"
+                                                        aria-labelledby="vdsreqs-pills-profile-tab">
+                                                        {{-- my retirements --}}
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <div class="card">
+                                                                    <div class="card-content table-responsive">
+                                                                        <br />
+                                                                        <table class="table table-bordered table-hover">
+                                                                            <p><strong>Applicants Shortlisted</strong></p>
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th scope="col">#</th>
+                                                                                    <th scope="col">Requested by</th>
+                                                                                    <th scope="col-md-4">Title</th>
+                                                                                    <th scope="col">Request Type</th>
+                                                                                    <th scope="col">Under Project</th>
+                                                                                    <th scope="col"># of approvals</th>
+                                                                                    <th scope="col">Total Cost</th>
+                                                                                    <th scope="col">Date created</th>
+
+                                                                                    <th scope="col"></th>
+
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <th scope="row">1</th>
+                                                                                    <td>MarkCuban</td>
+                                                                                    <td>Data visualisation in Mbeya</td>
+                                                                                    <td>Training</td>
+                                                                                    <td>Sauti Mpya</td>
+                                                                                    <td>0</td>
+                                                                                    <td>2,300,000 <span
+                                                                                            class="badge badge-success">TZS</span>
+                                                                                    </td>
+                                                                                    <td>2019-09-11</td>
+                                                                                    <td>
+                                                                                        <button type="button"
+                                                                                            class="btn btn-outline-success">view
+                                                                                            request</button>
+                                                                                    </td>
+                                                                                </tr>
+
+                                                                                <tr>
+                                                                                    <th scope="row">4</th>
+                                                                                    <td>Jane Sharpe</td>
+                                                                                    <td>Data Mining in Dar</td>
+                                                                                    <td>Training</td>
+                                                                                    <td>Data Zetu</td>
+                                                                                    <td>0</td>
+                                                                                    <td>6,600,000 <span
+                                                                                            class="badge badge-success">TZS</span>
+                                                                                    </td>
+                                                                                    <td>2019-09-11</td>
+                                                                                    <td>
+                                                                                        <button type="button"
+                                                                                            class="btn btn-outline-success">view
+                                                                                            request</button>
+                                                                                    </td>
+                                                                                </tr>
+
+                                                                                <tr>
+                                                                                    <th scope="row">3</th>
+                                                                                    <td>Mary Poppins</td>
+                                                                                    <td>Data Analyis and Mining</td>
+                                                                                    <td>Training</td>
+                                                                                    <td>Sauti Mpya</td>
+                                                                                    <td>0</td>
+                                                                                    <td>8,700,000 <span
+                                                                                            class="badge badge-success">TZS</span>
+                                                                                    </td>
+                                                                                    <td>2019-09-11</td>
+                                                                                    <td>
+                                                                                        <button type="button"
+                                                                                            class="btn btn-outline-success">view
+                                                                                            request</button>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                        <br />
+                                                                        <nav aria-label="Page navigation example">
+                                                                            <ul class="pagination">
+                                                                                <li class="page-item">
+                                                                                    <a class="page-link" href="#"
+                                                                                        aria-label="Previous">
+                                                                                        <span aria-hidden="true">&laquo;</span>
+                                                                                        <span class="sr-only">Previous</span>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li class="page-item"><a class="page-link"
+                                                                                        href="#">1</a></li>
+                                                                                <li class="page-item"><a class="page-link"
+                                                                                        href="#">2</a></li>
+                                                                                <li class="page-item"><a class="page-link"
+                                                                                        href="#">3</a></li>
+                                                                                <li class="page-item">
+                                                                                    <a class="page-link" href="#" aria-label="Next">
+                                                                                        <span aria-hidden="true">&raquo;</span>
+                                                                                        <span class="sr-only">Next</span>
+                                                                                    </a>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </nav>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- end of SECOND column -->
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="tab-pane fade" id="vds-ds-grantees-pills-pitched-content" role="tabpanel"
+                                                        aria-labelledby="vdsreqs-pills-settings-tab">
+                                                        {{-- my retirements --}}
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <div class="card">
+                                                                    <div class="card-content table-responsive">
+                                                                        <br />
+                                                                        <table class="table table-bordered table-hover">
+                                                                            <p>
+                                                                                <strong>Pitched.</strong></p>
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th scope="col">#</th>
+                                                                                    <th scope="col">Requested by</th>
+                                                                                    <th scope="col-md-4">Title</th>
+                                                                                    <th scope="col">Request Type</th>
+                                                                                    <th scope="col">Under Project</th>
+                                                                                    <th scope="col"># of approvals</th>
+                                                                                    <th scope="col">Total Cost</th>
+                                                                                    <th scope="col">Date created</th>
+
+                                                                                    <th scope="col"></th>
+
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <th scope="row">1</th>
+                                                                                    <td>MarkCuban</td>
+                                                                                    <td>Data visualisation in Mbeya</td>
+                                                                                    <td>Training</td>
+                                                                                    <td>Sauti Mpya</td>
+                                                                                    <td>0</td>
+                                                                                    <td>2,300,000 <span
+                                                                                            class="badge badge-success">TZS</span>
+                                                                                    </td>
+                                                                                    <td>2019-09-11</td>
+                                                                                    <td>
+                                                                                        <button type="button"
+                                                                                            class="btn btn-outline-success">view
+                                                                                            request</button>
+                                                                                    </td>
+                                                                                </tr>
+
+                                                                                <tr>
+                                                                                    <th scope="row">4</th>
+                                                                                    <td>Jane Sharpe</td>
+                                                                                    <td>Data Mining in Dar</td>
+                                                                                    <td>Training</td>
+                                                                                    <td>Data Zetu</td>
+                                                                                    <td>0</td>
+                                                                                    <td>6,600,000 <span
+                                                                                            class="badge badge-success">TZS</span>
+                                                                                    </td>
+                                                                                    <td>2019-09-11</td>
+                                                                                    <td>
+                                                                                        <button type="button"
+                                                                                            class="btn btn-outline-success">view
+                                                                                            request</button>
+                                                                                    </td>
+                                                                                </tr>
+
+                                                                                <tr>
+                                                                                    <th scope="row">3</th>
+                                                                                    <td>Mary Poppins</td>
+                                                                                    <td>Data Analyis and Mining</td>
+                                                                                    <td>Training</td>
+                                                                                    <td>Sauti Mpya</td>
+                                                                                    <td>0</td>
+                                                                                    <td>8,700,000 <span
+                                                                                            class="badge badge-success">TZS</span>
+                                                                                    </td>
+                                                                                    <td>2019-09-11</td>
+                                                                                    <td>
+                                                                                        <button type="button"
+                                                                                            class="btn btn-outline-success">view
+                                                                                            request</button>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                        <br />
+                                                                        <nav aria-label="Page navigation example">
+                                                                            <ul class="pagination">
+                                                                                <li class="page-item">
+                                                                                    <a class="page-link" href="#"
+                                                                                        aria-label="Previous">
+                                                                                        <span aria-hidden="true">&laquo;</span>
+                                                                                        <span class="sr-only">Previous</span>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li class="page-item"><a class="page-link"
+                                                                                        href="#">1</a></li>
+                                                                                <li class="page-item"><a class="page-link"
+                                                                                        href="#">2</a></li>
+                                                                                <li class="page-item"><a class="page-link"
+                                                                                        href="#">3</a></li>
+                                                                                <li class="page-item">
+                                                                                    <a class="page-link" href="#" aria-label="Next">
+                                                                                        <span aria-hidden="true">&raquo;</span>
+                                                                                        <span class="sr-only">Next</span>
+                                                                                    </a>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </nav>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- end of SECOND column -->
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="tab-pane fade" id="vds-ds-grantees-pills-innovators-content" role="tabpanel"
+                                                        aria-labelledby="vdsreqs-pills-messages-tab">
+                                                        {{-- my retirements --}}
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <div class="card">
+                                                                    <div class="card-content table-responsive">
+                                                                        <br />
+                                                                        <table class="table table-bordered table-hover">
+                                                                            <p><strong>Innovators Awarded.</strong></p>
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th scope="col">#</th>
+                                                                                    <th scope="col">Requested by</th>
+                                                                                    <th scope="col-md-4">Title</th>
+                                                                                    <th scope="col">Request Type</th>
+                                                                                    <th scope="col">Under Project</th>
+                                                                                    <th scope="col"># of approvals</th>
+                                                                                    <th scope="col">Total Cost</th>
+                                                                                    <th scope="col">Date created</th>
+
+                                                                                    <th scope="col"></th>
+
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <th scope="row">1</th>
+                                                                                    <td>MarkCuban</td>
+                                                                                    <td>Data visualisation in Mbeya</td>
+                                                                                    <td>Training</td>
+                                                                                    <td>Sauti Mpya</td>
+                                                                                    <td>0</td>
+                                                                                    <td>2,300,000 <span
+                                                                                            class="badge badge-success">TZS</span>
+                                                                                    </td>
+                                                                                    <td>2019-09-11</td>
+                                                                                    <td>
+                                                                                        <button type="button"
+                                                                                            class="btn btn-outline-success">view
+                                                                                            request</button>
+                                                                                    </td>
+                                                                                </tr>
+
+                                                                                <tr>
+                                                                                    <th scope="row">4</th>
+                                                                                    <td>Jane Sharpe</td>
+                                                                                    <td>Data Mining in Dar</td>
+                                                                                    <td>Training</td>
+                                                                                    <td>Data Zetu</td>
+                                                                                    <td>0</td>
+                                                                                    <td>6,600,000 <span
+                                                                                            class="badge badge-success">TZS</span>
+                                                                                    </td>
+                                                                                    <td>2019-09-11</td>
+                                                                                    <td>
+                                                                                        <button type="button"
+                                                                                            class="btn btn-outline-success">view
+                                                                                            request</button>
+                                                                                    </td>
+                                                                                </tr>
+
+                                                                                <tr>
+                                                                                    <th scope="row">3</th>
+                                                                                    <td>Mary Poppins</td>
+                                                                                    <td>Data Analyis and Mining</td>
+                                                                                    <td>Training</td>
+                                                                                    <td>Sauti Mpya</td>
+                                                                                    <td>0</td>
+                                                                                    <td>8,700,000 <span
+                                                                                            class="badge badge-success">TZS</span>
+                                                                                    </td>
+                                                                                    <td>2019-09-11</td>
+                                                                                    <td>
+                                                                                        <button type="button"
+                                                                                            class="btn btn-outline-success">view
+                                                                                            request</button>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                        <br />
+                                                                        <nav aria-label="Page navigation example">
+                                                                            <ul class="pagination">
+                                                                                <li class="page-item">
+                                                                                    <a class="page-link" href="#"
+                                                                                        aria-label="Previous">
+                                                                                        <span aria-hidden="true">&laquo;</span>
+                                                                                        <span class="sr-only">Previous</span>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li class="page-item"><a class="page-link"
+                                                                                        href="#">1</a></li>
+                                                                                <li class="page-item"><a class="page-link"
+                                                                                        href="#">2</a></li>
+                                                                                <li class="page-item"><a class="page-link"
+                                                                                        href="#">3</a></li>
+                                                                                <li class="page-item">
+                                                                                    <a class="page-link" href="#" aria-label="Next">
+                                                                                        <span aria-hidden="true">&raquo;</span>
+                                                                                        <span class="sr-only">Next</span>
+                                                                                    </a>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </nav>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- end of SECOND column -->
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="tab-pane fade" id="vds-ds-grantees-pills-dropouts-content" role="tabpanel"
+                                                        aria-labelledby="vdsreqs-pills-settings-tab">
+                                                        {{-- my retirements --}}
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <div class="card">
+                                                                    <div class="card-content table-responsive">
+                                                                        <br />
+                                                                        <table class="table table-bordered table-hover">
+                                                                            <p><strong>Dropout Applicants.</strong></p>
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th scope="col">#</th>
+                                                                                    <th scope="col">Requested by</th>
+                                                                                    <th scope="col-md-4">Title</th>
+                                                                                    <th scope="col">Request Type</th>
+                                                                                    <th scope="col">Under Project</th>
+                                                                                    <th scope="col"># of approvals</th>
+                                                                                    <th scope="col">Total Cost</th>
+                                                                                    <th scope="col">Date created</th>
+
+                                                                                    <th scope="col"></th>
+
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <th scope="row">1</th>
+                                                                                    <td>MarkCuban</td>
+                                                                                    <td>Data visualisation in Mbeya</td>
+                                                                                    <td>Training</td>
+                                                                                    <td>Sauti Mpya</td>
+                                                                                    <td>0</td>
+                                                                                    <td>2,300,000 <span
+                                                                                            class="badge badge-success">TZS</span>
+                                                                                    </td>
+                                                                                    <td>2019-09-11</td>
+                                                                                    <td>
+                                                                                        <button type="button"
+                                                                                            class="btn btn-outline-success">view
+                                                                                            request</button>
+                                                                                    </td>
+                                                                                </tr>
+
+                                                                                <tr>
+                                                                                    <th scope="row">4</th>
+                                                                                    <td>Jane Sharpe</td>
+                                                                                    <td>Data Mining in Dar</td>
+                                                                                    <td>Training</td>
+                                                                                    <td>Data Zetu</td>
+                                                                                    <td>0</td>
+                                                                                    <td>6,600,000 <span
+                                                                                            class="badge badge-success">TZS</span>
+                                                                                    </td>
+                                                                                    <td>2019-09-11</td>
+                                                                                    <td>
+                                                                                        <button type="button"
+                                                                                            class="btn btn-outline-success">view
+                                                                                            request</button>
+                                                                                    </td>
+                                                                                </tr>
+
+                                                                                <tr>
+                                                                                    <th scope="row">3</th>
+                                                                                    <td>Mary Poppins</td>
+                                                                                    <td>Data Analyis and Mining</td>
+                                                                                    <td>Training</td>
+                                                                                    <td>Sauti Mpya</td>
+                                                                                    <td>0</td>
+                                                                                    <td>8,700,000 <span
+                                                                                            class="badge badge-success">TZS</span>
+                                                                                    </td>
+                                                                                    <td>2019-09-11</td>
+                                                                                    <td>
+                                                                                        <button type="button"
+                                                                                            class="btn btn-outline-success">view
+                                                                                            request</button>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                        <br />
+                                                                        <nav aria-label="Page navigation example">
+                                                                            <ul class="pagination">
+                                                                                <li class="page-item">
+                                                                                    <a class="page-link" href="#"
+                                                                                        aria-label="Previous">
+                                                                                        <span aria-hidden="true">&laquo;</span>
+                                                                                        <span class="sr-only">Previous</span>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li class="page-item"><a class="page-link"
+                                                                                        href="#">1</a></li>
+                                                                                <li class="page-item"><a class="page-link"
+                                                                                        href="#">2</a></li>
+                                                                                <li class="page-item"><a class="page-link"
+                                                                                        href="#">3</a></li>
+                                                                                <li class="page-item">
+                                                                                    <a class="page-link" href="#" aria-label="Next">
+                                                                                        <span aria-hidden="true">&raquo;</span>
+                                                                                        <span class="sr-only">Next</span>
+                                                                                    </a>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </nav>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- end of SECOND column -->
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="tab-pane fade" id="vds-ds-grantees-pills-graduates-content" role="tabpanel"
+                                                        aria-labelledby="vdsreqs-pills-settings-tab">
+                                                        {{-- my retirements --}}
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <div class="card">
+                                                                    <div class="card-content table-responsive">
+                                                                        <br />
+                                                                        <table class="table table-bordered table-hover">
+                                                                            <p><strong>Graduates</strong></p>
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th scope="col">#</th>
+                                                                                    <th scope="col">Requested by</th>
+                                                                                    <th scope="col-md-4">Title</th>
+                                                                                    <th scope="col">Request Type</th>
+                                                                                    <th scope="col">Under Project</th>
+                                                                                    <th scope="col"># of approvals</th>
+                                                                                    <th scope="col">Total Cost</th>
+                                                                                    <th scope="col">Date created</th>
+
+                                                                                    <th scope="col"></th>
+
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <th scope="row">1</th>
+                                                                                    <td>MarkCuban</td>
+                                                                                    <td>Data visualisation in Mbeya</td>
+                                                                                    <td>Training</td>
+                                                                                    <td>Sauti Mpya</td>
+                                                                                    <td>0</td>
+                                                                                    <td>2,300,000 <span
+                                                                                            class="badge badge-success">TZS</span>
+                                                                                    </td>
+                                                                                    <td>2019-09-11</td>
+                                                                                    <td>
+                                                                                        <button type="button"
+                                                                                            class="btn btn-outline-success">view
+                                                                                            request</button>
+                                                                                    </td>
+                                                                                </tr>
+
+                                                                                <tr>
+                                                                                    <th scope="row">4</th>
+                                                                                    <td>Jane Sharpe</td>
+                                                                                    <td>Data Mining in Dar</td>
+                                                                                    <td>Training</td>
+                                                                                    <td>Data Zetu</td>
+                                                                                    <td>0</td>
+                                                                                    <td>6,600,000 <span
+                                                                                            class="badge badge-success">TZS</span>
+                                                                                    </td>
+                                                                                    <td>2019-09-11</td>
+                                                                                    <td>
+                                                                                        <button type="button"
+                                                                                            class="btn btn-outline-success">view
+                                                                                            request</button>
+                                                                                    </td>
+                                                                                </tr>
+
+                                                                                <tr>
+                                                                                    <th scope="row">3</th>
+                                                                                    <td>Mary Poppins</td>
+                                                                                    <td>Data Analyis and Mining</td>
+                                                                                    <td>Training</td>
+                                                                                    <td>Sauti Mpya</td>
+                                                                                    <td>0</td>
+                                                                                    <td>8,700,000 <span
+                                                                                            class="badge badge-success">TZS</span>
+                                                                                    </td>
+                                                                                    <td>2019-09-11</td>
+                                                                                    <td>
+                                                                                        <button type="button"
+                                                                                            class="btn btn-outline-success">view
+                                                                                            request</button>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                        <br />
+                                                                        <nav aria-label="Page navigation example">
+                                                                            <ul class="pagination">
+                                                                                <li class="page-item">
+                                                                                    <a class="page-link" href="#"
+                                                                                        aria-label="Previous">
+                                                                                        <span aria-hidden="true">&laquo;</span>
+                                                                                        <span class="sr-only">Previous</span>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li class="page-item"><a class="page-link"
+                                                                                        href="#">1</a></li>
+                                                                                <li class="page-item"><a class="page-link"
+                                                                                        href="#">2</a></li>
+                                                                                <li class="page-item"><a class="page-link"
+                                                                                        href="#">3</a></li>
+                                                                                <li class="page-item">
+                                                                                    <a class="page-link" href="#" aria-label="Next">
+                                                                                        <span aria-hidden="true">&raquo;</span>
+                                                                                        <span class="sr-only">Next</span>
+                                                                                    </a>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </nav>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- end of SECOND column -->
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="tab-pane fade" id="vds-ds-grantees-pills-scaled-up-proj-content" role="tabpanel"
+                                                        aria-labelledby="vdsreqs-pills-settings-tab">
+                                                        {{-- my retirements --}}
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <div class="card">
+                                                                    <div class="card-content table-responsive">
+                                                                        <br />
+                                                                        <table class="table table-bordered table-hover">
+                                                                            <p><strong>Scaled up projects.</strong></p>
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th scope="col">#</th>
+                                                                                    <th scope="col">Requested by</th>
+                                                                                    <th scope="col-md-4">Title</th>
+                                                                                    <th scope="col">Request Type</th>
+                                                                                    <th scope="col">Under Project</th>
+                                                                                    <th scope="col"># of approvals</th>
+                                                                                    <th scope="col">Total Cost</th>
+                                                                                    <th scope="col">Date created</th>
+
+                                                                                    <th scope="col"></th>
+
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <th scope="row">1</th>
+                                                                                    <td>MarkCuban</td>
+                                                                                    <td>Data visualisation in Mbeya</td>
+                                                                                    <td>Training</td>
+                                                                                    <td>Sauti Mpya</td>
+                                                                                    <td>0</td>
+                                                                                    <td>2,300,000 <span
+                                                                                            class="badge badge-success">TZS</span>
+                                                                                    </td>
+                                                                                    <td>2019-09-11</td>
+                                                                                    <td>
+                                                                                        <button type="button"
+                                                                                            class="btn btn-outline-success">view
+                                                                                            request</button>
+                                                                                    </td>
+                                                                                </tr>
+
+                                                                                <tr>
+                                                                                    <th scope="row">4</th>
+                                                                                    <td>Jane Sharpe</td>
+                                                                                    <td>Data Mining in Dar</td>
+                                                                                    <td>Training</td>
+                                                                                    <td>Data Zetu</td>
+                                                                                    <td>0</td>
+                                                                                    <td>6,600,000 <span
+                                                                                            class="badge badge-success">TZS</span>
+                                                                                    </td>
+                                                                                    <td>2019-09-11</td>
+                                                                                    <td>
+                                                                                        <button type="button"
+                                                                                            class="btn btn-outline-success">view
+                                                                                            request</button>
+                                                                                    </td>
+                                                                                </tr>
+
+                                                                                <tr>
+                                                                                    <th scope="row">3</th>
+                                                                                    <td>Mary Poppins</td>
+                                                                                    <td>Data Analyis and Mining</td>
+                                                                                    <td>Training</td>
+                                                                                    <td>Sauti Mpya</td>
+                                                                                    <td>0</td>
+                                                                                    <td>8,700,000 <span
+                                                                                            class="badge badge-success">TZS</span>
+                                                                                    </td>
+                                                                                    <td>2019-09-11</td>
+                                                                                    <td>
+                                                                                        <button type="button"
+                                                                                            class="btn btn-outline-success">view
+                                                                                            request</button>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                        <br />
+                                                                        <nav aria-label="Page navigation example">
+                                                                            <ul class="pagination">
+                                                                                <li class="page-item">
+                                                                                    <a class="page-link" href="#"
+                                                                                        aria-label="Previous">
+                                                                                        <span aria-hidden="true">&laquo;</span>
+                                                                                        <span class="sr-only">Previous</span>
+                                                                                    </a>
+                                                                                </li>
+                                                                                <li class="page-item"><a class="page-link"
+                                                                                        href="#">1</a></li>
+                                                                                <li class="page-item"><a class="page-link"
+                                                                                        href="#">2</a></li>
+                                                                                <li class="page-item"><a class="page-link"
+                                                                                        href="#">3</a></li>
+                                                                                <li class="page-item">
+                                                                                    <a class="page-link" href="#" aria-label="Next">
+                                                                                        <span aria-hidden="true">&raquo;</span>
+                                                                                        <span class="sr-only">Next</span>
+                                                                                    </a>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </nav>
+                                                                    </div>
+                                                                </div>
+                                                                <!-- end of SECOND column -->
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+        </div>
+        <!-- end of data-science-scholars data panel -->
 
     </div>
 

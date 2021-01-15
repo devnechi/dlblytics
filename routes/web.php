@@ -68,6 +68,17 @@ Route::get('/create-new-petty-cash', 'FinanceAdminController@createPettyCash')->
 Route::get('/create-payment-requisition', 'FinanceAdminController@createPaymentRequisition')->name('create-payment-requisition');
 Route::get('/create-new-workshop-registration', 'FinanceAdminController@createNewWorkshopRegistration')->name('create-new-workshop-registration');
 Route::get('/create-allowance-request', 'FinanceAdminController@createAllowanceRequest')->name('create-allowance-request');
+
+//Human Resources
+//create new employee/staff
+Route::resource('employees', EmployeesController::class);
+
+
+//create new pillar manager
+
+//create new line manager
+
+
 // Route::get('/create-per-diem-claim', 'FinanceAdminController@createPerDiemClaim')->name('create-per-diem-claim');
 
 // reports routes

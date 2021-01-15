@@ -730,6 +730,18 @@
 
 
 
+.headinglm{
+    text-align: left !important;
+
+}
+.jumbotron {
+    padding: 1rem 2rem;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #0488ae;
+}
 
         </style>
 
