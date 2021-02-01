@@ -16,7 +16,7 @@ class EmployeeController extends Controller
     {
         $employees = Employee::latest()->paginate(5);
 
-        return view('employees.index', compact('employees'))
+        return view('financeAdmin.hr.create-new-user', compact('employees'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -27,7 +27,27 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        return view('employees.create');
+        return view('financeAdmin.hr.create-new-user');
+    }
+
+    public function createPillarManager()
+    {
+        return view('financeAdmin.hr.creatingUsers.hr-create-pillar-manager');
+    }
+
+
+    public function createPillarStaff(){
+        return view('financeAdmin.hr.creatingUsers.hr-create-pillar-staff');
+    }
+
+
+    public function createDeptManager()
+    {
+        return view('financeAdmin.hr.creatingUsers.hr-create-dept-manager');
+    }
+
+    public function createDeptStaff(){
+        return view('financeAdmin.hr.creatingUsers.hr-create-dept-staff');
     }
 
     /**

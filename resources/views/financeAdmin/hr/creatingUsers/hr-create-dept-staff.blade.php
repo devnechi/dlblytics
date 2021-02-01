@@ -5,7 +5,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h4 class="title text-center">Add New  Staff to a Department</h4>
+                <h4 class="title text-center">Add new  Department Staff</h4>
             </div>
         </div>
         @if ($errors->any())
@@ -60,7 +60,7 @@
             <div class="row">
                 <div class="form-group col-md-4 input-group-lg">
                     <label for="formGroupProductName">Gender</label>
-                    <select class="form-control" aria-label="Large" id="currencyType" name="currencyType"
+                    <select class="form-control" aria-label="Large" id="gender" name="gender"
                         aria-describedby="inputGroup-sizing-sm">
                         <option value="select">Select</option>
                         <option value="usd">Male</option>
@@ -71,7 +71,7 @@
             <div class="row">
                 <div class="form-group col-md-4 input-group-lg">
                     <label for="formartialStatus">Martial Status: </label>
-                    <select class="form-control" aria-label="Large" id="currencyType" name="currencyType"
+                    <select class="form-control" aria-label="Large" id="martialstatus" name="martialstatus"
                         aria-describedby="inputGroup-sizing-sm">
                         <option value="select">Select</option>
                         <option value="usd">Married</option>
@@ -126,33 +126,31 @@
             <br />
             <div class="row">
                 <div class="form-group col-md-4 input-group-lg">
-                    <label for="forDepartment">Department: </label>
-                    <select class="form-control" aria-label="Large" id="selectDepartment" name="role"
+                    <label for="forDepartment">Pillar: </label>
+                    <select class="form-control" aria-label="Large" id="selectPillar" name="role"
                     aria-describedby="inputGroup-sizing-sm">
                     <option value="select">Select</option>
-                    <option value="usd">Accounting and Finance</option>
-                    <option value="tzs">Monitoring and Evaluation</option>
-                    <option value="tzs">IT</option>
-                    <option value="tzs">Human Resource</option>
+                    <option value="usd">Data Science</option>
+                    <option value="tzs">Capacity building</option>
+                    <option value="tzs">Community engagement</option>
+                    <option value="tzs">Research & Innovation</option>
+                    <option value="tzs">Institutional Strengthening</option>
                      </select>
               </div>
             </div>
             <div class="row">
-
                 <div class="form-group col-md-4 input-group-lg">
                     <label for="forposition">position: </label>
-                    <input type="text" class="form-control" name="dc_timing"
+                    <input type="text" class="form-control" name="position"
                         value="<?= isset($_POST['position']) ? $_POST['position'] : ''; ?>" placeholder="">
                 </div>
                 <div class="form-group col-md-4 input-group-lg">
                     <label for="forUserrole">User role: </label>
-                    <select class="form-control" aria-label="Large" id="currencyType" name="role"
+                    <select class="form-control" aria-label="Large" id="role" name="role"
                     aria-describedby="inputGroup-sizing-sm">
                     <option value="select">User Role</option>
-                    <option value="usd">finance staff</option>
-                    <option value="tzs">mne staff</option>
-                    <option value="usd">hr staff</option>
-                    <option value="tzs">procument staff</option>
+                    <option value="usd">Staff</option>
+                    <option value="tzs">manager</option>
                      </select>
               </div>
             </div>
@@ -228,7 +226,7 @@
             <br />
             <div class="row">
                 <div class="form-group col-md-4 input-group-lg">
-                <select class="form-control" aria-label="Large" id="currencyType" name="currencyType"
+                <select class="form-control" aria-label="Large" id="working-type" name="working-type"
                 aria-describedby="inputGroup-sizing-sm">
                 <option value="select">Working Type</option>
                 <option value="usd">Full-time</option>
@@ -268,8 +266,8 @@
             <div class="row">
                 <div class="form-group col-md-4 input-group-lg">
                     <label for="forKpi_title">Password: </label>
-                    <input type="text" class="form-control" name="kpi_title"
-                    value="<?= isset($_POST['kpi_title']) ? $_POST['kpi_title'] : ''; ?>"
+                    <input type="text" class="form-control" name="password"
+                    value="<?= isset($_POST['password']) ? $_POST['password'] : ''; ?>"
                     placeholder="" required>
                 </div>
             </div>
@@ -281,23 +279,23 @@
             <div class="row">
                 <div class="form-group col-md-6 input-group-lg">
                     <div class="form-group">
-                        <label for="exampleFormControlFile1">Upload Staff Photo</label>
-                        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                        <label for="exampleFormControlFile1">Upload User Photo</label>
+                        <input type="file" class="form-control-file" id="uploadUserPhoto">
                       </div>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-6 input-group-lg">
                     <div class="form-group">
-                        <label for="exampleFormControlFile1">Upload Staff contract</label>
-                        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                        <label for="exampleFormControlFile1">Upload User contract</label>
+                        <input type="file" class="form-control-file" id="uploadUserContract">
                       </div>
                 </div>
             </div>
 
             <div class="row">
                 <div class="form-group offset-md-6 col-md-4 input-group-lg push-right">
-                    <button type="submit" class="btn btn-outline-info btn-lg">Create New User</button>
+                    <button type="submit" class="btn btn-outline-info btn-lg">Create new user</button>
                 </div>
                 <div class="form-group offset-md-6 col-md-4 input-group-lg pull-right">
                     <button type="button" name="btnCancel" class="btn btn-outline-danger btn-lg">cancel entry</button>

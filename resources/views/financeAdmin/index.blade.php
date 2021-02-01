@@ -6050,9 +6050,47 @@
                                                     aria-labelledby="hr-managers-content-tab-md">
                                                     {{-- all managers --}}
                                                     <!-- Button trigger modal -->
-                                                    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#newDSimprest">
+                                                    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#hrcreateNewManagerModal">
                                                         add new manager
                                                     </button>
+
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="hrcreateNewManagerModal" tabindex="-1" role="dialog"
+                                                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLongTitle">Type of Manager</h5>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <ul class="list-group-flush">
+
+                                                                    <li class="list-group-item">
+                                                                        <a href="{{ route('create-new-pillar-manager') }}"
+                                                                            class="list-group-item list-group-item-action">
+                                                                            Pillar Manager
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="list-group-item">
+                                                                        <a href="{{ route('create-new-dept-manager') }}"
+                                                                            class="list-group-item list-group-item-action">
+                                                                            Department Manager
+                                                                        </a>
+                                                                    </li>
+
+                                                                </ul>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                     <div class="row">
                                                         <div class="col-lg-12">
                                                             <div class="card">
@@ -6172,10 +6210,47 @@
                                                 <div class="tab-pane fade" id="hr-staff-content" role="tabpanel"
                                                     aria-labelledby="hr-staff-content-tab-md">
                                                     {{-- managers --}}
-                                                    <!-- Button trigger modal -->
-                                                    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#newDSimprest">
+                                                    <!-- Button trigger modal to create new staff/employee -->
+                                                    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#hrcreateNewStaffModal">
                                                         add new staff
                                                     </button>
+
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="hrcreateNewStaffModal" tabindex="-1" role="dialog"
+                                                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLongTitle">Type of Staff</h5>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <ul class="list-group-flush">
+                                                                    <li class="list-group-item">
+                                                                        <a href="{{ route('create-new-dept-staff') }}"
+                                                                            class="list-group-item list-group-item-action">
+                                                                             Department Staff
+                                                                        </a>
+
+                                                                    </li>
+                                                                    <li class="list-group-item">
+                                                                        <a href="{{ route('create-new-pillar-staff') }}"
+                                                                            class="list-group-item list-group-item-action">
+                                                                            Pillar Staff
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                     <div class="row">
                                                         <div class="col-lg-12">
                                                             <div class="card">

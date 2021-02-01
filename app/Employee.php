@@ -9,7 +9,7 @@ class Employee extends Model
 {
     use HasFactory;
 
-    protected $table = 'employees';
+    protected $table = 'users';
     public $timestamps = true;
 
     protected $casts = [

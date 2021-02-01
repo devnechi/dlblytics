@@ -72,6 +72,15 @@ Route::get('/create-allowance-request', 'FinanceAdminController@createAllowanceR
 //Human Resources
 //create new employee/staff
 Route::resource('employees', EmployeesController::class);
+Route::get('/create-new-employee', 'EmployeeController@index')->name('create-new-employee');
+
+Route::get('/create-new-pillar-manager', 'EmployeeController@createPillarManager')->name('create-new-pillar-manager');
+Route::get('/create-new-dept-manager', 'EmployeeController@createDeptManager')->name('create-new-dept-manager');
+
+Route::get('/create-new-pillar-staff', 'EmployeeController@createPillarStaff')->name('create-new-pillar-staff');
+Route::get('/create-new-dept-staff', 'EmployeeController@createDeptStaff')->name('create-new-dept-staff');
+
+
 
 
 //create new pillar manager

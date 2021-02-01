@@ -16,20 +16,77 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('email')->unique();
+            //fname
+            $table->string('fname');
+            //mname
+            $table->string('mname');
+            //lname
+            $table->string('lname');
+            //dob
+            $table->string('dob');
+            //gender
+            $table->string('gender');
+            //martialstatus
+            $table->string('martialstatus');
+            //nationality
+            $table->string('nationality');
+            //address
+            $table->string('address');
+
+            //phonenumber
+            $table->string('phonenumber');
+
+            //emegency_contact
+            $table->string('emegency_contact');
+
+            //selectDepartment
+            $table->string('selectDepartment');
+
+            //selectPillar
+            $table->string('selectPillar');
+
+            //position
             $table->integer('role')->nullable();
+            //driving_license
+            $table->string('driving_license');
+
+            //tin_number
+            $table->string('tin_number');
+            //job_description
+            $table->string('job_description');
+            //bankusername
+            $table->string('bankusername');
+            //bankname
+            $table->string('bankname');
+            //bankaccnumber
+            $table->number('bankaccnumber');
+
+            //currencyType
+            $table->string('currencyType');
+
+            //totalsalary
+            $table->number('totalsalary');
+
+            //working_type
+            $table->string('working_type');
+
+            //useraccStatus
+            $table->string('useraccStatus');
+
+            //uploadUserPhoto
+            $table->string('uploadUserPhoto');
+
+            //createdby
+            $table->integer('creator_id');
+
+            //uploadUserContract
+            $table->string('email')->unique();
             $table->integer('status_id')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-            //items to add -->
-            // position
-            // Address
-            //if pillar, administration, department
-            // supervisour
-            // status
+
 
         });
     }
