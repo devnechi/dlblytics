@@ -6,10 +6,17 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+
 class User extends Authenticatable
 {
     use Notifiable;
 
+    use HasFactory;
+    protected $primaryKey = 'user_id';
+    protected $table = "users";
     /**
      * The attributes that are mass assignable.
      *

@@ -15,7 +15,7 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('user_id');
             //fname
             $table->string('fname');
             //mname
@@ -40,10 +40,10 @@ class CreateUsersTable extends Migration
             $table->string('emegency_contact');
 
             //selectDepartment
-            $table->string('selectDepartment');
+            $table->string('Department');
 
             //selectPillar
-            $table->string('selectPillar');
+            $table->string('Pillar');
 
             //position
             $table->integer('role')->nullable();
@@ -59,28 +59,28 @@ class CreateUsersTable extends Migration
             //bankname
             $table->string('bankname');
             //bankaccnumber
-            $table->number('bankaccnumber');
+            $table->float('bankaccnumber');
 
             //currencyType
             $table->string('currencyType');
 
             //totalsalary
-            $table->number('totalsalary');
+            $table->float('totalsalary');
 
             //working_type
             $table->string('working_type');
 
             //useraccStatus
-            $table->string('useraccStatus');
+            $table->string('acc_status');
 
             //uploadUserPhoto
-            $table->string('uploadUserPhoto');
+            $table->string('user_photo_url');
 
             //createdby
-            $table->integer('creator_id');
+            $table->integer('added_by');
 
             //uploadUserContract
-            $table->string('email')->unique();
+            $table->string('user_email')->unique();
             $table->integer('status_id')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
