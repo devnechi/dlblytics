@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e68db4ed332edf22a83e2b37f182f6f1",
+    "content-hash": "46a5fe6597c4d4ce521b1abe728bd555",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -757,43 +757,6 @@
                 "url"
             ],
             "time": "2019-07-01T23:21:34+00:00"
-        },
-        {
-            "name": "jazmy/jaz-form-builder",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jazmy/laravel-formbuilder.git",
-                "reference": "3a4ba8d5cfa92eaebde547e50aceae84280e9f4e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/jazmy/laravel-formbuilder/zipball/3a4ba8d5cfa92eaebde547e50aceae84280e9f4e",
-                "reference": "3a4ba8d5cfa92eaebde547e50aceae84280e9f4e",
-                "shasum": ""
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "jazmy\\FormBuilder\\FormBuilderServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "jazmy\\FormBuilder\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "authors": [
-                {
-                    "name": "Jasmine Robinson",
-                    "email": "jaz@jazmy.com"
-                }
-            ],
-            "description": "Laravel Package for Creating a Drag-and-Drop Form Builder Using JQuery Form Builder",
-            "time": "2020-08-29T15:53:02+00:00"
         },
         {
             "name": "laravel/framework",
@@ -6440,9 +6403,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "jazmy/jaz-form-builder": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

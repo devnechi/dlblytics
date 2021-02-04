@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePillarsTable extends Migration
+class CreateGendersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreatePillarsTable extends Migration
      */
     public function up()
     {
-        Schema::create('dlab_pillars', function (Blueprint $table) {
-            $table->increments('pillar_id');
-            $table->integer('creators_id');
-            $table->integer('managers_id');
-            $table->string('pillar_title');
-            $table->longText('pillar_desc');
-            $table->string('pillar_status');
+        Schema::create('genders_tbl', function (Blueprint $table) {
+            $table->increments('gender_id');
+            $table->string('gender_title');
             $table->timestamp('date_created');
             $table->timestamp('date_updated');
             $table->timestamps();
@@ -33,6 +29,6 @@ class CreatePillarsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pillars');
+        Schema::dropIfExists('genders');
     }
 }

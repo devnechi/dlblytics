@@ -1,6 +1,5 @@
 <?php
 
-use Database\Factories\FakeUserFactory;
 namespace Database\Seeders;
 
 use App\User;
@@ -8,6 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Faker\Factory as Faker;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,6 +18,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        FakeUserFactory::factory(150)->create();
+        // User::factory(150)->create();
+         $this->call([
+             newUserSeeder::class,
+             GenderSeeder::class,
+             DeptSeeder::class,
+             PillarSeeder::class
+         ]);
+
     }
 }

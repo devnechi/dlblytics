@@ -22,10 +22,13 @@ class CreateUsersTable extends Migration
             $table->string('mname');
             //lname
             $table->string('lname');
+            //password
+            $table->string('password');
+
             //dob
             $table->string('dob');
             //gender
-            $table->string('gender');
+            $table->string('gender_id')->nullable();
             //martialstatus
             $table->string('martialstatus');
             //nationality
@@ -43,7 +46,7 @@ class CreateUsersTable extends Migration
             $table->string('Department');
 
             //selectPillar
-            $table->string('Pillar');
+            $table->string('pillar_id');
 
             //position
             $table->integer('role')->nullable();
@@ -53,7 +56,7 @@ class CreateUsersTable extends Migration
             //tin_number
             $table->string('tin_number');
             //job_description
-            $table->string('job_description');
+            $table->text('job_description');
             //bankusername
             $table->string('bankusername');
             //bankname
@@ -80,10 +83,11 @@ class CreateUsersTable extends Migration
             $table->integer('added_by');
 
             //uploadUserContract
-            $table->string('user_email')->unique();
+            $table->string('user_emp_contact_url');
+
+            $table->string('email')->unique();
             $table->integer('status_id')->nullable();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
             $table->rememberToken();
             $table->timestamps();
 

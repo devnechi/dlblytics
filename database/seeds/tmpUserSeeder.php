@@ -1,6 +1,12 @@
 <?php
 
+use App\User;
+use Database\Factories\FakeUserFactory;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+
 
 class tmpUserSeeder extends Seeder
 {

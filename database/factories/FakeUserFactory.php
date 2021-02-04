@@ -13,7 +13,9 @@ class FakeUserFactory extends Factory
      *
      * @var string
      */
-    protected $model = User::class;
+    // protected $model = User::class;
+
+    protected $model = App\Models\User::class;
 
     /**
      * Define the model's default state.
@@ -33,7 +35,6 @@ class FakeUserFactory extends Factory
          $sts_id = $faker->randomElement(['active', 'suspended', 'deleted']);
 
         return [
-            'user_id' => 1,
             //'subscriber_email' => $faker->unique()->safeEmail,
             'user_email'    => $this->faker->fname . '@gmail.com',
             'fname'     => $this->faker->fname,

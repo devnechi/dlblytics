@@ -14,8 +14,10 @@ class CreateAdminUpdateDataTable extends Migration
     public function up()
     {
         Schema::create('admin_update_data', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->increments('admin_update_id');
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
+
         });
     }
 
