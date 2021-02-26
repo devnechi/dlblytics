@@ -63,7 +63,8 @@ class AdminPillarsController extends Controller
      */
     public function show($id)
     {
-           //
+        // return view('id.show', compact('product'));
+        //return view('articles.show',compact('article'));
     }
     /**
      * Show the form for editing the specified resource.

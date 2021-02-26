@@ -1,6 +1,20 @@
 @extends('layouts.llmds')
 @section('content')
 <div class="container-fluid">
+    <script>
+        $(document).ready(function () {
+            $('#nav-tab a[href="#{{ old('tab') }}"]').tab('show')
+        });
+    </script>
+
+    <div class="flash-message">
+        @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+          @if(Session::has('alert-' . $msg))
+
+          <p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }} <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></p>
+          @endif
+        @endforeach
+      </div> <!-- end .flash-message -->
     <ul class="nav nav-tabs md-tabs" id="selectDataViewTab" role="tablist">
         <li class="nav-item">
             <a class="nav-link active" id="data-science-overview-tab-md" data-toggle="tab"
@@ -12,6 +26,13 @@
             <a class="nav-link" id="data-science-request-tab-md" data-toggle="tab" href="#data-science-request-md"
                 role="tab" aria-controls="data-science-request-md" aria-selected="false"> Data Science Requests
                 <span class="badge badge-danger badge-pill">3</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" id="projects-nactivities-tab-md" data-toggle="tab" href="#projects-nactivities-md-content"
+                role="tab" aria-controls="projects-nactivities-md-content" aria-selected="false">Projects & Activities
+                <span class="badge badge-danger badge-pill">4</span>
             </a>
         </li>
         <li class="nav-item">
@@ -26,12 +47,6 @@
             <a class="nav-link" id="imprests-tab-md" data-toggle="tab" href="#imprests-md" role="tab"
                 aria-controls="imprests-md" aria-selected="false">Imprest Management
                 <span class="badge badge-danger badge-pill">3</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="projects-nactivities-tab-md" data-toggle="tab" href="#projects-nactivities-md"
-                role="tab" aria-controls="projects-nactivities-md" aria-selected="false">Projects & Activities
-                <span class="badge badge-danger badge-pill">4</span>
             </a>
         </li>
         <li class="nav-item">
@@ -6225,7 +6240,7 @@
                =      start of financial-analytics data           =
                ========================================= -->
         <!-- start of financial-analytics data panel -->
-        <div class="tab-pane fade" id="projects-nactivities-md" role="tabpanel"
+        <div class="tab-pane fade" id="projects-nactivities-md-content" role="tabpanel"
             aria-labelledby="projects-nactivities-tab-md">
             <br />
             {{-- my ds requests --}}
@@ -6244,11 +6259,9 @@
                         <a class="nav-link" id="vds-ds-pna-pills-sub-act-tab" data-toggle="pill"
                             href="#vds-ds-pna-pills-sub-act" role="tab" aria-controls="vdsreqs-pills-sub-act"
                             aria-selected="false">Sub Activities</a>
-
                     </div>
                 </div>
                 <div class="col-md-10">
-
                     <div class="tab-content" id="vds-ds-pna-pills-tabContent">
                         <div class="tab-pane fade show active" id="vds-ds-pna-pills-proj" role="tabpanel"
                             aria-labelledby="impr-pills-proj-tab">
@@ -6303,12 +6316,18 @@
                                                             <div class="tab-pane fade show active" id="vds-ds-project-ed-pills-reviewed-content"
                                                                 role="tabpanel" aria-labelledby="vds-ed-reqs-pills-home-tab">
 
+
                                                                 {{-- my retirements --}}
                                                                 <div class="row">
                                                                     <div class="col-lg-12">
                                                                         <div class="card">
                                                                             <div class="card-content table-responsive">
                                                                                 <br />
+
+                                                                                    <a class="btn btn-outline-success btn-lg" href="{{ route('ds-create-new-project') }}"
+                                                                                    role="button"> create a new project</a>
+                                                                                    <br />
+                                                                                    <br />
                                                                                 <table class="table table-bordered table-hover">
                                                                                     <p>My projects currently <strong> under Administration review</strong></p>
                                                                                     <thead>

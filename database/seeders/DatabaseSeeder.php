@@ -23,7 +23,11 @@ class DatabaseSeeder extends Seeder
              newUserSeeder::class,
              GenderSeeder::class,
              DeptSeeder::class,
-             PillarSeeder::class
+             PillarSeeder::class,
+             DeptManagerRolesSeeder::class,
+             DeptStaffRolesSeeder::class,
+             PillarManagerRolesSeeder::class,
+             PillarStaffRolesSeeder::class
          ]);
 
     }

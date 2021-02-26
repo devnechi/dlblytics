@@ -5789,9 +5789,9 @@
                                                     <div class="row">
                                                         <div class="col-lg-12">
                                                         <!-- Button trigger modal -->
-                                                        <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#newDSimprest">
-                                                            add new department
-                                                        </button>
+
+                                                        <a class="btn btn-outline-success btn-lg" href="{{ route('add-a-new-department') }}"
+                                                        role="button"> Add a New Department</a>
                                                             <div class="card">
                                                                 <div class="card-content table-responsive">
                                                                     <br />
@@ -5802,75 +5802,53 @@
                                                                                 <th scope="col">#</th>
                                                                                 <th scope="col">Department Name</th>
                                                                                 <th scope="col-md-4">Head of Deparment</th>
-                                                                                <th scope="col">Number of Staff</th>
+                                                                                <th scope="col">Description</th>
                                                                                 <th scope="col">total funds allocated</th>
+                                                                                <th scope="col">total staff</th>
                                                                                 <th scope="col">Date created</th>
                                                                                 <th scope="col"></th>
+                                                                                <th scope="col"></th>
+
 
                                                                             </tr>
                                                                         </thead>
                                                                         <tbody>
+
+                                                                            @foreach($departments as $department)
                                                                             <tr>
-                                                                                <th scope="row">1</th>
-                                                                                <td>Accounting & Finance</td>
-                                                                                <td>Nguza</td>
-                                                                                <td>22</td>
-                                                                                <td>20,300,000 <span class="badge badge-success">TZS</span>
-                                                                                </td>
-                                                                                <td>2019-09-11</td>
-                                                                                <td>
-                                                                                    <button type="button"
-                                                                                        class="btn btn-outline-info">add staff to
-                                                                                        department</button>
-                                                                                </td>
-                                                                                <td>
-                                                                                    <button type="button"
-                                                                                        class="btn btn-outline-success">view
-                                                                                        department</button>
-                                                                                </td>
+                                                                                <th scope="row">{{ $department->dept_id }}</th>
+                                                                                <td class="w-30 p-2">{{ $department->dept_title }}</td>
+
+                                                                                <td class="w-30 p-2">{{ $department->dept_manager_id }}</td>
+                                                                                <td class="w-30 h-30 p-4">{{ $department->dept_description }}</td>
+                                                                                <td class="w-30 h-30 p-4"> 10000000 </td>
+                                                                                <td class="w-30 h-30 p-4"> 22 </td>
+                                                                                <td class="w-10 p-2">{{ $department->created_at }}</td>
+                                                                                <td class="w-10 p-2"><a href="{{ route('hrdepts.show', $department->dept_id)}}"
+                                                                                    class="btn btn-outline-success">view details</a>
+                                                                               </td>
+                                                                               <td class="w-30 p-2"><a href="{{ route('hrdepts.edit', $department->dept_id)}}"
+                                                                                class="btn btn-outline-info btn-md">update</a>
+                                                                               </td>
+
+                                                                               {{-- {{ $department->total_fund_allocations }} --}}
+                                                                                {{-- <td class="w-10 p-2"><a href="{{ route('deptmanager.edit', $deptmanager->user_id)}}"
+                                                                                    class="btn btn-outline-info">edit</a>
+                                                                            </td> --}}
+                                                                            {{-- <td class="w-20 p-2">
+                                                                                <form action="{{ route('dept.destroy', $deptmanager->user_id)}}"
+                                                                                method="post">
+                                                                                @csrf
+                                                                                @method('UPDATE')
+                                                                                <button class="btn btn-outline-danger"
+                                                                                    type="submit">Delete</button>
+                                                                                </form>
+
+                                                                            </td> --}}
                                                                             </tr>
 
-
-                                                                            <tr>
-                                                                                <th scope="row">2</th>
-                                                                                <td>IT department</td>
-                                                                                <td>Alex Johns</td>
-                                                                                <td>12</td>
-                                                                                <td>20,300,000 <span class="badge badge-success">TZS</span>
-                                                                                </td>
-                                                                                <td>2019-09-11</td>
-                                                                                <td>
-                                                                                    <button type="button"
-                                                                                        class="btn btn-outline-info">add staff to
-                                                                                        department</button>
-                                                                                </td>
-                                                                                <td>
-                                                                                    <button type="button"
-                                                                                        class="btn btn-outline-success">view
-                                                                                        department</button>
-                                                                                </td>
-                                                                            </tr>
-
-                                                                            <tr>
-                                                                                <th scope="row">3</th>
-                                                                                <td>Human Resource</td>
-                                                                                <td>Omar</td>
-                                                                                <td>16</td>
-                                                                                <td>20,300,000 <span class="badge badge-success">TZS</span>
-                                                                                </td>
-                                                                                <td>2019-09-11</td>
-                                                                                <td>
-                                                                                    <button type="button"
-                                                                                        class="btn btn-outline-info">add staff to
-                                                                                        department</button>
-                                                                                </td>
-                                                                                <td>
-                                                                                    <button type="button"
-                                                                                        class="btn btn-outline-success">view
-                                                                                        department</button>
-                                                                                </td>
-                                                                            </tr>
                                                                         </tbody>
+                                                                        @endforeach
                                                                     </table>
                                                                     <br />
                                                                     <nav aria-label="Page navigation example">
@@ -5915,69 +5893,55 @@
                                                     <div class="row">
                                                         <div class="col-lg-12">
 
+                                                            <a class="btn btn-outline-success btn-lg" href="{{ route('add-a-new-pillar') }}"
+                                                            role="button"> Add a New Pillar</a>
+
                                                             <div class="card">
                                                                 <div class="card-content table-responsive">
                                                                     <br />
                                                                     <table class="table table-bordered table-hover">
+                                                                        <br />
                                                                         <p><strong>All organisation pillars</strong></p>
+                                                                        <br />
+                                                                        <br />
+
                                                                         <thead>
                                                                             <tr>
                                                                                 <th scope="col">#</th>
                                                                                 <th scope="col">Pillar Name</th>
-                                                                                <th scope="col-md-4">Manager</th>
+                                                                                <th scope="col">Manager</th>
+                                                                                <th scope="col-md-4">Description</th>
                                                                                 <th scope="col">Number of Staff</th>
                                                                                 <th scope="col">total funds allocated</th>
                                                                                 <th scope="col">Date created</th>
+                                                                                <th scope="col">last updated</th>
                                                                                 <th scope="col"></th>
+                                                                                <th scope="col"></th>
+
 
                                                                             </tr>
                                                                         </thead>
                                                                         <tbody>
-                                                                            <tr>
-                                                                                <th scope="row">1</th>
-                                                                                <td>Data Science</td>
-                                                                                <td>Charles</td>
-                                                                                <td>22</td>
-                                                                                <td>20,300,000 <span class="badge badge-success">TZS</span>
-                                                                                </td>
-                                                                                <td>2019-09-11</td>
-                                                                                <td>
-                                                                                    <button type="button"
-                                                                                        class="btn btn-outline-success">view
-                                                                                        department</button>
-                                                                                </td>
-                                                                            </tr>
 
-
+                                                                            @foreach($pillars as $pillar)
                                                                             <tr>
-                                                                                <th scope="row">2</th>
-                                                                                <td>Institutional Stregthening</td>
-                                                                                <td>Madia</td>
-                                                                                <td>12</td>
-                                                                                <td>20,300,000 <span class="badge badge-success">TZS</span>
-                                                                                </td>
-                                                                                <td>2019-09-11</td>
-                                                                                <td>
-                                                                                    <button type="button"
-                                                                                        class="btn btn-outline-success">view
-                                                                                        department</button>
-                                                                                </td>
-                                                                            </tr>
+                                                                                <th scope="row">{{ $pillar->pillar_id }}</th>
+                                                                                <td class="w-30 p-2">{{ $pillar->pillar_title }}</td>
+                                                                                <td class="w-30 p-2">{{ $pillar->managers_id }}</td>
+                                                                                <td class="w-30 h-30 p-4">{{ $pillar->pillar_desc }}</td>
+                                                                                <td class="w-30 h-30 p-4"> {{ $pillar->total_fund_allocations }} </td>
+                                                                                <td class="w-10 p-2"></td>
+                                                                                <td class="w-10 p-2">{{ $pillar->created_at }}</td>
+                                                                                <td class="w-10 p-2">{{ $pillar->date_updated }}</td>
+                                                                                <td class="w-10 p-2"><a href="{{ route('hrpillars.show', $pillar->pillar_id)}}"
+                                                                                    class="btn btn-outline-success">view details</a>
+                                                                               </td>
+                                                                               <td class="w-30 p-2"><a href="{{ route('hrpillars.edit', $pillar->pillar_id)}}"
+                                                                                class="btn btn-outline-info btn-md">update</a>
+                                                                               </td>
 
-                                                                            <tr>
-                                                                                <th scope="row">3</th>
-                                                                                <td>Community Engagements</td>
-                                                                                <td>Omar</td>
-                                                                                <td>16</td>
-                                                                                <td>20,300,000 <span class="badge badge-success">TZS</span>
-                                                                                </td>
-                                                                                <td>2019-09-11</td>
-                                                                                <td>
-                                                                                    <button type="button"
-                                                                                        class="btn btn-outline-success">view
-                                                                                        department</button>
-                                                                                </td>
                                                                             </tr>
+                                                                            @endforeach
                                                                         </tbody>
                                                                     </table>
                                                                     <br />
@@ -6096,81 +6060,61 @@
                                                             <div class="card">
                                                                 <div class="card-content table-responsive">
                                                                     <table class="table table-bordered table-hover">
+                                                                        <br />
+                                                                        <br />
+
                                                                         <p><strong>All Organisation Managers</strong></p>
+                                                                        <br />
+                                                                        <br />
+
                                                                         <thead>
                                                                             <tr>
                                                                                 <th scope="col">#</th>
-                                                                                <th scope="col">Managers Name</th>
-                                                                                <th scope="col-md-4">Name of Deparment</th>
-                                                                                <th scope="col">Number of Staff</th>
-                                                                                <th scope="col">total funds allocated</th>
+                                                                                <th scope="col">First Name</th>
+                                                                                <th scope="col-md-4">Email</th>
+                                                                                <th scope="col">role</th>
+                                                                                <th scope="col">Department</th>
                                                                                 <th scope="col">Date created</th>
                                                                                 <th scope="col"></th>
-
+                                                                                <th scope="col"></th>
                                                                             </tr>
                                                                         </thead>
                                                                         <tbody>
+
+                                                                            @foreach($deptmanagers as $deptmanager)
                                                                             <tr>
-                                                                                <th scope="row">1</th>
-                                                                                <td>Accounting & Finance</td>
-                                                                                <td>Nguza</td>
-                                                                                <td>22</td>
-                                                                                <td>20,300,000 <span class="badge badge-success">TZS</span>
+                                                                                <th scope="row">{{ $deptmanager->user_id }}</th>
+                                                                                <td class="w-30 p-2">{{ $deptmanager->fname }}</td>
+
+                                                                                <td class="w-30 p-2">{{ $deptmanager->email }}</td>
+                                                                                <td class="w-30 h-30 p-4">{{ $deptmanager->role_title }}</td>
+                                                                                <td class="w-30 h-30 p-4">{{ $deptmanager->dept_title }}</td>
+                                                                                <td class="w-10 p-2">{{ $deptmanager->created_at }}</td>
+                                                                                <td class="w-10 p-2"><a href="#"
+                                                                                    class="btn btn-outline-success">view details</a>
+                                                                               </td>
+                                                                                <td class="w-10 p-2"><a href="#"
+                                                                                    class="btn btn-outline-info">update details</a>
                                                                                 </td>
-                                                                                <td>2019-09-11</td>
-                                                                                <td>
-                                                                                    <button type="button"
-                                                                                        class="btn btn-outline-info">add staff to
-                                                                                        department</button>
-                                                                                </td>
-                                                                                <td>
-                                                                                    <button type="button"
-                                                                                        class="btn btn-outline-success">view
-                                                                                        department</button>
-                                                                                </td>
+
+                                                                                {{-- <td class="w-10 p-2"><a href="{{ route('deptmanager.edit', $deptmanager->user_id)}}"
+                                                                                    class="btn btn-outline-info">edit</a>
+                                                                            </td> --}}
+                                                                            {{-- <td class="w-20 p-2">
+                                                                                <form action="{{ route('dept.destroy', $deptmanager->user_id)}}"
+                                                                                method="post">
+                                                                                @csrf
+                                                                                @method('UPDATE')
+                                                                                <button class="btn btn-outline-danger"
+                                                                                    type="submit">Delete</button>
+                                                                                </form>
+
+                                                                            </td> --}}
                                                                             </tr>
 
-
-                                                                            <tr>
-                                                                                <th scope="row">2</th>
-                                                                                <td>IT department</td>
-                                                                                <td>Alex Johns</td>
-                                                                                <td>12</td>
-                                                                                <td>20,300,000 <span class="badge badge-success">TZS</span>
-                                                                                </td>
-                                                                                <td>2019-09-11</td>
-                                                                                <td>
-                                                                                    <button type="button"
-                                                                                        class="btn btn-outline-info">add staff to
-                                                                                        department</button>
-                                                                                </td>
-                                                                                <td>
-                                                                                    <button type="button"
-                                                                                        class="btn btn-outline-success">view
-                                                                                        department</button>
-                                                                                </td>
-                                                                            </tr>
-
-                                                                            <tr>
-                                                                                <th scope="row">3</th>
-                                                                                <td>Human Resource</td>
-                                                                                <td>Omar</td>
-                                                                                <td>16</td>
-                                                                                <td>20,300,000 <span class="badge badge-success">TZS</span>
-                                                                                </td>
-                                                                                <td>2019-09-11</td>
-                                                                                <td>
-                                                                                    <button type="button"
-                                                                                        class="btn btn-outline-info">add staff to
-                                                                                        department</button>
-                                                                                </td>
-                                                                                <td>
-                                                                                    <button type="button"
-                                                                                        class="btn btn-outline-success">view
-                                                                                        department</button>
-                                                                                </td>
-                                                                            </tr>
                                                                         </tbody>
+
+                                                                        @endforeach
                                                                     </table>
                                                                     <br />
                                                                     <nav aria-label="Page navigation example">
@@ -6256,66 +6200,57 @@
                                                             <div class="card">
                                                                 <div class="card-content table-responsive">
                                                                     <table class="table table-bordered table-hover">
+                                                                        <br />
+                                                                        <br />
                                                                         <p><strong>All Organisation Staff</strong></p>
+                                                                        <br />
                                                                         <thead>
                                                                             <tr>
                                                                                 <th scope="col">#</th>
-                                                                                <th scope="col">Pillar Name</th>
-                                                                                <th scope="col-md-4">Manager</th>
-                                                                                <th scope="col">Number of Staff</th>
-                                                                                <th scope="col">total funds allocated</th>
+                                                                                <th scope="col">First Name</th>
+                                                                                <th scope="col-md-4">Email</th>
+                                                                                <th scope="col">role</th>
+                                                                                <th scope="col">Department</th>
                                                                                 <th scope="col">Date created</th>
                                                                                 <th scope="col"></th>
-
+                                                                                <th scope="col"></th>
                                                                             </tr>
                                                                         </thead>
-                                                                        <tbody>
-                                                                            <tr>
-                                                                                <th scope="row">1</th>
-                                                                                <td>Data Science</td>
-                                                                                <td>Charles</td>
-                                                                                <td>22</td>
-                                                                                <td>20,300,000 <span class="badge badge-success">TZS</span>
-                                                                                </td>
-                                                                                <td>2019-09-11</td>
-                                                                                <td>
-                                                                                    <button type="button"
-                                                                                        class="btn btn-outline-success">view
-                                                                                        department</button>
-                                                                                </td>
-                                                                            </tr>
 
+                                                                        @foreach($pillarstaffs as $pillarstaff)
+                                                                        <tr>
+                                                                            <th scope="row">{{ $pillarstaff->user_id }}</th>
+                                                                            <td class="w-30 p-2">{{ $pillarstaff->fname }}</td>
 
-                                                                            <tr>
-                                                                                <th scope="row">2</th>
-                                                                                <td>Institutional Stregthening</td>
-                                                                                <td>Madia</td>
-                                                                                <td>12</td>
-                                                                                <td>20,300,000 <span class="badge badge-success">TZS</span>
-                                                                                </td>
-                                                                                <td>2019-09-11</td>
-                                                                                <td>
-                                                                                    <button type="button"
-                                                                                        class="btn btn-outline-success">view
-                                                                                        department</button>
-                                                                                </td>
-                                                                            </tr>
+                                                                            <td class="w-30 p-2">{{ $pillarstaff->email }}</td>
+                                                                            <td class="w-30 h-30 p-4">{{ $pillarstaff->role_title }}</td>
+                                                                            <td class="w-30 h-30 p-4">{{ $pillarstaff->dept_title }}</td>
+                                                                            <td class="w-10 p-2">{{ $pillarstaff->created_at }}</td>
+                                                                            <td class="w-10 p-2"><a href="#"
+                                                                                class="btn btn-outline-success">view details</a>
+                                                                           </td>
+                                                                            <td class="w-10 p-2"><a href="#"
+                                                                                class="btn btn-outline-info">update details</a>
+                                                                            </td>
 
-                                                                            <tr>
-                                                                                <th scope="row">3</th>
-                                                                                <td>Community Engagements</td>
-                                                                                <td>Omar</td>
-                                                                                <td>16</td>
-                                                                                <td>20,300,000 <span class="badge badge-success">TZS</span>
-                                                                                </td>
-                                                                                <td>2019-09-11</td>
-                                                                                <td>
-                                                                                    <button type="button"
-                                                                                        class="btn btn-outline-success">view
-                                                                                        department</button>
-                                                                                </td>
-                                                                            </tr>
-                                                                        </tbody>
+                                                                            {{-- <td class="w-10 p-2"><a href="{{ route('deptmanager.edit', $deptmanager->user_id)}}"
+                                                                                class="btn btn-outline-info">edit</a>
+                                                                        </td> --}}
+                                                                        {{-- <td class="w-20 p-2">
+                                                                            <form action="{{ route('dept.destroy', $deptmanager->user_id)}}"
+                                                                            method="post">
+                                                                            @csrf
+                                                                            @method('UPDATE')
+                                                                            <button class="btn btn-outline-danger"
+                                                                                type="submit">Delete</button>
+                                                                            </form>
+
+                                                                        </td> --}}
+                                                                        </tr>
+
+                                                                    </tbody>
+
+                                                                    @endforeach
                                                                     </table>
                                                                     <br />
                                                                     <nav aria-label="Page navigation example">
@@ -6343,8 +6278,6 @@
                                                         </div>
 
                                                     </div>
-
-
                                                 </div>
                                                 <!-- end of managers panel -->
                                             </div>

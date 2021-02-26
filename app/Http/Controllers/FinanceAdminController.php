@@ -2,14 +2,91 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
+
+use App\User;
+use App\Pillar;
+use App\Department;
+use App\DManagerRoles;
+use Auth;
 
 class FinanceAdminController extends Controller
 {
 
     public function index()
     {
-        return view('financeAdmin.index');
+        //all departments
+        //all pillars
+        $pillars = Pillar::all();
+        $departments = Department::all();
+
+        // $departments = DB::table('dlab_departments')
+        // ->join('users', 'dlab_departments.dept_manager_id', '=', 'dlab_departments.dept_manager_id')
+        // ->select('dlab_departments.*', 'users.fname')
+        // ->get();
+
+        $depts = DB::table('users')
+        ->join('dlab_departments', 'users.Department', '=', 'dlab_departments.dept_manager_id')
+        ->select('users.fname', 'dlab_departments.*')
+        ->get();
+
+
+        // getting all dept managers dept_manager_role_tbl
+          $pillarmanagers = DB::table('users')
+                        ->join('pillar_manager_role_tbl', 'users.role', '=', 'pillar_manager_role_tbl.role_id')
+                        ->join('dlab_departments', 'users.Department', '=', 'dlab_departments.dept_id')
+                        ->select('users.*', 'pillar_manager_role_tbl.role_title', 'dlab_departments.dept_title')
+                        ->get();
+
+         $deptmanagers = DB::table('users')
+                        ->join('dept_manager_role_tbl', 'users.role', '=', 'dept_manager_role_tbl.role_id')
+                        ->join('dlab_departments', 'users.Department', '=', 'dlab_departments.dept_id')
+                        ->select('users.*', 'dept_manager_role_tbl.role_title', 'dlab_departments.dept_title')
+                        ->get();
+
+
+
+         $deptstaffs = DB::table('users')
+                    ->join('dept_staff_role_tbl', 'users.role', '=', 'dept_staff_role_tbl.role_id')
+                    ->join('dlab_departments', 'users.Department', '=', 'dlab_departments.dept_id')
+                    ->select('users.*', 'dept_staff_role_tbl.role_title', 'dlab_departments.dept_title')
+                    ->get();
+
+
+         $pillarstaffs = DB::table('users')
+                    ->join('pillar_staff_role_tbl', 'users.role', '=', 'pillar_staff_role_tbl.role_id')
+                    ->join('dlab_departments', 'users.Department', '=', 'dlab_departments.dept_id')
+                    ->select('users.*', 'pillar_staff_role_tbl.role_title', 'dlab_departments.dept_title')
+                    ->get();
+                // all dept staff
+                // all pillar staff
+                // all pillar managers
+
+                //opend finance dashboard index page
+                return view('financeAdmin.index',
+                compact('deptmanagers',
+                'pillarmanagers',
+                'deptstaffs',
+                'pillarstaffs',
+                'depts',
+                'pillars',
+                'departments'));
     }
+
+
+    //  to create a new pillar
+    public function createNewPillar()
+    {
+        return view('financeAdmin.hr.fin_pillar.hr-create-new-pillar');
+    }
+
+    //  to create a new department
+    public function createNewDepartment()
+    {
+        return view('financeAdmin.hr.fin_depts.hr-create-new-department');
+    }
+
 
 
     //  Advance request

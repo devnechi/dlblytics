@@ -13,7 +13,7 @@
             <strong>Error!</strong>
             <ul>
                 @foreach ($errors->all() as $error)
-                    <li></li>
+                <li>{{ $error }}</li>
                 @endforeach
             </ul>
         </div>
@@ -23,12 +23,17 @@
         <a class="btn btn-primary" href="" title="Go back"> <i class="fas fa-backward "></i> </a>
     </div> --}}
 
-        <form method="post" action="">
+        <form method="post" action="{{ route('employees.store') }}">
             @csrf
-            <input type="hidden" value="{{ Auth::user()->id }}" name="creator_id">
+            <input type="hidden" value="{{ Auth::user()->user_id }}" name="added_by">
+            <input type="hidden" value=0 name="pillar_id">
+            <input type="hidden" value='password' name="password">
+            <input type="hidden" value='pending verification' name="acc_status">
+
+
             {{-- user personal information --}}
             <div class="row">
-                <div class="form-group col-md-4 input-group-lg">
+                <div class="form-group form-inline col-md-4 input-group-lg">
                     <label for="forFname">First Name: </label>
                     <input type="text" class="form-control" name="fname"
                         value="<?= isset($_POST['fname']) ? $_POST['fname'] : ''; ?>" placeholder="" required>
@@ -47,38 +52,40 @@
                 </div>
             </div>
 
-           <br />
-           <br />
-            <div class="row">
-                <div class="form-group col-md-4 input-group-lg">
-                    <label for="fordob">Date of Birth: </label>
-                    <input type="date" class="form-control" name="dob"
-                        value="<?= isset($_POST['dob']) ? $_POST['dob'] : ''; ?>" placeholder=""
-                        required>
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group col-md-4 input-group-lg">
-                    <label for="formGroupProductName">Gender</label>
-                    <select class="form-control" aria-label="Large" id="gender" name="gender"
-                        aria-describedby="inputGroup-sizing-sm">
-                        <option value="select">Select</option>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                    </select>
-                </div>
-            </div>
-            <div class="row">
+            <br />
+            <br />
+             <div class="row">
+                 <div class="form-group col-md-4 input-group-lg">
+                     <label for="fordob">Date of Birth: </label>
+                     <input type="date" class="form-control" name="dob"
+                         value="<?= isset($_POST['dob']) ? $_POST['dob'] : ''; ?>" placeholder=""
+                         required>
+                 </div>
+             </div>
+             <div class="row">
+                 <div class="form-group col-md-4 input-group-lg">
+                     <label for="formGroupProductName">Gender</label>
+                     <select class="form-control" aria-label="Large" id="gender_id" name="gender_id"
+                         aria-describedby="inputGroup-sizing-sm">
+                         <option value="select">Select</option>
+                         @foreach($genders as $gender)
+                         <option value="{{$gender->gender_id}}">{{$gender->gender_title}}</option>
+                         @endforeach
+                     </select>
+                 </div>
+             </div>
+
+             <div class="row">
                 <div class="form-group col-md-4 input-group-lg">
                     <label for="formartialStatus">Martial Status: </label>
                     <select class="form-control" aria-label="Large" id="martialstatus" name="martialstatus"
                         aria-describedby="inputGroup-sizing-sm">
                         <option value="select">Select</option>
-                        <option value="usd">Married</option>
-                        <option value="tzs">Widow</option>
-                        <option value="tzs">Widower</option>
-                        <option value="tzs">Divorced</option>
-                        <option value="tzs">Single</option>
+                        <option value="married">Married</option>
+                        <option value="widow">Widow</option>
+                        <option value="widower">Widower</option>
+                        <option value="divorced">Divorced</option>
+                        <option value="single">Single</option>
                     </select>
                 </div>
                 <div class="form-group col-md-4 input-group-lg">
@@ -86,11 +93,9 @@
                     <select class="form-control" aria-label="Large" id="nationality" name="nationality"
                         aria-describedby="inputGroup-sizing-sm">
                         <option value="select">Select</option>
-                        <option value="usd">Tanzanian</option>
-                        <option value="tzs">Kenyan</option>
-                        <option value="tzs">Ugandan</option>
-                        <option value="tzs">Rwandan</option>
-                        <option value="tzs">Other</option>
+                        <option value="Tanzanian">Tanzanian</option>
+                        <option value="Kenyan">Kenyan</option>
+                        <option value="other">Other</option>
                     </select>
                 </div>
 
@@ -126,45 +131,35 @@
             <br />
             <div class="row">
                 <div class="form-group col-md-4 input-group-lg">
-                    <label for="forDepartment">Department: </label>
-                    <select class="form-control" aria-label="Large" id="selectDepartment" name="role"
+                    <label for="forDepartment">Specify New user Department: </label>
+                    <select class="form-control" aria-label="Large" id="department_id" name="department_id"
                     aria-describedby="inputGroup-sizing-sm">
                     <option value="select">Select</option>
-                    <option value="usd">Accounting</option>
-                    <option value="tzs">Human resource</option>
-                    <option value="tzs">Procument</option>
-                    <option value="tzs">IT department</option>
+                    @foreach($depts as $dept)
+                    <option value="{{$dept->dept_id}}">{{$dept->dept_title}}</option>
+                    @endforeach
                      </select>
               </div>
             </div>
             <div class="row">
                 <div class="form-group col-md-4 input-group-lg">
-                    <label for="forposition">position: </label>
-                    <input type="text" class="form-control" name="position"
-                        value="<?= isset($_POST['position']) ? $_POST['position'] : ''; ?>" placeholder="">
-                </div>
-                <div class="form-group col-md-4 input-group-lg">
-                    <label for="forUserrole">User role: </label>
+                    <label for="forUserrole">Select user management deparment: </label>
                     <select class="form-control" aria-label="Large" id="role" name="role"
                     aria-describedby="inputGroup-sizing-sm">
-                    <option value="select">User manager role</option>
-                    <option value="usd">Accounting Department manager</option>
-                    <option value="tzs">Human resource Department manager</option>
-                    <option value="tzs">Procument department manager</option>
-                    <option value="tzs">IT department manager</option>
+                    <option value="select">Select manager department</option>
+                    @foreach($deptmanagerroles as $deptmanagerrole)
+                    <option value="{{$deptmanagerrole->role_id}}">{{$deptmanagerrole->role_title}}</option>
+                    @endforeach
                      </select>
               </div>
             </div>
 
-
             <div class="row">
-
                 <div class="form-group col-md-4 input-group-lg">
                     <label for="forKpi_dc_timing">Driving Licence Num: </label>
                     <input type="text" class="form-control" name="driving_license"
                         value="<?= isset($_POST['driving_license']) ? $_POST['driving_license'] : ''; ?>" placeholder="">
                 </div>
-
                 <div class="form-group col-md-4 input-group-lg">
                     <label for="forKpi_dc_timing">TIN Num: </label>
                     <input type="text" class="form-control" name="tin_number"
@@ -173,26 +168,25 @@
             </div>
 
              {{-- user login info --}}
-
-
-            <div class="row">
+             <div class="row">
                 <div class="form-group col-lg-12 input-group-lg">
                     <div class="form-group green-border-focus">
-                        <label for="forjobBriefDescription">Staff job description summary:
+                        <label for="forjobBriefDescription">managers position description summary:
                         </label>
                         <textarea class="form-control" name="job_description" rows="10" required></textarea>
                     </div>
                 </div>
             </div>
+
             <div class="row">
                 <div class="form-group col-md-6 input-group-lg">
-                    <label for="forbankusername">Bank Account User name: </label>
+                    <label for="forbankusername">Bank Account holders name: </label>
                     <input type="text" class="form-control" name="bankusername"
                         value="<?= isset($_POST['bankusername']) ? $_POST['bankusername'] : ''; ?>" placeholder="">
                 </div>
 
                 <div class="form-group col-md-4 input-group-lg">
-                    <label for="forbankname">Bank Name: </label>
+                    <label for="forbankname">Bank Title: </label>
                     <input type="text" class="form-control" name="bankname"
                         value="<?= isset($_POST['bankname']) ? $_POST['bankname'] : ''; ?>" placeholder="">
                 </div>
@@ -205,6 +199,14 @@
                         value="<?= isset($_POST['bankaccnumber']) ? $_POST['bankaccnumber'] : ''; ?>" placeholder="">
                 </div>
 
+
+                <div class="form-group col-md-4 input-group-lg">
+                    <label for="fortotalsalary">Total Salary: </label>
+                    <input type="text" class="form-control" name="totalsalary"
+                        value="<?= isset($_POST['totalsalary']) ? $_POST['totalsalary'] : ''; ?>" placeholder="">
+                </div>
+
+
                 <div class="form-group col-md-4 input-group-lg">
                     <label for="forposition">Currency Type: </label>
                     <select class="form-control" aria-label="Large" id="currencyType" name="currencyType"
@@ -215,12 +217,6 @@
 
                     </select>
                 </div>
-
-                <div class="form-group col-md-4 input-group-lg">
-                    <label for="fortotalsalary">Total Salary: </label>
-                    <input type="text" class="form-control" name="totalsalary"
-                        value="<?= isset($_POST['totalsalary']) ? $_POST['totalsalary'] : ''; ?>" placeholder="">
-                </div>
             </div>
             <br />
             <br />
@@ -230,8 +226,11 @@
                 <select class="form-control" aria-label="Large" id="working_type" name="working_type"
                 aria-describedby="inputGroup-sizing-sm">
                 <option value="select">Working Type</option>
-                <option value="usd">Full-time</option>
-                <option value="tzs">Part-time</option>
+                <option value="full-time">Full-time</option>
+                <option value="part-time">Part-time</option>
+                <option value="consultant">Consultant</option>
+                <option value="temporary">Temporary</option>
+
 
             </select>
                 </div>
@@ -242,8 +241,8 @@
                 <select class="form-control" aria-label="Large" id="useraccStatus" name="useraccStatus"
                         aria-describedby="inputGroup-sizing-sm">
                         <option value="select">User status</option>
-                        <option value="usd">Active</option>
-                        <option value="tzs">Pending</option>
+                        <option value="active">Active</option>
+                        <option value="pending">Pending</option>
 
                     </select>
                 </div>
@@ -254,7 +253,7 @@
             <br />
             <div class="row">
                 <div class="form-group col-md-4 input-group-lg">
-                    <label for="fortotalsalary">{{ __('E-Mail Address') }} </label>
+                    <label for="foremail">{{ __('E-Mail Address') }} </label>
                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
                     @error('email')
                         <span class="invalid-feedback" role="alert">
@@ -264,18 +263,6 @@
                 </div>
 
             </div>
-            <div class="row">
-                <div class="form-group col-md-4 input-group-lg">
-                    <label for="forKpi_title">Password: </label>
-                    <input type="text" class="form-control" name="password"
-                    value="<?= isset($_POST['password']) ? $_POST['password'] : ''; ?>"
-                    placeholder="" required>
-                </div>
-            </div>
-
-            <br />
-            <br />
-            <br />
 
             <div class="row">
                 <div class="form-group col-md-6 input-group-lg">
@@ -295,10 +282,10 @@
             </div>
 
             <div class="row">
-                <div class="form-group offset-md-6 col-md-6 input-group-lg push-right">
+                <div class="form-group offset-md-6 col-md-4 input-group-lg push-right">
                     <button type="submit" class="btn btn-outline-info btn-lg">Create new user</button>
                 </div>
-                <div class="form-group offset-md-6 col-md-6 input-group-lg pull-right">
+                <div class="form-group offset-md-6 col-md-4 input-group-lg pull-right">
                     <button type="button" name="btnCancel" class="btn btn-outline-danger btn-lg">cancel entry</button>
                 </div>
             </div>

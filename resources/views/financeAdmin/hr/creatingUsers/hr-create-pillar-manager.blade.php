@@ -13,22 +13,28 @@
             <strong>Error!</strong>
             <ul>
                 @foreach ($errors->all() as $error)
-                    <li></li>
+                    <li>{{ $error }}</li>
                 @endforeach
             </ul>
         </div>
     @endif
+
 {{--
     <div class="pull-right">
         <a class="btn btn-primary" href="" title="Go back"> <i class="fas fa-backward "></i> </a>
     </div> --}}
 
-        <form method="post" action="">
+        <form method="post"  action="{{ route('employees.store') }}">
             @csrf
-            <input type="hidden" value="{{ Auth::user()->id }}" name="creator_id">
+            <input type="hidden" value="{{ Auth::user()->user_id }}" name="added_by">
+            <input type="hidden" value=0 name="department_id">
+            <input type="hidden" value='password' name="password">
+            <input type="hidden" value='pending verification' name="acc_status">
+
+
             {{-- user personal information --}}
             <div class="row">
-                <div class="form-group col-md-4 input-group-lg">
+                <div class="form-group form-inline col-md-4 input-group-lg">
                     <label for="forFname">First Name: </label>
                     <input type="text" class="form-control" name="fname"
                         value="<?= isset($_POST['fname']) ? $_POST['fname'] : ''; ?>" placeholder="" required>
@@ -60,11 +66,12 @@
             <div class="row">
                 <div class="form-group col-md-4 input-group-lg">
                     <label for="formGroupProductName">Gender</label>
-                    <select class="form-control" aria-label="Large" id="gender" name="gender"
+                    <select class="form-control" aria-label="Large" id="gender_id" name="gender_id"
                         aria-describedby="inputGroup-sizing-sm">
                         <option value="select">Select</option>
-                        <option value="usd">Male</option>
-                        <option value="tzs">Female</option>
+                        @foreach($genders as $gender)
+                        <option value="{{$gender->gender_id}}">{{$gender->gender_title}}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -74,11 +81,11 @@
                     <select class="form-control" aria-label="Large" id="martialstatus" name="martialstatus"
                         aria-describedby="inputGroup-sizing-sm">
                         <option value="select">Select</option>
-                        <option value="usd">Married</option>
-                        <option value="tzs">Widow</option>
-                        <option value="tzs">Widower</option>
-                        <option value="tzs">Divorced</option>
-                        <option value="tzs">Single</option>
+                        <option value="married">Married</option>
+                        <option value="widow">Widow</option>
+                        <option value="widower">Widower</option>
+                        <option value="divorced">Divorced</option>
+                        <option value="single">Single</option>
                     </select>
                 </div>
                 <div class="form-group col-md-4 input-group-lg">
@@ -86,11 +93,9 @@
                     <select class="form-control" aria-label="Large" id="nationality" name="nationality"
                         aria-describedby="inputGroup-sizing-sm">
                         <option value="select">Select</option>
-                        <option value="usd">Tanzanian</option>
-                        <option value="tzs">Kenyan</option>
-                        <option value="tzs">Ugandan</option>
-                        <option value="tzs">Rwandan</option>
-                        <option value="tzs">Other</option>
+                        <option value="Tanzanian">Tanzanian</option>
+                        <option value="Kenyan">Kenyan</option>
+                        <option value="other">Other</option>
                     </select>
                 </div>
 
@@ -126,32 +131,25 @@
             <br />
             <div class="row">
                 <div class="form-group col-md-4 input-group-lg">
-                    <label for="forDepartment">Pillar: </label>
-                    <select class="form-control" aria-label="Large" id="selectPillar" name="role"
+                    <label for="forDepartment">Specify Pillar: </label>
+                    <select class="form-control" aria-label="Large" id="pillar_id" name="pillar_id"
                     aria-describedby="inputGroup-sizing-sm">
-                    <option value="select">Select</option>
-                    <option value="usd">Data Science</option>
-                    <option value="tzs">Capacity building</option>
-                    <option value="tzs">Community engagement</option>
-                    <option value="tzs">Research & Innovation</option>
-                    <option value="tzs">Institutional Strengthening</option>
+                    <option value="select">Specify user pillar</option>
+                    @foreach($pillars as $pillar)
+                    <option value="{{$pillar->pillar_id}}">{{$pillar->pillar_title}}</option>
+                    @endforeach
                      </select>
               </div>
             </div>
             <div class="row">
-
                 <div class="form-group col-md-4 input-group-lg">
-                    <label for="forposition">position: </label>
-                    <input type="text" class="form-control" name="position"
-                        value="<?= isset($_POST['position']) ? $_POST['position'] : ''; ?>" placeholder="">
-                </div>
-                <div class="form-group col-md-4 input-group-lg">
-                    <label for="forUserrole">User role: </label>
+                    <label for="forUserrole">Select Management pillar: </label>
                     <select class="form-control" aria-label="Large" id="role" name="role"
                     aria-describedby="inputGroup-sizing-sm">
-                    <option value="select">User Role</option>
-                    <option value="usd">Staff</option>
-                    <option value="tzs">manager</option>
+                    <option value="select">Select managers pillar</option>
+                    @foreach($pillarmanagerroles as $pillarmanagerrole)
+                    <option value="{{$pillarmanagerrole->role_id}}">{{$pillarmanagerrole->role_title}}</option>
+                    @endforeach
                      </select>
               </div>
             </div>
@@ -178,7 +176,7 @@
             <div class="row">
                 <div class="form-group col-lg-12 input-group-lg">
                     <div class="form-group green-border-focus">
-                        <label for="forjobBriefDescription">Staff job description summary:
+                        <label for="forjobBriefDescription">Pillar managers position description:
                         </label>
                         <textarea class="form-control" name="job_description" rows="10" required></textarea>
                     </div>
@@ -186,13 +184,13 @@
             </div>
             <div class="row">
                 <div class="form-group col-md-6 input-group-lg">
-                    <label for="forbankusername">Bank Account User name: </label>
+                    <label for="forbankusername">Bank Account holders name: </label>
                     <input type="text" class="form-control" name="bankusername"
                         value="<?= isset($_POST['bankusername']) ? $_POST['bankusername'] : ''; ?>" placeholder="">
                 </div>
 
                 <div class="form-group col-md-4 input-group-lg">
-                    <label for="forbankname">Bank Name: </label>
+                    <label for="forbankname">Bank Title: </label>
                     <input type="text" class="form-control" name="bankname"
                         value="<?= isset($_POST['bankname']) ? $_POST['bankname'] : ''; ?>" placeholder="">
                 </div>
@@ -205,6 +203,14 @@
                         value="<?= isset($_POST['bankaccnumber']) ? $_POST['bankaccnumber'] : ''; ?>" placeholder="">
                 </div>
 
+
+                <div class="form-group col-md-4 input-group-lg">
+                    <label for="fortotalsalary">Total Salary: </label>
+                    <input type="text" class="form-control" name="totalsalary"
+                        value="<?= isset($_POST['totalsalary']) ? $_POST['totalsalary'] : ''; ?>" placeholder="">
+                </div>
+
+
                 <div class="form-group col-md-4 input-group-lg">
                     <label for="forposition">Currency Type: </label>
                     <select class="form-control" aria-label="Large" id="currencyType" name="currencyType"
@@ -215,23 +221,20 @@
 
                     </select>
                 </div>
-
-                <div class="form-group col-md-4 input-group-lg">
-                    <label for="fortotalsalary">Total Salary: </label>
-                    <input type="text" class="form-control" name="totalsalary"
-                        value="<?= isset($_POST['totalsalary']) ? $_POST['totalsalary'] : ''; ?>" placeholder="">
-                </div>
             </div>
             <br />
             <br />
             <br />
             <div class="row">
                 <div class="form-group col-md-4 input-group-lg">
-                <select class="form-control" aria-label="Large" id="working-type" name="working-type"
+                <select class="form-control" aria-label="Large" id="working_type" name="working_type"
                 aria-describedby="inputGroup-sizing-sm">
                 <option value="select">Working Type</option>
-                <option value="usd">Full-time</option>
-                <option value="tzs">Part-time</option>
+                <option value="full-time">Full-time</option>
+                <option value="part-time">Part-time</option>
+                <option value="consultant">Consultant</option>
+                <option value="temporary">Temporary</option>
+
 
             </select>
                 </div>
@@ -242,8 +245,8 @@
                 <select class="form-control" aria-label="Large" id="useraccStatus" name="useraccStatus"
                         aria-describedby="inputGroup-sizing-sm">
                         <option value="select">User status</option>
-                        <option value="usd">Active</option>
-                        <option value="tzs">Pending</option>
+                        <option value="active">Active</option>
+                        <option value="pending">Pending</option>
 
                     </select>
                 </div>
@@ -254,7 +257,7 @@
             <br />
             <div class="row">
                 <div class="form-group col-md-4 input-group-lg">
-                    <label for="fortotalsalary">{{ __('E-Mail Address') }} </label>
+                    <label for="foremail">{{ __('E-Mail Address') }} </label>
                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
                     @error('email')
                         <span class="invalid-feedback" role="alert">
@@ -264,18 +267,6 @@
                 </div>
 
             </div>
-            <div class="row">
-                <div class="form-group col-md-4 input-group-lg">
-                    <label for="forKpi_title">Password: </label>
-                    <input type="text" class="form-control" name="password"
-                    value="<?= isset($_POST['password']) ? $_POST['password'] : ''; ?>"
-                    placeholder="" required>
-                </div>
-            </div>
-
-            <br />
-            <br />
-            <br />
 
             <div class="row">
                 <div class="form-group col-md-6 input-group-lg">

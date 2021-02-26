@@ -48,10 +48,16 @@ Route::get('/ri-pillar-manager', 'RIlineManager@index')->name('ri-pillar-manager
 Route::get('/is-pillar-manager', 'ISpillarManager@index')->name('is-pillar-manager')->middleware('is-pillar-manager');
 Route::get('/cb-pillar-manager', 'CBpillarManager@index')->name('cb-pillar-manager')->middleware('cb-pillar-manager');
 Route::get('/ce-pillar-manager', 'CEpillarManager@index')->name('ce-pillar-manager')->middleware('ce-pillar-manager');
+
+
+//data science routes
 Route::get('/ds-pillar-manager', 'DSpillarManager@index')->name('ds-pillar-manager')->middleware('ds-pillar-manager');
+Route::get('/ds-create-new-project', 'DSpillarManager@createNewProject')->name('ds-create-new-project');
+
+
 Route::get('/data-science-create-new-imprest', 'DSpillarManager@createImprest')->name('data-science-create-new-imprest');
 
-
+Route::resource('pillar-project', 'PillarProjectController');
 
 // ADMIN MANAGING kpis manage-kpis
 Route::get('/manage-kpis', 'DataKpiController@index')->name('manage-kpis');
@@ -68,10 +74,18 @@ Route::get('/create-new-petty-cash', 'FinanceAdminController@createPettyCash')->
 Route::get('/create-payment-requisition', 'FinanceAdminController@createPaymentRequisition')->name('create-payment-requisition');
 Route::get('/create-new-workshop-registration', 'FinanceAdminController@createNewWorkshopRegistration')->name('create-new-workshop-registration');
 Route::get('/create-allowance-request', 'FinanceAdminController@createAllowanceRequest')->name('create-allowance-request');
+Route::get('/add-a-new-pillar', 'FinanceAdminController@createNewPillar')->name('add-a-new-pillar');
+Route::resource('hractivities', 'FinanceAdminController');
+
+Route::resource('hrpillars', 'PillarsController');
+
+Route::resource('hrdepts', 'HRmanageDeptsController');
+Route::get('/add-a-new-department', 'FinanceAdminController@createNewDepartment')->name('add-a-new-department');
+
 
 //Human Resources
 //create new employee/staff
-Route::resource('employees', EmployeesController::class);
+Route::resource('employees', 'EmployeeController');
 Route::get('/create-new-employee', 'EmployeeController@index')->name('create-new-employee');
 
 Route::get('/create-new-pillar-manager', 'EmployeeController@createPillarManager')->name('create-new-pillar-manager');

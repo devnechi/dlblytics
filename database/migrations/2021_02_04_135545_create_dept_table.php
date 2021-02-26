@@ -15,9 +15,11 @@ class CreateDeptTable extends Migration
     {
         Schema::create('dlab_departments', function (Blueprint $table) {
             $table->increments('dept_id');
+            $table->string('created_by');
             $table->string('dept_title');
             $table->integer('dept_manager_id');
             $table->string('dept_description');
+            $table->float('total_fund_allocation');
             $table->timestamp('date_created');
             $table->timestamp('date_updated');
             $table->timestamps();

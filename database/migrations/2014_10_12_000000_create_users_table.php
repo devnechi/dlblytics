@@ -24,7 +24,6 @@ class CreateUsersTable extends Migration
             $table->string('lname');
             //password
             $table->string('password');
-
             //dob
             $table->string('dob');
             //gender
@@ -35,24 +34,18 @@ class CreateUsersTable extends Migration
             $table->string('nationality');
             //address
             $table->string('address');
-
             //phonenumber
             $table->string('phonenumber');
-
             //emegency_contact
             $table->string('emegency_contact');
-
             //selectDepartment
-            $table->string('Department');
-
+            $table->string('department_id');
             //selectPillar
             $table->string('pillar_id');
-
             //position
-            $table->integer('role')->nullable();
+            $table->integer('role_id')->nullable();
             //driving_license
             $table->string('driving_license');
-
             //tin_number
             $table->string('tin_number');
             //job_description
@@ -63,28 +56,20 @@ class CreateUsersTable extends Migration
             $table->string('bankname');
             //bankaccnumber
             $table->float('bankaccnumber');
-
             //currencyType
             $table->string('currencyType');
-
             //totalsalary
             $table->float('totalsalary');
-
             //working_type
             $table->string('working_type');
-
             //useraccStatus
             $table->string('acc_status');
-
             //uploadUserPhoto
             $table->string('user_photo_url');
-
             //createdby
             $table->integer('added_by');
-
             //uploadUserContract
             $table->string('user_emp_contact_url');
-
             $table->string('email')->unique();
             $table->integer('status_id')->nullable();
             $table->timestamp('email_verified_at')->nullable();

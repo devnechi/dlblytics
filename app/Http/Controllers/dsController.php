@@ -10,4 +10,8 @@ class dsController extends Controller
     {
         return view('dsAdmin.index');
     }
+
+    public function createNewProject(){
+        return view('lmds.dsprojects.ds-create-new-project');
+    }
 }

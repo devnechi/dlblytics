@@ -4,10 +4,8 @@
     .form-control {
         border: 1px solid #477bff;
     }
-
 </style>
 <div class="container-fluid">
-
     <div class="row">
         <div class="col-lg-12">
             @if(session()->has('success'))

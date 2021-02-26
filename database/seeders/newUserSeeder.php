@@ -21,26 +21,6 @@ class newUserSeeder extends Seeder
      */
     public function run()
     {
-        // $gender = gender->randomElement(['male', 'female']);
-        // $genders = DB::table('genders')->insert([
-        //     ['gender_title' => 'Male'],
-        //     ['gender_title' => 'female']
-        // ]);
-
-        //  $genderIds = Genders::pluck('id');
-
-        // DB::table('users')->insert([
-        //     'fname' => Str::random(10),
-        //     'mname' => Str::random(10),
-        //     'lname' => Str::random(10),
-        //     'dob' => now(),
-        //     'user_email' => Str::random(10).'@gmail.com',
-        //     'password' => Hash::make('password'),
-        // ]);
-
-
-        // // $users = FakeUserFactory::factory()->count(20)->create();
-         // \App\User::factory()->count(30)->create();
 
          $faker = Faker::create();
          $gender = ['male', 'female'];
@@ -71,7 +51,7 @@ class newUserSeeder extends Seeder
              'martialstatus'        => $faker->randomElement($mrtstatus),
              'nationality'       => $faker->randomElement($ntlty),
              'address'       => Str::random(20),
-             'Department'       => $faker->randomElement($dept),
+             'department_id'       => $faker->randomElement($dept),
              'pillar_id'       => $faker->randomElement($pillar),
              'driving_license'       => Str::random(10),
              'tin_number'       => Str::random(10),

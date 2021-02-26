@@ -2,24 +2,23 @@
 
 namespace App;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Pillar extends Model
+class Department extends Model
 {
-    use Notifiable;
 
     use HasFactory;
-    protected $primaryKey = 'pillar_id';
-    protected $table = "dlab_pillars";
+    protected $primaryKey = 'dept_id';
+    protected $table = "dlab_departments";
 
     protected $fillable = [
-        'pillar_title',
-        'pillar_desc',
-        'pillar_status',
+        'dept_title',
+        'dept_description'
     ];
 }

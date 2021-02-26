@@ -16,4 +16,8 @@ class DSpillarManager extends Controller
     public function createImprest(){
         return view('lmds.imprestds.create-new-imprest');
     }
+
+    public function createNewProject(){
+        return view('lmds.dsprojects.ds-create-new-project');
+    }
 }
