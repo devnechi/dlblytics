@@ -93,4 +93,17 @@ class PillarProjectController extends Controller
         return redirect()->route('ds-pillar-manager')
             ->with(['success', 'project was successfully added!. you can now manage it.'], ['tab', 'projects-nactivities-md-content']);
     }
+
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Employee  $employee
+     * @return \Illuminate\Http\Response
+     */
+    public function show(PillarProject $pillarprojects)
+    {
+        return view('pillarprojects.show', compact('pillarprojects'));
+    }
+
 }

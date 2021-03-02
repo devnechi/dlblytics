@@ -31,5 +31,7 @@ class PillarManagerRolesTable extends Migration
     public function down()
     {
         //
+        Schema::dropIfExists('pillar_manager_role_tbl');
+
     }
 }

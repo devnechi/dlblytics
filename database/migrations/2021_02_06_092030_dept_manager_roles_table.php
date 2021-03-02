@@ -32,5 +32,7 @@ class DeptManagerRolesTable extends Migration
     public function down()
     {
         //
+        Schema::dropIfExists('dept_manager_role_tbl');
+
     }
 }

@@ -32,5 +32,7 @@ class PillarStaffRolesTable extends Migration
     public function down()
     {
         //
+        Schema::dropIfExists('pillar_staff_role_tbl');
+
     }
 }

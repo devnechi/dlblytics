@@ -46,7 +46,7 @@ class newUserSeeder extends Seeder
              'phoneNumber'    => $faker->phoneNumber,
              'emegency_contact'     => $faker->phoneNumber,
              'dob'          => now(),
-             'role' => $faker->randomElement($userroles),
+             'role_id' => $faker->randomElement($userroles),
              'gender_id'               => $faker->randomElement($gender),
              'martialstatus'        => $faker->randomElement($mrtstatus),
              'nationality'       => $faker->randomElement($ntlty),

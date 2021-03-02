@@ -48,6 +48,6 @@ class CreateNewProject extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('new_project');
+        Schema::dropIfExists('pillar_projects');
     }
 }

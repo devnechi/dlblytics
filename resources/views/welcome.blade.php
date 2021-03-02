@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    DLAB OPERATION & MEL SYSTEM
+                    DLAB OPERATIONS & MEL SYSTEM
                 </div>
 
                 <div class="links">

@@ -33,7 +33,7 @@ class LoginController extends Controller
 
     public function redirectTo(){
 
-        switch (Auth::user()->role) {
+        switch (Auth::user()->role_id) {
             case 1:
 
                 //role 1 = admin

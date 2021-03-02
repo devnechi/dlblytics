@@ -27,36 +27,36 @@ class FinanceAdminController extends Controller
         // ->get();
 
         $depts = DB::table('users')
-        ->join('dlab_departments', 'users.Department', '=', 'dlab_departments.dept_manager_id')
+        ->join('dlab_departments', 'users.department_id', '=', 'dlab_departments.dept_manager_id')
         ->select('users.fname', 'dlab_departments.*')
         ->get();
 
 
         // getting all dept managers dept_manager_role_tbl
           $pillarmanagers = DB::table('users')
-                        ->join('pillar_manager_role_tbl', 'users.role', '=', 'pillar_manager_role_tbl.role_id')
-                        ->join('dlab_departments', 'users.Department', '=', 'dlab_departments.dept_id')
+                        ->join('pillar_manager_role_tbl', 'users.role_id', '=', 'pillar_manager_role_tbl.role_id')
+                        ->join('dlab_departments', 'users.department_id', '=', 'dlab_departments.dept_id')
                         ->select('users.*', 'pillar_manager_role_tbl.role_title', 'dlab_departments.dept_title')
                         ->get();
 
          $deptmanagers = DB::table('users')
-                        ->join('dept_manager_role_tbl', 'users.role', '=', 'dept_manager_role_tbl.role_id')
-                        ->join('dlab_departments', 'users.Department', '=', 'dlab_departments.dept_id')
+                        ->join('dept_manager_role_tbl', 'users.role_id', '=', 'dept_manager_role_tbl.role_id')
+                        ->join('dlab_departments', 'users.department_id', '=', 'dlab_departments.dept_id')
                         ->select('users.*', 'dept_manager_role_tbl.role_title', 'dlab_departments.dept_title')
                         ->get();
 
 
 
          $deptstaffs = DB::table('users')
-                    ->join('dept_staff_role_tbl', 'users.role', '=', 'dept_staff_role_tbl.role_id')
-                    ->join('dlab_departments', 'users.Department', '=', 'dlab_departments.dept_id')
+                    ->join('dept_staff_role_tbl', 'users.role_id', '=', 'dept_staff_role_tbl.role_id')
+                    ->join('dlab_departments', 'users.department_id', '=', 'dlab_departments.dept_id')
                     ->select('users.*', 'dept_staff_role_tbl.role_title', 'dlab_departments.dept_title')
                     ->get();
 
 
          $pillarstaffs = DB::table('users')
-                    ->join('pillar_staff_role_tbl', 'users.role', '=', 'pillar_staff_role_tbl.role_id')
-                    ->join('dlab_departments', 'users.Department', '=', 'dlab_departments.dept_id')
+                    ->join('pillar_staff_role_tbl', 'users.role_id', '=', 'pillar_staff_role_tbl.role_id')
+                    ->join('dlab_departments', 'users.department_id', '=', 'dlab_departments.dept_id')
                     ->select('users.*', 'pillar_staff_role_tbl.role_title', 'dlab_departments.dept_title')
                     ->get();
                 // all dept staff

@@ -33,6 +33,6 @@ class CreateDeptTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dept');
+        Schema::dropIfExists('dlab_departments');
     }
 }

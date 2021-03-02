@@ -34,6 +34,6 @@ class CreatePillarsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pillars');
+        Schema::dropIfExists('dlab_pillars');
     }
 }
