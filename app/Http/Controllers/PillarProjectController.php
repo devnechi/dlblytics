@@ -40,12 +40,14 @@ class PillarProjectController extends Controller
             'project_title' => 'required',
             'project_desc' => 'required',
             'total_project_cost' => 'required',
-            'creators_id' => 'required'
+            'created_by' => 'required',
+            'pillar_ref_id' => 'required'
         ]);
 
         $project = new PillarProject([
             'project_title' => $request->get('project_title'),
-            'created_by' => $request->get('creators_id'),
+            'created_by' => $request->get('created_by'),
+            'pillar_ref_id'=>$request->get('pillar_ref_id'),
             'project_desc' => $request->get('project_desc'),
             'kpi_reference_id' => $request->ref_kpi,
             'total_project_cost' => $request->get('total_project_cost'),
@@ -63,7 +65,6 @@ class PillarProjectController extends Controller
          $project_expected_outcomes = [];
 
          foreach($request->input('project_objectives') as $key => $value) {
-
              $project_objectives["project_objectives.{$key}"] = 'required';
          }
 
@@ -92,7 +93,9 @@ class PillarProjectController extends Controller
         $request->session()->flash('alert-success', 'project was successfully added!. You can now manage it.');
         return redirect()->route('ds-pillar-manager')
             ->with(['success', 'project was successfully added!. you can now manage it.'], ['tab', 'projects-nactivities-md-content']);
-    }
+
+        //var_dump( $request->get('created_by'));
+        }
 
 
     /**
@@ -101,9 +104,12 @@ class PillarProjectController extends Controller
      * @param  \App\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function show(PillarProject $pillarprojects)
+    public function show($id)
     {
-        return view('pillarprojects.show', compact('pillarprojects'));
-    }
+                $project = PillarProject::find($id);
 
+        //return view('pillar-project.show', compact('pillarprojects'));
+            return view('lmds.dsprojects.ds-view-project-full-details', compact('project'));
+
+    }
 }

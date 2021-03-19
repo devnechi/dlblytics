@@ -13,7 +13,8 @@ class PillarProject extends Model
 
     protected $fillable = [
         'project_title',
-        'creators_id',
+        'created_by',
+        'pillar_ref_id',
         'project_desc',
         'project_objectives',
         'ref_kpi',

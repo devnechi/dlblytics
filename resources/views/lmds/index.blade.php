@@ -6244,6 +6244,11 @@
             aria-labelledby="projects-nactivities-tab-md">
             <br />
             {{-- my ds requests --}}
+
+            <a class="btn btn-outline-success btn-lg" href="{{ route('ds-create-new-project') }}"
+            role="button"> create a new project</a>
+            <br />
+            <br />
             <div class="row">
                 <div class="col-md-2">
                     <div class="nav flex-column nav-pills" id="vds-ds-proj-pills-tab" role="tablist"
@@ -6266,6 +6271,7 @@
                         <div class="tab-pane fade show active" id="vds-ds-pna-pills-proj" role="tabpanel"
                             aria-labelledby="impr-pills-proj-tab">
                             {{-- Projects --}}
+
                             <div class="row">
                                 <div class="col-lg-12">
                                     <nav>
@@ -6294,7 +6300,7 @@
                                                             aria-orientation="vertical">
                                                             <a class="nav-link active" id="vds-ds-project-ed-pills-reviewed-tab" data-toggle="pill"
                                                                 href="#vds-ds-project-ed-pills-reviewed-content" role="tab"
-                                                                aria-controls="vds-ed-reqs-pills-reviewed" aria-selected="true">Reviewed</a>
+                                                                aria-controls="vds-ed-reqs-pills-reviewed" aria-selected="true">On Review</a>
 
                                                             <a class="nav-link" id="vds-ds-project-ed-pills-approved-tab" data-toggle="pill"
                                                                 href="#vds-ds-project-ed-pills-approved-content" role="tab"
@@ -6324,83 +6330,41 @@
                                                                             <div class="card-content table-responsive">
                                                                                 <br />
 
-                                                                                    <a class="btn btn-outline-success btn-lg" href="{{ route('ds-create-new-project') }}"
-                                                                                    role="button"> create a new project</a>
-                                                                                    <br />
-                                                                                    <br />
-                                                                                <table class="table table-bordered table-hover">
-                                                                                    <p>My projects currently <strong> under Administration review</strong></p>
-                                                                                    <thead>
-                                                                                        <tr>
-                                                                                            <th scope="col">#</th>
-                                                                                            <th scope="col">Requested by</th>
-                                                                                            <th scope="col-md-4">Title</th>
-                                                                                            <th scope="col">Request Type</th>
-                                                                                            <th scope="col">Under Project</th>
-                                                                                            <th scope="col"># of approvals</th>
-                                                                                            <th scope="col">Total Cost</th>
-                                                                                            <th scope="col">Date created</th>
+                                                                                    <table class="table table-bordered table-hover">
+                                                                                        <p><strong>My projects on review</strong></p>
+                                                                                        <thead>
+                                                                                            <tr>
+                                                                                                <th scope="col">#</th>
+                                                                                                <th scope="col">project title</th>
+                                                                                                <th scope="col-md-4">Total Estimated cost</th>
+                                                                                                <th scope="col">current stage</th>
+                                                                                                <th scope="col">status</th>
+                                                                                                <th scope="col">Date created</th>
+                                                                                                <th scope="col"></th>
+                                                                                                <th scope="col"></th>
+                                                                                            </tr>
+                                                                                        </thead>
+                                                                                        <tbody>
 
-                                                                                            <th scope="col"></th>
+                                                                                            @foreach($myprojects as $myproject)
+                                                                                            <tr>
+                                                                                                <th scope="row">{{ $myproject->project_id }}</th>
+                                                                                                <td class="w-30 p-2">{{ $myproject->project_title }}</td>
+                                                                                                <td class="w-30 p-2">{{ $myproject->total_project_cost }}</td>
+                                                                                                <td class="w-30 h-30 p-4">{{ $myproject->current_stage }}</td>
+                                                                                                <td class="w-30 h-30 p-4">{{ $myproject->review_status }}</td>
+                                                                                                <td class="w-10 p-2">{{ $myproject->created_at }}</td>
+                                                                                                <td class="w-10 p-2"><a href="{{ route('pillar-project.show', $myproject->project_id)}}"
+                                                                                                    class="btn btn-outline-success">view details</a>
+                                                                                               </td>
+                                                                                               <td class="w-30 p-2"><a href="{{ route('pillar-project.edit', $myproject->project_id)}}"
+                                                                                                class="btn btn-outline-info btn-md">update</a>
+                                                                                               </td>
+                                                                                            </tr>
 
-                                                                                        </tr>
-                                                                                    </thead>
-                                                                                    <tbody>
-                                                                                        <tr>
-                                                                                            <th scope="row">1</th>
-                                                                                            <td>MarkCuban</td>
-                                                                                            <td>Data visualisation in Mbeya</td>
-                                                                                            <td>Training</td>
-                                                                                            <td>Sauti Mpya</td>
-                                                                                            <td>0</td>
-                                                                                            <td>2,300,000 <span
-                                                                                                    class="badge badge-success">TZS</span>
-                                                                                            </td>
-                                                                                            <td>2019-09-11</td>
-                                                                                            <td>
-                                                                                                <button type="button"
-                                                                                                    class="btn btn-outline-success">view
-                                                                                                    request</button>
-                                                                                            </td>
-                                                                                        </tr>
-
-                                                                                        <tr>
-                                                                                            <th scope="row">4</th>
-                                                                                            <td>Jane Sharpe</td>
-                                                                                            <td>Data Mining in Dar</td>
-                                                                                            <td>Training</td>
-                                                                                            <td>Data Zetu</td>
-                                                                                            <td>0</td>
-                                                                                            <td>6,600,000 <span
-                                                                                                    class="badge badge-success">TZS</span>
-                                                                                            </td>
-                                                                                            <td>2019-09-11</td>
-                                                                                            <td>
-                                                                                                <button type="button"
-                                                                                                    class="btn btn-outline-success">view
-                                                                                                    request</button>
-                                                                                            </td>
-                                                                                        </tr>
-
-                                                                                        <tr>
-                                                                                            <th scope="row">3</th>
-                                                                                            <td>Mary Poppins</td>
-                                                                                            <td>Data Analyis and Mining</td>
-                                                                                            <td>Training</td>
-                                                                                            <td>Sauti Mpya</td>
-                                                                                            <td>0</td>
-                                                                                            <td>8,700,000 <span
-                                                                                                    class="badge badge-success">TZS</span>
-                                                                                            </td>
-                                                                                            <td>2019-09-11</td>
-                                                                                            <td>
-                                                                                                <button type="button"
-                                                                                                    class="btn btn-outline-success">view
-                                                                                                    request</button>
-                                                                                            </td>
-                                                                                        </tr>
-                                                                                    </tbody>
-                                                                                </table>
+                                                                                        </tbody>
+                                                                                        @endforeach
+                                                                                    </table>
                                                                                 <br />
                                                                                 <nav aria-label="Page navigation example">
                                                                                     <ul class="pagination">
@@ -6442,79 +6406,41 @@
                                                                         <div class="card">
                                                                             <div class="card-content table-responsive">
                                                                                 <br />
-                                                                                <table class="table table-bordered table-hover">
-                                                                                    <p>My Approved by <strong>Projects</strong></p>
 
+                                                                                <table class="table table-bordered table-hover">
+                                                                                    <p><strong>My Approved Projects</strong></p>
                                                                                     <thead>
                                                                                         <tr>
                                                                                             <th scope="col">#</th>
-                                                                                            <th scope="col">Requested by</th>
-                                                                                            <th scope="col-md-4">Title</th>
-                                                                                            <th scope="col">Request Type</th>
-                                                                                            <th scope="col">Under Project</th>
-                                                                                            <th scope="col"># of approvals</th>
-                                                                                            <th scope="col">Total Cost</th>
+                                                                                            <th scope="col">project title</th>
+                                                                                            <th scope="col-md-4">Total Estimated cost</th>
+                                                                                            <th scope="col">current stage</th>
+                                                                                            <th scope="col">status</th>
                                                                                             <th scope="col">Date created</th>
-
                                                                                             <th scope="col"></th>
-
+                                                                                            <th scope="col"></th>
                                                                                         </tr>
                                                                                     </thead>
                                                                                     <tbody>
+
+                                                                                        @foreach($myapprovedprojects as $myapprovedproject)
                                                                                         <tr>
-                                                                                            <th scope="row">1</th>
-                                                                                            <td>MarkCuban</td>
-                                                                                            <td>Data visualisation in Mbeya</td>
-                                                                                            <td>Training</td>
-                                                                                            <td>Sauti Mpya</td>
-                                                                                            <td>0</td>
-                                                                                            <td>2,300,000 <span
-                                                                                                    class="badge badge-success">TZS</span>
-                                                                                            </td>
-                                                                                            <td>2019-09-11</td>
-                                                                                            <td>
-                                                                                                <button type="button"
-                                                                                                    class="btn btn-outline-success">view
-                                                                                                    request</button>
-                                                                                            </td>
+                                                                                            <th scope="row">{{ $myapprovedproject->project_id }}</th>
+                                                                                            <td class="w-30 p-2">{{ $myapprovedproject->project_title }}</td>
+                                                                                            <td class="w-30 p-2">{{ $myapprovedproject->total_project_cost }}</td>
+                                                                                            <td class="w-30 h-30 p-4">{{ $myapprovedproject->current_stage }}</td>
+                                                                                            <td class="w-30 h-30 p-4">{{ $myapprovedproject->review_status }}</td>
+                                                                                            <td class="w-10 p-2">{{ $myapprovedproject->created_at }}</td>
+                                                                                            <td class="w-10 p-2"><a href="{{ route('pillar-project.show', $myapprovedproject->project_id)}}"
+                                                                                                class="btn btn-outline-success">view details</a>
+                                                                                           </td>
+                                                                                           <td class="w-30 p-2"><a href="{{ route('pillar-project.edit', $myapprovedproject->project_id)}}"
+                                                                                            class="btn btn-outline-info btn-md">update</a>
+                                                                                           </td>
                                                                                         </tr>
 
-                                                                                        <tr>
-                                                                                            <th scope="row">4</th>
-                                                                                            <td>Jane Sharpe</td>
-                                                                                            <td>Data Mining in Dar</td>
-                                                                                            <td>Training</td>
-                                                                                            <td>Data Zetu</td>
-                                                                                            <td>0</td>
-                                                                                            <td>6,600,000 <span
-                                                                                                    class="badge badge-success">TZS</span>
-                                                                                            </td>
-                                                                                            <td>2019-09-11</td>
-                                                                                            <td>
-                                                                                                <button type="button"
-                                                                                                    class="btn btn-outline-success">view
-                                                                                                    request</button>
-                                                                                            </td>
-                                                                                        </tr>
-
-                                                                                        <tr>
-                                                                                            <th scope="row">3</th>
-                                                                                            <td>Mary Poppins</td>
-                                                                                            <td>Data Analyis and Mining</td>
-                                                                                            <td>Training</td>
-                                                                                            <td>Sauti Mpya</td>
-                                                                                            <td>0</td>
-                                                                                            <td>8,700,000 <span
-                                                                                                    class="badge badge-success">TZS</span>
-                                                                                            </td>
-                                                                                            <td>2019-09-11</td>
-                                                                                            <td>
-                                                                                                <button type="button"
-                                                                                                    class="btn btn-outline-success">view
-                                                                                                    request</button>
-                                                                                            </td>
-                                                                                        </tr>
                                                                                     </tbody>
+                                                                                    @endforeach
                                                                                 </table>
                                                                                 <br />
                                                                                 <nav aria-label="Page navigation example">
@@ -6558,79 +6484,41 @@
                                                                         <div class="card">
                                                                             <div class="card-content table-responsive">
                                                                                 <br />
-                                                                                <table class="table table-bordered table-hover">
-                                                                                    <p>My denied <strong>Projects</strong></p>
 
+                                                                                <table class="table table-bordered table-hover">
+                                                                                    <p><strong>My Denied Projects</strong></p>
                                                                                     <thead>
                                                                                         <tr>
                                                                                             <th scope="col">#</th>
-                                                                                            <th scope="col">Requested by</th>
-                                                                                            <th scope="col-md-4">Title</th>
-                                                                                            <th scope="col">Request Type</th>
-                                                                                            <th scope="col">Under Project</th>
-                                                                                            <th scope="col"># of approvals</th>
-                                                                                            <th scope="col">Total Cost</th>
+                                                                                            <th scope="col">project title</th>
+                                                                                            <th scope="col-md-4">Total Estimated cost</th>
+                                                                                            <th scope="col">current stage</th>
+                                                                                            <th scope="col">status</th>
                                                                                             <th scope="col">Date created</th>
-
                                                                                             <th scope="col"></th>
-
+                                                                                            <th scope="col"></th>
                                                                                         </tr>
                                                                                     </thead>
                                                                                     <tbody>
+
+                                                                                        @foreach($mydeniedprojects as $mydeniedproject)
                                                                                         <tr>
-                                                                                            <th scope="row">1</th>
-                                                                                            <td>MarkCuban</td>
-                                                                                            <td>Data visualisation in Mbeya</td>
-                                                                                            <td>Training</td>
-                                                                                            <td>Sauti Mpya</td>
-                                                                                            <td>0</td>
-                                                                                            <td>2,300,000 <span
-                                                                                                    class="badge badge-success">TZS</span>
-                                                                                            </td>
-                                                                                            <td>2019-09-11</td>
-                                                                                            <td>
-                                                                                                <button type="button"
-                                                                                                    class="btn btn-outline-success">view
-                                                                                                    request</button>
-                                                                                            </td>
+                                                                                            <th scope="row">{{ $mydeniedproject->project_id }}</th>
+                                                                                            <td class="w-30 p-2">{{ $mydeniedproject->project_title }}</td>
+                                                                                            <td class="w-30 p-2">{{ $mydeniedproject->total_project_cost }}</td>
+                                                                                            <td class="w-30 h-30 p-4">{{ $mydeniedproject->current_stage }}</td>
+                                                                                            <td class="w-30 h-30 p-4">{{ $mydeniedproject->review_status }}</td>
+                                                                                            <td class="w-10 p-2">{{ $mydeniedproject->created_at }}</td>
+                                                                                            <td class="w-10 p-2"><a href="{{ route('pillar-project.show', $mydeniedproject->project_id)}}"
+                                                                                                class="btn btn-outline-success">view details</a>
+                                                                                           </td>
+                                                                                           <td class="w-30 p-2"><a href="{{ route('pillar-project.edit', $mydeniedproject->project_id)}}"
+                                                                                            class="btn btn-outline-info btn-md">update</a>
+                                                                                           </td>
                                                                                         </tr>
 
-                                                                                        <tr>
-                                                                                            <th scope="row">4</th>
-                                                                                            <td>Jane Sharpe</td>
-                                                                                            <td>Data Mining in Dar</td>
-                                                                                            <td>Training</td>
-                                                                                            <td>Data Zetu</td>
-                                                                                            <td>0</td>
-                                                                                            <td>6,600,000 <span
-                                                                                                    class="badge badge-success">TZS</span>
-                                                                                            </td>
-                                                                                            <td>2019-09-11</td>
-                                                                                            <td>
-                                                                                                <button type="button"
-                                                                                                    class="btn btn-outline-success">view
-                                                                                                    request</button>
-                                                                                            </td>
-                                                                                        </tr>
-
-                                                                                        <tr>
-                                                                                            <th scope="row">3</th>
-                                                                                            <td>Mary Poppins</td>
-                                                                                            <td>Data Analyis and Mining</td>
-                                                                                            <td>Training</td>
-                                                                                            <td>Sauti Mpya</td>
-                                                                                            <td>0</td>
-                                                                                            <td>8,700,000 <span
-                                                                                                    class="badge badge-success">TZS</span>
-                                                                                            </td>
-                                                                                            <td>2019-09-11</td>
-                                                                                            <td>
-                                                                                                <button type="button"
-                                                                                                    class="btn btn-outline-success">view
-                                                                                                    request</button>
-                                                                                            </td>
-                                                                                        </tr>
                                                                                     </tbody>
+                                                                                    @endforeach
                                                                                 </table>
                                                                                 <br />
                                                                                 <nav aria-label="Page navigation example">
@@ -6675,95 +6563,55 @@
                                                                             <div class="card-content table-responsive">
                                                                                 <br />
                                                                                 <table class="table table-bordered table-hover">
-                                                                                    <p>My <strong>Projects</strong> List</p>
-
+                                                                                    <p><strong>All projects under this pillar</strong></p>
                                                                                     <thead>
                                                                                         <tr>
                                                                                             <th scope="col">#</th>
-                                                                                            <th scope="col">Requested by</th>
-                                                                                            <th scope="col-md-4">Title</th>
-                                                                                            <th scope="col">Request Type</th>
-                                                                                            <th scope="col">Under Project</th>
-                                                                                            <th scope="col"># of approvals</th>
-                                                                                            <th scope="col">Total Cost</th>
+                                                                                            <th scope="col">project title</th>
+                                                                                            <th scope="col-md-4">Total Estimated cost</th>
+                                                                                            <th scope="col">current stage</th>
+                                                                                            <th scope="col">status</th>
                                                                                             <th scope="col">Date created</th>
-
                                                                                             <th scope="col"></th>
+                                                                                            <th scope="col"></th>
+
 
                                                                                         </tr>
                                                                                     </thead>
                                                                                     <tbody>
+
+                                                                                        @foreach($pillarprojects as $pillarproject)
                                                                                         <tr>
-                                                                                            <th scope="row">1</th>
-                                                                                            <td>MarkCuban</td>
-                                                                                            <td>Data visualisation in Mbeya</td>
-                                                                                            <td>Training</td>
-                                                                                            <td>Sauti Mpya</td>
-                                                                                            <td>0</td>
-                                                                                            <td>2,300,000 <span
-                                                                                                    class="badge badge-success">TZS</span>
-                                                                                            </td>
-                                                                                            <td>2019-09-11</td>
-                                                                                            <td>
-                                                                                                <button type="button"
-                                                                                                    class="btn btn-outline-success">view
-                                                                                                    request</button>
-                                                                                            </td>
+                                                                                            <th scope="row">{{ $pillarproject->project_id }}</th>
+                                                                                            <td class="w-30 p-2">{{ $pillarproject->project_title }}</td>
+
+                                                                                            <td class="w-30 p-2">{{ $pillarproject->total_project_cost }}</td>
+                                                                                            <td class="w-30 h-30 p-4">{{ $pillarproject->current_stage }}</td>
+                                                                                            <td class="w-30 h-30 p-4">{{ $pillarproject->review_status }}</td>
+                                                                                            <td class="w-10 p-2">{{ $pillarproject->created_at }}</td>
+                                                                                            <td class="w-10 p-2"><a href="{{ route('pillar-project.show', $pillarproject->project_id)}}"
+                                                                                                class="btn btn-outline-success">view details</a>
+                                                                                           </td>
+                                                                                           <td class="w-30 p-2"><a href="{{ route('pillar-project.edit', $pillarproject->project_id)}}"
+                                                                                            class="btn btn-outline-info btn-md">update</a>
+                                                                                           </td>
                                                                                         </tr>
 
-                                                                                        <tr>
-                                                                                            <th scope="row">4</th>
-                                                                                            <td>Jane Sharpe</td>
-                                                                                            <td>Data Mining in Dar</td>
-                                                                                            <td>Training</td>
-                                                                                            <td>Data Zetu</td>
-                                                                                            <td>0</td>
-                                                                                            <td>6,600,000 <span
-                                                                                                    class="badge badge-success">TZS</span>
-                                                                                            </td>
-                                                                                            <td>2019-09-11</td>
-                                                                                            <td>
-                                                                                                <button type="button"
-                                                                                                    class="btn btn-outline-success">view
-                                                                                                    request</button>
-                                                                                            </td>
-                                                                                        </tr>
-
-                                                                                        <tr>
-                                                                                            <th scope="row">3</th>
-                                                                                            <td>Mary Poppins</td>
-                                                                                            <td>Data Analyis and Mining</td>
-                                                                                            <td>Training</td>
-                                                                                            <td>Sauti Mpya</td>
-                                                                                            <td>0</td>
-                                                                                            <td>8,700,000 <span
-                                                                                                    class="badge badge-success">TZS</span>
-                                                                                            </td>
-                                                                                            <td>2019-09-11</td>
-                                                                                            <td>
-                                                                                                <button type="button"
-                                                                                                    class="btn btn-outline-success">view
-                                                                                                    request</button>
-                                                                                            </td>
-                                                                                        </tr>
                                                                                     </tbody>
+                                                                                    @endforeach
                                                                                 </table>
                                                                                 <br />
                                                                                 <nav aria-label="Page navigation example">
                                                                                     <ul class="pagination">
                                                                                         <li class="page-item">
-                                                                                            <a class="page-link" href="#"
-                                                                                                aria-label="Previous">
+                                                                                            <a class="page-link" href="#" aria-label="Previous">
                                                                                                 <span aria-hidden="true">&laquo;</span>
                                                                                                 <span class="sr-only">Previous</span>
                                                                                             </a>
                                                                                         </li>
-                                                                                        <li class="page-item"><a class="page-link"
-                                                                                                href="#">1</a></li>
-                                                                                        <li class="page-item"><a class="page-link"
-                                                                                                href="#">2</a></li>
-                                                                                        <li class="page-item"><a class="page-link"
-                                                                                                href="#">3</a></li>
+                                                                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
                                                                                         <li class="page-item">
                                                                                             <a class="page-link" href="#" aria-label="Next">
                                                                                                 <span aria-hidden="true">&raquo;</span>
@@ -6791,104 +6639,9 @@
                                                     <div class="card">
                                                         <div class="card-content table-responsive">
                                                             <br />
-                                                            <table class="table table-bordered table-hover">
-                                                                <p>Staff projects that are
-                                                                    <strong>on administration review.</strong></p>
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th scope="col">#</th>
-                                                                        <th scope="col">Requested by</th>
-                                                                        <th scope="col-md-4">Title</th>
-                                                                        <th scope="col">Request Type</th>
-                                                                        <th scope="col">Under Project</th>
-                                                                        <th scope="col"># of approvals</th>
-                                                                        <th scope="col">Total Cost</th>
-                                                                        <th scope="col">Date created</th>
-
-                                                                        <th scope="col"></th>
-
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <th scope="row">1</th>
-                                                                        <td>MarkCuban</td>
-                                                                        <td>Data visualisation in Mbeya</td>
-                                                                        <td>Training</td>
-                                                                        <td>Sauti Mpya</td>
-                                                                        <td>0</td>
-                                                                        <td>2,300,000 <span
-                                                                                class="badge badge-success">TZS</span>
-                                                                        </td>
-                                                                        <td>2019-09-11</td>
-                                                                        <td>
-                                                                            <button type="button"
-                                                                                class="btn btn-outline-success">view
-                                                                                request</button>
-                                                                        </td>
-                                                                    </tr>
-
-                                                                    <tr>
-                                                                        <th scope="row">4</th>
-                                                                        <td>Jane Sharpe</td>
-                                                                        <td>Data Mining in Dar</td>
-                                                                        <td>Training</td>
-                                                                        <td>Data Zetu</td>
-                                                                        <td>0</td>
-                                                                        <td>6,600,000 <span
-                                                                                class="badge badge-success">TZS</span>
-                                                                        </td>
-                                                                        <td>2019-09-11</td>
-                                                                        <td>
-                                                                            <button type="button"
-                                                                                class="btn btn-outline-success">view
-                                                                                request</button>
-                                                                        </td>
-                                                                    </tr>
-
-                                                                    <tr>
-                                                                        <th scope="row">3</th>
-                                                                        <td>Mary Poppins</td>
-                                                                        <td>Data Analyis and Mining</td>
-                                                                        <td>Training</td>
-                                                                        <td>Sauti Mpya</td>
-                                                                        <td>0</td>
-                                                                        <td>8,700,000 <span
-                                                                                class="badge badge-success">TZS</span>
-                                                                        </td>
-                                                                        <td>2019-09-11</td>
-                                                                        <td>
-                                                                            <button type="button"
-                                                                                class="btn btn-outline-success">view
-                                                                                request</button>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                            <br />
-                                                            <nav aria-label="Page navigation example">
-                                                                <ul class="pagination">
-                                                                    <li class="page-item">
-                                                                        <a class="page-link" href="#"
-                                                                            aria-label="Previous">
-                                                                            <span aria-hidden="true">&laquo;</span>
-                                                                            <span class="sr-only">Previous</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">1</a></li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">2</a></li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">3</a></li>
-                                                                    <li class="page-item">
-                                                                        <a class="page-link" href="#" aria-label="Next">
-                                                                            <span aria-hidden="true">&raquo;</span>
-                                                                            <span class="sr-only">Next</span>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </nav>
+                                                            <div class="alert alert-primary" role="alert">
+                                                                No current record  for this <a href="#" class="alert-link">section</a>. If pillar staff creates a project request it will show up here.
+                                                              </div>
                                                         </div>
                                                     </div>
                                                     <!-- end of SECOND column -->
@@ -6904,104 +6657,9 @@
                                                     <div class="card">
                                                         <div class="card-content table-responsive">
                                                             <br />
-                                                            <table class="table table-bordered table-hover">
-                                                                <p>My project response from
-                                                                    <strong>Line manager.</strong></p>
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th scope="col">#</th>
-                                                                        <th scope="col">Requested by</th>
-                                                                        <th scope="col-md-4">Title</th>
-                                                                        <th scope="col">Request Type</th>
-                                                                        <th scope="col">Under Project</th>
-                                                                        <th scope="col"># of approvals</th>
-                                                                        <th scope="col">Total Cost</th>
-                                                                        <th scope="col">Date created</th>
-
-                                                                        <th scope="col"></th>
-
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <th scope="row">1</th>
-                                                                        <td>MarkCuban</td>
-                                                                        <td>Data visualisation in Mbeya</td>
-                                                                        <td>Training</td>
-                                                                        <td>Sauti Mpya</td>
-                                                                        <td>0</td>
-                                                                        <td>2,300,000 <span
-                                                                                class="badge badge-success">TZS</span>
-                                                                        </td>
-                                                                        <td>2019-09-11</td>
-                                                                        <td>
-                                                                            <button type="button"
-                                                                                class="btn btn-outline-success">view
-                                                                                request</button>
-                                                                        </td>
-                                                                    </tr>
-
-                                                                    <tr>
-                                                                        <th scope="row">4</th>
-                                                                        <td>Jane Sharpe</td>
-                                                                        <td>Data Mining in Dar</td>
-                                                                        <td>Training</td>
-                                                                        <td>Data Zetu</td>
-                                                                        <td>0</td>
-                                                                        <td>6,600,000 <span
-                                                                                class="badge badge-success">TZS</span>
-                                                                        </td>
-                                                                        <td>2019-09-11</td>
-                                                                        <td>
-                                                                            <button type="button"
-                                                                                class="btn btn-outline-success">view
-                                                                                request</button>
-                                                                        </td>
-                                                                    </tr>
-
-                                                                    <tr>
-                                                                        <th scope="row">3</th>
-                                                                        <td>Mary Poppins</td>
-                                                                        <td>Data Analyis and Mining</td>
-                                                                        <td>Training</td>
-                                                                        <td>Sauti Mpya</td>
-                                                                        <td>0</td>
-                                                                        <td>8,700,000 <span
-                                                                                class="badge badge-success">TZS</span>
-                                                                        </td>
-                                                                        <td>2019-09-11</td>
-                                                                        <td>
-                                                                            <button type="button"
-                                                                                class="btn btn-outline-success">view
-                                                                                request</button>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                            <br />
-                                                            <nav aria-label="Page navigation example">
-                                                                <ul class="pagination">
-                                                                    <li class="page-item">
-                                                                        <a class="page-link" href="#"
-                                                                            aria-label="Previous">
-                                                                            <span aria-hidden="true">&laquo;</span>
-                                                                            <span class="sr-only">Previous</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">1</a></li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">2</a></li>
-                                                                    <li class="page-item"><a class="page-link"
-                                                                            href="#">3</a></li>
-                                                                    <li class="page-item">
-                                                                        <a class="page-link" href="#" aria-label="Next">
-                                                                            <span aria-hidden="true">&raquo;</span>
-                                                                            <span class="sr-only">Next</span>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </nav>
+                                                            <div class="alert alert-primary" role="alert">
+                                                                No current response from <a href="#" class="alert-link">line manager</a>. If you get a project response it will show up here.
+                                                              </div>
                                                         </div>
                                                     </div>
                                                     <!-- end of SECOND column -->

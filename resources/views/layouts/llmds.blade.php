@@ -1560,7 +1560,7 @@
                         </div>
                         <ul class="nav navbar-nav justify-content-end" style="display: contents;">
                             <li><a href="#">Welcome, <strong
-                                        style="color: #a7a4a2;">{{ Auth::user()->name }}</strong></a></li>
+                                        style="color: #a7a4a2;">{{ Auth::user()->fname }}</strong></a></li>
                         </ul>
                     </div>
                 </nav>
