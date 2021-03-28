@@ -14,21 +14,24 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <h4 class="title text-center">New Activity details</h4>
+            <h4 class="title text-center">New Project Activity details</h4>
         </div>
     </div>
+
     <form method="post" action="{{ route('pillar-project.store') }}">
         @csrf
         <input type="hidden" value="{{ Auth::user()->user_id }}" name="created_by">
         <input type="hidden" value="{{ Auth::user()->pillar_id }}" name="pillar_ref_id">
+        {{-- <input type="hidden" value="{{ $projectref ?? ''->project_id }}" name="project_ref_id"> --}}
+
         <input type="hidden" value='pending review' name="review_status">
         <input type="hidden" value='submitted' name="current_stage">
 
         <div class="row">
             <div class="form-group col-md-4 input-group-lg">
-                <label for="forDepartmentTitle">Activity Title</label>
+                <label for="forDepartmentTitle">Activity Title </label>
                 <input type="text" class="form-control" name="project_title"
-                     placeholder=""
+                     placeholder="" value=""
                     required>
             </div>
         </div>
@@ -46,31 +49,47 @@
         </div>
 
         <div class="row">
-            <div class="form-group col-md-4 input-group-lg">
-                <label for="forDepartmentTitle">KPI project references</label>
-                <select class="form-control form-group col-lg-12" aria-label="Large" id="ref_kpi" name="selectProject"
-                    aria-describedby="inputGroup-sizing-sm">
-                    <option value="select">Select Indicator </option>
-                    <option value="indicator1">Number of packaged data "Use Stories"</option>
-                    <option value="indicator4">Number of Data Activities facilitated by dLab
-                    </option>
-                    <option value="indicator5">Number of dLab's Training Package provided to
-                        Target Stakeholders</option>
-                    <option value="indicator6">Number of data related Capacity Building
-                        Activities</option>
-                    <option value="indicator7">Percentage of activity participants who are
-                        Youths</option>
-                    <option value="indicator8">Percentage of activity participants who are
-                        Female</option>
-                    <option value="indicator11">Number of Organisations engaged</option>
-                    <option value="indicator12">Number of Data Fellows engaged by dLab</option>
-                    <option value="indicator14">Number of Data Ambassadors engaged by dLab
-                    </option>
-                    <option value="indicator15">Number of Partnerships formed by dLab</option>
-                </select>
+            <div class="form-group col-lg-12">
+                <div class="form-group multiple-form-group" data-max=6>
+                    <div class="form-group input-group-lg">
+                        <label for="forDepartmentTitle">KPI project references</label>
+                        <div class="row">
+                            <div class="col-md-6 input-group-lg">
+                                <select class="form-control form-group col-lg-12" aria-label="Large" id="ref_kpi" name="selectProject"
+                                aria-describedby="inputGroup-sizing-sm">
+                                <option value="select">Select Indicator </option>
+                                <option value="indicator1">Number of packaged data "Use Stories"</option>
+                                <option value="indicator4">Number of Data Activities facilitated by dLab
+                                </option>
+                                <option value="indicator5">Number of dLab's Training Package provided to
+                                    Target Stakeholders</option>
+                                <option value="indicator6">Number of data related Capacity Building
+                                    Activities</option>
+                                <option value="indicator7">Percentage of activity participants who are
+                                    Youths</option>
+                                <option value="indicator8">Percentage of activity participants who are
+                                    Female</option>
+                                <option value="indicator11">Number of Organisations engaged</option>
+                                <option value="indicator12">Number of Data Fellows engaged by dLab</option>
+                                <option value="indicator14">Number of Data Ambassadors engaged by dLab
+                                </option>
+                                <option value="indicator15">Number of Partnerships formed by dLab</option>
+                            </select>
+                            </div>
+                            <div class="col-md-2 input-group-lg">
+                                <span class="input-group-btn"><button type="button"
+                                        class="btn btn-outline-primary btn-add"> add +
+                                    </button></span>
+                                {{-- <hr style="background-color: aqua;"> --}}
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
+        <hr >
         <label for="formGroupExampleInput2">Activity objectives.</label>
         <div class="row">
             <div class="form-group col-lg-12">
@@ -92,6 +111,7 @@
             </div>
         </div>
 
+        <hr >
         <label for="formGroupExampleInput2">Activity expected outcomes.</label>
         <div class="row">
             <div class="form-group col-lg-12">

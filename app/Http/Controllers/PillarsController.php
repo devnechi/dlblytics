@@ -113,6 +113,7 @@ class PillarsController extends Controller
         // 'pillars',
         // 'departments'))->with('success', 'A new pillar was successfully added!');
     }
+
     /**
      * Display the specified resource.
      *
@@ -124,9 +125,8 @@ class PillarsController extends Controller
         $pillar = Pillar::find($id);
         // return view('admin.pillarmanage.edit-pillar', compact('pillar'));
         return view('financeAdmin.hr.fin_pillar.hr-view-full-pillar-details', compact('pillar'));
-
-
     }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -135,7 +135,6 @@ class PillarsController extends Controller
      */
     public function edit($id)
     {
-
         $pillar = Pillar::find($id);
         // return view('admin.pillarmanage.edit-pillar', compact('pillar'));
         return view('financeAdmin.hr.fin_pillar.hr-update-pillar-details', compact('pillar'));

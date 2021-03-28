@@ -53,11 +53,19 @@ Route::get('/ce-pillar-manager', 'CEpillarManager@index')->name('ce-pillar-manag
 //data science routes
 Route::get('/ds-pillar-manager', 'DSpillarManager@index')->name('ds-pillar-manager')->middleware('ds-pillar-manager');
 Route::get('/ds-create-new-project', 'DSpillarManager@createNewProject')->name('ds-create-new-project');
+Route::get('/ds-create-new-activity', 'DSpillarManager@createNewActivity')->name('ds-create-new-activity');
+Route::get('/ds-create-new-project-activity', 'DSpillarManager@createNewProjectActivity')->name('ds-create-new-project-activity');
+
+
 
 
 Route::get('/data-science-create-new-imprest', 'DSpillarManager@createImprest')->name('data-science-create-new-imprest');
 
 Route::resource('pillar-project', 'PillarProjectController');
+Route::resource('pillar-activity', 'PillarActivitiesController');
+
+Route::resource('upload-project-file-doc', 'ProjectDocController');
+
 
 // ADMIN MANAGING kpis manage-kpis
 Route::get('/manage-kpis', 'DataKpiController@index')->name('manage-kpis');

@@ -31,7 +31,7 @@ class DSpillarManager extends Controller
         $myprojects = DB::table('pillar_projects')
                 ->where('created_by', '=', $cuid)
                 ->where('pillar_ref_id', '=', $cpid)
-                ->where('review_status', '=', 'on review')
+                ->where('review_status', '=', 'pending review')
                 ->get();
 
          //my approved projects
@@ -66,5 +66,15 @@ class DSpillarManager extends Controller
 
     public function createNewProject(){
         return view('lmds.dsprojects.ds-create-new-project');
+    }
+
+    public function createNewActivity(){
+        return view('lmds.dsactivities.ds-create-new-activity');
+    }
+
+    public function createNewProjectActivity(){
+
+        // $cprojid = Crypt::decrypt($id);
+        return view('lmds.dsactivities.ds-create-project-activity');
     }
 }

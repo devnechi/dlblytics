@@ -1532,8 +1532,8 @@
 
         <!-- <li><a href="dlab_data_tests.php"> Data Mapping</a></li> -->
         <li><a href="{{ route('manage-users') }}">Scholars and Grantees</a></li> --}}
+        <li><a href="#">Pillar KPI Management</a></li>
         <li><a href="#">Account Management</a></li>
-
         <li>
             <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
