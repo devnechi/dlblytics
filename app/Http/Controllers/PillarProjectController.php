@@ -52,6 +52,7 @@ class PillarProjectController extends Controller
             'created_by' => $request->get('created_by'),
             'pillar_ref_id'=>$request->get('pillar_ref_id'),
             'project_desc' => $request->get('project_desc'),
+            'review_status' => $request->get('review_status'),
             'total_project_cost' => $request->get('total_project_cost'),
             'current_stage' => $request->get('current_stage')
         ]);
@@ -77,9 +78,9 @@ class PillarProjectController extends Controller
              $project_expected_outcomes["project_expected_outcomes.{$key}"] = 'required';
          }
 
-         foreach($request->project_kpi_ref_id as $key => $value) {
-            $project_kpi_ref_id["project_kpi_ref_id.{$key}"] = 'required';
-        }
+        //  foreach($request->project_kpi_ref_id as $key => $value) {
+        //     $project_kpi_ref_id["project_kpi_ref_id.{$key}"] = 'required';
+        // }
 
          //pillar full document url
 
@@ -103,13 +104,13 @@ class PillarProjectController extends Controller
         }
 
         // store the project kpi reference
-        foreach($request->project_kpi_ref_id as $key => $value) {
-            $projrefkpi = new projectkpiReferences([
-                'project_id' => $proj_ref_id,
-                'ref_kpi_id' => $value
-            ]);
-            $projrefkpi->save();
-        }
+        // foreach($request->project_kpi_ref_id as $key => $value) {
+        //     $projrefkpi = new projectkpiReferences([
+        //         'project_id' => $proj_ref_id,
+        //         'ref_kpi_id' => $value
+        //     ]);
+        //     $projrefkpi->save();
+        // }
 
          //store project doc file
          $fileModel = new DocProjectFile;

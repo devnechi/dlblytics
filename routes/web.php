@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CEpillarManager;
 use App\Http\Middleware\ResearchnInnovation;
 use Illuminate\Support\Facades\Route;
 
@@ -17,15 +18,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
 Auth::routes();
 
 
 Route::get('/admin', 'AdminController@index')->name('admin')->middleware('admin');
 Route::get('/manager', 'ManagerController@index')->name('manager')->middleware('manager');
 Route::get('/user', 'UserController@index')->name('user')->middleware('user');
-
-
 
 Route::get('/home', 'HomeController@index')->name('home');
 // admin update data
@@ -41,14 +39,10 @@ Route::get('/manage-pillars', 'AdminPillarsController@index')->name('manage-pill
 Route::get('/add-new-pillar', 'AdminPillarsController@create')->name('add-new-pillar');
 Route::resource('pillars', 'AdminPillarsController');
 
-
-
 // line / pillar managers routes
 Route::get('/ri-pillar-manager', 'RIlineManager@index')->name('ri-pillar-manager')->middleware('ri-pillar-manager');
 Route::get('/is-pillar-manager', 'ISpillarManager@index')->name('is-pillar-manager')->middleware('is-pillar-manager');
 Route::get('/cb-pillar-manager', 'CBpillarManager@index')->name('cb-pillar-manager')->middleware('cb-pillar-manager');
-Route::get('/ce-pillar-manager', 'CEpillarManager@index')->name('ce-pillar-manager')->middleware('ce-pillar-manager');
-
 
 //data science routes
 Route::get('/ds-pillar-manager', 'DSpillarManager@index')->name('ds-pillar-manager')->middleware('ds-pillar-manager');
@@ -56,21 +50,27 @@ Route::get('/ds-create-new-project', 'DSpillarManager@createNewProject')->name('
 Route::get('/ds-create-new-activity', 'DSpillarManager@createNewActivity')->name('ds-create-new-activity');
 Route::get('/ds-create-new-project-activity', 'DSpillarManager@createNewProjectActivity')->name('ds-create-new-project-activity');
 
+// community engagement routes
+Route::get('/ce-pillar-manager', 'CEpillarManager@index')->name('ce-pillar-manager')->middleware('ce-pillar-manager');
+Route::get('/ce-insert-new-project', 'CEpillarManager@insertNewProject')->name('ce-insert-new-project');
+Route::get('/ce-pillar-projects-management', 'CEpillarManager@managePillarProjects')->name('ce-pillar-projects-management');
+Route::get('/ce-create-new-solo-activity', 'CEpillarManager@createSoloNewActivity')->name('ce-create-new-solo-activity');
+Route::get('/ce-create-new-project-activity', 'CEpillarManager@createNewProjectActivity')->name('ce-create-new-project-activity');
+Route::get('/ce-pillar-activities-management', 'CEpillarManager@managePillarActivities')->name('ce-pillar-activities-management');
+Route::get('/ce-create-new-sub-activity', 'CEpillarManager@createSubNewActivity')->name('ce-create-new-sub-activity');
+Route::get('/ce-pillar-sub-activities-management', 'CEpillarManager@manageSubActivities')->name('ce-pillar-sub-activities-management');
 
-
+Route::resource('ce-pillar-project', 'cePillarProjectController');
 
 Route::get('/data-science-create-new-imprest', 'DSpillarManager@createImprest')->name('data-science-create-new-imprest');
-
 Route::resource('pillar-project', 'PillarProjectController');
 Route::resource('pillar-activity', 'PillarActivitiesController');
 
 Route::resource('upload-project-file-doc', 'ProjectDocController');
 
-
 // ADMIN MANAGING kpis manage-kpis
 Route::get('/manage-kpis', 'DataKpiController@index')->name('manage-kpis');
 Route::get('/create-new-kpi', 'DataKpiController@create')->name('create-new-kpi');
-
 Route::resource('kpis', 'DataKpiController');
 
 // finance Admin routes
@@ -102,15 +102,12 @@ Route::get('/create-new-dept-manager', 'EmployeeController@createDeptManager')->
 Route::get('/create-new-pillar-staff', 'EmployeeController@createPillarStaff')->name('create-new-pillar-staff');
 Route::get('/create-new-dept-staff', 'EmployeeController@createDeptStaff')->name('create-new-dept-staff');
 
-
-
-
 //create new pillar manager
-
 //create new line manager
 
 
-// Route::get('/create-per-diem-claim', 'FinanceAdminController@createPerDiemClaim')->name('create-per-diem-claim');
+//Route::get('/create-per-diem-claim', 'FinanceAdminController@createPerDiemClaim')->name('create-per-diem-claim');
+
 
 // reports routes
 Route::get('/create-bank-reconciliation-report', 'FinanceAdminController@createBankReconciliationReport')->name('create-bank-reconciliation-report');
@@ -119,9 +116,6 @@ Route::get('/create-payment-voucher', 'FinanceAdminController@createPaymentVouch
 Route::get('/create-deposit-voucher', 'FinanceAdminController@createDepositVoucher')->name('create-deposit-voucher');
 Route::get('/create-journal-voucher', 'FinanceAdminController@createJournalVoucher')->name('create-journal-voucher');
 Route::get('/create-pay-slip', 'FinanceAdminController@createPaySlip')->name('create-pay-slip');
-
-
-
 
 
 

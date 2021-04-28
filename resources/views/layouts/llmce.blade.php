@@ -737,10 +737,7 @@
     .main-timeline4 .inner-content{padding:10px}
     }
 
-
-
-
-        </style>
+ </style>
 
 </head>
 <body>
@@ -752,63 +749,51 @@
                             <div class="sidebar-header">
                                 <h3> DLAB Finance Dashboard</h3>
                             </div>
-
                             <ul class="list-unstyled components">
                                 <p style="font-size:800;">Navigation</p>
                                 <li><a href="{{ route('finance-dashboard') }}">Dashboard</a></li>
+                                <li><a href="{{ route('update') }}">pillar year plan</a></li>
+
                                 <li>
-                                    <a  data-toggle="collapse" href="#nav-new-request" aria-expanded="false" aria-controls="nav-new-request">
-                                      Advance Requests
-                                      <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-double-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-                                        <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-                                      </svg>
+                                    <a  data-toggle="collapse" href="#nav-mng-pillar-projects" aria-expanded="false" aria-controls="nav-mng-pillar-projects">
+                                     projects
+
                                     </a>
-                                    <div class="collapse" id="nav-new-request">
-                                        <a  href="{{ route('manage-pillars') }}">
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                                              </svg>
-                                              Create New Request</a>
-                                        <a  href="{{ route('manage-pillars') }}">
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                                              </svg>
-                                              Manage Requests</a>
+                                    <div class="collapse" id="nav-mng-pillar-projects">
+                                        <a  href="{{ route('ce-insert-new-project') }}">
+                                              add new project</a>
+                                        <a  href="{{ route('ce-pillar-projects-management') }}">
+                                              manage projects</a>
                                       </div>
                                 </li>
                                 <li>
-                                    <a  data-toggle="collapse" href="#nav-new-reports" aria-expanded="false" aria-controls="nav-new-request">
-                                      Finance reports
-                                      <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-double-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-                                        <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-                                      </svg>
+                                    <a  data-toggle="collapse" href="#nav-mng-pillar-activities" aria-expanded="false" aria-controls="nav-mng-pillar-activities">
+                                       activities
                                     </a>
-                                    <div class="collapse" id="nav-new-reports">
-                                        <a  href="{{ route('manage-pillars') }}">
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                                              </svg>
-                                              Create New Request</a>
-                                        <a  href="{{ route('manage-pillars') }}">
-                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
-                                              </svg>
-                                              Manage Requests</a>
+                                    <div class="collapse" id="nav-mng-pillar-activities">
+                                        <a  href="{{ route('ce-create-new-solo-activity') }}">
+                                              create new activity</a>
+                                        <a  href="{{ route('ce-pillar-activities-management') }}">
+                                              manage activities</a>
                                       </div>
                                 </li>
-                                <!-- <li><a href="dlab_create_project.php">Create A new project</a></li> -->
-                                <li><a href="{{ route('update') }}">Payroll System</a></li>
-
-                                <li><a href="{{ route('admin') }}">Financial Reports</a></li>
-
-                                <!-- <li><a href="dlab_data_tests.php"> Data Mapping</a></li> -->
-                                <li><a href="{{ route('manage-users') }}">Scholars and Grantees</a></li>
+                                <li>
+                                    <a  data-toggle="collapse" href="#nav-mng-pillar-sub-activities" aria-expanded="false" aria-controls="nav-mng-pillar-sub-activities">
+                                       sub activities
+                                    </a>
+                                    <div class="collapse" id="nav-mng-pillar-sub-activities">
+                                        {{-- <a  href="{{ route('manage-pillars') }}">
+                                              create imprest</a> --}}
+                                        <a  href="{{ route('ce-pillar-sub-activities-management') }}">
+                                              manage sub activities</a>
+                                      </div>
+                                </li>
+                               <!-- <li><a href="dlab_create_project.php">Create A new project</a></li> -->
+                                <li><a href="{{ route('update') }}">account</a></li>
                                 <li>
                                     <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('logout') }}
                                     </a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
@@ -816,27 +801,24 @@
                                 </li>
                             </ul>
                         </nav>
-
-
-
-        <main class="py-4">
-            <div id="content">
-                <nav class="navbar navbar-default">
-                    <div class="container-fluid">
-                        <div class="navbar-header">
-                            <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
-                                <i class="glyphicon glyphicon-align-left"></i>
-                                <span>Toggle Sidebar</span>
-                            </button>
-                        </div>
-                            <ul class="nav navbar-nav justify-content-end" style="display: contents;">
-                              <li><a href="#">Welcome, <strong style="color: #a7a4a2;">{{ Auth::user()->name }}</strong></a></li>
-                              </ul>
+                        <main class="py-4">
+                            <div id="content">
+                                <nav class="navbar navbar-default">
+                                    <div class="container-fluid">
+                                        <div class="navbar-header">
+                                            <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                                                <i class="glyphicon glyphicon-align-left"></i>
+                                                <span>Toggle Sidebar</span>
+                                            </button>
+                                        </div>
+                                            <ul class="nav navbar-nav justify-content-end" style="display: contents;">
+                                            <li><a href="#">Welcome, <strong style="color: #a7a4a2;">{{ Auth::user()->fname }}</strong></a></li>
+                                            </ul>
+                                    </div>
+                                </nav>
+                            @yield('content')
+                        </main>
                     </div>
-                </nav>
-            @yield('content')
-        </main>
-    </div>
 
 
 
@@ -853,9 +835,9 @@
             <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
             <!-- jQuery Custom Scroller CDN -->
             <!-- JS, Popper.js, and jQuery -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
             <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/en-gb.js"></script>

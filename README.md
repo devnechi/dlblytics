@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-# lrvlMultiRlsTmp
+# NGO analytics platform
 Laravel Framework multiple users roles with seperate area redirections Template easy for project start ups
 =======
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
