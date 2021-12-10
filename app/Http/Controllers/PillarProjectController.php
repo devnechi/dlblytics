@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
-
 use App\User;
 use DateTime;
 use App\Pillar;
@@ -16,6 +14,8 @@ use App\projectOutcome;
 use App\projectkpiReferences;
 use App\DocProjectFile;
 use Auth;
+use App\Facilitator;
+use App\PillarActivities;
 
 class PillarProjectController extends Controller
 {
@@ -38,24 +38,37 @@ class PillarProjectController extends Controller
      */
     public function store(Request $request)
     {
+
         $request->validate([
             'project_title' => 'required',
             'project_desc' => 'required',
             'total_project_cost' => 'required',
             'created_by' => 'required',
             'pillar_ref_id' => 'required',
+            'start_date'=> 'required',
+            'end_date'=> 'required',
+            'project_tech'=> 'required',
+            'project_busi'=> 'required'
 
         ]);
 
         $project = new PillarProject([
             'project_title' => $request->get('project_title'),
             'created_by' => $request->get('created_by'),
-            'pillar_ref_id'=>$request->get('pillar_ref_id'),
+            'pillar_ref_id'=>$request->pillar_ref_id,
             'project_desc' => $request->get('project_desc'),
-            'review_status' => $request->get('review_status'),
+            'review_status' => $request->review_status,
             'total_project_cost' => $request->get('total_project_cost'),
-            'current_stage' => $request->get('current_stage')
+            'current_stage' => $request->get('current_stage'),
+            'start_date' => $request->start_date,
+            'end_date' => $request->end_date,
+            'lead' => $request->lead,
+            'project_funders' => $request->pfunder,
+            'project_partiners' => $request->ppartiner
+
+
         ]);
+
 
         // 'project_objectives' => $request->get('project_objectives'),
         // 'project_expected_outcomes' => $request->get('project_expected_outcomes'),
@@ -65,25 +78,13 @@ class PillarProjectController extends Controller
          $project->project_id;
          $proj_ref_id = $project->project_id;
          $project_objectives = [];
-         $project_expected_outcomes = [];
-         $project_kpi_ref_id = [];
+
 
 
 
          foreach($request->input('project_objectives') as $key => $value) {
              $project_objectives["project_objectives.{$key}"] = 'required';
          }
-
-         foreach($request->input('project_expected_outcomes') as $key => $value) {
-             $project_expected_outcomes["project_expected_outcomes.{$key}"] = 'required';
-         }
-
-        //  foreach($request->project_kpi_ref_id as $key => $value) {
-        //     $project_kpi_ref_id["project_kpi_ref_id.{$key}"] = 'required';
-        // }
-
-         //pillar full document url
-
 
         // store the projObj
         foreach($request->input('project_objectives') as $key => $value) {
@@ -94,35 +95,29 @@ class PillarProjectController extends Controller
             $projobj->save();
         }
 
-        // store the proOutcomes
-        foreach($request->input('project_expected_outcomes') as $key => $value) {
-            $projoutcome = new projectOutcome([
-                'project_id' => $proj_ref_id,
-                'outcome_content' => $value
-            ]);
-            $projoutcome->save();
-        }
 
-        // store the project kpi reference
-        // foreach($request->project_kpi_ref_id as $key => $value) {
-        //     $projrefkpi = new projectkpiReferences([
-        //         'project_id' => $proj_ref_id,
-        //         'ref_kpi_id' => $value
-        //     ]);
-        //     $projrefkpi->save();
-        // }
 
          //store project doc file
          $fileModel = new DocProjectFile;
-         if($request->file()) {
-             $fileName = time().'_'.$request->project_file_title->getClientOriginalName();
-             $filePath = $request->file('project_file_title')->storeAs('project_documents_uploads', $fileName, 'private');
 
-             $fileModel->proj_ref_id;
-             $fileModel->project_file_title = time().'_'.$request->file->getClientOriginalName();
+         if($request->hasfile('project_tech')) {
+             $fileName = time().'_'.$request->file('project_tech')->getClientOriginalName();
+             $filePath = $request->file('project_tech')->storeAs('project_documents_uploads', $fileName);
+             $fileModel->file_type="projecttech";
+             $fileModel->project_id=$project->project_id;
+             $fileModel->project_file_title = time().'_'.$request->file('project_tech')->getClientOriginalName();
              $fileModel->file_path = '/storage/' . $filePath;
              $fileModel->save();
          }
+         if($request->hasfile('project_busi')) {
+            $fileName = time().'_'.$request->file('project_busi')->getClientOriginalName();
+            $filePath = $request->file('project_busi')->storeAs('project_documents_uploads', $fileName);
+            $fileModel->file_type="projectbusi";
+            $fileModel->project_id=$project->project_id;
+            $fileModel->project_file_title = time().'_'.$request->file('project_busi')->getClientOriginalName();
+            $fileModel->file_path = '/storage/' . $filePath;
+            $fileModel->save();
+        }
 
         $request->session()->flash('alert-success', 'project was successfully added!. You can now manage it.');
         return redirect()->route('ds-pillar-manager')
@@ -130,8 +125,111 @@ class PillarProjectController extends Controller
 
         //var_dump( $request->get('created_by'));
         }
+        public function createNewProject(){
+
+            $facil=Facilitator::all();
+            $lead=PillarActivities::all();
+
+            return view('lmds.dsprojects.ds-create-new-project')->with('facil',$facil)
+            ->with('lead',$lead);
+        }
+
+        public function edit($id)
+        {
+            $facil=Facilitator::all();
+            $lead=PillarActivities::all();
+            $model=PillarProject::find($id);
+
+            return view('lmds.dsprojects.ds-edit-project')->with('facil',$facil)
+            ->with('lead',$lead)->with('model',$model);
+        }
+        public function update(Request $request)
+        {
+
+            $request->validate([
+                'project_title' => 'required',
+                'project_desc' => 'required',
+                'total_project_cost' => 'required',
+                'created_by' => 'required',
+                'pillar_ref_id' => 'required',
+                'start_date'=> 'required',
+                'end_date'=> 'required'
+
+            ]);
+            $proj=PillarProject::find($request->pjid);
+dd($request);
+           $proj->project_title = $request->get('project_title');
+           $proj->created_by= $request->get('created_by');
+           $proj->pillar_ref_id=$request->pillar_ref_id;
+           $proj->project_desc = $request->get('project_desc');
+           $proj->review_status = $request->review_status;
+           $proj->total_project_cost = $request->get('total_project_cost');
+           $proj->current_stage = $request->get('current_stage');
+           $proj->start_date = $request->start_date;
+           $proj->end_date = $request->end_date;
+           $proj->lead = $request->lead;
+           $proj->project_funders = $request->pfunder;
+           $proj->project_partiners = $request->ppartiner;
 
 
+
+
+
+            // 'project_objectives' => $request->get('project_objectives'),
+            // 'project_expected_outcomes' => $request->get('project_expected_outcomes'),
+             $proj->update();
+            //get last project id
+
+
+             $proj_ref_id = $proj->project_id;
+             $project_objectives = [];
+
+
+
+
+             foreach($request->input('project_objectives') as $key => $value) {
+                 $project_objectives["project_objectives.{$key}"] = 'required';
+             }
+
+            // store the projObj
+            foreach($request->input('project_objectives') as $key => $value) {
+                $projobj = new projectObjective([
+                    'project_id' => $proj_ref_id,
+                    'objective_content' => $value
+                ]);
+                $projobj->save();
+            }
+
+
+
+             //store project doc file
+             $fileModel = new DocProjectFile;
+
+             if($request->hasfile('project_tech')) {
+                 $fileName = time().'_'.$request->file('project_tech')->getClientOriginalName();
+                 $filePath = $request->file('project_tech')->storeAs('project_documents_uploads', $fileName);
+                 $fileModel->file_type="projecttech";
+                 $fileModel->project_id=$proj->project_id;
+                 $fileModel->project_file_title = time().'_'.$request->file('project_tech')->getClientOriginalName();
+                 $fileModel->file_path = '/storage/' . $filePath;
+                 $fileModel->save();
+             }
+             if($request->hasfile('project_busi')) {
+                $fileName = time().'_'.$request->file('project_busi')->getClientOriginalName();
+                $filePath = $request->file('project_busi')->storeAs('project_documents_uploads', $fileName);
+                $fileModel->file_type="projectbusi";
+                $fileModel->project_id=$proj->project_id;
+                $fileModel->project_file_title = time().'_'.$request->file('project_busi')->getClientOriginalName();
+                $fileModel->file_path = '/storage/' . $filePath;
+                $fileModel->save();
+            }
+
+            $request->session()->flash('alert-success', 'project was successfully added!. You can now manage it.');
+            return redirect()->route('ds-pillar-manager')
+                ->with(['success', 'project was successfully added!. you can now manage it.'], ['tab', 'projects-nactivities-md-content']);
+
+            //var_dump( $request->get('created_by'));
+            }
     /**
      * Display the specified resource.
      *

@@ -20,6 +20,9 @@ Route::get('/', function () {
 });
 Auth::routes();
 
+//Mail Route
+Route::get('send-mail', 'MailController@sendMail')->name('send.mail');
+
 
 Route::get('/admin', 'AdminController@index')->name('admin')->middleware('admin');
 Route::get('/manager', 'ManagerController@index')->name('manager')->middleware('manager');
@@ -46,8 +49,11 @@ Route::get('/cb-pillar-manager', 'CBpillarManager@index')->name('cb-pillar-manag
 
 //data science routes
 Route::get('/ds-pillar-manager', 'DSpillarManager@index')->name('ds-pillar-manager')->middleware('ds-pillar-manager');
-Route::get('/ds-create-new-project', 'DSpillarManager@createNewProject')->name('ds-create-new-project');
-Route::get('/ds-create-new-activity', 'DSpillarManager@createNewActivity')->name('ds-create-new-activity');
+Route::get('/ds-create-new-project', 'PillarProjectController@createNewProject')->name('ds-create-new-project');
+Route::post('/facilitatorpost', 'DSpillarManager@facilitatorpost')->name('facilitatorpost');
+
+Route::get('/ds-create-new-activity/{id?}', 'PillarProjectController@createNewActivity')->name('ds-create-new-activity');
+Route::get('/ds-create-new-subactivity', 'DSpillarManager@createNewSubActivity')->name('ds-create-new-subactivity');
 Route::get('/ds-create-new-project-activity', 'DSpillarManager@createNewProjectActivity')->name('ds-create-new-project-activity');
 
 // community engagement routes
@@ -63,11 +69,21 @@ Route::get('/ce-pillar-sub-activities-management', 'CEpillarManager@manageSubAct
 Route::resource('ce-pillar-project', 'cePillarProjectController');
 
 Route::get('/data-science-create-new-imprest', 'DSpillarManager@createImprest')->name('data-science-create-new-imprest');
+Route::get('/imprest-detail/{id}', 'DSpillarManager@showImprest')->name('imprest-detail');
+Route::get('edit-project/{id}', 'PillarProjectController@edit')->name('edit-project');
+
 Route::resource('pillar-project', 'PillarProjectController');
+Route::post('edit-projectp', 'PillarProjectController@update')->name('edit-projectp');
+;
+
+
 Route::resource('pillar-activity', 'PillarActivitiesController');
+Route::resource('pillar-subactivity', 'PillarSubActivitiesController');
 
 Route::resource('upload-project-file-doc', 'ProjectDocController');
 
+Route::resource('imprest', 'ImprestController');
+Route::post('/retirestore', 'ImprestController@retirestore')->name('retirestore');
 // ADMIN MANAGING kpis manage-kpis
 Route::get('/manage-kpis', 'DataKpiController@index')->name('manage-kpis');
 Route::get('/create-new-kpi', 'DataKpiController@create')->name('create-new-kpi');

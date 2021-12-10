@@ -25,7 +25,7 @@ class FakeUserFactory extends Factory
     public function definition()
     {
         $gender = $faker->randomElement(['male', 'female']);
-        $mrtstatus = $faker->randomElement(['single', 'marrie', 'divorced', 'widow', 'widower', 'bachelor', 'spinster']);
+        $mrtstatus = $faker->randomElement(['single', 'married', 'divorced', 'widow', 'widower', 'bachelor', 'spinster']);
         $ntlty = $faker->randomElement(['Tanzania', 'Kenya', 'Uganda', 'other']);
         $dept = $faker->randomElement(['IT', 'Human Resourse', 'Procument', 'Account & Finance']);
         $pillar = $faker->randomElement(['Data Science', 'Capacity Building', 'Research & Innovation', 'Community Engagement']);

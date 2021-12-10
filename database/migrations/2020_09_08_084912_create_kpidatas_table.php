@@ -17,19 +17,6 @@ class CreateKpidatasTable extends Migration
             $table->increments('id');
             $table->integer('creators_id');
             $table->string('kpi_title');
-            $table->string('ref_pillar_id');
-            $table->longText('kpi_desc');
-            $table->string('dc_timing');
-            $table->string('fq_of_dc');
-            $table->string('classification');
-            $table->string('unit_of_measure');
-            $table->string('method_of_dc');
-            $table->string('dissaggregate');
-            $table->longText('formula');
-            $table->string('reporting_respns');
-            $table->string('target_value');
-            $table->string('tolerance_band');
-            $table->string('last_approved');
             $table->timestamps();
         });
     }

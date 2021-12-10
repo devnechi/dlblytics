@@ -17,10 +17,8 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
 
 
     <!-- Styles -->
@@ -268,7 +266,6 @@
             color: #525c65;
             transition: color 0.3s ease;
         }
-
     </style>
 
     <style>
@@ -715,8 +712,6 @@
         }
 
 
-
-        ///timezone_location_get
         a {
             text-decoration: none
         }
@@ -1420,15 +1415,13 @@
         .cardhdthreesuccess {
             color: #8bc34a;
         }
-
     </style>
 
 </head>
 
 <body>
     {{-- user task on page load --}}
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -1469,61 +1462,80 @@
                     <p>Managers dashboard</p>
                 </div>
 
-                <ul class="list-unstyled components">
+                <ul class="list-unstyled components" >
                     <p style="font-size:800;">Navigation</p>
                     <li><a href="{{ route('finance-dashboard') }}">Dashboard</a></li>
-                    {{-- <li>
-                                    <a  data-toggle="collapse" href="#nav-new-request" aria-expanded="false" aria-controls="nav-new-request">
-                                      Project & Activities
-                                      <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-double-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-                                        <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
-                                      </svg>
-                                    </a>
-                                    <div class="collapse" id="nav-new-request">
-                                        <a  href="{{ route('manage-pillars') }}">
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                    <li>
+                        <a data-toggle="collapse" href="" onclick="cpl(event,'#nav-new-request')"  aria-expanded="false" aria-controls="nav-new-request">
+                            Project & Activities
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-double-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                            </svg>
+                        </a>
+                        <div class="collapse" id="nav-new-request">
+                            <a id="projects-nactivities-tab-md" data-toggle="pill" href="#vds-ds-pna-pills-proj" onclick="cplt(event,'#vds-ds-pna-pills-proj')" role="tab" aria-controls="vdsreqs-pills-proj" aria-selected="false">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                                </svg>
+                                Projects</a>
+                            <a id="vds-ds-pna-pills-activities-tab" data-toggle="pill" href="#vds-ds-pna-pills-activities" role="tab" onclick="cplt(event,'#vds-ds-pna-pills-activities')"aria-controls="vdsreqs-pills-activities" aria-selected="false">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                                </svg>
+                                Activities</a>
+                            <a id="vds-ds-pna-pills-sub-act-tab" data-toggle="pill" href="#vds-ds-pna-pills-sub-act" onclick="cplt(event,'#vds-ds-pna-pills-sub-act')" role="tab" aria-controls="vdsreqs-pills-sub-act" aria-selected="false"">
+                                <svg width=" 1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                                </svg>
+                                Sub Activities
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <a data-toggle="collapse" href="#nav-new-reports" onclick="cpl(event,'#nav-new-reports')"  aria-expanded="false" aria-controls="nav-new-request">
+                            Imprest Management
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-double-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                            </svg>
+                        </a>
+                        <div class="collapse" id="nav-new-reports">
+                    <a  id="data-science-request-tab-md" data-toggle="tab" href="#data-science-request-md" onclick="cplt(event,'#data-science-request-md')"
+                     role="tab" aria-controls="data-science-request-md" aria-selected="false">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
                     </svg>
-                    Create New Project</a>
-                    <a href="{{ route('manage-pillars') }}">
-                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill"
-                            fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                    Requests</a>
+                    <a id="retirements-tab-md" data-toggle="tab"
+                    href="#retirements-md" onclick="cplt(event,'#retirements-md')"
+                    role="tab" aria-controls="retirements-md" aria-selected="false">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
                         </svg>
-                        Manage Projects</a>
+                    Retirements</a>
         </div>
         </li>
-        <li>
-            <a data-toggle="collapse" href="#nav-new-reports" aria-expanded="false" aria-controls="nav-new-request">
-                Staff Management
-                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-double-down" fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd"
-                        d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
-                    <path fill-rule="evenodd"
-                        d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
-                </svg>
-            </a>
-            <div class="collapse" id="nav-new-reports">
-                <a href="{{ route('manage-pillars') }}">
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                    {{-- <li>
+                        <a data-toggle="collapse" href="#nav-new-reports" aria-expanded="false" aria-controls="nav-new-request">
+                            Staff Management
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-double-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                            </svg>
+                        </a>
+                        <div class="collapse" id="nav-new-reports">
+                            <a href="{{ route('manage-pillars') }}">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
                     </svg>
                     Create Staff Appraisal</a>
-                <a href="{{ route('manage-pillars') }}">
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
-                    </svg>
-                    Manage Staff</a>
-            </div>
+                    <a href="{{ route('manage-pillars') }}">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                        </svg>
+                        Manage Staff</a>
+        </div>
         </li>
         <!-- <li><a href="dlab_create_project.php">Create A new project</a></li> -->
         <li><a href="{{ route('update') }}">My Timesheet</a></li>
@@ -1531,9 +1543,9 @@
         <li><a href="{{ route('admin') }}">My Records</a></li>
 
         <!-- <li><a href="dlab_data_tests.php"> Data Mapping</a></li> -->
-        <li><a href="{{ route('manage-users') }}">Scholars and Grantees</a></li> --}}
+        <li><a href="{{ route('manage-users') }}">Scholars and Grantees</a></li>
         <li><a href="#">Pillar KPI Management</a></li>
-        <li><a href="#">Account Management</a></li>
+        <li><a href="#">Account Management</a></li>--}}
         <li>
             <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
@@ -1559,8 +1571,7 @@
                             </button>
                         </div>
                         <ul class="nav navbar-nav justify-content-end" style="display: contents;">
-                            <li><a href="#">Welcome, <strong
-                                        style="color: #a7a4a2;">{{ Auth::user()->fname }}</strong></a></li>
+                            <li><a href="#">Welcome, <strong style="color: #a7a4a2;">{{ Auth::user()->fname }}</strong></a></li>
                         </ul>
                     </div>
                 </nav>
@@ -1578,27 +1589,22 @@
     </div>
 
     <!-- jQuery CDN -->
-    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-    <!-- Bootstrap Js CDN -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+   Bootstrap Js CDN -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  -->
     <!-- jQuery Custom Scroller CDN -->
     <!-- JS, Popper.js, and jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
     </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
     </script>
 
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/en-gb.js"></script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker-standalone.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker-standalone.min.css">
     </script>
     <script src="../../web/js/moment.min.js"></script>
     <script src="../../web/js/bootstrap-datetimepicker.min.js"></script>
@@ -1606,23 +1612,21 @@
 
 
     <script type="text/javascript">
-        $(document).ready(function () {
+        $(document).ready(function() {
             $('[data-toggle=confirmation]').confirmation({
                 rootSelector: '[data-toggle=confirmation]',
-                onConfirm: function (event, element) {
+                onConfirm: function(event, element) {
                     element.closest('form').submit();
                 }
             });
         });
-
     </script>
 
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             $('#dtBasicExample').DataTable();
             $('.dataTables_length').addClass('bs-select');
         });
-
     </script>
 
     {{-- script that loads a modal that collects user tasks daily --}}
@@ -1634,10 +1638,10 @@
 
 
     <script>
-        (function ($) {
-            $(function () {
+        (function($) {
+            $(function() {
 
-                var addFormGroup = function (event) {
+                var addFormGroup = function(event) {
                     event.preventDefault();
 
                     var $formGroup = $(this).closest('.form-group');
@@ -1657,7 +1661,7 @@
                     }
                 };
 
-                var removeFormGroup = function (event) {
+                var removeFormGroup = function(event) {
                     event.preventDefault();
 
                     var $formGroup = $(this).closest('.form-group');
@@ -1671,7 +1675,7 @@
                     $formGroup.remove();
                 };
 
-                var countFormGroup = function ($form) {
+                var countFormGroup = function($form) {
                     return $form.find('.form-group').length;
                 };
 
@@ -1680,12 +1684,11 @@
 
             });
         })(jQuery);
-
     </script>
 
 
     <script>
-        window.onload = function () {
+        window.onload = function() {
 
             var chart = new CanvasJS.Chart("chartDlabPyramid", {
                 animationEnabled: true,
@@ -1727,12 +1730,11 @@
             chart.render();
 
         }
-
     </script>
 
 
     <script>
-        window.onload = function () {
+        window.onload = function() {
 
             var chart = new CanvasJS.Chart("chartContainer", {
                 animationEnabled: true,
@@ -2021,7 +2023,7 @@
             chart.render();
 
             function toggleDataSeries(e) {
-                if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+                if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
                     e.dataSeries.visible = false;
                 } else {
                     e.dataSeries.visible = true;
@@ -2240,7 +2242,7 @@
             }
 
             function toggleDataSeries(e) {
-                if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+                if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
                     e.dataSeries.visible = false;
                 } else {
                     e.dataSeries.visible = true;
@@ -2250,27 +2252,25 @@
 
 
         }
-
     </script>
 
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"> </script>
 
 
     <script type="text/javascript">
-        $(document).ready(function () {
+        $(document).ready(function() {
 
 
-            $('#sidebarCollapse').on('click', function () {
+            $('#sidebarCollapse').on('click', function() {
                 $('#sidebar, #content').toggleClass('active');
                 $('.collapse.in').toggleClass('in');
                 $('a[aria-expanded=true]').attr('aria-expanded', 'false');
             });
         });
-
     </script>
 
     <script>
-        $("#menu-toggle").click(function (e) {
+        $("#menu-toggle").click(function(e) {
             e.preventDefault();
             $("#wrapper").toggleClass("toggled");
         });
@@ -2282,29 +2282,18 @@
         function closeNav() {
             document.getElementById("mySidenav").style.width = "0";
         }
-
-        }
-
     </script>
 
 
 
 
     <script>
-        $(document).ready(function () {
-            $('#selectedBatch').on('change', function () {
+        $(document).ready(function() {
+            $('#selectedBatch').on('change', function() {
                 if (this.value == 'stage 1') {
                     $("#pnl_candling_report").show();
-                    // $('#contact').text("Email Address");
-                    // $('#selected_batch_id').text("'
-                    //  alert($(this).find("option:selected").text());
-                    // batch_id
                     document.getElementById("selected_batch_id").innerHTML = $(this).find(
                         "option:selected").text();
-                    //document.getElementById("batch_id").innerHTML = $(this).find("option:selected").text();
-
-
-
                     $("#pnl_hatching_report").hide();
                     $("#pnl_sales_report").hide();
                 } else if (this.value == 'stage 2') {
@@ -2330,13 +2319,12 @@
             });
             //console.log("hellow");
         });
-
     </script>
 
 
     <script>
-        $(document).ready(function () {
-            $('#selectPillar').on('change', function () {
+        $(document).ready(function() {
+            $('#selectPillar').on('change', function() {
                 if (this.value == 'cb') {
                     $("#pnl_cb_pillar").show();
                     // document.getElementById("selected_batch_id").innerHTML = $(this).find("option:selected").text();
@@ -2373,15 +2361,14 @@
             });
             //console.log("hellow");
         });
-
     </script>
 
 
 
     <script>
         // selectCBindicator
-        $(document).ready(function () {
-            $('#selectCBindicator').on('change', function () {
+        $(document).ready(function() {
+            $('#selectCBindicator').on('change', function() {
                 if (this.value == 'indicator1') {
                     $("#pnl_kpi_1").show();
 
@@ -2462,7 +2449,6 @@
             });
             //console.log("dlab cb");
         });
-
     </script>
 
 
@@ -2472,8 +2458,8 @@
 
     <script>
         // selectCEindicator
-        $(document).ready(function () {
-            $('#selectCEindicator').on('change', function () {
+        $(document).ready(function() {
+            $('#selectCEindicator').on('change', function() {
                 if (this.value == 'indicator1') {
                     $("#pnl_kpi_1").show();
 
@@ -2554,7 +2540,6 @@
             });
             //console.log("dlab cb");
         });
-
     </script>
 
 
@@ -2563,8 +2548,8 @@
 
     <script>
         // selectRIindicator
-        $(document).ready(function () {
-            $('#selectRIindicator').on('change', function () {
+        $(document).ready(function() {
+            $('#selectRIindicator').on('change', function() {
                 if (this.value == 'indicator1') {
                     $("#pnl_kpi_1").show();
 
@@ -2645,14 +2630,13 @@
             });
             //console.log("dlab cb");
         });
-
     </script>
 
     {{-- data science pillar --}}
     <script>
         // selectDSindicator
-        $(document).ready(function () {
-                    $('#selectDSindicator').on('change', function () {
+        $(document).ready(function() {
+                    $('#selectDSindicator').on('change', function() {
                             if (this.value == 'indicator1') {
                                 $("#pnl_kpi_1").show();
 
@@ -2685,8 +2669,9 @@
                                 $("#pnl_select_pillars").hide();
 
                             } else if (this.value == 'indicator10') {
-                                $("#pnl_kpi_10).show();
-                                    $("#pnl_ds_pillar").hide(); $("#pnl_select_pillars").hide();
+                                $("#pnl_kpi_10").show();
+                                $("#pnl_ds_pillar").hide();
+                                $("#pnl_select_pillars").hide();
 
                                 }
                                 else if (this.value == 'indicator11') {
@@ -2733,7 +2718,6 @@
                             });
                         //console.log("dlab cb");
                     });
-
     </script>
 
 
@@ -2741,8 +2725,8 @@
         // {{-- data INSTITUTIONAL STREGTHING pillar --}}
 
         // selectDSindicator
-        $(document).ready(function () {
-                    $('#selectDSindicator').on('change', function () {
+        $(document).ready(function() {
+                    $('#selectDSindicator').on('change', function() {
                             if (this.value == 'indicator1') {
                                 $("#pnl_kpi_1").show();
 
@@ -2775,8 +2759,9 @@
                                 $("#pnl_select_pillars").hide();
 
                             } else if (this.value == 'indicator10') {
-                                $("#pnl_kpi_10).show();
-                                    $("#pnl_ds_pillar").hide(); $("#pnl_select_pillars").hide();
+                                $("#pnl_kpi_10").show();
+                                $("#pnl_ds_pillar").hide();
+                                $("#pnl_select_pillars").hide();
 
                                 }
                                 else if (this.value == 'indicator11') {
@@ -2823,7 +2808,6 @@
                             });
                         //console.log("dlab cb");
                     });
-
     </script>
 
 
@@ -2831,8 +2815,8 @@
     <script>
         //   <!-- after user selects activity to update -->
 
-        $(document).ready(function () {
-            $('#selectUpdateActivity').on('change', function () {
+        $(document).ready(function() {
+            $('#selectUpdateActivity').on('change', function() {
                 if (this.value == 1) {
                     $("#pnl_kpi_1").show();
                     // document.getElementById("selected_batch_id").innerHTML = $(this).find("option:selected").text();
@@ -2931,8 +2915,25 @@
                 }
             });
         });
-
     </script>
+    <script>
+    function cpl(e,param){
+
+        e.preventDefault();
+        $(param).toggle().style.transition = "all 2s";
+
+    }
+function cplt(e,param){
+
+e.preventDefault();
+
+            $(param).addClass('active').addClass('show')
+                .siblings().removeClass('active').removeClass('show');
+
+
+
+}
+</script>
 </body>
 
 </html>

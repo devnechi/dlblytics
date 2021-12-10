@@ -3,14 +3,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use Monarobase\CountryList\CountryListFacade;
 use App\PillarProject;
 
 use App\User;
 use App\Pillar;
 use App\Department;
 use App\DManagerRoles;
+use App\Facilitator;
+use App\Imprest;
+use App\PillarActivities;
+use App\PillarSubActivities;
+
 use Auth;
+use Facade\FlareClient\Http\Response;
 
 class DSpillarManager extends Controller
 {
@@ -34,11 +40,21 @@ class DSpillarManager extends Controller
                 ->where('review_status', '=', 'pending review')
                 ->get();
 
+        //pillar manager get activities created by them
+        $myactivities=PillarActivities::all();
+        $mysubactivities=PillarSubActivities::all();
+
          //my approved projects
          $myapprovedprojects = DB::table('pillar_projects')
                             ->where('created_by', '=', $cuid)
                             ->where('pillar_ref_id', '=', $cpid)
                             ->where('review_status', '=', 'approved')
+                            ->get();
+
+
+                //pillar manager get project created by them
+        $imprests = DB::table('imprests')
+                            ->where('requested_by', '=', $cuid)
                             ->get();
 
          //my denied projects
@@ -55,26 +71,149 @@ class DSpillarManager extends Controller
             //sub activities
             // $mysubactivities
 
-        return view('lmds.index', compact('pillarprojects', 'myprojects', 'myapprovedprojects', 'mydeniedprojects'));
+        return view('lmds.index', compact('pillarprojects', 'myapprovedprojects', 'mydeniedprojects'))->with('myprojects',$myprojects)->with('myactivities',$myactivities)->with('mysubactivities',$mysubactivities)->with("imprests",$imprests);
+
     }
 
 
+    public function facilitatorpost(Request $request){
+        $fac=new Facilitator();
+        $fac->name=$request->facil_name;
+        $fac->save();
+        return Response()->json($fac);
+    }
       //create new imprest
     public function createImprest(){
+
+
+
         return view('lmds.imprestds.create-new-imprest');
     }
+    public function showImprest($id){
+        $imprest = Imprest::find($id);
 
-    public function createNewProject(){
-        return view('lmds.dsprojects.ds-create-new-project');
+        return view('lmds.dsactivities.imprest_show')->with("imprest",$imprest);
     }
 
-    public function createNewActivity(){
-        return view('lmds.dsactivities.ds-create-new-activity');
+  
+
+    public function createNewActivity($proj_id=null){
+        $users=User::all();
+        $countries=CountryListFacade::getlist('en');
+        $regions=array(
+            'Mjini Magharibi',
+            'Dar es Salaam',
+            'Kilimanjaro',
+            'Unguja South',
+            'Pemba South',
+            'Unguja North',
+            'Iringa',
+            'Njombe',
+            'Tanga',
+            'Arusha',
+            'Manyara',
+            'Pemba North',
+            'Ruvuma',
+            'Morogoro',
+            'Singida',
+            'Mbeya',
+            'Mara',
+            'Pwani',
+            'Geita',
+            'Mwanza',
+            'Kagera',
+            'Kigoma',
+            'Lindi',
+            'Shinyanga',
+            'Simiyu',
+            'Mtwara',
+            'Dodoma',
+            'Katavi',
+            'Rukwa',
+            'Tabora'
+        );
+        $projs=PillarProject::all();
+        return view('lmds.dsactivities.ds-create-new-activity')->with('projs',$projs)->with('users',$users)->with('countries',$countries)->with('regions',$regions)->with('proj_id',$proj_id);
+    }
+    public function createNewSubActivity(){
+        $users=User::all();
+        $countries=CountryListFacade::getlist('en');
+        $regions=array(
+            'Mjini Magharibi',
+            'Dar es Salaam',
+            'Kilimanjaro',
+            'Unguja South',
+            'Pemba South',
+            'Unguja North',
+            'Iringa',
+            'Njombe',
+            'Tanga',
+            'Arusha',
+            'Manyara',
+            'Pemba North',
+            'Ruvuma',
+            'Morogoro',
+            'Singida',
+            'Mbeya',
+            'Mara',
+            'Pwani',
+            'Geita',
+            'Mwanza',
+            'Kagera',
+            'Kigoma',
+            'Lindi',
+            'Shinyanga',
+            'Simiyu',
+            'Mtwara',
+            'Dodoma',
+            'Katavi',
+            'Rukwa',
+            'Tabora'
+        );
+        $acties=PillarActivities::all();
+        return view('lmds.dsactivities.ds-create-new-subactivity')->with('acties',$acties)
+        ->with('users',$users)->with('countries',$countries)->with('regions',$regions);
     }
 
     public function createNewProjectActivity(){
 
         // $cprojid = Crypt::decrypt($id);
         return view('lmds.dsactivities.ds-create-project-activity');
+    }
+
+    public function Tanzaniaregions(){
+    return array(
+    'Mjini Magharibi',
+    'Dar es Salaam',
+    'Kilimanjaro',
+    'Unguja South',
+    'Pemba South',
+    'Unguja North',
+    'Iringa',
+    'Njombe',
+    'Tanga',
+    'Arusha',
+    'Manyara',
+    'Pemba North',
+    'Ruvuma',
+    'Morogoro',
+    'Singida',
+    'Mbeya',
+    'Mara',
+    'Pwani',
+    'Geita',
+    'Mwanza',
+    'Kagera',
+    'Kigoma',
+    'Lindi',
+    'Shinyanga',
+    'Simiyu',
+    'Mtwara',
+    'Dodoma',
+    'Katavi',
+    'Rukwa',
+    'Tabora'
+);
+
     }
 }

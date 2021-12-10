@@ -46,8 +46,12 @@ class cePillarProjectController extends Controller
             'total_project_cost' => 'required',
             'created_by' => 'required',
             'pillar_ref_id' => 'required',
-
+            'start_date'=>'required',
+            'end_date'=>'required',
+            'project_file_title.*' => 'required|file|mimes: doc,docx,csv,rtf,xlsx,xls,txt,pdf,zip|max:2048',
+            'project_expected_outcomes.*' => 'required|file|mimes: doc,docx,csv,rtf,xlsx,xls,txt,pdf,zip|max:2048'
         ]);
+
 
 
         $project = new PillarProject([
@@ -56,7 +60,9 @@ class cePillarProjectController extends Controller
             'pillar_ref_id'=>$request->get('pillar_ref_id'),
             'project_desc' => $request->get('project_desc'),
             'total_project_cost' => $request->get('total_project_cost'),
-            'current_stage' => $request->get('current_stage')
+            'current_stage' => $request->get('current_stage'),
+            'start_date' => $request->get('start_date'),
+            'end_date' => $request->get('end_date')
         ]);
 
         // 'project_objectives' => $request->get('project_objectives'),
@@ -70,13 +76,7 @@ class cePillarProjectController extends Controller
          $project_expected_outcomes = [];
          $project_kpi_ref_id = [];
 
-         foreach($request->input('project_objectives') as $key => $value) {
-             $project_objectives["project_objectives.{$key}"] = 'required';
-         }
 
-         foreach($request->input('project_expected_outcomes') as $key => $value) {
-             $project_expected_outcomes["project_expected_outcomes.{$key}"] = 'required';
-         }
 
          //pillar full document url
         // store the projObj
@@ -97,20 +97,13 @@ class cePillarProjectController extends Controller
             $projoutcome->save();
         }
 
-        $validatedData = $request->validate([
-            'files' => 'required|file|mimes: doc,docx,csv,rtf,xlsx,xls,txt,pdf,zip'
-            ],
-            [
-                'files.*.required' => 'Please upload an file only',
-                'files.*.mimes' => 'Only doc, docx, pdf and txt files are allowed',
-                'files.*.max' => 'Sorry! Maximum allowed size for an image is 2MB'
-            ]);
 
-        if($request->hasfile('files'))
+
+        if($request->hasfile('project_file_title'))
          {
-            foreach($request->file('files') as $key => $file)
-            {
-                $path = $file->store('storage/project_documents_uploads');
+            $file= $request->file('project_file_title');
+
+                $path = $file->store('/Documents_uploads');
                 $filename = time().'-'.$file->getClientOriginalName();
                 // $file->move(public_path('images'), $filename);
                 $file->move($path, $filename);
@@ -121,10 +114,29 @@ class cePillarProjectController extends Controller
                     'created_at' => NOW()
                 ]);
                 $projectdoc->save();
-            }
+
          }
 
+         if($request->hasfile('project_expected_outcomes'))
+         {
+            $file= $request->file('project_expected_outcomes');
 
+                $path2 = $file->store('/Documents_uploads');
+                $filename = time().'-'.$file->getClientOriginalName();
+                // $file->move(public_path('images'), $filename);
+                $file->move($path, $filename);
+                $projectdoc = new DocProjectFile([
+                    'project_id' => $proj_ref_id,
+                    'project_file_title' => $filename,
+                    'file_path' => $path2,
+                    'created_at' => NOW()
+                ]);
+                $projectdoc->save();
+
+         }
+
+         $mailer= new MailController();
+         $mailer->SendMail();
         $request->session()->flash('alert-success', 'project was successfully added!. You can now manage it.');
          return redirect()->route('ce-pillar-manager')
             ->with(['success', 'project was successfully added!. you can now manage it.'], ['tab', 'projects-nactivities-md-content']);

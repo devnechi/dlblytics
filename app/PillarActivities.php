@@ -14,14 +14,13 @@ class PillarActivities extends Model
     protected $fillable = [
         'act_title',
         'created_by',
-        'project_ref_id',
         'act_desc',
         'act_objectives',
-        'ref_kpi',
-        'act_expected_outcomes',
-        'total_activity_cost',
-        'current_stage'
+        'total_act_cost',
+        'current_stage',
+        'start_date',
+        'end_date'
     ];
 }
 
-}
+

@@ -131,10 +131,10 @@
             <br />
             <div class="row">
                 <div class="form-group col-md-4 input-group-lg">
-                    <label for="forDepartment">Specify Pillar: </label>
+                    <label for="forDepartment">Select Pillar: </label>
                     <select class="form-control" aria-label="Large" id="pillar_id" name="pillar_id"
                     aria-describedby="inputGroup-sizing-sm">
-                    <option value="select">Specify user pillar</option>
+                    <option value="select">Select user pillar</option>
                     @foreach($pillars as $pillar)
                     <option value="{{$pillar->pillar_id}}">{{$pillar->pillar_title}}</option>
                     @endforeach
@@ -143,10 +143,10 @@
             </div>
             <div class="row">
                 <div class="form-group col-md-4 input-group-lg">
-                    <label for="forUserrole">Select Management pillar: </label>
+                    <label for="forUserrole">Select pillar Management Role: </label>
                     <select class="form-control" aria-label="Large" id="role" name="role"
                     aria-describedby="inputGroup-sizing-sm">
-                    <option value="select">Select managers pillar</option>
+                    <option value="select">Select Role</option>
                     @foreach($pillarmanagerroles as $pillarmanagerrole)
                     <option value="{{$pillarmanagerrole->role_id}}">{{$pillarmanagerrole->role_title}}</option>
                     @endforeach

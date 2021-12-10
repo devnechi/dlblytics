@@ -15,6 +15,7 @@ class DocProjectFile extends Model
     protected $fillable = [
         'project_file_title',
         'project_id',
+        'file_type',
         'file_path'
     ];
 }
