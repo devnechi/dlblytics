@@ -15,7 +15,8 @@ class CreateNewProject extends Migration
     {
         Schema::create('pillar_projects', function (Blueprint $table) {
             $table->increments('project_id');
-            $table->string('project_title');
+            $table->string('project_title')->unique();
+            $table->string('project_lead_id');
             $table->string('created_by');
             $table->string('start_date');
             $table->string('end_date');
@@ -36,6 +37,9 @@ class CreateNewProject extends Migration
             $table->string('date_reviewed');
             $table->string('date_created');
             $table->string('date_updated');
+            $table->string('lead')->nullable();
+            $table->json('project_funders')->nullable();
+            $table->json('project_partiners')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

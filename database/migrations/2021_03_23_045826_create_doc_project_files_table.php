@@ -17,6 +17,7 @@ class CreateDocProjectFilesTable extends Migration
             $table->increments('project_file_id');
             $table->string('project_id')->nullable();
             $table->string('project_file_title')->nullable();
+            $table->string('file_type')->nullable();
             $table->string('file_path')->nullable();
             $table->timestamps();
         });
