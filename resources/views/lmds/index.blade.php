@@ -6251,31 +6251,14 @@
 
                                                                                                 </li>
                                                                                                 <li class="list-group-item">
-                                                                                                    <a href="{{ route('pillar-project.edit', $myact->pillar_act_id)}}" class="btn btn-outline-info btn-md d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view update project details">
+                                                                                                    <a href="{{ route('edit-activity', $myact->pillar_act_id)}}" class="btn btn-outline-info btn-md d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view update project details">
                                                                                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
                                                                                                             <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
                                                                                                         </svg>
                                                                                                         <p class="m-auto">Edit Activity </p>
                                                                                                     </a>
                                                                                                 </li>
-                                                                                                <li class="list-group-item">
-                                                                                                    <a href="{{ route('create-allowance-request', ['projid' => $myact->project_id]) }}" class="list-group-item list-group-item-action">
-                                                                                                        Allowance Request
-                                                                                                    </a>
-                                                                                                </li>
-                                                                                                <li class="list-group-item">
-                                                                                                    <a href="{{ route('create-new-per-diem-claim', ['projid' => $myact->project_id]) }}" class="list-group-item list-group-item-action">
-                                                                                                        Per Diem claim
-                                                                                                    </a>
-                                                                                                </li>
-                                                                                                <li class="list-group-item">
-                                                                                                    <a href="{{ route('create-new-petty-cash', ['projid' => $myact->project_id]) }}" class="list-group-item list-group-item-action">
-                                                                                                        Petty Cash
-                                                                                                    </a>
-                                                                                                </li>
-                                                                                                <li class="list-group-item">
-                                                                                                    <a href="{{ route('create-payment-requisition', ['projid' => $myact->project_id]) }}" class="list-group-item list-group-item-action"> Payment Requisition
-                                                                                                    </a>
+
                                                                                             </ul>
                                                                                         </div>
                                                                                         <div class="modal-footer">
@@ -6862,7 +6845,7 @@
                                                             <table class="table table-bordered table-hover">
                                                                 <p class="d-flex justify-content-between"><strong>My SubActivities that are on Administrative review</strong>
 
-                                                                    <a class="btn btn-outline-info btn-lg" href="{{ route('ds-create-new-activity') }}" role="button"> create a new SubActivity</a>
+                                                                    <a class="btn btn-outline-info btn-lg" href="{{ route('ds-create-new-subactivity') }}" role="button"> create a new SubActivity</a>
                                                                 </p>
                                                                 <thead>
                                                                     <tr>
@@ -6917,7 +6900,7 @@
 
                                                                                                 </li>
                                                                                                 <li class="list-group-item">
-                                                                                                    <a href="{{ route('pillar-project.edit', $myact->id)}}" class="btn btn-outline-info btn-md d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view update project details">
+                                                                                                    <a href="{{ route('pillar-subactivity.edit', $myact->id)}}" class="btn btn-outline-info btn-md d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view update project details">
                                                                                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
                                                                                                             <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
                                                                                                         </svg>

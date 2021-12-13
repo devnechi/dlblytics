@@ -157,7 +157,7 @@ class PillarProjectController extends Controller
 
             ]);
             $proj=PillarProject::find($request->pjid);
-dd($request);
+
            $proj->project_title = $request->get('project_title');
            $proj->created_by= $request->get('created_by');
            $proj->pillar_ref_id=$request->pillar_ref_id;

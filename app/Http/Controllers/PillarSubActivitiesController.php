@@ -4,22 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
-
 use App\User;
-use DateTime;
-use App\Pillar;
-use App\Department;
-use App\DManagerRoles;
-use App\PillarProject;
 use App\PillarActivities;
 use App\PillarSubActivities;
-use App\projectObjective;
-use App\projectOutcome;
-use App\DocProjectFile;
+use App\Imprest;
+use App\Imprest_activity;
+use Monarobase\CountryList\CountryListFacade;
 
 use Auth;
-
 class PillarSubActivitiesController extends Controller
 {
     /**
@@ -27,64 +19,188 @@ class PillarSubActivitiesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function createNewSubActivity($act_id=0){
+        $users=User::all();
+        $countries=CountryListFacade::getlist('en');
+        $regions=array(
+            'Mjini Magharibi',
+            'Dar es Salaam',
+            'Kilimanjaro',
+            'Unguja South',
+            'Pemba South',
+            'Unguja North',
+            'Iringa',
+            'Njombe',
+            'Tanga',
+            'Arusha',
+            'Manyara',
+            'Pemba North',
+            'Ruvuma',
+            'Morogoro',
+            'Singida',
+            'Mbeya',
+            'Mara',
+            'Pwani',
+            'Geita',
+            'Mwanza',
+            'Kagera',
+            'Kigoma',
+            'Lindi',
+            'Shinyanga',
+            'Simiyu',
+            'Mtwara',
+            'Dodoma',
+            'Katavi',
+            'Rukwa',
+            'Tabora'
+        );
+        $acts=PillarActivities::all();
+        return view('lmds.dsactivities.ds-create-new-subactivity')->with('acts',$acts)->with('users',$users)->with('countries',$countries)->with('regions',$regions)->with('act_id',$act_id);
     }
-
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-       
-       $validated=$request->validate([                 
-           'subact_title'=> 'required',
+
+        $request->validate([
+            'subact_title'=> 'required',
             'review_status'=> 'required',
             'current_stage'=> 'required',
             'created_by'=> 'required',
-            'activity_ref_id'=> 'required',
             'subact_desc'=> 'required',
-            'subact_objectives'=> 'required',
             'total_subactivity_cost'=> 'required',
             'start_date'=> 'required',
-            'end_date'=> 'required',
+            'subact_objectives'=> 'required',
             'pinvolved'=> 'required',
+            'end_date'=> 'required',
             'country'=> 'required',
-            'region'=> 'required',
-            'venue'=> 'required',
+            'venue'=> 'required'
+
         ]);
-    
-        $activity = new PillarSubActivities();   
-        $ractivity=$activity->create($validated);
-    
+        $activity = new PillarSubActivities([
+
+            'subact_title'=> $request->get('subact_title'),
+            'review_status'=> $request->get('review_status'),
+            'current_stage'=> $request->get('current_stage'),
+            'created_by'=> $request->get('created_by'),
+            'activity_ref_id'=> $request->get('activity_ref_id'),
+            'subact_desc'=> $request->get('subact_desc'),
+            'total_subactivity_cost'=> $request->get('total_subactivity_cost'),
+            'subact_objectives'=> $request->get('subact_objectives'),
+            'pinvolved'=> $request->get('pinvolved'),
+            'start_date'=> $request->get('start_date'),
+            'end_date'=> $request->get('end_date'),
+            'country'=> $request->get('country'),
+            'region'=> $request->get('region'),
+            'venue'=> $request->get('venue')
+        ]);
+
+
+        //get last activity id
+
+       $activity_id=$activity->save();
 
 
 
-        //  $fileModel = new DocProjectFile;
 
-        //  if($request->hasfile('activity_doc')) {
-        //      $fileName = time().'_'.$request->file('activity_doc')->getClientOriginalName();
-        //      $filePath = $request->file('activity_doc')->storeAs('activity_documents_uploads', $fileName, 'public');
-        //      $fileModel->file_type="activitydoc";
-        //      $fileModel->project_id=$activity->project_ref_id;
-        //      $fileModel->project_file_title = time().'_'.$request->file('activity_doc')->getClientOriginalName();
-        //      $fileModel->file_path = '/storage/' . $filePath;
-        //      $fileModel->save();
-        //  }
 
-        $request->session()->flash('alert-success', 'Subactivity was successfully added!. You can now manage it.');
+        $request->session()->flash('alert-success', 'SubActivity was successfully added!. You can now manage it.');
         return redirect()->route('ds-pillar-manager')
-            ->with(['success', 'Subactivity was successfully added!. you can now manage it.'], ['tab', 'projects-nactivities-md-content']);
+            ->with(['success', 'SubActivity was successfully added!. you can now manage it.'], ['tab', 'projects-nactivities-md-content']);
 
         //var_dump( $request->get('created_by'));
         }
 
-    public function Activid($id)
+        public function edit($id)
+        {
+
+        $users=User::all();
+        $countries=CountryListFacade::getlist('en');
+        $regions=array(
+            'Mjini Magharibi',
+            'Dar es Salaam',
+            'Kilimanjaro',
+            'Unguja South',
+            'Pemba South',
+            'Unguja North',
+            'Iringa',
+            'Njombe',
+            'Tanga',
+            'Arusha',
+            'Manyara',
+            'Pemba North',
+            'Ruvuma',
+            'Morogoro',
+            'Singida',
+            'Mbeya',
+            'Mara',
+            'Pwani',
+            'Geita',
+            'Mwanza',
+            'Kagera',
+            'Kigoma',
+            'Lindi',
+            'Shinyanga',
+            'Simiyu',
+            'Mtwara',
+            'Dodoma',
+            'Katavi',
+            'Rukwa',
+            'Tabora'
+        );
+        $subactiv=PillarSubActivities::find($id);
+        $acts=PillarActivities::all();
+        return view('lmds.dsactivities.ds-edit-subactivity')->with('acts',$acts)->with('users',$users)
+        ->with('countries',$countries)
+        ->with('regions',$regions)
+        ->with('subactiv',$subactiv);
+        }
+
+
+
+        public function update(Request $request)
+        {
+
+            $request->validate([
+                'subact_title'=> 'required',
+                'review_status'=> 'required',
+                'current_stage'=> 'required',
+                'created_by'=> 'required',
+                'subact_desc'=> 'required',
+                'total_subactivity_cost'=> 'required',
+                'start_date'=> 'required',
+                'subact_objectives'=> 'required',
+                'pinvolved'=> 'required',
+                'end_date'=> 'required',
+                'country'=> 'required',
+                'venue'=> 'required'
+            ]);
+            $subactivity = PillarSubActivities::find($request->id);
+            $subactivity->subact_title= $request->get('subact_title');
+            $subactivity->review_status= $request->get('review_status');
+            $subactivity->current_stage= $request->get('current_stage');
+            $subactivity->created_by= $request->get('created_by');
+            $subactivity->activity_ref_id= $request->get('activity_ref_id');
+            $subactivity->subact_desc= $request->get('subact_desc');
+            $subactivity->total_subactivity_cost= $request->get('total_subactivity_cost');
+            $subactivity->subact_objectives= $request->get('subact_objectives');
+            $subactivity->pinvolved= $request->get('pinvolved');
+            $subactivity->start_date= $request->get('start_date');
+            $subactivity->end_date= $request->get('end_date');
+            $subactivity->country=$request->get('country');
+            $subactivity->region= $request->get('region');
+            $subactivity->venue= $request->get('venue');
+               //get last activity id
+
+           $subactivity->update();
+
+           $request->session()->flash('alert-success', 'subactivity was successfully updated!. You can now manage it.');
+           return redirect()->route('ds-pillar-manager')
+               ->with(['success', 'subactivity was successfully added!. you can now manage it.'], ['tab', 'projects-nactivities-md-content']);
+
+
+
+
+    }
+        public function Activid($id)
     {
         $proj = PillarActivities::find($id);
         // return view('admin.pillarmanage.edit-pillar', compact('pillar'));
