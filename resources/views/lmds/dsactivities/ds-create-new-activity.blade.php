@@ -58,12 +58,12 @@
                     <div class="form-group input-group-lg">
                         <div class="row">
                             <div class="col-md-6 input-group-lg">
-                                <select class="form-control form-group col-lg-12" aria-label="Large" id="selectProject" name="pinvolved" aria-describedby="inputGroup-sizing-sm">
+                                <select class="form-control form-group col-lg-12" aria-label="Large" id="selectProject" name="pinvolved[]" aria-describedby="inputGroup-sizing-sm">
                                     <option value="">Select individual</option>
 
                                     @if(isset($users))
                                     @foreach($users as $user)
-                                    <option value="{{$user->user_id}}">{{$user->fname}} {{$user->lname}}</option>
+                                    <option value="{{$user->fname}}">{{$user->fname}} {{$user->lname}}</option>
                                     @endforeach
                                     @else
 
@@ -107,7 +107,7 @@
                     <div class="form-group input-group-lg">
                         <div class="row">
                             <div class="col-md-6 input-group-lg">
-                                <input type="text" name="project_objectives[]" class="form-control">
+                                <input type="text" name="act_objectives[]" class="form-control">
                             </div>
                             <div class="col-md-2 input-group-lg">
                                 <span class="input-group-btn"><button type="button" class="btn btn-outline-primary btn-add"> add +
@@ -123,7 +123,7 @@
         <div class="row">
             <div class="form-group col-md-4 input-group-lg">
                 <label for="Country">Country</label>
-                <select class="form-control form-group col-lg-12" onchange="countrychange(this)" aria-label="Large" id="selectProject" name="Country" aria-describedby="inputGroup-sizing-sm">
+                <select class="form-control form-group col-lg-12" onchange="countrychange(this)" aria-label="Large" id="selectProject" name="country" aria-describedby="inputGroup-sizing-sm">
                     <option value="">Select country</option>
                     @foreach($countries as $country)
                     <option value="{{$country }}">{{$country }}</option>
@@ -274,25 +274,26 @@
                                                                             </div>
                                                                             <div class=" input-group-sm mr-1 col-md-1">
                                                                                 <label for="formGroupExampleInput2">Qty</label>
-                                                                                <input type="text" name="qty[]" class="form-control">
+                                                                                <input type="text" name="qty[]"
+                                                                                id="qty" class="form-control">
                                                                             </div>
                                                                             <div class=" input-group-sm mr-1 col-md-3">
                                                                                 <label for="formGroupExampleInput2">Unit</label>
-                                                                                <input type="text" name="unit[]" class="form-control">
+                                                                                <input type="text" name="unit[]" id="united" class="form-control">
                                                                             </div>
 
                                                                             <div class=" input-group-sm mr-1 col-md-1">
                                                                                 <label for="formGroupExampleInput2">Number</label>
-                                                                                <input type="text" name="number[]" class="form-control">
+                                                                                <input type="text" name="number[]" id="number"class="form-control">
                                                                             </div>
                                                                             <div class=" input-group-sm mr-1">
                                                                                 <label for="formGroupExampleInput2">Unit price</label>
-                                                                                <input type="text" name="unit_price[]" class="form-control">
+                                                                                <input type="text" onchange="totalcost(event)" name="unit_price[]" class="form-control">
                                                                             </div>
 
                                                                             <div class=" input-group-sm text-nowrap">
                                                                                 <label for="formGroupExampleInput2">Total Amount<small> (TZS)</small></label>
-                                                                                <input type="text" name="total_cost[]" class="form-control">
+                                                                                <input type="text" id="tcost"name="total_cost[]" readonly class="form-control">
                                                                             </div>
 
 
@@ -360,6 +361,13 @@
 
     function changedimprest(event) {
         $("#" + event.value).toggle().style.transition = "all 2s";
+    }
+    function totalcost(e)
+    {
+        var f= document.getElementById('tcost');
+
+     f.value=e.target.value * $('#number').val() * $('#qty').val();
+
     }
 </script>
 @endsection

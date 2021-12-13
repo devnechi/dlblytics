@@ -95,46 +95,8 @@ class DSpillarManager extends Controller
         return view('lmds.dsactivities.imprest_show')->with("imprest",$imprest);
     }
 
-  
 
-    public function createNewActivity($proj_id=null){
-        $users=User::all();
-        $countries=CountryListFacade::getlist('en');
-        $regions=array(
-            'Mjini Magharibi',
-            'Dar es Salaam',
-            'Kilimanjaro',
-            'Unguja South',
-            'Pemba South',
-            'Unguja North',
-            'Iringa',
-            'Njombe',
-            'Tanga',
-            'Arusha',
-            'Manyara',
-            'Pemba North',
-            'Ruvuma',
-            'Morogoro',
-            'Singida',
-            'Mbeya',
-            'Mara',
-            'Pwani',
-            'Geita',
-            'Mwanza',
-            'Kagera',
-            'Kigoma',
-            'Lindi',
-            'Shinyanga',
-            'Simiyu',
-            'Mtwara',
-            'Dodoma',
-            'Katavi',
-            'Rukwa',
-            'Tabora'
-        );
-        $projs=PillarProject::all();
-        return view('lmds.dsactivities.ds-create-new-activity')->with('projs',$projs)->with('users',$users)->with('countries',$countries)->with('regions',$regions)->with('proj_id',$proj_id);
-    }
+
     public function createNewSubActivity(){
         $users=User::all();
         $countries=CountryListFacade::getlist('en');

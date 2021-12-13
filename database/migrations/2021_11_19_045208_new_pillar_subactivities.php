@@ -31,7 +31,7 @@ class NewPillarSubActivities extends Migration
             $table->string('approval_status');
             $table->Integer('imprest_id');
             $table->string('country');
-            $table->string('region');
+            $table->string('region')->nullable();
             $table->string('venue');
             $table->json('pinvolved');
             $table->string('date_approved');

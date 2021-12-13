@@ -10,7 +10,10 @@ class PillarActivities extends Model
     use HasFactory;
     protected $primaryKey = 'pillar_act_id';
     protected $table = "pillar_activities";
-
+    protected $casts = [
+        'pinvolved' => 'array',
+        'act_objectives' => 'array'
+    ];
     protected $fillable = [
         'act_title',
         'created_by',
@@ -19,7 +22,10 @@ class PillarActivities extends Model
         'total_act_cost',
         'current_stage',
         'start_date',
-        'end_date'
+        'end_date',
+        'country',
+        'venue',
+        'pinvolved'
     ];
 }
 

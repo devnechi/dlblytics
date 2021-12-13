@@ -26,13 +26,18 @@ class NewPillarActivities extends Migration
             $table->string('current_stage');
             $table->string('review_status');
             $table->string('approval_status');
-            $table->float('total_funds_allocated');
             $table->string('retirement_id')->nullable();
             $table->string('retirement_status')->nullable();
             $table->string('date_approved');
             $table->string('date_reviewed');
             $table->string('date_created');
             $table->string('date_updated');
+            $table->string('country');
+            $table->string('region')->nullable();
+            $table->string('venue');
+            $table->json('pinvolved');
+            $table->json('act_objectives');
+
             $table->rememberToken();
             $table->timestamps();
         });
