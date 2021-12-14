@@ -173,7 +173,7 @@ class PillarSubActivitiesController extends Controller
                 'country'=> 'required',
                 'venue'=> 'required'
             ]);
-            $subactivity = PillarSubActivities::find($request->id);
+            $subactivity = PillarSubActivities::find($request->subactid);
             $subactivity->subact_title= $request->get('subact_title');
             $subactivity->review_status= $request->get('review_status');
             $subactivity->current_stage= $request->get('current_stage');
@@ -195,10 +195,6 @@ class PillarSubActivitiesController extends Controller
            $request->session()->flash('alert-success', 'subactivity was successfully updated!. You can now manage it.');
            return redirect()->route('ds-pillar-manager')
                ->with(['success', 'subactivity was successfully added!. you can now manage it.'], ['tab', 'projects-nactivities-md-content']);
-
-
-
-
     }
         public function Activid($id)
     {
