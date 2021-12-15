@@ -31,9 +31,22 @@ class PillarActivitiesController extends Controller
      */
     public function index()
     {
-        //
-    }
+        $cuid = Auth::user()->user_id;
+        $cpid = Auth::user()->pillar_id;
 
+
+
+        //pillar manager get project created by them
+        $myactivities = DB::table('pillar_activities')
+                ->where('created_by', '=', $cuid)
+                ->where('pillar_ref_id', '=', $cpid)
+                ->where('review_status', '=', 'pending review')
+                ->get();
+
+
+        return view('lmds.dsactivities.ds-index-activity')->with('myact',$myactivities);
+
+    }
 
     /**
      * Store a newly created resource in storage.

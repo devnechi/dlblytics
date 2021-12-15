@@ -6,7 +6,20 @@ use App\Imprest;
 use App\Imprest_activity;
 use App\Retirement;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
+use App\User;
+use DateTime;
+use App\Pillar;
+use App\Department;
+use App\DManagerRoles;
+use App\PillarProject;
+use App\projectObjective;
+use App\projectOutcome;
+use App\projectkpiReferences;
+use App\DocProjectFile;
+use Auth;
+use App\Facilitator;
+use App\PillarActivities;
 class ImprestController extends Controller
 {
     /**
@@ -16,9 +29,19 @@ class ImprestController extends Controller
      */
     public function index()
     {
-        //
-    }
+        $cuid = Auth::user()->user_id;
+        $cpid = Auth::user()->pillar_id;
 
+        $imprests = Imprest::all();
+
+        return view('imprest.ds-imprest-index')->with('imprests',$imprests);
+    }
+    public function retireindex()
+    {
+
+
+        return view('lmds.dsactivities.ds-retirement-index');
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -64,9 +87,15 @@ class ImprestController extends Controller
 
 
         }
+public function edit($id)
+{
 
+    $imprest=Imprest::findOrFail($id);
+        return view('imprest.ds-edit-imprest')
+        ->with('imprest',$imprest);
+}
 
-        public function retirestore(Request $request)
+        public function update(Request $request)
         {
             $request->validate([
                 'imp_act_id'=> 'required',
@@ -106,12 +135,18 @@ class ImprestController extends Controller
      * @param  \App\Employee  $employee
      * @return \Illuminate\Http\Response
      */
+    public function destroy($id)
+    {
+        Imprest::destroy($id);
+
+        return redirect('imprest/imprest')->with('flash_message', 'Imprest deleted!');
+    }
     public function show($id)
     {
-                $project = Imprest::find($id);
 
-        //return view('pillar-project.show', compact('pillarprojects'));
-            return view('lmds.dsprojects.ds-view-project-full-details', compact('project'));
+                $imprest=Imprest::findOrFail($id);
+                return view('imprest.show')
+                ->with('imprest',$imprest);
 
     }
 }

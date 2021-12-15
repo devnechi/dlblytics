@@ -26,7 +26,37 @@ class PillarProjectController extends Controller
      */
     public function index()
     {
-        //
+        $cuid = Auth::user()->user_id;
+        $cpid = Auth::user()->pillar_id;
+
+        //pillar manager get project created by them
+        $myprojects = DB::table('pillar_projects')
+                ->where('created_by', '=', $cuid)
+                ->where('pillar_ref_id', '=', $cpid)
+                ->where('review_status', '=', 'pending review')
+                ->get();
+
+
+         //my approved projects
+         $myapprovedprojects = DB::table('pillar_projects')
+                            ->where('created_by', '=', $cuid)
+                            ->where('pillar_ref_id', '=', $cpid)
+                            ->where('review_status', '=', 'approved')
+                            ->get();
+
+
+
+         //my denied projects
+          $mydeniedprojects = DB::table('pillar_projects')
+                            ->where('created_by', '=', $cuid)
+                            ->where('pillar_ref_id', '=', $cpid)
+                            ->where('review_status', '=', 'denied')
+                            ->get();
+
+
+
+        return view('lmds.dsprojects.ds-index-project')->with('myprojects',$myprojects)->with('myapprovedprojects',$myapprovedprojects)->with('mydeniedprojects',$mydeniedprojects);
+
     }
 
 

@@ -1474,17 +1474,17 @@
                             </svg>
                         </a>
                         <div class="collapse" id="nav-new-request">
-                            <a id="projects-nactivities-tab-md" data-toggle="pill" href="#vds-ds-pna-pills-proj" onclick="cplt(event,'#vds-ds-pna-pills-proj')" role="tab" aria-controls="vdsreqs-pills-proj" aria-selected="false">
+                            <a id="projects-nactivities-tab-md" href="{{route('pillar-project.index')}}"  >
                                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
                                 </svg>
                                 Projects</a>
-                            <a id="vds-ds-pna-pills-activities-tab" data-toggle="pill" href="#vds-ds-pna-pills-activities" role="tab" onclick="cplt(event,'#vds-ds-pna-pills-activities')"aria-controls="vdsreqs-pills-activities" aria-selected="false">
+                            <a id="vds-ds-pna-pills-activities-tab"  href="{{route('pillar-activity.index')}}" >
                                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
                                 </svg>
                                 Activities</a>
-                            <a id="vds-ds-pna-pills-sub-act-tab" data-toggle="pill" href="#vds-ds-pna-pills-sub-act" onclick="cplt(event,'#vds-ds-pna-pills-sub-act')" role="tab" aria-controls="vdsreqs-pills-sub-act" aria-selected="false"">
+                            <a id="vds-ds-pna-pills-sub-act-tab" href="{{route('pillar-subactivity.index')}}" >
                                 <svg width=" 1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
                                 </svg>
@@ -1501,15 +1501,12 @@
                             </svg>
                         </a>
                         <div class="collapse" id="nav-new-reports">
-                    <a  id="data-science-request-tab-md" data-toggle="tab" href="#data-science-request-md" onclick="cplt(event,'#data-science-request-md')"
-                     role="tab" aria-controls="data-science-request-md" aria-selected="false">
+                    <a  id="data-science-request-tab-md" href="{{route('imprest.index')}}" >
                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
                     </svg>
-                    Requests</a>
-                    <a id="retirements-tab-md" data-toggle="tab"
-                    href="#retirements-md" onclick="cplt(event,'#retirements-md')"
-                    role="tab" aria-controls="retirements-md" aria-selected="false">
+                    Imprests</a>
+                    <a id="retirements-tab-md" href="{{route('retireindex')}}">
                         <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
                         </svg>
@@ -1575,7 +1572,9 @@
                         </ul>
                     </div>
                 </nav>
+                <div  style="width:85%; margin:0 auto;">
                 @yield('content')
+                </div>
         </main>
     </div>
 
