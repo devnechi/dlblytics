@@ -38,28 +38,25 @@
         <input type="hidden" value='submitted' name="current_stage">
         <label for="formGroupExampleInput2">Project Lead.</label>
         <div class="row">
-           <div class="col-md-4 input-group-lg">
-                            <select class="form-control form-group col-lg-12"                       aria-label="Large" id="selectProject" name="lead"
-                                aria-describedby="inputGroup-sizing-sm">
-                                <option value="">Select lead</option>
-                                @if(isset($lead))
-                                @foreach($lead as  $ld)
-                                <option value="{{$ld->pillar_act_id}}">{{$ld->act_title}}</option>
-                                @endforeach
-                                @else
+            <div class="col-md-4 input-group-lg">
+                <select class="form-control form-group col-lg-12" aria-label="Large" id="selectProject" name="lead" aria-describedby="inputGroup-sizing-sm">
+                    <option value="">Select lead</option>
+                    @if(isset($lead))
+                    @foreach($lead as $ld)
+                    <option value="{{$ld->pillar_act_id}}">{{$ld->act_title}}</option>
+                    @endforeach
+                    @else
 
-                                @endif
+                    @endif
 
-                            </select>
-                            </div>
+                </select>
+            </div>
         </div>
-        <hr >
+        <hr>
         <div class="row">
             <div class="form-group col-md-4 input-group-lg">
                 <label for="forDepartmentTitle">Project Title</label>
-                <input type="text" class="form-control" name="project_title"
-                     placeholder=""
-                    required>
+                <input type="text" class="form-control" name="project_title" placeholder="" required>
             </div>
         </div>
 
@@ -74,7 +71,7 @@
                 <input type="date" class="form-control" name="end_date">
             </div>
         </div>
-        <hr >
+        <hr>
 
 
 
@@ -130,7 +127,7 @@
                 </div>
             </div>
             <div class="col-md-2 input-group-lg">
-                <span class="input-group-btn"><button type="button" class="btn btn-outline-primary " data-toggle="modal" data-target="#fundermodal"> add new founder
+                <span class="input-group-btn"><button type="button" class="btn btn-outline-primary " data-toggle="modal" data-target="#fundermodal"> add new funder
                     </button></span>
                 {{-- <hr style="background-color: aqua;"> --}}
             </div>
@@ -163,7 +160,7 @@
                 </div>
             </div>
             <div class="col-md-2 input-group-lg">
-                <span class="input-group-btn"><button type="button" class="btn btn-outline-primary " data-toggle="modal" data-target="#partinermodal"> add new partiner
+                <span class="input-group-btn"><button type="button" class="btn btn-outline-primary " data-toggle="modal" data-target="#partnermodal"> add new partiner
                     </button></span>
                 {{-- <hr style="background-color: aqua;"> --}}
             </div>
@@ -271,6 +268,26 @@
 
         </div>
     </div>
+</div><div class="modal" id="mModal">
+    <div class="modal-dialog" style="max-width: 80%;">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Preview PDF</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div style="width: 100%; height: 83vh;">
+                    <object data="" style="width: 100%; height: inherit;" id="pspdf"></object>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
     <!-- Modal -->
     <div class="modal fade" id="fundermodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -392,11 +409,11 @@
                 '<tr class="" id="' + name.slice(0, 4) + '">' +
                 '<td>' + nam2 + '</td>' +
                 '<td><button type="button" class="btn btn-outline-success m-1"' +
-                'onclick="openpdf(\'' + url + '\')">Preview</button>'  +
+                'onclick="openpdf(\'' + url + '\')">Preview</button>' +
                 '</tr>';
-                var item = document.getElementById("pdfb");
-                item.removeChild(item.childNodes[0]);
-                $("#pdfb").append($(btnhtml2));
+            var item = document.getElementById("pdfb");
+            item.removeChild(item.childNodes[0]);
+            $("#pdfb").append($(btnhtml2));
             i2++;
         };
 
@@ -407,12 +424,12 @@
                 '<tr class="" id="' + name.slice(0, 4) + '">' +
                 '<td>' + nam2 + '</td>' +
                 '<td><button type="button" class="btn btn-outline-success m-1"' +
-                'onclick="openpdf(\'' + url + '\')">Preview</button>' +
+                'onclick="openpdff(\'' + url + '\')">Preview</button>' +
                 '</td>' +
                 '</tr>';
-                var item = document.getElementById("pdff");
-                item.removeChild(item.childNodes[1]);
-                $("#pdff").append($(btnhtml2));
+            var item = document.getElementById("pdff");
+            item.removeChild(item.childNodes[0]);
+            $("#pdff").append($(btnhtml2));
 
             i2++;
         };
@@ -422,5 +439,10 @@
             pdfviewer.data = url;
             $('#myModal').modal('show');
         };
+        function openpdff(url) {
+            const pdfviewer = document.getElementById('pspdf');
+            pdfviewer.data = url;
+            $('#mModal').modal('show');
+        };
     </script>
-@endsection
+    @endsection

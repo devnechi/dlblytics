@@ -2925,8 +2925,6 @@
     }
 function cplt(e,param){
 
-e.preventDefault();
-
             $(param).addClass('active').addClass('show')
                 .siblings().removeClass('active').removeClass('show');
 

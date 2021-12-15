@@ -17,12 +17,12 @@
             <h4 class="title text-center">Edit subActivity</h4>
         </div>
     </div>
-    <form method="post" enctype="multipart/form-data" action="{{ route('update-activity') }}">
+    <form method="post" enctype="multipart/form-data" action="{{ route('update-subactivity') }}">
         @csrf
         <input type="hidden" value="{{ Auth::user()->user_id }}" name="created_by">
         <input type="hidden" value='pending review' name="review_status">
         <input type="hidden" value='submitted' name="current_stage">
-        <input type="hidden" value='{{$subactiv->pillar_act_id}}' name="id">
+        <input type="hidden" value='{{$subactiv->id}}' name="subactid">
 
         <label for="forDepartmentTitle">project reference</label>
         <div class="row">
