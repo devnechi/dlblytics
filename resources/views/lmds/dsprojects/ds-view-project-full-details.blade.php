@@ -121,13 +121,100 @@
                                         <br />
 
                                         <div class="card">
-                                            <h5 class="card-header">Featured</h5>
-                                            <div class="card-body">
-                                              <h5 class="card-title">Special title treatment</h5>
-                                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                              <a href="#" class="btn btn-primary">Go somewhere</a>
+                                            <div class="card-content table-responsive">
+                                                <br />
+                                                <table class="table table-bordered table-hover">
+                                                <h5><strong>Project Activities</strong></h5>
+                                                <br />
+
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">#</th>
+                                                            <th scope="col">Requested by</th>
+                                                            <th scope="col-md-4">Title</th>
+                                                            <th scope="col">Request Type</th>
+                                                            <th scope="col">Under Project</th>
+                                                            <th scope="col"># of approvals</th>
+                                                            <th scope="col">Total Cost</th>
+                                                            <th scope="col">Date created</th>
+
+                                                            <th scope="col"></th>
+
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <th scope="row">1</th>
+                                                            <td>MarkCuban</td>
+                                                            <td>Data visualisation in Mbeya</td>
+                                                            <td>Training</td>
+                                                            <td>Sauti Mpya</td>
+                                                            <td>0</td>
+                                                            <td>2,300,000 <span class="badge badge-success">TZS</span>
+                                                            </td>
+                                                            <td>2019-09-11</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-outline-success">view
+                                                                    request</button>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th scope="row">4</th>
+                                                            <td>Jane Sharpe</td>
+                                                            <td>Data Mining in Dar</td>
+                                                            <td>Training</td>
+                                                            <td>Data Zetu</td>
+                                                            <td>0</td>
+                                                            <td>6,600,000 <span class="badge badge-success">TZS</span>
+                                                            </td>
+                                                            <td>2019-09-11</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-outline-success">view
+                                                                    request</button>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th scope="row">3</th>
+                                                            <td>Mary Poppins</td>
+                                                            <td>Data Analyis and Mining</td>
+                                                            <td>Training</td>
+                                                            <td>Sauti Mpya</td>
+                                                            <td>0</td>
+                                                            <td>8,700,000 <span class="badge badge-success">TZS</span>
+                                                            </td>
+                                                            <td>2019-09-11</td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-outline-success">view
+                                                                    request</button>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <br />
+                                                <nav aria-label="Page navigation example">
+                                                    <ul class="pagination">
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="#" aria-label="Previous">
+                                                                <span aria-hidden="true">&laquo;</span>
+                                                                <span class="sr-only">Previous</span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="#" aria-label="Next">
+                                                                <span aria-hidden="true">&raquo;</span>
+                                                                <span class="sr-only">Next</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </nav>
                                             </div>
-                                          </div>
+                                        </div>
+                                        <!-- end of SECOND column -->
 
                                     </div>
                                     <div class="tab-pane fade" id="nav-sub-acts" role="tabpanel" aria-labelledby="nav-sub-acts-tab">

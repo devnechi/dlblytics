@@ -95,7 +95,7 @@ class PillarActivitiesController extends Controller
     }
     public function store(Request $request)
     {
-
+ //dd($request);
         $request->validate([
             'act_title' => 'required',
             'act_desc' => 'required',
