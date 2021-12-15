@@ -39,10 +39,9 @@ class PillarActivitiesController extends Controller
         //pillar manager get project created by them
         $myactivities = DB::table('pillar_activities')
                 ->where('created_by', '=', $cuid)
-                ->where('pillar_ref_id', '=', $cpid)
-                ->where('review_status', '=', 'pending review')
+                // ->where('pillar_ref_id', '=', $cpid)
+                // ->where('review_status', '=', 'pending review')
                 ->get();
-
 
         return view('lmds.dsactivities.ds-index-activity')->with('myact',$myactivities);
 
@@ -266,11 +265,18 @@ class PillarActivitiesController extends Controller
 
 
     }
-        public function Activid($id)
+    public function destroy($id)
     {
-        $proj = PillarActivities::find($id);
-        // return view('admin.pillarmanage.edit-pillar', compact('pillar'));
-        return view('lmds.dsactivities.ds-create-project-activity',  compact('proj'));
+        PillarActivities::destroy($id);
+
+        return redirect('imprest/imprest')->with('flash_message', 'Imprest deleted!');
+    }
+    public function show($id)
+    {
+
+                $myactivities=PillarActivities::findOrFail($id);
+                return view('imprest.show')
+                ->with('myactivities',$myactivities);
 
     }
 

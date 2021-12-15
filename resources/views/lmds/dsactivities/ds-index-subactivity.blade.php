@@ -151,7 +151,7 @@
 
                     </div>
                 </div>
-                <div class="tab-pane fade show active" id="ds-ds-subact-ed-pills-going-content" role="tabpanel" aria-labelledby="nav-ds-pna-my-sub-activities-content-tab">
+                <div class="tab-pane fade " id="ds-ds-subact-ed-pills-going-content" role="tabpanel" aria-labelledby="nav-ds-pna-my-sub-activities-content-tab">
 
 
                     <div class="row">
@@ -283,7 +283,7 @@
 
                     </div>
                 </div>
-                <div class="tab-pane fade show active" id="vds-ds-subact-ed-pills-complete-content" role="tabpanel" aria-labelledby="nav-ds-pna-my-sub-activities-content-tab">
+                <div class="tab-pane fade " id="vds-ds-subact-ed-pills-complete-content" role="tabpanel" aria-labelledby="nav-ds-pna-my-sub-activities-content-tab">
 
 
                     <div class="row">
