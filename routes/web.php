@@ -3,6 +3,7 @@
 use App\Http\Controllers\CEpillarManager;
 use App\Http\Middleware\ResearchnInnovation;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
