@@ -301,6 +301,27 @@
 
         </div>
     </div>
+</div>
+</div><div class="modal" id="mModal">
+    <div class="modal-dialog" style="max-width: 80%;">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Preview PDF</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div style="width: 100%; height: 83vh;">
+                    <object data="" style="width: 100%; height: inherit;" id="pspdf"></object>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
     <!-- Modal -->
     <div class="modal fade" id="fundermodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -437,7 +458,7 @@
                 '<tr class="" id="' + name.slice(0, 4) + '">' +
                 '<td>' + nam2 + '</td>' +
                 '<td><button type="button" class="btn btn-outline-success m-1"' +
-                'onclick="openpdf(\'' + url + '\')">Preview</button>' +
+                'onclick="openpdff(\'' + url + '\')">Preview</button>' +
                 '</td>' +
                 '</tr>';
                 var item = document.getElementById("pdff");
@@ -451,6 +472,11 @@
             const pdfviewer = document.getElementById('pspdfkit');
             pdfviewer.data = url;
             $('#myModal').modal('show');
+        };
+        function openpdff(url) {
+            const pdfviewer = document.getElementById('pspdf');
+            pdfviewer.data = url;
+            $('#mModal').modal('show');
         };
     </script>
     @endsection

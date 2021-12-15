@@ -87,6 +87,8 @@ Route::resource('pillar-subactivity', 'PillarSubActivitiesController');
 Route::resource('upload-project-file-doc', 'ProjectDocController');
 
 Route::resource('imprest', 'ImprestController');
+Route::get('retireindex', 'ImprestController@retireindex')->name('retireindex');
+
 Route::post('/retirestore', 'ImprestController@retirestore')->name('retirestore');
 // ADMIN MANAGING kpis manage-kpis
 Route::get('/manage-kpis', 'DataKpiController@index')->name('manage-kpis');

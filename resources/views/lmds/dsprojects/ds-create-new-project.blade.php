@@ -12,7 +12,7 @@
         cursor: pointer;
     }
 </style>
-<div class="container-fluid">
+<div class="container-fluid" >
     @if ($errors->any())
     <div class="alert alert-danger">
         <ul>

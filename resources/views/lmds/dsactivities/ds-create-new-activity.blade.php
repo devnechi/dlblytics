@@ -31,19 +31,17 @@
                         <div class="row">
                             <div class="col-md-6 input-group-lg">
                                 <select class="form-control form-group col-lg-12" aria-label="Large" id="project_ref_id" name="project_ref_id" aria-describedby="inputGroup-sizing-sm">
-                                @if(isset($proj_id))
+                                    @if(isset($proj_id))
 
                                     @foreach($projs as $prijs)
-                                    <option value="{{$prijs->project_id}}"
-                                    {{ $proj_id==$prijs->project_id?'selected':''}}
-                                    >{{$prijs->project_title}}</option>
+                                    <option value="{{$prijs->project_id}}" {{ $proj_id==$prijs->project_id?'selected':''}}>{{$prijs->project_title}}</option>
                                     @endforeach
-                                @else
+                                    @else
                                     <option value="">Select Project </option>
                                     @foreach($projs as $prijs)
                                     <option value="{{$prijs->project_id}}">{{$prijs->project_title}}</option>
                                     @endforeach
-                                @endif
+                                    @endif
                                 </select>
                             </div>
                         </div>
@@ -274,8 +272,7 @@
                                                                             </div>
                                                                             <div class=" input-group-sm mr-1 col-md-1">
                                                                                 <label for="formGroupExampleInput2">Qty</label>
-                                                                                <input type="text" name="qty[]"
-                                                                                id="qty" class="form-control">
+                                                                                <input type="text" name="qty[]" id="qty" class="form-control">
                                                                             </div>
                                                                             <div class=" input-group-sm mr-1 col-md-3">
                                                                                 <label for="formGroupExampleInput2">Unit</label>
@@ -284,7 +281,7 @@
 
                                                                             <div class=" input-group-sm mr-1 col-md-1">
                                                                                 <label for="formGroupExampleInput2">Number</label>
-                                                                                <input type="text" name="number[]" id="number"class="form-control">
+                                                                                <input type="text" name="number[]" id="number" class="form-control">
                                                                             </div>
                                                                             <div class=" input-group-sm mr-1">
                                                                                 <label for="formGroupExampleInput2">Unit price</label>
@@ -293,7 +290,7 @@
 
                                                                             <div class=" input-group-sm text-nowrap">
                                                                                 <label for="formGroupExampleInput2">Total Amount<small> (TZS)</small></label>
-                                                                                <input type="text" id="tcost"name="total_cost[]" readonly class="form-control">
+                                                                                <input type="text" id="tcost" name="total_cost[]" readonly class="form-control">
                                                                             </div>
 
 
@@ -362,11 +359,11 @@
     function changedimprest(event) {
         $("#" + event.value).toggle().style.transition = "all 2s";
     }
-    function totalcost(e)
-    {
-        var f= document.getElementById('tcost');
 
-     f.value=e.target.value * $('#number').val() * $('#qty').val();
+    function totalcost(e) {
+        var f = document.getElementById('tcost');
+
+        f.value = e.target.value * $('#number').val() * $('#qty').val();
 
     }
 </script>

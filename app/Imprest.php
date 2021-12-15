@@ -24,4 +24,13 @@ class Imprest extends Model
     {
         return $this->hasMany(Imprest_activity::class,'imprest_id','id');
     }
+    public function project()
+    {
+        return $this->belongsTo(PillarProject::class,'pillar_project_project_id','project_id');
+    }
+
+    public function activity()
+    {
+        return $this->belongsTo(PillarActivities::class,'pillar_activities_pillar_act_id','pillar_act_id');
+    }
 }

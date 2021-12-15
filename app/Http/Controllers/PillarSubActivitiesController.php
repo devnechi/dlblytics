@@ -18,7 +18,26 @@ class PillarSubActivitiesController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     *
      */
+    public function index()
+    {
+        $cuid = Auth::user()->user_id;
+        $cpid = Auth::user()->pillar_id;
+
+
+
+        //pillar manager get project created by them
+        $mysubactivities = DB::table('pillar_subactivities')
+                ->where('created_by', '=', $cuid)
+                ->where('pillar_ref_id', '=', $cpid)
+                ->where('review_status', '=', 'pending review')
+                ->get();
+
+
+        return view('lmds.dsactivities.ds-index-subactivity')->with('mysubactivities',$mysubactivities);
+
+    }
     public function createNewSubActivity($act_id=0){
         $users=User::all();
         $countries=CountryListFacade::getlist('en');
