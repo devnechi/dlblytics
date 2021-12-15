@@ -4051,11 +4051,11 @@
                             <div class="row">
                                 <div class="col-md-2">
                                     <div class="nav flex-column nav-pills" id="vds-ds-project-ed-pills-tab" role="tablist" aria-orientation="vertical">
-                                        <a class="nav-link active" id="vds-ds-project-ed-pills-reviewed-tab" data-toggle="pill" href="#vds-ds-project-ed-pills-reviewed-content" role="tab" aria-controls="vds-ed-reqs-pills-reviewed" aria-selected="true">On Review</a>
+                                        <a class="nav-link active" id="vds-ds-project-ed-pills-reviewed-tab" data-toggle="pill" href="#vds-ds-project-ed-pills-reviewed-content" role="tab" aria-controls="vds-ed-reqs-pills-reviewed" aria-selected="true">On going projects</a>
 
-                                        <a class="nav-link" id="vds-ds-project-ed-pills-approved-tab" data-toggle="pill" href="#vds-ds-project-ed-pills-approved-content" role="tab" aria-controls="vds-ed-reqs-pills-approved" aria-selected="false">Approved</a>
+                                        <a class="nav-link" id="vds-ds-project-ed-pills-approved-tab" data-toggle="pill" href="#vds-ds-project-ed-pills-approved-content" role="tab" aria-controls="vds-ed-reqs-pills-approved" aria-selected="false">Approved projects</a>
 
-                                        <a class="nav-link" id="vds-ds-project-ed-pills-denied-tab" data-toggle="pill" href="#vds-ds-project-ed-pills-denied-content" role="tab" aria-controls="vds-ed-reqs-pills-denied" aria-selected="false">Denied</a>
+                                        <a class="nav-link" id="vds-ds-project-ed-pills-denied-tab" data-toggle="pill" href="#vds-ds-project-ed-pills-denied-content" role="tab" aria-controls="vds-ed-reqs-pills-denied" aria-selected="false">Completed</a>
 
                                         <a class="nav-link" id="vds-ds-project-ed-pills-all-tab" data-toggle="pill" href="#vds-ds-project-ed-pills-all-content" role="tab" aria-controls="vds-ed-reqs-pills-all" aria-selected="false">All</a>
                                     </div>
@@ -4114,7 +4114,7 @@
                                                                                                 <li class="list-group-item">
                                                                                                     <a href="{{ route('ds-create-new-activity', $myproject->project_id) }}" class="btn  btn-outline-secondary d-flex justify-content-between">
                                                                                                         <i class="fas fa-chalkboard fa-lg mt-auto mb-auto"></i>
-                                                                                                        <p class="m-auto"> New Activity</p>
+                                                                                                        <p class="m-auto"> Create New Activity</p>
                                                                                                     </a>
                                                                                                 </li>
                                                                                                 <li class="list-group-item">
@@ -4123,7 +4123,7 @@
                                                                                                             <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
                                                                                                             <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
                                                                                                         </svg>
-                                                                                                        <p class="m-auto">Activity Details</p>
+                                                                                                        <p class="m-auto">View project details</p>
                                                                                                     </a>
 
                                                                                                 </li>
@@ -4132,7 +4132,7 @@
                                                                                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
                                                                                                             <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
                                                                                                         </svg>
-                                                                                                        <p class="m-auto">Edit Activity </p>
+                                                                                                        <p class="m-auto">Edit Project </p>
                                                                                                     </a>
                                                                                                 </li>
 
