@@ -15,8 +15,48 @@
     <div class="row">
         <div class="col-lg-12">
 
-            <a class="btn btn-outline-info btn-lg" href="{{ route('ce-insert-new-project') }}"
-            role="button"> create new activity</a>
+               <!-- Button trigger modal -->
+               <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#modalNewSoloActivity">
+                create a new activity
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="modalNewSoloActivity" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Select Type of Activity</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <ul class="list-group-flush">
+
+                                <li class="list-group-item">
+                                    <a href="{{ route('create-payment-requisition') }}"
+                                        class="list-group-item list-group-item-action">
+                                        Travel request
+                                    </a>
+                                </li>
+
+                                <li class="list-group-item">
+                                    <a href="{{ route('create-new-workshop-registration') }}"
+                                        class="list-group-item list-group-item-action">
+                                        New Imprest
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <br />

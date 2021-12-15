@@ -37,7 +37,6 @@ class NewPillarActivities extends Migration
             $table->string('venue');
             $table->json('pinvolved');
             $table->json('act_objectives');
-
             $table->rememberToken();
             $table->timestamps();
         });
