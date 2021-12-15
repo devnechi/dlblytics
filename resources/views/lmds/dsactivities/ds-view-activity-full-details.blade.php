@@ -23,6 +23,8 @@
                     </div><br />
                     @endif
 
+
+
                         <div class="row">
                             <div class="form-group col-md-6 input-group-lg">
                                 {{-- <label for="forPillarTitle" value="">Pillar Title</label> --}}

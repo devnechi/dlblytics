@@ -608,7 +608,7 @@
 
 
 
-        ///timezone_location_get
+        /* ///timezone_location_get */
         a{text-decoration:none}
     h4{text-align:center;margin:30px 0;color:#444}
     .main-timeline{position:relative}
