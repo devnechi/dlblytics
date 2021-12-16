@@ -30,7 +30,7 @@
                     <div class="form-group input-group-lg">
                         <div class="row">
                             <div class="col-md-6 input-group-lg">
-                                <select class="form-control form-group col-lg-12" aria-label="Large" id="project_ref_id" name="project_ref_id" aria-describedby="inputGroup-sizing-sm">
+                                <select class="form-control form-group col-lg-12" aria-label="Large" id="project_ref_id" name="project_ref_id" {{empty($proj_id) ?'':'disabled="true"'}} aria-describedby="inputGroup-sizing-sm">
                                     @if(isset($proj_id))
 
                                     @foreach($projs as $prijs)
@@ -64,7 +64,6 @@
                                     <option value="{{$user->fname}}">{{$user->fname}} {{$user->lname}}</option>
                                     @endforeach
                                     @else
-
                                     @endif
 
                                 </select>
@@ -248,17 +247,17 @@
                                                     <div class="row">
 
                                                         <div class="form-group col-lg-12">
-                                                            <div class="form-group multiple-form-group" data-max=6>
+                                                            <div class="form-group multiple-form-group "  id="custg" data-max=6>
                                                                 <div class="form-group input-group-lg">
                                                                     <div class="d-flex justify-content-between">
                                                                         <div class="row">
 
-                                                                            <div class="form-group  input-group-sm mr-1">
+                                                                            <div class="form-group  input-group-sm p-1 col-md-6">
                                                                                 <label for="formGroupProductName">Activity title</label>
                                                                                 <input type="text" class="form-control" id="number_of_breaks" name="imp_act_name[]" value="" placeholder="">
                                                                             </div>
 
-                                                                            <div class="form-group input-group-sm mr-1"> <label for="formGroupProductName">Imprest type</label>
+                                                                            <div class="form-group input-group-sm p-1 col-md-6"> <label   for="formGroupProductName">Imprest type</label>
                                                                                 <select class="form-control form-group col-lg-12 " aria-label="Large" id="selectimprest" name="imp_type[]" aria-describedby="inputGroup-sizing-sm">
                                                                                     <option value="">Select imprest Item</option>
                                                                                     <option value="Training Advance Request">Training Advance Request</option>
@@ -270,34 +269,34 @@
                                                                                     <option value="Other">Other</option>
                                                                                 </select>
                                                                             </div>
-                                                                            <div class=" input-group-sm mr-1 col-md-1">
+                                                                            <div class=" input-group-sm p-1 col-md-1">
                                                                                 <label for="formGroupExampleInput2">Qty</label>
-                                                                                <input type="text" name="qty[]" id="qty" class="form-control">
+                                                                                <input type="text" name="qty[]" id="qty" class="form-control cls0">
                                                                             </div>
-                                                                            <div class=" input-group-sm mr-1 col-md-3">
+                                                                            <div class=" input-group-sm p-1 ">
                                                                                 <label for="formGroupExampleInput2">Unit</label>
-                                                                                <input type="text" name="unit[]" id="united" class="form-control">
+                                                                                <input type="text" name="unit[]" id="united" class="form-control ">
                                                                             </div>
 
-                                                                            <div class=" input-group-sm mr-1 col-md-1">
+                                                                            <div class=" input-group-sm p-1 col-md-1 mr-3">
                                                                                 <label for="formGroupExampleInput2">Number</label>
-                                                                                <input type="text" name="number[]" id="number" class="form-control">
+                                                                                <input type="text" name="number[]" id="number" class="form-control cls0">
                                                                             </div>
-                                                                            <div class=" input-group-sm mr-1">
+                                                                            <div class=" input-group-sm p-1 col-md-2">
                                                                                 <label for="formGroupExampleInput2">Unit price</label>
-                                                                                <input type="text" onchange="totalcost(event)" name="unit_price[]" class="form-control">
+                                                                                <input type="text" onchange="totalcost(event)" name="unit_price[]" class="form-control cls0">
                                                                             </div>
 
-                                                                            <div class=" input-group-sm text-nowrap">
+                                                                            <div class=" input-group-sm text-nowrap p-1 ">
                                                                                 <label for="formGroupExampleInput2">Total Amount<small> (TZS)</small></label>
-                                                                                <input type="text" id="tcost" name="total_cost[]" readonly class="form-control">
+                                                                                <input type="text" id="cls0t" name="total_cost[]" readonly class="tocost form-control">
                                                                             </div>
 
 
                                                                         </div>
-                                                                        <div class="col-md-1 input-group-sm">
+                                                                        <div class="col-md-1 input-group-sm border-left mt-4 ml-4">
                                                                             <label for="formGroupExampleInput2"> <br><br></label>
-                                                                            <span class="input-group-btn"><button type="button" class="btn btn-outline-primary btn-add">+
+                                                                            <span class="input-group-btn"><button type="button" class="btn btn-outline-primary btn-adl">+
                                                                                 </button></span>
                                                                         </div>
                                                                     </div>
@@ -319,7 +318,7 @@
                                 <div class="row">
                                     <div class="form-group col-lg-12 input-group-lg">
                                         <div class="form-group green-border-focus d-flex justify-content-between">
-                                            <label for="amount_rqst" class=" text-nowrap">Total Amount Requested:
+                                            <label for="amount_rqst" class="tt text-nowrap">Total Amount Requested:
                                             </label>
                                             <input type="text" class="form-control col-4" name="amount_rqst">
                                         </div>
@@ -340,7 +339,7 @@
     <!-- Modal -->
 
 </div>
-
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script>
     function countrychange(event) {
 
@@ -361,10 +360,82 @@
     }
 
     function totalcost(e) {
-        var f = document.getElementById('tcost');
 
-        f.value = e.target.value * $('#number').val() * $('#qty').val();
+var gclas= e.target.getAttribute("class");
+var ele=gclas.split(' ')[1];
+
+var elements = document.getElementsByClassName(ele);
+
+let sum = 0;
+        for (var i = 0, len = elements.length; i < len; i++) {
+
+            sum +=parseInt(elements[i].value);
+        }
+
+        var f = document.getElementById(ele+'t');
+        f.value = sum;
 
     }
+    $(document).ready(function(){
+        var elements = document.getElementsByClassName("tocost");
+        var tt = document.getElementsByClassName("tt");
+        var sum = 0;
+        for (var i = 0, len = elements.length; i < len; i++) {
+            alert(element[i].value);
+            sum = sum + element[i].value;
+        }
+
+        tt.value = sum;
+
+
+    });
+    var cls= 1;
+    var addFormGrp = function(event) {
+
+                    var formg =  '<div class="form-group input-group-lg">'+
+                                        '<div class="d-flex justify-content-between">'+
+                                        '<div class="row"> <div class="form-group  input-group-sm p-1 col-md-6">'+
+                                        '<label for="formGroupProductName">Activity title</label>'+
+                                        '<input type="text" class="form-control" id="number_of_breaks" name="imp_act_name[]" value="" placeholder=""></div>'+
+                                        '<div class="form-group input-group-sm p-1 col-md-6"> <label   for="formGroupProductName">Imprest type</label>'+
+                                        '<select class="form-control form-group col-lg-12 " aria-label="Large" id="selectimprest" name="imp_type[]" aria-describedby="inputGroup-sizing-sm">'+
+                                        '<option value="">Select imprest Item</option>'+
+                                        '<option value="Training Advance Request">Training Advance Request</option>'+
+                                        '<option value="Travel Advance Request">Travel Advance Request</option>'+
+                                        '<option value="Allowance Request">Allowance Request</option>'+
+                                        '<option value="Per Diem Claim">Per Diem Claim</option>'+
+                                        '<option value="Petty Cash">Petty Cash</option>'+
+                                        '<option value="Payment Requesition Request">Payment Requesition Request</option>'+
+                                        '<option value="Other">Other</option>'+
+                                        '</select> </div>'+
+                                    '<div class=" input-group-sm p-1 col-md-1">'+
+                                    '<label for="formGroupExampleInput2">Qty</label>'+
+                                    '<input type="text" name="qty[]" id="qty" class="form-control cls'+cls+'"></div>'+
+                                    '<div class=" input-group-sm p-1 ">'+
+                                    '<label for="formGroupExampleInput2">Unit</label>'+
+                                    '<input type="text" name="unit[]" id="united" class="form-control "></div>'+
+                                    '<div class=" input-group-sm p-1 col-md-1 mr-3">'+
+                                    '<label for="formGroupExampleInput2">Number</label>'+
+                                    '<input type="text" name="number[]" id="number" class="form-control cls'+cls+'"></div>'+
+                                    '<div class=" input-group-sm p-1 col-md-2">'+
+                                    '<label for="formGroupExampleInput2">Unit price</label>'+
+                                    '<input type="text" onchange="totalcost(event)" name="unit_price[]" class="form-control cls'+cls+'"></div>'+
+                                    '<div class=" input-group-sm text-nowrap p-1 ">'+
+                                    '<label for="formGroupExampleInput2">Total Amount<small> (TZS)</small></label>'+
+                                    '<input type="text" id="cls'+cls+'t" name="total_cost[]" readonly class="tocost form-control"></div>'+
+                                    '</div><div class="col-md-1 input-group-sm border-left mt-4 ml-4">'+
+                                    '<label for="formGroupExampleInput2"> <br><br></label>'+
+                                        '<span class="input-group-btn"><button type="button" class="btn btn-outline-primary btn-adl">+'+
+                                        '</button></span></div></div>'+
+                                        '<hr style="background-color: aqua;"></div>';
+
+                                        event.target.classList.toggle('btn-default btn-adl btn-danger btn-remove');
+
+                    $("#custg").append(formg);
+                    alert(event.target.classList);
+
+                    cls++;
+                };
+                $(document).on('click', '.btn-adl', addFormGrp);
 </script>
 @endsection
