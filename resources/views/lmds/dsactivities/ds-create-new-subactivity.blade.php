@@ -31,11 +31,12 @@
                     <div class="form-group input-group-lg">
                         <div class="row">
                             <div class="col-md-6 input-group-lg">
-                                <select class="form-control form-group col-lg-12" aria-label="Large" id="activity_ref_id" name="activity_ref_id" aria-describedby="inputGroup-sizing-sm">
+                                <select class="form-control form-group col-lg-12" aria-label="Large" id="activity_ref_id" name="activity_ref_id"
+                                {{empty($act_id) ?'':'disabled="true"'}}aria-describedby="inputGroup-sizing-sm">
                                     <option value="">Select Activity </option>
 
                                     @foreach($acts as $act)
-                                    <option value="{{$act->pillar_act_id}}" {{$act_id == $act->pillar_act_id?'selected':''}}>{{$act->act_title}}</option>
+                                    <option value="{{$act->pillar_act_id}}" {{$act_id == $act->pillar_act_id?'selected ':''}}>{{$act->act_title}}</option>
                                     @endforeach
                                 </select>
                             </div>
