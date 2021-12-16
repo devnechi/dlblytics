@@ -54,7 +54,7 @@ Route::get('/ds-create-new-project', 'PillarProjectController@createNewProject')
 Route::post('/facilitatorpost', 'DSpillarManager@facilitatorpost')->name('facilitatorpost');
 
 Route::get('/ds-create-new-activity/{id?}', 'PillarActivitiesController@createNewActivity')->name('ds-create-new-activity');
-Route::get('/ds-create-new-subactivity', 'PillarSubActivitiesController@createNewSubActivity')->name('ds-create-new-subactivity');
+Route::get('/ds-create-new-subactivity/{id?}', 'PillarSubActivitiesController@createNewSubActivity')->name('ds-create-new-subactivity');
 Route::get('/ds-create-new-project-activity', 'DSpillarManager@createNewProjectActivity')->name('ds-create-new-project-activity');
 
 // community engagement routes

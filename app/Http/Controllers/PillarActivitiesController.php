@@ -269,7 +269,7 @@ class PillarActivitiesController extends Controller
     {
         PillarActivities::destroy($id);
 
-        return redirect('imprest/imprest')->with('flash_message', 'Imprest deleted!');
+        return redirect('imprest.index')->with('flash_message', 'Imprest deleted!');
     }
     public function show($id)
     {
