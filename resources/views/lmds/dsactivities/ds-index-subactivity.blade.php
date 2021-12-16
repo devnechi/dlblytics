@@ -57,7 +57,7 @@
                                                     <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#ds-subact-modal"> Actions
                                                     </button>
                                                     <!-- Modal -->
-                                                    <div class="modal fade" id="ds-subact-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-proj="{{ $myact->pillar_act_id }}" data-user="{{ Auth::user()->user_id }}">
+                                                    <div class="modal fade" id="ds-subact-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-proj="{{ $myact->id }}" data-user="{{ Auth::user()->user_id }}">
                                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
@@ -69,7 +69,7 @@
                                                                 <div class="modal-body">
                                                                     <ul class="list-group-flush">
                                                                         <li class="list-group-item">
-                                                                            <a href="{{ route('ds-create-new-project-activity', $myact->project_id) }}" class="btn  btn-outline-secondary d-flex justify-content-between">
+                                                                            <a href="{{ route('ds-create-new-project-activity', $myact->id) }}" class="btn  btn-outline-secondary d-flex justify-content-between">
                                                                                 <i class="fas fa-chalkboard fa-lg mt-auto mb-auto"></i>
                                                                                 <p class="m-auto"> New Subactivity</p>
                                                                             </a>
@@ -189,7 +189,7 @@
                                                     <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#ds-subact-modal"> Actions
                                                     </button>
                                                     <!-- Modal -->
-                                                    <div class="modal fade" id="ds-subact-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-proj="{{ $myact->pillar_act_id }}" data-user="{{ Auth::user()->user_id }}">
+                                                    <div class="modal fade" id="ds-subact-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-proj="{{ $myact->id }}" data-user="{{ Auth::user()->user_id }}">
                                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
@@ -201,7 +201,7 @@
                                                                 <div class="modal-body">
                                                                     <ul class="list-group-flush">
                                                                         <li class="list-group-item">
-                                                                            <a href="{{ route('ds-create-new-project-activity', $myact->project_id) }}" class="btn  btn-outline-secondary d-flex justify-content-between">
+                                                                            <a href="{{ route('ds-create-new-project-activity', $myact->id) }}" class="btn  btn-outline-secondary d-flex justify-content-between">
                                                                                 <i class="fas fa-chalkboard fa-lg mt-auto mb-auto"></i>
                                                                                 <p class="m-auto"> New Subactivity</p>
                                                                             </a>
@@ -321,7 +321,7 @@
                                                     <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#ds-subact-modal"> Actions
                                                     </button>
                                                     <!-- Modal -->
-                                                    <div class="modal fade" id="ds-subact-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-proj="{{ $myact->pillar_act_id }}" data-user="{{ Auth::user()->user_id }}">
+                                                    <div class="modal fade" id="ds-subact-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-proj="{{ $myact->id }}" data-user="{{ Auth::user()->user_id }}">
                                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
@@ -333,7 +333,7 @@
                                                                 <div class="modal-body">
                                                                     <ul class="list-group-flush">
                                                                         <li class="list-group-item">
-                                                                            <a href="{{ route('ds-create-new-project-activity', $myact->project_id) }}" class="btn  btn-outline-secondary d-flex justify-content-between">
+                                                                            <a href="{{ route('ds-create-new-project-activity', $myact->id) }}" class="btn  btn-outline-secondary d-flex justify-content-between">
                                                                                 <i class="fas fa-chalkboard fa-lg mt-auto mb-auto"></i>
                                                                                 <p class="m-auto"> New Subactivity</p>
                                                                             </a>
