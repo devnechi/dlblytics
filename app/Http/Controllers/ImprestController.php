@@ -141,10 +141,11 @@ public function edit($id)
 
         return redirect('imprest/imprest')->with('flash_message', 'Imprest deleted!');
     }
-    public function show($id)
-    {
+    public function show($impid)
+    { 
 
-                $imprest=Imprest::findOrFail($id);
+                $imprest=Imprest::findOrFail($impid);
+
                 return view('imprest.show')
                 ->with('imprest',$imprest);
 

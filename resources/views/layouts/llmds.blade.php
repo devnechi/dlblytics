@@ -1568,7 +1568,7 @@
                         </ul>
                     </div>
                 </nav>
-                <div  style="width:85%; margin:0 auto;">
+                <div >
                 @yield('content')
                 </div>
         </main>
@@ -1648,7 +1648,7 @@
                         .html('–');
 
                     $formGroupClone.find('input').val('');
-                    // 
+                    //
                     $formGroupClone.insertAfter($formGroup);
 
                     var $lastFormGroupLast = $multipleFormGroup.find('.form-group:last');
