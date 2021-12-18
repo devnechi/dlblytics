@@ -16,9 +16,9 @@
 <div class="container-fluid" id="data-science-request-md">
     <!-- line chart -->
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#dataScienceRequestTypeModal">
+    {{-- <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#dataScienceRequestTypeModal">
         create a new request
-    </button>
+    </button> --}}
     <br />
     <br />
 
@@ -29,9 +29,10 @@
 
             <nav>
                 <div class="nav nav-tabs" id="dsreq-nav-tab" role="tablist">
-                    <a class="nav-item nav-link active" id="nav-my-requests-tab" data-toggle="tab" href="#dsreq-nav-my-requests" role="tab" aria-controls="nav-my-requests" aria-selected="true">My
-                        Requests</a>
-                    <a class="nav-item nav-link" id="nav-staff-requests-tab" data-toggle="tab" href="#dsreq-nav-staff-requests" role="tab" aria-controls="nav-staff-requests" aria-selected="false">Staff Requests</a>
+                    <a class="nav-item nav-link active" id="nav-my-requests-tab" data-toggle="tab" href="#dsreq-nav-my-requests" role="tab" aria-controls="nav-my-requests" aria-selected="true">
+                        My Imprests
+                    </a>
+                    <a class="nav-item nav-link" id="nav-staff-requests-tab" data-toggle="tab" href="#dsreq-nav-staff-requests" role="tab" aria-controls="nav-staff-requests" aria-selected="false">Staff Imprests</a>
                     <a class="nav-item nav-link" id="nav-res-lm-requests-tab" data-toggle="tab" href="#dsreq-nav-res-lm-requests" role="tab" aria-controls="nav-contact" aria-selected="false">Response from Line Manager</a>
                 </div>
             </nav>
@@ -44,14 +45,14 @@
                         <div class="col-md-2">
                             <div class="nav flex-column nav-pills" id="vdsreqs-pills-tab" role="tablist" aria-orientation="vertical">
                                 <a class="nav-link active" id="vdsreqs-pills-all-pillar-request-tab" data-toggle="pill" href="#vdsreqs-pills-all-pillar-request" role="tab" aria-controls="vdsreqs-pills-all-pillar-request" aria-selected="true">All
-                                    Pillar requests</a>
+                                    Pillar Imprests</a>
                                 <a class="nav-link " id="vdsreqs-pills-my-req-onreview-tab" data-toggle="pill" href="#vdsreqs-pillsmy-req-onreview" role="tab" aria-controls="vdsreqs-pills-my-req-onreview" aria-selected="false">My reviewed requests</a>
                                 <a class="nav-link" id="vdsreqs-pills-my-approved-req-tab" data-toggle="pill" href="#vdsreqs-pills-my-approved-req" role="tab" aria-controls="vdsreqs-pills-my-approved-req" aria-selected="false">My Approved
-                                    request</a>
+                                    Imprests</a>
                                 <a class="nav-link" id="vdsreqs-pills-my-req-retirements-tab" data-toggle="pill" href="#vdsreqs-pills-my-req-retirements" role="tab" aria-controls="vdsreqs-pills-my-req-retirements" aria-selected="false">My
-                                    Requests retirements</a>
+                                    Imprest retirements</a>
                                 <a class="nav-link" id="vdsreqs-pills-all-my-req-tab" data-toggle="pill" href="#vdsreqs-pills-all-my-req" role="tab" aria-controls="vdsreqs-pills-all-my-req" aria-selected="false">All My
-                                    requests</a>
+                                    imprests</a>
 
                             </div>
                         </div>
@@ -61,7 +62,7 @@
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <table class="table table-bordered table-hover">
-                                                <p>All created <strong>Requests</strong> in the Pillar</p>
+                                                <p>All created <strong>Imprests</strong> in the Project</p>
                                                 <thead>
                                                     <tr>
                                                         <th scope="col">#</th>

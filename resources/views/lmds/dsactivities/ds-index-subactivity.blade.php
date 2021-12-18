@@ -28,9 +28,9 @@
                                 <div class="card-content table-responsive">
                                     <br />
                                     <table class="table table-bordered table-hover">
-                                        <p class="d-flex justify-content-between"><strong>My SubActivities that are on Administrative review</strong>
+                                        <p class="d-flex justify-content-between"><strong>My Sub Activities that are on Administrative review</strong>
 
-                                            <a class="btn btn-outline-info btn-lg" href="{{ route('ds-create-new-subactivity') }}" role="button"> create a new SubActivity</a>
+                                            {{-- <a class="btn btn-outline-info btn-lg" href="{{ route('ds-create-new-subactivity') }}" role="button"> create a new SubActivity</a> --}}
                                         </p>
                                         <thead>
                                             <tr>
