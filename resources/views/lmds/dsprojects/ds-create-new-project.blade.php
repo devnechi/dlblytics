@@ -133,7 +133,7 @@
             </div>
         </div>
 
-        <label for="formGroupExampleInput2">Project Partiners.</label>
+        <label for="formGroupExampleInput2">Project Partners.</label>
         <div class="row">
             <div class="form-group col-lg-10">
                 <div class="form-group multiple-form-group" data-max=6>
@@ -144,7 +144,7 @@
 
                                 </div>
                                 <select class="form-control form-group col-lg-12" aria-label="Large" id="selectProject" onchange="addpart(event)" aria-describedby="inputGroup-sizing-sm">
-                                    <option value="">Select partiner</option>
+                                    <option value="">Select partner</option>
                                     @if(isset($facil))
                                     @foreach($facil as $fac)
                                     <option value="{{$fac->name}}">{{$fac->name}}</option>
@@ -160,7 +160,7 @@
                 </div>
             </div>
             <div class="col-md-2 input-group-lg">
-                <span class="input-group-btn"><button type="button" class="btn btn-outline-primary " data-toggle="modal" data-target="#partnermodal"> add new partiner
+                <span class="input-group-btn"><button type="button" class="btn btn-outline-primary " data-toggle="modal" data-target="#partnermodal"> add new partner
                     </button></span>
                 {{-- <hr style="background-color: aqua;"> --}}
             </div>
@@ -316,20 +316,20 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalCenterTitle">Add Partiner</h5>
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Add Partner</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="subcatgname" class="control-label">Partiner name</label>
+                        <label for="subcatgname" class="control-label">Partner name</label>
                         <input type="text" name="facil_name" class="form-control" />
                     </div>
                 </div>
                 <div class="modal-footer ">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" onclick="ajaxed1()" class="btn btn-primary">Save changes</button>
+                    <button type="button" onclick="ajaxed1()"  data-toggle="modal" data-target="#subcategorymodal" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>

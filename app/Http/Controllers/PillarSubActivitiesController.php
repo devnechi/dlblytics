@@ -30,8 +30,6 @@ class PillarSubActivitiesController extends Controller
         //pillar manager get project created by them
         $mysubactivities = DB::table('pillar_subactivities')
                 ->where('created_by', '=', $cuid)
-                ->where('pillar_ref_id', '=', $cpid)
-                ->where('review_status', '=', 'pending review')
                 ->get();
 
 

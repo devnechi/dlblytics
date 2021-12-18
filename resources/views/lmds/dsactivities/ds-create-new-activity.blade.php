@@ -238,16 +238,17 @@
                                 <div class="card">
 
                                     <div class="card-content table-responsive">
-                                        <h4>Add Activities</h4>
+                                        <h4>Add Activities </h4>
+                                        <p>As per uploaded Imprest above</p>
                                         <br />
                                         <div class="row">
                                             <div class="col-lg-12">
 
                                                 <div class="form-group col-lg-12 input-group-lg">
-                                                    <div class="row">
+                                                    <div class="row ">
 
-                                                        <div class="form-group col-lg-12">
-                                                            <div class="form-group multiple-form-group "  id="custg" data-max=6>
+                                                        <div class="form-group col-md-12">
+                                                            <div class="form-group multiple-form-group " id="custg" data-max=6>
                                                                 <div class="form-group input-group-lg">
                                                                     <div class="d-flex justify-content-between">
                                                                         <div class="row">
@@ -257,7 +258,7 @@
                                                                                 <input type="text" class="form-control" id="number_of_breaks" name="imp_act_name[]" value="" placeholder="">
                                                                             </div>
 
-                                                                            <div class="form-group input-group-sm p-1 col-md-6"> <label   for="formGroupProductName">Imprest type</label>
+                                                                            <div class="form-group input-group-sm p-1 col-md-6"> <label for="formGroupProductName">Imprest type</label>
                                                                                 <select class="form-control form-group col-lg-12 " aria-label="Large" id="selectimprest" name="imp_type[]" aria-describedby="inputGroup-sizing-sm">
                                                                                     <option value="">Select imprest Item</option>
                                                                                     <option value="Training Advance Request">Training Advance Request</option>
@@ -289,19 +290,26 @@
 
                                                                             <div class=" input-group-sm text-nowrap p-1 ">
                                                                                 <label for="formGroupExampleInput2">Total Amount<small> (TZS)</small></label>
-                                                                                <input type="text" id="cls0t" name="total_cost[]" readonly class="tocost form-control">
+                                                                                <input type="text" id="cls0t" oninput="totalamount(this.value)" name="total_cost[]" readonly class="tocost form-control">
                                                                             </div>
 
 
                                                                         </div>
                                                                         <div class="col-md-1 input-group-sm border-left mt-4 ml-4">
                                                                             <label for="formGroupExampleInput2"> <br><br></label>
-                                                                            <span class="input-group-btn"><button type="button" class="btn btn-outline-primary btn-adl">+
+                                                                            <span class="input-group-btn"><button type="button" class="btn btn-outline-primary btn-danger btn-remo">-
                                                                                 </button></span>
                                                                         </div>
                                                                     </div>
                                                                     <hr style="background-color: aqua;">
 
+                                                                </div>
+                                                                <div class="row justify-content-end">
+                                                                    <div class="col-md-1 input-group-sm  m-0 p-1">
+                                                                        <label for="formGroupExampleInput2"></label>
+                                                                        <span class="input-group-btn"><button type="button" class="btn btn-outline-primary btn-adl btn-default">+
+                                                                            </button></span>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -318,25 +326,27 @@
                                 <div class="row">
                                     <div class="form-group col-lg-12 input-group-lg">
                                         <div class="form-group green-border-focus d-flex justify-content-between">
-                                            <label for="amount_rqst" class="tt text-nowrap">Total Amount Requested:
+                                            <label for="amount_rqst" class=" text-nowrap">Total Amount Requested:
                                             </label>
-                                            <input type="text" class="form-control col-4" name="amount_rqst">
+                                            <input type="text" class="form-control col-4" id="tt" name="amount_rqst readonly">
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
-
                         </div>
+
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
+              
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </div>
         </div>
-    </form>
-    <!-- Modal -->
+</div>
+</form>
+<!-- Modal -->
 
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -361,81 +371,103 @@
 
     function totalcost(e) {
 
-var gclas= e.target.getAttribute("class");
-var ele=gclas.split(' ')[1];
+        var gclas = e.target.getAttribute("class");
+        var ele = gclas.split(' ')[1];
 
-var elements = document.getElementsByClassName(ele);
+        var elements = document.getElementsByClassName(ele);
 
-let sum = 0;
+        let sum = 1;
         for (var i = 0, len = elements.length; i < len; i++) {
 
-            sum +=parseInt(elements[i].value);
+            sum *= parseInt(elements[i].value);
         }
 
-        var f = document.getElementById(ele+'t');
+        var f = document.getElementById(ele + 't');
         f.value = sum;
-
+        totalamount(); 
     }
-    $(document).ready(function(){
-        var elements = document.getElementsByClassName("tocost");
-        var tt = document.getElementsByClassName("tt");
+    
+    function totalamount() {
+ 
+        var element = document.getElementsByClassName("tocost");
+        
+        var tt =document.getElementById("tt");
         var sum = 0;
-        for (var i = 0, len = elements.length; i < len; i++) {
-            alert(element[i].value);
-            sum = sum + element[i].value;
+        for (var i = 0, len = element.length; i < len; i++) {
+       
+            sum = sum + parseInt(element[i].value);
         }
-
+     
         tt.value = sum;
 
 
-    });
-    var cls= 1;
+    };
+    var cls = 1;
     var addFormGrp = function(event) {
 
-                    var formg =  '<div class="form-group input-group-lg">'+
-                                        '<div class="d-flex justify-content-between">'+
-                                        '<div class="row"> <div class="form-group  input-group-sm p-1 col-md-6">'+
-                                        '<label for="formGroupProductName">Activity title</label>'+
-                                        '<input type="text" class="form-control" id="number_of_breaks" name="imp_act_name[]" value="" placeholder=""></div>'+
-                                        '<div class="form-group input-group-sm p-1 col-md-6"> <label   for="formGroupProductName">Imprest type</label>'+
-                                        '<select class="form-control form-group col-lg-12 " aria-label="Large" id="selectimprest" name="imp_type[]" aria-describedby="inputGroup-sizing-sm">'+
-                                        '<option value="">Select imprest Item</option>'+
-                                        '<option value="Training Advance Request">Training Advance Request</option>'+
-                                        '<option value="Travel Advance Request">Travel Advance Request</option>'+
-                                        '<option value="Allowance Request">Allowance Request</option>'+
-                                        '<option value="Per Diem Claim">Per Diem Claim</option>'+
-                                        '<option value="Petty Cash">Petty Cash</option>'+
-                                        '<option value="Payment Requesition Request">Payment Requesition Request</option>'+
-                                        '<option value="Other">Other</option>'+
-                                        '</select> </div>'+
-                                    '<div class=" input-group-sm p-1 col-md-1">'+
-                                    '<label for="formGroupExampleInput2">Qty</label>'+
-                                    '<input type="text" name="qty[]" id="qty" class="form-control cls'+cls+'"></div>'+
-                                    '<div class=" input-group-sm p-1 ">'+
-                                    '<label for="formGroupExampleInput2">Unit</label>'+
-                                    '<input type="text" name="unit[]" id="united" class="form-control "></div>'+
-                                    '<div class=" input-group-sm p-1 col-md-1 mr-3">'+
-                                    '<label for="formGroupExampleInput2">Number</label>'+
-                                    '<input type="text" name="number[]" id="number" class="form-control cls'+cls+'"></div>'+
-                                    '<div class=" input-group-sm p-1 col-md-2">'+
-                                    '<label for="formGroupExampleInput2">Unit price</label>'+
-                                    '<input type="text" onchange="totalcost(event)" name="unit_price[]" class="form-control cls'+cls+'"></div>'+
-                                    '<div class=" input-group-sm text-nowrap p-1 ">'+
-                                    '<label for="formGroupExampleInput2">Total Amount<small> (TZS)</small></label>'+
-                                    '<input type="text" id="cls'+cls+'t" name="total_cost[]" readonly class="tocost form-control"></div>'+
-                                    '</div><div class="col-md-1 input-group-sm border-left mt-4 ml-4">'+
-                                    '<label for="formGroupExampleInput2"> <br><br></label>'+
-                                        '<span class="input-group-btn"><button type="button" class="btn btn-outline-primary btn-adl">+'+
-                                        '</button></span></div></div>'+
-                                        '<hr style="background-color: aqua;"></div>';
+        var formg = '<div class="form-group input-group-lg">' +
+            '<div class="d-flex justify-content-between">' +
+            '<div class="row"> <div class="form-group  input-group-sm p-1 col-md-6">' +
+            '<label for="formGroupProductName">Activity title</label>' +
+            '<input type="text" class="form-control" id="number_of_breaks" name="imp_act_name[]" value="" placeholder=""></div>' +
+            '<div class="form-group input-group-sm p-1 col-md-6"> <label   for="formGroupProductName">Imprest type</label>' +
+            '<select class="form-control form-group col-lg-12 " aria-label="Large" id="selectimprest" name="imp_type[]" aria-describedby="inputGroup-sizing-sm">' +
+            '<option value="">Select imprest Item</option>' +
+            '<option value="Training Advance Request">Training Advance Request</option>' +
+            '<option value="Travel Advance Request">Travel Advance Request</option>' +
+            '<option value="Allowance Request">Allowance Request</option>' +
+            '<option value="Per Diem Claim">Per Diem Claim</option>' +
+            '<option value="Petty Cash">Petty Cash</option>' +
+            '<option value="Payment Requesition Request">Payment Requesition Request</option>' +
+            '<option value="Other">Other</option>' +
+            '</select> </div>' +
+            '<div class=" input-group-sm p-1 col-md-1">' +
+            '<label for="formGroupExampleInput2">Qty</label>' +
+            '<input type="text" name="qty[]" id="qty" class="form-control cls' + cls + '"></div>' +
+            '<div class=" input-group-sm p-1 ">' +
+            '<label for="formGroupExampleInput2">Unit</label>' +
+            '<input type="text" name="unit[]" id="united" class="form-control "></div>' +
+            '<div class=" input-group-sm p-1 col-md-1 mr-3">' +
+            '<label for="formGroupExampleInput2">Number</label>' +
+            '<input type="text" name="number[]" id="number" class="form-control cls' + cls + '"></div>' +
+            '<div class=" input-group-sm p-1 col-md-2">' +
+            '<label for="formGroupExampleInput2">Unit price</label>' +
+            '<input type="text" onchange="totalcost(event)" name="unit_price[]" class="form-control cls' + cls + '"></div>' +
+            '<div class=" input-group-sm text-nowrap p-1 ">' +
+            '<label for="formGroupExampleInput2">Total Amount<small> (TZS)</small></label>' +
+            '<input type="text" id="cls' + cls + 't" name="total_cost[]" readonly class="tocost form-control"></div>' +
+            '</div><div class="col-md-1 input-group-sm border-left mt-4 ml-4">' +
+            '<label for="formGroupExampleInput2"> <br><br></label>' +
+            '<span class="input-group-btn"><button type="button" class="btn btn-outline-danger btn-remo">-' +
+            '</button></span></div></div>' +
+            '<hr style="background-color: aqua;"></div>';
 
-                                        event.target.classList.toggle('btn-default btn-adl btn-danger btn-remove');
 
-                    $("#custg").append(formg);
-                    alert(event.target.classList);
+        $("#custg").append(formg);
 
-                    cls++;
+        cls++;
+    };
+    var removeFormGrp = function(event) {
+                    event.preventDefault();
+
+                    var $formGroup = $(this).closest('.form-group');
+                    var $multipleFormGroup = $formGroup.closest('.multiple-form-group');
+
+                    var $lastFormGroupLast = $multipleFormGroup.find('.form-group:last');
+                    if ($multipleFormGroup.data('max') >= countFormGroup($multipleFormGroup)) {
+                        $lastFormGroupLast.find('.btn-add').attr('disabled', false);
+                    }
+
+                    $formGroup.remove();
+                    totalamount();
                 };
-                $(document).on('click', '.btn-adl', addFormGrp);
+
+                var countFormGroup = function($form) {
+                    return $form.find('.form-group').length;
+                };
+
+               
+    $(document).on('click', '.btn-remo', removeFormGrp);
+    $(document).on('click', '.btn-adl', addFormGrp);
 </script>
 @endsection
