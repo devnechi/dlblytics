@@ -67,9 +67,9 @@
                             </div>
                             <div class="form-group  input-group-sm d-flex justify-content-between">
                                 <label for="forDepartmentTitle" class="mr-2">Balance</label>
-                                <input type="text" class="form-control col-4" name="balance[]">
-                                <button type="button" data-toggle="modal" data-target="#imprest" class="btn btn-info">describe</button>
-                                <div class="modal fade" id="imprest" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <input type="text" class="form-control col-4"readonly name="balance[]">
+                                <button type="button" data-toggle="modal" data-target="#imp{{$imprest->id}}" class="btn btn-info">describe</button>
+                                <div class="modal fade" id="imp{{$imprest->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                     <div class="modal-dialog  modal-dialog-scrollable  modal-lg" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">

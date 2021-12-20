@@ -33,8 +33,17 @@ class ImprestController extends Controller
         $cpid = Auth::user()->pillar_id;
 
         $imprests = Imprest::all();
+        $imprestapprv=Imprest::where('status','approved')->where('pillar_id',$cpid)->get();
+        $imprestsubmited=Imprest::where('status','submitted')->where('pillar_id',$cpid)->get();
+        $imprestprossessing=Imprest::where('status','prossessing')->where('pillar_id',$cpid)->get();
+        $imprestdenied=Imprest::where('status','denied')->where('pillar_id',$cpid)->get();
 
-        return view('imprest.ds-imprest-index')->with('imprests',$imprests);
+
+        return view('imprest.ds-imprest-index')->with('imprests',$imprests)
+        ->with('imprestapprv',$imprestapprv)
+        ->with('imprestsubmited',$imprestsubmited)
+        ->with('imprestprossessing',$imprestprossessing)
+        ->with('imprestdenied',$imprestdenied);
     }
     public function retireindex()
     {
@@ -142,7 +151,7 @@ public function edit($id)
         return redirect('imprest/imprest')->with('flash_message', 'Imprest deleted!');
     }
     public function show($impid)
-    { 
+    {
 
                 $imprest=Imprest::findOrFail($impid);
 

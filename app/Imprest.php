@@ -14,12 +14,21 @@ class Imprest extends Model
     protected $fillable = [
         'imp_title',
         'requested_by',
+        'pillar_id',
         'ref_no',
         'purpose',
         'start_date',
         'end_date',
-        'amount_rqst'
+        'current_stage',
+        'status',
+        'amount_rqst',
+        'pillar_activities_pillar_act_id'
     ];
+
+    public function requestedby()
+    {
+        return $this->hasone(User::class,'user_id','requested_by');
+    }
     public function imp_activities()
     {
         return $this->hasMany(Imprest_activity::class,'imprest_id','id');
@@ -31,6 +40,6 @@ class Imprest extends Model
 
     public function activity()
     {
-        return $this->belongsTo(PillarActivities::class,'pillar_activities_pillar_act_id','pillar_act_id');
+        return $this->belongsTo(PillarActivities::class,'pillar_act_id','pillar_activities_pillar_act_id');
     }
 }
