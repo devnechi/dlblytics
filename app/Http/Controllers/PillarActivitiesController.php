@@ -141,7 +141,7 @@ class PillarActivitiesController extends Controller
             'end_date' => $request->get('end_datei'),
             'doc_path'=>$filePath,
             'amount_rqst' => $request->amount_rqst,
-
+            'current_stage' => $request->current_stage,
         ]);
 
         //get last imprest id
@@ -261,9 +261,9 @@ class PillarActivitiesController extends Controller
     public function show($id)
     {
 
-                $myactivities=PillarActivities::findOrFail($id);
-                return view('imprest.show')
-                ->with('myactivities',$myactivities);
+                $activt=PillarActivities::findOrFail($id);
+                return view('lmds.dsactivities.ds-show-activity')
+                ->with('activt',$activt);
 
     }
 
