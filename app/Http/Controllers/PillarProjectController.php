@@ -36,7 +36,6 @@ class PillarProjectController extends Controller
                 ->where('review_status', '=', 'pending review')
                 ->get();
 
-
          //my approved projects
          $myapprovedprojects = DB::table('pillar_projects')
                             ->where('created_by', '=', $cuid)
@@ -44,16 +43,12 @@ class PillarProjectController extends Controller
                             ->where('review_status', '=', 'approved')
                             ->get();
 
-
-
          //my denied projects
           $mydeniedprojects = DB::table('pillar_projects')
                             ->where('created_by', '=', $cuid)
                             ->where('pillar_ref_id', '=', $cpid)
                             ->where('review_status', '=', 'denied')
                             ->get();
-
-
 
         return view('lmds.dsprojects.ds-index-project')->with('myprojects',$myprojects)->with('myapprovedprojects',$myapprovedprojects)->with('mydeniedprojects',$mydeniedprojects);
 
@@ -99,7 +94,6 @@ class PillarProjectController extends Controller
 
         ]);
 
-
         // 'project_objectives' => $request->get('project_objectives'),
         // 'project_expected_outcomes' => $request->get('project_expected_outcomes'),
          $project->save();
@@ -108,9 +102,6 @@ class PillarProjectController extends Controller
          $project->project_id;
          $proj_ref_id = $project->project_id;
          $project_objectives = [];
-
-
-
 
          foreach($request->input('project_objectives') as $key => $value) {
              $project_objectives["project_objectives.{$key}"] = 'required';
@@ -124,8 +115,6 @@ class PillarProjectController extends Controller
             ]);
             $projobj->save();
         }
-
-
 
          //store project doc file
          $fileModel = new DocProjectFile;
