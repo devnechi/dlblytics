@@ -34,17 +34,13 @@ class PillarActivitiesController extends Controller
         $cuid = Auth::user()->user_id;
         $cpid = Auth::user()->pillar_id;
 
-
-
         //pillar manager get project created by them
         $myactivities = DB::table('pillar_activities')
                 ->where('created_by', '=', $cuid)
                 // ->where('pillar_ref_id', '=', $cpid)
                 // ->where('review_status', '=', 'pending review')
                 ->get();
-
-        return view('lmds.dsactivities.ds-index-activity')->with('myact',$myactivities);
-
+         return view('lmds.dsactivities.ds-index-activity')->with('myact',$myactivities);
     }
 
     /**
@@ -94,7 +90,7 @@ class PillarActivitiesController extends Controller
     }
     public function store(Request $request)
     {
- //dd($request);
+        //dd($request);
         $request->validate([
             'act_title' => 'required',
             'act_desc' => 'required',
@@ -127,12 +123,8 @@ class PillarActivitiesController extends Controller
 
         ]);
 
-
         //get last activity id
-
        $activity_id=$activity->save();
-
-
 
        if($request->hasfile('imprest_doc')) {
            $fileName = time().'_'.$request->file('imprest_doc')->getClientOriginalName();
@@ -154,7 +146,6 @@ class PillarActivitiesController extends Controller
 
         //get last imprest id
         $impid=$imprest->save();
-
          for($i=0; $i<count($request->imp_act_name);$i++)
         {
             $impact = new Imprest_activity([
@@ -170,8 +161,6 @@ class PillarActivitiesController extends Controller
             $impact->save();
         }
 
-
-
         $request->session()->flash('alert-success', 'Activity was successfully added!. You can now manage it.');
         return redirect()->route('ds-pillar-manager')
             ->with(['success', 'Activity was successfully added!. you can now manage it.'], ['tab', 'projects-nactivities-md-content']);
@@ -181,7 +170,6 @@ class PillarActivitiesController extends Controller
 
         public function edit($id)
         {
-
         $users=User::all();
         $countries=CountryListFacade::getlist('en');
         $regions=array(
@@ -228,7 +216,6 @@ class PillarActivitiesController extends Controller
 
         public function update(Request $request)
         {
-
             $request->validate([
                 'act_title' => 'required',
                 'act_desc' => 'required',
@@ -277,6 +264,22 @@ class PillarActivitiesController extends Controller
                 $myactivities=PillarActivities::findOrFail($id);
                 return view('imprest.show')
                 ->with('myactivities',$myactivities);
+
+    }
+
+
+        /**
+     * Display the specified resource.
+     *
+     * @param  \App\Employee  $employee
+     * @return \Illuminate\Http\Response
+     */
+    public function pillardetailsshow($id)
+    {
+                $project = PillarProject::find($id);
+
+        //return view('pillar-project.show', compact('pillarprojects'));
+            return view('lmds.dsprojects.ds-view-activity-full-details', compact('project'));
 
     }
 
