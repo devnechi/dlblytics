@@ -328,7 +328,7 @@
                                         <div class="form-group green-border-focus d-flex justify-content-between">
                                             <label for="amount_rqst" class=" text-nowrap">Total Amount Requested:
                                             </label>
-                                            <input type="text" class="form-control col-4" id="tt" name="amount_rqst readonly">
+                                            <input type="text" class="form-control col-4" id="tt" name="amount_rqst " readonly>
                                         </div>
                                     </div>
 
@@ -337,7 +337,7 @@
                         </div>
 
                     </div>
-              
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                     <button type="submit" class="btn btn-primary">Submit</button>
@@ -384,20 +384,20 @@
 
         var f = document.getElementById(ele + 't');
         f.value = sum;
-        totalamount(); 
+        totalamount();
     }
-    
+
     function totalamount() {
- 
+
         var element = document.getElementsByClassName("tocost");
-        
+
         var tt =document.getElementById("tt");
         var sum = 0;
         for (var i = 0, len = element.length; i < len; i++) {
-       
+
             sum = sum + parseInt(element[i].value);
         }
-     
+
         tt.value = sum;
 
 
@@ -466,7 +466,7 @@
                     return $form.find('.form-group').length;
                 };
 
-               
+
     $(document).on('click', '.btn-remo', removeFormGrp);
     $(document).on('click', '.btn-adl', addFormGrp);
 </script>

@@ -27,6 +27,14 @@ class PillarActivities extends Model
         'venue',
         'pinvolved'
     ];
+    public function subactivities()
+    {
+        return $this->hasMany(PillarSubActivities::class,'activity_ref_id','pillar_act_id');
+    }
+    public function act_imprest()
+    {
+        return $this->hasMany(PillarSubActivities::class,'pillar_activities_pillar_act_id','pillar_act_id');
+    }
 }
 
 

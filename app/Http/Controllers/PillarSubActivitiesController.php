@@ -36,7 +36,7 @@ class PillarSubActivitiesController extends Controller
         return view('lmds.dsactivities.ds-index-subactivity')->with('mysubactivities',$mysubactivities);
 
     }
-    public function createNewSubActivity($act_id=0){
+    public function create($act_id=0){
         $users=User::all();
         $countries=CountryListFacade::getlist('en');
         $regions=array(
@@ -213,11 +213,12 @@ class PillarSubActivitiesController extends Controller
            return redirect()->route('ds-pillar-manager')
                ->with(['success', 'subactivity was successfully added!. you can now manage it.'], ['tab', 'projects-nactivities-md-content']);
     }
-        public function Activid($id)
+    public function show($id)
     {
-        $proj = PillarActivities::find($id);
-        // return view('admin.pillarmanage.edit-pillar', compact('pillar'));
-        return view('lmds.dsactivities.ds-create-project-activity',  compact('proj'));
+
+                $activt=PillarSubActivities::findOrFail($id);
+                return view('lmds.dsactivities.ds-show-subactivity')
+                ->with('activt',$activt);
 
     }
 
