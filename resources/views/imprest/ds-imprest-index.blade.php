@@ -16,9 +16,9 @@
 <div class="container-fluid" id="data-science-request-md">
     <!-- line chart -->
     <!-- Button trigger modal -->
-    <!-- <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#dataScienceRequestTypeModal">
+
         create a new request
-    </button>
+    </button> --}}
     <br />
     <br /> -->
 
@@ -29,8 +29,6 @@
 
             <nav>
                 <div class="nav nav-tabs" id="dsreq-nav-tab" role="tablist">
-                    <a class="nav-item nav-link active" id="nav-my-requests-tab" data-toggle="tab" href="#dsreq-nav-my-requests" role="tab" aria-controls="nav-my-requests" aria-selected="true">My
-                        Imprests</a>
 
                     <a class="nav-item nav-link" id="nav-res-lm-requests-tab" data-toggle="tab" href="#dsreq-nav-res-lm-requests" role="tab" aria-controls="nav-contact" aria-selected="false">Response from Line Manager</a>
                 </div>
@@ -44,11 +42,7 @@
                         <div class="col-md-2">
                             <div class="nav flex-column nav-pills" id="vdsreqs-pills-tab" role="tablist" aria-orientation="vertical">
                                 <a class="nav-link active" id="vdsreqs-pills-all-pillar-request-tab" data-toggle="pill" href="#vdsreqs-pills-all-pillar-request" role="tab" aria-controls="vdsreqs-pills-all-pillar-request" aria-selected="true">All
-                                    Pillar requests</a>
-                                <a class="nav-link" id="vdsreqs-pills-my-approved-req-tab" data-toggle="pill" href="#vdsreqs-pills-my-approved-req" role="tab" aria-controls="vdsreqs-pills-my-approved-req" aria-selected="false">My Approved
-                                    Imprest</a>
-                                <a class="nav-link" id="vdsreqs-pills-my-req-retirements-tab" data-toggle="pill" href="#vdsreqs-pills-my-req-retirements" role="tab" aria-controls="vdsreqs-pills-my-req-retirements" aria-selected="false">My
-                                    Denied Imprest</a>
+
 
                                 <a class="nav-link" id="submittedimprest-tab" data-toggle="pill" href="#submittedimprest" role="tab" aria-controls="submittedimprest" aria-selected="false">Submitted Imprest</a>
                                 <a class="nav-link" id="prossessingimprest-tab" data-toggle="pill" href="#prossessingimprest" role="tab" aria-controls="prossessingimprest" aria-selected="false">Prossessing Imprest</a>
@@ -64,7 +58,7 @@
                                             <div class="d-flex p-2 justify-content-center">No Record Found!</div>
                                             @else
                                             <table class="table table-bordered table-hover">
-                                                <p>All created <strong>Imprests</strong> in the Pillar</p>
+
                                                 <thead>
                                                     <tr>
                                                         <th scope="col">#</th>
