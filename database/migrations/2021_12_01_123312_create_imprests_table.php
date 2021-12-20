@@ -25,7 +25,7 @@ class CreateImprestsTable extends Migration
             $table->string('doc_path');
             $table->integer('requested_by');
             $table->integer('pillar_id');
-            $table->json('reviewed_by')->nullable;
+            $table->json('reviewed_by')->nullable();
             $table->string('ref_no');
             $table->longText('purpose');
             $table->float('amount_rqst');

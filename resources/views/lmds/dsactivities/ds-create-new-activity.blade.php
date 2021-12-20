@@ -290,7 +290,7 @@
 
                                                                             <div class=" input-group-sm text-nowrap p-1 ">
                                                                                 <label for="formGroupExampleInput2">Total Amount<small> (TZS)</small></label>
-                                                                                <input type="text" id="cls0t" oninput="totalamount(this.value)" name="total_cost[]" readonly class="tocost form-control">
+                                                                                <input type="text" id="cls0t" oninput="totalamount(this.value)" name="total_cost[]"  readonly class="tocost form-control">
                                                                             </div>
 
 
@@ -328,7 +328,7 @@
                                         <div class="form-group green-border-focus d-flex justify-content-between">
                                             <label for="amount_rqst" class=" text-nowrap">Total Amount Requested:
                                             </label>
-                                            <input type="text" class="form-control col-4" id="tt" name="amount_rqst " readonly>
+                                            <input type="text" class="form-control col-4" id="tt" name="amount_rqst" readonly >
                                         </div>
                                     </div>
 
