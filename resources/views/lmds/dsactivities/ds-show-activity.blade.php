@@ -42,7 +42,6 @@
                         <a class="nav-link" id="nav-imprests-tab" data-toggle="tab" href="#nav-imprests" role="tab" aria-controls="nav-imprests" aria-selected="false">Imprests</a>
                         <a class="nav-link" id="nav-retirements-tab" data-toggle="tab" href="#nav-retirements" role="tab" aria-controls="nav-retirements" aria-selected="false">Retirements</a>
                         <a class="nav-link" id="nav-members-tab" data-toggle="tab" href="#nav-members" role="tab" aria-controls="nav-members" aria-selected="false">Members</a>
-                       
 
 
 
