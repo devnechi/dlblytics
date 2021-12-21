@@ -86,7 +86,7 @@ Route::resource('pillar-activity', 'PillarActivitiesController');
 Route::resource('pillar-subactivity', 'PillarSubActivitiesController');
 
 Route::resource('upload-project-file-doc', 'ProjectDocController');
-
+Route::resource('retirement', 'RetirementsController');
 Route::resource('imprest', 'ImprestController');
 Route::get('retireindex', 'ImprestController@retireindex')->name('retireindex');
 

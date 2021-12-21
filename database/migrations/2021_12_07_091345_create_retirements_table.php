@@ -18,8 +18,9 @@ class CreateRetirementsTable extends Migration
             $table->integer('imp_act_id');
             $table->integer('amount used');
             $table->string('receipt_path');
+            $table->string('balance_path')->nullable();
             $table->string('balance');
-            $table->string('described');
+            $table->string('described')->nullable();
             $table->timestamps();
         });
     }

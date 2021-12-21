@@ -28,7 +28,7 @@ class CreateImprestsTable extends Migration
             $table->json('reviewed_by')->nullable();
             $table->string('ref_no');
             $table->longText('purpose');
-            $table->float('amount_rqst');
+            $table->integer('amount_rqst');
             $table->dateTime('start_date');
             $table->dateTime('end_date');
             $table->timestamps();

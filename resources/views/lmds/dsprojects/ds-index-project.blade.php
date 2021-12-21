@@ -67,10 +67,10 @@
                                                                 <td class="w-30 p-2">{{ $myproject->review_status }}</td>
                                                                 <td class="w-10 p-2">{{ $myproject->created_at }}</td>
                                                                 <td class="w-30 p-2">
-                                                                    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#ds-act-actions"> Actions
+                                                                    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#pr{{$myproject->project_id }}"> Actions
                                                                     </button>
                                                                     <!-- Modal -->
-                                                                    <div class="modal fade" id="ds-act-actions" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-proj="{{ $myproject->project_id }}" data-user="{{ Auth::user()->user_id }}">
+                                                                    <div class="modal fade" id="pr{{$myproject->project_id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-proj="{{ $myproject->project_id }}" data-user="{{ Auth::user()->user_id }}">
                                                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                                                             <div class="modal-content">
                                                                                 <div class="modal-header">

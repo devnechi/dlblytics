@@ -304,19 +304,21 @@
                                                                     <hr style="background-color: aqua;">
 
                                                                 </div>
-                                                                <div class="row justify-content-end">
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <!-- <label for="exampleFormControlSelect1" class="control-label">select below:</label> -->
+
+                                                </div>
+                                                <div class="row justify-content-end">
                                                                     <div class="col-md-1 input-group-sm  m-0 p-1">
                                                                         <label for="formGroupExampleInput2"></label>
                                                                         <span class="input-group-btn"><button type="button" class="btn btn-outline-primary btn-adl btn-default">+
                                                                             </button></span>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- <label for="exampleFormControlSelect1" class="control-label">select below:</label> -->
-
-                                                </div>
                                             </div>
                                             <!-- end of row -->
                                         </div>
