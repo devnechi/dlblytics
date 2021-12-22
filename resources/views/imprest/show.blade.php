@@ -60,7 +60,7 @@
         </ul>
         <div class="collapse" id="{{'cp'.$imp->id}}">
             <div class="card mt-1 mb-1">
-                <form action="{{route('retirestore')}}" method="post">
+                <form action="{{route('retirement.store')}}" method="post">
                     <div class=" row card-body">
                         <div class="col-md-4">Lorem ipsum dolor sit amet consectetur</div>
                         <div class="col-md-8">
@@ -77,9 +77,10 @@
                                         No receipt Attached</label>
                                 </div>
                             </div>
+                            <input  name="imp_act_id" type="hidden" id="imp_act_id" value="{{ isset($imp->id) ? $imp->id : ''}}" >
                             <div class="form-group  input-group-sm d-flex justify-content-between">
                                 <label for="forDepartmentTitle" class="mr-2">Balance</label>
-                                <input type="text" id="ba{{$imp->id}}" class="form-control col-4" name="balance">
+                                <input type="text" id="ba{{$imp->id}}" readonly class="form-control col-4" name="balance">
                                 <div id="b{{$imp->id}}">
                                 <button type="button"  data-toggle="modal" data-target="#mo{{$imp->id}}" class="btn btn-info">describe</button>
                                 </div>
@@ -176,7 +177,7 @@ var bol= document.getElementById('b' + prm);
 
         ba.value=parseInt(ta.innerHTML)-parseInt(e.target.value);
         var newb = document.createElement('div');
-        oldb= '<button type="button"  data-toggle="modal" data-target="#imprest" class="btn btn-info">describe</button>';
+        oldb= '<button type="button"  data-toggle="modal" data-target="#mo'+prm+'" class="btn btn-info">describe</button>';
          newb= '<button type="submit"   class="btn btn-info">Submit</button>';
         if(ba.value==0)
         {

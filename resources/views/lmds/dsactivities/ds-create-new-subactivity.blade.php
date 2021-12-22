@@ -79,11 +79,11 @@
         </div>
         <div class="row">
             <div class="form-group col-md-6 input-group-lg">
-                <label for="forDepartmentTitle">Activity Title</label>
+                <label for="forDepartmentTitle">Sub activity Title</label>
                 <input type="text" class="form-control" name="subact_title" placeholder="" required>
             </div>
         </div>
-        <p>Activity estimated duration</p>
+        <p>Sub activity estimated duration</p>
         <div class="row">
             <div class="form-group col-md-4 input-group-lg">
                 <label for="forDepartmentTitle">Start Date</label>
@@ -94,7 +94,7 @@
                 <input type="date" class="form-control" name="end_date">
             </div>
         </div>
-        <label for="formGroupExampleInput2">Activity objectives.</label>
+        <label for="formGroupExampleInput2">Sub activity objectives.</label>
         <div class="row">
             <div class="form-group col-lg-12">
                 <div class="form-group multiple-form-group" data-max=6>

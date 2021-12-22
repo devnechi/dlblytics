@@ -290,7 +290,7 @@
 
                                                                             <div class=" input-group-sm text-nowrap p-1 ">
                                                                                 <label for="formGroupExampleInput2">Total Amount<small> (TZS)</small></label>
-                                                                                <input type="text" id="cls0t" oninput="totalamount(this.value)" name="total_cost[]" readonly class="tocost form-control">
+                                                                                <input type="text" id="cls0t" oninput="totalamount(this.value)" name="total_cost[]"  readonly class="tocost form-control">
                                                                             </div>
 
 
@@ -304,19 +304,21 @@
                                                                     <hr style="background-color: aqua;">
 
                                                                 </div>
-                                                                <div class="row justify-content-end">
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <!-- <label for="exampleFormControlSelect1" class="control-label">select below:</label> -->
+
+                                                </div>
+                                                <div class="row justify-content-end">
                                                                     <div class="col-md-1 input-group-sm  m-0 p-1">
                                                                         <label for="formGroupExampleInput2"></label>
                                                                         <span class="input-group-btn"><button type="button" class="btn btn-outline-primary btn-adl btn-default">+
                                                                             </button></span>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!-- <label for="exampleFormControlSelect1" class="control-label">select below:</label> -->
-
-                                                </div>
                                             </div>
                                             <!-- end of row -->
                                         </div>
@@ -328,7 +330,7 @@
                                         <div class="form-group green-border-focus d-flex justify-content-between">
                                             <label for="amount_rqst" class=" text-nowrap">Total Amount Requested:
                                             </label>
-                                            <input type="text" class="form-control col-4" id="tt" name="amount_rqst " readonly>
+                                            <input type="text" class="form-control col-4" id="tt" name="amount_rqst" readonly >
                                         </div>
                                     </div>
 

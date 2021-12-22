@@ -25,7 +25,7 @@
         <div class="tab-pane fade show active" id="data-science-overview-md" role="tabpanel" aria-labelledby="data-science-overview-tab-md">
             <div class="row">
                 {{-- data science notifications --}}
-                <div class="col-lg-3">
+                <!-- <div class="col-lg-3">
                     <div class="card rounded">
                         <div class="card-content table-responsive">
                             <h5 class="title">New Notifications</h5>
@@ -93,22 +93,17 @@
                         </div>
 
                     </div>
-                </div>
-                <div class="col-lg-9">
+                </div> -->
+                <div class="col-lg-12">
                     <div class="row">
                         <div class="col-md-3">
                             <div class="card rounded">
-                                <div class="card-content table-responsive d-flex">
-                                    <div class="row">
-                                        <div class="">
-                                            <p class="p-0"> projects created </p>
-                                        </div>
-                                    </div>
-
+                                <div class="card-content table-responsive d-flex justify-content-between">
+                                      <p class=""> projects created </p>
                                     <div class="d-flex justify-content-between">
 
                                         <div class="m-1">
-                                            <h3 class="cardhd">12</h3>
+                                            <h3 class="cardhd">{{count($myprojects)}}</h3>
                                         </div>
                                         <div class="m-1">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#9c27b0" class="bi bi-folder-check" viewBox="0 0 16 16">
@@ -122,14 +117,14 @@
                         </div>
                         <div class="col-md-3">
                             <div class="card rounded">
-                                <div class="card-content table-responsive d-flex ">
+                                <div class="card-content table-responsive d-flex justify-content-between">
                                     <p> Activities created </p>
-                                    <div class="row">
+                                    <div class="row justify-content-between">
 
-                                        <div class="">
-                                            <h3 class="cardhd">10</h3>
+                                        <div class="m-1">
+                                            <h3 class="cardhd">{{count($myactivities)}}</h3>
                                         </div>
-                                        <div class="">
+                                        <div class="m-1">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#00bcd4" class="bi bi-check2-circle" viewBox="0 0 16 16">
                                                 <path fill-rule="evenodd" d="M15.354 2.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L8 9.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
                                                 <path fill-rule="evenodd" d="M8 2.5A5.5 5.5 0 1 0 13.5 8a.5.5 0 0 1 1 0 6.5 6.5 0 1 1-3.25-5.63.5.5 0 1 1-.5.865A5.472 5.472 0 0 0 8 2.5z" />
@@ -141,14 +136,14 @@
                         </div>
                         <div class="col-md-3">
                             <div class="card rounded">
-                                <div class="card-content table-responsive d-flex">
+                                <div class="card-content table-responsive d-flex justify-content-between">
                                     <p> Sub-Activities recorded </p>
-                                    <div class="row">
+                                    <div class="row justify-content-between">
 
-                                        <div class="">
-                                            <h3 class="cardhd">24</h3>
+                                        <div class="m-1">
+                                            <h3 class="cardhd">{{count($mysubactivities)}}</h3>
                                         </div>
-                                        <div class="">
+                                        <div class="m-1">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#009688" class="bi bi-check2-square" viewBox="0 0 16 16">
                                                 <path fill-rule="evenodd" d="M15.354 2.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L8 9.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
                                                 <path fill-rule="evenodd" d="M1.5 13A1.5 1.5 0 0 0 3 14.5h10a1.5 1.5 0 0 0 1.5-1.5V8a.5.5 0 0 0-1 0v5a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V3a.5.5 0 0 1 .5-.5h8a.5.5 0 0 0 0-1H3A1.5 1.5 0 0 0 1.5 3v10z" />
@@ -160,14 +155,14 @@
                         </div>
                         <div class="col-md-3">
                             <div class="card rounded">
-                                <div class="card-content table-responsive d-flex">
+                                <div class="card-content table-responsive d-flex justify-content-between">
                                     <p> other Activities </p>
-                                    <div class="row">
+                                    <div class="row justify-content-between">
 
-                                        <div class="">
-                                            <h3 class="cardhd">06</h3>
+                                        <div class="m-1">
+                                            <h3 class="cardhd">0</h3>
                                         </div>
-                                        <div class="">
+                                        <div class="m-1">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#ff9800" class="bi bi-folder-check" viewBox="0 0 16 16">
                                                 <path fill-rule="evenodd" d="M9.828 4H2.19a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91H9v1H2.826a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31L.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181L15.546 8H14.54l.265-2.91A1 1 0 0 0 13.81 4H9.828zm-2.95-1.707L7.587 3H2.19c-.24 0-.47.042-.684.12L1.5 2.98a1 1 0 0 1 1-.98h3.672a1 1 0 0 1 .707.293z" />
                                                 <path fill-rule="evenodd" d="M15.854 10.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708l1.146 1.147 2.646-2.647a.5.5 0 0 1 .708 0z" />
@@ -899,10 +894,10 @@
         </div>
 
 
-      
+
 
         <!-- start of financial reports data panel -->
-  
+
 
 
         <!-- start of download-forms data panel -->
@@ -1294,7 +1289,7 @@
         </div>
 
 
-     
+
         <!-- start of financial-analytics data panel -->
         <!-- <div class="tab-pane fade" id="projects-nactivities-md-content" role="tabpanel" aria-labelledby="projects-nactivities-tab-md">
 

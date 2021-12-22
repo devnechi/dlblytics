@@ -15,12 +15,7 @@
 <!--  start of imprest-retirements data-->
 <div class="container-fluid" id="data-science-request-md">
     <!-- line chart -->
-    <!-- Button trigger modal -->
-
-        create a new request
-    </button> --}}
-    <br />
-    <br /> -->
+  
 
 
 
@@ -53,7 +48,7 @@
                                 <div class="tab-pane fade active show" id="vdsreqs-pills-all-pillar-request" role="tabpanel" aria-labelledby="vdsreqs-pills-settings-tab">
                                     <div class="row">
                                         <div class="col-lg-12">
-                                        
+
                                             @if(count($imprests)==0)
                                             <div class="d-flex p-2 justify-content-center">No Record Found!</div>
                                             @else
