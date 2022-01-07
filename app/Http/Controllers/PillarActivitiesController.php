@@ -147,8 +147,7 @@ class PillarActivitiesController extends Controller
         ]);
 
         //get last imprest id
-        $imprest->save();
-        $impid=$imprest->id;
+
          for($i=0; $i<count($request->imp_act_name);$i++)
         {
             $impact = new Imprest_activity([
@@ -279,10 +278,10 @@ class PillarActivitiesController extends Controller
      */
     public function pillardetailsshow($id)
     {
-                $project = PillarProject::find($id);
+               // $pillactivity = PillarProject::find($id);
 
         //return view('pillar-project.show', compact('pillarprojects'));
-            return view('lmds.dsprojects.ds-view-activity-full-details', compact('project'));
+            return view('lmds.dsprojects.ds-view-activity-full-details', compact('pillactivity'));
 
     }
 
