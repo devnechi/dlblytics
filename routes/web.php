@@ -74,6 +74,8 @@ Route::get('/imprest-detail/{id}', 'DSpillarManager@showImprest')->name('imprest
 Route::get('edit-project/{id}', 'PillarProjectController@edit')->name('edit-project');
 
 Route::resource('pillar-project', 'PillarProjectController');
+Route::get('get-pdf/{name}','PillarProjectController@getPdf')->name('get-pdf');
+
 Route::post('edit-projectp', 'PillarProjectController@update')->name('edit-projectp');
 
 Route::get('edit-activity/{id}', 'PillarActivitiesController@edit')->name('edit-activity');
@@ -88,7 +90,11 @@ Route::resource('pillar-subactivity', 'PillarSubActivitiesController');
 Route::resource('upload-project-file-doc', 'ProjectDocController');
 Route::resource('retirement', 'RetirementsController');
 Route::resource('imprest', 'ImprestController');
+
+Route::get('retireshow/{id}', 'RetirementsController@retireshow')->name('retireshow');
 Route::get('retireindex', 'ImprestController@retireindex')->name('retireindex');
+Route::post('retireview', 'RetirementsController@review')->name('retireview');
+Route::post('imprestreview', 'ImprestController@review')->name('imprestreview');
 
 Route::post('/retirestore', 'ImprestController@retirestore')->name('retirestore');
 // ADMIN MANAGING kpis manage-kpis

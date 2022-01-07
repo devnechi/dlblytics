@@ -9,6 +9,10 @@ use App\User;
 use App\Pillar;
 use App\Department;
 use App\DManagerRoles;
+use App\Imprest;
+use App\PillarActivities;
+use App\PillarProject;
+use App\PillarSubActivities;
 use Auth;
 
 class FinanceAdminController extends Controller
@@ -62,6 +66,14 @@ class FinanceAdminController extends Controller
                 // all dept staff
                 // all pillar staff
                 // all pillar managers
+                // all pillar projects
+                $projects=PillarProject::all();
+                // all pillar projects
+                $activities=PillarActivities::all();
+                // all pillar projects
+                $subactivities=PillarSubActivities::all();
+                // all pillar projects
+                $imprests=Imprest::all();
 
                 //opend finance dashboard index page
                 return view('financeAdmin.index',
@@ -71,6 +83,10 @@ class FinanceAdminController extends Controller
                 'pillarstaffs',
                 'depts',
                 'pillars',
+                'projects',
+                'activities',
+                'subactivities',
+                'imprests',
                 'departments'));
     }
 

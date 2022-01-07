@@ -37,9 +37,17 @@ class PillarProject extends Model
     {
         return $this->hasMany(projectObjective::class,'project_id','project_id');
     }
+    public function activities()
+    {
+        return $this->hasMany(PillarActivities::class,'project_ref_id','project_id');
+    }
 
     public function ProjectFile()
     {
         return $this->hasMany(DocProjectFile::class,'project_id','project_id');
+    }
+    public function user()
+    {
+        return $this->hasOne(User::class,'user_id','created_by');
     }
 }

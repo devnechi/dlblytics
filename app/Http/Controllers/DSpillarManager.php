@@ -35,14 +35,14 @@ class DSpillarManager extends Controller
 
         //pillar manager get project created by them
         $myprojects = DB::table('pillar_projects')
-                ->where('created_by', '=', $cuid)
-                ->where('pillar_ref_id', '=', $cpid)
-                ->where('review_status', '=', 'pending review')
-                ->get();
+                            ->where('created_by', '=', $cuid)
+                            ->where('pillar_ref_id', '=', $cpid)
+                            ->where('review_status', '=', 'pending review')
+                            ->get();
 
         //pillar manager get activities created by them
-        $myactivities=PillarActivities::all();
-        $mysubactivities=PillarSubActivities::all();
+        $myactivities=PillarActivities::where('pillar_ref_id', '=', $cpid)->get();
+        $mysubactivities=PillarSubActivities::where('pillar_ref_id', '=', $cpid)->get();
 
          //my approved projects
          $myapprovedprojects = DB::table('pillar_projects')
@@ -54,7 +54,7 @@ class DSpillarManager extends Controller
 
                 //pillar manager get project created by them
         $imprests = DB::table('imprests')
-                            ->where('requested_by', '=', $cuid)
+                            ->where('pillar_id', '=', $cpid)
                             ->get();
 
          //my denied projects
@@ -64,12 +64,6 @@ class DSpillarManager extends Controller
                             ->where('review_status', '=', 'denied')
                             ->get();
 
-            //activities
-            // $myactivities
-
-
-            //sub activities
-            // $mysubactivities
 
         return view('lmds.index', compact('pillarprojects', 'myapprovedprojects', 'mydeniedprojects'))->with('myprojects',$myprojects)->with('myactivities',$myactivities)->with('mysubactivities',$mysubactivities)->with("imprests",$imprests);
 

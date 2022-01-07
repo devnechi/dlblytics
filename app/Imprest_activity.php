@@ -11,6 +11,7 @@ class Imprest_activity extends Model
     protected $table = "imprest_activities";
 
     protected $fillable = [
+        'status',
         'imp_act_name',
         'imp_type',
         'imprest_id',
@@ -24,4 +25,9 @@ class Imprest_activity extends Model
     {
         return $this->belongsTo(Imprest::class);
     }
+    public function retire()
+    {
+        return $this->hasOne(Retirement::class,'imp_act_id','id');
+    }
+
 }

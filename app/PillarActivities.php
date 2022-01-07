@@ -25,15 +25,16 @@ class PillarActivities extends Model
         'end_date',
         'country',
         'venue',
-        'pinvolved'
+        'pinvolved',
+        'pillar_ref_id'
     ];
     public function subactivities()
     {
         return $this->hasMany(PillarSubActivities::class,'activity_ref_id','pillar_act_id');
     }
-    public function act_imprest()
+    public function imprests()
     {
-        return $this->hasMany(PillarSubActivities::class,'pillar_activities_pillar_act_id','pillar_act_id');
+        return $this->hasMany(Imprest::class,'pillar_activities_pillar_act_id','pillar_act_id');
     }
 }
 

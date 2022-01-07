@@ -16,7 +16,7 @@ class CreateRetirementsTable extends Migration
         Schema::create('retirements', function (Blueprint $table) {
             $table->id();
             $table->integer('imp_act_id');
-            $table->integer('amount used');
+            $table->integer('amount_used');
             $table->string('receipt_path');
             $table->string('balance_path')->nullable();
             $table->string('balance');

@@ -4,9 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
-
+use Auth;
 use App\Retirement;
+use App\Imprest;
+use App\imprest_review;
 use Illuminate\Http\Request;
+use App\Notifications\StatusNotification;
+use Notification;
 
 class RetirementsController extends Controller
 {
@@ -26,9 +30,15 @@ class RetirementsController extends Controller
             $retirements = Retirement::latest()->paginate($perPage);
         }
 
-        return view('retitements.retirements.index', compact('retirements'));
+        return view('retirements.retirements.index', compact('retirements'));
     }
 
+    public function retireshow($impid)
+    {
+        $imprest = Imprest::findOrFail($impid);
+
+        return view('retirements.retirements.index', compact('imprest'));
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -49,12 +59,50 @@ class RetirementsController extends Controller
     public function store(Request $request)
     {
 
-        dd($request);
-        $requestData = $request->all();
 
-        Retirement::create($requestData);
+        $retires = Retirement::where('imp_act_id', $request->get('imp_act_id'))->first();
+        if (isset($retires)) {
 
-        return redirect('retirements')->with('flash_message', 'Retirement added!');
+            $retires->imp_act_id = $request->get('imp_act_id');
+            $retires->amount_used = $request->get('amount_used');
+            $retires->balance = $request->get('balance');
+            $retires->described = $request->get('described');
+
+
+            if ($request->hasfile('receipt')) {
+                $fileName = time() . '_' . $request->file('receipt')->getClientOriginalName();
+                $filePath = $request->file('receipt')->storeAs('project_documents_uploads', $fileName);
+
+                $retires->receipt_path = '/storage/' . $filePath;
+            }
+            if ($request->hasfile('describedoc')) {
+                $fileName = time() . '_' . $request->file('describedoc')->getClientOriginalName();
+                $filePath = $request->file('describedoc')->storeAs('project_documents_uploads', $fileName);
+                $retires->balance_path = '/storage/' . $filePath;
+            }
+            $retires->update();
+        } else {
+            $cretirement = new Retirement([
+                'imp_act_id' => $request->get('imp_act_id'),
+                'amount_used' => $request->get('amount_used'),
+                'balance' => $request->get('balance'),
+                'described' => $request->get('described'),
+            ]);
+
+            if ($request->hasfile('receipt')) {
+                $fileName = time() . '_' . $request->file('receipt')->getClientOriginalName();
+                $filePath = $request->file('receipt')->storeAs('project_documents_uploads', $fileName);
+
+                $cretirement->receipt_path = '/storage/' . $filePath;
+            }
+            if ($request->hasfile('describedoc')) {
+                $fileName = time() . '_' . $request->file('describedoc')->getClientOriginalName();
+                $filePath = $request->file('describedoc')->storeAs('project_documents_uploads', $fileName);
+                $cretirement->balance_path = '/storage/' . $filePath;
+            }
+            $cretirement->save();
+        }
+        return redirect('imprest')->with('flash_message', 'Retirement added!');
     }
 
     /**
@@ -101,6 +149,35 @@ class RetirementsController extends Controller
         $retirement = Retirement::findOrFail($id);
         $retirement->update($requestData);
 
+        return redirect('retirements')->with('flash_message', 'Retirement updated!');
+    }
+
+    public function review(Request $request)
+    {
+        $imp = Imprest::findOrFail($request->imprest_id);
+        $imp->status = $request->status;
+        $imp->update();
+        $imprev = new imprest_review([
+            'comments' => $request->comments,
+            'imprest_id' => $request->imprest_id,
+            'imprest_id' => $request->imprest_id,
+            'user_id' => Auth::user()->user_id
+        ]);
+        $imprev->save();
+        $data = Auth::user();
+
+        $billData = [
+
+            'body' => 'You have received a new bill.',
+            'thanks' => 'Thank you',
+            'text' => '$600',
+            'offer' => route('retireindex'),
+            'bill_id' => 30061
+        ];
+
+        Notification::send($data, new StatusNotification($billData));
+
+        dd('Bill notification has been sent!');
         return redirect('retirements')->with('flash_message', 'Retirement updated!');
     }
 

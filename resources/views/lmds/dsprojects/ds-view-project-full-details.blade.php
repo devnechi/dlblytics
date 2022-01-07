@@ -20,7 +20,7 @@
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="m-auto " style="padding-top:40px; background:rgb(45, 170, 166); height:280px ">
                                     <div class="cont text-light text-center mb-4">
-                                        <a class="btn btn-outline-light mb-5">{{$project->project_title}} : project Overview</a>
+                                        <a href="{{route('pillar-project.index')}}" class="btn btn-outline-light mb-5">{{$project->project_title}} : project Overview</a>
                                         <h1 class="text-center "><strong>{{$project->project_title}}<strong></h1>
                                         <p class=" text-light">
                                             <strong>title<strong>
@@ -44,12 +44,6 @@
                                         <div class="nav nav-tabs" id="proj-details-nav-tab" role="tablist">
                                             <a class="nav-link active" id="nav-acts-tab" data-toggle="tab" href="#nav-projs" role="tab" aria-controls="nav-acts" aria-selected="true">Project Overview</a>
                                             <a class="nav-link " id="nav-acts-tab" data-toggle="tab" href="#nav-acts" role="tab" aria-controls="nav-acts" aria-selected="false">Activities</a>
-
-                                            <a class="nav-link" id="nav-sub-acts-tab" data-toggle="tab" href="#nav-sub-acts" role="tab" aria-controls="nav-sub-acts" aria-selected="false">Sub
-                                                Activities</a>
-
-                                            <a class="nav-link" id="nav-imprests-tab" data-toggle="tab" href="#nav-imprests" role="tab" aria-controls="nav-imprests" aria-selected="false">Imprests</a>
-                                            <a class="nav-link" id="nav-retirements-tab" data-toggle="tab" href="#nav-retirements" role="tab" aria-controls="nav-retirements" aria-selected="false">Retirements</a>
                                             <a class="nav-link" id="nav-members-tab" data-toggle="tab" href="#nav-members" role="tab" aria-controls="nav-members" aria-selected="false">Members</a>
                                             <a class="nav-link" id="nav-partners-tab" data-toggle="tab" href="#nav-partners" role="tab" aria-controls="nav-partners" aria-selected="false">Partners</a>
                                             <a class="nav-link" id="nav-funders-tab" data-toggle="tab" href="#nav-funders" role="tab" aria-controls="nav-funders" aria-selected="false">Funders</a>
@@ -65,7 +59,7 @@
 
                                             <div class="coursevida">
                                                 <div class="row">
-                                                    <div class=" col-md-6">
+                                                    <div class="col-md-6">
                                                         <div class="card">
                                                             <div class="card-header d-flex justify-content-between">
                                                                 <p>Objectives</p> <i class="fas fa-tasks fa-2x"></i>
@@ -99,42 +93,39 @@
                                                             </div>
                                                         </div>
                                                     </div>
-
-                                                    <div class=" col-md-6">
+                                                    <div class="col-md-6">
                                                         <div class="card">
-                                                        <div class="card-header d-flex justify-content-between">
-                                                            <p>Funders</p> <i class="fas fa-hand-holding-usd fa-2x"></i></i>
+                                                            <div class="card-header d-flex justify-content-between">
+                                                                <p>Duration</p> <i class="fas fa-hourglass-half fa-2x text-info"></i></i>
+                                                            </div>
+                                                            <div class="card-body">
+                                                                <ul class="list-group list-group-flush">
+                                                                    @php
+                                                                    $start_time = \Carbon\Carbon::parse($project->start_date);
+                                                                    $finish_time = \Carbon\Carbon::parse($project->end_date);
+                                                                    @endphp
+                                                                    <li class="list-group-item text-center">{{$start_time->diffInDays($finish_time, false)}} Days</li>
+                                                                    <li class="list-group-item d-flex justify-content-between"> <span>From <i class="text-success">{{date('d-m-Y', strtotime($start_time))}}</i> </span> <span>To <i class="text-primary">
+                                                                                {{date('d-m-Y', strtotime($finish_time))}}
+                                                                            </i> </span> </li>
+                                                                </ul>
+                                                            </div>
                                                         </div>
-                                                        <div class="card-body">
-                                                            <ul class="list-group list-group-flush">
-                                                                @foreach( $project->project_funders as $arriy)
-                                                                @foreach( explode(',', $arriy) as $fnd)
-
-
-                                                                <li class="list-group-item">{{$fnd}}</li>
-                                                                @endforeach
-                                                                @endforeach
-                                                            </ul>
-                                                        </div>
-                                                        </div>
-
                                                     </div>
-                                                    <div class=" col-md-6">
+                                                    <div class="col-md-6">
                                                         <div class="card">
-                                                        <div class="card-header d-flex justify-content-between">
-                                                            <p>Pertners</p> <i class="fas fa-hands-helping fa-2x"></i></i>
-                                                        </div>
-                                                        <div class="card-body">
-                                                            <ul class="list-group list-group-flush">
-                                                                @foreach( $project->project_partiners as $arriy)
-                                                                @foreach( explode(',', $arriy) as $fnd)
-
-
-                                                                <li class="list-group-item">{{$fnd}}</li>
-                                                                @endforeach
-                                                                @endforeach
-                                                            </ul>
-                                                        </div>
+                                                            <div class="card-header d-flex justify-content-between">
+                                                                <p>Pertners</p> <i class="fas fa-hands-helping fa-2x text-secondary"></i></i>
+                                                            </div>
+                                                            <div class="card-body">
+                                                                <ul class="list-group list-group-flush">
+                                                                    @foreach( $project->project_partiners as $arriy)
+                                                                    @foreach( explode(',', $arriy) as $fnd)
+                                                                    <li class="list-group-item">{{$fnd}}</li>
+                                                                    @endforeach
+                                                                    @endforeach
+                                                                </ul>
+                                                            </div>
                                                         </div>
 
                                                     </div>
@@ -145,111 +136,17 @@
 
                                         </div>
                                         <div class="tab-pane fade " id="nav-acts" role="tabpanel" aria-labelledby="nav-acts-tab">
-                                            <br />
-                                            <br />
 
-                                            <div class="card">
-                                                <div class="card-content table-responsive">
-                                                    <br />
-                                                    <table class="table table-bordered table-hover">
-                                                        <h5><strong>Project Activities</strong></h5>
-                                                        <br />
-
-                                                        <thead>
-                                                            <tr>
-                                                                <th scope="col">#</th>
-                                                                <th scope="col">Created by</th>
-                                                                <th scope="col-md-4">Activity Title</th>
-                                                                <th scope="col">Status</th>
-                                                                <th scope="col">Total Estimated cost</th>
-                                                                <th scope="col">Date created</th>
-                                                                <th scope="col"></th>
-
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <th scope="row">1</th>
-                                                                <td>MarkCuban</td>
-                                                                <td>Data visualisation in Mbeya</td>
-                                                                <td>on-going</td>
-                                                                <td>2,300,000 <span class="badge badge-success">TZS</span>
-                                                                </td>
-                                                                <td>2019-09-11</td>
-                                                                <td>
-                                                                    <button type="button" class="btn btn-outline-success">view
-                                                                        request</button>
-                                                                </td>
-                                                            </tr>
-
-                                                            <tr>
-                                                                <th scope="row">4</th>
-                                                                <td>Jane Sharpe</td>
-                                                                <td>Data Mining in Dar</td>
-                                                                <td>on-going</td>
-                                                                <td>6,600,000 <span class="badge badge-success">TZS</span>
-                                                                </td>
-                                                                <td>2019-09-11</td>
-                                                                <td>
-                                                                    <button type="button" class="btn btn-outline-success">view
-                                                                        request</button>
-                                                                </td>
-                                                            </tr>
-
-                                                            <tr>
-                                                                <th scope="row">3</th>
-                                                                <td>Mary Poppins</td>
-                                                                <td>Data Analyis and Mining</td>
-                                                                <td>on-going</td>
-                                                                <td>8,700,000 <span class="badge badge-success">TZS</span>
-                                                                </td>
-                                                                <td>2019-09-11</td>
-                                                                <td>
-                                                                    <button type="button" class="btn btn-outline-success">view
-                                                                        request</button>
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                    <br />
-                                                    <nav aria-label="Page navigation example">
-                                                        <ul class="pagination">
-                                                            <li class="page-item">
-                                                                <a class="page-link" href="#" aria-label="Previous">
-                                                                    <span aria-hidden="true">&laquo;</span>
-                                                                    <span class="sr-only">Previous</span>
-                                                                </a>
-                                                            </li>
-                                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                            <li class="page-item">
-                                                                <a class="page-link" href="#" aria-label="Next">
-                                                                    <span aria-hidden="true">&raquo;</span>
-                                                                    <span class="sr-only">Next</span>
-                                                                </a>
-                                                            </li>
-                                                        </ul>
-                                                    </nav>
-                                                </div>
-                                            </div>
-                                            <!-- end of SECOND column -->
-
-                                        </div>
-                                        <div class="tab-pane fade" id="nav-sub-acts" role="tabpanel" aria-labelledby="nav-sub-acts-tab">
-                                            <br />
-                                            <br />
-                                            <br />
-
+                                            @if(count($project->activities)==0)
+                                            <div class="d-flex p-2 bg-teal justify-content-center">No Activities Found!</div>
+                                            @else
                                             <table class="table table-bordered table-hover">
-                                                <h5><strong>Project Sub Activities</strong></h5>
+                                                <h5><strong>Project Activities</strong></h5>
                                                 <br />
 
                                                 <thead>
                                                     <tr>
                                                         <th scope="col">#</th>
-                                                        <th scope="col">Lead Activitity</th>
-                                                        <th scope="col-md-4">Sub Activity Title</th>
                                                         <th scope="col">Status</th>
                                                         <th scope="col">Total Estimated cost</th>
                                                         <th scope="col">Date created</th>
@@ -258,47 +155,23 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+                                                    @php $n=1; @endphp
+                                                    @foreach($project->activities as $acts)
                                                     <tr>
-                                                        <th scope="row">1</th>
-                                                        <td>SIAS 1</td>
-                                                        <td>Data visualisation in Mbeya</td>
-                                                        <td>on-going</td>
-                                                        <td>2,300,000 <span class="badge badge-success">TZS</span>
-                                                        </td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
+                                                        <th scope="row">{{$n}}</th>
 
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>SIAS 3</td>
-                                                        <td>Data Mining in Dar</td>
-                                                        <td>on-going</td>
-                                                        <td>6,600,000 <span class="badge badge-success">TZS</span>
+                                                        <td>{{$acts->act_title}}</td>
+                                                        <td>{{$acts->current_stage}}</td>
+                                                        <td>{{$acts->total_act_cost}} <span class="badge badge-success">TZS</span>
                                                         </td>
-                                                        <td>2019-09-11</td>
+                                                        <td>{{$acts->created_at}}</td>
                                                         <td>
                                                             <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
+                                                                Activity</button>
                                                         </td>
                                                     </tr>
-
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td>SIAS 5</td>
-                                                        <td>Data Analyis and Mining</td>
-                                                        <td>on-going</td>
-                                                        <td>8,700,000 <span class="badge badge-success">TZS</span>
-                                                        </td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
+                                                    @php $n++; @endphp
+                                                    @endforeach
                                                 </tbody>
                                             </table>
                                             <br />
@@ -321,170 +194,12 @@
                                                     </li>
                                                 </ul>
                                             </nav>
+                                            @endif
+
+
                                         </div>
-                                        <div class="tab-pane fade" id="nav-imprests" role="tabpanel" aria-labelledby="nav-imprests-tab">
-                                            <br />
-                                            <br />
-                                            <br />
-                                            <table class="table table-bordered table-hover">
-                                                <h5><strong>Project Imprests</strong></h5>
-                                                <br />
 
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">#</th>
-                                                        <th scope="col-md-4">Imprest Title</th>
-                                                        <th scope="col">Created by</th>
-                                                        <th scope="col">Total cost</th>
-                                                        <th scope="col">Date created</th>
-                                                        <th scope="col"></th>
 
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">1</th>
-                                                        <td>Data visualisation in Mbeya</td>
-                                                        <td>MarkCuban</td>
-                                                        <td>6,600,000 <span class="badge badge-success">TZS</span>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">actions</button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">2</th>
-                                                        <td>Data visualisation in Mbeya</td>
-                                                        <td>MarkCuban</td>
-                                                        <td>6,600,000 <span class="badge badge-success">TZS</span>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">actions</button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td>Data visualisation in Mbeya</td>
-                                                        <td>MarkCuban</td>
-                                                        <td>6,600,000 <span class="badge badge-success">TZS</span>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">actions</button>
-                                                        </td>
-                                                    </tr>
-
-                                                </tbody>
-                                            </table>
-                                            <br />
-                                            <nav aria-label="Page navigation example">
-                                                <ul class="pagination">
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Previous">
-                                                            <span aria-hidden="true">&laquo;</span>
-                                                            <span class="sr-only">Previous</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Next">
-                                                            <span aria-hidden="true">&raquo;</span>
-                                                            <span class="sr-only">Next</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </nav>
-                                        </div>
-                                        <div class="tab-pane fade" id="nav-retirements" role="tabpanel" aria-labelledby="nav-retirements-tab">
-                                            <br />
-                                            <br />
-                                            <br />
-                                            <table class="table table-bordered table-hover">
-                                                <h5><strong>Project Retirements</strong></h5>
-                                                <br />
-
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">#</th>
-                                                        <th scope="col">Requested by</th>
-                                                        <th scope="col-md-4">Retirement Title</th>
-                                                        <th scope="col">imprest id</th>
-                                                        <th scope="col">status</th>
-                                                        <th scope="col">Total allocated amount</th>
-                                                        <th scope="col">Total amount retired</th>
-                                                        <th scope="col">Date created</th>
-                                                        <th scope="col"></th>
-
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">1</th>
-                                                        <td>MarkCuban</td>
-                                                        <td>Data visualisation ret</td>
-                                                        <td>23</td>
-                                                        <td>pending retirement</td>
-                                                        <td>2,000,000 <span class="badge badge-success">TZS</span></td>
-                                                        <td>1,300,000
-                                                        </td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">actions</button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">2</th>
-                                                        <td>MarkCuban</td>
-                                                        <td>Data visualisation ret</td>
-                                                        <td>23</td>
-                                                        <td>pending retirement</td>
-                                                        <td>2,000,000 <span class="badge badge-success">TZS</span></td>
-                                                        <td>1,300,000
-                                                        </td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">actions</button>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td>MarkCuban</td>
-                                                        <td>Data visualisation ret</td>
-                                                        <td>23</td>
-                                                        <td>pending retirement</td>
-                                                        <td>2,000,000 <span class="badge badge-success">TZS</span></td>
-                                                        <td>1,300,000
-                                                        </td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">actions</button>
-                                                        </td>
-                                                    </tr>
-
-                                                </tbody>
-                                            </table>
-                                            <br />
-                                            <nav aria-label="Page navigation example">
-                                                <ul class="pagination">
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Previous">
-                                                            <span aria-hidden="true">&laquo;</span>
-                                                            <span class="sr-only">Previous</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Next">
-                                                            <span aria-hidden="true">&raquo;</span>
-                                                            <span class="sr-only">Next</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </nav>
-                                        </div>
                                         <div class="tab-pane fade" id="nav-members" role="tabpanel" aria-labelledby="nav-members-tab">
                                             <br />
                                             <br />
@@ -630,21 +345,25 @@
                                             <h5><strong>Project Documents</strong></h5>
                                             <br />
                                             <div class="row">
-                                                <div class="col-sm-6">
+                                                <div class="col-md-6">
                                                     <div class="card">
                                                         <div class="card-body">
                                                             <h5 class="card-title">Technical Document</h5>
                                                             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                                            <a href="#" class="btn btn-primary">Preview document</a>
+                                                            <a data-toggle="modal" data-target="#techmodal" class="btn btn-primary">Preview document</a>
+                                                            <div class="modal" id="myModal">
+
+
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-sm-6">
-                                                    <div class="card">
+                                                <div class="col-md-6">
+                                                    <div class="card ">
                                                         <div class="card-body">
                                                             <h5 class="card-title">Financial Documet</h5>
                                                             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                                            <a href="#" class="btn btn-primary">Preview document</a>
+                                                            <a data-toggle="modal" data-target="#finmodal" class="btn btn-primary">Preview document</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -663,4 +382,47 @@
         </div>
     </div>
 
+    <!-- The Modal -->
+    <div class="modal" id="techmodal">
+        <div class="modal-dialog" style="max-width: 80%;">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Preview Technical</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div style="width: 100%; height: 83vh;">
+                        <object  style="width: 100%; height: inherit;"
+                        data="{{isset($project->ProjectFile->where('file_type','projecttech')->first()->file_path) ? route('get-pdf',explode('/',$project->ProjectFile->where('file_type','projecttech')->first()->file_path)[3]) :'' }}"
+                        id="pspdfkit"></object>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="finmodal">
+        <div class="modal-dialog" style="max-width: 80%;">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">Preview financial Doc</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div style="width: 100%; height: 83vh;">
+                        <object data="{{isset($project->ProjectFile->where('file_type','projectbusi')->first()->file_path) ? route('get-pdf',explode('/',$project->ProjectFile->where('file_type','projectbusi')->first()->file_path)[3]) :'' }}" style="width: 100%; height: inherit;" id="pspdfkit"></object>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
     @endsection

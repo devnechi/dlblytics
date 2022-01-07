@@ -12,6 +12,7 @@ use App\PillarProject;
 use App\projectObjective;
 use App\projectOutcome;
 use App\projectkpiReferences;
+use Illuminate\Support\Facades\Storage;
 use App\DocProjectFile;
 use Auth;
 use App\Facilitator;
@@ -262,5 +263,18 @@ class PillarProjectController extends Controller
         //return view('pillar-project.show', compact('pillarprojects'));
             return view('lmds.dsprojects.ds-view-project-full-details', compact('project'));
 
+    }
+    public function getPdf($pdf)
+    {
+
+
+        $path = storage_path('app\project_documents_uploads' . '/' . $pdf);
+      // header
+     $header = [
+       'Content-Type' => 'application/pdf',
+       'Content-Disposition' => 'inline; filename="' . $pdf . '"'
+     ];
+    
+        return response()->file($path, $header);
     }
 }

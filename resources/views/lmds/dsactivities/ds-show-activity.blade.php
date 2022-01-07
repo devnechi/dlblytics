@@ -111,20 +111,20 @@
                                 </div>
                                 <div class=" col-md-6">
                                     <div class="card">
-                                    <div class="card-header d-flex justify-content-between">
-                                        <p>Pesonnel involved</p> <i class="fas fa-users fa-2x"></i>
-                                    </div>
-                                    <div class="card-body">
-                                        <ul class="list-group list-group-flush">
-                                            @foreach( $activt->pinvolved as $arriy)
-                                            @foreach( explode(',', $arriy) as $fnd)
+                                        <div class="card-header d-flex justify-content-between">
+                                            <p>Pesonnel involved</p> <i class="fas fa-users fa-2x"></i>
+                                        </div>
+                                        <div class="card-body">
+                                            <ul class="list-group list-group-flush">
+                                                @foreach( $activt->pinvolved as $arriy)
+                                                @foreach( explode(',', $arriy) as $fnd)
 
 
-                                            <li class="list-group-item">{{$fnd}}</li>
-                                            @endforeach
-                                            @endforeach
-                                        </ul>
-                                    </div>
+                                                <li class="list-group-item">{{$fnd}}</li>
+                                                @endforeach
+                                                @endforeach
+                                            </ul>
+                                        </div>
                                     </div>
 
                                 </div>
@@ -138,65 +138,42 @@
                         <br />
                         <br />
                         <br />
-
+                        @if(count($activt->subactivities)==0)
+                        <div class="d-flex p-2 bg-teal justify-content-center">No Sub Activities Found!</div>
+                        @else
                         <table class="table table-bordered table-hover">
                             <h5><strong>Project Sub Activities</strong></h5>
                             <br />
 
                             <thead>
+
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Lead Activitity</th>
-                                    <th scope="col-md-4">Sub Activity Title</th>
+                                    <th scope="col">Sub Activity Title</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">Total Estimated cost</th>
                                     <th scope="col">Date created</th>
                                     <th scope="col"></th>
-
                                 </tr>
+
                             </thead>
                             <tbody>
+                                @php $n=1; @endphp
+                                @foreach($activt->subactivities as $subacts)
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>SIAS 1</td>
-                                    <td>Data visualisation in Mbeya</td>
+                                    <th scope="row">{{$n}}</th>
+                                    <td>{{$subacts->subact_title}}</td>
                                     <td>on-going</td>
-                                    <td>2,300,000 <span class="badge badge-success">TZS</span>
+                                    <td>{{$subacts->total_subactivity_cost}}<span class="badge badge-success">TZS</span>
                                     </td>
-                                    <td>2019-09-11</td>
+                                    <td>{{$subacts->start_date}}</td>
                                     <td>
                                         <button type="button" class="btn btn-outline-success">view
                                             request</button>
                                     </td>
                                 </tr>
-
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>SIAS 3</td>
-                                    <td>Data Mining in Dar</td>
-                                    <td>on-going</td>
-                                    <td>6,600,000 <span class="badge badge-success">TZS</span>
-                                    </td>
-                                    <td>2019-09-11</td>
-                                    <td>
-                                        <button type="button" class="btn btn-outline-success">view
-                                            request</button>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>SIAS 5</td>
-                                    <td>Data Analyis and Mining</td>
-                                    <td>on-going</td>
-                                    <td>8,700,000 <span class="badge badge-success">TZS</span>
-                                    </td>
-                                    <td>2019-09-11</td>
-                                    <td>
-                                        <button type="button" class="btn btn-outline-success">view
-                                            request</button>
-                                    </td>
-                                </tr>
+                                @php $n++; @endphp
+                                @endforeach
                             </tbody>
                         </table>
                         <br />
@@ -219,13 +196,17 @@
                                 </li>
                             </ul>
                         </nav>
+                        @endif
                     </div>
                     <div class="tab-pane fade" id="nav-imprests" role="tabpanel" aria-labelledby="nav-imprests-tab">
                         <br />
                         <br />
                         <br />
+                        @if(count($activt->imprests)==0)
+                        <div class="d-flex p-2 bg-teal justify-content-center">No Sub Activities Found!</div>
+                        @else
                         <table class="table table-bordered table-hover">
-                            <h5><strong>Project Imprests</strong></h5>
+                            <h5><strong>Activivty Imprests</strong></h5>
                             <br />
 
                             <thead>
@@ -240,37 +221,20 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @php $ni=1; @endphp
+                                @foreach($activt->imprests as $imps)
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>Data visualisation in Mbeya</td>
-                                    <td>MarkCuban</td>
-                                    <td>6,600,000 <span class="badge badge-success">TZS</span>
-                                    <td>2019-09-11</td>
+                                    <th scope="row">1{{$ni}}</th>
+                                    <td>{{$imps->imp_title}}</td>
+                                    <td>{{$imps->requested_by}}</td>
+                                    <td>{{$imps->amount_rqst}}<span class="badge badge-success">TZS</span>
+                                    <td>{{$imps->start_date}}</td>
                                     <td>
                                         <button type="button" class="btn btn-outline-success">actions</button>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Data visualisation in Mbeya</td>
-                                    <td>MarkCuban</td>
-                                    <td>6,600,000 <span class="badge badge-success">TZS</span>
-                                    <td>2019-09-11</td>
-                                    <td>
-                                        <button type="button" class="btn btn-outline-success">actions</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Data visualisation in Mbeya</td>
-                                    <td>MarkCuban</td>
-                                    <td>6,600,000 <span class="badge badge-success">TZS</span>
-                                    <td>2019-09-11</td>
-                                    <td>
-                                        <button type="button" class="btn btn-outline-success">actions</button>
-                                    </td>
-                                </tr>
-
+                                @php $ni++; @endphp
+                                @endforeach
                             </tbody>
                         </table>
                         <br />
@@ -293,6 +257,7 @@
                                 </li>
                             </ul>
                         </nav>
+                        @endif
                     </div>
                     <div class="tab-pane fade" id="nav-retirements" role="tabpanel" aria-labelledby="nav-retirements-tab">
                         <br />
