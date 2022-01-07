@@ -146,11 +146,12 @@ class PillarActivitiesController extends Controller
 
         //get last imprest id
         $impid=$imprest->save();
+        dd($impid);
          for($i=0; $i<count($request->imp_act_name);$i++)
         {
             $impact = new Imprest_activity([
                 'imp_act_name' => $request->imp_act_name[$i],
-                'imp_typ' => $request->imp_typ[$i],
+                'imp_type' => $request->imp_type[$i],
                 'qty'=>$request->qty[$i],
                 'unit'=>$request->unit[$i],
                 'number'=>$request->number[$i],
