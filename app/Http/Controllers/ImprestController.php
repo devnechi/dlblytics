@@ -6,20 +6,8 @@ use App\Imprest;
 use App\Imprest_activity;
 use App\Retirement;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use App\User;
-use DateTime;
-use App\Pillar;
-use App\Department;
-use App\DManagerRoles;
-use App\PillarProject;
-use App\projectObjective;
-use App\projectOutcome;
-use App\projectkpiReferences;
-use App\DocProjectFile;
+use App\imprest_review;
 use Auth;
-use App\Facilitator;
-use App\PillarActivities;
 class ImprestController extends Controller
 {
     /**
@@ -32,11 +20,12 @@ class ImprestController extends Controller
         $cuid = Auth::user()->user_id;
         $cpid = Auth::user()->pillar_id;
 
-        $imprests = Imprest::all();
-        $imprestapprv=Imprest::where('status','approved')->where('pillar_id',$cpid)->get();
-        $imprestsubmited=Imprest::where('status','submitted')->where('pillar_id',$cpid)->get();
-        $imprestprossessing=Imprest::where('status','prossessing')->where('pillar_id',$cpid)->get();
-        $imprestdenied=Imprest::where('status','denied')->where('pillar_id',$cpid)->get();
+        $imprest = Imprest::where('pillar_id', $cpid);
+        $imprests = $imprest->get();
+        $imprestapprv=$imprest->where('status','approved')->where('pillar_id',$cpid)->get();
+        $imprestsubmited=$imprest->where('status','submitted')->where('pillar_id',$cpid)->get();
+        $imprestprossessing=$imprest->where('status','prossessing')->where('pillar_id',$cpid)->get();
+        $imprestdenied=$imprest->where('status','denied')->where('pillar_id',$cpid)->get();
 
 
         return view('imprest.ds-imprest-index')->with('imprests',$imprests)
@@ -144,6 +133,19 @@ public function edit($id)
      * @param  \App\Employee  $employee
      * @return \Illuminate\Http\Response
      */
+    public function review(Request $request)
+    {
+        $imp = Imprest::findOrFail($request->imprest_id);
+        $imp->status=$request->status;
+        $imp->update();
+        $imprev = new imprest_review([
+            'comments'=>$request->comments,
+            'imprest_id'=>$request->imprest_id,
+            'user_id'=>Auth::user()->user_id
+        ]);
+        $imprev->save();
+        return redirect('retirements')->with('flash_message', 'Retirement updated!');
+    }
     public function destroy($id)
     {
         Imprest::destroy($id);

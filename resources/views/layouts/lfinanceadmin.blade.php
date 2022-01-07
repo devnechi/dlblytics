@@ -17,10 +17,8 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
 
 
     <!-- Styles -->
@@ -277,7 +275,6 @@
             color: #525c65;
             transition: color 0.3s ease;
         }
-
     </style>
 
     <style>
@@ -1435,49 +1432,50 @@
 
 
 
-        .form-check-pcr{
-            padding-left: 3.25rem; !important
+        .form-check-pcr {
+            padding-left: 3.25rem!important;
+
         }
 
         .form-inline .form-group input {
             width: auto;
-            }
+        }
     </style>
 
 </head>
 
 <body>
-     {{-- user task on page load --}}
-     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    {{-- user task on page load --}}
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Enter what you will be doing today</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form>
-                {{-- <div class="form-group">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Enter what you will be doing today</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        {{-- <div class="form-group">
                   <label for="recipient-name" class="col-form-label">T:</label>
                   <input type="text" class="form-control" id="recipient-name">
                 </div> --}}
-                <div class="form-group">
-                  <label for="message-text" class="col-form-label">Description of Task:</label>
-                  <textarea class="form-control" id="message-text" rows="4"></textarea>
-                </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Description of Task:</label>
+                            <textarea class="form-control" id="message-text" rows="4"></textarea>
+                        </div>
 
-                <p> This helps create your monthly timesheet</p>
-              </form>
+                        <p> This helps create your monthly timesheet</p>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Add Task</button>
+                </div>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Add Task</button>
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
 
     <div id="app">
         <div class="wrapper">
@@ -1491,153 +1489,68 @@
                     <p style="font-size:800;">Navigation</p>
                     <li><a href="{{ route('finance-dashboard') }}">Dashboard</a></li>
                     <li>
-                        <a class="nav-side-drp" data-toggle="collapse" href="#nav-new-request" aria-expanded="false"
-                            aria-controls="nav-new-request">
+                        <a class="nav-side-drp" data-toggle="collapse" href="#nav-new-request" aria-expanded="false" aria-controls="nav-new-request">
                             Advance Requests
-                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-double-down"
-                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
-                                <path fill-rule="evenodd"
-                                    d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-double-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
                             </svg>
                         </a>
                         <div class="collapse" id="nav-new-request">
                             <a href="{{ route('manage-pillars') }}">
-                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill"
-                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
                                 </svg>
                                 Create New Request</a>
                             <a href="{{ route('manage-pillars') }}">
-                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill"
-                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
                                 </svg>
                                 Manage Requests</a>
                         </div>
                     </li>
                     <li>
-                        <a data-toggle="collapse" href="#nav-new-reports" aria-expanded="false"
-                            aria-controls="nav-new-request">
+                        <a data-toggle="collapse" href="#nav-new-reports" aria-expanded="false" aria-controls="nav-new-request">
                             Finance reports
-                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-double-down"
-                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
-                                <path fill-rule="evenodd"
-                                    d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-double-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
                             </svg>
                         </a>
                         <div class="collapse" id="nav-new-reports">
                             <a href="{{ route('manage-pillars') }}">
-                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill"
-                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
                                 </svg>
                                 Create New Request</a>
                             <a href="{{ route('manage-pillars') }}">
-                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill"
-                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
                                 </svg>
                                 Manage Requests</a>
                         </div>
                     </li>
-                    <!-- <li><a href="dlab_create_project.php">Create A new project</a></li> -->
 
-                    <!-- <li><a href="dlab_data_tests.php"> Data Mapping</a></li> -->
                     <li>
-                        <a data-toggle="collapse" href="#nav-scholars" aria-expanded="false"
-                        aria-controls="nav-new-request">
-                        Scholars
-                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-double-down"
-                            fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
-                            <path fill-rule="evenodd"
-                                d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
-                        </svg>
-                    </a>
-                    <div class="collapse" id="nav-scholars">
-                        <a href="{{ route('manage-pillars') }}">
-                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill"
-                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                        <a data-toggle="collapse" href="#nav-payroll" aria-expanded="false" aria-controls="nav-new-request">
+                            Staff Payroll
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-double-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                                <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
                             </svg>
-                            Add scholar expenses</a>
-                        <a href="{{ route('manage-pillars') }}">
-                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill"
-                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
-                            </svg>
-                            Manage Scholars</a>
-                    </div>
-
-                    </li>
-                    <li>
-                        <a data-toggle="collapse" href="#nav-grantees" aria-expanded="false"
-                        aria-controls="nav-new-request">
-                        Grantees
-                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-double-down"
-                            fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
-                            <path fill-rule="evenodd"
-                                d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
-                        </svg>
-                    </a>
-                    <div class="collapse" id="nav-grantees">
-                        <a href="{{ route('manage-pillars') }}">
-                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill"
-                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
-                            </svg>
-                            Fund Grantee</a>
-                        <a href="{{ route('manage-pillars') }}">
-                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill"
-                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
-                            </svg>
-                            Manage Grantee</a>
-                    </div>
-                    </li>
-                    <li>
-                        <a data-toggle="collapse" href="#nav-payroll" aria-expanded="false"
-                        aria-controls="nav-new-request">
-                        Staff Payroll
-                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-double-down"
-                            fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
-                            <path fill-rule="evenodd"
-                                d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
-                        </svg>
-                    </a>
-                    <div class="collapse" id="nav-payroll">
-                        <a href="{{ route('manage-pillars') }}">
-                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill"
-                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
-                            </svg>
-                            Staff Timesheet</a>
-                        <a href="{{ route('manage-pillars') }}">
-                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill"
-                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
-                            </svg>
-                            Initiate Payment</a>
-                    </div>
+                        </a>
+                        <div class="collapse" id="nav-payroll">
+                            <a href="{{ route('manage-pillars') }}">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                                </svg>
+                                Staff Timesheet</a>
+                            <a href="{{ route('manage-pillars') }}">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                                </svg>
+                                Initiate Payment</a>
+                        </div>
                     </li>
                     <li>
                         <a href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -1658,17 +1571,14 @@
                         <div class="container-fluid">
                             <div class="navbar-header">
                                 <button type="button" id="sidebarCollapse" class="btn btn-info">
-                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-text-left"
-                                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-text-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
                                     </svg>
                                     <span>Toggle Sidebar</span>
                                 </button>
                             </div>
                             <ul class="nav navbar-nav justify-content-end" style="display: contents;">
-                                <li><a href="#">Welcome, <strong
-                                            style="color: #a7a4a2;">{{ Auth::user()->fname }}</strong></a></li>
+                                <li><a href="#">Welcome, <strong style="color: #a7a4a2;">{{ Auth::user()->fname }}</strong></a></li>
                             </ul>
                         </div>
                     </nav>
@@ -1700,12 +1610,10 @@
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
     </script> --}}
 
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/locale/en-gb.js"></script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker-standalone.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker-standalone.min.css">
     </script>
     <script src="../../web/js/moment.min.js"></script>
     <script src="../../web/js/bootstrap-datetimepicker.min.js"></script>
@@ -1713,15 +1621,14 @@
 
 
     <script type="text/javascript">
-        $(document).ready(function () {
+        $(document).ready(function() {
             $('[data-toggle=confirmation]').confirmation({
                 rootSelector: '[data-toggle=confirmation]',
-                onConfirm: function (event, element) {
+                onConfirm: function(event, element) {
                     element.closest('form').submit();
                 }
             });
         });
-
     </script>
 
     {{-- script that loads a modal that collects user tasks daily --}}
@@ -1733,28 +1640,27 @@
 
 
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             $('#dtBasicExample').DataTable();
             $('.dataTables_length').addClass('bs-select');
         });
 
 
-        $(function () {
-            $('.list-group-item').on('click', function () {
+        $(function() {
+            $('.list-group-item').on('click', function() {
                 $('class', this)
                     .toggleClass('bi bi-chevron-double-right')
                     .toggleClass('bi bi-chevron-double-down');
             });
 
         });
-
     </script>
 
     <script>
-        (function ($) {
-            $(function () {
+        (function($) {
+            $(function() {
 
-                var addFormGroup = function (event) {
+                var addFormGroup = function(event) {
                     event.preventDefault();
 
                     var $formGroup = $(this).closest('.form-group');
@@ -1774,7 +1680,7 @@
                     }
                 };
 
-                var removeFormGroup = function (event) {
+                var removeFormGroup = function(event) {
                     event.preventDefault();
 
                     var $formGroup = $(this).closest('.form-group');
@@ -1788,7 +1694,7 @@
                     $formGroup.remove();
                 };
 
-                var countFormGroup = function ($form) {
+                var countFormGroup = function($form) {
                     return $form.find('.form-group').length;
                 };
 
@@ -1797,11 +1703,10 @@
 
             });
         })(jQuery);
-
     </script>
 
     <script>
-        window.onload = function () {
+        window.onload = function() {
 
             var chart = new CanvasJS.Chart("chartContainer", {
                 animationEnabled: true,
@@ -2090,7 +1995,7 @@
             chart.render();
 
             function toggleDataSeries(e) {
-                if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+                if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
                     e.dataSeries.visible = false;
                 } else {
                     e.dataSeries.visible = true;
@@ -2309,7 +2214,7 @@
             }
 
             function toggleDataSeries(e) {
-                if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+                if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
                     e.dataSeries.visible = false;
                 } else {
                     e.dataSeries.visible = true;
@@ -2319,27 +2224,25 @@
 
 
         }
-
     </script>
 
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"> </script>
 
 
     <script type="text/javascript">
-        $(document).ready(function () {
+        $(document).ready(function() {
 
 
-            $('#sidebarCollapse').on('click', function () {
+            $('#sidebarCollapse').on('click', function() {
                 $('#sidebar, #content').toggleClass('active');
                 $('.collapse.in').toggleClass('in');
                 $('a[aria-expanded=true]').attr('aria-expanded', 'false');
             });
         });
-
     </script>
 
     <script>
-        $("#menu-toggle").click(function (e) {
+        $("#menu-toggle").click(function(e) {
             e.preventDefault();
             $("#wrapper").toggleClass("toggled");
         });
@@ -2353,15 +2256,14 @@
         }
 
         }
-
     </script>
 
 
 
 
     <script>
-        $(document).ready(function () {
-            $('#selectedBatch').on('change', function () {
+        $(document).ready(function() {
+            $('#selectedBatch').on('change', function() {
                 if (this.value == 'stage 1') {
                     $("#pnl_candling_report").show();
                     // $('#contact').text("Email Address");
@@ -2399,13 +2301,12 @@
             });
             //console.log("hellow");
         });
-
     </script>
 
 
     <script>
-        $(document).ready(function () {
-            $('#selectPillar').on('change', function () {
+        $(document).ready(function() {
+            $('#selectPillar').on('change', function() {
                 if (this.value == 'cb') {
                     $("#pnl_cb_pillar").show();
                     // document.getElementById("selected_batch_id").innerHTML = $(this).find("option:selected").text();
@@ -2442,15 +2343,14 @@
             });
             //console.log("hellow");
         });
-
     </script>
 
 
 
     <script>
         // selectCBindicator
-        $(document).ready(function () {
-            $('#selectCBindicator').on('change', function () {
+        $(document).ready(function() {
+            $('#selectCBindicator').on('change', function() {
                 if (this.value == 'indicator1') {
                     $("#pnl_kpi_1").show();
 
@@ -2531,7 +2431,6 @@
             });
             //console.log("dlab cb");
         });
-
     </script>
 
 
@@ -2541,8 +2440,8 @@
 
     <script>
         // selectCEindicator
-        $(document).ready(function () {
-            $('#selectCEindicator').on('change', function () {
+        $(document).ready(function() {
+            $('#selectCEindicator').on('change', function() {
                 if (this.value == 'indicator1') {
                     $("#pnl_kpi_1").show();
 
@@ -2623,7 +2522,6 @@
             });
             //console.log("dlab cb");
         });
-
     </script>
 
 
@@ -2632,8 +2530,8 @@
 
     <script>
         // selectRIindicator
-        $(document).ready(function () {
-            $('#selectRIindicator').on('change', function () {
+        $(document).ready(function() {
+            $('#selectRIindicator').on('change', function() {
                 if (this.value == 'indicator1') {
                     $("#pnl_kpi_1").show();
 
@@ -2714,14 +2612,13 @@
             });
             //console.log("dlab cb");
         });
-
     </script>
 
     {{-- data science pillar --}}
     <script>
         // selectDSindicator
-        $(document).ready(function () {
-                    $('#selectDSindicator').on('change', function () {
+        $(document).ready(function() {
+                    $('#selectDSindicator').on('change', function() {
                             if (this.value == 'indicator1') {
                                 $("#pnl_kpi_1").show();
 
@@ -2802,7 +2699,6 @@
                             });
                         //console.log("dlab cb");
                     });
-
     </script>
 
 
@@ -2810,8 +2706,8 @@
         // {{-- data INSTITUTIONAL STREGTHING pillar --}}
 
         // selectDSindicator
-        $(document).ready(function () {
-                    $('#selectDSindicator').on('change', function () {
+        $(document).ready(function() {
+                    $('#selectDSindicator').on('change', function() {
                             if (this.value == 'indicator1') {
                                 $("#pnl_kpi_1").show();
 
@@ -2892,7 +2788,6 @@
                             });
                         //console.log("dlab cb");
                     });
-
     </script>
 
 
@@ -2900,8 +2795,8 @@
     <script>
         //   <!-- after user selects activity to update -->
 
-        $(document).ready(function () {
-            $('#selectUpdateActivity').on('change', function () {
+        $(document).ready(function() {
+            $('#selectUpdateActivity').on('change', function() {
                 if (this.value == 1) {
                     $("#pnl_kpi_1").show();
                     // document.getElementById("selected_batch_id").innerHTML = $(this).find("option:selected").text();
@@ -3000,15 +2895,15 @@
                 }
             });
         });
-
     </script>
 
 
     <script>
-    //redirect to specific tab
-    $(document).ready(function () {
-    $('#tabMenu a[href="#{{ old('tab') }}"]').tab('show')
-    });
+        //redirect to specific tab
+        $(document).ready(function() {
+            $('#tabMenu a[href="#{{ old('
+                tab ') }}"]').tab('show')
+        });
     </script>
 </body>
 

@@ -48,7 +48,8 @@
         </ul>
         <div class="collapse" id="{{'cp'.$imp->id}}">
             <div class="card ">
-                <form action="{{route('retirestore')}}" method="post">
+                <form action="{{route('retirement.store')}}" method="post">
+                @csrf
                     <div class=" row card-body">
                         <div class="col-md-6">Lorem ipsum dolor sit amet consectetur</div>
                         <div class="col-md-6">

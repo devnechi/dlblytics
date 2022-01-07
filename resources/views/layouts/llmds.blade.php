@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
 
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style>
@@ -1455,18 +1455,41 @@
     <div id="app">
         <div class="wrapper">
             <!-- Sidebar Holder -->
-            <!-- Sidebar Holder -->
             <nav id="sidebar">
                 <div class="sidebar-header">
+
+                    @if(Auth::user()->role_id == 6)
+                    <h3>cb Dashboard</h3>
+                    @endif
+
+                    @if(Auth::user()->role_id == 7)
+                    <h3>is Dashboard</h3>
+                    @endif
+
+                    @if(Auth::user()->role_id == 8)
+                    <h3>ri Dashboard</h3>
+                    @endif
+
+                    @if(Auth::user()->role_id == 9)
+                    <h3>Community engagement Dashboard</h3>
+                    @endif
+
+                    @if(Auth::user()->role_id == 10)
                     <h3>Data Science Dashboard</h3>
+                    @endif
+
+                    @if(Auth::user()->role_id == 16)
+                    <h3>communication channels Dashboard</h3>
+                    @endif
+
                     <p>Managers dashboard</p>
                 </div>
 
-                <ul class="list-unstyled components" >
+                <ul class="list-unstyled components">
                     <p style="font-size:800;">Navigation</p>
                     <li><a href="{{ route('finance-dashboard') }}">Dashboard</a></li>
                     <li>
-                        <a data-toggle="collapse" href="" onclick="cpl(event,'#nav-new-request')"  aria-expanded="false" aria-controls="nav-new-request">
+                        <a data-toggle="collapse" href="" onclick="cpl(event,'#nav-new-request')" aria-expanded="false" aria-controls="nav-new-request">
                             Project & Activities
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-double-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
@@ -1474,26 +1497,26 @@
                             </svg>
                         </a>
                         <div class="collapse" id="nav-new-request">
-                            <a id="projects-nactivities-tab-md" href="{{route('pillar-project.index')}}"  >
+                            <a id="projects-nactivities-tab-md" href="{{route('pillar-project.index')}}">
                                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
                                 </svg>
                                 Projects</a>
-                            <a id="vds-ds-pna-pills-activities-tab"  href="{{route('pillar-activity.index')}}" >
+                            <a id="vds-ds-pna-pills-activities-tab" href="{{route('pillar-activity.index')}}">
                                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
                                 </svg>
                                 Activities</a>
-                            <a id="vds-ds-pna-pills-sub-act-tab" href="{{route('pillar-subactivity.index')}}" >
+                            <a id="vds-ds-pna-pills-sub-act-tab" href="{{route('pillar-subactivity.index')}}">
                                 <svg width=" 1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                                    <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
                                 </svg>
                                 Sub Activities
                             </a>
                         </div>
                     </li>
                     <li>
-                        <a data-toggle="collapse" href="#nav-new-reports" onclick="cpl(event,'#nav-new-reports')"  aria-expanded="false" aria-controls="nav-new-request">
+                        <a data-toggle="collapse" href="#nav-new-reports" onclick="cpl(event,'#nav-new-reports')" aria-expanded="false" aria-controls="nav-new-request">
                             Imprest Management
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-double-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
@@ -1501,14 +1524,14 @@
                             </svg>
                         </a>
                         <div class="collapse" id="nav-new-reports">
-                    <a  id="data-science-request-tab-md" href="{{route('imprest.index')}}" >
-                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
-                    </svg>
-                    Imprests</a>
+                            <a id="data-science-request-tab-md" href="{{route('imprest.index')}}">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                                </svg>
+                                Imprests</a>
 
-        </div>
-        </li>
+                        </div>
+                    </li>
                     {{-- <li>
                         <a data-toggle="collapse" href="#nav-new-reports" aria-expanded="false" aria-controls="nav-new-request">
                             Staff Management
@@ -1568,8 +1591,8 @@
                         </ul>
                     </div>
                 </nav>
-                <div >
-                @yield('content')
+                <div>
+                    @yield('content')
                 </div>
         </main>
     </div>
@@ -2632,88 +2655,87 @@
     <script>
         // selectDSindicator
         $(document).ready(function() {
-                    $('#selectDSindicator').on('change', function() {
-                            if (this.value == 'indicator1') {
-                                $("#pnl_kpi_1").show();
+            $('#selectDSindicator').on('change', function() {
+                if (this.value == 'indicator1') {
+                    $("#pnl_kpi_1").show();
 
-                                $("#pnl_select_pillars").hide();
-                                $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
+                    $("#pnl_ds_pillar").hide();
 
-                            } else if (this.value == 'indicator4') {
-                                $("#pnl_kpi_4").show();
-                                $("#pnl_ds_pillar").hide();
-                                $("#pnl_select_pillars").hide();
+                } else if (this.value == 'indicator4') {
+                    $("#pnl_kpi_4").show();
+                    $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
 
-                            } else if (this.value == 'indicator5') {
-                                $("#pnl_kpi_5").show();
-                                $("#pnl_ds_pillar").hide();
-                                $("#pnl_select_pillars").hide();
+                } else if (this.value == 'indicator5') {
+                    $("#pnl_kpi_5").show();
+                    $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
 
-                            } else if (this.value == 'indicator6') {
-                                $("#pnl_kpi_6").show();
-                                $("#pnl_ds_pillar").hide();
-                                $("#pnl_select_pillars").hide();
+                } else if (this.value == 'indicator6') {
+                    $("#pnl_kpi_6").show();
+                    $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
 
-                            } else if (this.value == 'indicator7') {
-                                $("#pnl_kpi_7").show();
-                                $("#pnl_ds_pillar").hide();
-                                $("#pnl_select_pillars").hide();
+                } else if (this.value == 'indicator7') {
+                    $("#pnl_kpi_7").show();
+                    $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
 
-                            } else if (this.value == 'indicator8') {
-                                $("#pnl_kpi_8").show();
-                                $("#pnl_ds_pillar").hide();
-                                $("#pnl_select_pillars").hide();
+                } else if (this.value == 'indicator8') {
+                    $("#pnl_kpi_8").show();
+                    $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
 
-                            } else if (this.value == 'indicator10') {
-                                $("#pnl_kpi_10").show();
-                                $("#pnl_ds_pillar").hide();
-                                $("#pnl_select_pillars").hide();
+                } else if (this.value == 'indicator10') {
+                    $("#pnl_kpi_10").show();
+                    $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
 
-                                }
-                                else if (this.value == 'indicator11') {
-                                    $("#pnl_kpi_11").show();
-                                    $("#pnl_ds_pillar").hide();
-                                    $("#pnl_select_pillars").hide();
+                } else if (this.value == 'indicator11') {
+                    $("#pnl_kpi_11").show();
+                    $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
 
-                                } else if (this.value == 'indicator13') {
-                                    $("#pnl_kpi_13").show();
-                                    $("#pnl_ds_pillar").hide();
-                                    $("#pnl_select_pillars").hide();
+                } else if (this.value == 'indicator13') {
+                    $("#pnl_kpi_13").show();
+                    $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
 
-                                } else if (this.value == 'indicator15') {
-                                    $("#pnl_kpi_15").show();
-                                    $("#pnl_ds_pillar").hide();
-                                    $("#pnl_select_pillars").hide();
+                } else if (this.value == 'indicator15') {
+                    $("#pnl_kpi_15").show();
+                    $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
 
-                                } else {
+                } else {
 
-                                    $("#pnl_kpi_1").hide();
-                                    $("#pnl_kpi_2").hide();
+                    $("#pnl_kpi_1").hide();
+                    $("#pnl_kpi_2").hide();
 
-                                    $("#pnl_kpi_3").hide();
-                                    $("#pnl_kpi_4").hide();
-                                    $("#pnl_kpi_5").hide();
+                    $("#pnl_kpi_3").hide();
+                    $("#pnl_kpi_4").hide();
+                    $("#pnl_kpi_5").hide();
 
-                                    $("#pnl_kpi_6").hide();
-                                    $("#pnl_kpi_7").hide();
-                                    $("#pnl_kpi_8").hide();
-                                    $("#pnl_kpi_9").hide();
+                    $("#pnl_kpi_6").hide();
+                    $("#pnl_kpi_7").hide();
+                    $("#pnl_kpi_8").hide();
+                    $("#pnl_kpi_9").hide();
 
-                                    $("#pnl_kpi_10").hide();
-                                    $("#pnl_kpi_11").hide();
-                                    $("#pnl_kpi_12").hide();
-                                    $("#pnl_kpi_13").hide();
+                    $("#pnl_kpi_10").hide();
+                    $("#pnl_kpi_11").hide();
+                    $("#pnl_kpi_12").hide();
+                    $("#pnl_kpi_13").hide();
 
-                                    $("#pnl_kpi_14").hide();
-                                    $("#pnl_kpi_15").hide();
-                                    $("#pnl_cb_pillar").hide();
-                                    $("#pnl_select_pillars").show();
+                    $("#pnl_kpi_14").hide();
+                    $("#pnl_kpi_15").hide();
+                    $("#pnl_cb_pillar").hide();
+                    $("#pnl_select_pillars").show();
 
 
-                                }
-                            });
-                        //console.log("dlab cb");
-                    });
+                }
+            });
+            //console.log("dlab cb");
+        });
     </script>
 
 
@@ -2722,88 +2744,87 @@
 
         // selectDSindicator
         $(document).ready(function() {
-                    $('#selectDSindicator').on('change', function() {
-                            if (this.value == 'indicator1') {
-                                $("#pnl_kpi_1").show();
+            $('#selectDSindicator').on('change', function() {
+                if (this.value == 'indicator1') {
+                    $("#pnl_kpi_1").show();
 
-                                $("#pnl_select_pillars").hide();
-                                $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
+                    $("#pnl_ds_pillar").hide();
 
-                            } else if (this.value == 'indicator4') {
-                                $("#pnl_kpi_4").show();
-                                $("#pnl_ds_pillar").hide();
-                                $("#pnl_select_pillars").hide();
+                } else if (this.value == 'indicator4') {
+                    $("#pnl_kpi_4").show();
+                    $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
 
-                            } else if (this.value == 'indicator5') {
-                                $("#pnl_kpi_5").show();
-                                $("#pnl_ds_pillar").hide();
-                                $("#pnl_select_pillars").hide();
+                } else if (this.value == 'indicator5') {
+                    $("#pnl_kpi_5").show();
+                    $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
 
-                            } else if (this.value == 'indicator6') {
-                                $("#pnl_kpi_6").show();
-                                $("#pnl_ds_pillar").hide();
-                                $("#pnl_select_pillars").hide();
+                } else if (this.value == 'indicator6') {
+                    $("#pnl_kpi_6").show();
+                    $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
 
-                            } else if (this.value == 'indicator7') {
-                                $("#pnl_kpi_7").show();
-                                $("#pnl_ds_pillar").hide();
-                                $("#pnl_select_pillars").hide();
+                } else if (this.value == 'indicator7') {
+                    $("#pnl_kpi_7").show();
+                    $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
 
-                            } else if (this.value == 'indicator8') {
-                                $("#pnl_kpi_8").show();
-                                $("#pnl_ds_pillar").hide();
-                                $("#pnl_select_pillars").hide();
+                } else if (this.value == 'indicator8') {
+                    $("#pnl_kpi_8").show();
+                    $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
 
-                            } else if (this.value == 'indicator10') {
-                                $("#pnl_kpi_10").show();
-                                $("#pnl_ds_pillar").hide();
-                                $("#pnl_select_pillars").hide();
+                } else if (this.value == 'indicator10') {
+                    $("#pnl_kpi_10").show();
+                    $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
 
-                                }
-                                else if (this.value == 'indicator11') {
-                                    $("#pnl_kpi_11").show();
-                                    $("#pnl_ds_pillar").hide();
-                                    $("#pnl_select_pillars").hide();
+                } else if (this.value == 'indicator11') {
+                    $("#pnl_kpi_11").show();
+                    $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
 
-                                } else if (this.value == 'indicator13') {
-                                    $("#pnl_kpi_13").show();
-                                    $("#pnl_ds_pillar").hide();
-                                    $("#pnl_select_pillars").hide();
+                } else if (this.value == 'indicator13') {
+                    $("#pnl_kpi_13").show();
+                    $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
 
-                                } else if (this.value == 'indicator15') {
-                                    $("#pnl_kpi_15").show();
-                                    $("#pnl_ds_pillar").hide();
-                                    $("#pnl_select_pillars").hide();
+                } else if (this.value == 'indicator15') {
+                    $("#pnl_kpi_15").show();
+                    $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
 
-                                } else {
+                } else {
 
-                                    $("#pnl_kpi_1").hide();
-                                    $("#pnl_kpi_2").hide();
+                    $("#pnl_kpi_1").hide();
+                    $("#pnl_kpi_2").hide();
 
-                                    $("#pnl_kpi_3").hide();
-                                    $("#pnl_kpi_4").hide();
-                                    $("#pnl_kpi_5").hide();
+                    $("#pnl_kpi_3").hide();
+                    $("#pnl_kpi_4").hide();
+                    $("#pnl_kpi_5").hide();
 
-                                    $("#pnl_kpi_6").hide();
-                                    $("#pnl_kpi_7").hide();
-                                    $("#pnl_kpi_8").hide();
-                                    $("#pnl_kpi_9").hide();
+                    $("#pnl_kpi_6").hide();
+                    $("#pnl_kpi_7").hide();
+                    $("#pnl_kpi_8").hide();
+                    $("#pnl_kpi_9").hide();
 
-                                    $("#pnl_kpi_10").hide();
-                                    $("#pnl_kpi_11").hide();
-                                    $("#pnl_kpi_12").hide();
-                                    $("#pnl_kpi_13").hide();
+                    $("#pnl_kpi_10").hide();
+                    $("#pnl_kpi_11").hide();
+                    $("#pnl_kpi_12").hide();
+                    $("#pnl_kpi_13").hide();
 
-                                    $("#pnl_kpi_14").hide();
-                                    $("#pnl_kpi_15").hide();
-                                    $("#pnl_cb_pillar").hide();
-                                    $("#pnl_select_pillars").show();
+                    $("#pnl_kpi_14").hide();
+                    $("#pnl_kpi_15").hide();
+                    $("#pnl_cb_pillar").hide();
+                    $("#pnl_select_pillars").show();
 
 
-                                }
-                            });
-                        //console.log("dlab cb");
-                    });
+                }
+            });
+            //console.log("dlab cb");
+        });
     </script>
 
 
@@ -2913,21 +2934,22 @@
         });
     </script>
     <script>
-    function cpl(e,param){
+        function cpl(e, param) {
 
-        e.preventDefault();
-        $(param).toggle().style.transition = "all 2s";
+            e.preventDefault();
+            $(param).toggle().style.transition = "all 2s";
 
-    }
-function cplt(e,param){
+        }
+
+        function cplt(e, param) {
 
             $(param).addClass('active').addClass('show')
                 .siblings().removeClass('active').removeClass('show');
 
 
 
-}
-</script>
+        }
+    </script>
 </body>
 
 </html>

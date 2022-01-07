@@ -87,7 +87,7 @@
                                                                                 <p class="m-auto">Edit SubActivity </p>
                                                                             </a>
                                                                         </li>
-                                                             </ul>
+                                                                    </ul>
                                                                 </div>
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -166,7 +166,7 @@
                                                     <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="subat{{$myact->id}}"> Actions
                                                     </button>
                                                     <!-- Modal -->
-                                                    <div class="modal fade" id="subat{{$myact->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
+                                                    <div class="modal fade" id="subat{{$myact->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
@@ -201,7 +201,7 @@
                                                                                 <p class="m-auto">Edit SubActivity </p>
                                                                             </a>
                                                                         </li>
-                                                                </ul>
+                                                                    </ul>
                                                                 </div>
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -280,7 +280,7 @@
                                                     <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#subact{{$myact->id}}"> Actions
                                                     </button>
                                                     <!-- Modal -->
-                                                    <div class="modal fade" id="subact{{$myact->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
+                                                    <div class="modal fade" id="subact{{$myact->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
@@ -310,7 +310,7 @@
                                                                                 <p class="m-auto">Edit SubActivity </p>
                                                                             </a>
                                                                         </li>
-                                                                 </ul>
+                                                                    </ul>
                                                                 </div>
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

@@ -19,7 +19,8 @@
     </div>
     <form method="post" enctype="multipart/form-data" action="{{ route('pillar-activity.store') }}">
         @csrf
-        <input type="hidden" value="{{ Auth::user()->user_id }}" name="created_by">
+        <input type="hidden" value="{{Auth::user()->user_id}}" name="created_by">
+        <input type="hidden" value="{{Auth::user()->role_id}}" name="pillar_ref_id">
         <input type="hidden" value='pending review' name="review_status">
         <input type="hidden" value='submitted' name="current_stage">
 
@@ -381,7 +382,7 @@
         let sum = 1;
         for (var i = 0, len = elements.length; i < len; i++) {
 
-            sum *= parseInt(elements[i].value);
+            sum *= parseFloat(elements[i].value);
         }
 
         var f = document.getElementById(ele + 't');

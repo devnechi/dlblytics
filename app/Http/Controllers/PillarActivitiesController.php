@@ -37,7 +37,7 @@ class PillarActivitiesController extends Controller
         //pillar manager get project created by them
         $myactivities = DB::table('pillar_activities')
                 ->where('created_by', '=', $cuid)
-                // ->where('pillar_ref_id', '=', $cpid)
+                ->where('pillar_ref_id', '=', $cpid)
                 // ->where('review_status', '=', 'pending review')
                 ->get();
          return view('lmds.dsactivities.ds-index-activity')->with('myact',$myactivities);
@@ -90,7 +90,7 @@ class PillarActivitiesController extends Controller
     }
     public function store(Request $request)
     {
-        //dd($request);
+        
         $request->validate([
             'act_title' => 'required',
             'act_desc' => 'required',
@@ -120,6 +120,7 @@ class PillarActivitiesController extends Controller
             'country'=>$request->country,
             'region'=>$request->region,
             'venue'=>$request->venue,
+            'pillar_ref_id'=>$request->pillar_ref_id,
 
         ]);
 
@@ -142,11 +143,11 @@ class PillarActivitiesController extends Controller
             'doc_path'=>$filePath,
             'amount_rqst' => $request->amount_rqst,
             'current_stage' => $request->current_stage,
+            'pillar_id'=>$request->pillar_ref_id,
         ]);
 
         //get last imprest id
-        $impid=$imprest->save();
-        dd($impid);
+
          for($i=0; $i<count($request->imp_act_name);$i++)
         {
             $impact = new Imprest_activity([

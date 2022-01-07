@@ -3,8 +3,7 @@
 <div class="container-fluid">
     <script>
         $(document).ready(function() {
-            $('#nav-tab a[href="#{{ old('
-                tab ') }}"]').tab('show')
+            $('#nav-tab a[href="#{{old('tab')}}"]').tab('show')
         });
     </script>
 
@@ -119,7 +118,7 @@
                             <div class="card rounded">
                                 <div class="card-content table-responsive d-flex justify-content-between">
                                     <p> Activities created </p>
-                                    <div class="row justify-content-between">
+                                    <div class="d-flex justify-content-between">
 
                                         <div class="m-1">
                                             <h3 class="cardhd">{{count($myactivities)}}</h3>

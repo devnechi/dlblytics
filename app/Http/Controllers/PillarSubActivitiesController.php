@@ -98,7 +98,8 @@ class PillarSubActivitiesController extends Controller
             'pinvolved'=> 'required',
             'end_date'=> 'required',
             'country'=> 'required',
-            'venue'=> 'required'
+            'venue'=> 'required',
+            'pillar_ref_id'=>'pillar_ref_id'
 
         ]);
         $activity = new PillarSubActivities([
@@ -116,7 +117,8 @@ class PillarSubActivitiesController extends Controller
             'end_date'=> $request->get('end_date'),
             'country'=> $request->get('country'),
             'region'=> $request->get('region'),
-            'venue'=> $request->get('venue')
+            'venue'=> $request->get('venue'),
+            'pillar_ref_id'=>$request->get('pillar_ref_id'),
         ]);
 
 
