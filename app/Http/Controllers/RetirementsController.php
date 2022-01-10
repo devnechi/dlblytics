@@ -168,14 +168,14 @@ class RetirementsController extends Controller
 
         $billData = [
 
-            'body' => 'You have received a new bill.',
-            'thanks' => 'Thank you',
-            'text' => '$600',
-            'offer' => route('retireindex'),
-            'bill_id' => 30061
+            'body' => 'You received an offer.',
+            'actionText' => 'Check out the offer',
+            'actionURL' => route('retireindex'),
+            'thanks' => 'Thanks yoo',
+            'bill_id'=> 0007
         ];
-
-        Notification::send($data, new StatusNotification($billData));
+        Notification::route('mail', 'semperjack@gmail.com')
+        ->notify( new StatusNotification($billData));
 
         dd('Bill notification has been sent!');
         return redirect('retirements')->with('flash_message', 'Retirement updated!');
