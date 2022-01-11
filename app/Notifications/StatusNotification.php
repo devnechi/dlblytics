@@ -1,6 +1,9 @@
 <?php
+
 namespace App\Notifications;
+
 use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
@@ -39,11 +42,10 @@ class StatusNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-
-   
-        ->line($this->billData['body'])
-        ->action($this->billData['actionText'], $this->billData['actionURL'])
-        ->line($this->billData['thanks']);
+           
+            ->line($this->billData['body'])
+            ->action($this->billData['text'], $this->billData['url'])
+            ->line($this->billData['thanks']);
     }
 
     /**
