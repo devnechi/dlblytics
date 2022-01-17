@@ -66,7 +66,7 @@
                                                                     <td class="w-30 p-2">{{ $myactiv->act_title }}</td>
                                                                     <td class="w-30 p-2">{{ $myactiv->total_act_cost }}</td>
                                                                     <td class="w-30  p-2">{{ $myactiv->current_stage }}</td>
-                                                                    <td class="w-10 p-2">{{ $myactiv->created_at }}</td>
+                                                                    <td class="w-10 p-2">{{ $myactiv->created_at->format('Y-m-d') }}</td>
                                                                     <td class="w-30 p-2">
                                                                         <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#act{{$myactiv->pillar_act_id}}"> Actions
                                                                         </button>
@@ -186,7 +186,7 @@
                                                 <td class="w-30 p-2">{{ $myactiv->act_title }}</td>
                                                 <td class="w-30 p-2">{{ $myactiv->total_act_cost }}</td>
                                                 <td class="w-30  p-2">{{ $myactiv->current_stage }}</td>
-                                                <td class="w-10 p-2">{{ $myactiv->created_at }}</td>
+                                                <td class="w-10 p-2">{{ $myactiv->created_at->format('Y-m-d') }}</td>
                                                 <td class="w-30 p-2">
                                                     <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#ds-act-createNewRequest"> Actions
                                                     </button>
@@ -304,7 +304,7 @@
                                                 <td class="w-30 p-2">{{ $myactiv->act_title }}</td>
                                                 <td class="w-30 p-2">{{ $myactiv->total_act_cost }}</td>
                                                 <td class="w-30  p-2">{{ $myactiv->current_stage }}</td>
-                                                <td class="w-10 p-2">{{ $myactiv->created_at }}</td>
+                                                <td class="w-10 p-2">{{ $myactiv->created_at->format('Y-m-d') }}</td>
                                                 <td class="w-30 p-2">
                                                     <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#ds-act-createNewRequest"> Actions
                                                     </button>

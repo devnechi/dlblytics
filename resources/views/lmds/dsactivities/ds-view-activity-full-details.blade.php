@@ -1,4 +1,8 @@
+@if (Auth::user()->pillar_id==2)
+@extends('layouts.lfinanceadmin')
+@else
 @extends('layouts.llmds')
+@endif
 @section('content')
 <div class="container-fluid">
     <div class="row">

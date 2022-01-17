@@ -42,4 +42,8 @@ class Imprest extends Model
     {
         return $this->belongsTo(PillarActivities::class,'pillar_act_id','pillar_activities_pillar_act_id');
     }
+    public function user()
+    {
+        return $this->hasOne(User::class,'user_id','requested_by');
+    }
 }

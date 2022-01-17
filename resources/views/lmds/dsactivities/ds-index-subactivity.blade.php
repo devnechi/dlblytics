@@ -52,7 +52,7 @@
                                                 <td class="w-30 p-2">{{ $myact->total_subactivity_cost }}</td>
                                                 <td class="w-30  p-2">{{ $myact->current_stage }}</td>
                                                 <td class="w-30  p-2">{{ $myact->review_status }}</td>
-                                                <td class="w-10 p-2">{{ $myact->created_at }}</td>
+                                                <td class="w-10 p-2">{{ $myact->created_at->format('Y-m-d') }}</td>
                                                 <td class="w-30 p-2">
                                                     <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#subacti{{$myact->id}}"> Actions
                                                     </button>
@@ -161,7 +161,7 @@
                                                 <td class="w-30 p-2">{{ $myact->total_subactivity_cost }}</td>
                                                 <td class="w-30  p-2">{{ $myact->current_stage }}</td>
                                                 <td class="w-30  p-2">{{ $myact->review_status }}</td>
-                                                <td class="w-10 p-2">{{ $myact->created_at }}</td>
+                                                <td class="w-10 p-2">{{ $myact->created_at->format('Y-m-d') }}</td>
                                                 <td class="w-30 p-2">
                                                     <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="subat{{$myact->id}}"> Actions
                                                     </button>
@@ -275,7 +275,7 @@
                                                 <td class="w-30 p-2">{{ $myact->total_subactivity_cost }}</td>
                                                 <td class="w-30  p-2">{{ $myact->current_stage }}</td>
                                                 <td class="w-30  p-2">{{ $myact->review_status }}</td>
-                                                <td class="w-10 p-2">{{ $myact->created_at }}</td>
+                                                <td class="w-10 p-2">{{ $myact->created_at->format('Y-m-d') }}</td>
                                                 <td class="w-30 p-2">
                                                     <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#subact{{$myact->id}}"> Actions
                                                     </button>

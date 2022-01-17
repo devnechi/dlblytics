@@ -31,8 +31,7 @@ class PillarProjectController extends Controller
         $cpid = Auth::user()->pillar_id;
 
         //pillar manager get project created by them
-        $myprojects = DB::table('pillar_projects')
-                ->where('created_by', '=', $cuid)
+        $myprojects = PillarProject::where('created_by', '=', $cuid)
                 ->where('pillar_ref_id', '=', $cpid)
                 ->where('review_status', '=', 'pending review')
                 ->get();
@@ -274,7 +273,7 @@ class PillarProjectController extends Controller
        'Content-Type' => 'application/pdf',
        'Content-Disposition' => 'inline; filename="' . $pdf . '"'
      ];
-    
+
         return response()->file($path, $header);
     }
 }

@@ -1433,7 +1433,7 @@
 
 
         .form-check-pcr {
-            padding-left: 3.25rem!important;
+            padding-left: 3.25rem !important;
 
         }
 
@@ -1486,8 +1486,29 @@
                 </div>
 
                 <ul class="list-unstyled components">
-                    <p style="font-size:800;">Navigation</p>
                     <li><a href="{{ route('finance-dashboard') }}">Dashboard</a></li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" id="finance-admin-tab-md" data-toggle="tab" href="#finance-admin-content" role="tab" aria-controls="finance-admin-md" aria-selected="false">Financial Management</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" id="finance-pillars-tab-md" data-toggle="tab" href="#finance-pillars-content" role="tab" aria-controls="finance-pillars-content-md" aria-selected="false">Pillars</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" id="finance-line-manager-tab-md" data-toggle="tab" href="#finance-line-manager-content" role="tab" aria-controls="finance-line-manager-md" aria-selected="false">Line Manager</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" id="finance-exec-dir-tab-md" data-toggle="tab" href="#finance-executive-dir-content" role="tab" aria-controls="finance-exec-dir-md" aria-selected="false">Executive Director</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="finance-hr-tab-md" data-toggle="tab" href="#finance-hr-content" role="tab" aria-controls="finance-hr-content-md" aria-selected="false">HR </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="financial-forms-tab-md" data-toggle="tab" href="#financial-forms-content" role="tab" aria-controls="financial-forms-md" aria-selected="false">Financial Forms</a>
+                    </li>
                     <li>
                         <a class="nav-side-drp" data-toggle="collapse" href="#nav-new-request" aria-expanded="false" aria-controls="nav-new-request">
                             Advance Requests

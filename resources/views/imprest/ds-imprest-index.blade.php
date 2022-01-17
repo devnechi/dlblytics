@@ -15,7 +15,7 @@
 <!--  start of imprest-retirements data-->
 <div class="container-fluid" id="data-science-request-md">
     <!-- line chart -->
-  
+
 
 
 
@@ -39,8 +39,8 @@
                                 <a class="nav-link active" id="vdsreqs-pills-all-pillar-request-tab" data-toggle="pill" href="#vdsreqs-pills-all-pillar-request" role="tab" aria-controls="vdsreqs-pills-all-pillar-request" aria-selected="true">All
 
 
-                                <a class="nav-link" id="submittedimprest-tab" data-toggle="pill" href="#submittedimprest" role="tab" aria-controls="submittedimprest" aria-selected="false">Submitted Imprest</a>
-                                <a class="nav-link" id="prossessingimprest-tab" data-toggle="pill" href="#prossessingimprest" role="tab" aria-controls="prossessingimprest" aria-selected="false">Prossessing Imprest</a>
+                                    <a class="nav-link" id="submittedimprest-tab" data-toggle="pill" href="#submittedimprest" role="tab" aria-controls="submittedimprest" aria-selected="false">Submitted Imprest</a>
+                                    <a class="nav-link" id="prossessingimprest-tab" data-toggle="pill" href="#prossessingimprest" role="tab" aria-controls="prossessingimprest" aria-selected="false">Prossessing Imprest</a>
                             </div>
                         </div>
                         <div class="col-md-10">
@@ -52,13 +52,14 @@
                                             @if(count($imprests)==0)
                                             <div class="d-flex p-2 justify-content-center">No Record Found!</div>
                                             @else
-                                            <table class="table table-bordered table-hover">
 
+                                            <table class="table table-bordered table-hover">
+                                                <p>All created <strong>Imprests</strong> in the Pillar</p>
                                                 <thead>
                                                     <tr>
                                                         <th scope="col">#</th>
                                                         <th scope="col">Requested by</th>
-                                                        <th scope="col-md-4">Title</th>
+                                                        <th scope="col">Title</th>
                                                         <th scope="col">Current Stage</th>
                                                         <th scope="col">Status</th>
                                                         <th scope="col">Total Cost</th>
@@ -76,8 +77,8 @@
                                                         <th scope="row">{{$n}}.</th>
                                                         <td>{{$imp->requestedby->fname}}</td>
                                                         <td>{{$imp->imp_title}}</td>
-                                                        <td> on review finance</td>
-                                                        <td></td>
+                                                        <td>{{$imp->current_stage}}</td>
+                                                        <td>{{$imp->status}}</td>
                                                         <td>{{$imp->amount_rqst}}</td>
                                                         <td>{{$imp->created_at->format('Y-m-d') }}</span>
                                                         </td>
@@ -134,32 +135,33 @@
                                                 </tbody>
 
                                             </table>
-
                                             <br />
                                             <br />
                                             <nav aria-label="Page navigation example">
                                                 <ul class="pagination">
+
                                                     <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Previous">
+                                                        <a class="page-link" href="{{ $imprests->previousPageUrl() }}">
                                                             <span aria-hidden="true">&laquo;</span>
                                                             <span class="sr-only">Previous</span>
                                                         </a>
                                                     </li>
-                                                    <li class="page-item"><a class="page-link" href="#">1</a>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link" href="#">2</a>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link" href="#">3</a>
-                                                    </li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Next">
-                                                            <span aria-hidden="true">&raquo;</span>
-                                                            <span class="sr-only">Next</span>
-                                                        </a>
-                                                    </li>
+
+                                                    @for ($i = 1; $i <= $imprests->lastPage(); $i++)
+
+                                                        <li class="page-item {{$imprests->currentPage() == $i ? 'active' : ''}}">
+                                                            <a class="page-link" href="{{ $imprests->url($i) }}">{{$i}}
+                                                            </a>
+                                                        </li>
+                                                        @endfor
+
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="{{ $imprests->nextPageUrl() }}">Next
+                                                            </a>
+                                                        </li>
                                                 </ul>
                                             </nav>
-                                             @endif
+                                            @endif
                                             <!-- end of SECOND column -->
                                         </div>
 
@@ -170,7 +172,7 @@
 
                                     {{-- my approved Imprests --}}
                                     <div class="row">
-                                    <div class="col-lg-12">
+                                        <div class="col-lg-12">
                                             @if(count($imprestapprv)==0)
                                             <div class="d-flex p-2 justify-content-center">No Record Found!</div>
                                             @else
@@ -259,28 +261,7 @@
 
                                             <br />
                                             <br />
-                                            <nav aria-label="Page navigation example">
-                                                <ul class="pagination">
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Previous">
-                                                            <span aria-hidden="true">&laquo;</span>
-                                                            <span class="sr-only">Previous</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link" href="#">1</a>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link" href="#">2</a>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link" href="#">3</a>
-                                                    </li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Next">
-                                                            <span aria-hidden="true">&raquo;</span>
-                                                            <span class="sr-only">Next</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </nav>
+
                                             @endif
                                             <!-- end of SECOND column -->
                                         </div>
@@ -291,7 +272,7 @@
                                 <div class="tab-pane fade" id="vdsreqs-pills-my-req-retirements" role="tabpanel" aria-labelledby="vdsreqs-pills-messages-tab">
                                     {{-- my Imprest retirements --}}
                                     <div class="row">
-                                    <div class="col-lg-12">
+                                        <div class="col-lg-12">
                                             @if(count($imprests)==0)
                                             <div class="d-flex p-2 justify-content-center">No Record Found!</div>
                                             @else
@@ -301,7 +282,7 @@
                                                     <tr>
                                                         <th scope="col">#</th>
                                                         <th scope="col">Requested by</th>
-                                                        <th scope="col-md-4">Title</th>
+                                                        <th scope="col">Title</th>
                                                         <th scope="col">Current Stage</th>
                                                         <th scope="col">Status</th>
                                                         <th scope="col">Total Cost</th>
@@ -319,8 +300,8 @@
                                                         <th scope="row">{{$n}}.</th>
                                                         <td>{{$imp->requestedby->fname}}</td>
                                                         <td>{{$imp->imp_title}}</td>
-                                                        <td> on review finance</td>
-                                                        <td></td>
+                                                        <td>{{$imp->current_stage}}</td>
+                                                        <td>{{$imp->status}}</td>
                                                         <td>{{$imp->amount_rqst}}</td>
                                                         <td>{{$imp->created_at->format('Y-m-d') }}</span>
                                                         </td>
@@ -382,24 +363,26 @@
                                             <br />
                                             <nav aria-label="Page navigation example">
                                                 <ul class="pagination">
+
                                                     <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Previous">
+                                                        <a class="page-link" href="{{ $imprests->previousPageUrl() }}">
                                                             <span aria-hidden="true">&laquo;</span>
                                                             <span class="sr-only">Previous</span>
                                                         </a>
                                                     </li>
-                                                    <li class="page-item"><a class="page-link" href="#">1</a>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link" href="#">2</a>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link" href="#">3</a>
-                                                    </li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Next">
-                                                            <span aria-hidden="true">&raquo;</span>
-                                                            <span class="sr-only">Next</span>
-                                                        </a>
-                                                    </li>
+
+                                                    @for ($i = 1; $i <= $imprests->lastPage(); $i++)
+
+                                                        <li class="page-item {{$imprests->currentPage() == $i ? 'active' : ''}}">
+                                                            <a class="page-link" href="{{ $imprests->url($i) }}">{{$i}}
+                                                            </a>
+                                                        </li>
+                                                        @endfor
+
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="{{ $imprests->nextPageUrl() }}">Next
+                                                            </a>
+                                                        </li>
                                                 </ul>
                                             </nav>
                                             @endif
@@ -412,7 +395,7 @@
                                 <div class="tab-pane fade" id="prossessingimprest" role="tabpanel" aria-labelledby="vdsreqs-pills-messages-tab">
                                     {{-- my Imprest retirements --}}
                                     <div class="row">
-                                    <div class="col-lg-12">
+                                        <div class="col-lg-12">
 
                                             @if(count($imprestprossessing)==0)
                                             <div class="d-flex p-2 justify-content-center">No Record Found!</div>
@@ -504,24 +487,26 @@
                                             <br />
                                             <nav aria-label="Page navigation example">
                                                 <ul class="pagination">
+
                                                     <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Previous">
+                                                        <a class="page-link" href="{{ $imprests->previousPageUrl() }}">
                                                             <span aria-hidden="true">&laquo;</span>
                                                             <span class="sr-only">Previous</span>
                                                         </a>
                                                     </li>
-                                                    <li class="page-item"><a class="page-link" href="#">1</a>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link" href="#">2</a>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link" href="#">3</a>
-                                                    </li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Next">
-                                                            <span aria-hidden="true">&raquo;</span>
-                                                            <span class="sr-only">Next</span>
-                                                        </a>
-                                                    </li>
+
+                                                    @for ($i = 1; $i <= $imprests->lastPage(); $i++)
+
+                                                        <li class="page-item {{$imprests->currentPage() == $i ? 'active' : ''}}">
+                                                            <a class="page-link" href="{{ $imprests->url($i) }}">{{$i}}
+                                                            </a>
+                                                        </li>
+                                                        @endfor
+
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="{{ $imprests->nextPageUrl() }}">Next
+                                                            </a>
+                                                        </li>
                                                 </ul>
                                             </nav>
                                             @endif
@@ -532,7 +517,7 @@
                                 <div class="tab-pane fade" id="submittedimprest" role="tabpanel" aria-labelledby="vdsreqs-pills-messages-tab">
                                     {{-- my Imprest retirements --}}
                                     <div class="row">
-                                    <div class="col-lg-12">
+                                        <div class="col-lg-12">
                                             @if(count($imprestsubmited)==0)
                                             <div class="d-flex p-2 justify-content-center">No Record Found!</div>
                                             @else
@@ -622,24 +607,26 @@
                                             <br />
                                             <nav aria-label="Page navigation example">
                                                 <ul class="pagination">
+
                                                     <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Previous">
+                                                        <a class="page-link" href="{{ $imprests->previousPageUrl() }}">
                                                             <span aria-hidden="true">&laquo;</span>
                                                             <span class="sr-only">Previous</span>
                                                         </a>
                                                     </li>
-                                                    <li class="page-item"><a class="page-link" href="#">1</a>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link" href="#">2</a>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link" href="#">3</a>
-                                                    </li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Next">
-                                                            <span aria-hidden="true">&raquo;</span>
-                                                            <span class="sr-only">Next</span>
-                                                        </a>
-                                                    </li>
+
+                                                    @for ($i = 1; $i <= $imprests->lastPage(); $i++)
+
+                                                        <li class="page-item {{$imprests->currentPage() == $i ? 'active' : ''}}">
+                                                            <a class="page-link" href="{{ $imprests->url($i) }}">{{$i}}
+                                                            </a>
+                                                        </li>
+                                                        @endfor
+
+                                                        <li class="page-item">
+                                                            <a class="page-link" href="{{ $imprests->nextPageUrl() }}">Next
+                                                            </a>
+                                                        </li>
                                                 </ul>
                                             </nav>
                                             @endif

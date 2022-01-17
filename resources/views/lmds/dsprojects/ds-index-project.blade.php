@@ -4,20 +4,20 @@
 <style>
 
 </style>
-<div class="container-fluid " id="vds-ds-pna-pills-proj" >
+<div class="container-fluid " id="vds-ds-pna-pills-proj">
     {{-- Projects --}}
 
     <div class="row">
         <div class="col-lg-12">
-             <nav>
-                    <div class="nav nav-tabs" id="ds-pna-activities-nav-tab" role="tablist">
-                                <a class="nav-link nav-item active" id="vds-ds-project-ed-pills-reviewed-tab" data-toggle="tab" href="#vds-ds-project-ed-pills-reviewed-content" role="tab" aria-controls="vds-ed-reqs-pills-reviewed"  aria-selected="true">All Projects</a>
+            <nav>
+                <div class="nav nav-tabs" id="ds-pna-activities-nav-tab" role="tablist">
+                    <a class="nav-link nav-item active" id="vds-ds-project-ed-pills-reviewed-tab" data-toggle="tab" href="#vds-ds-project-ed-pills-reviewed-content" role="tab" aria-controls="vds-ed-reqs-pills-reviewed" aria-selected="true">All Projects</a>
 
-                                <a class=" nav-item nav-link" id="vds-ds-project-ed-pills-approved-tab" data-toggle="tab" href="#vds-ds-act-ed-pills-approved-content" role="tab" aria-controls="vds-ed-reqs-pills-approved" aria-selected="false" >Completed</a>
+                    <a class=" nav-item nav-link" id="vds-ds-project-ed-pills-approved-tab" data-toggle="tab" href="#vds-ds-act-ed-pills-approved-content" role="tab" aria-controls="vds-ed-reqs-pills-approved" aria-selected="false">Completed</a>
 
 
-                                <a class=" nav-item nav-link" id="vds-ds-project-ed-pills-all-tab" data-toggle="tab" href="#vds-ds-act-ed-pills-denied-content" role="tab" aria-controls="vds-ed-reqs-pills-all" aria-selected="false">On going</a>
-                            </div>
+                    <a class=" nav-item nav-link" id="vds-ds-project-ed-pills-all-tab" data-toggle="tab" href="#vds-ds-act-ed-pills-denied-content" role="tab" aria-controls="vds-ed-reqs-pills-all" aria-selected="false">On going</a>
+                </div>
             </nav>
             <div class="tab-content" id="ds-impr-nav-tabContent">
 
@@ -50,22 +50,26 @@
                                                                 <th scope="col">#</th>
                                                                 <th scope="col">project title</th>
                                                                 <th scope="col-md-4">Total Estimated cost</th>
-                                                                <th scope="col">current stage</th>
-                                                                <th scope="col">status</th>
+                                                                <th scope="col">Lead</th>
+                                                                <th scope="col"># of approval</th>
                                                                 <th scope="col">Date created</th>
                                                                 <th scope="col"></th>
 
                                                             </tr>
                                                         </thead>
                                                         <tbody>
+                                                            @php
+                                                            $ds=1;
+                                                            @endphp
                                                             @foreach($myprojects as $myproject)
                                                             <tr>
-                                                                <th scope="row">{{ $myproject->project_id }}</th>
+                                                                <th scope="row">{{$ds}}</th>
                                                                 <td class="w-30 p-2">{{ $myproject->project_title }}</td>
                                                                 <td class="w-30 p-2">{{ $myproject->total_project_cost }}</td>
-                                                                <td class="w-30 p-2">{{ $myproject->current_stage }}</td>
-                                                                <td class="w-30 p-2">{{ $myproject->review_status }}</td>
-                                                                <td class="w-10 p-2">{{ $myproject->created_at }}</td>
+
+                                                                <td class=" ">{{ empty($myproject->lead)?'none': $myproject->lead }}</td>
+                                                                <td class="">{{ empty($myproject->activities->where('approval_status','approved'))?'0':  count($myproject->activities->where('approval_status','approved'))  }}</td>
+                                                                <td>{{$myproject->created_at->format('Y-m-d')}}
                                                                 <td class="w-30 p-2">
                                                                     <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#pr{{$myproject->project_id }}"> Actions
                                                                     </button>
@@ -116,6 +120,9 @@
                                                                     </div>
                                                                 </td>
                                                             </tr>
+                                                            @php
+                                                            $ds++;
+                                                            @endphp
                                                             @endforeach
                                                         </tbody>
                                                     </table>
@@ -232,7 +239,7 @@
                                                 <div class="card-content table-responsive">
                                                     <br />
                                                     <table class="table table-bordered table-hover">
-                                                    <strong>My on-going projects</strong>
+                                                        <strong>My on-going projects</strong>
 
 
                                                         <thead>

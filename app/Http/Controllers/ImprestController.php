@@ -7,7 +7,10 @@ use App\Imprest_activity;
 use App\Retirement;
 use Illuminate\Http\Request;
 use App\imprest_review;
+use App\PillarActivities;
 use Auth;
+use App\Notifications\StatusNotification;
+use Notification;
 class ImprestController extends Controller
 {
     /**
@@ -21,7 +24,7 @@ class ImprestController extends Controller
         $cpid = Auth::user()->pillar_id;
 
         $imprest = Imprest::where('pillar_id', $cpid);
-        $imprests = $imprest->get();
+        $imprests = $imprest->paginate(3);
         $imprestapprv=$imprest->where('status','approved')->where('pillar_id',$cpid)->get();
         $imprestsubmited=$imprest->where('status','submitted')->where('pillar_id',$cpid)->get();
         $imprestprossessing=$imprest->where('status','prossessing')->where('pillar_id',$cpid)->get();
@@ -136,15 +139,50 @@ public function edit($id)
     public function review(Request $request)
     {
         $imp = Imprest::findOrFail($request->imprest_id);
+        $act=PillarActivities::findOrFail($imp->pillar_activities_pillar_act_id);
         $imp->status=$request->status;
+        $act->review_status=$request->status;
+
+        if(Auth::user()->pillar_id==1)
+        {
+        if($request->status=='Approved')
+        {
+        $imp->current_stage="Line manager";
+        $act->current_stage="Line manager";
+            $imp->status='Approved';
+            $act->review_status='Approved';
+        }}
+        else{
+            if($request->status=='Approved')
+        {
+            $imp->current_stage="Line manager";
+            $act->current_stage="Line manager";
+            $imp->status='submited';
+            $act->review_status='submited';
+        }
+        }
+
         $imp->update();
+        $act->update();
         $imprev = new imprest_review([
             'comments'=>$request->comments,
             'imprest_id'=>$request->imprest_id,
             'user_id'=>Auth::user()->user_id
         ]);
         $imprev->save();
-        return redirect('retirements')->with('flash_message', 'Retirement updated!');
+        $data = Auth::user();
+
+        $billData = [
+
+            'body' => 'Your imprest has been reviewed.',
+            'actionText' => 'Check out on the system',
+            'actionURL' => route('retireindex'),
+            'thanks' => 'Thanks yoo',
+            'bill_id'=> 0007
+        ];
+        Notification::route('mail', 'semperjack@gmail.com')
+        ->notify( new StatusNotification($billData));
+        return redirect('finance-dashboard')->with('flash_message', 'Retirement updated!');
     }
     public function destroy($id)
     {

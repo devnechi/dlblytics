@@ -21,8 +21,8 @@
         @csrf
         <input type="hidden" value="{{Auth::user()->user_id}}" name="created_by">
         <input type="hidden" value="{{Auth::user()->role_id}}" name="pillar_ref_id">
-        <input type="hidden" value='pending review' name="review_status">
-        <input type="hidden" value='submitted' name="current_stage">
+        <input type="hidden" value='submited' name="review_status">
+        <input type="hidden" value='finance' name="current_stage">
 
         <label for="forDepartmentTitle">project reference</label>
         <div class="row">
@@ -31,7 +31,8 @@
                     <div class="form-group input-group-lg">
                         <div class="row">
                             <div class="col-md-6 input-group-lg">
-                                <select class="form-control form-group col-lg-12" aria-label="Large" id="project_ref_id" name="project_ref_id" {{empty($proj_id) ?'':'disabled="true"'}} aria-describedby="inputGroup-sizing-sm">
+                                <select class="form-control form-group col-lg-12" aria-label="Large" id="project_ref_id"
+                                name="project_ref_id" {{empty($proj_id) ?'':disabled="true"'}} aria-describedby="inputGroup-sizing-sm">
                                     @if(isset($proj_id))
 
                                     @foreach($projs as $prijs)

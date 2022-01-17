@@ -74,9 +74,11 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @php $n=1;@endphp
+                        @php $n=1;
+                        $actimp=$imprest->imp_activities;
+                        @endphp
 
-                        @foreach($imprest->imp_activities as $ret)
+                        @foreach($actimp as $ret)
                         <tr>
                             <th scope="row">{{$n}}.</th>
 
@@ -175,28 +177,30 @@
 
                 <br />
                 <br />
-                <nav aria-label="Page navigation example">
+                <!-- <nav aria-label="Page navigation example">
                     <ul class="pagination">
+
                         <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Previous">
+                            <a class="page-link" href="{{ $actimp->previousPageUrl() }}">
                                 <span aria-hidden="true">&laquo;</span>
                                 <span class="sr-only">Previous</span>
                             </a>
                         </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">2</a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">3</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </li>
+
+                        @for ($i = 1; $i <= $actimp->lastPage(); $i++)
+
+                            <li class="page-item {{$actimp->currentPage() == $i ? 'active' : ''}}">
+                                <a class="page-link" href="{{ $actimp->url($i) }}">{{$i}}
+                                </a>
+                            </li>
+                            @endfor
+
+                            <li class="page-item">
+                                <a class="page-link" href="{{ $actimp->nextPageUrl() }}">Next
+                                </a>
+                            </li>
                     </ul>
-                </nav>
+                </nav> -->
                 @endif
                 <!-- end of SECOND column -->
             </div>
