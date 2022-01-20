@@ -1,4 +1,10 @@
+
+
+
+
+
 @extends('layouts.llmds')
+
 @section('content')
 <div class="container-fluid">
     <div class="row">
@@ -141,13 +147,15 @@
                                             <div class="d-flex p-2 bg-teal justify-content-center">No Activities Found!</div>
                                             @else
                                             <table class="table table-bordered table-hover">
-                                                <h5><strong>Project Activities</strong></h5>
+
                                                 <br />
 
                                                 <thead>
                                                     <tr>
                                                         <th scope="col">#</th>
+                                                        <th scope="col">Title</th>
                                                         <th scope="col">Status</th>
+                                                        <th scope="col">Current Stage</th>
                                                         <th scope="col">Total Estimated cost</th>
                                                         <th scope="col">Date created</th>
                                                         <th scope="col"></th>
@@ -161,14 +169,48 @@
                                                         <th scope="row">{{$n}}</th>
 
                                                         <td>{{$acts->act_title}}</td>
+                                                        <td>{{$acts->review_status}}</td>
                                                         <td>{{$acts->current_stage}}</td>
                                                         <td>{{$acts->total_act_cost}} <span class="badge badge-success">TZS</span>
                                                         </td>
-                                                        <td>{{$acts->created_at}}</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                Activity</button>
-                                                        </td>
+                                                        <td>{{$acts->created_at->format('Y-m-d')}}</td>
+                                                        <td class="w-30 p-2">
+                                                                            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#act{{$acts->pillar_act_id}}"> Actions
+                                                                            </button>
+                                                                            <!-- Modal -->
+                                                                            <div class="modal fade" id="act{{$acts->pillar_act_id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-proj="{{ $acts->pillar_act_id }}" data-user="{{ Auth::user()->user_id }}">
+                                                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                                                    <div class="modal-content">
+                                                                                        <div class="modal-header">
+                                                                                            <h5 class="modal-title" id="exampleModalLongTitle">Select Type of Request</h5>
+                                                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                                <span aria-hidden="true">&times;</span>
+                                                                                            </button>
+                                                                                        </div>
+                                                                                        <div class="modal-body">
+                                                                                            <ul class="list-group-flush">
+
+                                                                                                <li class="list-group-item">
+                                                                                                    <a href="{{ route('pillar-activity.show',   $acts->pillar_act_id)}}" class="btn btn-outline-success d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view project full details">
+                                                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                                                                                                            <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
+                                                                                                            <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
+                                                                                                        </svg>
+                                                                                                        <p class="m-auto">Activity Details</p>
+                                                                                                    </a>
+
+                                                                                                </li>
+
+
+                                                                                            </ul>
+                                                                                        </div>
+                                                                                        <div class="modal-footer">
+                                                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
                                                     </tr>
                                                     @php $n++; @endphp
                                                     @endforeach
@@ -207,7 +249,7 @@
                                             <br />
 
                                             <div class="row">
-                                                <div class="card mb-3" style="max-width: 540px;">
+                                                <div class="card mb-3" style=" ">
                                                     <div class="row no-gutters">
                                                         <div class="col-md-4">
                                                             <img src="/images/pot/man-1.jpg" alt="members photo">
@@ -226,7 +268,7 @@
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="card mb-3" style="max-width: 540px;">
+                                                <div class="card mb-3" style=" ">
                                                     <div class="row no-gutters">
                                                         <div class="col-md-4">
                                                             <img src="/images/pot/woman-2.jpg" alt="members photo">
@@ -253,7 +295,7 @@
                                             <h5><strong>Partners on this project </strong></h5>
                                             <br />
                                             <div class="row">
-                                                <div class="card mb-3" style="max-width: 540px;">
+                                                <div class="card mb-3" style=" ">
                                                     <div class="row no-gutters">
                                                         <div class="col-md-4">
                                                             <img src="/images/pot/man-1.jpg" alt="members photo">
@@ -272,7 +314,7 @@
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="card mb-3" style="max-width: 540px;">
+                                                <div class="card mb-3" style=" ">
                                                     <div class="row no-gutters">
                                                         <div class="col-md-4">
                                                             <img src="/images/pot/woman-2.jpg" alt="members photo">
@@ -298,7 +340,7 @@
                                             <h5><strong>Project Funders</strong></h5>
                                             <br />
                                             <div class="row">
-                                                <div class="card mb-3" style="max-width: 540px;">
+                                                <div class="card mb-3" style=" ">
                                                     <div class="row no-gutters">
                                                         <div class="col-md-4">
                                                             <img src="/images/pot/man-1.jpg" alt="members photo">
@@ -317,7 +359,7 @@
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="card mb-3" style="max-width: 540px;">
+                                                <div class="card mb-3" style=" ">
                                                     <div class="row no-gutters">
                                                         <div class="col-md-4">
                                                             <img src="/images/pot/woman-2.jpg" alt="members photo">

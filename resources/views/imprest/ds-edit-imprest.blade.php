@@ -202,7 +202,7 @@
                     <div class="form-group green-border-focus d-flex justify-content-between">
                         <label for="amount_rqst" class=" text-nowrap">Total Amount Requested:
                         </label>
-                        <input type="text" class="form-control col-4 tt" name="amount_rqst">
+                        <input type="text" class="form-control col-4 tt" value="{{$imprest->amount_rqst}}" name="amount_rqst">
                     </div>
                 </div>
             </div>

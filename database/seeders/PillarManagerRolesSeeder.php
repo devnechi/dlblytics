@@ -20,11 +20,11 @@ class PillarManagerRolesSeeder extends Seeder
     {
 
         $faker = Faker::create();
-        $role = ['data science manager', 'capacity building manager', 'research & innovation manager', 'institutional strenthening manager', 'community engagement manager'];
+        $role = ['data science manager', 'capacity building manager', 'research & innovation manager', 'institutional strenthening manager', 'community engagement manager','Communications Channel Manager'];
 
-        foreach(range(1, 6) as $index){
+        foreach(range(0, 5) as $index){
             DB::table('pillar_manager_role_tbl')->insert([
-                'role_title' => $faker->randomElement($role),
+                'role_title' => $role[$index],
                 'date_created' => now(),
                 'date_updated' => now()
                 ]);

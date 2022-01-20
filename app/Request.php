@@ -5,8 +5,9 @@ namespace App;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Imprest extends Model
+class Request extends Model
 {
+    
     use HasFactory;
 
     protected $table = "imprests";

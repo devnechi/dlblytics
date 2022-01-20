@@ -177,25 +177,9 @@
                             </tbody>
                         </table>
                         <br />
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination">
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Previous">
-                                        <span aria-hidden="true">&laquo;</span>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Next">
-                                        <span aria-hidden="true">&raquo;</span>
-                                        <span class="sr-only">Next</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
+
+
+
                         @endif
                     </div>
                     <div class="tab-pane fade" id="nav-imprests" role="tabpanel" aria-labelledby="nav-imprests-tab">
@@ -212,8 +196,10 @@
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col-md-4">Imprest Title</th>
+                                    <th scope="col">Imprest Title</th>
                                     <th scope="col">Created by</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Current Stage</th>
                                     <th scope="col">Total cost</th>
                                     <th scope="col">Date created</th>
                                     <th scope="col"></th>
@@ -224,10 +210,12 @@
                                 @php $ni=1; @endphp
                                 @foreach($activt->imprests as $imps)
                                 <tr>
-                                    <th scope="row">1{{$ni}}</th>
+                                    <th scope="row">{{$ni}}</th>
                                     <td>{{$imps->imp_title}}</td>
-                                    <td>{{$imps->requested_by}}</td>
-                                    <td>{{$imps->amount_rqst}}<span class="badge badge-success">TZS</span>
+                                    <td>{{$imps->user->fname}} {{$imps->user->lname}}</td>
+                                    <td>{{$imps->status}}</td>
+                                    <td>{{$imps->current_stage}}</td>
+                                    <td>{{$imps->amount_rqst}}<span class="badge badge-success">TZS</span></td>
                                     <td>{{$imps->start_date}}</td>
                                     <td>
                                         <button type="button" class="btn btn-outline-success">actions</button>
@@ -355,7 +343,7 @@
                         <br />
 
                         <div class="row">
-                            <div class="card mb-3" style="max-width: 540px;">
+                            <div class="card mb-3" style=" ">
                                 <div class="row no-gutters">
                                     <div class="col-md-4">
                                         <img src="/images/pot/man-1.jpg" alt="members photo">
@@ -374,7 +362,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="card mb-3" style="max-width: 540px;">
+                            <div class="card mb-3" style=" ">
                                 <div class="row no-gutters">
                                     <div class="col-md-4">
                                         <img src="/images/pot/woman-2.jpg" alt="members photo">

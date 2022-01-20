@@ -86,7 +86,8 @@ class LoginController extends Controller
 
             case 9:
                 //role 9 = ce-pillar-manager
-                $this->redirectTo = '/ce-pillar-manager';
+                // $this->redirectTo = '/ce-pillar-manager';
+                $this->redirectTo = '/ds-pillar-manager';
                 return $this->redirectTo;
                 break;
 

@@ -7,7 +7,7 @@ use App\Http\Requests;
 use Auth;
 use App\Retirement;
 use App\Imprest;
-use App\imprest_review;
+use App\retire_review;
 use Illuminate\Http\Request;
 use App\Notifications\StatusNotification;
 use Notification;
@@ -154,13 +154,11 @@ class RetirementsController extends Controller
 
     public function review(Request $request)
     {
-        $imp = Imprest::findOrFail($request->imprest_id);
-        $imp->status = $request->status;
-        $imp->update();
-        $imprev = new imprest_review([
+       
+        $imprev = new retire_review([
             'comments' => $request->comments,
             'imprest_id' => $request->imprest_id,
-            'imprest_id' => $request->imprest_id,
+            'imprest_act_id' => $request->imprest_act_id,
             'user_id' => Auth::user()->user_id
         ]);
         $imprev->save();

@@ -68,10 +68,10 @@
                     <label for="formGroupProductName">Gender</label>
                     <select class="form-control" aria-label="Large" id="gender_id" name="gender_id"
                         aria-describedby="inputGroup-sizing-sm">
-                        <option value="select">Select</option>
-                        @foreach($genders as $gender)
-                        <option value="{{$gender->gender_id}}">{{$gender->gender_title}}</option>
-                        @endforeach
+                        <option value="No select">Select</option>
+
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
                     </select>
                 </div>
             </div>
@@ -144,7 +144,7 @@
             <div class="row">
                 <div class="form-group col-md-4 input-group-lg">
                     <label for="forUserrole">Select pillar Management Role: </label>
-                    <select class="form-control" aria-label="Large" id="role" name="role"
+                    <select class="form-control" aria-label="Large" id="role_id" name="role_id"
                     aria-describedby="inputGroup-sizing-sm">
                     <option value="select">Select Role</option>
                     @foreach($pillarmanagerroles as $pillarmanagerrole)

@@ -230,6 +230,7 @@ Monarobase\CountryList\CountryListServiceProvider::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Countries' => Monarobase\CountryList\CountryListFacade::class,
 
+
     ],
 
 ];

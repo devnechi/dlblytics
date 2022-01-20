@@ -88,6 +88,7 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
+
         $request->validate([
             'fname' => 'required',
             'mname' => 'required',
@@ -109,7 +110,7 @@ class EmployeeController extends Controller
             'lname' => $request->get('lname'),
             'password' => Hash::make($request->get('password')),
             'email' => $request->get('email'),
-            'role' => $request->role,
+            'role_id' => $request->get('role_id'),
             'dob' => $request->get('dob'),
             'gender_id' => $request->gender_id,
             'martialstatus' => $request->martialstatus,
@@ -117,7 +118,7 @@ class EmployeeController extends Controller
             'address' => $request->get('address'),
             'phonenumber' => $request->get('phonenumber'),
             'emegency_contact' => $request->get('emegency_contact'),
-            'Department' => $request->get('department_id'),
+            'department_id' => $request->get('department_id'),
             'pillar_id' => $request->pillar_id,
             'job_description' => $request->get('job_description'),
             'bankusername' => $request->get('bankusername'),

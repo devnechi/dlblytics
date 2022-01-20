@@ -102,7 +102,7 @@
                                                                         <td class="w-30 p-2">{{ $myproject->total_project_cost }}</td>
                                                                         <td class="w-30 h-30 p-4">{{ $myproject->current_stage }}</td>
                                                                         <td class="w-30 h-30 p-4">{{ $myproject->review_status }}</td>
-                                                                        <td class="w-10 p-2">{{ $myproject->created_at }}</td>
+                                                                        <td class="w-10 p-2">{{ $myproject->created_at->format('Y-m-d') }}</td>
                                                                         <td class="w-10 p-2"><a href="{{ route('ce-pillar-project.show', $myproject->project_id)}}"
                                                                             class="btn btn-outline-success">view details</a>
                                                                        </td>
@@ -180,7 +180,7 @@
                                                                     <td class="w-30 p-2">{{ $myapprovedproject->total_project_cost }}</td>
                                                                     <td class="w-30 h-30 p-4">{{ $myapprovedproject->current_stage }}</td>
                                                                     <td class="w-30 h-30 p-4">{{ $myapprovedproject->review_status }}</td>
-                                                                    <td class="w-10 p-2">{{ $myapprovedproject->created_at }}</td>
+                                                                    <td class="w-10 p-2">{{ $myapprovedproject->created_at->format('Y-m-d') }}</td>
 
                                                                     <td class="w-10 p-2"><a href="{{ route('ce-pillar-project.show', $myapprovedproject->project_id)}}"
                                                                         class="btn btn-outline-success" data-bs-toggle="tooltip" data-bs-placement="top" title="view project full details">
@@ -350,7 +350,7 @@
                                                                     <td class="w-30 p-2">{{ $mydeniedproject->total_project_cost }}</td>
                                                                     <td class="w-30 h-30 p-4">{{ $mydeniedproject->current_stage }}</td>
                                                                     <td class="w-30 h-30 p-4">{{ $mydeniedproject->review_status }}</td>
-                                                                    <td class="w-10 p-2">{{ $mydeniedproject->created_at }}</td>
+                                                                    <td class="w-10 p-2">{{ $mydeniedproject->created_at->format('Y-m-d') }}</td>
                                                                     <td class="w-10 p-2"><a href="{{ route('ce-pillar-project.show', $mydeniedproject->project_id)}}"
                                                                         class="btn btn-outline-success">view details</a>
                                                                    </td>
@@ -430,7 +430,7 @@
                                                                     <td class="w-30 p-2">{{ $pillarproject->total_project_cost }}</td>
                                                                     <td class="w-30 h-30 p-4">{{ $pillarproject->current_stage }}</td>
                                                                     <td class="w-30 h-30 p-4">{{ $pillarproject->review_status }}</td>
-                                                                    <td class="w-10 p-2">{{ $pillarproject->created_at }}</td>
+                                                                    <td class="w-10 p-2">{{ $pillarproject->created_at->format('Y-m-d') }}</td>
                                                                     <td class="w-10 p-2"><a href="{{ route('ce-pillar-project.show', $pillarproject->project_id)}}"
                                                                         class="btn btn-outline-success">view details</a>
                                                                    </td>

@@ -1,4 +1,6 @@
+
 @extends('layouts.llmds')
+
 @section('content')
 <div class="container-fluid">
     <div class="row">
@@ -196,9 +198,7 @@
 
                                         <a class="nav-link" id="nav-imprests-tab" data-toggle="tab" href="#nav-imprests"
                                             role="tab" aria-controls="nav-imprests" aria-selected="false">Imprests</a>
-                                        <a class="nav-link" id="nav-retirements-tab" data-toggle="tab"
-                                            href="#nav-retirements" role="tab" aria-controls="nav-retirements"
-                                            aria-selected="false">Retirements</a>
+
                                         <a class="nav-link" id="nav-members-tab" data-toggle="tab" href="#nav-members"
                                             role="tab" aria-controls="nav-members" aria-selected="false">Members</a>
                                         <a class="nav-link" id="nav-partners-tab" data-toggle="tab" href="#nav-partners"
@@ -407,90 +407,11 @@
                                             <thead>
                                                 <tr>
                                                     <th scope="col">#</th>
-                                                    <th scope="col-md-4">Imprest Title</th>
+                                                    <th scope="col">Imprest Title</th>
                                                     <th scope="col">Created by</th>
                                                     <th scope="col">Total cost</th>
-                                                    <th scope="col">Date created</th>
-                                                    <th scope="col"></th>
-
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <th scope="row">1</th>
-                                                    <td>Data visualisation in Mbeya</td>
-                                                    <td>MarkCuban</td>
-                                                    <td>6,600,000 <span class="badge badge-success">TZS</span>
-                                                    <td>2019-09-11</td>
-                                                    <td>
-                                                        <button type="button"
-                                                            class="btn btn-outline-success">actions</button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">2</th>
-                                                    <td>Data visualisation in Mbeya</td>
-                                                    <td>MarkCuban</td>
-                                                    <td>6,600,000 <span class="badge badge-success">TZS</span>
-                                                    <td>2019-09-11</td>
-                                                    <td>
-                                                        <button type="button"
-                                                            class="btn btn-outline-success">actions</button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">3</th>
-                                                    <td>Data visualisation in Mbeya</td>
-                                                    <td>MarkCuban</td>
-                                                    <td>6,600,000 <span class="badge badge-success">TZS</span>
-                                                    <td>2019-09-11</td>
-                                                    <td>
-                                                        <button type="button"
-                                                            class="btn btn-outline-success">actions</button>
-                                                    </td>
-                                                </tr>
-
-                                            </tbody>
-                                        </table>
-                                        <br />
-                                        <nav aria-label="Page navigation example">
-                                            <ul class="pagination">
-                                                <li class="page-item">
-                                                    <a class="page-link" href="#" aria-label="Previous">
-                                                        <span aria-hidden="true">&laquo;</span>
-                                                        <span class="sr-only">Previous</span>
-                                                    </a>
-                                                </li>
-                                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                <li class="page-item">
-                                                    <a class="page-link" href="#" aria-label="Next">
-                                                        <span aria-hidden="true">&raquo;</span>
-                                                        <span class="sr-only">Next</span>
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                        </nav>
-                                    </div>
-                                    <div class="tab-pane fade" id="nav-retirements" role="tabpanel"
-                                        aria-labelledby="nav-retirements-tab">
-                                        <br />
-                                        <br />
-                                        <br />
-                                        <table class="table table-bordered table-hover">
-                                            <h5><strong>Activity Retirements</strong></h5>
-                                            <br />
-
-                                            <thead>
-                                                <tr>
-                                                    <th scope="col">#</th>
-                                                    <th scope="col">Requested by</th>
-                                                    <th scope="col-md-4">Retirement Title</th>
-                                                    <th scope="col">imprest id</th>
+                                                    <th scope="col">Current stage/th>
                                                     <th scope="col">status</th>
-                                                    <th scope="col">Total allocated amount</th>
-                                                    <th scope="col">Total amount retired</th>
                                                     <th scope="col">Date created</th>
                                                     <th scope="col"></th>
 
@@ -499,13 +420,9 @@
                                             <tbody>
                                                 <tr>
                                                     <th scope="row">1</th>
+                                                    <td>Data visualisation in Mbeya</td>
                                                     <td>MarkCuban</td>
-                                                    <td>Data visualisation ret</td>
-                                                    <td>23</td>
-                                                    <td>pending retirement</td>
-                                                    <td>2,000,000 <span class="badge badge-success">TZS</span></td>
-                                                    <td>1,300,000
-                                                    </td>
+                                                    <td>6,600,000 <span class="badge badge-success">TZS</span>
                                                     <td>2019-09-11</td>
                                                     <td>
                                                         <button type="button"
@@ -514,13 +431,9 @@
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">2</th>
+                                                    <td>Data visualisation in Mbeya</td>
                                                     <td>MarkCuban</td>
-                                                    <td>Data visualisation ret</td>
-                                                    <td>23</td>
-                                                    <td>pending retirement</td>
-                                                    <td>2,000,000 <span class="badge badge-success">TZS</span></td>
-                                                    <td>1,300,000
-                                                    </td>
+                                                    <td>6,600,000 <span class="badge badge-success">TZS</span>
                                                     <td>2019-09-11</td>
                                                     <td>
                                                         <button type="button"
@@ -529,13 +442,9 @@
                                                 </tr>
                                                 <tr>
                                                     <th scope="row">3</th>
+                                                    <td>Data visualisation in Mbeya</td>
                                                     <td>MarkCuban</td>
-                                                    <td>Data visualisation ret</td>
-                                                    <td>23</td>
-                                                    <td>pending retirement</td>
-                                                    <td>2,000,000 <span class="badge badge-success">TZS</span></td>
-                                                    <td>1,300,000
-                                                    </td>
+                                                    <td>6,600,000 <span class="badge badge-success">TZS</span>
                                                     <td>2019-09-11</td>
                                                     <td>
                                                         <button type="button"
@@ -566,6 +475,7 @@
                                             </ul>
                                         </nav>
                                     </div>
+
                                     <div class="tab-pane fade" id="nav-members" role="tabpanel"
                                         aria-labelledby="nav-members-tab">
                                         <br />
@@ -574,7 +484,7 @@
                                         <br />
 
                                         <div class="row">
-                                            <div class="card mb-3" style="max-width: 540px;">
+                                            <div class="card mb-3" style=" ">
                                                 <div class="row no-gutters">
                                                     <div class="col-md-4">
                                                         <img src="/images/pot/man-1.jpg" alt="members photo">
@@ -593,7 +503,7 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="card mb-3" style="max-width: 540px;">
+                                            <div class="card mb-3" style=" ">
                                                 <div class="row no-gutters">
                                                     <div class="col-md-4">
                                                         <img src="/images/pot/woman-2.jpg" alt="members photo">
@@ -621,7 +531,7 @@
                                         <h5><strong>Partners on this Activity </strong></h5>
                                         <br />
                                         <div class="row">
-                                            <div class="card mb-3" style="max-width: 540px;">
+                                            <div class="card mb-3" style=" ">
                                                 <div class="row no-gutters">
                                                     <div class="col-md-4">
                                                         <img src="/images/pot/man-1.jpg" alt="members photo">
@@ -640,7 +550,7 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="card mb-3" style="max-width: 540px;">
+                                            <div class="card mb-3" style=" ">
                                                 <div class="row no-gutters">
                                                     <div class="col-md-4">
                                                         <img src="/images/pot/woman-2.jpg" alt="members photo">
@@ -667,7 +577,7 @@
                                         <h5><strong>Activity Funders</strong></h5>
                                         <br />
                                         <div class="row">
-                                            <div class="card mb-3" style="max-width: 540px;">
+                                            <div class="card mb-3" style=" ">
                                                 <div class="row no-gutters">
                                                     <div class="col-md-4">
                                                         <img src="/images/pot/man-1.jpg" alt="members photo">
@@ -686,7 +596,7 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="card mb-3" style="max-width: 540px;">
+                                            <div class="card mb-3" style=" ">
                                                 <div class="row no-gutters">
                                                     <div class="col-md-4">
                                                         <img src="/images/pot/woman-2.jpg" alt="members photo">

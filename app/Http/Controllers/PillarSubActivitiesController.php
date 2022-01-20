@@ -32,17 +32,8 @@ class PillarSubActivitiesController extends Controller
                 ->where('created_by', '=', $cuid)
                 ->get();
 
-            //dd($mysubactivities);
-            // if($mysubactivities->isEmpty()){
-            //         $mysubactivities->session()->flash('alert-success', 'Sub activitivities are currently empty!. You can create one.');
-            //         return view('lmds.dsactivities.ds-index-subactivity')
-            //         ->with('mysubactivities',$mysubactivities);
-            //     }else{
 
-                return view('lmds.dsactivities.ds-index-subactivity')
-                ->with('mysubactivities',$mysubactivities);
-
-             //   }
+        return view('lmds.dsactivities.ds-index-subactivity')->with('mysubactivities',$mysubactivities);
 
     }
     public function create($act_id=0){
@@ -125,6 +116,10 @@ class PillarSubActivitiesController extends Controller
         //get last activity id
 
        $activity_id=$activity->save();
+
+
+
+
 
         $request->session()->flash('alert-success', 'SubActivity was successfully added!. You can now manage it.');
         return redirect()->route('ds-pillar-manager')
@@ -224,13 +219,8 @@ class PillarSubActivitiesController extends Controller
     {
 
                 $activt=PillarSubActivities::findOrFail($id);
-                //dd($activt);
-                // if($activt->isEmpty()){
-                //     $activt->session()->flash('alert-success', 'Sub activitivities are currently empty!. You can create one.');
-                // }else{
                 return view('lmds.dsactivities.ds-show-subactivity')
                 ->with('activt',$activt);
-                // }
 
     }
 

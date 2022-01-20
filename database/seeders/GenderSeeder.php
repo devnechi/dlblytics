@@ -22,13 +22,13 @@ class GenderSeeder extends Seeder
         $faker = Faker::create();
         $gender = ['male', 'female'];
 
-        foreach(range(1, 2) as $index){
-            DB::table('genders_tbl')->insert([
-                'gender_title' => $faker->randomElement($gender),
-                'date_created' => now(),
-                'date_updated' => now()
-                ]);
-            }
+        // foreach(range(1, 2) as $index){
+        //     DB::table('genders_tbl')->insert([
+        //         'gender_title' => $faker->randomElement($gender),
+        //         'date_created' => now(),
+        //         'date_updated' => now()
+        //         ]);
+        //     }
 
     }
 }

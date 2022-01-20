@@ -74,9 +74,9 @@
         <div class="row">
             <div class="form-group col-lg-12">
                 <div class="form-group multiple-form-group" data-max=6>
-                    <div class="mb-2 listob">
+                    <div class="mb-2 list-group list-group-flush col-md-6 listob">
                         @foreach($model->pObjs as $obj)
-                        <a href="" class="badge badge-light" onclick="remofond(event)">{{$obj->objective_content}} <span>&times;</span>
+                        <a href="" class="list-group-item" onclick="remofond(event)">{{$obj->objective_content}} <span>&times;</span>
                             <input type="hidden" value="{{$obj->objective_content}}" name="project_objectives[]">
                         </a>
                         @endforeach
@@ -219,11 +219,13 @@
 
                                 @endphp
 
-                                @if(empty($temp))
+                                @if(count($temp)==0)
+                                @else
+                                @foreach($temp as $doc)
                                 <tr class="" >
-                                    <td> {{$temp[0]->project_file_title }}</td>
-
+                                    <td>{{$doc->project_file_title }}</td>
                                 </tr>
+                                @endforeach
                                 @endif
                             </table>
                         </div>
@@ -251,13 +253,13 @@
 
                                 @endphp
 
-                                @if(empty($tempf))
+                                @if(count($tempf)==0)
                                 @else
-
+                                @foreach($tempf as $doc)
                                 <tr class="" >
-                                    <td> {{$tempf[0]->project_file_title }}</td>
-
+                                    <td>{{$doc->project_file_title }}</td>
                                 </tr>
+                                @endforeach
                                 @endif
                             </table>
                         </div>

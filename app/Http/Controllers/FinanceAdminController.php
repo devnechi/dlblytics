@@ -90,6 +90,11 @@ class FinanceAdminController extends Controller
                 'departments'));
     }
 
+    public function activityajax()
+    {
+        $activities=PillarActivities::all();
+        return Response()->json($activities);
+    }
 
     //  to create a new pillar
     public function createNewPillar()
