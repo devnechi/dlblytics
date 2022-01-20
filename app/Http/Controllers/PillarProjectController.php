@@ -118,15 +118,17 @@ class PillarProjectController extends Controller
 
          //store project doc file
          $fileModel = new DocProjectFile;
+         $fileModel1 = new DocProjectFile;
 
          if($request->hasfile('project_tech')) {
-             $fileName = time().'_'.$request->file('project_tech')->getClientOriginalName();
-             $filePath = $request->file('project_tech')->storeAs('project_documents_uploads', $fileName);
-             $fileModel->file_type="projecttech";
-             $fileModel->project_id=$project->project_id;
-             $fileModel->project_file_title = time().'_'.$request->file('project_tech')->getClientOriginalName();
-             $fileModel->file_path = '/storage/' . $filePath;
-             $fileModel->save();
+             $fileName1 = time().'_'.$request->file('project_tech')->getClientOriginalName();
+             $filePath1 = $request->file('project_tech')->storeAs('project_documents_uploads', $fileName1);
+             $fileModel1->file_type="projecttech";
+             $fileModel1->project_id=$project->project_id;
+             $fileModel1->project_file_title = time().'_'.$request->file('project_tech')->getClientOriginalName();
+             $fileModel1->file_path = '/storage/' . $filePath1;
+             $fileModel1->save();
+
          }
          if($request->hasfile('project_busi')) {
             $fileName = time().'_'.$request->file('project_busi')->getClientOriginalName();

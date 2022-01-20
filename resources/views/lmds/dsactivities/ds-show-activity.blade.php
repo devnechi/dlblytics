@@ -179,30 +179,6 @@
                         <br />
 
 
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination">
-
-                                <li class="page-item">
-                                    <a class="page-link" href="{{ $subacts->previousPageUrl() }}">
-                                        <span aria-hidden="true">&laquo;</span>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                </li>
-
-                                @for ($i = 1; $i <= $subacts->lastPage(); $i++)
-
-                                    <li class="page-item {{$subacts->currentPage() == $i ? 'active' : ''}}">
-                                        <a class="page-link" href="{{ $subacts->url($i) }}">{{$i}}
-                                        </a>
-                                    </li>
-                                    @endfor
-
-                                    <li class="page-item">
-                                        <a class="page-link" href="{{ $subacts->nextPageUrl() }}">Next
-                                        </a>
-                                    </li>
-                            </ul>
-                        </nav>
 
                         @endif
                     </div>
@@ -220,7 +196,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col-md-4">Imprest Title</th>
+                                    <th scope="col">Imprest Title</th>
                                     <th scope="col">Created by</th>
                                     <th scope="col">Status</th>
                                     <th scope="col">Current Stage</th>
@@ -367,7 +343,7 @@
                         <br />
 
                         <div class="row">
-                            <div class="card mb-3" style="max-width: 540px;">
+                            <div class="card mb-3" style=" ">
                                 <div class="row no-gutters">
                                     <div class="col-md-4">
                                         <img src="/images/pot/man-1.jpg" alt="members photo">
@@ -386,7 +362,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="card mb-3" style="max-width: 540px;">
+                            <div class="card mb-3" style=" ">
                                 <div class="row no-gutters">
                                     <div class="col-md-4">
                                         <img src="/images/pot/woman-2.jpg" alt="members photo">

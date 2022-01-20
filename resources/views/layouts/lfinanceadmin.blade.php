@@ -2276,7 +2276,7 @@
             document.getElementById("mySidenav").style.width = "0";
         }
 
-        }
+
     </script>
 
 
@@ -2287,16 +2287,10 @@
             $('#selectedBatch').on('change', function() {
                 if (this.value == 'stage 1') {
                     $("#pnl_candling_report").show();
-                    // $('#contact').text("Email Address");
-                    // $('#selected_batch_id').text("'
-                    //  alert($(this).find("option:selected").text());
+
                     // batch_id
                     document.getElementById("selected_batch_id").innerHTML = $(this).find(
                         "option:selected").text();
-                    //document.getElementById("batch_id").innerHTML = $(this).find("option:selected").text();
-
-
-
                     $("#pnl_hatching_report").hide();
                     $("#pnl_sales_report").hide();
                 } else if (this.value == 'stage 2') {
@@ -2639,87 +2633,87 @@
     <script>
         // selectDSindicator
         $(document).ready(function() {
-                    $('#selectDSindicator').on('change', function() {
-                            if (this.value == 'indicator1') {
-                                $("#pnl_kpi_1").show();
+            $('#selectDSindicator').on('change', function() {
+                if (this.value == 'indicator1') {
+                    $("#pnl_kpi_1").show();
 
-                                $("#pnl_select_pillars").hide();
-                                $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
+                    $("#pnl_ds_pillar").hide();
 
-                            } else if (this.value == 'indicator4') {
-                                $("#pnl_kpi_4").show();
-                                $("#pnl_ds_pillar").hide();
-                                $("#pnl_select_pillars").hide();
+                } else if (this.value == 'indicator4') {
+                    $("#pnl_kpi_4").show();
+                    $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
 
-                            } else if (this.value == 'indicator5') {
-                                $("#pnl_kpi_5").show();
-                                $("#pnl_ds_pillar").hide();
-                                $("#pnl_select_pillars").hide();
+                } else if (this.value == 'indicator5') {
+                    $("#pnl_kpi_5").show();
+                    $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
 
-                            } else if (this.value == 'indicator6') {
-                                $("#pnl_kpi_6").show();
-                                $("#pnl_ds_pillar").hide();
-                                $("#pnl_select_pillars").hide();
+                } else if (this.value == 'indicator6') {
+                    $("#pnl_kpi_6").show();
+                    $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
 
-                            } else if (this.value == 'indicator7') {
-                                $("#pnl_kpi_7").show();
-                                $("#pnl_ds_pillar").hide();
-                                $("#pnl_select_pillars").hide();
+                } else if (this.value == 'indicator7') {
+                    $("#pnl_kpi_7").show();
+                    $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
 
-                            } else if (this.value == 'indicator8') {
-                                $("#pnl_kpi_8").show();
-                                $("#pnl_ds_pillar").hide();
-                                $("#pnl_select_pillars").hide();
+                } else if (this.value == 'indicator8') {
+                    $("#pnl_kpi_8").show();
+                    $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
 
-                            } else if (this.value == 'indicator10') {
-                                $("#pnl_kpi_10).show();
-                                    $("#pnl_ds_pillar").hide(); $("#pnl_select_pillars").hide();
+                } else if (this.value == 'indicator10') {
+                    $("#pnl_kpi_10").show();
+                    $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
 
-                                }
-                                else if (this.value == 'indicator11') {
-                                    $("#pnl_kpi_11").show();
-                                    $("#pnl_ds_pillar").hide();
-                                    $("#pnl_select_pillars").hide();
+                } else if (this.value == 'indicator11') {
+                    $("#pnl_kpi_11").show();
+                    $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
 
-                                } else if (this.value == 'indicator13') {
-                                    $("#pnl_kpi_13").show();
-                                    $("#pnl_ds_pillar").hide();
-                                    $("#pnl_select_pillars").hide();
+                } else if (this.value == 'indicator13') {
+                    $("#pnl_kpi_13").show();
+                    $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
 
-                                } else if (this.value == 'indicator15') {
-                                    $("#pnl_kpi_15").show();
-                                    $("#pnl_ds_pillar").hide();
-                                    $("#pnl_select_pillars").hide();
+                } else if (this.value == 'indicator15') {
+                    $("#pnl_kpi_15").show();
+                    $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
 
-                                } else {
+                } else {
 
-                                    $("#pnl_kpi_1").hide();
-                                    $("#pnl_kpi_2").hide();
+                    $("#pnl_kpi_1").hide();
+                    $("#pnl_kpi_2").hide();
 
-                                    $("#pnl_kpi_3").hide();
-                                    $("#pnl_kpi_4").hide();
-                                    $("#pnl_kpi_5").hide();
+                    $("#pnl_kpi_3").hide();
+                    $("#pnl_kpi_4").hide();
+                    $("#pnl_kpi_5").hide();
 
-                                    $("#pnl_kpi_6").hide();
-                                    $("#pnl_kpi_7").hide();
-                                    $("#pnl_kpi_8").hide();
-                                    $("#pnl_kpi_9").hide();
+                    $("#pnl_kpi_6").hide();
+                    $("#pnl_kpi_7").hide();
+                    $("#pnl_kpi_8").hide();
+                    $("#pnl_kpi_9").hide();
 
-                                    $("#pnl_kpi_10").hide();
-                                    $("#pnl_kpi_11").hide();
-                                    $("#pnl_kpi_12").hide();
-                                    $("#pnl_kpi_13").hide();
+                    $("#pnl_kpi_10").hide();
+                    $("#pnl_kpi_11").hide();
+                    $("#pnl_kpi_12").hide();
+                    $("#pnl_kpi_13").hide();
 
-                                    $("#pnl_kpi_14").hide();
-                                    $("#pnl_kpi_15").hide();
-                                    $("#pnl_cb_pillar").hide();
-                                    $("#pnl_select_pillars").show();
+                    $("#pnl_kpi_14").hide();
+                    $("#pnl_kpi_15").hide();
+                    $("#pnl_cb_pillar").hide();
+                    $("#pnl_select_pillars").show();
 
 
-                                }
-                            });
-                        //console.log("dlab cb");
-                    });
+                }
+            });
+            //console.log("dlab cb");
+        });
     </script>
 
 
@@ -2728,87 +2722,99 @@
 
         // selectDSindicator
         $(document).ready(function() {
-                    $('#selectDSindicator').on('change', function() {
-                            if (this.value == 'indicator1') {
-                                $("#pnl_kpi_1").show();
+            $('#selectDSindicator').on('change', function() {
+                if (this.value == 'indicator1') {
+                    $("#pnl_kpi_1").show();
 
-                                $("#pnl_select_pillars").hide();
-                                $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
+                    $("#pnl_ds_pillar").hide();
 
-                            } else if (this.value == 'indicator4') {
-                                $("#pnl_kpi_4").show();
-                                $("#pnl_ds_pillar").hide();
-                                $("#pnl_select_pillars").hide();
+                } else if (this.value == 'indicator4') {
+                    $("#pnl_kpi_4").show();
+                    $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
 
-                            } else if (this.value == 'indicator5') {
-                                $("#pnl_kpi_5").show();
-                                $("#pnl_ds_pillar").hide();
-                                $("#pnl_select_pillars").hide();
+                } else if (this.value == 'indicator5') {
+                    $("#pnl_kpi_5").show();
+                    $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
 
-                            } else if (this.value == 'indicator6') {
-                                $("#pnl_kpi_6").show();
-                                $("#pnl_ds_pillar").hide();
-                                $("#pnl_select_pillars").hide();
+                } else if (this.value == 'indicator6') {
+                    $("#pnl_kpi_6").show();
+                    $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
 
-                            } else if (this.value == 'indicator7') {
-                                $("#pnl_kpi_7").show();
-                                $("#pnl_ds_pillar").hide();
-                                $("#pnl_select_pillars").hide();
+                } else if (this.value == 'indicator7') {
+                    $("#pnl_kpi_7").show();
+                    $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
 
-                            } else if (this.value == 'indicator8') {
-                                $("#pnl_kpi_8").show();
-                                $("#pnl_ds_pillar").hide();
-                                $("#pnl_select_pillars").hide();
+                } else if (this.value == 'indicator8') {
+                    $("#pnl_kpi_8").show();
+                    $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
 
-                            } else if (this.value == 'indicator10') {
-                                $("#pnl_kpi_10).show();
-                                    $("#pnl_ds_pillar").hide(); $("#pnl_select_pillars").hide();
+                } else if (this.value == 'indicator10') {
+                    $("#pnl_kpi_10").show();
+                    $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
 
-                                }
-                                else if (this.value == 'indicator11') {
-                                    $("#pnl_kpi_11").show();
-                                    $("#pnl_ds_pillar").hide();
-                                    $("#pnl_select_pillars").hide();
+                } else if (this.value == 'indicator11') {
+                    $("#pnl_kpi_11").show();
+                    $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
 
-                                } else if (this.value == 'indicator13') {
-                                    $("#pnl_kpi_13").show();
-                                    $("#pnl_ds_pillar").hide();
-                                    $("#pnl_select_pillars").hide();
+                } else if (this.value == 'indicator13') {
+                    $("#pnl_kpi_13").show();
+                    $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
 
-                                } else if (this.value == 'indicator15') {
-                                    $("#pnl_kpi_15").show();
-                                    $("#pnl_ds_pillar").hide();
-                                    $("#pnl_select_pillars").hide();
+                } else if (this.value == 'indicator15') {
+                    $("#pnl_kpi_15").show();
+                    $("#pnl_ds_pillar").hide();
+                    $("#pnl_select_pillars").hide();
 
-                                } else {
+                } else {
 
-                                    $("#pnl_kpi_1").hide();
-                                    $("#pnl_kpi_2").hide();
+                    $("#pnl_kpi_1").hide();
+                    $("#pnl_kpi_2").hide();
 
-                                    $("#pnl_kpi_3").hide();
-                                    $("#pnl_kpi_4").hide();
-                                    $("#pnl_kpi_5").hide();
+                    $("#pnl_kpi_3").hide();
+                    $("#pnl_kpi_4").hide();
+                    $("#pnl_kpi_5").hide();
 
-                                    $("#pnl_kpi_6").hide();
-                                    $("#pnl_kpi_7").hide();
-                                    $("#pnl_kpi_8").hide();
-                                    $("#pnl_kpi_9").hide();
+                    $("#pnl_kpi_6").hide();
+                    $("#pnl_kpi_7").hide();
+                    $("#pnl_kpi_8").hide();
+                    $("#pnl_kpi_9").hide();
 
-                                    $("#pnl_kpi_10").hide();
-                                    $("#pnl_kpi_11").hide();
-                                    $("#pnl_kpi_12").hide();
-                                    $("#pnl_kpi_13").hide();
+                    $("#pnl_kpi_10").hide();
+                    $("#pnl_kpi_11").hide();
+                    $("#pnl_kpi_12").hide();
+                    $("#pnl_kpi_13").hide();
 
-                                    $("#pnl_kpi_14").hide();
-                                    $("#pnl_kpi_15").hide();
-                                    $("#pnl_cb_pillar").hide();
-                                    $("#pnl_select_pillars").show();
+                    $("#pnl_kpi_14").hide();
+                    $("#pnl_kpi_15").hide();
+                    $("#pnl_cb_pillar").hide();
+                    $("#pnl_select_pillars").show();
 
 
-                                }
-                            });
-                        //console.log("dlab cb");
-                    });
+                }
+            });
+            //console.log("dlab cb");
+        });
+
+
+        $('.components').on('click', 'a', function(e) {
+            window.location = "{{url('/finance-dashboard')}}" + e.target.hash;
+            tabs = document.getElementsByClassName('tb');
+            for (var i = 0; i < tabs.length; i++) {
+
+                tabs[i].classList.remove('active,show')
+
+            }
+             $(e.target.hash).addClass('show').addClass('active');
+        });
     </script>
 
 

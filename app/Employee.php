@@ -36,7 +36,7 @@ class Employee extends Model
         'emegency_contact',
         'Department',
         'pillar_id',
-        'role',
+        'role_id',
         'driving_license',
         'tin_number',
         'job_description',

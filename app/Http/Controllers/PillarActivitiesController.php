@@ -90,7 +90,7 @@ class PillarActivitiesController extends Controller
     }
     public function store(Request $request)
     {
-        
+
         $request->validate([
             'act_title' => 'required',
             'act_desc' => 'required',
@@ -113,6 +113,7 @@ class PillarActivitiesController extends Controller
             'created_by' => $request->get('created_by'),
             'project_ref_id'=>$request->project_ref_id,
             'current_stage' => $request->get('current_stage'),
+            'review_status' => $request->get('review_status'),
             'start_date'=>  $request->start_date,
             'end_date'=>  $request->end_date,
             'pinvolved'=>  $request->pinvolved,
@@ -125,7 +126,8 @@ class PillarActivitiesController extends Controller
         ]);
 
         //get last activity id
-       $activity_id=$activity->save();
+      $activity->save();
+      $act_id = $activity->pillar_act_id;
 
        if($request->hasfile('imprest_doc')) {
            $fileName = time().'_'.$request->file('imprest_doc')->getClientOriginalName();
@@ -136,7 +138,7 @@ class PillarActivitiesController extends Controller
             'requested_by' => $request->get('requested_by'),
             'imp_title'=>$request->imp_title,
             'ref_no'=>$request->ref_no,
-            'pillar_activities_pillar_act_id'=>$activity_id,
+            'pillar_activities_pillar_act_id'=>$act_id ,
             'purpose' => $request->purpose,
             'start_date' => $request->get('start_datei'),
             'end_date' => $request->get('end_datei'),
@@ -148,6 +150,7 @@ class PillarActivitiesController extends Controller
 
         //get last imprest id
         $imprest->save();
+
         $impid=$imprest->id;
          for($i=0; $i<count($request->imp_act_name);$i++)
         {

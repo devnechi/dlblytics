@@ -79,9 +79,9 @@
         <div class="row">
             <div class="form-group col-lg-12">
                 <div class="form-group multiple-form-group" data-max=6>
-                    <div class="mb-2 listob">
+                    <div class="mb-2 list-group list-group-flush col-md-6 listob">
 
-                    </div>
+</div>
 
                     <div class="form-group input-group-sm">
                         <div class="row">
@@ -112,10 +112,10 @@
                     <div class="form-group input-group-lg">
                         <div class="row">
                             <div class="col-md-8 input-group-lg">
-                                <div class="d-flex mb-2 listfond">
+                                <div class="list-group list-group-flush col-md-6 mb-2 listfond">
 
-                                </div>
-                                <select class="form-control form-group col-lg-12" onchange="addfond(event)" aria-label="Large" id="selectProject" aria-describedby="inputGroup-sizing-sm">
+</div>
+                                <select class="form-control form-group col-lg-12" onchange="addfond(event)" aria-label="Large" id="fundersel" aria-describedby="inputGroup-sizing-sm">
                                     <option value="">Select funder</option>
                                     @foreach($facil as $fac)
                                     <option value="{{$fac->name}}">{{$fac->name}}</option>
@@ -140,10 +140,10 @@
                     <div class="form-group input-group-lg">
                         <div class="row">
                             <div class="col-md-8 input-group-lg">
-                                <div class="d-flex mb-2 listpart">
+                                <div class="list-group list-group-flush col-md-6 mb-2 listpart">
 
                                 </div>
-                                <select class="form-control form-group col-lg-12" aria-label="Large" id="selectProject" onchange="addpart(event)" aria-describedby="inputGroup-sizing-sm">
+                                <select class="form-control form-group col-lg-12" aria-label="Large" id="partsel" onchange="addpart(event)" aria-describedby="inputGroup-sizing-sm">
                                     <option value="">Select partner</option>
                                     @if(isset($facil))
                                     @foreach($facil as $fac)
@@ -300,13 +300,13 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="subcatgname" class="control-label">Funder name</label>
+                        <label for="facil_name" class="control-label">Funder name</label>
                         <input type="text" name="facil_name" class="form-control" />
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" onclick="ajaxed1()" data-toggle="modal" data-target="#subcategorymodal" class="btn btn-primary">Save changes</button>
+                    <button type="button" onclick="ajaxed1()" data-dismiss="modal" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
@@ -323,13 +323,13 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="subcatgname" class="control-label">Partner name</label>
+                        <label for="facil_name" class="control-label">Partner name</label>
                         <input type="text" name="facil_name" class="form-control" />
                     </div>
                 </div>
                 <div class="modal-footer ">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" onclick="ajaxed1()"  data-toggle="modal" data-target="#subcategorymodal" class="btn btn-primary">Save changes</button>
+                    <button type="button" onclick="ajaxed1()"  data-dismiss="modal" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
@@ -338,7 +338,8 @@
         function ajaxed1() {
             var form_dat = new FormData();
             form_dat.append('facil_name', $('input[name=facil_name]').val());
-
+            const fun = document.getElementById('fundersel');
+            const par = document.getElementById('partsel');
             $.ajax({
                 type: 'POST',
                 headers: {
@@ -352,8 +353,15 @@
                     if ((data.errors)) {
                         alert(data.errors);
                     } else {
-                        window.location.reload();
 
+                        var po='<option value="">Select option</option>';
+
+                        for(let i in data){
+                            po=po+'<option value="'+ data[i].name +'">'+ data[i].name +'</option>';
+                    }
+
+                    fun.innerHTML=po;
+                    par.innerHTML=po;
                     }
                 },
 
@@ -372,18 +380,21 @@
         function addob(e) {
 
             const obv = document.getElementById('pob');
-            var n = '<a href="" class="badge badge-light" onclick="remofond(event)">' + obv.value + ' <span>&times;</span><input type="hidden" value="' + obv.value + '" name="project_objectives[]"></a>';
-            $('.listob').append(n)
+            var n = '<a href="" class=" list-group-item" onclick="remofond(event)">' + obv.value + ' <span>&times;</span><input type="hidden" value="' + obv.value + '" name="project_objectives[]"></a>';
+            if(obv.value!=""){
+            $('.listob').append(n);
+            obv.value="";
+            }
         }
 
         function addfond(e) {
-            var n = '<a href="" class="badge badge-light" onclick="remofond(event)">' + e.target.value + ' <span>&times;</span>' +
+            var n = '<a href="" class="list-group-item" onclick="remofond(event)">' + e.target.value + ' <span>&times;</span>' +
                 '<input type="hidden" value="' + e.target.value + '" name="pfunder[]"></a>';
             $('.listfond').append(n)
         }
 
         function addpart(e) {
-            var n = '<a href="" class="badge badge-light" onclick="remofond(event)">' + e.target.value + ' <span>&times;</span>' +
+            var n = '<a href="" class="list-group-item" onclick="remofond(event)">' + e.target.value + ' <span>&times;</span>' +
                 '<input type="hidden" value="' + e.target.value + '" name="ppartiner[]"></a>';
             $('.listpart').append(n)
         }

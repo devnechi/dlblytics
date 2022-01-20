@@ -10,7 +10,7 @@
          =      start of data dashboard           =
          ========================================= -->
         <!-- start of  data dashboard panel -->
-        <div class="tab-pane fade show active" id="datadashboard-md" role="tabpanel" aria-labelledby="datadashboard-tab-md">
+        <div class="tab-pane tb fade show active" id="datadashboard-md" role="tabpanel" aria-labelledby="datadashboard-tab-md">
 
 
             <div class="row">
@@ -1396,7 +1396,7 @@
                =             start of financial adminstration data =
                ========================================= -->
 
-        <div class="tab-pane fade" id="finance-admin-content" role="tabpanel" aria-labelledby="finance-admin-tab-md">
+        <div class="tab-pane tb fade" id="finance-admin-content" role="tabpanel" aria-labelledby="finance-admin-tab-md">
             {{-- financial administration --}}
             <div class="row">
                 <div class="col-md-2">
@@ -1739,7 +1739,7 @@
                =             start of financial pillar adminstration data =
                ========================================= -->
 
-        <div class="tab-pane fade" id="finance-pillars-content" role="tabpanel" aria-labelledby="finance-admin-tab-md">
+        <div class="tab-pane tb fade" id="finance-pillars-content" role="tabpanel" aria-labelledby="finance-admin-tab-md">
             {{-- financial pillar administration --}}
 
             <div class="row">
@@ -2306,6 +2306,7 @@
                                                                     </li>
                                                                 </ul>
                                                             </nav>
+
                                                             @endif
                                                         </div>
                                                     </div>
@@ -5838,7 +5839,7 @@
                =             start of financial adminstration data =
                ========================================= -->
 
-        <div class="tab-pane fade" id="finance-executive-dir-content" role="tabpanel" aria-labelledby="finance-admin-tab-md">
+        <div class="tab-pane tb fade" id="finance-executive-dir-content" role="tabpanel" aria-labelledby="finance-admin-tab-md">
             {{-- financial administration --}}
             <div class="row">
                 <div class="col-md-2">
@@ -6181,7 +6182,7 @@
                =             start of financial executive dir adminstration data =
                ========================================= -->
 
-        <div class="tab-pane fade" id="finance-hr-content" role="tabpanel" aria-labelledby="finance-admin-tab-md">
+        <div class="tab-pane tb fade" id="finance-hr-content" role="tabpanel" aria-labelledby="finance-admin-tab-md">
             {{-- human resource --}}
             <div class="row">
                 <div class="col-md-2">
@@ -7899,7 +7900,7 @@
                =             start of imprest-retirements data =
                ========================================= -->
 
-        <div class="tab-pane fade" id="imprest-retirements-md" role="tabpanel" aria-labelledby="imprest-retirements-tab-md">
+        <div class="tab-pane tb fade" id="imprest-retirements-md" role="tabpanel" aria-labelledby="imprest-retirements-tab-md">
             <!-- line chart -->
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModalCenter">
@@ -8219,7 +8220,7 @@
                =      start of finacial reports data           =
                ========================================= -->
         <!-- start of financial reports data panel -->
-        <div class="tab-pane fade" id="financial-reports-md" role="tabpanel" aria-labelledby="financial-reports-tab-md">
+        <div class="tab-pane tb fade" id="financial-reports-md" role="tabpanel" aria-labelledby="financial-reports-tab-md">
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#newFinancialReport">
                 create a new financial report
@@ -9400,7 +9401,7 @@
          =       start of payroll-system =
          ======================================== -->
         <!-- start of payroll-system panel -->
-        <div class="tab-pane fade" id="payroll-system-md" role="tabpanel" aria-labelledby="payroll-system-tab-md">
+        <div class="tab-pane tb fade" id="payroll-system-md" role="tabpanel" aria-labelledby="payroll-system-tab-md">
 
             <br />
             <div class="row">
@@ -9499,7 +9500,7 @@
                =      start of financial-analytics data           =
                ========================================= -->
         <!-- start of financial-analytics data panel -->
-        <div class="tab-pane fade" id="financial-forms-content" role="tabpanel" aria-labelledby="financial-analytics-tab-md">
+        <div class="tab-pane tb fade" id="financial-forms-content" role="tabpanel" aria-labelledby="financial-analytics-tab-md">
             <p>Financial Forms</p>
             <br />
 

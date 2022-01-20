@@ -1,8 +1,10 @@
-@if (Auth::user()->pillar_id==2)
-@extends('layouts.lfinanceadmin')
-@else
+
+
+
+
+
 @extends('layouts.llmds')
-@endif
+
 @section('content')
 <div class="container-fluid">
     <div class="row">
@@ -247,7 +249,7 @@
                                             <br />
 
                                             <div class="row">
-                                                <div class="card mb-3" style="max-width: 540px;">
+                                                <div class="card mb-3" style=" ">
                                                     <div class="row no-gutters">
                                                         <div class="col-md-4">
                                                             <img src="/images/pot/man-1.jpg" alt="members photo">
@@ -266,7 +268,7 @@
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="card mb-3" style="max-width: 540px;">
+                                                <div class="card mb-3" style=" ">
                                                     <div class="row no-gutters">
                                                         <div class="col-md-4">
                                                             <img src="/images/pot/woman-2.jpg" alt="members photo">
@@ -293,7 +295,7 @@
                                             <h5><strong>Partners on this project </strong></h5>
                                             <br />
                                             <div class="row">
-                                                <div class="card mb-3" style="max-width: 540px;">
+                                                <div class="card mb-3" style=" ">
                                                     <div class="row no-gutters">
                                                         <div class="col-md-4">
                                                             <img src="/images/pot/man-1.jpg" alt="members photo">
@@ -312,7 +314,7 @@
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="card mb-3" style="max-width: 540px;">
+                                                <div class="card mb-3" style=" ">
                                                     <div class="row no-gutters">
                                                         <div class="col-md-4">
                                                             <img src="/images/pot/woman-2.jpg" alt="members photo">
@@ -338,7 +340,7 @@
                                             <h5><strong>Project Funders</strong></h5>
                                             <br />
                                             <div class="row">
-                                                <div class="card mb-3" style="max-width: 540px;">
+                                                <div class="card mb-3" style=" ">
                                                     <div class="row no-gutters">
                                                         <div class="col-md-4">
                                                             <img src="/images/pot/man-1.jpg" alt="members photo">
@@ -357,7 +359,7 @@
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="card mb-3" style="max-width: 540px;">
+                                                <div class="card mb-3" style=" ">
                                                     <div class="row no-gutters">
                                                         <div class="col-md-4">
                                                             <img src="/images/pot/woman-2.jpg" alt="members photo">

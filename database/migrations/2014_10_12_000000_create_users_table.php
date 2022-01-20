@@ -43,7 +43,7 @@ class CreateUsersTable extends Migration
             //selectPillar
             $table->string('pillar_id');
             //position
-            $table->integer('role_id')->nullable();
+            $table->integer('role_id');
             //driving_license
             $table->string('driving_license');
             //tin_number
@@ -55,11 +55,11 @@ class CreateUsersTable extends Migration
             //bankname
             $table->string('bankname');
             //bankaccnumber
-            $table->float('bankaccnumber');
+            $table->integer('bankaccnumber');
             //currencyType
             $table->string('currencyType');
             //totalsalary
-            $table->float('totalsalary');
+            $table->integer('totalsalary');
             //working_type
             $table->string('working_type');
             //useraccStatus

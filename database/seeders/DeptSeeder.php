@@ -19,14 +19,16 @@ class DeptSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
-        $dept = ['IT', 'Human Resourse', 'Procument', 'Account & Finance'];
+        $dept = ['IT', 'Human Resourse', 'Procument', 'Account & Finance','Administration'];
+
+        foreach(range(0, 4) as $index){
         DB::table('dlab_departments')->insert([
-            'dept_title' =>  $faker->randomElement($dept),
+            'dept_title' =>  $dept[$index],
             'dept_manager_id' => '1',
             'dept_description' => Str::random(10),
             'date_created' => now(),
             'date_updated' => now()
             ]);
-
+        }
     }
 }

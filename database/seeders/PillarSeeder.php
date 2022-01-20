@@ -19,13 +19,13 @@ class PillarSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
-        $pillar = ['Data Science', 'Community Engagement', 'Capacity Building', 'Research & Innovation', 'Institutional Strengthening'];
+        $pillar = ['Data Science', 'Community Engagement', 'Capacity Building', 'Research & Innovation', 'Institutional Strengthening','Communications Channel'];
 
-        foreach(range(1, 5) as $index){
+        foreach(range(0, 5) as $index){
            DB::table('dlab_pillars')->insert([
             'creators_id' => 1,
             'managers_id' => 1,
-            'pillar_title' => $faker->randomElement($pillar),
+            'pillar_title' => $pillar[$index],
             'pillar_desc' => now(),
             'pillar_status' => 'active',
             'date_created' => now(),

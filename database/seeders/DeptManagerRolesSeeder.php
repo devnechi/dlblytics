@@ -23,9 +23,9 @@ class DeptManagerRolesSeeder extends Seeder
         $faker = Faker::create();
         $role = ['IT dept manager', 'Account dept manager', 'Procurement dept manager', 'Human Resource dept manager', 'MnE dept manager'];
 
-        foreach(range(1, 7) as $index){
+        foreach(range(0, 4) as $index){
             DB::table('dept_manager_role_tbl')->insert([
-                'role_title' => $faker->randomElement($role),
+                'role_title' => $role[$index],
                 'date_created' => now(),
                 'date_updated' => now()
                 ]);
