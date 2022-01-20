@@ -1,3 +1,4 @@
+
 @extends('layouts.lfinanceadmin')
 
 @section('content')
@@ -2028,7 +2029,6 @@
                                                 <div class="col-lg-12">
                                                     @php
                                                     $dsimprest=$imprests->where('pillar_id',5);
-
                                                     @endphp
                                                     @if(count($dsimprest)==0)
                                                     <div class="d-flex p-2 justify-content-center">No Record Found!</div>
@@ -2327,7 +2327,6 @@
                                                         <br />
                                                         @php
                                                         $mysubactivities=$subactivities->where('pillar_ref_id',5);
-
                                                         @endphp
                                                         @if(count($mysubactivities)==0)
                                                         <div class="d-flex p-2 justify-content-center">No Record Found!</div>
@@ -2799,7 +2798,6 @@
                                                 <div class="col-lg-12">
                                                     @php
                                                     $dsimprest=$imprests->where('pillar_id',5);
-
                                                     @endphp
                                                     @if(count($dsimprest)==0)
                                                     <div class="d-flex p-2 justify-content-center">No Record Found!</div>
@@ -3046,7 +3044,6 @@
                                                             <br />
                                                             @php
                                                             $mysubactivities=$subactivities->where('pillar_ref_id',5);
-
                                                             @endphp
                                                             @if(count($mysubactivities)==0)
                                                             <div class="d-flex p-2 justify-content-center">No Record Found!</div>
@@ -3413,7 +3410,6 @@
                                                 <div class="col-lg-12">
                                                     @php
                                                     $dsimprest=$imprests->where('pillar_id',5);
-
                                                     @endphp
                                                     @if(count($dsimprest)==0)
                                                     <div class="d-flex p-2 justify-content-center">No Record Found!</div>
@@ -3660,7 +3656,6 @@
                                                             <br />
                                                             @php
                                                             $mysubactivities=$subactivities->where('pillar_ref_id',5);
-
                                                             @endphp
                                                             @if(count($mysubactivities)==0)
                                                             <div class="d-flex p-2 justify-content-center">No Record Found!</div>
@@ -4028,7 +4023,6 @@
                                                 <div class="col-lg-12">
                                                     @php
                                                     $dsimprest=$imprests->where('pillar_id',5);
-
                                                     @endphp
                                                     @if(count($dsimprest)==0)
                                                     <div class="d-flex p-2 justify-content-center">No Record Found!</div>
@@ -4275,7 +4269,6 @@
                                                             <br />
                                                             @php
                                                             $mysubactivities=$subactivities->where('pillar_ref_id',5);
-
                                                             @endphp
                                                             @if(count($mysubactivities)==0)
                                                             <div class="d-flex p-2 justify-content-center">No Record Found!</div>
@@ -4640,7 +4633,6 @@
                                                 <div class="col-lg-12">
                                                     @php
                                                     $dsimprest=$imprests->where('pillar_id',5);
-
                                                     @endphp
                                                     @if(count($dsimprest)==0)
                                                     <div class="d-flex p-2 justify-content-center">No Record Found!</div>
@@ -4887,7 +4879,6 @@
                                                             <br />
                                                             @php
                                                             $mysubactivities=$subactivities->where('pillar_ref_id',5);
-
                                                             @endphp
                                                             @if(count($mysubactivities)==0)
                                                             <div class="d-flex p-2 justify-content-center">No Record Found!</div>
@@ -5254,7 +5245,6 @@
                                                 <div class="col-lg-12">
                                                     @php
                                                     $dsimprest=$imprests->where('pillar_id',5);
-
                                                     @endphp
                                                     @if(count($dsimprest)==0)
                                                     <div class="d-flex p-2 justify-content-center">No Record Found!</div>
@@ -5501,7 +5491,6 @@
                                                             <br />
                                                             @php
                                                             $mysubactivities=$subactivities->where('pillar_ref_id',5);
-
                                                             @endphp
                                                             @if(count($mysubactivities)==0)
                                                             <div class="d-flex p-2 justify-content-center">No Record Found!</div>
@@ -6307,7 +6296,6 @@
                                                                         @method('UPDATE')
                                                                         <button class="btn btn-outline-danger" type="submit">Delete</button>
                                                                         </form>
-
                                                                         </td> --}}
                                                                     </tr>
 
@@ -6556,7 +6544,6 @@
                                                                         @method('UPDATE')
                                                                         <button class="btn btn-outline-danger" type="submit">Delete</button>
                                                                         </form>
-
                                                                         </td> --}}
                                                                     </tr>
 
@@ -6685,7 +6672,6 @@
                                                                     @method('UPDATE')
                                                                     <button class="btn btn-outline-danger" type="submit">Delete</button>
                                                                     </form>
-
                                                                     </td> --}}
                                                                 </tr>
 
@@ -7947,12 +7933,10 @@
                                     <a href="#" class="btn btn-lg  btn-outline-info" role="button"
                                         aria-pressed="true">Training Adavance Request</a>
                                 </li>
-
                                 <li class="list-group-item">
                                     <a href="#" class="btn btn-lg  btn-outline-info" role="button"
                                         aria-pressed="true">Workshop Registration Form</a>
                                 </li>
-
                             </ul> --}}
                             <ul class="list-group-flush">
                                 <li class="list-group-item">
