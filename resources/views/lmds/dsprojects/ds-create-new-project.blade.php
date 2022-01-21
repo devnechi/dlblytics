@@ -340,6 +340,7 @@
             form_dat.append('facil_name', $('input[name=facil_name]').val());
             const fun = document.getElementById('fundersel');
             const par = document.getElementById('partsel');
+   
             $.ajax({
                 type: 'POST',
                 headers: {

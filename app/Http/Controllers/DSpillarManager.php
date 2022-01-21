@@ -72,9 +72,9 @@ class DSpillarManager extends Controller
 
     public function facilitatorpost(Request $request){
 
-        // $fac=new Facilitator();
-        // $fac->name=$request->facil_name;
-        // $fac->save();
+        $fac=new Facilitator();
+        $fac->name=$request->facil_name;
+        $fac->save();
         $facil=Facilitator::all();
 
         return Response()->json($facil);
