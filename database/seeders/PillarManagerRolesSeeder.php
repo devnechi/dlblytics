@@ -20,14 +20,19 @@ class PillarManagerRolesSeeder extends Seeder
     {
 
         $faker = Faker::create();
-        $role = ['data science manager', 'capacity building manager', 'research & innovation manager', 'institutional strenthening manager', 'community engagement manager','Communications Channel Manager'];
+        $role = [
+            'admin', 'manager', 'user', 'finance admin', 'mne,', 'cb-pillar-manager', 'is-pillar-manager', 'ri-pillar-manager', 'ce-pillar-manager', 'ds-pillar-manager', 'research-innovation-dashboard',
+            'capacity-building-dashboard', 'institutional-strengthening-dashboard', 'community-engagement-dashboard', 'data-science-dashboard', 'communication-channels-dashboard',
+            'dlab-donors-dashboard', 'members-area-dashboard'
+        ];
 
-        foreach(range(0, 5) as $index){
+
+        foreach (range(0, 17) as $index) {
             DB::table('pillar_manager_role_tbl')->insert([
                 'role_title' => $role[$index],
                 'date_created' => now(),
                 'date_updated' => now()
-                ]);
-            }
+            ]);
+        }
     }
 }

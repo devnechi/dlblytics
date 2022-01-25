@@ -137,7 +137,7 @@
                             <div class="card rounded">
                                 <div class="card-content table-responsive d-flex justify-content-between">
                                     <p> Sub-Activities recorded </p>
-                                    <div class="row justify-content-between">
+                                    <div class="d-flex justify-content-between">
 
                                         <div class="m-1">
                                             <h3 class="cardhd">{{count($mysubactivities)}}</h3>

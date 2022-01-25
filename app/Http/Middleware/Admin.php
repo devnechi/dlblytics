@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\DSpillarManager;
 
 class Admin
 {
@@ -19,9 +19,7 @@ class Admin
     public function handle($request, Closure $next)
     {
 
-            if(!Auth::check()){
-                return redirect()->route('login');
-            }
+
 
             //role_id 1 = admin
             if(Auth::user()->role_id == 1){
@@ -50,80 +48,6 @@ class Admin
                 return redirect()->route('monitoring-evaluation-dashboard');
             }
 
-            // role_id 6 = cb-pillar-manager
-            // if(Auth::user()->role_id == 6){
-            //     return redirect()->route('cb-pillar-manager');
-
-
-            // }
-
-            // role_id 7 = is-pillar-manager
-            // if(Auth::user()->role_id == 7){
-            //     return redirect()->route('is-pillar-manager');
-
-
-            // }
-            // role_id 8 = ri-pillar-manager
-            // if(Auth::user()->role_id == 8){
-            //     return redirect()->route('ri-pillar-manager');
-
-
-            // }
-
-            // role_id 9 = ce-pillar-manager
-            // if(Auth::user()->role_id == 9){
-            //     return redirect()->route('ce-pillar-manager');
-
-
-            // }
-            // role_id 10 = ds-pillar-manager
-            // if(Auth::user()->role_id == 10){
-
-            //     return redirect()->route('ds-pillar-manager');
-
-            // }
-
-            // Staff Roles and redirections
-            // role_id 11 = ri-staff
-            // if(Auth::user()->role_id == 11){
-            //     return redirect()->route('research-innovation-dashboard');
-
-
-            // }
-            // role_id 12 = cb-staff
-            // if(Auth::user()->role_id == 12){
-            //     return redirect()->route('capacity-building-dashboard');
-
-
-            // }
-            // role_id 13 = is-staff
-            // if(Auth::user()->role_id == 13){
-            //     return redirect()->route('institutional-strengthening-dashboard');
-
-
-            // }
-            // role_id 14 = ce-staff
-            // if(Auth::user()->role_id == 14){
-            //     return redirect()->route('community-engagement-dashboard');
-
-
-            // }
-            // role_id 15 = ds-staff
-            // if(Auth::user()->role_id == 15){
-            //     return redirect()->route('data-science-dashboard');
-
-
-            // }
-
-            // communication channels
-            // if(Auth::user()->role_id == 16){
-            //     return redirect()->route('communication-channels-dashboard');
-
-
-            // }
-
-
-
 
             //role_id 6 = cb-pillar-manager
             if(Auth::user()->role_id == 6){
@@ -147,14 +71,16 @@ class Admin
 
             //role_id 9 = ce-pillar-manager
             if(Auth::user()->role_id == 9){
-                return redirect()->route('ds-pillar-manager');
+
+                
+                return redirect()->action([DSpillarManager::class, 'index']);
 
 
             }
             //role_id 10 = ds-pillar-manager
             if(Auth::user()->role_id == 10){
 
-                return redirect()->route('ds-pillar-manager');
+                return $next($request);
 
             }
 

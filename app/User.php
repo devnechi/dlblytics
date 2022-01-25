@@ -44,5 +44,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-
+    public function rolePM()
+    {
+        return $this->hasone(PManagerRoles::class,'role_id','role_id');
+    }
+    public function rolePS()
+    {
+        return $this->hasone(PManagerRoles::class,'role_id','role_id');
+    }
 }

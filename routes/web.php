@@ -44,9 +44,9 @@ Route::get('/add-new-pillar', 'AdminPillarsController@create')->name('add-new-pi
 Route::resource('pillars', 'AdminPillarsController');
 
 // line / pillar managers routes
-Route::get('/ri-pillar-manager', 'RIlineManager@index')->name('ri-pillar-manager')->middleware('ri-pillar-manager');
-Route::get('/is-pillar-manager', 'ISpillarManager@index')->name('is-pillar-manager')->middleware('is-pillar-manager');
-Route::get('/cb-pillar-manager', 'CBpillarManager@index')->name('cb-pillar-manager')->middleware('cb-pillar-manager');
+Route::get('/ri-pillar-manager', 'DSpillarManager@index')->name('ri-pillar-manager')->middleware('ri-pillar-manager');
+Route::get('/is-pillar-manager', 'DSpillarManager@index')->name('is-pillar-manager')->middleware('is-pillar-manager');
+Route::get('/cb-pillar-manager', 'DSpillarManager@index')->name('cb-pillar-manager')->middleware('cb-pillar-manager');
 
 //data science routes
 Route::get('/ds-pillar-manager', 'DSpillarManager@index')->name('ds-pillar-manager')->middleware('ds-pillar-manager');
@@ -58,7 +58,7 @@ Route::get('/ds-create-new-subactivity/{id?}', 'PillarSubActivitiesController@cr
 Route::get('/ds-create-new-project-activity', 'DSpillarManager@createNewProjectActivity')->name('ds-create-new-project-activity');
 
 // community engagement routes
-Route::get('/ce-pillar-manager', 'CEpillarManager@index')->name('ce-pillar-manager')->middleware('ce-pillar-manager');
+Route::get('/ce-pillar-manager', 'DSpillarManager@index')->name('ce-pillar-manager')->middleware('ce-pillar-manager');
 Route::get('/ce-insert-new-project', 'CEpillarManager@insertNewProject')->name('ce-insert-new-project');
 Route::get('/ce-pillar-projects-management', 'CEpillarManager@managePillarProjects')->name('ce-pillar-projects-management');
 Route::get('/ce-create-new-solo-activity', 'CEpillarManager@createSoloNewActivity')->name('ce-create-new-solo-activity');
