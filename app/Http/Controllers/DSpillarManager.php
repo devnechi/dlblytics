@@ -25,7 +25,7 @@ class DSpillarManager extends Controller
     {
         $cuid = Auth::user()->user_id;
         $cpid = Auth::user()->pillar_id;
-     
+       
         //data to be passed when the data science dashboard is loaded
         // $pillarprojects = PillarProject::all();
 

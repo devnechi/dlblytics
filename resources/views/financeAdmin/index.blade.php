@@ -1899,8 +1899,7 @@
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             @php
-                                                            use App\Support\CollectionHelper;
-                                                            $dsproject=CollectionHelper::paginate($projects->where('pillar_ref_id',5),2);
+                                                            $dsproject =$projects->where('pillar_ref_id',1);
                                                             $ds=1;
                                                             @endphp
                                                             @if(count($dsproject)==0)
@@ -2024,7 +2023,7 @@
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     @php
-                                                    $dsimprest=$imprests->where('pillar_id',5);
+                                                    $dsimprest=$imprests->where('pillar_id',1);
                                                     @endphp
                                                     @if(count($dsimprest)==0)
                                                     <div class="d-flex p-2 justify-content-center">No Record Found!</div>
@@ -2201,7 +2200,7 @@
                                                             <br />
 
                                                             @php
-                                                            $myact=$activities->where('pillar_ref_id',5);
+                                                            $myact=$activities->where('pillar_ref_id',1);
                                                             $act=1;
                                                             @endphp
                                                             @if(count($myact)==0)
@@ -2322,7 +2321,7 @@
                                                     <div class="card-content table-responsive">
                                                         <br />
                                                         @php
-                                                        $mysubactivities=$subactivities->where('pillar_ref_id',5);
+                                                        $mysubactivities=$subactivities->where('pillar_ref_id',1);
                                                         @endphp
                                                         @if(count($mysubactivities)==0)
                                                         <div class="d-flex p-2 justify-content-center">No Record Found!</div>
@@ -2674,7 +2673,7 @@
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             @php
-                                                            $dsproject=$projects->where('pillar_ref_id',5);
+                                                            $dsproject=$projects->where('pillar_ref_id',2);
                                                             $ds=1;
                                                             @endphp
                                                             @if(count($dsproject)==0)
@@ -2793,7 +2792,7 @@
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     @php
-                                                    $dsimprest=$imprests->where('pillar_id',5);
+                                                    $dsimprest=$imprests->where('pillar_id',2);
                                                     @endphp
                                                     @if(count($dsimprest)==0)
                                                     <div class="d-flex p-2 justify-content-center">No Record Found!</div>
@@ -2922,7 +2921,7 @@
                                                             <br />
 
                                                             @php
-                                                            $myact=$activities->where('pillar_ref_id',5);
+                                                            $myact=$activities->where('pillar_ref_id',1);
                                                             $act=1;
                                                             @endphp
                                                             @if(count($myact)==0)
@@ -3039,7 +3038,7 @@
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             @php
-                                                            $mysubactivities=$subactivities->where('pillar_ref_id',5);
+                                                            $mysubactivities=$subactivities->where('pillar_ref_id',2);
                                                             @endphp
                                                             @if(count($mysubactivities)==0)
                                                             <div class="d-flex p-2 justify-content-center">No Record Found!</div>
@@ -3286,7 +3285,7 @@
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             @php
-                                                            $dsproject=$projects->where('pillar_ref_id',5);
+                                                            $dsproject=$projects->where('pillar_ref_id',3);
                                                             $ds=1;
                                                             @endphp
                                                             @if(count($dsproject)==0)
@@ -3405,7 +3404,7 @@
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     @php
-                                                    $dsimprest=$imprests->where('pillar_id',5);
+                                                    $dsimprest=$imprests->where('pillar_id',3);
                                                     @endphp
                                                     @if(count($dsimprest)==0)
                                                     <div class="d-flex p-2 justify-content-center">No Record Found!</div>
@@ -3534,7 +3533,7 @@
                                                             <br />
 
                                                             @php
-                                                            $myact=$activities->where('pillar_ref_id',5);
+                                                            $myact=$activities->where('pillar_ref_id',3);
                                                             $act=1;
                                                             @endphp
                                                             @if(count($myact)==0)
@@ -3548,7 +3547,7 @@
                                                                     <tr>
                                                                         <th scope="col">#</th>
                                                                         <th scope="col">Activity title</th>
-                                                                        <th scope="col-md-4">Total Estimated cost</th>
+                                                                        <th scope="col">Total Estimated cost</th>
                                                                         <th scope="col">current stage</th>
                                                                         <th scope="col">Date created</th>
                                                                         <th scope="col"></th>
@@ -3651,7 +3650,7 @@
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             @php
-                                                            $mysubactivities=$subactivities->where('pillar_ref_id',5);
+                                                            $mysubactivities=$subactivities->where('pillar_ref_id',3);
                                                             @endphp
                                                             @if(count($mysubactivities)==0)
                                                             <div class="d-flex p-2 justify-content-center">No Record Found!</div>
@@ -3899,7 +3898,7 @@
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             @php
-                                                            $dsproject=$projects->where('pillar_ref_id',5);
+                                                            $dsproject=$projects->where('pillar_ref_id',4);
                                                             $ds=1;
                                                             @endphp
                                                             @if(count($dsproject)==0)
@@ -4018,7 +4017,7 @@
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     @php
-                                                    $dsimprest=$imprests->where('pillar_id',5);
+                                                    $dsimprest=$imprests->where('pillar_id',4);
                                                     @endphp
                                                     @if(count($dsimprest)==0)
                                                     <div class="d-flex p-2 justify-content-center">No Record Found!</div>
@@ -4147,7 +4146,7 @@
                                                             <br />
 
                                                             @php
-                                                            $myact=$activities->where('pillar_ref_id',5);
+                                                            $myact=$activities->where('pillar_ref_id',4);
                                                             $act=1;
                                                             @endphp
                                                             @if(count($myact)==0)
@@ -4264,7 +4263,7 @@
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             @php
-                                                            $mysubactivities=$subactivities->where('pillar_ref_id',5);
+                                                            $mysubactivities=$subactivities->where('pillar_ref_id',4);
                                                             @endphp
                                                             @if(count($mysubactivities)==0)
                                                             <div class="d-flex p-2 justify-content-center">No Record Found!</div>
@@ -5121,7 +5120,7 @@
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             @php
-                                                            $dsproject=$projects->where('pillar_ref_id',5);
+                                                            $dsproject=$projects->where('pillar_ref_id',6);
                                                             $ds=1;
                                                             @endphp
                                                             @if(count($dsproject)==0)
@@ -5240,7 +5239,7 @@
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     @php
-                                                    $dsimprest=$imprests->where('pillar_id',5);
+                                                    $dsimprest=$imprests->where('pillar_id',6);
                                                     @endphp
                                                     @if(count($dsimprest)==0)
                                                     <div class="d-flex p-2 justify-content-center">No Record Found!</div>
@@ -5369,7 +5368,7 @@
                                                             <br />
 
                                                             @php
-                                                            $myact=$activities->where('pillar_ref_id',5);
+                                                            $myact=$activities->where('pillar_ref_id',6);
                                                             $act=1;
                                                             @endphp
                                                             @if(count($myact)==0)
@@ -5486,7 +5485,7 @@
                                                         <div class="card-content table-responsive">
                                                             <br />
                                                             @php
-                                                            $mysubactivities=$subactivities->where('pillar_ref_id',5);
+                                                            $mysubactivities=$subactivities->where('pillar_ref_id',6);
                                                             @endphp
                                                             @if(count($mysubactivities)==0)
                                                             <div class="d-flex p-2 justify-content-center">No Record Found!</div>
