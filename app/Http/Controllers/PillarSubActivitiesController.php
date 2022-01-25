@@ -90,7 +90,7 @@ class PillarSubActivitiesController extends Controller
             'end_date'=> 'required',
             'country'=> 'required',
             'venue'=> 'required',
-            'pillar_ref_id'=>'pillar_ref_id'
+            'pillar_ref_id'=>'required'
 
         ]);
         $activity = new PillarSubActivities([

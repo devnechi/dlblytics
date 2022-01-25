@@ -323,13 +323,13 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="facil_name" class="control-label">Partner name</label>
-                        <input type="text" name="facil_name" class="form-control" />
+                        <label for="facil_nam" class="control-label">Partner name</label>
+                        <input type="text" name="facil_nam" class="form-control" />
                     </div>
                 </div>
                 <div class="modal-footer ">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" onclick="ajaxed1()"  data-dismiss="modal" class="btn btn-primary">Save changes</button>
+                    <button type="button" onclick="ajaxed2()"  data-dismiss="modal" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
@@ -340,6 +340,7 @@
             form_dat.append('facil_name', $('input[name=facil_name]').val());
             const fun = document.getElementById('fundersel');
             const par = document.getElementById('partsel');
+
             $.ajax({
                 type: 'POST',
                 headers: {
@@ -347,6 +348,44 @@
                 },
                 url: "{{route('facilitatorpost') }}",
                 data: form_dat,
+                processData: false,
+                contentType: false,
+                success: function(data) {
+                    if ((data.errors)) {
+                        alert(data.errors);
+                    } else {
+
+                        var po='<option value="">Select option</option>';
+
+                        for(let i in data){
+                            po=po+'<option value="'+ data[i].name +'">'+ data[i].name +'</option>';
+                    }
+
+                    fun.innerHTML=po;
+                    par.innerHTML=po;
+                    }
+                },
+
+
+
+
+
+            });
+        };
+
+   function ajaxed2() {
+            var form_da = new FormData();
+            form_da.append('facil_name', $('input[name=facil_nam]').val());
+            const fun = document.getElementById('fundersel');
+            const par = document.getElementById('partsel');
+
+            $.ajax({
+                type: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url: "{{route('facilitatorpost') }}",
+                data: form_da,
                 processData: false,
                 contentType: false,
                 success: function(data) {

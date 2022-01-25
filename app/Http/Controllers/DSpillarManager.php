@@ -25,7 +25,7 @@ class DSpillarManager extends Controller
     {
         $cuid = Auth::user()->user_id;
         $cpid = Auth::user()->pillar_id;
-
+     
         //data to be passed when the data science dashboard is loaded
         // $pillarprojects = PillarProject::all();
 
@@ -72,9 +72,9 @@ class DSpillarManager extends Controller
 
     public function facilitatorpost(Request $request){
 
-        // $fac=new Facilitator();
-        // $fac->name=$request->facil_name;
-        // $fac->save();
+        $fac=new Facilitator();
+        $fac->name=$request->facil_name;
+        $fac->save();
         $facil=Facilitator::all();
 
         return Response()->json($facil);

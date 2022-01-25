@@ -28,21 +28,21 @@ class newUserSeeder extends Seeder
          $ntlty = ['Tanzania', 'Kenya', 'Uganda', 'other'];
          $dept = [1, 2, 3, 4];
          $pillar = [1, 2, 3, 4, 5, 6];
-          $bnk = ['CRDB', 'Exim', 'NMB','Stanbic', 'NBC', 'DTB', 'Barclays', 'Postal Bank'];
-          $crny = ['USD', 'TZ'];
-          $wrktype = ['full-time', 'part-time', 'consulting'];
-          $sts_id = ['active', 'suspended', 'deleted'];
-          $usraccstatus = ['pending verification', 'verified', 'suspended'];
-          $userroles = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
+         $bnk = ['CRDB', 'Exim', 'NMB','Stanbic', 'NBC', 'DTB', 'Barclays', 'Postal Bank'];
+         $crny = ['USD', 'TZ'];
+         $wrktype = ['full-time', 'part-time', 'consulting'];
+         $sts_id = ['active', 'suspended', 'deleted'];
+         $usraccstatus = ['pending verification', 'verified', 'suspended'];
+         $userroles = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
 
 
 
-         foreach(range(1, 100) as $index){
+         foreach(range(1, 50) as $index){
            DB::table('users')->insert([
-             'email'    => $faker->name.'@dlab.or.tz',
-             'fname'     => $faker->name,
-             'mname' => $faker->name,
-             'lname' => $faker->name,
+             'email'    => $faker->firstName.'@dlab',
+             'fname'     => $faker->firstName,
+             'mname' => $faker->userName                ,
+             'lname' => $faker->lastName                                  ,
              'phoneNumber'    => $faker->phoneNumber,
              'emegency_contact'     => $faker->phoneNumber,
              'dob'          => now(),

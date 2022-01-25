@@ -1778,12 +1778,8 @@
                                         <a class="nav-link active" id="pillars-pills-ds-requests-tab" data-toggle="pill" href="#pillars-pills-ds-requests-content" role="tab" aria-controls="" aria-selected="true">Requests</a>
 
                                         <a class="nav-link" id="pillars-pills-ds-projects-tab" data-toggle="pill" href="#pillars-pills-ds-projects-content" role="tab" aria-controls="pillars-pills-ds-content-tab" aria-selected="false">Projects</a>
-
                                         <a class="nav-link" id="pillars-pills-ds-imprests-tab" data-toggle="pill" href="#pillars-pills-ds-imprests-content" role="tab" aria-controls="pillars-pills-funds-tab" aria-selected="false">Imprests</a>
-
-
                                         <a class="nav-link" id="pillars-pills-ds-activities-tab" data-toggle="pill" href="#pillars-pills-ds-activities-content" role="tab" aria-controls="pillars-pills-funds-tab" aria-selected="false">Activities</a>
-
                                         <a class="nav-link" id="pillars-pills-ds-sub-activities-tab" data-toggle="pill" href="#pillars-pills-ds-sub-activities-content" role="tab" aria-controls="pillars-pills-funds-tab" aria-selected="false">Sub Activities</a>
 
 
