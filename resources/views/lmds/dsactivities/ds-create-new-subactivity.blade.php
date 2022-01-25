@@ -23,7 +23,7 @@
         <input type="hidden" value="{{ Auth::user()->user_id }}" name="created_by">
         <input type="hidden" value='pending review' name="review_status">
         <input type="hidden" value='submitted' name="current_stage">
-        <input type="hidden" value="{{Auth::user()->role_id}}" name="pillar_ref_id">
+        <input type="hidden" value="{{Auth::user()->pillar_id}}" name="pillar_ref_id">
 
 
         <label for="forDepartmentTitle">project reference</label>

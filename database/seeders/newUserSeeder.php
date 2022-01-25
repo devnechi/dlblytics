@@ -41,8 +41,8 @@ class newUserSeeder extends Seeder
            DB::table('users')->insert([
              'email'    => $faker->firstName.'@dlab',
              'fname'     => $faker->firstName,
-             'mname' => $faker->userName                ,
-             'lname' => $faker->lastName                                  ,
+             'mname' => $faker->userName,
+             'lname' => $faker->lastName,
              'phoneNumber'    => $faker->phoneNumber,
              'emegency_contact'     => $faker->phoneNumber,
              'dob'          => now(),
