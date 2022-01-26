@@ -145,6 +145,7 @@ class PillarActivitiesController extends Controller
             'doc_path'=>$filePath,
             'amount_rqst' => $request->amount_rqst,
             'current_stage' => $request->current_stage,
+            'status'=>'submited',
             'pillar_id'=>$request->pillar_ref_id,
         ]);
 
@@ -168,7 +169,7 @@ class PillarActivitiesController extends Controller
         }
 
         $request->session()->flash('alert-success', 'Activity was successfully added!. You can now manage it.');
-        return redirect()->route('ds-pillar-manager')
+        return redirect()->route('pillar-activity.index')
             ->with(['success', 'Activity was successfully added!. you can now manage it.'], ['tab', 'projects-nactivities-md-content']);
 
         //var_dump( $request->get('created_by'));

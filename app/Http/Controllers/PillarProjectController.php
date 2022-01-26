@@ -73,7 +73,8 @@ class PillarProjectController extends Controller
             'start_date'=> 'required',
             'end_date'=> 'required',
             'project_tech'=> 'required',
-            'project_busi'=> 'required'
+            'project_busi'=> 'required',
+            'project_objectives'=> 'required'
 
         ]);
 
@@ -94,12 +95,9 @@ class PillarProjectController extends Controller
 
         ]);
 
-        // 'project_objectives' => $request->get('project_objectives'),
-        // 'project_expected_outcomes' => $request->get('project_expected_outcomes'),
          $project->save();
         //get last project id
 
-         $project->project_id;
          $proj_ref_id = $project->project_id;
          $project_objectives = [];
 
@@ -141,7 +139,7 @@ class PillarProjectController extends Controller
         }
 
         $request->session()->flash('alert-success', 'project was successfully added!. You can now manage it.');
-        return redirect()->route('ds-pillar-manager')
+        return redirect()->route('pillar-project.index')
             ->with(['success', 'project was successfully added!. you can now manage it.'], ['tab', 'projects-nactivities-md-content']);
 
         //var_dump( $request->get('created_by'));

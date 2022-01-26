@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Imprest;
+use App\Reqiuest;
 use App\Imprest_activity;
 use App\Retirement;
 use Illuminate\Http\Request;
@@ -11,7 +11,8 @@ use App\PillarActivities;
 use Auth;
 use App\Notifications\StatusNotification;
 use Notification;
-class ImprestController extends Controller
+
+class RequestController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -23,16 +24,16 @@ class ImprestController extends Controller
         $cuid = Auth::user()->user_id;
         $cpid = Auth::user()->pillar_id;
 
-        $imprest = Imprest::all();
-        $imprests = Imprest::paginate(10);
-        $imprestapprv=$imprest->where('status','approved')->where('pillar_id',$cpid);
-        $imprestsubmited=$imprest->where('pillar_id',$cpid)->where('status','submited');
-        $imprestprossessing=$imprest->where('status','prossessing')->where('pillar_id',$cpid);
-  
-        $imprestdenied=$imprest->where('status','denied')->where('pillar_id',$cpid);
+        $reqiuest = Reqiuest::all();
+        $imprests = Reqiuest::paginate(10);
+        $imprestapprv=$reqiuest->where('status','approved')->where('pillar_id',$cpid);
+        $imprestsubmited=$reqiuest->where('pillar_id',$cpid)->where('status','submited');
+        $imprestprossessing=$reqiuest->where('status','prossessing')->where('pillar_id',$cpid);
+
+        $imprestdenied=$reqiuest->where('status','denied')->where('pillar_id',$cpid);
 
 
-        return view('imprest.ds-imprest-index')->with('imprests',$imprests)
+        return view('reqiuest.ds-reqiuest-index')->with('imprests',$imprests)
         ->with('imprestapprv',$imprestapprv)
         ->with('imprestsubmited',$imprestsubmited)
         ->with('imprestprossessing',$imprestprossessing)
@@ -48,7 +49,7 @@ class ImprestController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\reqiuest  $reqiuest
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -60,30 +61,30 @@ class ImprestController extends Controller
             'end_date' => 'required'
         ]);
 
-        $imprest = new Imprest([
+        $reqiuest = new Reqiuest([
             'requested_by' => $request->get('requested_by'),
-            'imp_typ'=>$request->imp_typ,
+            'req_typ'=>$request->imp_typ,
             'purpose' => $request->purpose,
             'start_date' => $request->get('start_date'),
             'end_date' => $request->get('end_date')
         ]);
 
         //get last project id
-        $impid=$imprest->save();
+        $impid=$reqiuest->save();
 
-         for($i=0; $i<count($request->imp_act_name);$i++)
+         for($i=0; $i<count($reqiuest->imp_act_name);$i++)
         {
             $impact = new Imprest_activity([
-                'imp_act_name' => $request->imp_act_name[$i],
-                'rate'=>$request->rate[$i],
-                'units' => $request->units[$i],
-                'total_cost' => $request->total_cost[$i],
+                'imp_act_name' => $reqiuest->imp_act_name[$i],
+                'rate'=>$reqiuest->rate[$i],
+                'units' => $reqiuest->units[$i],
+                'total_cost' => $reqiuest->total_cost[$i],
                 'imprest_id' => $impid,
             ]);
             $impact->save();
         }
 
-        $request->session()->flash('alert-success', 'project was successfully added!. You can now manage it.');
+        $reqiuest->session()->flash('alert-success', 'project was successfully added!. You can now manage it.');
         return redirect()->route('ds-pillar-manager')
             ->with(['success', 'project was successfully added!. you can now manage it.'], ['tab', 'projects-nactivities-md-content']);
 
@@ -92,14 +93,14 @@ class ImprestController extends Controller
 public function edit($id)
 {
 
-    $imprest=Imprest::findOrFail($id);
-        return view('imprest.ds-edit-imprest')
-        ->with('imprest',$imprest);
+    $reqiuest=Reqiuest::findOrFail($id);
+        return view('reqiuest.edit-reqiuest')
+        ->with('reqiuest',$reqiuest);
 }
 
-        public function update(Request $request)
+        public function update(Reqiuest $reqiuest)
         {
-            $request->validate([
+            $reqiuest->validate([
                 'imp_act_id'=> 'required',
                 'amount_used'=> 'required',
                 'balance'=> 'required',
@@ -107,20 +108,20 @@ public function edit($id)
             ]);
 
 
-             for($i=0; $i<count($request->amount_used);$i++)
+             for($i=0; $i<count($reqiuest->amount_used);$i++)
             {
 
-       if($request->hasfile('imprest_doc')) {
-        $fileName = time().'_'.$request->file('imprest_doc')[$i]->getClientOriginalName();
-        $filePath = $request->file('imprest_doc')[$i]->storeAs('project_documents_uploads', $fileName);
+       if($reqiuest->hasfile('imprest_doc')) {
+        $fileName = time().'_'.$reqiuest->file('imprest_doc')[$i]->getClientOriginalName();
+        $filePath = $reqiuest->file('imprest_doc')[$i]->storeAs('project_documents_uploads', $fileName);
 
     }
                 $retire = new Retirement([
-                    'imp_act_id'=> $request->imp_act_id,
-                    'amount_used'=> $request->amount_used,
-                    'balance'=> $request->balance,
-                    'receipt_path'=> $request->filePath,
-                    'described'=> $request->described,
+                    'imp_act_id'=> $reqiuest->imp_act_id,
+                    'amount_used'=> $reqiuest->amount_used,
+                    'balance'=> $reqiuest->balance,
+                    'receipt_path'=> $reqiuest->filePath,
+                    'described'=> $reqiuest->described,
 
 
                 ]);
@@ -137,16 +138,16 @@ public function edit($id)
      * @param  \App\Employee  $employee
      * @return \Illuminate\Http\Response
      */
-    public function review(Request $request)
+    public function review(reqiuest $reqiuest)
     {
-        $imp = Imprest::findOrFail($request->imprest_id);
+        $imp = reqiuest::findOrFail($reqiuest->imprest_id);
         $act=PillarActivities::findOrFail($imp->pillar_activities_pillar_act_id);
-        $imp->status=$request->status;
-        $act->review_status=$request->status;
+        $imp->status=$reqiuest->status;
+        $act->review_status=$reqiuest->status;
 
         if(Auth::user()->pillar_id==1)
         {
-        if($request->status=='Approved')
+        if($reqiuest->status=='Approved')
         {
         $imp->current_stage="Line manager";
         $act->current_stage="Line manager";
@@ -154,7 +155,7 @@ public function edit($id)
             $act->review_status='Approved';
         }}
         else{
-            if($request->status=='Approved')
+            if($reqiuest->status=='Approved')
         {
             $imp->current_stage="Line manager";
             $act->current_stage="Line manager";
@@ -166,8 +167,8 @@ public function edit($id)
         $imp->update();
         $act->update();
         $imprev = new imprest_review([
-            'comments'=>$request->comments,
-            'imprest_id'=>$request->imprest_id,
+            'comments'=>$reqiuest->comments,
+            'imprest_id'=>$reqiuest->imprest_id,
             'user_id'=>Auth::user()->user_id
         ]);
         $imprev->save();
@@ -175,7 +176,7 @@ public function edit($id)
 
         $billData = [
 
-            'body' => 'Your imprest has been reviewed.',
+            'body' => 'Your reqiuest has been reviewed.',
             'actionText' => 'Check out on the system',
             'actionURL' => route('retireindex'),
             'thanks' => 'Thanks yoo',
@@ -187,17 +188,17 @@ public function edit($id)
     }
     public function destroy($id)
     {
-        Imprest::destroy($id);
+        reqiuest::destroy($id);
 
-        return redirect('imprest/imprest')->with('flash_message', 'Imprest deleted!');
+        return redirect('reqiuest/reqiuest')->with('flash_message', 'reqiuest deleted!');
     }
     public function show($impid)
     {
 
-                $imprest=Imprest::findOrFail($impid);
+                $reqiuest=reqiuest::findOrFail($impid);
 
-                return view('imprest.show')
-                ->with('imprest',$imprest);
+                return view('reqiuest.show')
+                ->with('reqiuest',$reqiuest);
 
     }
 }

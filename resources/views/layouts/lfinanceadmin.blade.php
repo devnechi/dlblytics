@@ -1489,7 +1489,7 @@
                     <li><a href="{{ route('finance-dashboard') }}">Dashboard</a></li>
 
                     <li class="nav-item">
-                        <a class="nav-link" id="finance-admin-tab-md" data-toggle="tab" href="#finance-admin-content" role="tab" aria-controls="finance-admin-md" aria-selected="false">Financial Management</a>
+                        <a class="nav-link" id="finance-admin-tab-md"href="{{route('finance-management')}}" >Financial Management</a>
                     </li>
 
                     <li class="nav-item">
@@ -2927,7 +2927,7 @@
 
     <script>
         //redirect to specific tab
-    
+
     </script>
 </body>
 

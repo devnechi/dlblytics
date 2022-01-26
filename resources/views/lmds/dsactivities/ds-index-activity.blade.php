@@ -16,8 +16,17 @@
 <div class="container-fluid" id="vds-ds-pna-pills-activities">
     {{-- Activities --}}
 
+
     <div class="row">
         <div class="col-lg-12">
+            <div class="flash-message">
+                @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+                @if(Session::has('alert-' . $msg))
+
+                <p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }} <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></p>
+                @endif
+                @endforeach
+            </div> <!-- end .flash-message -->
             <nav>
                 <div class="nav nav-tabs" id="ds-pna-activities-nav-tab" role="tablist">
                     <a class="nav-item nav-link active" id="ds-nav-pna-my-activities-tab" data-toggle="tab" href="#ds-pna-my-activities-content" role="tab" aria-controls="nav-my-activities" aria-selected="true">All
@@ -166,7 +175,7 @@
 
                                     @php
                                     $coact=1;
-                                    $mycoact=$myact->where('review_status','completed');
+                                    $mycoact=$myact->where('review_status','!=','completed');
                                     @endphp
                                     @if(count($mycoact)==0)
                                     <div class="d-flex p-2 justify-content-center">No Record Found!</div>
@@ -292,7 +301,7 @@
 
                                     @php
                                     $coact=1;
-                                    $myinact=$myact->where('review_status','!=','completed');
+                                    $myinact=$myact->where('review_status','completed');
                                     @endphp
                                     @if(count($myinact)==0)
                                     <div class="d-flex p-2 justify-content-center">No Record Found!</div>
@@ -324,7 +333,7 @@
                                                     <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#actin{{$myactiv->pillar_act_id}}"> Actions
                                                     </button>
                                                     <!-- Modal -->
-                                                    <div class="modal fade" id="actin{{$myactiv->pillar_act_id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
+                                                    <div class="modal fade" id="actin{{$myactiv->pillar_act_id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">

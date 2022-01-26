@@ -1458,26 +1458,28 @@
             <nav id="sidebar">
                 <div class="sidebar-header">
 
-                @if(Auth::user()->pillar_id == 1)
+
+
+                @if(Auth::user()->role_id == 10)
                     <h3>Data Science Dashboard</h3>
                     @endif
-                    @if(Auth::user()->pillar_id == 2)
+                    @if(Auth::user()->role_id ==9)
                     <h3>Community engagement Dashboard</h3>
                     @endif
-                    @if(Auth::user()->pillar_id == 3)
+                    @if(Auth::user()->role_id == 6)
                     <h3>Capacity Building Dashboard</h3>
                     @endif
 
-                    @if(Auth::user()->pillar_id == 4)
+                    @if(Auth::user()->role_id == 8)
                     <h3>Research & Innovation Dashboard</h3>
                     @endif
 
-                    @if(Auth::user()->pillar_id == 5)
+                    @if(Auth::user()->role_id == 7)
                     <h3>Institutional Strengthening Dashboard</h3>
                     @endif
 
-                    @if(Auth::user()->pillar_id == 6)
-                    <h3>communication channels Dashboard</h3>
+                    @if(Auth::user()->role_id == 16)
+                    <h3>Communication channels Dashboard</h3>
                     @endif
 
                     <p>Managers dashboard</p>

@@ -113,19 +113,11 @@ class PillarSubActivitiesController extends Controller
         ]);
 
 
-        //get last activity id
-
-       $activity_id=$activity->save();
-
-
-
-
-
         $request->session()->flash('alert-success', 'SubActivity was successfully added!. You can now manage it.');
-        return redirect()->route('ds-pillar-manager')
+        return redirect()->route('pillar-subactivity.index')
             ->with(['success', 'SubActivity was successfully added!. you can now manage it.'], ['tab', 'projects-nactivities-md-content']);
 
-        //var_dump( $request->get('created_by'));
+
         }
 
         public function edit($id)

@@ -9,6 +9,14 @@
 
     <div class="row">
         <div class="col-lg-12">
+        <div class="flash-message">
+        @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+        @if(Session::has('alert-' . $msg))
+
+        <p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }} <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></p>
+        @endif
+        @endforeach
+    </div> <!-- end .flash-message -->
             <nav>
                 <div class="nav nav-tabs" id="ds-pna-activities-nav-tab" role="tablist">
                     <a class="nav-link nav-item active" id="vds-ds-project-ed-pills-reviewed-tab" data-toggle="tab" href="#vds-ds-project-ed-pills-reviewed-content" role="tab" aria-controls="vds-ed-reqs-pills-reviewed" aria-selected="true">All Projects</a>
