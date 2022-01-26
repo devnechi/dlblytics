@@ -90,6 +90,16 @@ class FinanceAdminController extends Controller
                 'departments'));
     }
 
+
+
+
+
+
+    public function fmanagementindex()
+    {
+
+        return view('financeAdmin.financeManagement.index');
+    }
     public function activityajax()
     {
         $activities=PillarActivities::all();

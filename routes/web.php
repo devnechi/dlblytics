@@ -104,6 +104,7 @@ Route::resource('kpis', 'DataKpiController');
 
 // finance Admin routes
 Route::get('/finance-dashboard', 'FinanceAdminController@index')->name('finance-dashboard')->middleware('finance-dashboard');
+Route::get('/finance-management', 'FinanceAdminController@fmanagementindex')->name('finance-management');
 Route::get('/create-new-training-advance-request', 'FinanceAdminController@createTrainingAdvance')->name('create-new-training-advance-request');
 Route::get('/create-new-travel-advance-request', 'FinanceAdminController@createTravelAdvance')->name('create-new-travel-advance-request');
 Route::get('/create-new-per-diem-claim', 'FinanceAdminController@createperDiemClaim')->name('create-new-per-diem-claim');
@@ -161,7 +162,7 @@ Route::get('/community-engagement-dashboard', 'ceController@index')->name('commu
 // DS routes
 Route::get('/data-science-dashboard', 'dsController@index')->name('data-science-dashboard')->middleware('data-science-dashboard');
 // Comms routes
-Route::get('/communication-channels-dashboard', 'commsController@index')->name('communication-channels-dashboard')->middleware('communication-channels-dashboard');
+Route::get('/communication-channels-dashboard', 'DSpillarManager@index')->name('communication-channels-dashboard')->middleware('communication-channels-dashboard');
 // Normal User routes
 Route::get('/members-area-dashboard', 'nuController@index')->name('members-area-dashboard')->middleware('members-area-dashboard');
 // donor routes
