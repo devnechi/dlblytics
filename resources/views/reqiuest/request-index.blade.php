@@ -25,7 +25,8 @@
             <nav>
                 <div class="nav nav-tabs" id="dsreq-nav-tab" role="tablist">
 
-                    <a class="nav-item nav-link" id="nav-res-lm-requests-tab" data-toggle="tab" href="#dsreq-nav-res-lm-requests" role="tab" aria-controls="nav-contact" aria-selected="false">Response from Line Manager</a>
+                    <a class="nav-item nav-link active" id="nav-requests-tab" data-toggle="tab" href="#dsreq-nav-my-requests" role="tab" aria-controls="nav-contact" aria-selected="false">My Requests</a>
+                    <!-- <a class="nav-item nav-link" id="nav-res-lm-requests-tab" data-toggle="tab" href="#dsreq-nav-res-lm-requests" role="tab" aria-controls="nav-contact" aria-selected="false">Response from Line Manager</a> -->
                 </div>
             </nav>
             <div class="tab-content" id="dsreq-tabContent">
@@ -48,13 +49,15 @@
                                 <div class="tab-pane fade active show" id="vdsreqs-pills-all-pillar-request" role="tabpanel" aria-labelledby="vdsreqs-pills-settings-tab">
                                     <div class="row">
                                         <div class="col-lg-12">
-
+                                            <p class="d-flex justify-content-end">
+                                                <a class="btn btn-outline-info btn-lg" href="{{ route('imprest.create') }}" role="button"> create a new Request</a>
+                                            </p>
                                             @if(count($imprests)==0)
                                             <div class="d-flex p-2 justify-content-center">No Record Found!</div>
                                             @else
 
                                             <table class="table table-bordered table-hover">
-                                                <p>All created <strong>Imprests</strong> in the Pillar</p>
+                                                <p>All created <strong>Requests</strong> in the Pillar</p>
                                                 <thead>
                                                     <tr>
                                                         <th scope="col">#</th>
@@ -640,7 +643,7 @@
                         </div>
                     </div>
                 </div>
-
+<!--
                 <div class="tab-pane fade" id="dsreq-nav-res-lm-requests" role="tabpanel" aria-labelledby="nav-contact-tab">
                     {{-- my ds Imprests --}}
                     <br />
@@ -940,7 +943,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

@@ -36,11 +36,11 @@ class PillarActivitiesController extends Controller
 
         //pillar manager get project created by them
         $myactivities = DB::table('pillar_activities')
-                ->where('created_by', '=', $cuid)
-                ->where('pillar_ref_id', '=', $cpid)
-                // ->where('review_status', '=', 'pending review')
-                ->get();
-         return view('lmds.dsactivities.ds-index-activity')->with('myact',$myactivities);
+            ->where('created_by', '=', $cuid)
+            ->where('pillar_ref_id', '=', $cpid)
+            // ->where('review_status', '=', 'pending review')
+            ->get();
+        return view('lmds.dsactivities.ds-index-activity')->with('myact', $myactivities);
     }
 
     /**
@@ -50,10 +50,11 @@ class PillarActivitiesController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function createNewActivity($proj_id=null){
-        $users=User::all();
-        $countries=CountryListFacade::getlist('en');
-        $regions=array(
+    public function createNewActivity($proj_id = null)
+    {
+        $users = User::all();
+        $countries = CountryListFacade::getlist('en');
+        $regions = array(
             'Mjini Magharibi',
             'Dar es Salaam',
             'Kilimanjaro',
@@ -85,8 +86,8 @@ class PillarActivitiesController extends Controller
             'Rukwa',
             'Tabora'
         );
-        $projs=PillarProject::all();
-        return view('lmds.dsactivities.ds-create-new-activity')->with('projs',$projs)->with('users',$users)->with('countries',$countries)->with('regions',$regions)->with('proj_id',$proj_id);
+        $projs = PillarProject::all();
+        return view('lmds.dsactivities.ds-create-new-activity')->with('projs', $projs)->with('users', $users)->with('countries', $countries)->with('regions', $regions)->with('proj_id', $proj_id);
     }
     public function store(Request $request)
     {
@@ -96,71 +97,69 @@ class PillarActivitiesController extends Controller
             'act_desc' => 'required',
             'total_act_cost' => 'required',
             'created_by' => 'required',
-            'start_date'=> 'required',
-            'end_date'=> 'required',
+            'start_date' => 'required',
+            'end_date' => 'required',
             'purpose' => 'required',
             'start_datei' => 'required',
             'end_datei' => 'required',
             'pinvolved' => 'required',
-            'act_objectives'=>'required',
-            'country'=>'required',
-            'venue'=>'required'
+            'act_objectives' => 'required',
+            'country' => 'required',
+            'venue' => 'required'
         ]);
         $activity = new PillarActivities([
             'act_title' => $request->get('act_title'),
             'act_desc' => $request->get('act_desc'),
             'total_act_cost' => $request->get('total_act_cost'),
             'created_by' => $request->get('created_by'),
-            'project_ref_id'=>$request->project_ref_id,
+            'project_ref_id' => $request->project_ref_id,
             'current_stage' => $request->get('current_stage'),
             'review_status' => $request->get('review_status'),
-            'start_date'=>  $request->start_date,
-            'end_date'=>  $request->end_date,
-            'pinvolved'=>  $request->pinvolved,
-            'act_objectives'=>$request->act_objectives,
-            'country'=>$request->country,
-            'region'=>$request->region,
-            'venue'=>$request->venue,
-            'pillar_ref_id'=>$request->pillar_ref_id,
+            'start_date' =>  $request->start_date,
+            'end_date' =>  $request->end_date,
+            'pinvolved' =>  $request->pinvolved,
+            'act_objectives' => $request->act_objectives,
+            'country' => $request->country,
+            'region' => $request->region,
+            'venue' => $request->venue,
+            'pillar_ref_id' => $request->pillar_ref_id,
 
         ]);
 
         //get last activity id
-      $activity->save();
-      $act_id = $activity->pillar_act_id;
+        $activity->save();
+        $act_id = $activity->pillar_act_id;
 
-       if($request->hasfile('imprest_doc')) {
-           $fileName = time().'_'.$request->file('imprest_doc')->getClientOriginalName();
-           $filePath = $request->file('imprest_doc')->storeAs('project_documents_uploads', $fileName);
-
-       }
+        if ($request->hasfile('imprest_doc')) {
+            $fileName = time() . '_' . $request->file('imprest_doc')->getClientOriginalName();
+            $filePath = $request->file('imprest_doc')->storeAs('project_documents_uploads', $fileName);
+        }
         $imprest = new Imprest([
             'requested_by' => $request->get('requested_by'),
-            'imp_title'=>$request->imp_title,
-            'ref_no'=>$request->ref_no,
-            'pillar_activities_pillar_act_id'=>$act_id ,
+            'imp_title' => $request->imp_title,
+            'ref_no' => $request->ref_no,
+            'pillar_activities_pillar_act_id' => $act_id,
             'purpose' => $request->purpose,
             'start_date' => $request->get('start_datei'),
             'end_date' => $request->get('end_datei'),
-            'doc_path'=>$filePath,
+            'doc_path' => $filePath,
             'amount_rqst' => $request->amount_rqst,
             'current_stage' => $request->current_stage,
-            'status'=>'submited',
-            'pillar_id'=>$request->pillar_ref_id,
+            'status' => 'submited',
+            'pillar_id' => $request->pillar_ref_id,
         ]);
 
         //get last imprest id
         $imprest->save();
 
-        $impid=$imprest->id;
-         for($i=0; $i<count($request->imp_act_name);$i++)
-        {
+        $impid = $imprest->id;
+        for ($i = 0; $i < count($request->imp_act_name); $i++) {
             $impact = new Imprest_activity([
                 'imp_act_name' => $request->imp_act_name[$i],
                 'imp_type' => $request->imp_type[$i],
-                'qty'=>$request->qty[$i],
-                'unit'=>$request->unit[$i],
-                'number'=>$request->number[$i],
+                'qty' => $request->qty[$i],
+                'unit' => $request->unit[$i],
+                'number' => $request->number[$i],
                 'unit_price' => $request->unit_price[$i],
                 'total_cost' => $request->total_cost[$i],
                 'imprest_id' => $impid,
@@ -173,13 +172,13 @@ class PillarActivitiesController extends Controller
             ->with(['success', 'Activity was successfully added!. you can now manage it.'], ['tab', 'projects-nactivities-md-content']);
 
         //var_dump( $request->get('created_by'));
-        }
+    }
 
-        public function edit($id)
-        {
-        $users=User::all();
-        $countries=CountryListFacade::getlist('en');
-        $regions=array(
+    public function edit($id)
+    {
+        $users = User::all();
+        $countries = CountryListFacade::getlist('en');
+        $regions = array(
             'Mjini Magharibi',
             'Dar es Salaam',
             'Kilimanjaro',
@@ -211,53 +210,49 @@ class PillarActivitiesController extends Controller
             'Rukwa',
             'Tabora'
         );
-        $activ=PillarActivities::find($id);
-        $projs=PillarProject::all();
-        return view('lmds.dsactivities.ds-edit-activity')->with('projs',$projs)->with('users',$users)
-        ->with('countries',$countries)
-        ->with('regions',$regions)
-        ->with('activ',$activ);
-        }
+        $activ = PillarActivities::find($id);
+        $projs = PillarProject::all();
+        return view('lmds.dsactivities.ds-edit-activity')->with('projs', $projs)->with('users', $users)
+            ->with('countries', $countries)
+            ->with('regions', $regions)
+            ->with('activ', $activ);
+    }
 
 
 
-        public function update(Request $request)
-        {
-            $request->validate([
-                'act_title' => 'required',
-                'act_desc' => 'required',
-                'total_act_cost' => 'required',
-                'created_by' => 'required',
-                'start_date'=> 'required',
-                'end_date'=> 'required',
-                'start_date' => 'required',
-                'end_date' => 'required'
-            ]);
-            $activity = PillarActivities::find($request->id);
-            $activity->act_title = $request->get('act_title');
-            $activity->act_desc = $request->get('act_desc');
-            $activity->total_act_cost = $request->get('total_act_cost');
-            $activity->created_by = $request->get('created_by');
-            $activity->project_ref_id=$request->project_ref_id;
-            $activity->current_stage = $request->get('current_stage');
-            $activity->start_date=  $request->start_date;
-            $activity->pinvolved=  $request->pinvolved;
-            $activity->act_objectives=$request->act_objectives;
-            $activity->end_date=  $request->end_date;
-            $activity->country=  $request->country;
-            $activity->venue=  $request->venue;
-            $activity->region=  $request->region;
-               //get last activity id
+    public function update(Request $request)
+    {
+        $request->validate([
+            'act_title' => 'required',
+            'act_desc' => 'required',
+            'total_act_cost' => 'required',
+            'created_by' => 'required',
+            'start_date' => 'required',
+            'end_date' => 'required',
+            'start_date' => 'required',
+            'end_date' => 'required'
+        ]);
+        $activity = PillarActivities::find($request->id);
+        $activity->act_title = $request->get('act_title');
+        $activity->act_desc = $request->get('act_desc');
+        $activity->total_act_cost = $request->get('total_act_cost');
+        $activity->created_by = $request->get('created_by');
+        $activity->project_ref_id = $request->project_ref_id;
+        $activity->current_stage = $request->get('current_stage');
+        $activity->start_date =  $request->start_date;
+        $activity->pinvolved =  $request->pinvolved;
+        $activity->act_objectives = $request->act_objectives;
+        $activity->end_date =  $request->end_date;
+        $activity->country =  $request->country;
+        $activity->venue =  $request->venue;
+        $activity->region =  $request->region;
+        //get last activity id
 
-           $activity_id=$activity->update();
+        $activity_id = $activity->update();
 
-           $request->session()->flash('alert-success', 'activity was successfully updated!. You can now manage it.');
-           return redirect()->route('ds-pillar-manager')
-               ->with(['success', 'activity was successfully added!. you can now manage it.'], ['tab', 'projects-nactivities-md-content']);
-
-
-
-
+        $request->session()->flash('alert-success', 'activity was successfully updated!. You can now manage it.');
+        return redirect()->route('ds-pillar-manager')
+            ->with(['success', 'activity was successfully added!. you can now manage it.'], ['tab', 'projects-nactivities-md-content']);
     }
     public function destroy($id)
     {
@@ -268,14 +263,13 @@ class PillarActivitiesController extends Controller
     public function show($id)
     {
 
-                $activt=PillarActivities::findOrFail($id);
-                return view('lmds.dsactivities.ds-show-activity')
-                ->with('activt',$activt);
-
+        $activt = PillarActivities::findOrFail($id);
+        return view('lmds.dsactivities.ds-show-activity')
+            ->with('activt', $activt);
     }
 
 
-        /**
+    /**
      * Display the specified resource.
      *
      * @param  \App\Employee  $employee
@@ -283,11 +277,9 @@ class PillarActivitiesController extends Controller
      */
     public function pillardetailsshow($id)
     {
-                $project = PillarProject::find($id);
+        $project = PillarProject::find($id);
 
         //return view('pillar-project.show', compact('pillarprojects'));
-            return view('lmds.dsprojects.ds-view-activity-full-details', compact('project'));
-
+        return view('lmds.dsprojects.ds-view-activity-full-details', compact('project'));
     }
-
 }
