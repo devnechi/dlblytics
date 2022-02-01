@@ -113,6 +113,16 @@ Route::get('/create-payment-requisition', 'FinanceAdminController@createPaymentR
 Route::get('/create-new-workshop-registration', 'FinanceAdminController@createNewWorkshopRegistration')->name('create-new-workshop-registration');
 Route::get('/create-allowance-request', 'FinanceAdminController@createAllowanceRequest')->name('create-allowance-request');
 Route::get('/add-a-new-pillar', 'FinanceAdminController@createNewPillar')->name('add-a-new-pillar');
+
+//financial management tab
+//create bank account
+Route::get('/fin-add-new-bnk-account', 'FinanceAdminController@addNewBankAccount')->name('fin-add-new-bnk-account');
+Route::resource('add-co-bnk-kks', 'CobnkakksController');
+
+//financial reports
+//createBankReconciliationReport
+Route::get('/fin-add-bank-recon-report', 'FinanceAdminController@createBankReconciliationReport')->name('fin-add-bank-recon-report');
+
 Route::resource('hractivities', 'FinanceAdminController');
 
 Route::resource('hrpillars', 'PillarsController');

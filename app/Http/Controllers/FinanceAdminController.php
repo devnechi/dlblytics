@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\BankAcc;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -24,6 +25,7 @@ class FinanceAdminController extends Controller
         //all pillars
         $pillars = Pillar::all();
         $departments = Department::all();
+        $bankaccs = BankAcc::all();
 
         // $departments = DB::table('dlab_departments')
         // ->join('users', 'dlab_departments.dept_manager_id', '=', 'dlab_departments.dept_manager_id')
@@ -87,7 +89,8 @@ class FinanceAdminController extends Controller
                 'activities',
                 'subactivities',
                 'imprests',
-                'departments'));
+                'departments',
+                'bankaccs'));
     }
 
 
@@ -97,8 +100,18 @@ class FinanceAdminController extends Controller
 
     public function fmanagementindex()
     {
+        $projects=PillarProject::all();
+        // all pillar projects
+        $activities=PillarActivities::all();
+        // all pillar projects
+        $subactivities=PillarSubActivities::all();
+        // all pillar projects
+        $imprests=Imprest::all();
+            $pillars = Pillar::all();
+        $departments = Department::all();
+        $bankaccs = BankAcc::all();
 
-        return view('financeAdmin.financeManagement.index');
+        return view('financeAdmin.financeManagement.index', compact('bankaccs'));
     }
     public function activityajax()
     {
@@ -174,6 +187,10 @@ class FinanceAdminController extends Controller
 
     public function createPaySlip(){
         return view('financeAdmin.finReports.create-pay-slip');
+    }
+    public function addNewBankAccount(){
+        return view('financeAdmin.financeManagement.bnkacc.fin-add-bnk-account');
+
     }
 
 }

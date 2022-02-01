@@ -11,7 +11,11 @@
          ========================================= -->
         <!-- start of  data dashboard panel -->
         <div class="tab-pane tb fade show active" id="datadashboard-md" role="tabpanel" aria-labelledby="datadashboard-tab-md">
-
+            @if ($message = Session::get('success'))
+            <div class="alert alert-success">
+            <p>{{ $message }}</p>
+            </div>
+            @endif
 
             <div class="row">
                 <div class="col-lg-3">
