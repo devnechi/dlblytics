@@ -86,13 +86,14 @@ Route::post('update-subactivity', 'PillarSubActivitiesController@update')->name(
 
 Route::resource('pillar-activity', 'PillarActivitiesController');
 Route::resource('pillar-subactivity', 'PillarSubActivitiesController');
-
+Route::resource('reqiuest', 'RequestController');
 Route::resource('upload-project-file-doc', 'ProjectDocController');
 Route::resource('retirement', 'RetirementsController');
 Route::resource('imprest', 'ImprestController');
 
 Route::get('retireshow/{id}', 'RetirementsController@retireshow')->name('retireshow');
 Route::get('retireindex', 'ImprestController@retireindex')->name('retireindex');
+Route::get('reqindex', 'ImprestController@reqindex')->name('reqindex');
 Route::post('retireview', 'RetirementsController@review')->name('retireview');
 Route::post('imprestreview', 'ImprestController@review')->name('imprestreview');
 
