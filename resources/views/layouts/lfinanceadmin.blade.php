@@ -1500,24 +1500,24 @@
                         <a class="nav-link" id="finance-line-manager-tab-md" data-toggle="tab" href="#finance-line-manager-content" role="tab" aria-controls="finance-line-manager-md" aria-selected="false">Line Manager</a>
                     </li>
 
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link" id="finance-exec-dir-tab-md" data-toggle="tab" href="#finance-executive-dir-content" role="tab" aria-controls="finance-exec-dir-md" aria-selected="false">Executive Director</a>
-                    </li>
+                    </li> --}}
                     <li class="nav-item">
                         <a class="nav-link" id="finance-hr-tab-md" data-toggle="tab" href="#finance-hr-content" role="tab" aria-controls="finance-hr-content-md" aria-selected="false">HR </a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link" id="financial-forms-tab-md" data-toggle="tab" href="#financial-forms-content" role="tab" aria-controls="financial-forms-md" aria-selected="false">Financial Forms</a>
-                    </li>
+                    </li> --}}
                     <li>
-                        <a class="nav-side-drp" data-toggle="collapse" href="#nav-new-request" aria-expanded="false" aria-controls="nav-new-request">
+                        {{-- <a class="nav-side-drp" data-toggle="collapse" href="#nav-new-request" aria-expanded="false" aria-controls="nav-new-request">
                             Advance Requests
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-double-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
                                 <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
                             </svg>
-                        </a>
-                        <div class="collapse" id="nav-new-request">
+                        </a> --}}
+                        {{-- <div class="collapse" id="nav-new-request">
                             <a href="{{ route('manage-pillars') }}">
                                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
@@ -1528,9 +1528,9 @@
                                     <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
                                 </svg>
                                 Manage Requests</a>
-                        </div>
+                        </div> --}}
                     </li>
-                    <li>
+                    {{-- <li>
                         <a data-toggle="collapse" href="#nav-new-reports" aria-expanded="false" aria-controls="nav-new-request">
                             Finance reports
                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-double-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -1550,8 +1550,8 @@
                                 </svg>
                                 Manage Requests</a>
                         </div>
-                    </li>
-
+                    </li> --}}
+{{--
                     <li>
                         <a data-toggle="collapse" href="#nav-payroll" aria-expanded="false" aria-controls="nav-new-request">
                             Staff Payroll
@@ -1572,7 +1572,7 @@
                                 </svg>
                                 Initiate Payment</a>
                         </div>
-                    </li>
+                    </li> --}}
                     <li>
                         <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                                     document.getElementById('logout-form').submit();">
