@@ -1526,14 +1526,15 @@
                         <a class="nav-link" id="finance-line-manager-tab-md" data-toggle="tab" href="#finance-line-manager-content" role="tab" aria-controls="finance-line-manager-md" aria-selected="false">Line Manager</a>
                     </li>
 
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link" id="finance-exec-dir-tab-md" data-toggle="tab" href="#finance-executive-dir-content" role="tab" aria-controls="finance-exec-dir-md" aria-selected="false">Executive Director</a>
-                    </li>
-                    <li class="nav-item">
+                    </li> --}}
+
                         <a class="nav-link" id="finance-hr-tab-md" href="{{route('hr-index')}}"  >HR </a>
                     </li>
 
                     <li>
+
                         <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                                     document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
