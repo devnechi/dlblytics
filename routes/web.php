@@ -121,7 +121,7 @@ Route::resource('hrpillars', 'PillarsController');
 Route::resource('hrdepts', 'HRmanageDeptsController');
 Route::get('/add-a-new-department', 'FinanceAdminController@createNewDepartment')->name('add-a-new-department');
 
-
+Route::get('hr-index', 'FinanceAdminController@hrIndex')->name('hr-index');
 //Human Resources
 //create new employee/staff
 Route::resource('employees', 'EmployeeController');

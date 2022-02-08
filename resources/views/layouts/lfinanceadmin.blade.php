@@ -95,6 +95,32 @@
             background: #0488ae;
             color: #fff;
             transition: all 0.3s;
+
+        }
+
+        #sidebar:hover {
+            overflow-y: scroll;
+        }
+
+        /* width */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #cccccc;
+            border-radius: 10px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
         }
 
         #sidebar.active {
@@ -1489,7 +1515,7 @@
                     <li><a href="{{ route('finance-dashboard') }}">Dashboard</a></li>
 
                     <li class="nav-item">
-                        <a class="nav-link" id="finance-admin-tab-md"href="{{route('finance-management')}}" >Financial Management</a>
+                        <a class="nav-link" id="finance-admin-tab-md" href="{{route('finance-management')}}">Financial Management</a>
                     </li>
 
                     <li class="nav-item">
@@ -1504,75 +1530,9 @@
                         <a class="nav-link" id="finance-exec-dir-tab-md" data-toggle="tab" href="#finance-executive-dir-content" role="tab" aria-controls="finance-exec-dir-md" aria-selected="false">Executive Director</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="finance-hr-tab-md" data-toggle="tab" href="#finance-hr-content" role="tab" aria-controls="finance-hr-content-md" aria-selected="false">HR </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="financial-forms-tab-md" data-toggle="tab" href="#financial-forms-content" role="tab" aria-controls="financial-forms-md" aria-selected="false">Financial Forms</a>
-                    </li>
-                    <li>
-                        <a class="nav-side-drp" data-toggle="collapse" href="#nav-new-request" aria-expanded="false" aria-controls="nav-new-request">
-                            Advance Requests
-                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-double-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
-                                <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
-                            </svg>
-                        </a>
-                        <div class="collapse" id="nav-new-request">
-                            <a href="{{ route('manage-pillars') }}">
-                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
-                                </svg>
-                                Create New Request</a>
-                            <a href="{{ route('manage-pillars') }}">
-                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
-                                </svg>
-                                Manage Requests</a>
-                        </div>
-                    </li>
-                    <li>
-                        <a data-toggle="collapse" href="#nav-new-reports" aria-expanded="false" aria-controls="nav-new-request">
-                            Finance reports
-                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-double-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
-                                <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
-                            </svg>
-                        </a>
-                        <div class="collapse" id="nav-new-reports">
-                            <a href="{{ route('manage-pillars') }}">
-                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
-                                </svg>
-                                Create New Request</a>
-                            <a href="{{ route('manage-pillars') }}">
-                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
-                                </svg>
-                                Manage Requests</a>
-                        </div>
+                        <a class="nav-link" id="finance-hr-tab-md" href="{{route('hr-index')}}"  >HR </a>
                     </li>
 
-                    <li>
-                        <a data-toggle="collapse" href="#nav-payroll" aria-expanded="false" aria-controls="nav-new-request">
-                            Staff Payroll
-                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-double-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
-                                <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
-                            </svg>
-                        </a>
-                        <div class="collapse" id="nav-payroll">
-                            <a href="{{ route('manage-pillars') }}">
-                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
-                                </svg>
-                                Staff Timesheet</a>
-                            <a href="{{ route('manage-pillars') }}">
-                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
-                                </svg>
-                                Initiate Payment</a>
-                        </div>
-                    </li>
                     <li>
                         <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                                     document.getElementById('logout-form').submit();">
@@ -1615,21 +1575,23 @@
         <!-- Placed at the end of the document so the pages load faster -->
     </div>
     </div>
+
+    <script src="{{ asset('js/jquery-3.3.1.min.js') }}">
+        </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="../../js/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <!-- jQuery Custom Scroller CDN -->
     <!-- JS, Popper.js, and jQuery -->
-    {{-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+
+
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
-    </script> --}}
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js">
     </script>
@@ -2254,11 +2216,11 @@
         $(document).ready(function() {
 
 
-            $('#sidebarCollapse').on('click', function() {
-                $('#sidebar, #content').toggleClass('active');
-                $('.collapse.in').toggleClass('in');
-                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-            });
+            // $('#sidebarCollapse').on('click', function() {
+            //     $('#sidebar, #content').toggleClass('active');
+            //     $('.collapse.in').toggleClass('in');
+            //     $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            // });
         });
     </script>
 
@@ -2275,8 +2237,6 @@
         function closeNav() {
             document.getElementById("mySidenav").style.width = "0";
         }
-
-
     </script>
 
 
@@ -2805,16 +2765,16 @@
         });
 
 
-        $('.components').on('click', 'a', function(e) {
-            window.location = "{{url('/finance-dashboard')}}" + e.target.hash;
-            tabs = document.getElementsByClassName('tb');
-            for (var i = 0; i < tabs.length; i++) {
+        // $('.components').on('click', 'a', function(e) {
+        //     window.location = "{{url('/finance-dashboard')}}" + e.target.hash;
+        //     tabs = document.getElementsByClassName('tb');
+        //     for (var i = 0; i < tabs.length; i++) {
 
-                tabs[i].classList.remove('active,show')
+        //         tabs[i].classList.remove('active,show')
 
-            }
-             $(e.target.hash).addClass('show').addClass('active');
-        });
+        //     }
+        //     $(e.target.hash).addClass('show').addClass('active');
+        // });
     </script>
 
 
@@ -2927,7 +2887,6 @@
 
     <script>
         //redirect to specific tab
-
     </script>
 </body>
 

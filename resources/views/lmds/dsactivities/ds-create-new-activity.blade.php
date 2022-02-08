@@ -24,6 +24,9 @@
         <input type="hidden" value='submited' name="review_status">
         <input type="hidden" value='finance' name="current_stage">
 
+
+        @if(empty($proj_id))
+        @else
         <label for="forDepartmentTitle">project reference</label>
         <div class="row">
             <div class="form-group col-lg-12">
@@ -52,6 +55,7 @@
                 </div>
             </div>
         </div>
+        @endif
         <label for="formGroupExampleInput2">Personnel involved.</label>
         <div class="row">
             <div class="form-group col-lg-10">

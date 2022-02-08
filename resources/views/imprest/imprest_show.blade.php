@@ -86,8 +86,7 @@
                                                             <div class="form-group green-border-focus">
                                                                 <label for="amount_rqst" class=" text-nowrap">Description
                                                                 </label>
-                                                                <textarea class="form-control" name="descrbide[]">
-                                                                </textarea>
+                                                                <textarea class="form-control" name="descrbide[]"> </textarea>
                                                             </div>
                                                         </div>
                                                     </div>
