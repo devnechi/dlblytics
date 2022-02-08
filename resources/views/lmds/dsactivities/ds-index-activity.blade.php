@@ -70,13 +70,15 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+
                                             @foreach($myact as $myactiv)
+
                                             <tr>
-                                                <th scope="row">{{ $act }}</th>
+                                                <th scope="">{{ $act}} <small class="bg-info">{{$myactiv->project_ref_id!=null ?'':'solo'}}</small></th>
                                                 <td class="w-30 p-2">{{ $myactiv->act_title }}</td>
                                                 <td class="w-30 p-2">{{ $myactiv->total_act_cost }}</td>
-                                                <td class="w-30  p-2">{{ $myactiv->current_stage }}</td>
-                                                <td class="w-30  p-2">{{ $myactiv->review_status }}</td>
+                                                <td class="w-30 p-2">{{ $myactiv->current_stage }}</td>
+                                                <td class="w-30 p-2">{{ $myactiv->review_status }}</td>
                                                 <td class="w-10 p-2">{{ $myactiv->created_at}}</td>
                                                 <td class="w-30 p-2">
                                                     <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#act{{$myactiv->pillar_act_id}}"> Actions

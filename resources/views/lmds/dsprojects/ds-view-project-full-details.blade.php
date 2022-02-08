@@ -121,7 +121,7 @@
                                                     <div class="col-md-6">
                                                         <div class="card">
                                                             <div class="card-header d-flex justify-content-between">
-                                                                <p>Pertners</p> <i class="fas fa-hands-helping fa-2x text-secondary"></i></i>
+                                                                <p>Partners</p> <i class="fas fa-hands-helping fa-2x text-secondary"></i></i>
                                                             </div>
                                                             <div class="card-body">
                                                                 <ul class="list-group list-group-flush">

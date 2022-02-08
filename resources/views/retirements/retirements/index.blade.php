@@ -177,30 +177,7 @@
 
                 <br />
                 <br />
-                <!-- <nav aria-label="Page navigation example">
-                    <ul class="pagination">
-
-                        <li class="page-item">
-                            <a class="page-link" href="{{ $actimp->previousPageUrl() }}">
-                                <span aria-hidden="true">&laquo;</span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                        </li>
-
-                        @for ($i = 1; $i <= $actimp->lastPage(); $i++)
-
-                            <li class="page-item {{$actimp->currentPage() == $i ? 'active' : ''}}">
-                                <a class="page-link" href="{{ $actimp->url($i) }}">{{$i}}
-                                </a>
-                            </li>
-                            @endfor
-
-                            <li class="page-item">
-                                <a class="page-link" href="{{ $actimp->nextPageUrl() }}">Next
-                                </a>
-                            </li>
-                    </ul>
-                </nav> -->
+          
                 @endif
                 <!-- end of SECOND column -->
             </div>

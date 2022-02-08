@@ -37,10 +37,9 @@
                         <div class="col-md-2">
                             <div class="nav flex-column nav-pills" id="vdsreqs-pills-tab" role="tablist" aria-orientation="vertical">
                                 <a class="nav-link active" id="vdsreqs-pills-all-pillar-request-tab" data-toggle="pill" href="#vdsreqs-pills-all-pillar-request" role="tab" aria-controls="vdsreqs-pills-all-pillar-request" aria-selected="true">All
-
-
-                                    <a class="nav-link" id="submittedimprest-tab" data-toggle="pill" href="#submittedimprest" role="tab" aria-controls="submittedimprest" aria-selected="false">Submitted Imprest</a>
-                                    <a class="nav-link" id="prossessingimprest-tab" data-toggle="pill" href="#prossessingimprest" role="tab" aria-controls="prossessingimprest" aria-selected="false">Prossessing Imprest</a>
+                                </a>
+                                <a class="nav-link" id="submittedimprest-tab" data-toggle="pill" href="#submittedimprest" role="tab" aria-controls="submittedimprest" aria-selected="false">Submitted Imprest</a>
+                                <a class="nav-link" id="prossessingimprest-tab" data-toggle="pill" href="#prossessingimprest" role="tab" aria-controls="prossessingimprest" aria-selected="false">Prossessing Imprest</a>
                             </div>
                         </div>
                         <div class="col-md-10">

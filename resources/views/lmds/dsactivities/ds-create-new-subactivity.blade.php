@@ -21,8 +21,8 @@
     <form method="post" enctype="multipart/form-data" action="{{ route('pillar-subactivity.store') }}">
         @csrf
         <input type="hidden" value="{{ Auth::user()->user_id }}" name="created_by">
-        <input type="hidden" value='pending review' name="review_status">
-        <input type="hidden" value='submitted' name="current_stage">
+        <input type="hidden" value='submited' name="review_status">
+        <input type="hidden" value='finance' name="current_stage">
         <input type="hidden" value="{{Auth::user()->pillar_id}}" name="pillar_ref_id">
 
 

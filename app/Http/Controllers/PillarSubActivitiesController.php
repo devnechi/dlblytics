@@ -93,7 +93,7 @@ class PillarSubActivitiesController extends Controller
             'pillar_ref_id'=>'required'
 
         ]);
-        $activity = new PillarSubActivities([
+        $subactivity = new PillarSubActivities([
 
             'subact_title'=> $request->get('subact_title'),
             'review_status'=> $request->get('review_status'),
@@ -111,7 +111,7 @@ class PillarSubActivitiesController extends Controller
             'venue'=> $request->get('venue'),
             'pillar_ref_id'=>$request->get('pillar_ref_id'),
         ]);
-
+        $subactivity->save();
 
         $request->session()->flash('alert-success', 'SubActivity was successfully added!. You can now manage it.');
         return redirect()->route('pillar-subactivity.index')

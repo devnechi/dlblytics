@@ -1796,7 +1796,7 @@
                                             {{-- my retirements --}}
 
                                             <div class="row">
-                                            <div class="col-lg-12">
+                                                <div class="col-lg-12">
                                                     @php
                                                     $dsrimprest=$imprests->where('pillar_id',6);
                                                     @endphp
@@ -1850,7 +1850,7 @@
                                                                                     <ul class="list-group-flush">
 
                                                                                         <li class="list-group-item">
-                                                                                            <a href="{{ route('imprest.show',   $imp->id)}}" class="btn btn-outline-success d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view project full details">
+                                                                                            <a href="{{ route('imprest.show',   $imp->id)}}" class="btn btn-outline-success d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view project full details">
                                                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                                                                                                     <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
                                                                                                     <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
@@ -1860,7 +1860,7 @@
 
                                                                                         </li>
                                                                                         <li class="list-group-item">
-                                                                                            <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view update project details">
+                                                                                            <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view update project details">
                                                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
                                                                                                     <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
                                                                                                 </svg>
@@ -1984,7 +1984,7 @@
 
                                                                                                 </li>
                                                                                                 <li class="list-group-item">
-                                                                                                    <a href="{{ route('pillar-project.show',   $pro->project_id)}}" class="btn btn-outline-success d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view project full details">
+                                                                                                    <a href="{{ route('pillar-project.show',   $pro->project_id)}}" class="btn btn-outline-success d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view project full details">
                                                                                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                                                                                                             <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
                                                                                                             <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
@@ -2077,7 +2077,7 @@
                                                                                     <ul class="list-group-flush">
 
                                                                                         <li class="list-group-item">
-                                                                                            <a href="{{ route('imprest.show',   $imp->id)}}" class="btn btn-outline-success d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view project full details">
+                                                                                            <a href="{{ route('imprest.show',   $imp->id)}}" class="btn btn-outline-success d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view project full details">
                                                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                                                                                                     <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
                                                                                                     <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
@@ -2095,7 +2095,7 @@
                                                                                             </a>
                                                                                         </li>
                                                                                         <li class="list-group-item">
-                                                                                            <a href="{{ route('retireshow',   $imp->id)}}" class="btn btn-outline-success d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view project full details">
+                                                                                            <a href="{{ route('retireshow',   $imp->id)}}" class="btn btn-outline-success d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view project full details">
                                                                                                 <i class="fas fa-marker fa-2x"></i>
                                                                                                 <p class="m-auto">Review Retirements</p>
                                                                                             </a>
@@ -2250,7 +2250,7 @@
                                                                                             <ul class="list-group-flush">
 
                                                                                                 <li class="list-group-item">
-                                                                                                    <a href="{{ route('pillar-activity.show',   $myactiv->pillar_act_id)}}" class="btn btn-outline-success d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view project full details">
+                                                                                                    <a href="{{ route('pillar-activity.show',   $myactiv->pillar_act_id)}}" class="btn btn-outline-success d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view project full details">
                                                                                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                                                                                                             <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
                                                                                                             <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
@@ -2260,7 +2260,7 @@
 
                                                                                                 </li>
                                                                                                 <li class="list-group-item">
-                                                                                                    <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view update project details">
+                                                                                                    <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view update project details">
                                                                                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
                                                                                                             <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
                                                                                                         </svg>
@@ -2370,7 +2370,7 @@
                                                                                         <ul class="list-group-flush">
 
                                                                                             <li class="list-group-item">
-                                                                                                <a href="{{ route('pillar-subactivity.show',$myact->id)}}" class="btn btn-outline-success d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view project full details">
+                                                                                                <a href="{{ route('pillar-subactivity.show',$myact->id)}}" class="btn btn-outline-success d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view project full details">
                                                                                                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                                                                                                         <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
                                                                                                         <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
@@ -2380,7 +2380,7 @@
 
                                                                                             </li>
                                                                                             <li class="list-group-item">
-                                                                                                <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view update project details">
+                                                                                                <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view update project details">
                                                                                                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
                                                                                                         <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
                                                                                                     </svg>
@@ -2463,7 +2463,7 @@
                                             {{-- my retirements --}}
 
                                             <div class="row">
-                                            <div class="col-lg-12">
+                                                <div class="col-lg-12">
                                                     @php
                                                     $ceimprest=$imprests->where('pillar_id',6);
                                                     @endphp
@@ -2517,7 +2517,7 @@
                                                                                     <ul class="list-group-flush">
 
                                                                                         <li class="list-group-item">
-                                                                                            <a href="{{ route('imprest.show',   $imp->id)}}" class="btn btn-outline-success d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view project full details">
+                                                                                            <a href="{{ route('imprest.show',   $imp->id)}}" class="btn btn-outline-success d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view project full details">
                                                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                                                                                                     <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
                                                                                                     <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
@@ -2527,7 +2527,7 @@
 
                                                                                         </li>
                                                                                         <li class="list-group-item">
-                                                                                            <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view update project details">
+                                                                                            <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view update project details">
                                                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
                                                                                                     <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
                                                                                                 </svg>
@@ -2651,7 +2651,7 @@
 
                                                                                                 </li>
                                                                                                 <li class="list-group-item">
-                                                                                                    <a href="{{ route('pillar-project.show',   $pro->project_id)}}" class="btn btn-outline-success d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view project full details">
+                                                                                                    <a href="{{ route('pillar-project.show',   $pro->project_id)}}" class="btn btn-outline-success d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view project full details">
                                                                                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                                                                                                             <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
                                                                                                             <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
@@ -2762,7 +2762,7 @@
                                                                                     <ul class="list-group-flush">
 
                                                                                         <li class="list-group-item">
-                                                                                            <a href="{{ route('imprest.show',   $imp->id)}}" class="btn btn-outline-success d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view project full details">
+                                                                                            <a href="{{ route('imprest.show',   $imp->id)}}" class="btn btn-outline-success d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view project full details">
                                                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                                                                                                     <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
                                                                                                     <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
@@ -2772,7 +2772,7 @@
 
                                                                                         </li>
                                                                                         <li class="list-group-item">
-                                                                                            <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view update project details">
+                                                                                            <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view update project details">
                                                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
                                                                                                     <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
                                                                                                 </svg>
@@ -2885,7 +2885,7 @@
                                                                                             <ul class="list-group-flush">
 
                                                                                                 <li class="list-group-item">
-                                                                                                    <a href="{{ route('pillar-activity.show',   $myactiv->pillar_act_id)}}" class="btn btn-outline-success d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view project full details">
+                                                                                                    <a href="{{ route('pillar-activity.show',   $myactiv->pillar_act_id)}}" class="btn btn-outline-success d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view project full details">
                                                                                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                                                                                                             <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
                                                                                                             <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
@@ -2895,7 +2895,7 @@
 
                                                                                                 </li>
                                                                                                 <li class="list-group-item">
-                                                                                                    <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view update project details">
+                                                                                                    <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view update project details">
                                                                                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
                                                                                                             <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
                                                                                                         </svg>
@@ -3003,7 +3003,7 @@
                                                                                             <ul class="list-group-flush">
 
                                                                                                 <li class="list-group-item">
-                                                                                                    <a href="{{ route('pillar-subactivity.show',$myact->id)}}" class="btn btn-outline-success d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view project full details">
+                                                                                                    <a href="{{ route('pillar-subactivity.show',$myact->id)}}" class="btn btn-outline-success d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view project full details">
                                                                                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                                                                                                             <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
                                                                                                             <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
@@ -3013,7 +3013,7 @@
 
                                                                                                 </li>
                                                                                                 <li class="list-group-item">
-                                                                                                    <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view update project details">
+                                                                                                    <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view update project details">
                                                                                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
                                                                                                             <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
                                                                                                         </svg>
@@ -3097,7 +3097,7 @@
                                             {{-- my retirements --}}
 
                                             <div class="row">
-                                            <div class="col-lg-12">
+                                                <div class="col-lg-12">
                                                     @php
                                                     $cbimprest=$imprests->where('pillar_id',3);
                                                     @endphp
@@ -3151,7 +3151,7 @@
                                                                                     <ul class="list-group-flush">
 
                                                                                         <li class="list-group-item">
-                                                                                            <a href="{{ route('imprest.show',   $imp->id)}}" class="btn btn-outline-success d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view project full details">
+                                                                                            <a href="{{ route('imprest.show',   $imp->id)}}" class="btn btn-outline-success d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view project full details">
                                                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                                                                                                     <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
                                                                                                     <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
@@ -3161,7 +3161,7 @@
 
                                                                                         </li>
                                                                                         <li class="list-group-item">
-                                                                                            <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view update project details">
+                                                                                            <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view update project details">
                                                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
                                                                                                     <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
                                                                                                 </svg>
@@ -3285,7 +3285,7 @@
 
                                                                                                 </li>
                                                                                                 <li class="list-group-item">
-                                                                                                    <a href="{{ route('pillar-project.show',   $pro->project_id)}}" class="btn btn-outline-success d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view project full details">
+                                                                                                    <a href="{{ route('pillar-project.show',   $pro->project_id)}}" class="btn btn-outline-success d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view project full details">
                                                                                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                                                                                                             <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
                                                                                                             <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
@@ -3396,7 +3396,7 @@
                                                                                     <ul class="list-group-flush">
 
                                                                                         <li class="list-group-item">
-                                                                                            <a href="{{ route('imprest.show',   $imp->id)}}" class="btn btn-outline-success d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view project full details">
+                                                                                            <a href="{{ route('imprest.show',   $imp->id)}}" class="btn btn-outline-success d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view project full details">
                                                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                                                                                                     <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
                                                                                                     <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
@@ -3406,7 +3406,7 @@
 
                                                                                         </li>
                                                                                         <li class="list-group-item">
-                                                                                            <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view update project details">
+                                                                                            <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view update project details">
                                                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
                                                                                                     <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
                                                                                                 </svg>
@@ -3519,7 +3519,7 @@
                                                                                             <ul class="list-group-flush">
 
                                                                                                 <li class="list-group-item">
-                                                                                                    <a href="{{ route('pillar-activity.show',   $myactiv->pillar_act_id)}}" class="btn btn-outline-success d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view project full details">
+                                                                                                    <a href="{{ route('pillar-activity.show',   $myactiv->pillar_act_id)}}" class="btn btn-outline-success d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view project full details">
                                                                                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                                                                                                             <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
                                                                                                             <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
@@ -3529,7 +3529,7 @@
 
                                                                                                 </li>
                                                                                                 <li class="list-group-item">
-                                                                                                    <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view update project details">
+                                                                                                    <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view update project details">
                                                                                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
                                                                                                             <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
                                                                                                         </svg>
@@ -3637,7 +3637,7 @@
                                                                                             <ul class="list-group-flush">
 
                                                                                                 <li class="list-group-item">
-                                                                                                    <a href="{{ route('pillar-subactivity.show',$myact->id)}}" class="btn btn-outline-success d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view project full details">
+                                                                                                    <a href="{{ route('pillar-subactivity.show',$myact->id)}}" class="btn btn-outline-success d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view project full details">
                                                                                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                                                                                                             <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
                                                                                                             <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
@@ -3647,7 +3647,7 @@
 
                                                                                                 </li>
                                                                                                 <li class="list-group-item">
-                                                                                                    <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view update project details">
+                                                                                                    <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view update project details">
                                                                                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
                                                                                                             <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
                                                                                                         </svg>
@@ -3732,7 +3732,7 @@
                                             {{-- my retirements --}}
 
                                             <div class="row">
-                                            <div class="col-lg-12">
+                                                <div class="col-lg-12">
                                                     @php
                                                     $riimprest=$imprests->where('pillar_id',4);
                                                     @endphp
@@ -3786,7 +3786,7 @@
                                                                                     <ul class="list-group-flush">
 
                                                                                         <li class="list-group-item">
-                                                                                            <a href="{{ route('imprest.show',   $imp->id)}}" class="btn btn-outline-success d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view project full details">
+                                                                                            <a href="{{ route('imprest.show',   $imp->id)}}" class="btn btn-outline-success d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view project full details">
                                                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                                                                                                     <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
                                                                                                     <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
@@ -3796,7 +3796,7 @@
 
                                                                                         </li>
                                                                                         <li class="list-group-item">
-                                                                                            <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view update project details">
+                                                                                            <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view update project details">
                                                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
                                                                                                     <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
                                                                                                 </svg>
@@ -3920,7 +3920,7 @@
 
                                                                                                 </li>
                                                                                                 <li class="list-group-item">
-                                                                                                    <a href="{{ route('pillar-project.show',   $pro->project_id)}}" class="btn btn-outline-success d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view project full details">
+                                                                                                    <a href="{{ route('pillar-project.show',   $pro->project_id)}}" class="btn btn-outline-success d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view project full details">
                                                                                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                                                                                                             <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
                                                                                                             <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
@@ -4031,7 +4031,7 @@
                                                                                     <ul class="list-group-flush">
 
                                                                                         <li class="list-group-item">
-                                                                                            <a href="{{ route('imprest.show',   $imp->id)}}" class="btn btn-outline-success d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view project full details">
+                                                                                            <a href="{{ route('imprest.show',   $imp->id)}}" class="btn btn-outline-success d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view project full details">
                                                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                                                                                                     <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
                                                                                                     <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
@@ -4041,7 +4041,7 @@
 
                                                                                         </li>
                                                                                         <li class="list-group-item">
-                                                                                            <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view update project details">
+                                                                                            <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view update project details">
                                                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
                                                                                                     <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
                                                                                                 </svg>
@@ -4154,7 +4154,7 @@
                                                                                             <ul class="list-group-flush">
 
                                                                                                 <li class="list-group-item">
-                                                                                                    <a href="{{ route('pillar-activity.show',   $myactiv->pillar_act_id)}}" class="btn btn-outline-success d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view project full details">
+                                                                                                    <a href="{{ route('pillar-activity.show',   $myactiv->pillar_act_id)}}" class="btn btn-outline-success d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view project full details">
                                                                                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                                                                                                             <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
                                                                                                             <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
@@ -4164,7 +4164,7 @@
 
                                                                                                 </li>
                                                                                                 <li class="list-group-item">
-                                                                                                    <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view update project details">
+                                                                                                    <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view update project details">
                                                                                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
                                                                                                             <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
                                                                                                         </svg>
@@ -4272,7 +4272,7 @@
                                                                                             <ul class="list-group-flush">
 
                                                                                                 <li class="list-group-item">
-                                                                                                    <a href="{{ route('pillar-subactivity.show',$myact->id)}}" class="btn btn-outline-success d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view project full details">
+                                                                                                    <a href="{{ route('pillar-subactivity.show',$myact->id)}}" class="btn btn-outline-success d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view project full details">
                                                                                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                                                                                                             <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
                                                                                                             <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
@@ -4282,7 +4282,7 @@
 
                                                                                                 </li>
                                                                                                 <li class="list-group-item">
-                                                                                                    <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view update project details">
+                                                                                                    <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view update project details">
                                                                                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
                                                                                                             <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
                                                                                                         </svg>
@@ -4365,7 +4365,7 @@
                                             {{-- my retirements --}}
 
                                             <div class="row">
-                                            <div class="col-lg-12">
+                                                <div class="col-lg-12">
                                                     @php
                                                     $isimprest=$imprests->where('pillar_id',6);
                                                     @endphp
@@ -4419,7 +4419,7 @@
                                                                                     <ul class="list-group-flush">
 
                                                                                         <li class="list-group-item">
-                                                                                            <a href="{{ route('imprest.show',   $imp->id)}}" class="btn btn-outline-success d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view project full details">
+                                                                                            <a href="{{ route('imprest.show',   $imp->id)}}" class="btn btn-outline-success d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view project full details">
                                                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                                                                                                     <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
                                                                                                     <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
@@ -4429,7 +4429,7 @@
 
                                                                                         </li>
                                                                                         <li class="list-group-item">
-                                                                                            <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view update project details">
+                                                                                            <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view update project details">
                                                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
                                                                                                     <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
                                                                                                 </svg>
@@ -4553,7 +4553,7 @@
 
                                                                                                 </li>
                                                                                                 <li class="list-group-item">
-                                                                                                    <a href="{{ route('pillar-project.show',   $pro->project_id)}}" class="btn btn-outline-success d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view project full details">
+                                                                                                    <a href="{{ route('pillar-project.show',   $pro->project_id)}}" class="btn btn-outline-success d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view project full details">
                                                                                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                                                                                                             <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
                                                                                                             <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
@@ -4664,7 +4664,7 @@
                                                                                     <ul class="list-group-flush">
 
                                                                                         <li class="list-group-item">
-                                                                                            <a href="{{ route('imprest.show',   $imp->id)}}" class="btn btn-outline-success d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view project full details">
+                                                                                            <a href="{{ route('imprest.show',   $imp->id)}}" class="btn btn-outline-success d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view project full details">
                                                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                                                                                                     <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
                                                                                                     <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
@@ -4674,7 +4674,7 @@
 
                                                                                         </li>
                                                                                         <li class="list-group-item">
-                                                                                            <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view update project details">
+                                                                                            <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view update project details">
                                                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
                                                                                                     <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
                                                                                                 </svg>
@@ -4787,7 +4787,7 @@
                                                                                             <ul class="list-group-flush">
 
                                                                                                 <li class="list-group-item">
-                                                                                                    <a href="{{ route('pillar-activity.show',   $myactiv->pillar_act_id)}}" class="btn btn-outline-success d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view project full details">
+                                                                                                    <a href="{{ route('pillar-activity.show',   $myactiv->pillar_act_id)}}" class="btn btn-outline-success d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view project full details">
                                                                                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                                                                                                             <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
                                                                                                             <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
@@ -4797,7 +4797,7 @@
 
                                                                                                 </li>
                                                                                                 <li class="list-group-item">
-                                                                                                    <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view update project details">
+                                                                                                    <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view update project details">
                                                                                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
                                                                                                             <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
                                                                                                         </svg>
@@ -4905,7 +4905,7 @@
                                                                                             <ul class="list-group-flush">
 
                                                                                                 <li class="list-group-item">
-                                                                                                    <a href="{{ route('pillar-subactivity.show',$myact->id)}}" class="btn btn-outline-success d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view project full details">
+                                                                                                    <a href="{{ route('pillar-subactivity.show',$myact->id)}}" class="btn btn-outline-success d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view project full details">
                                                                                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                                                                                                             <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
                                                                                                             <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
@@ -4915,7 +4915,7 @@
 
                                                                                                 </li>
                                                                                                 <li class="list-group-item">
-                                                                                                    <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view update project details">
+                                                                                                    <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view update project details">
                                                                                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
                                                                                                             <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
                                                                                                         </svg>
@@ -4999,7 +4999,7 @@
                                             {{-- my retirements --}}
 
                                             <div class="row">
-                                            <div class="col-lg-12">
+                                                <div class="col-lg-12">
                                                     @php
                                                     $ccimprest=$imprests->where('pillar_id',6);
                                                     @endphp
@@ -5053,7 +5053,7 @@
                                                                                     <ul class="list-group-flush">
 
                                                                                         <li class="list-group-item">
-                                                                                            <a href="{{ route('imprest.show',   $imp->id)}}" class="btn btn-outline-success d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view project full details">
+                                                                                            <a href="{{ route('imprest.show',   $imp->id)}}" class="btn btn-outline-success d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view project full details">
                                                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                                                                                                     <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
                                                                                                     <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
@@ -5063,7 +5063,7 @@
 
                                                                                         </li>
                                                                                         <li class="list-group-item">
-                                                                                            <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view update project details">
+                                                                                            <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view update project details">
                                                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
                                                                                                     <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
                                                                                                 </svg>
@@ -5187,7 +5187,7 @@
 
                                                                                                 </li>
                                                                                                 <li class="list-group-item">
-                                                                                                    <a href="{{ route('pillar-project.show',   $pro->project_id)}}" class="btn btn-outline-success d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view project full details">
+                                                                                                    <a href="{{ route('pillar-project.show',   $pro->project_id)}}" class="btn btn-outline-success d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view project full details">
                                                                                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                                                                                                             <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
                                                                                                             <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
@@ -5298,7 +5298,7 @@
                                                                                     <ul class="list-group-flush">
 
                                                                                         <li class="list-group-item">
-                                                                                            <a href="{{ route('imprest.show',   $imp->id)}}" class="btn btn-outline-success d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view project full details">
+                                                                                            <a href="{{ route('imprest.show',   $imp->id)}}" class="btn btn-outline-success d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view project full details">
                                                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                                                                                                     <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
                                                                                                     <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
@@ -5308,7 +5308,7 @@
 
                                                                                         </li>
                                                                                         <li class="list-group-item">
-                                                                                            <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view update project details">
+                                                                                            <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view update project details">
                                                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
                                                                                                     <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
                                                                                                 </svg>
@@ -5421,7 +5421,7 @@
                                                                                             <ul class="list-group-flush">
 
                                                                                                 <li class="list-group-item">
-                                                                                                    <a href="{{ route('pillar-activity.show',   $myactiv->pillar_act_id)}}" class="btn btn-outline-success d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view project full details">
+                                                                                                    <a href="{{ route('pillar-activity.show',   $myactiv->pillar_act_id)}}" class="btn btn-outline-success d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view project full details">
                                                                                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                                                                                                             <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
                                                                                                             <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
@@ -5431,7 +5431,7 @@
 
                                                                                                 </li>
                                                                                                 <li class="list-group-item">
-                                                                                                    <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view update project details">
+                                                                                                    <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view update project details">
                                                                                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
                                                                                                             <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
                                                                                                         </svg>
@@ -5539,7 +5539,7 @@
                                                                                             <ul class="list-group-flush">
 
                                                                                                 <li class="list-group-item">
-                                                                                                    <a href="{{ route('pillar-subactivity.show',$myact->id)}}" class="btn btn-outline-success d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view project full details">
+                                                                                                    <a href="{{ route('pillar-subactivity.show',$myact->id)}}" class="btn btn-outline-success d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view project full details">
                                                                                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                                                                                                             <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
                                                                                                             <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
@@ -5549,7 +5549,7 @@
 
                                                                                                 </li>
                                                                                                 <li class="list-group-item">
-                                                                                                    <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-bs-toggle="tooltip" data-bs-placement="top" title="view update project details">
+                                                                                                    <a href="" class="btn btn-outline-info btn-md d-flex justify-content-between" data-toggle="tooltip" data-bs-placement="top" title="view update project details">
                                                                                                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
                                                                                                             <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
                                                                                                         </svg>
@@ -6165,1721 +6165,7 @@
                 </div>
             </div>
         </div>
-        <!-- end of finance executive director adminstration data column -->
 
-
-        <!-- =========================================
-               =                                       =
-               =             start of financial executive dir adminstration data =
-               ========================================= -->
-
-        <div class="tab-pane tb fade" id="finance-hr-content" role="tabpanel" aria-labelledby="finance-admin-tab-md">
-            {{-- human resource --}}
-            <div class="row">
-                <div class="col-md-2">
-                    <div class="nav flex-column nav-pills" id="vds-hr-tab" role="tablist" aria-orientation="vertical">
-                        <a class="nav-link active" id="hr-pills-departments-tab" data-toggle="pill" href="#hr-pills-departments-content" role="tab" aria-controls="hr-pills-departments-tab" aria-selected="true">Departments & Pillars</a>
-
-                        <a class="nav-link" id="hr-pills-staff-employee-tab" data-toggle="pill" href="#hr-pills-staff-employee-content" role="tab" aria-controls="hr-pills-staff-employee-tab" aria-selected="false">Staff / Employees</a>
-
-
-                        <a class="nav-link" id="hr-pills-benefits-tab" data-toggle="pill" href="#hr-pills-benefits-content" role="tab" aria-controls="hr-pills-benefits-tab" aria-selected="false">Benefits</a>
-
-
-                        <a class="nav-link" id="hr-pills-cost-sharing-tab" data-toggle="pill" href="#hr-pills-cost-sharing-content" role="tab" aria-controls="hr-pills-cost-sharing-tab" aria-selected="false">Cost Sharing</a>
-
-                        <a class="nav-link" id="hr-pills-deductions-tab" data-toggle="pill" href="#hr-pills-deductions-content" role="tab" aria-controls="hr-pills-deductions-tab" aria-selected="false">Deductions</a>
-
-                        <a class="nav-link" id="hr-pills-dlr-tab" data-toggle="pill" href="#hr-pills-dlr-content" role="tab" aria-controls="hr-pills-dlr-tab" aria-selected="false">Direct Loans
-                            receipts</a>
-
-
-                        <a class="nav-link" id="hr-pills-leave-allowance-tab" data-toggle="pill" href="#hr-pills-leave-allowance-content" role="tab" aria-controls="hr-pills-leave-allowance-tab" aria-selected="false">Leave allowance</a>
-
-                        <a class="nav-link" id="hr-pills-leaves-tab" data-toggle="pill" href="#hr-pills-leaves-content" role="tab" aria-controls="hr-pills-leaves-tab" aria-selected="false">Leaves</a>
-
-
-                        <a class="nav-link" id="hr-pills-loans-tab" data-toggle="pill" href="#hr-pills-loans-content" role="tab" aria-controls="hr-pills-loans-tab" aria-selected="false">Loans</a>
-
-                        <a class="nav-link" id="hr-pills-payroll-tab" data-toggle="pill" href="#hr-pills-payroll-content" role="tab" aria-controls="hr-pills-payroll-tab" aria-selected="false">Payroll</a>
-
-                        <a class="nav-link" id="hr-pills-salary-tab" data-toggle="pill" href="#hr-pills-salary-content" role="tab" aria-controls="hr-pills-salary-tab" aria-selected="false">Salary and Salary Areas</a>
-
-                        <a class="nav-link" id="hr-pills-salary-slips-tab" data-toggle="pill" href="#hr-pills-salary-slips-content" role="tab" aria-controls="hr-pills-salary-slips-tab" aria-selected="false">Salary Slips</a>
-
-                        <a class="nav-link" id="hr-pills-staff-appraisal-tab" data-toggle="pill" href="#hr-pills-staff-appraisal-content" role="tab" aria-controls="hr-pills-staff-appraisal-tab" aria-selected="false">Staff Appraisals</a>
-
-
-
-
-                    </div>
-                </div>
-                <div class="col-md-10">
-
-                    <div class="tab-content" id="vds-finance-pillars-pills-tabContent">
-                        <div class="tab-pane fade show active" id="hr-pills-departments-content" role="tabpanel" aria-labelledby="pills-finance-pillars-tab">
-                            {{-- departments and pillars --}}
-
-                            <div class="container-fluid">
-                                <div class="tab-pane fade show active" id="line-manager-content" role="tabpanel" aria-labelledby="line-manager-tab-md">
-                                    <br />
-                                    <ul class="nav nav-tabs md-tabs" id="linemanagerPanel" role="tablist">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" id="hr-departments-pill" data-toggle="tab" href="#hr-departments-content" role="tab" aria-controls="hr-departments-content-md" aria-selected="true">Departments
-                                            </a>
-                                        </li>
-
-                                        <li class="nav-item">
-                                            <a class="nav-link" id="hr-pillar-pill" data-toggle="tab" href="#hr-pillar-content" role="tab" aria-controls="hr-pillar-content-md" aria-selected="true">Pillars
-
-                                            </a>
-                                        </li>
-                                    </ul>
-
-
-                                    <div class="tab-content pt-5" id="selectDataViewTabContent">
-                                        <!--
-                                                ========================================
-                                                =                                      =
-                                                =       departments    =
-                                                ======================================== -->
-                                        <div class="tab-pane fade show active" id="hr-departments-content" role="tabpanel" aria-labelledby="hr-pillar-content-tab-md">
-                                            {{-- departments --}}
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <!-- Button trigger modal -->
-
-                                                    <a class="btn btn-outline-success btn-lg" href="{{ route('add-a-new-department') }}" role="button"> Add a New Department</a>
-                                                    <div class="card">
-                                                        <div class="card-content table-responsive">
-                                                            <br />
-                                                            <table class="table table-bordered table-hover">
-                                                                <p><strong>All organisation Departments</strong></p>
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th scope="col">#</th>
-                                                                        <th scope="col">Department Name</th>
-                                                                        <th scope="col-md-4">Head of Deparment</th>
-                                                                        <th scope="col">Description</th>
-                                                                        <th scope="col">total funds allocated</th>
-                                                                        <th scope="col">total staff</th>
-                                                                        <th scope="col">Date created</th>
-                                                                        <th scope="col"></th>
-                                                                        <th scope="col"></th>
-
-
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-
-                                                                    @foreach($departments as $department)
-                                                                    <tr>
-                                                                        <th scope="row">{{ $department->dept_id }}</th>
-                                                                        <td class="w-30 p-2">{{ $department->dept_title }}</td>
-
-                                                                        <td class="w-30 p-2">{{ $department->dept_manager_id }}</td>
-                                                                        <td class="w-30 h-30 p-4">{{ $department->dept_description }}</td>
-                                                                        <td class="w-30 h-30 p-4"> 10000000 </td>
-                                                                        <td class="w-30 h-30 p-4"> 22 </td>
-                                                                        <td class="w-10 p-2">{{ $department->created_at }}</td>
-                                                                        <td class="w-10 p-2"><a href="{{ route('hrdepts.show', $department->dept_id)}}" class="btn btn-outline-success">view details</a>
-                                                                        </td>
-                                                                        <td class="w-30 p-2"><a href="{{ route('hrdepts.edit', $department->dept_id)}}" class="btn btn-outline-info btn-md">update</a>
-                                                                        </td>
-
-                                                                        {{-- {{ $department->total_fund_allocations }} --}}
-                                                                        {{-- <td class="w-10 p-2"><a href="{{ route('deptmanager.edit', $deptmanager->user_id)}}"
-                                                                        class="btn btn-outline-info">edit</a>
-                                                                        </td> --}}
-                                                                        {{-- <td class="w-20 p-2">
-                                                                                <form action="{{ route('dept.destroy', $deptmanager->user_id)}}"
-                                                                        method="post">
-                                                                        @csrf
-                                                                        @method('UPDATE')
-                                                                        <button class="btn btn-outline-danger" type="submit">Delete</button>
-                                                                        </form>
-                                                                        </td> --}}
-                                                                    </tr>
-
-                                                                </tbody>
-                                                                @endforeach
-                                                            </table>
-                                                            <br />
-                                                            <nav aria-label="Page navigation example">
-                                                                <ul class="pagination">
-                                                                    <li class="page-item">
-                                                                        <a class="page-link" href="#" aria-label="Previous">
-                                                                            <span aria-hidden="true">&laquo;</span>
-                                                                            <span class="sr-only">Previous</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                                    <li class="page-item">
-                                                                        <a class="page-link" href="#" aria-label="Next">
-                                                                            <span aria-hidden="true">&raquo;</span>
-                                                                            <span class="sr-only">Next</span>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </nav>
-                                                        </div>
-                                                    </div>
-                                                    <!-- end of SECOND column -->
-                                                </div>
-
-                                            </div>
-
-
-                                        </div>
-                                        <!-- end of departments panel -->
-
-
-                                        <!--
-                                                ========================================
-                                                =                                      =
-                                                =       pillars                       =
-                                                ======================================== -->
-                                        <div class="tab-pane fade" id="hr-pillar-content" role="tabpanel" aria-labelledby="hr-pillar-content-tab-md">
-                                            {{-- pillars --}}
-                                            <div class="row">
-                                                <div class="col-lg-12">
-
-                                                    <a class="btn btn-outline-success btn-lg" href="{{ route('add-a-new-pillar') }}" role="button"> Add a New Pillar</a>
-
-                                                    <div class="card">
-                                                        <div class="card-content table-responsive">
-                                                            <br />
-                                                            <table class="table table-bordered table-hover">
-                                                                <br />
-                                                                <p><strong>All organisation pillars</strong></p>
-                                                                <br />
-                                                                <br />
-
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th scope="col">#</th>
-                                                                        <th scope="col">Pillar Name</th>
-                                                                        <th scope="col">Manager</th>
-                                                                        <th scope="col-md-4">Description</th>
-                                                                        <th scope="col">Number of Staff</th>
-                                                                        <th scope="col">total funds allocated</th>
-                                                                        <th scope="col">Date created</th>
-                                                                        <th scope="col">last updated</th>
-                                                                        <th scope="col"></th>
-                                                                        <th scope="col"></th>
-
-
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-
-                                                                    @foreach($pillars as $pillar)
-                                                                    <tr>
-                                                                        <th scope="row">{{ $pillar->pillar_id }}</th>
-                                                                        <td class="w-30 p-2">{{ $pillar->pillar_title }}</td>
-                                                                        <td class="w-30 p-2">{{ $pillar->managers_id }}</td>
-                                                                        <td class="w-30 h-30 p-4">{{ $pillar->pillar_desc }}</td>
-                                                                        <td class="w-30 h-30 p-4"> {{ $pillar->total_fund_allocations }} </td>
-                                                                        <td class="w-10 p-2"></td>
-                                                                        <td class="w-10 p-2">{{ $pillar->created_at }}</td>
-                                                                        <td class="w-10 p-2">{{ $pillar->date_updated }}</td>
-                                                                        <td class="w-10 p-2"><a href="{{ route('hrpillars.show', $pillar->pillar_id)}}" class="btn btn-outline-success">view details</a>
-                                                                        </td>
-                                                                        <td class="w-30 p-2"><a href="{{ route('hrpillars.edit', $pillar->pillar_id)}}" class="btn btn-outline-info btn-md">update</a>
-                                                                        </td>
-
-                                                                    </tr>
-                                                                    @endforeach
-                                                                </tbody>
-                                                            </table>
-                                                            <br />
-                                                            <nav aria-label="Page navigation example">
-                                                                <ul class="pagination">
-                                                                    <li class="page-item">
-                                                                        <a class="page-link" href="#" aria-label="Previous">
-                                                                            <span aria-hidden="true">&laquo;</span>
-                                                                            <span class="sr-only">Previous</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                                    <li class="page-item">
-                                                                        <a class="page-link" href="#" aria-label="Next">
-                                                                            <span aria-hidden="true">&raquo;</span>
-                                                                            <span class="sr-only">Next</span>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </nav>
-                                                        </div>
-                                                    </div>
-                                                    <!-- end of SECOND column -->
-                                                </div>
-
-                                            </div>
-
-
-                                        </div>
-                                        <!-- end of pillars panel -->
-
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="tab-pane fade" id="hr-pills-staff-employee-content" role="tabpanel" aria-labelledby="vdsreqs-pills-profile-tab">
-                            {{-- hr staff and employees --}}
-                            <div class="container-fluid">
-                                <div class="tab-pane fade show active" id="hr-employeesnmanagers-content" role="tabpanel" aria-labelledby="hr-employeesnmanagers-tab-md">
-                                    <br />
-                                    <ul class="nav nav-tabs md-tabs" id="employeesnmanagersPanel" role="tablist">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" id="hr-managers-pill" data-toggle="tab" href="#hr-managers-content" role="tab" aria-controls="hr-managers-content-md" aria-selected="true">Managers
-                                            </a>
-                                        </li>
-
-                                        <li class="nav-item">
-                                            <a class="nav-link" id="hr-staff-pill" data-toggle="tab" href="#hr-staff-content" role="tab" aria-controls="hr-staff-content-md" aria-selected="true">Staff
-
-                                            </a>
-                                        </li>
-                                    </ul>
-
-
-                                    <div class="tab-content pt-5" id="hr-pills-staff-employeeTabContent">
-                                        <!--
-                                                ========================================
-                                                =                                      =
-                                                =       managers    =
-                                                ======================================== -->
-                                        <div class="tab-pane fade show active" id="hr-managers-content" role="tabpanel" aria-labelledby="hr-managers-content-tab-md">
-                                            {{-- all managers --}}
-                                            <!-- Button trigger modal -->
-                                            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#hrcreateNewManagerModal">
-                                                add new manager
-                                            </button>
-
-
-                                            <!-- Modal -->
-                                            <div class="modal fade" id="hrcreateNewManagerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                                <div class="modal-dialog modal-dialog-centered" role="document">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLongTitle">Type of Manager</h5>
-                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <ul class="list-group-flush">
-
-                                                                <li class="list-group-item">
-                                                                    <a href="{{ route('create-new-pillar-manager') }}" class="list-group-item list-group-item-action">
-                                                                        Pillar Manager
-                                                                    </a>
-                                                                </li>
-                                                                <li class="list-group-item">
-                                                                    <a href="{{ route('create-new-dept-manager') }}" class="list-group-item list-group-item-action">
-                                                                        Department Manager
-                                                                    </a>
-                                                                </li>
-
-                                                            </ul>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div class="card">
-                                                        <div class="card-content table-responsive">
-                                                            <table class="table table-bordered table-hover">
-                                                                <br />
-                                                                <br />
-
-                                                                <p><strong>All Organisation Managers</strong></p>
-                                                                <br />
-                                                                <br />
-
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th scope="col">#</th>
-                                                                        <th scope="col">First Name</th>
-                                                                        <th scope="col-md-4">Email</th>
-                                                                        <th scope="col">role</th>
-                                                                        <th scope="col">Department</th>
-                                                                        <th scope="col">Date created</th>
-                                                                        <th scope="col"></th>
-                                                                        <th scope="col"></th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody>
-
-                                                                    @foreach($deptmanagers as $deptmanager)
-                                                                    <tr>
-                                                                        <th scope="row">{{ $deptmanager->user_id }}</th>
-                                                                        <td class="w-30 p-2">{{ $deptmanager->fname }}</td>
-
-                                                                        <td class="w-30 p-2">{{ $deptmanager->email }}</td>
-                                                                        <td class="w-30 h-30 p-4">{{ $deptmanager->role_title }}</td>
-                                                                        <td class="w-30 h-30 p-4">{{ $deptmanager->dept_title }}</td>
-                                                                        <td class="w-10 p-2">{{ $deptmanager->created_at }}</td>
-                                                                        <td class="w-10 p-2"><a href="#" class="btn btn-outline-success">view details</a>
-                                                                        </td>
-                                                                        <td class="w-10 p-2"><a href="#" class="btn btn-outline-info">update details</a>
-                                                                        </td>
-
-                                                                        {{-- <td class="w-10 p-2"><a href="{{ route('deptmanager.edit', $deptmanager->user_id)}}"
-                                                                        class="btn btn-outline-info">edit</a>
-                                                                        </td> --}}
-                                                                        {{-- <td class="w-20 p-2">
-                                                                                <form action="{{ route('dept.destroy', $deptmanager->user_id)}}"
-                                                                        method="post">
-                                                                        @csrf
-                                                                        @method('UPDATE')
-                                                                        <button class="btn btn-outline-danger" type="submit">Delete</button>
-                                                                        </form>
-                                                                        </td> --}}
-                                                                    </tr>
-
-                                                                </tbody>
-
-                                                                @endforeach
-                                                            </table>
-                                                            <br />
-                                                            <nav aria-label="Page navigation example">
-                                                                <ul class="pagination">
-                                                                    <li class="page-item">
-                                                                        <a class="page-link" href="#" aria-label="Previous">
-                                                                            <span aria-hidden="true">&laquo;</span>
-                                                                            <span class="sr-only">Previous</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                                    <li class="page-item">
-                                                                        <a class="page-link" href="#" aria-label="Next">
-                                                                            <span aria-hidden="true">&raquo;</span>
-                                                                            <span class="sr-only">Next</span>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </nav>
-                                                        </div>
-                                                    </div>
-                                                    <!-- end of SECOND column -->
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <!-- end of managers panel -->
-
-
-                                        <!--
-                                                ========================================
-                                                =                                      =
-                                                =       managers                       =
-                                                ======================================== -->
-                                        <div class="tab-pane fade" id="hr-staff-content" role="tabpanel" aria-labelledby="hr-staff-content-tab-md">
-                                            {{-- managers --}}
-                                            <!-- Button trigger modal to create new staff/employee -->
-                                            <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#hrcreateNewStaffModal">
-                                                add new staff
-                                            </button>
-
-
-                                            <!-- Modal -->
-                                            <div class="modal fade" id="hrcreateNewStaffModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                                <div class="modal-dialog modal-dialog-centered" role="document">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLongTitle">Type of Staff</h5>
-                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <ul class="list-group-flush">
-                                                                <li class="list-group-item">
-                                                                    <a href="{{ route('create-new-dept-staff') }}" class="list-group-item list-group-item-action">
-                                                                        Department Staff
-                                                                    </a>
-
-                                                                </li>
-                                                                <li class="list-group-item">
-                                                                    <a href="{{ route('create-new-pillar-staff') }}" class="list-group-item list-group-item-action">
-                                                                        Pillar Staff
-                                                                    </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div class="card">
-                                                        <div class="card-content table-responsive">
-                                                            <table class="table table-bordered table-hover">
-                                                                <br />
-                                                                <br />
-                                                                <p><strong>All Organisation Staff</strong></p>
-                                                                <br />
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th scope="col">#</th>
-                                                                        <th scope="col">First Name</th>
-                                                                        <th scope="col-md-4">Email</th>
-                                                                        <th scope="col">role</th>
-                                                                        <th scope="col">Department</th>
-                                                                        <th scope="col">Date created</th>
-                                                                        <th scope="col"></th>
-                                                                        <th scope="col"></th>
-                                                                    </tr>
-                                                                </thead>
-
-                                                                @foreach($pillarstaffs as $pillarstaff)
-                                                                <tr>
-                                                                    <th scope="row">{{ $pillarstaff->user_id }}</th>
-                                                                    <td class="w-30 p-2">{{ $pillarstaff->fname }}</td>
-
-                                                                    <td class="w-30 p-2">{{ $pillarstaff->email }}</td>
-                                                                    <td class="w-30 h-30 p-4">{{ $pillarstaff->role_title }}</td>
-                                                                    <td class="w-30 h-30 p-4">{{ $pillarstaff->dept_title }}</td>
-                                                                    <td class="w-10 p-2">{{ $pillarstaff->created_at }}</td>
-                                                                    <td class="w-10 p-2"><a href="#" class="btn btn-outline-success">view details</a>
-                                                                    </td>
-                                                                    <td class="w-10 p-2"><a href="#" class="btn btn-outline-info">update details</a>
-                                                                    </td>
-
-                                                                    {{-- <td class="w-10 p-2"><a href="{{ route('deptmanager.edit', $deptmanager->user_id)}}"
-                                                                    class="btn btn-outline-info">edit</a>
-                                                                    </td> --}}
-                                                                    {{-- <td class="w-20 p-2">
-                                                                            <form action="{{ route('dept.destroy', $deptmanager->user_id)}}"
-                                                                    method="post">
-                                                                    @csrf
-                                                                    @method('UPDATE')
-                                                                    <button class="btn btn-outline-danger" type="submit">Delete</button>
-                                                                    </form>
-                                                                    </td> --}}
-                                                                </tr>
-
-                                                                </tbody>
-
-                                                                @endforeach
-                                                            </table>
-                                                            <br />
-                                                            <nav aria-label="Page navigation example">
-                                                                <ul class="pagination">
-                                                                    <li class="page-item">
-                                                                        <a class="page-link" href="#" aria-label="Previous">
-                                                                            <span aria-hidden="true">&laquo;</span>
-                                                                            <span class="sr-only">Previous</span>
-                                                                        </a>
-                                                                    </li>
-                                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                                    <li class="page-item">
-                                                                        <a class="page-link" href="#" aria-label="Next">
-                                                                            <span aria-hidden="true">&raquo;</span>
-                                                                            <span class="sr-only">Next</span>
-                                                                        </a>
-                                                                    </li>
-                                                                </ul>
-                                                            </nav>
-                                                        </div>
-                                                    </div>
-                                                    <!-- end of SECOND column -->
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                        <!-- end of managers panel -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="tab-pane fade" id="hr-pills-benefits-content" role="tabpanel" aria-labelledby="vdsreqs-pills-settings-tab">
-                            {{-- data science imprests --}}
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="card">
-                                        <div class="card-content table-responsive">
-                                            <br />
-                                            <table class="table table-bordered table-hover">
-                                                <p>
-                                                    <strong>Data Science Imprests.</strong>
-                                                </p>
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">#</th>
-                                                        <th scope="col">Requested by</th>
-                                                        <th scope="col-md-4">Title</th>
-                                                        <th scope="col">Request Type</th>
-                                                        <th scope="col">Under Project</th>
-                                                        <th scope="col"># of approvals</th>
-                                                        <th scope="col">Total Cost</th>
-                                                        <th scope="col">Date created</th>
-
-                                                        <th scope="col"></th>
-
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">1</th>
-                                                        <td>MarkCuban</td>
-                                                        <td>Data visualisation in Mbeya</td>
-                                                        <td>Training</td>
-                                                        <td>Sauti Mpya</td>
-                                                        <td>0</td>
-                                                        <td>2,300,000 <span class="badge badge-success">TZS</span>
-                                                        </td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>Jane Sharpe</td>
-                                                        <td>Data Mining in Dar</td>
-                                                        <td>Training</td>
-                                                        <td>Data Zetu</td>
-                                                        <td>0</td>
-                                                        <td>6,600,000 <span class="badge badge-success">TZS</span>
-                                                        </td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td>Mary Poppins</td>
-                                                        <td>Data Analyis and Mining</td>
-                                                        <td>Training</td>
-                                                        <td>Sauti Mpya</td>
-                                                        <td>0</td>
-                                                        <td>8,700,000 <span class="badge badge-success">TZS</span>
-                                                        </td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <br />
-                                            <nav aria-label="Page navigation example">
-                                                <ul class="pagination">
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Previous">
-                                                            <span aria-hidden="true">&laquo;</span>
-                                                            <span class="sr-only">Previous</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Next">
-                                                            <span aria-hidden="true">&raquo;</span>
-                                                            <span class="sr-only">Next</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </nav>
-                                        </div>
-                                    </div>
-                                    <!-- end of SECOND column -->
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <div class="tab-pane fade" id="hr-pills-cost-sharing-content" role="tabpanel" aria-labelledby="pillars-pills-ds-activities-tab">
-                            {{-- data science activities --}}
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="card">
-                                        <div class="card-content table-responsive">
-                                            <br />
-                                            <table class="table table-bordered table-hover">
-                                                <p>
-                                                    <strong>Pillar Activities.</strong>
-                                                </p>
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">#</th>
-                                                        <th scope="col">Requested by</th>
-                                                        <th scope="col-md-4">Title</th>
-                                                        <th scope="col">Request Type</th>
-                                                        <th scope="col">Under Project</th>
-                                                        <th scope="col"># of approvals</th>
-                                                        <th scope="col">Total Cost</th>
-                                                        <th scope="col">Date created</th>
-
-                                                        <th scope="col"></th>
-
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">1</th>
-                                                        <td>MarkCuban</td>
-                                                        <td>Data visualisation in Mbeya</td>
-                                                        <td>Training</td>
-                                                        <td>Sauti Mpya</td>
-                                                        <td>0</td>
-                                                        <td>2,300,000 <span class="badge badge-success">TZS</span>
-                                                        </td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>Jane Sharpe</td>
-                                                        <td>Data Mining in Dar</td>
-                                                        <td>Training</td>
-                                                        <td>Data Zetu</td>
-                                                        <td>0</td>
-                                                        <td>6,600,000 <span class="badge badge-success">TZS</span>
-                                                        </td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td>Mary Poppins</td>
-                                                        <td>Data Analyis and Mining</td>
-                                                        <td>Training</td>
-                                                        <td>Sauti Mpya</td>
-                                                        <td>0</td>
-                                                        <td>8,700,000 <span class="badge badge-success">TZS</span>
-                                                        </td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <br />
-                                            <nav aria-label="Page navigation example">
-                                                <ul class="pagination">
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Previous">
-                                                            <span aria-hidden="true">&laquo;</span>
-                                                            <span class="sr-only">Previous</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Next">
-                                                            <span aria-hidden="true">&raquo;</span>
-                                                            <span class="sr-only">Next</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </nav>
-                                        </div>
-                                    </div>
-                                    <!-- end of SECOND column -->
-                                </div>
-
-                            </div>
-
-
-                        </div>
-
-                        <div class="tab-pane fade" id="hr-pills-deductions-content" role="tabpanel" aria-labelledby="pillars-pills-ds-sub-activities-tab">
-
-                            {{-- data science sub activities --}}
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="card">
-                                        <div class="card-content table-responsive">
-                                            <br />
-                                            <table class="table table-bordered table-hover">
-                                                <p>
-                                                    <strong>Data Science Sub Activities.</strong>
-                                                </p>
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">#</th>
-                                                        <th scope="col">Requested by</th>
-                                                        <th scope="col-md-4">Title</th>
-                                                        <th scope="col">Request Type</th>
-                                                        <th scope="col">Under Project</th>
-                                                        <th scope="col"># of approvals</th>
-                                                        <th scope="col">Total Cost</th>
-                                                        <th scope="col">Date created</th>
-
-                                                        <th scope="col"></th>
-
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">1</th>
-                                                        <td>MarkCuban</td>
-                                                        <td>Data visualisation in Mbeya</td>
-                                                        <td>Training</td>
-                                                        <td>Sauti Mpya</td>
-                                                        <td>0</td>
-                                                        <td>2,300,000 <span class="badge badge-success">TZS</span>
-                                                        </td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>Jane Sharpe</td>
-                                                        <td>Data Mining in Dar</td>
-                                                        <td>Training</td>
-                                                        <td>Data Zetu</td>
-                                                        <td>0</td>
-                                                        <td>6,600,000 <span class="badge badge-success">TZS</span>
-                                                        </td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td>Mary Poppins</td>
-                                                        <td>Data Analyis and Mining</td>
-                                                        <td>Training</td>
-                                                        <td>Sauti Mpya</td>
-                                                        <td>0</td>
-                                                        <td>8,700,000 <span class="badge badge-success">TZS</span>
-                                                        </td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <br />
-                                            <nav aria-label="Page navigation example">
-                                                <ul class="pagination">
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Previous">
-                                                            <span aria-hidden="true">&laquo;</span>
-                                                            <span class="sr-only">Previous</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Next">
-                                                            <span aria-hidden="true">&raquo;</span>
-                                                            <span class="sr-only">Next</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </nav>
-                                        </div>
-                                    </div>
-                                    <!-- end of SECOND column -->
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <div class="tab-pane fade" id="hr-pills-dlr-content" role="tabpanel" aria-labelledby="pillars-pills-ds-scholars-tab">
-
-                            {{-- data science scholars --}}
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="card">
-                                        <div class="card-content table-responsive">
-                                            <br />
-                                            <table class="table table-bordered table-hover">
-                                                <p>
-                                                    <strong>Data Science Scholars.</strong>
-                                                </p>
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">#</th>
-                                                        <th scope="col">Requested by</th>
-                                                        <th scope="col-md-4">Title</th>
-                                                        <th scope="col">Request Type</th>
-                                                        <th scope="col">Under Project</th>
-                                                        <th scope="col"># of approvals</th>
-                                                        <th scope="col">Total Cost</th>
-                                                        <th scope="col">Date created</th>
-
-                                                        <th scope="col"></th>
-
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">1</th>
-                                                        <td>MarkCuban</td>
-                                                        <td>Data visualisation in Mbeya</td>
-                                                        <td>Training</td>
-                                                        <td>Sauti Mpya</td>
-                                                        <td>0</td>
-                                                        <td>2,300,000 <span class="badge badge-success">TZS</span>
-                                                        </td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>Jane Sharpe</td>
-                                                        <td>Data Mining in Dar</td>
-                                                        <td>Training</td>
-                                                        <td>Data Zetu</td>
-                                                        <td>0</td>
-                                                        <td>6,600,000 <span class="badge badge-success">TZS</span>
-                                                        </td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td>Mary Poppins</td>
-                                                        <td>Data Analyis and Mining</td>
-                                                        <td>Training</td>
-                                                        <td>Sauti Mpya</td>
-                                                        <td>0</td>
-                                                        <td>8,700,000 <span class="badge badge-success">TZS</span>
-                                                        </td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <br />
-                                            <nav aria-label="Page navigation example">
-                                                <ul class="pagination">
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Previous">
-                                                            <span aria-hidden="true">&laquo;</span>
-                                                            <span class="sr-only">Previous</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Next">
-                                                            <span aria-hidden="true">&raquo;</span>
-                                                            <span class="sr-only">Next</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </nav>
-                                        </div>
-                                    </div>
-                                    <!-- end of SECOND column -->
-                                </div>
-
-                            </div>
-
-                        </div>
-                        <div class="tab-pane fade" id="hr-pills-leave-allowance-content" role="tabpanel" aria-labelledby="pillars-pills-ds-grantees-tab">
-
-                            {{-- data science grantees --}}
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="card">
-                                        <div class="card-content table-responsive">
-                                            <br />
-                                            <table class="table table-bordered table-hover">
-                                                <p>
-                                                    <strong>Data Science Grantees.</strong>
-                                                </p>
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">#</th>
-                                                        <th scope="col">Requested by</th>
-                                                        <th scope="col-md-4">Title</th>
-                                                        <th scope="col">Request Type</th>
-                                                        <th scope="col">Under Project</th>
-                                                        <th scope="col"># of approvals</th>
-                                                        <th scope="col">Total Cost</th>
-                                                        <th scope="col">Date created</th>
-
-                                                        <th scope="col"></th>
-
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">1</th>
-                                                        <td>MarkCuban</td>
-                                                        <td>Data visualisation in Mbeya</td>
-                                                        <td>Training</td>
-                                                        <td>Sauti Mpya</td>
-                                                        <td>0</td>
-                                                        <td>2,300,000 <span class="badge badge-success">TZS</span>
-                                                        </td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>Jane Sharpe</td>
-                                                        <td>Data Mining in Dar</td>
-                                                        <td>Training</td>
-                                                        <td>Data Zetu</td>
-                                                        <td>0</td>
-                                                        <td>6,600,000 <span class="badge badge-success">TZS</span>
-                                                        </td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td>Mary Poppins</td>
-                                                        <td>Data Analyis and Mining</td>
-                                                        <td>Training</td>
-                                                        <td>Sauti Mpya</td>
-                                                        <td>0</td>
-                                                        <td>8,700,000 <span class="badge badge-success">TZS</span>
-                                                        </td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <br />
-                                            <nav aria-label="Page navigation example">
-                                                <ul class="pagination">
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Previous">
-                                                            <span aria-hidden="true">&laquo;</span>
-                                                            <span class="sr-only">Previous</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Next">
-                                                            <span aria-hidden="true">&raquo;</span>
-                                                            <span class="sr-only">Next</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </nav>
-                                        </div>
-                                    </div>
-                                    <!-- end of SECOND column -->
-                                </div>
-
-                            </div>
-
-                        </div>
-                        <div class="tab-pane fade" id="hr-pills-leaves-content" role="tabpanel" aria-labelledby="pillars-pills-ds-retirements-tab">
-
-                            {{-- data science retirements --}}
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="card">
-                                        <div class="card-content table-responsive">
-                                            <br />
-                                            <table class="table table-bordered table-hover">
-                                                <p>
-                                                    <strong>Data Science Retirements.</strong>
-                                                </p>
-
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">#</th>
-                                                        <th scope="col">Requested by</th>
-                                                        <th scope="col-md-4">Title</th>
-                                                        <th scope="col">Request Type</th>
-                                                        <th scope="col">Under Project</th>
-                                                        <th scope="col"># of approvals</th>
-                                                        <th scope="col">Total Cost</th>
-                                                        <th scope="col">Date created</th>
-
-                                                        <th scope="col"></th>
-
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">1</th>
-                                                        <td>MarkCuban</td>
-                                                        <td>Data visualisation in Mbeya</td>
-                                                        <td>Training</td>
-                                                        <td>Sauti Mpya</td>
-                                                        <td>0</td>
-                                                        <td>2,300,000 <span class="badge badge-success">TZS</span>
-                                                        </td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>Jane Sharpe</td>
-                                                        <td>Data Mining in Dar</td>
-                                                        <td>Training</td>
-                                                        <td>Data Zetu</td>
-                                                        <td>0</td>
-                                                        <td>6,600,000 <span class="badge badge-success">TZS</span>
-                                                        </td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td>Mary Poppins</td>
-                                                        <td>Data Analyis and Mining</td>
-                                                        <td>Training</td>
-                                                        <td>Sauti Mpya</td>
-                                                        <td>0</td>
-                                                        <td>8,700,000 <span class="badge badge-success">TZS</span>
-                                                        </td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <br />
-                                            <nav aria-label="Page navigation example">
-                                                <ul class="pagination">
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Previous">
-                                                            <span aria-hidden="true">&laquo;</span>
-                                                            <span class="sr-only">Previous</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Next">
-                                                            <span aria-hidden="true">&raquo;</span>
-                                                            <span class="sr-only">Next</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </nav>
-                                        </div>
-                                    </div>
-                                    <!-- end of SECOND column -->
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <div class="tab-pane fade" id="hr-pills-loans-content" role="tabpanel" aria-labelledby="pillars-pills-ds-scholars-tab">
-
-                            {{-- data science scholars --}}
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="card">
-                                        <div class="card-content table-responsive">
-                                            <br />
-                                            <table class="table table-bordered table-hover">
-                                                <p>
-                                                    <strong>Data Science Scholars.</strong>
-                                                </p>
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">#</th>
-                                                        <th scope="col">Requested by</th>
-                                                        <th scope="col-md-4">Title</th>
-                                                        <th scope="col">Request Type</th>
-                                                        <th scope="col">Under Project</th>
-                                                        <th scope="col"># of approvals</th>
-                                                        <th scope="col">Total Cost</th>
-                                                        <th scope="col">Date created</th>
-
-                                                        <th scope="col"></th>
-
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">1</th>
-                                                        <td>MarkCuban</td>
-                                                        <td>Data visualisation in Mbeya</td>
-                                                        <td>Training</td>
-                                                        <td>Sauti Mpya</td>
-                                                        <td>0</td>
-                                                        <td>2,300,000 <span class="badge badge-success">TZS</span>
-                                                        </td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>Jane Sharpe</td>
-                                                        <td>Data Mining in Dar</td>
-                                                        <td>Training</td>
-                                                        <td>Data Zetu</td>
-                                                        <td>0</td>
-                                                        <td>6,600,000 <span class="badge badge-success">TZS</span>
-                                                        </td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td>Mary Poppins</td>
-                                                        <td>Data Analyis and Mining</td>
-                                                        <td>Training</td>
-                                                        <td>Sauti Mpya</td>
-                                                        <td>0</td>
-                                                        <td>8,700,000 <span class="badge badge-success">TZS</span>
-                                                        </td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <br />
-                                            <nav aria-label="Page navigation example">
-                                                <ul class="pagination">
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Previous">
-                                                            <span aria-hidden="true">&laquo;</span>
-                                                            <span class="sr-only">Previous</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Next">
-                                                            <span aria-hidden="true">&raquo;</span>
-                                                            <span class="sr-only">Next</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </nav>
-                                        </div>
-                                    </div>
-                                    <!-- end of SECOND column -->
-                                </div>
-
-                            </div>
-
-                        </div>
-                        <div class="tab-pane fade" id="hr-pills-payroll-content" role="tabpanel" aria-labelledby="pillars-pills-ds-grantees-tab">
-
-                            {{-- data science grantees --}}
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="card">
-                                        <div class="card-content table-responsive">
-                                            <br />
-                                            <table class="table table-bordered table-hover">
-                                                <p>
-                                                    <strong>Data Science Grantees.</strong>
-                                                </p>
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">#</th>
-                                                        <th scope="col">Requested by</th>
-                                                        <th scope="col-md-4">Title</th>
-                                                        <th scope="col">Request Type</th>
-                                                        <th scope="col">Under Project</th>
-                                                        <th scope="col"># of approvals</th>
-                                                        <th scope="col">Total Cost</th>
-                                                        <th scope="col">Date created</th>
-
-                                                        <th scope="col"></th>
-
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">1</th>
-                                                        <td>MarkCuban</td>
-                                                        <td>Data visualisation in Mbeya</td>
-                                                        <td>Training</td>
-                                                        <td>Sauti Mpya</td>
-                                                        <td>0</td>
-                                                        <td>2,300,000 <span class="badge badge-success">TZS</span>
-                                                        </td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>Jane Sharpe</td>
-                                                        <td>Data Mining in Dar</td>
-                                                        <td>Training</td>
-                                                        <td>Data Zetu</td>
-                                                        <td>0</td>
-                                                        <td>6,600,000 <span class="badge badge-success">TZS</span>
-                                                        </td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td>Mary Poppins</td>
-                                                        <td>Data Analyis and Mining</td>
-                                                        <td>Training</td>
-                                                        <td>Sauti Mpya</td>
-                                                        <td>0</td>
-                                                        <td>8,700,000 <span class="badge badge-success">TZS</span>
-                                                        </td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <br />
-                                            <nav aria-label="Page navigation example">
-                                                <ul class="pagination">
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Previous">
-                                                            <span aria-hidden="true">&laquo;</span>
-                                                            <span class="sr-only">Previous</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Next">
-                                                            <span aria-hidden="true">&raquo;</span>
-                                                            <span class="sr-only">Next</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </nav>
-                                        </div>
-                                    </div>
-                                    <!-- end of SECOND column -->
-                                </div>
-
-                            </div>
-
-                        </div>
-                        <div class="tab-pane fade" id="hr-pills-salary-content" role="tabpanel" aria-labelledby="pillars-pills-ds-retirements-tab">
-
-                            {{-- data science retirements --}}
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="card">
-                                        <div class="card-content table-responsive">
-                                            <br />
-                                            <table class="table table-bordered table-hover">
-                                                <p>
-                                                    <strong>Data Science Retirements.</strong>
-                                                </p>
-
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">#</th>
-                                                        <th scope="col">Requested by</th>
-                                                        <th scope="col-md-4">Title</th>
-                                                        <th scope="col">Request Type</th>
-                                                        <th scope="col">Under Project</th>
-                                                        <th scope="col"># of approvals</th>
-                                                        <th scope="col">Total Cost</th>
-                                                        <th scope="col">Date created</th>
-
-                                                        <th scope="col"></th>
-
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">1</th>
-                                                        <td>MarkCuban</td>
-                                                        <td>Data visualisation in Mbeya</td>
-                                                        <td>Training</td>
-                                                        <td>Sauti Mpya</td>
-                                                        <td>0</td>
-                                                        <td>2,300,000 <span class="badge badge-success">TZS</span>
-                                                        </td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>Jane Sharpe</td>
-                                                        <td>Data Mining in Dar</td>
-                                                        <td>Training</td>
-                                                        <td>Data Zetu</td>
-                                                        <td>0</td>
-                                                        <td>6,600,000 <span class="badge badge-success">TZS</span>
-                                                        </td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td>Mary Poppins</td>
-                                                        <td>Data Analyis and Mining</td>
-                                                        <td>Training</td>
-                                                        <td>Sauti Mpya</td>
-                                                        <td>0</td>
-                                                        <td>8,700,000 <span class="badge badge-success">TZS</span>
-                                                        </td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <br />
-                                            <nav aria-label="Page navigation example">
-                                                <ul class="pagination">
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Previous">
-                                                            <span aria-hidden="true">&laquo;</span>
-                                                            <span class="sr-only">Previous</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Next">
-                                                            <span aria-hidden="true">&raquo;</span>
-                                                            <span class="sr-only">Next</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </nav>
-                                        </div>
-                                    </div>
-                                    <!-- end of SECOND column -->
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <div class="tab-pane fade" id="hr-pills-salary-slips-content" role="tabpanel" aria-labelledby="pillars-pills-ds-scholars-tab">
-
-                            {{-- data science scholars --}}
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="card">
-                                        <div class="card-content table-responsive">
-                                            <br />
-                                            <table class="table table-bordered table-hover">
-                                                <p>
-                                                    <strong>Data Science Scholars.</strong>
-                                                </p>
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">#</th>
-                                                        <th scope="col">Requested by</th>
-                                                        <th scope="col-md-4">Title</th>
-                                                        <th scope="col">Request Type</th>
-                                                        <th scope="col">Under Project</th>
-                                                        <th scope="col"># of approvals</th>
-                                                        <th scope="col">Total Cost</th>
-                                                        <th scope="col">Date created</th>
-
-                                                        <th scope="col"></th>
-
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">1</th>
-                                                        <td>MarkCuban</td>
-                                                        <td>Data visualisation in Mbeya</td>
-                                                        <td>Training</td>
-                                                        <td>Sauti Mpya</td>
-                                                        <td>0</td>
-                                                        <td>2,300,000 <span class="badge badge-success">TZS</span>
-                                                        </td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>Jane Sharpe</td>
-                                                        <td>Data Mining in Dar</td>
-                                                        <td>Training</td>
-                                                        <td>Data Zetu</td>
-                                                        <td>0</td>
-                                                        <td>6,600,000 <span class="badge badge-success">TZS</span>
-                                                        </td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td>Mary Poppins</td>
-                                                        <td>Data Analyis and Mining</td>
-                                                        <td>Training</td>
-                                                        <td>Sauti Mpya</td>
-                                                        <td>0</td>
-                                                        <td>8,700,000 <span class="badge badge-success">TZS</span>
-                                                        </td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <br />
-                                            <nav aria-label="Page navigation example">
-                                                <ul class="pagination">
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Previous">
-                                                            <span aria-hidden="true">&laquo;</span>
-                                                            <span class="sr-only">Previous</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Next">
-                                                            <span aria-hidden="true">&raquo;</span>
-                                                            <span class="sr-only">Next</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </nav>
-                                        </div>
-                                    </div>
-                                    <!-- end of SECOND column -->
-                                </div>
-
-                            </div>
-
-                        </div>
-                        <div class="tab-pane fade" id="hr-pills-staff-appraisal-content" role="tabpanel" aria-labelledby="pillars-pills-ds-grantees-tab">
-
-                            {{-- data science grantees --}}
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="card">
-                                        <div class="card-content table-responsive">
-                                            <br />
-                                            <table class="table table-bordered table-hover">
-                                                <p>
-                                                    <strong>Data Science Grantees.</strong>
-                                                </p>
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">#</th>
-                                                        <th scope="col">Requested by</th>
-                                                        <th scope="col-md-4">Title</th>
-                                                        <th scope="col">Request Type</th>
-                                                        <th scope="col">Under Project</th>
-                                                        <th scope="col"># of approvals</th>
-                                                        <th scope="col">Total Cost</th>
-                                                        <th scope="col">Date created</th>
-
-                                                        <th scope="col"></th>
-
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">1</th>
-                                                        <td>MarkCuban</td>
-                                                        <td>Data visualisation in Mbeya</td>
-                                                        <td>Training</td>
-                                                        <td>Sauti Mpya</td>
-                                                        <td>0</td>
-                                                        <td>2,300,000 <span class="badge badge-success">TZS</span>
-                                                        </td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <th scope="row">4</th>
-                                                        <td>Jane Sharpe</td>
-                                                        <td>Data Mining in Dar</td>
-                                                        <td>Training</td>
-                                                        <td>Data Zetu</td>
-                                                        <td>0</td>
-                                                        <td>6,600,000 <span class="badge badge-success">TZS</span>
-                                                        </td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td>Mary Poppins</td>
-                                                        <td>Data Analyis and Mining</td>
-                                                        <td>Training</td>
-                                                        <td>Sauti Mpya</td>
-                                                        <td>0</td>
-                                                        <td>8,700,000 <span class="badge badge-success">TZS</span>
-                                                        </td>
-                                                        <td>2019-09-11</td>
-                                                        <td>
-                                                            <button type="button" class="btn btn-outline-success">view
-                                                                request</button>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                            <br />
-                                            <nav aria-label="Page navigation example">
-                                                <ul class="pagination">
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Previous">
-                                                            <span aria-hidden="true">&laquo;</span>
-                                                            <span class="sr-only">Previous</span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#" aria-label="Next">
-                                                            <span aria-hidden="true">&raquo;</span>
-                                                            <span class="sr-only">Next</span>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </nav>
-                                        </div>
-                                    </div>
-                                    <!-- end of SECOND column -->
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
         <!-- end of finance executive director adminstration data column -->
 
 
@@ -9469,30 +7755,8 @@
 
 
         </div>
-        <!-- end of payroll-system data panel -->
-
-        <!--
-         ========================================
-         =                                      =
-         =       start of scholars and grantees =
-         ======================================== -->
-        <!-- start of scholar and grantees data panel -->
-
-        <!-- end of scholar and grantees data panel -->
-
-        <!--
-               =========================================
-               =                                       =
-               =      start of financial-analytics data           =
-               ========================================= -->
-        <!-- start of financial-analytics data panel -->
-        <div class="tab-pane tb fade" id="financial-forms-content" role="tabpanel" aria-labelledby="financial-analytics-tab-md">
-            <p>Financial Forms</p>
-            <br />
 
 
-        </div>
-        <!-- end of financial-analytics data panel -->
 
     </div>
 
